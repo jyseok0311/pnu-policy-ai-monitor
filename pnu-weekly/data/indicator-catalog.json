@@ -169,6 +169,17 @@
   ],
   "month": [
     {
+      "id": "kosis-local",
+      "name": "KOSIS 지자체 통계 (부산)",
+      "what": "20대 순이동·청년 고용률·연령별 인구 — 학령인구와 인재 유출의 월 단위 선행 신호",
+      "org": "통계청",
+      "url": "https://kosis.kr/index/index.do",
+      "api": "https://kosis.kr/openapi/",
+      "collect": "api",
+      "priority": 1,
+      "note": "인증키 필요(KOSIS_KEY)"
+    },
+    {
       "id": "kosis-employ",
       "name": "KOSIS 고용동향 (지역별 청년 고용률)",
       "what": "부산 15~29세 고용률·실업률 — 지역 인재 유출의 선행 신호",
@@ -244,6 +255,16 @@
       "api": "https://www.data.go.kr/data/15037507/openapi.do",
       "collect": "api",
       "priority": 1
+    },
+    {
+      "id": "kcue-accredit",
+      "name": "대학기관평가인증 (한국대학평가원)",
+      "what": "인증 여부와 인증기간. 미인증·만료는 재정지원·편입학 등에서 직접 불이익으로 이어진다. 4주기 2026~2030.",
+      "org": "한국대학평가원",
+      "url": "https://aims.kcue.or.kr/EgovPageLink.do?subMenu=4010000",
+      "collect": "scrape",
+      "priority": 1,
+      "verified": "2026-09-11 인증대학 167개교 수집, 거점국립대 10/10 매칭"
     },
     {
       "id": "kess",

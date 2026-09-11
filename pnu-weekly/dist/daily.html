@@ -271,6 +271,11 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .map-hint .hint-rk em{font-style:normal;opacity:.6;font-size:9.5px;margin-left:2px}
 .warn-src.via{text-decoration:none;cursor:pointer}
 .warn-src.via:hover{background:#ffe9a8;text-decoration:none}
+/* 대학기관평가인증 표시 */
+.map-hint .hint-ac{margin-top:5px;font-size:11.5px;color:#374151}
+.map-hint .hint-ac b{color:#1f6b42}
+.map-hint .hint-ac b.bad{color:var(--crisis)}
+.map-hint .hint-ac span{color:var(--mute)}
 
 .artlist{list-style:none;margin:0;padding:0}
 .artlist li{display:grid;grid-template-columns:46px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
@@ -3036,7 +3041,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </ul></div>
   </details>
 </section>
-<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 02:48:05 · 데이터: data/collected/</p>
+<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 03:59:08 · 데이터: data/collected/</p>
 </main>
 </div>
 </div>
@@ -3208,7 +3213,10 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
       '<span class="hint-rk"><i>QS</i>' + esc(r.qs || '—') + '</span>' +
       '<span class="hint-rk"><i>THE</i>' + esc(r.the || '—') + '</span>' +
       (r.ja ? '<span class="hint-rk ja"><i>중앙</i>' + esc(r.ja.rank) + '위 <em>' + esc(r.ja.year) + '</em></span>' : '') +
-      '</div>';
+      '</div>' +
+      (d.accredit ? '<div class="hint-ac">평가인증 ' +
+        (d.accredit.daysLeft > 0 ? '<b>유효</b>' : '<b class="bad">만료</b>') +
+        ' <span>' + esc(d.accredit.from) + ' ~ ' + esc(d.accredit.to) + '</span></div>' : '');
   }
 
   function hintBox(el) {

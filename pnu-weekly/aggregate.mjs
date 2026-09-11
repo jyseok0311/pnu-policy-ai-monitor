@@ -68,6 +68,15 @@ const UNI_STOP = new Set([
 ]);
 const RANK = J('data/rankings.json');
 const JA = (() => { try { return J('data/joongang-ranking.json'); } catch { return null; } })();
+const UD = (() => { try { return J('data/univ-data.json'); } catch { return null; } })();
+// 대학기관평가인증(한국대학평가원) — 인증 여부와 남은 기간
+const accreditOf = (id) => {
+  const a = UD && UD.accreditation && UD.accreditation.focus && UD.accreditation.focus[id];
+  if (!a || !a.to) return null;
+  const end = new Date(a.to.replace(/\./g, '-'));
+  const days = Math.round((end - new Date()) / 864e5);
+  return { from: a.from, to: a.to, type: a.type, region: a.region, daysLeft: days };
+};
 // 중앙일보는 연도별 패널이라 가장 최근 등재 연도를 뽑아 쓴다
 const jaLatest = (id) => {
   const u = JA && JA.universities[id];
@@ -102,6 +111,7 @@ const uniDetail = Object.fromEntries(meta.universities.map((u) => {
   return [u.id, {
     name: u.name,
     rank: rk ? { qs: rk.qs, the: rk.the, city: rk.city, ja: jaLatest(u.id) } : null,
+    accredit: accreditOf(u.id),
     mentions: hit.length,
     risky: risky.length,
     riskRate: +(rr * 100).toFixed(1),
@@ -260,7 +270,24 @@ const week = {
           : { name: '중앙일보 국내 종합', period: '최근', value: '—', unit: '', change: '자료 없음', dir: 'flat', freq: 'year', src: 'joongang' };
       })()
     ]
-  }],
+  }, ...(() => {
+    const ac = accreditOf('pnu');
+    if (!ac) return [];
+    const yrs = (ac.daysLeft / 365).toFixed(1);
+    return [{
+      group: '대학 공식자료 (부산대)',
+      items: [
+        { name: '대학기관평가인증', period: ac.to.slice(0, 4) + '까지', value: ac.daysLeft > 0 ? '유효' : '만료',
+          unit: '', change: `${ac.from} ~ ${ac.to} (잔여 ${yrs}년)`, dir: ac.daysLeft > 365 ? 'flat' : 'up',
+          freq: 'accredit', src: 'kcue_aims' },
+        { name: '전국 인증대학', period: '4주기', value: String(UD.accreditation.total), unit: '개교',
+          change: `국립 ${UD.accreditation.byType['국립'] || 0} · 사립 ${UD.accreditation.byType['사립'] || 0}`,
+          dir: 'flat', freq: 'accredit', src: 'kcue_aims' },
+        { name: '부산 지역 인증대학', period: '4주기', value: String(UD.accreditation.byRegion['부산'] || 0), unit: '개교',
+          change: '지역 내 경쟁 대학 수', dir: 'flat', freq: 'accredit', src: 'kcue_aims' }
+      ]
+    }];
+  })()],
   paths: narr.paths, innerPaths: narr.innerPaths, sectors: narr.sectors,
   diagnosis: narr.diagnosis, refs, voices
 };

@@ -1,9 +1,10 @@
 {
   "_comment": "KPI 원자료 출처 레지스트리. weeks.json 의 kpis[].src 가 이 키를 참조한다.",
   "kosis": {
-    "name": "KOSIS 국가통계포털",
-    "url": "https://kosis.kr/",
-    "api": "https://kosis.kr/openapi/"
+    "name": "국가통계포털(KOSIS)",
+    "url": "https://kosis.kr/index/index.do",
+    "api": "https://kosis.kr/openapi/",
+    "note": "지자체 통계(부산 20대 순이동·청년 고용률·연령별 인구). 키 없이 호출하면 err 11 로 엔드포인트만 확인된다. KOSIS_KEY 지정 시 자동 수집."
   },
   "kess": {
     "name": "교육통계서비스(KESS)",
@@ -12,9 +13,9 @@
   },
   "academyinfo": {
     "name": "대학알리미 정보공시",
-    "url": "https://www.academyinfo.go.kr/",
-    "api": "https://www.data.go.kr/data/15037507/openapi.do",
-    "note": "4·6·8·10월 공시. 항목별로 연 1~2회 + 수시 갱신 — 단순 '연 1회'가 아님."
+    "url": "https://www.academyinfo.go.kr/index.do",
+    "api": "https://www.data.go.kr/data/15158679/openapi.do",
+    "note": "4·6·8·10월 공시. 항목별 연 1~2회 + 수시. 공공데이터포털 OpenAPI 3종(교육여건·교원연구·산학협력) — 활용신청 후 DATA_GO_KR_KEY 지정 시 자동 수집."
   },
   "adiga": {
     "name": "대교협 어디가",
@@ -117,6 +118,10 @@
     "event": {
       "label": "공고시",
       "cls": "f-slow"
+    },
+    "accredit": {
+      "label": "인증 주기",
+      "cls": "f-slow"
     }
   },
   "_excluded": {
@@ -127,5 +132,11 @@
         "reason": "2026-09-11 제외 요청"
       }
     ]
+  },
+  "kcue_aims": {
+    "name": "한국대학평가원 대학기관평가인증",
+    "url": "https://aims.kcue.or.kr/EgovPageLink.do?subMenu=4010000",
+    "api": null,
+    "note": "인증대학 현황 167개교(4주기 2026~2030). 목록 엔드포인트가 pageUnit 을 받아 전체를 한 요청으로 준다. 인증키 불필요 — univdata.mjs 가 자동 수집한다."
   }
 }

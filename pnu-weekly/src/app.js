@@ -165,7 +165,10 @@
       '<span class="hint-rk"><i>QS</i>' + esc(r.qs || '—') + '</span>' +
       '<span class="hint-rk"><i>THE</i>' + esc(r.the || '—') + '</span>' +
       (r.ja ? '<span class="hint-rk ja"><i>중앙</i>' + esc(r.ja.rank) + '위 <em>' + esc(r.ja.year) + '</em></span>' : '') +
-      '</div>';
+      '</div>' +
+      (d.accredit ? '<div class="hint-ac">평가인증 ' +
+        (d.accredit.daysLeft > 0 ? '<b>유효</b>' : '<b class="bad">만료</b>') +
+        ' <span>' + esc(d.accredit.from) + ' ~ ' + esc(d.accredit.to) + '</span></div>' : '');
   }
 
   function hintBox(el) {
