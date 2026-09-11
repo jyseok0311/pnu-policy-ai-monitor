@@ -1,4 +1,4 @@
-// 일일 브리핑 생성 — dist/daily.html
+// 일일 브리핑 생성 — dist/daily.html (+ 언어판)
 // 사용: node daily.mjs
 //
 // 주간 리포트와 같은 수집본을 날짜로 쪼개 쓴다. 추가 수집이 필요 없다.
@@ -10,6 +10,8 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { relevant, mentionsOf } from './src/filter.mjs';
 import { sanjini } from './src/browser/sanjini.svg.js';
+import { t as pack, LANGS } from './src/i18n.mjs';
+import { headerControls } from './src/render.mjs';
 const TIER_MOOD = { 1: 'happy', 2: 'base', 3: 'tense', 4: 'angry' };
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -17,8 +19,6 @@ const J = (p) => JSON.parse(readFileSync(join(root, p), 'utf8'));
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 const meta = J('data/meta.json');
-// PDF 파일명은 주간과 같은 기준일(최신 주차 날짜)을 쓴다 — pdf.mjs 가 굽는 이름과 맞춰야 한다
-const weeksAll = J('data/weeks.json');
 const pdfPath = 'pdf/PNU_Univ_Policy_AI_Daily_All.pdf';   // 합본
 const dailyPdf = (d) => `pdf/PNU_Univ_Policy_AI_Daily(${d.replace(/-/g, '.')}).pdf`;
 const TH = J('data/thresholds.json');
@@ -35,10 +35,8 @@ for (const f of files.slice(-2)) {
 }
 const days = [...new Set(all.map((x) => x.date))].sort().reverse().slice(0, 10);
 
-const LVWORD = { crisis: '위기', warning: '경고', watch: '관찰', normal: '일반' };
 const LVCLS = { crisis: 's', warning: 'i', watch: 'm', normal: 'l' };
 const ORDER = { crisis: 0, warning: 1, watch: 2, normal: 3 };
-const WD = ['일', '월', '화', '수', '목', '금', '토'];
 
 // 일간 등급은 주간 임계값을 그대로 쓰면 안 된다.
 // 하루 표본이 20~200건으로 들쭉날쭉해 위험신호 비중의 분산이 주간보다 훨씬 크다.
@@ -57,7 +55,6 @@ function tierOf(risk, n) {
   if (n < MIN_N) return null;                       // 표본 부족 — 등급 없음
   return risk >= DTH.t4 ? 4 : risk >= DTH.t3 ? 3 : risk >= DTH.t2 ? 2 : 1;
 }
-const WORD = { 4: '위기', 3: '경계', 2: '주의', 1: '관심' };
 const STATE = { 4: 'Crisis', 3: 'Warning', 2: 'Watch', 1: 'Normal' };
 
 const stat = (items) => {
@@ -77,13 +74,15 @@ calibrateDaily(days.map((d) => {
 }));
 
 const FIELDS = ['거버넌스', '재정', '입시·학령인구', 'AI·디지털', '기타'];
+const wd = (d, T) => T.daily.weekday[new Date(Date.parse(d)).getDay()];
 
-function renderDay(d, idx) {
+function renderDay(d, idx, T) {
+  const D = T.daily;
   const items = all.filter((x) => x.date === d).sort((a, b) => ORDER[a.level] - ORDER[b.level]);
   const s = stat(items);
-  const dt = new Date(Date.parse(d));
   const prev = days[idx + 1] ? stat(all.filter((x) => x.date === days[idx + 1])) : null;
   const delta = prev ? (s.risk - prev.risk).toFixed(1) : null;
+  const deltaHtml = delta === null ? '' : D.vsPrev(+delta > 0 ? 'up' : 'down', (+delta >= 0 ? '+' : '') + delta);
 
   const byField = FIELDS.map((f) => ({ f, list: items.filter((x) => x.field === f) })).filter((x) => x.list.length);
   const uni = meta.universities.map((u) => ({ n: u.name, c: mentionsOf(items, u.name) })).filter((x) => x.c).sort((a, b) => b.c - a.c);
@@ -91,60 +90,75 @@ function renderDay(d, idx) {
   return `<section class="week" id="d-${d}">
   <div class="wk-head">
     <span class="tier-face">${sanjini(s.tier ? (TIER_MOOD[s.tier] || 'base') : 'sad', 44)}</span>
-    ${s.tier ? `<span class="tier t${s.tier}">Tier ${s.tier} ${WORD[s.tier]}</span>` : '<span class="tier t0">표본 부족</span>'}
+    ${s.tier ? `<span class="tier t${s.tier}">Tier ${s.tier} ${esc(D.tierWord[s.tier])}</span>` : `<span class="tier t0">${esc(D.noTier)}</span>`}
     <div>
-      <div class="wk-title">${d.replace(/-/g, '.')} (${WD[dt.getDay()]})</div>
-      <div class="wk-range">일일 브리핑 · 당일 수집 기사 기준</div>
+      <div class="wk-title">${d.replace(/-/g, '.')} (${esc(wd(d, T))})</div>
+      <div class="wk-range">${esc(D.subline)}</div>
     </div>
-    ${s.tier ? `<div class="state t${s.tier}"><i class="dot d${s.tier}"></i>${STATE[s.tier]}</div>` : `<div class="state t0">등급 미산정 <small style="font-weight:500;font-size:12px">(${MIN_N}건 미만)</small></div>`}
+    ${s.tier ? `<div class="state t${s.tier}"><i class="dot d${s.tier}"></i>${STATE[s.tier]}</div>` : `<div class="state t0">${D.noTierState(MIN_N)}</div>`}
   </div>
-  <div class="signal">신호: <b>Crisis ${s.crisis}%</b> | <b>Warning ${s.warning}%</b> | 합산 ${s.risk}% | 총 ${s.n}건${
-    delta !== null ? ` | 전일 대비 <b class="${+delta > 0 ? 'up' : 'down'}">${+delta >= 0 ? '+' : ''}${delta}%p</b>` : ''}</div>
-  <div class="live-note"><span class="live-badge">실데이터</span>무료·공개 소스(구글 뉴스 + 언론사 RSS) 수집분 · 서술 없이 집계와 목록만 제공</div>
+  <div class="signal">${D.signal(s.crisis, s.warning, s.risk, s.n, deltaHtml)}</div>
+  <div class="live-note"><span class="live-badge">${esc(T.liveBadge)}</span>${esc(D.liveNote)}</div>
 
-  <h2 class="sec">분야별 <small>당일 ${s.n}건</small></h2>
+  <h2 class="sec">${esc(D.secFields)} <small>${esc(D.dayTotal(s.n))}</small></h2>
   <div class="kpis">${byField.map(({ f, list }) => {
     const r = stat(list);
     return `<div class="kpi${list.length >= 5 && r.risk >= DTH.t3 ? '' : ' live'}">
       <div class="n"><span>${esc(f)}</span></div>
-      <div class="val">${list.length}<small>건</small></div>
-      <div class="ch ${list.length < 5 ? 'flat' : r.risk >= DTH.t3 ? 'up' : 'flat'}">${list.length < 5 ? '위험신호 —' : `위험신호 ${r.risk}%`}</div>
+      <div class="val">${list.length}<small>${esc(T.unit)}</small></div>
+      <div class="ch ${list.length < 5 ? 'flat' : r.risk >= DTH.t3 ? 'up' : 'flat'}">${esc(list.length < 5 ? D.riskNone : D.riskPct(r.risk))}</div>
     </div>`;
   }).join('')}</div>
 
-  ${uni.length ? `<h2 class="sec">거점국립대 언급</h2>
+  ${uni.length ? `<h2 class="sec">${esc(D.secUni)}</h2>
   <div class="kpis">${uni.map((u) => `<div class="kpi${u.n === '부산대' ? ' live' : ''}">
-    <div class="n"><span>${esc(u.n)}</span></div><div class="val">${u.c}<small>건</small></div></div>`).join('')}</div>` : ''}
+    <div class="n"><span>${esc(u.n)}</span></div><div class="val">${u.c}<small>${esc(T.unit)}</small></div></div>`).join('')}</div>` : ''}
 
-  <h2 class="sec">기사 <small>위험도 순 · 제목을 누르면 원문으로 이동</small></h2>
+  <h2 class="sec">${esc(D.secArticles)} <small>${esc(D.secArticlesSub)}</small></h2>
   ${byField.map(({ f, list }) => `
   <details class="day"${f === byField[0].f ? ' open' : ''}>
-    <summary><span>${esc(f)} — ${list.length}건</span></summary>
+    <summary><span>${esc(f)} — ${esc(D.count(list.length))}</span></summary>
     <div class="cat"><ul class="artlist">${list.slice(0, 40).map((x) => `
-      <li><span class="lv ${LVCLS[x.level]}">${LVWORD[x.level]}</span>
+      <li><span class="lv ${LVCLS[x.level]}">${esc(D.lvWord[x.level])}</span>
       <a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a>
       <span class="artmeta">${esc(x.media)}</span></li>`).join('')}
-      ${list.length > 40 ? `<li class="more">… 외 ${list.length - 40}건</li>` : ''}
+      ${list.length > 40 ? `<li class="more">${esc(D.more(list.length - 40))}</li>` : ''}
     </ul></div>
   </details>`).join('')}
 </section>`;
 }
 
-const nav = days.map((d, i) => {
-  const s = stat(all.filter((x) => x.date === d));
-  return `<li><a class="${i === 0 ? 'on' : ''}" href="#d-${d}" data-nav="d-${d}">
-    <i class="dot ${s.tier ? 'd' + s.tier : 'd0'}"></i>${d.replace(/-/g, '.')} (${WD[new Date(Date.parse(d)).getDay()]})
-    <span class="stub">${s.n}건</span></a></li>`;
-}).join('');
+// 언어별 파일명 — ko 는 daily.html, 나머지는 daily.<code>.html
+const pageFor = (code) => (code === 'ko' ? 'daily.html' : 'daily.' + code + '.html');
+const weeklyFor = (code) => (code === 'ko' ? 'index.html' : 'index.' + code + '.html');
+const hrefs = Object.fromEntries(LANGS.map((L) => [L.code, pageFor(L.code)]));
 
-const html = `<!DOCTYPE html>
-<html lang="ko">
+const css = readFileSync(join(root, 'src/styles.css'), 'utf8');
+const js = readFileSync(join(root, 'src/app.js'), 'utf8');
+const boot = readFileSync(join(root, 'src/theme-boot.js'), 'utf8');
+
+function renderDaily(lang) {
+  const T = pack(lang), D = T.daily;
+  // 언어별 meta 문구 — <field>En 이 있으면 쓰고, 없으면 한국어 원문을 그대로 둔다
+  const M = (k) => (lang !== 'ko' && meta[k + lang.replace(/^(.)/, (c) => c.toUpperCase())]) || meta[k];
+  const title = M('title') + ' · ' + D.suffix;
+
+  const nav = days.map((d, i) => {
+    const s = stat(all.filter((x) => x.date === d));
+    return `<li><a class="${i === 0 ? 'on' : ''}" href="#d-${d}" data-nav="d-${d}">
+      <i class="dot ${s.tier ? 'd' + s.tier : 'd0'}"></i>${d.replace(/-/g, '.')} (${esc(wd(d, T))})
+      <span class="stub">${esc(D.count(s.n))}</span></a></li>`;
+  }).join('');
+
+  return `<!DOCTYPE html>
+<html lang="${T.htmlLang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(meta.title)} · 일일 브리핑 | PNU</title>
+<title>${esc(title)} | PNU</title>
+<script>${boot}</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<style>${readFileSync(join(root, 'src/styles.css'), 'utf8')}
+<style>${css}
 .artlist{list-style:none;margin:0;padding:0}
 .artlist li{display:grid;grid-template-columns:46px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
 .artlist li:last-child{border-bottom:0}
@@ -156,41 +170,45 @@ const html = `<!DOCTYPE html>
 <body>
 <div class="shell">
 <aside class="side">
-  <a class="go" href="index.html">‹ Go To Weekly</a>
+  <a class="go" href="${weeklyFor(lang)}">${esc(T.navWeekly)}</a>
   <ul>${nav}</ul>
 </aside>
 <div>
 <header class="top">
   <div class="brand">
-    <img class="logo-img" src="assets/pnu-symbol.png" alt="부산대학교" width="48" height="48">
-    <div><h1>${esc(meta.title)} · 일일 브리핑</h1>
-    <div class="sub">${esc(meta.org)}${meta.contact ? ' · ' + esc(meta.contact) : ''}</div></div>
+    <img class="logo-img" src="assets/pnu-symbol.png" alt="PNU" width="48" height="48">
+    <div><h1>${esc(title)}</h1>
+    <div class="sub">${esc(T.brandSub(meta.org))}${meta.contact ? ' · ' + esc(meta.contact) : ''}</div></div>
   </div>
   <div class="acts">
-    <select class="pdf-sel" data-pdf-select aria-label="PDF 날짜 선택">
-      <option value="${esc(pdfPath)}">전체 (${days.length}일 합본)</option>
-      ${days.map((d) => `<option value="${esc(dailyPdf(d))}">${d.replace(/-/g, '.')} (${WD[new Date(Date.parse(d)).getDay()]})</option>`).join('')}
+    <select class="pdf-sel" data-pdf-select aria-label="${esc(T.pdfDateLabel)}">
+      <option value="${esc(pdfPath)}">${esc(T.pdfAllDays(days.length))}</option>
+      ${days.map((d) => `<option value="${esc(dailyPdf(d))}">${d.replace(/-/g, '.')} (${esc(wd(d, T))})</option>`).join('')}
     </select>
-    <a class="btn" href="index.html">주간 리포트</a>
-    <a class="btn ghost" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf title="선택한 날짜의 일일 브리핑 PDF">PDF 다운로드</a>
+    <a class="btn" href="${weeklyFor(lang)}">${esc(T.weeklyLink)}</a>
+    <a class="btn ghost" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf>${esc(T.pdfDownload)}</a>
+    ${headerControls(T, lang, hrefs)}
   </div>
 </header>
 <main class="main">
-<p class="notice"><span class="sec-face notice-face">${sanjini('grad', 40)}</span>일일 브리핑은 <b>집계와 기사 목록만</b> 제공합니다. 해석·전망·권고는 주간 리포트에서 다룹니다.
-매일 생성되며 생성형 AI 서술을 포함하지 않으므로 수치 외의 판단이 들어가지 않습니다.
-<span class="sample">일간 임계값은 일별 분포로 별도 산정한 잠정값 (Tier4 ≥${DTH.t4}% / Tier3 ≥${DTH.t3}% / Tier2 ≥${DTH.t2}%) · ${MIN_N}건 미만인 날은 등급 미산정</span></p>
-${days.map(renderDay).join('\n')}
-<p class="foot">${esc(meta.foot)}<br>생성: ${new Date().toISOString().slice(0, 19).replace('T', ' ')} · 데이터: data/collected/</p>
+<p class="notice"><span class="sec-face notice-face">${sanjini('grad', 40)}</span>${D.notice}
+<span class="sample">${esc(D.thresholdNote(DTH, MIN_N))}</span></p>
+${days.map((d, i) => renderDay(d, i, T)).join('\n')}
+<p class="foot">${esc(M('foot'))}<br>${esc(T.genAt)}: ${new Date().toISOString().slice(0, 19).replace('T', ' ')} · data/collected/</p>
 </main>
 </div>
 </div>
 <div id="toast"></div>
-<script>${readFileSync(join(root, 'src/app.js'), 'utf8')}</script>
+<script>${js}</script>
 </body>
 </html>`;
+}
 
-writeFileSync(join(root, 'dist/daily.html'), html, 'utf8');
-console.log(`✓ dist/daily.html  ${(Buffer.byteLength(html) / 1024).toFixed(0)} KB`);
+for (const L of LANGS) {
+  const html = renderDaily(L.code);
+  writeFileSync(join(root, 'dist/' + pageFor(L.code)), html, 'utf8');
+  console.log(`✓ dist/${pageFor(L.code)}  ${(Buffer.byteLength(html) / 1024).toFixed(0)} KB  [${L.label}]`);
+}
 console.log(`  ${days.length}일치 · 총 ${all.length}건`);
 console.log(`  일간 임계값 T4≥${DTH.t4}% T3≥${DTH.t3}% T2≥${DTH.t2}% (표본 ${MIN_N}건 미만은 미산정)`);
 days.forEach((d) => { const s = stat(all.filter((x) => x.date === d)); console.log(`  ${d}  ${String(s.n).padStart(3)}건  위험신호 ${String(s.risk).padStart(5)}%  ${s.tier ? 'T' + s.tier : '—'}`); });

@@ -14,31 +14,31 @@ a:hover{text-decoration:underline}
 .shell > *{min-width:0}
 
 /* sidebar */
-.side{background:#f7f8fa;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;padding:14px 0}
-.side .go{display:block;margin:0 14px 12px;padding:8px 12px;background:var(--navy);color:#fff;border-radius:6px;font-size:13px;font-weight:600;text-align:center}
-.side .go:hover{background:var(--navy-2);text-decoration:none}
+.side{background:var(--side-bg);border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;padding:14px 0}
+.side .go{display:block;margin:0 14px 12px;padding:8px 12px;background:var(--head-bg);color:#fff;border-radius:6px;font-size:13px;font-weight:600;text-align:center}
+.side .go:hover{background:var(--head-bg2);text-decoration:none}
 .side ul{list-style:none;margin:0;padding:0}
-.side li a{display:flex;align-items:center;gap:8px;padding:6px 16px;font-size:12.5px;color:#374151}
+.side li a{display:flex;align-items:center;gap:8px;padding:6px 16px;font-size:12.5px;color:var(--ink-2)}
 .side li a:hover,.side li a.on{background:var(--sky-l);color:var(--navy);text-decoration:none}
 .side li a.on{font-weight:700;box-shadow:inset 3px 0 0 var(--navy)}
-.side li a .stub{margin-left:auto;font-size:10px;color:#9ca3af;border:1px solid #e5e7eb;border-radius:3px;padding:0 4px}
+.side li a .stub{margin-left:auto;font-size:10px;color:var(--faint);border:1px solid var(--line);border-radius:3px;padding:0 4px}
 .dot{width:8px;height:8px;border-radius:50%;flex:none}
 .d4{background:var(--crisis)}.d3{background:var(--warn)}.d2{background:var(--watch)}.d1{background:var(--ok)}
 
 /* header */
-.top{background:var(--navy);color:#fff;padding:22px 32px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;position:sticky;top:0;z-index:500}
+.top{background:var(--head-bg);color:var(--head-ink);padding:22px 32px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;position:sticky;top:0;z-index:500}
 .brand{display:flex;gap:14px;align-items:center}
 .logo{width:48px;height:48px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-weight:800;font-size:14px;letter-spacing:.5px}
 .top h1{margin:0;font-size:22px;font-weight:700}
 .top .sub{font-size:13px;opacity:.85;margin-top:3px}
 .top .acts{display:flex;gap:8px;align-items:center;align-self:center}
-.btn{background:#fff;color:var(--navy);border:0;border-radius:6px;padding:7px 13px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn{background:var(--btn-bg);color:var(--btn-ink);border:0;border-radius:6px;padding:7px 13px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
 .btn:hover{background:var(--sky-l);text-decoration:none}
 .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
 .btn.ghost:hover{background:rgba(255,255,255,.12)}
 
 .main{padding:0 32px 60px}
-.notice{border-left:3px solid var(--sky);background:#f8fafc;padding:10px 14px;font-size:13px;color:#4b5563;margin:18px 0}
+.notice{border-left:3px solid var(--sky);background:var(--soft);padding:10px 14px;font-size:13px;color:var(--ink-3);margin:18px 0}
 .sample{display:inline-block;background:#fff3cd;color:#7a5a00;border:1px solid #ffe08a;border-radius:4px;font-size:12px;padding:2px 8px;font-weight:700}
 
 /* trend strip */
@@ -59,7 +59,7 @@ a:hover{text-decoration:underline}
 .state{margin-left:auto;font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px}
 .state .dot{width:14px;height:14px}
 .state.t4{color:var(--crisis)}.state.t3{color:var(--warn)}.state.t2{color:var(--watch)}.state.t1{color:var(--ok)}
-.signal{margin:12px 0 22px;font-size:13.5px;color:#374151}
+.signal{margin:12px 0 22px;font-size:13.5px;color:var(--ink-2)}
 .signal b{color:var(--ink)}
 
 h2.sec{font-size:17px;font-weight:800;margin:30px 0 12px;display:flex;align-items:center;gap:8px}
@@ -69,10 +69,10 @@ h3.sub{background:var(--thead);color:var(--navy);font-size:15px;font-weight:700;
 
 /* map */
 .mapbox{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
-.lmap{height:460px;width:100%;background:#dfe3e9}
-.legend{font-size:12.5px;color:#4b5563;margin-top:10px;line-height:1.7}
+.lmap{height:460px;width:100%;background:var(--map-bg)}
+.legend{font-size:12.5px;color:var(--ink-3);margin-top:10px;line-height:1.7}
 .legend .k{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle;margin-right:4px}
-.uni-label{font-weight:700;font-size:12px;color:#1f2937;text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 3px #fff;white-space:nowrap}
+.uni-label{font-weight:700;font-size:12px;color:var(--ink);text-shadow:0 0 3px var(--halo),0 0 3px var(--halo),0 0 3px var(--halo);white-space:nowrap}
 .uni-label.focus{color:var(--crisis);font-size:13px;font-weight:800}
 .leaflet-container{font-family:inherit}
 
@@ -88,19 +88,19 @@ h3.sub{background:var(--thead);color:var(--navy);font-size:15px;font-weight:700;
 .reflist{list-style:none;margin:0;padding:0;font-size:13px}
 .reflist li{display:grid;grid-template-columns:34px 1fr;gap:8px;padding:7px 8px;border-bottom:1px dashed var(--line);scroll-margin-top:110px;border-radius:4px}
 .reflist li:last-child{border-bottom:0}
-.reflist li.hit{background:#fff8e1}
+.reflist li.hit{background:var(--hit)}
 .reflist .n{color:var(--sky);font-weight:800}
 .reflist .meta{color:var(--mute);font-size:12px;margin-top:2px}
 
 /* articles */
-details.day{border:1px solid var(--line);border-radius:6px;margin:6px 0;background:#fafbfc}
+details.day{border:1px solid var(--line);border-radius:6px;margin:6px 0;background:var(--soft)}
 details.day summary{cursor:pointer;padding:8px 12px;font-weight:700;font-size:14px;list-style:none;display:flex;justify-content:space-between}
 details.day summary::-webkit-details-marker{display:none}
 details.day summary::after{content:"＋";color:var(--mute)}
 details.day[open] summary::after{content:"－"}
 .cat{padding:4px 14px 10px}
 .cat h4{margin:8px 0 3px;font-size:13px;color:var(--navy)}
-.cat ul{margin:0;padding-left:16px;font-size:13px;color:#374151}
+.cat ul{margin:0;padding-left:16px;font-size:13px;color:var(--ink-2)}
 .cat li{margin:2px 0}
 .cat .more{color:var(--mute);font-size:12px}
 
@@ -109,7 +109,7 @@ details.day[open] summary::after{content:"－"}
 .chg .arrow{font-weight:800}
 .up{color:var(--crisis)}.down{color:var(--sky)}
 .chg .v{font-weight:700}
-.chg .why{color:#4b5563;font-size:13px}
+.chg .why{color:var(--ink-3);font-size:13px}
 
 /* watch */
 .watch{display:grid;gap:8px}
@@ -120,8 +120,8 @@ details.day[open] summary::after{content:"－"}
 .kpi-group{margin:14px 0}
 .kpi-group h4{margin:0 0 6px;font-size:13.5px;color:var(--navy);font-weight:700}
 .kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:8px}
-.kpi{background:#fafbfc;border:1px solid var(--line);border-radius:6px;padding:8px 10px}
-.kpi.live{background:#f2f8f4;border-color:#bfdccb}
+.kpi{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+.kpi.live{background:var(--live-bg);border-color:var(--live-line)}
 .kpi .n{font-size:12px;color:var(--mute);display:flex;justify-content:space-between;gap:6px}
 .kpi .n a{color:var(--mute)}
 .kpi .n a:hover{color:var(--sky)}
@@ -135,11 +135,11 @@ details.day[open] summary::after{content:"－"}
 .f-slow{background:#f3f4f6;color:#6b7280;border-color:#e5e7eb}
 
 /* paths */
-.path{background:#fafbfc;border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13.5px}
+.path{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13.5px}
 .path .tag{display:inline-block;background:var(--crisis);color:#fff;font-size:11px;border-radius:3px;padding:1px 6px;margin-right:6px;font-weight:700}
 .path .tag.w{background:var(--warn)}
 .path b{color:var(--navy)}
-.path .flow{margin-top:4px;color:#374151}
+.path .flow{margin-top:4px;color:var(--ink-2)}
 
 /* table */
 .tbl{overflow-x:auto}
@@ -156,13 +156,13 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .diag li{margin:6px 0}
 
 /* stub week */
-.stub-body{color:var(--mute);font-size:13.5px;background:#fafbfc;border:1px dashed var(--line);border-radius:6px;padding:14px 16px;margin-top:14px}
+.stub-body{color:var(--mute);font-size:13.5px;background:var(--soft);border:1px dashed var(--line);border-radius:6px;padding:14px 16px;margin-top:14px}
 .stub-body b{color:var(--ink)}
 
 .foot{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;font-size:13px;color:var(--mute)}
 
 /* toast */
-#toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(120%);background:var(--navy);color:#fff;padding:11px 18px;border-radius:8px;font-size:13px;box-shadow:0 6px 20px rgba(0,0,0,.22);transition:transform .25s ease;z-index:9999;max-width:90vw}
+#toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(120%);background:var(--head-bg);color:#fff;padding:11px 18px;border-radius:8px;font-size:13px;box-shadow:0 6px 20px rgba(0,0,0,.22);transition:transform .25s ease;z-index:9999;max-width:90vw}
 #toast.on{transform:translateX(-50%) translateY(0)}
 
 @media (max-width:860px){
@@ -221,10 +221,10 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .state.t0{color:var(--mute)}
 .dot.d0{background:#9ca3af}
 /* 내 위치 버튼 */
-.leaflet-locate{width:30px;height:30px;line-height:30px;text-align:center;background:#fff;color:var(--navy);font-size:16px;font-weight:800;border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.3);text-decoration:none}
+.leaflet-locate{width:30px;height:30px;line-height:30px;text-align:center;background:var(--pop);color:var(--pop-ink);font-size:16px;font-weight:800;border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.3);text-decoration:none}
 .leaflet-locate:hover{background:var(--sky-l);text-decoration:none}
 /* 지도 마커 호버 힌트 — 대학별 주요 키워드 */
-.map-hint{position:absolute;display:none;z-index:1200;max-width:300px;background:#fff;border:1px solid var(--line);
+.map-hint{position:absolute;display:none;z-index:1200;max-width:300px;background:var(--pop);border:1px solid var(--line);
   border-radius:8px;box-shadow:0 6px 22px rgba(0,0,0,.18);padding:10px 12px;font-size:12.5px;line-height:1.5;pointer-events:none}
 .map-hint .hint-h{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--navy)}
 .map-hint .hint-g{color:#fff;font-size:10.5px;font-weight:800;border-radius:3px;padding:1px 6px}
@@ -233,13 +233,13 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .map-hint .hint-k{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
 .map-hint .hint-k span{background:var(--sky-l);color:var(--navy);border-radius:3px;padding:1px 6px;font-size:11.5px;font-weight:700}
 .map-hint .hint-k i{font-style:normal;color:var(--sky);margin-left:3px;font-weight:600}
-.map-hint .hint-l{margin-top:8px;padding-top:7px;border-top:1px dashed var(--line);color:#374151;font-size:12px}
+.map-hint .hint-l{margin-top:8px;padding-top:7px;border-top:1px dashed var(--line);color:var(--ink-2);font-size:12px}
 .map-hint .hint-l .lv{margin-right:5px;font-size:10.5px}
 @media print{.map-hint{display:none !important}}
 /* 호버 힌트 내 세계대학랭킹 */
 .map-hint .hint-r{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-top:6px}
-.map-hint .hint-city{background:#eef1f5;color:#4b5563;border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700}
-.map-hint .hint-rk{background:var(--navy);color:#fff;border-radius:3px;padding:1px 7px;font-size:11px;font-weight:700}
+.map-hint .hint-city{background:var(--chip-bg);color:var(--ink-3);border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700}
+.map-hint .hint-rk{background:var(--head-bg);color:#fff;border-radius:3px;padding:1px 7px;font-size:11px;font-weight:700}
 .map-hint .hint-rk i{font-style:normal;opacity:.65;margin-right:4px;font-size:10px;letter-spacing:.3px}
 /* 지도 휠 확대/축소 안내 */
 .map-wheel-hint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:1100;
@@ -251,15 +251,15 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .lmap:hover .map-wheel-hint{opacity:1}
 @media print{.map-wheel-hint{display:none !important}}
 /* 세계 랭킹 레이어 */
-.leaflet-world{width:30px;height:30px;line-height:30px;text-align:center;background:#fff;font-size:15px;border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.3);text-decoration:none}
+.leaflet-world{width:30px;height:30px;line-height:30px;text-align:center;background:var(--pop);font-size:15px;border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.3);text-decoration:none}
 .leaflet-world:hover{background:var(--sky-l);text-decoration:none}
-.leaflet-world.on{background:var(--navy);box-shadow:0 0 0 2px var(--sky)}
+.leaflet-world.on{background:var(--head-bg);box-shadow:0 0 0 2px var(--sky)}
 .world-tip{font-size:12px}
-.world-legend{display:none;position:absolute;left:8px;bottom:34px;z-index:1100;background:rgba(255,255,255,.94);
+.world-legend{display:none;position:absolute;left:8px;bottom:34px;z-index:1100;background:var(--pop-90);
   border:1px solid var(--line);border-radius:6px;padding:7px 10px;font-size:11.5px;line-height:1.6;box-shadow:0 2px 10px rgba(0,0,0,.12)}
 .lmap.world-on .world-legend{display:block}
 .world-legend b{display:block;color:var(--navy);margin-bottom:3px}
-.world-legend span{display:flex;align-items:center;gap:5px;color:#4b5563}
+.world-legend span{display:flex;align-items:center;gap:5px;color:var(--ink-3)}
 .world-legend i{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
 .world-legend em{display:block;margin-top:4px;color:var(--mute);font-style:normal;font-size:10.5px}
 @media print{.leaflet-world,.world-legend{display:none !important}}
@@ -268,7 +268,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .warn-src.via{text-decoration:none;cursor:pointer}
 .warn-src.via:hover{background:#ffe9a8;text-decoration:none}
 /* 대학기관평가인증 표시 */
-.map-hint .hint-ac{margin-top:5px;font-size:11.5px;color:#374151}
+.map-hint .hint-ac{margin-top:5px;font-size:11.5px;color:var(--ink-2)}
 .map-hint .hint-ac b{color:#1f6b42}
 .map-hint .hint-ac b.bad{color:var(--crisis)}
 .map-hint .hint-ac span{color:var(--mute)}
@@ -304,7 +304,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     padding:0 12px 4px;gap:6px;scrollbar-width:thin}
   .side li{flex:none}
   .side li a{border:1px solid var(--line);border-radius:14px;padding:5px 10px;
-    font-size:11.5px;white-space:nowrap;background:#fff}
+    font-size:11.5px;white-space:nowrap;background:var(--paper)}
   .side li a.on{box-shadow:none;border-color:var(--navy);background:var(--sky-l)}
 
   /* 본문 여백 */
@@ -382,7 +382,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   .acts .btn{font-size:11px;padding:8px 3px}
 }
 /* PDF 날짜 선택 */
-.pdf-sel{background:#fff;color:var(--navy);border:0;border-radius:6px;padding:7px 9px;
+.pdf-sel{background:var(--btn-bg);color:var(--btn-ink);border:0;border-radius:6px;padding:7px 9px;
   font-size:12px;font-weight:700;font-family:inherit;max-width:190px;cursor:pointer}
 .pdf-sel:focus{outline:2px solid var(--sky)}
 /* ?only= 인쇄 전용 뷰 — 사이드바·추이·버튼을 걷어낸 한 회차짜리 화면 */
@@ -390,7 +390,7 @@ body.only-view .shell{grid-template-columns:minmax(0,1fr)}
 body.only-view .main{padding-top:14px}
 @media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none;padding:9px} }
 /* 등록됐으나 이번 주 언급이 0인 워치리스트 항목 */
-.kpi.muted{background:#fbfbfc;border-style:dashed}
+.kpi.muted{background:var(--soft);border-style:dashed}
 .kpi.muted .val{color:#9ca3af}
 .kpi.muted .ch{color:#b6bcc6}
 /* 추이 섹션 접기/펴기 */
@@ -423,7 +423,7 @@ h2.sec .sec-face{margin-right:4px}
 .kpi.muted .empty-face{position:absolute;right:8px;top:8px;margin:0;opacity:.5}
 .kpi{position:relative}
 .stub-body .empty-face{float:left;margin:0 12px 4px 0}
-.map-fallback{display:flex;align-items:center;gap:14px;padding:22px;color:#4b5563;font-size:13px}
+.map-fallback{display:flex;align-items:center;gap:14px;padding:22px;color:var(--ink-3);font-size:13px}
 .map-fallback b{display:block;color:var(--ink);font-size:14px;margin-bottom:3px}
 .map-fallback span{font-size:12.5px;color:var(--mute);line-height:1.6}
 
@@ -443,3 +443,78 @@ h2.sec .sec-face{margin-right:4px}
   background:#fff;border-radius:50%;padding:2px;box-sizing:border-box}
 @media (max-width:640px){ .logo-img{width:40px;height:40px} }
 @media print{ .logo-img{width:40px;height:40px} }
+/* ══════════════ 다크 모드 ══════════════
+   토큰만 갈아끼운다. 컴포넌트 규칙은 손대지 않는다.
+   data-theme 속성이 없으면 OS 설정(prefers-color-scheme)을 따른다 = '자동'.
+   두 블록의 값은 반드시 같아야 한다. 한쪽만 고치면 '자동'과 '어둡게'가 달라진다. */
+:root[data-theme="dark"]{
+  --navy:#9ec2f0;              /* 다크에서 --navy 는 배경이 아니라 제목 강조색이다 */
+  --navy-2:#b5d2f7; --sky:#79aef2; --sky-l:#1e2c42;
+  --bg:#0f141c; --paper:#161d27; --ink:#e6eaf1; --mute:#99a3b2; --line:#2a3442;
+  --thead:#1e2836;
+  --crisis:#e06054; --warn:#e3a054; --watch:#d6bb48; --ok:#4fb383;
+  --side-bg:#121822; --soft:#1a2230; --pop:#1c2431; --pop-ink:#e6eaf1;
+  --pop-90:rgba(28,36,49,.95);
+  --btn-bg:#e8eef7; --btn-ink:#14203a;
+  --ink-2:#c3cbd7; --ink-3:#aeb7c4; --faint:#7b8695;
+  --chip-bg:#232d3c; --map-bg:#0c1017; --halo:#0f141c; --hit:#3a3320;
+  --live-bg:#16281f; --live-line:#2c5240;
+  --head-bg:#0c1220; --head-bg2:#16213a; --head-ink:#e9eef6;
+  --tile:invert(1) hue-rotate(180deg) brightness(.86) contrast(.92) saturate(.8);
+  color-scheme:dark;
+}
+
+/* '자동'은 CSS 가 아니라 부트 스크립트가 결정한다.
+   저장값이 auto 면 matchMedia 결과를 보고 data-theme 에 light/dark 를 직접 박는다.
+   그래서 다크 토큰 블록은 위 하나뿐이다 — 두 벌을 어긋나게 관리할 일이 없다. */
+
+/* OSM 타일은 밝게 만들어져 있다. 다크에서는 반전시켜야 지도만 흰 판으로 뜨지 않는다. */
+.leaflet-tile-pane{filter:var(--tile)}
+
+/* 다크에서 흰 배지류는 대비가 지나치다. 잉크만 낮춘다. */
+:root[data-theme="dark"] .sample,
+:root[data-theme="dark"] .warn-src,
+:root[data-theme="dark"] .ref.hit{background:#3a3320;color:#f0d98a;border-color:#5c5030}
+:root[data-theme="dark"] .f-week{background:#16281f;color:#7fd0a4;border-color:#2c5240}
+:root[data-theme="dark"] .f-day{background:#16281f;color:#7fd0a4;border-color:#2c5240}
+:root[data-theme="dark"] .f-month{background:#1b2740;color:#93b6ec;border-color:#2f4468}
+:root[data-theme="dark"] .f-slow{background:#232d3c;color:#9aa4b2;border-color:#333e4e}
+:root[data-theme="dark"] .live-badge{background:#2c5240;color:#d6f2e2}
+:root[data-theme="dark"] .src-ok{color:#7fd0a4}
+:root[data-theme="dark"] .logo-img{background:#e9eef6}
+:root[data-theme="dark"] .sanjini{filter:drop-shadow(0 0 1px rgba(255,255,255,.25))}
+:root[data-theme="dark"] .spark text{fill:var(--mute)}
+:root[data-theme="dark"] .spark circle{fill:var(--paper)}
+
+/* 인쇄는 언제나 밝은 테마다. PDF 를 검은 바탕으로 굽지 않는다. */
+@media print{
+  :root,:root[data-theme="dark"]{
+    --navy:#1a2b4c; --navy-2:#243a63; --sky:#3b7dd8; --sky-l:#e6eef9;
+    --bg:#fff; --paper:#fff; --ink:#1f2937; --mute:#6b7280; --line:#d9dee6;
+    --thead:#e3e9f2; --crisis:#b3261e; --warn:#d9822b; --watch:#c9a227; --ok:#2f8f5b;
+    --side-bg:#f7f8fa; --soft:#fafbfc; --pop:#fff; --pop-ink:#1a2b4c;
+    --btn-bg:#fff; --btn-ink:#1a2b4c; --ink-2:#374151; --ink-3:#4b5563; --faint:#9ca3af;
+    --chip-bg:#eef1f5; --map-bg:#dfe3e9; --halo:#fff; --hit:#fff8e1;
+    --live-bg:#f2f8f4; --live-line:#bfdccb;
+    --head-bg:#1a2b4c; --head-bg2:#243a63; --head-ink:#fff;
+    --tile:none; color-scheme:light;
+  }
+}
+
+/* ── 헤더 컨트롤: 언어 / 테마 ───────────────────────────── */
+.ctl{display:inline-flex;align-items:center;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.28);border-radius:6px;overflow:hidden;flex:none}
+.ctl button{background:transparent;border:0;color:var(--head-ink);font-family:inherit;
+  font-size:11.5px;font-weight:700;padding:6px 9px;cursor:pointer;line-height:1.5;opacity:.72}
+.ctl button+button{border-left:1px solid rgba(255,255,255,.22)}
+.ctl button:hover{background:rgba(255,255,255,.14);opacity:1}
+.ctl button[aria-pressed="true"]{background:#fff;color:#14203a;opacity:1}
+.lang-sel{background:var(--btn-bg);color:var(--btn-ink);border:0;border-radius:6px;
+  padding:7px 9px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer}
+.lang-sel:focus,.ctl button:focus-visible{outline:2px solid var(--sky);outline-offset:1px}
+@media print{ .ctl,.lang-sel{display:none !important} }
+@media (max-width:640px){
+  .ctl button{padding:7px 8px;font-size:11px}
+  .lang-sel{padding:8px 7px;font-size:11.5px}
+}
+:root[data-theme="dark"] .spark line{stroke:#2a3442}

@@ -445,4 +445,41 @@
       if (m.saved) m.map.setView(m.saved.c, m.saved.z, { animate: false });
     });
   });
+
+  /* ---------- 9. 헤더 컨트롤: 테마 / 언어 ---------- */
+  // 테마 결정은 theme-boot.js 가 <head> 에서 이미 끝냈다. 여기서는 버튼 상태와 클릭만 맡는다.
+  (function themeCtl() {
+    var box = document.querySelector('[data-theme-ctl]');
+    if (!box || !window.__pnuTheme) return;
+    var btns = [].slice.call(box.querySelectorAll('button'));
+    function paint() {
+      btns.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.theme === window.__pnuTheme.pref));
+      });
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        window.__pnuTheme.apply(b.dataset.theme);
+        paint();
+        toast(b.dataset.toast || b.textContent.trim());
+      });
+    });
+    paint();
+    // 테마가 바뀌면 지도 타일 필터가 따라 바뀐다. Leaflet 은 리페인트 신호가 필요 없지만
+    // 크기 재계산은 해 두는 편이 안전하다(사이드바 폭이 스크롤바 때문에 흔들리는 경우).
+    window.addEventListener('pnu:theme', function () {
+      MAPS.forEach(function (m) { m.map.invalidateSize({ animate: false }); });
+    });
+  })();
+
+  // 언어: 같은 페이지의 다른 언어판으로 이동한다. 현재 보던 주차(해시)는 유지한다.
+  (function langCtl() {
+    var sel = document.querySelector('[data-lang-select]');
+    if (!sel) return;
+    sel.addEventListener('change', function () {
+      if (!sel.value) return;
+      location.href = sel.value + location.hash;
+    });
+  })();
+
 })();
