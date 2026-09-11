@@ -387,6 +387,14 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   .top h1{font-size:16px}
   .acts .btn{font-size:11px;padding:8px 3px}
 }
+/* PDF 날짜 선택 */
+.pdf-sel{background:#fff;color:var(--navy);border:0;border-radius:6px;padding:7px 9px;
+  font-size:12px;font-weight:700;font-family:inherit;max-width:190px;cursor:pointer}
+.pdf-sel:focus{outline:2px solid var(--sky)}
+/* ?only= 인쇄 전용 뷰 — 사이드바·추이·버튼을 걷어낸 한 회차짜리 화면 */
+body.only-view .shell{grid-template-columns:minmax(0,1fr)}
+body.only-view .main{padding-top:14px}
+@media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none} }
 </style>
 </head>
 <body>
@@ -430,7 +438,11 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </div>
   </div>
   <div class="acts">
-    <a class="btn" href="pdf/PNU_Univ_Policy_AI_Weekly(2026.09.11).pdf" target="_blank" rel="noopener" data-pdf title="빌드 때 미리 생성한 PDF (지도 기본 화면, 열람자 위치 미포함)">PDF 다운로드</a>
+    <select class="pdf-sel" data-pdf-select aria-label="PDF 회차 선택">
+      <option value="pdf/PNU_Univ_Policy_AI_Weekly_All.pdf">전체 (8주차 합본)</option>
+      <option value="pdf/PNU_Univ_Policy_AI_Weekly(2026.09.11).pdf">2026.09.11 (Week 37)</option><option value="pdf/PNU_Univ_Policy_AI_Weekly(2026.09.04).pdf">2026.09.04 (Week 36)</option><option value="pdf/PNU_Univ_Policy_AI_Weekly(2026.08.28).pdf">2026.08.28 (Week 35)</option><option value="pdf/PNU_Univ_Policy_AI_Weekly(2026.08.21).pdf">2026.08.21 (Week 34)</option><option value="pdf/PNU_Univ_Policy_AI_Weekly(2026.08.14).pdf">2026.08.14 (Week 33)</option><option value="pdf/PNU_Univ_Policy_AI_Weekly(2026.08.07).pdf">2026.08.07 (Week 32)</option><option value="pdf/PNU_Univ_Policy_AI_Weekly(2026.07.31).pdf">2026.07.31 (Week 31)</option><option value="pdf/PNU_Univ_Policy_AI_Weekly(2026.07.24).pdf">2026.07.24 (Week 30)</option>
+    </select>
+    <a class="btn" href="pdf/PNU_Univ_Policy_AI_Weekly_All.pdf" target="_blank" rel="noopener" data-pdf title="선택한 회차의 PDF (빌드 때 미리 생성, 열람자 위치 미포함)">PDF 다운로드</a>
   </div>
 </header>
 
@@ -768,37 +780,37 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </div></div></div>
   <p class="note-line">직책만 등록되고 이름이 비어 있어 집계되지 않은 항목: 재정경제부 장관 · 교육부 차관 · 과기정통부 장관 · 국회 교육위원장 · 부산대 총장 · 부산광역시장 — <code>data/watchlist.json</code> 에서 채우면 자동 집계됩니다.</p>
   
-  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 14건 · 교육부 50건 (최근 14일)</span></h4>
+  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)</span></h4>
   <ul class="reflist"><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
+    <div><a href="https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
+    <div><a href="https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
+    <div><a href="https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
     <div class="meta">과학기술정보통신부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
+    <div><a href="https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
+    <div><a href="https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
+    <div><a href="https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
+    <div><a href="https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
+    <div><a href="https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
     <div class="meta">과학기술정보통신부 · 2026-09-08</div></div></li></ul></div>
   <h2 class="sec">정책 → 대학 전파경로</h2>
   <div class="path"><span class="tag w">기회</span><b>재원</b> 🏛 경로<div class="flow">'서울대 10개 만들기' 1차 선정 → AI스타펠로우십 121억 확보(즉시) → 사업 착수·집행 체계 구성(4-12주) → 후속 선정·확산 단계에서의 우선권 확보(12주+)</div></div><div class="path"><span class="tag ">활성</span><b>거버넌스</b> 🏛 경로<div class="flow">9개교 중 3개교만 선정 → 미선정 6개교 추가 지원 요구 및 지역 반발(즉시) → 성과 확산 방식 논의(4-12주) → 거점국립대 간 역할 분담 구도 재편(12주+)</div></div><div class="path"><span class="tag w">경계</span><b>입시</b> 🏛 경로<div class="flow">지방 국립대 등록금 0원 추진 → 수시 지원 패턴 변화(즉시) → 경쟁률·충원율 확정(4주) → 사립대 역차별 논쟁과 재정지원 구조 재논의(12주+)</div></div><div class="path"><span class="tag w">기회</span><b>AX</b> 🏛 경로<div class="flow">PLATO 고도화 2학기 서비스 + 휴머노이드 의료로봇 의학교육 시범 → 교육 AX 실증 축적(즉시) → 행정 AX 실적과 결합해 성과 패키징(4-12주) → 후속 국비 공모 근거(12주+)</div></div>
@@ -1241,37 +1253,37 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </div></div></div>
   <p class="note-line">직책만 등록되고 이름이 비어 있어 집계되지 않은 항목: 재정경제부 장관 · 교육부 차관 · 과기정통부 장관 · 국회 교육위원장 · 부산대 총장 · 부산광역시장 — <code>data/watchlist.json</code> 에서 채우면 자동 집계됩니다.</p>
   
-  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 14건 · 교육부 50건 (최근 14일)</span></h4>
+  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)</span></h4>
   <ul class="reflist"><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
+    <div><a href="https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
+    <div><a href="https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
+    <div><a href="https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
     <div class="meta">과학기술정보통신부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
+    <div><a href="https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
+    <div><a href="https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
+    <div><a href="https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
+    <div><a href="https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
+    <div><a href="https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
     <div class="meta">과학기술정보통신부 · 2026-09-08</div></div></li></ul></div>
   <h2 class="sec">정책 → 대학 전파경로</h2>
   <div class="path"><span class="tag w">기회</span><b>재원</b> 🏛 경로<div class="flow">패키지 지원 선정 → 연 700억 규모 확보(즉시) → 실행계획·성과지표 확정(4-12주) → 후속 확산 단계 우선권(12주+)</div></div><div class="path"><span class="tag ">활성</span><b>거버넌스</b> 🏛 경로<div class="flow">3개교 선별 지원 → 미선정 반발·서열화 논쟁(즉시) → 성과 확산 요구(4-12주) → 거점국립대 역할 재편(12주+)</div></div><div class="path"><span class="tag w">경계</span><b>입시</b> 🏛 경로<div class="flow">선별 지원 → 합격선 격차 확대(즉시) → 지원 패턴 변화(4주) → 거점 쏠림 고착(12주+)</div></div>
@@ -1612,37 +1624,37 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </div></div></div>
   <p class="note-line">직책만 등록되고 이름이 비어 있어 집계되지 않은 항목: 재정경제부 장관 · 교육부 차관 · 과기정통부 장관 · 국회 교육위원장 · 부산대 총장 · 부산광역시장 — <code>data/watchlist.json</code> 에서 채우면 자동 집계됩니다.</p>
   
-  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 14건 · 교육부 50건 (최근 14일)</span></h4>
+  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)</span></h4>
   <ul class="reflist"><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
+    <div><a href="https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
+    <div><a href="https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
+    <div><a href="https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
     <div class="meta">과학기술정보통신부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
+    <div><a href="https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
+    <div><a href="https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
+    <div><a href="https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
+    <div><a href="https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
+    <div><a href="https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
     <div class="meta">과학기술정보통신부 · 2026-09-08</div></div></li></ul></div>
   <h2 class="sec">정책 → 대학 전파경로</h2>
   <div class="path"><span class="tag ">활성</span><b>재정</b> 🏛 경로<div class="flow">전액 장학금 추진 → 국·사립 전면 충돌(즉시) → 재원 분담 구조 논의(4-12주) → 고등교육 재정 재편(12주+)</div></div><div class="path"><span class="tag w">경계</span><b>통합</b> 🏛 경로<div class="flow">유인책에도 통합 무산 누적 → 정책 실효성 의문(즉시) → 대안 모델 모색(4-12주) → 연합·패키지 지원으로 전환(12주+)</div></div><div class="path"><span class="tag w">기회</span><b>지역연계</b> 🏛 경로<div class="flow">경남 대학·기업 연계 → 광역 인재 육성 구도(즉시) → 정주형 인재 성과 축적(12주+)</div></div>
@@ -1967,37 +1979,37 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   
   <p class="note-line">직책만 등록되고 이름이 비어 있어 집계되지 않은 항목: 재정경제부 장관 · 교육부 차관 · 과기정통부 장관 · 국회 교육위원장 · 부산대 총장 · 부산광역시장 — <code>data/watchlist.json</code> 에서 채우면 자동 집계됩니다.</p>
   
-  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 14건 · 교육부 50건 (최근 14일)</span></h4>
+  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)</span></h4>
   <ul class="reflist"><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
+    <div><a href="https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
+    <div><a href="https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
+    <div><a href="https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
     <div class="meta">과학기술정보통신부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
+    <div><a href="https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
+    <div><a href="https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
+    <div><a href="https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
+    <div><a href="https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
+    <div><a href="https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
     <div class="meta">과학기술정보통신부 · 2026-09-08</div></div></li></ul></div>
   <h2 class="sec">정책 → 대학 전파경로</h2>
   <div class="path"><span class="tag w">경계</span><b>통합</b> 🏛 경로<div class="flow">교명 합의 → 구성원 반발 지속(즉시) → 투표 국면(4-12주) → 통합 정책의 실효성 재평가(12주+)</div></div><div class="path"><span class="tag w">기회</span><b>산학</b> 🏛 경로<div class="flow">LG·한화 계약학과 → 기업 연계 정원 확보(즉시) → 취업 연계 성과 축적(4-12주) → 학과 개편의 근거(12주+)</div></div>
@@ -2333,37 +2345,37 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </div></div></div>
   <p class="note-line">직책만 등록되고 이름이 비어 있어 집계되지 않은 항목: 재정경제부 장관 · 교육부 차관 · 과기정통부 장관 · 국회 교육위원장 · 부산대 총장 · 부산광역시장 — <code>data/watchlist.json</code> 에서 채우면 자동 집계됩니다.</p>
   
-  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 14건 · 교육부 50건 (최근 14일)</span></h4>
+  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)</span></h4>
   <ul class="reflist"><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
+    <div><a href="https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
+    <div><a href="https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
+    <div><a href="https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
     <div class="meta">과학기술정보통신부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
+    <div><a href="https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
+    <div><a href="https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
+    <div><a href="https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
+    <div><a href="https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
+    <div><a href="https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
     <div class="meta">과학기술정보통신부 · 2026-09-08</div></div></li></ul></div>
   <h2 class="sec">정책 → 대학 전파경로</h2>
   <div class="path"><span class="tag ">활성</span><b>재정</b> 🏛 경로<div class="flow">국립대 무상 등록금 추진 → 사립대 반발 본격화(즉시) → 정부 조정 필요(4-12주) → 국·사립 재정지원 구조 재편(12주+)</div></div><div class="path"><span class="tag w">경계</span><b>교원</b> 🏛 경로<div class="flow">전임교원 미달 제재 정당 판결 → 확보율 관리 부담 상승(즉시) → 신규 채용 계획 조정(4-12주)</div></div><div class="path"><span class="tag w">기회</span><b>자산·산학</b> 🏛 경로<div class="flow">유휴부지 활용 + 대기업 계약학과 → 자체 재원 다변화(즉시) → 재정 의존도 완화(12주+)</div></div>
@@ -2708,37 +2720,37 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </div></div></div>
   <p class="note-line">직책만 등록되고 이름이 비어 있어 집계되지 않은 항목: 재정경제부 장관 · 교육부 차관 · 과기정통부 장관 · 국회 교육위원장 · 부산대 총장 · 부산광역시장 — <code>data/watchlist.json</code> 에서 채우면 자동 집계됩니다.</p>
   
-  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 14건 · 교육부 50건 (최근 14일)</span></h4>
+  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)</span></h4>
   <ul class="reflist"><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
+    <div><a href="https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
+    <div><a href="https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
+    <div><a href="https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
     <div class="meta">과학기술정보통신부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
+    <div><a href="https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
+    <div><a href="https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
+    <div><a href="https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
+    <div><a href="https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
+    <div><a href="https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
     <div class="meta">과학기술정보통신부 · 2026-09-08</div></div></li></ul></div>
   <h2 class="sec">정책 → 대학 전파경로</h2>
   <div class="path"><span class="tag ">활성</span><b>재정</b> 🏛 경로<div class="flow">등록금 18년 동결 → 국·공립대 공동 재정 확충 요구(즉시) → 예산 편성 반영 여부(4-12주) → 고등교육 재정 구조 재설계(12주+)</div></div><div class="path"><span class="tag w">경계</span><b>통합</b> 🏛 경로<div class="flow">통합 일정 후퇴 → 단계별 전환·졸속 논란(즉시) → 통합 정책 신뢰도 저하(4-12주) → 연합 모델로 무게 이동(12주+)</div></div><div class="path"><span class="tag w">기회</span><b>연구</b> 🏛 경로<div class="flow">스탠퍼드 정밀의료 AI 허브 → 국제 공동연구 기반(즉시) → AI·의료 국비 확보 근거(4-12주)</div></div>
@@ -3064,37 +3076,37 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </div></div></div>
   <p class="note-line">직책만 등록되고 이름이 비어 있어 집계되지 않은 항목: 재정경제부 장관 · 교육부 차관 · 과기정통부 장관 · 국회 교육위원장 · 부산대 총장 · 부산광역시장 — <code>data/watchlist.json</code> 에서 채우면 자동 집계됩니다.</p>
   
-  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 14건 · 교육부 50건 (최근 14일)</span></h4>
+  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)</span></h4>
   <ul class="reflist"><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
+    <div><a href="https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
+    <div><a href="https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
+    <div><a href="https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
     <div class="meta">과학기술정보통신부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
+    <div><a href="https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
+    <div><a href="https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
+    <div><a href="https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
+    <div><a href="https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
+    <div><a href="https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
     <div class="meta">과학기술정보통신부 · 2026-09-08</div></div></li></ul></div>
   <h2 class="sec">정책 → 대학 전파경로</h2>
   <div class="path"><span class="tag ">활성</span><b>통합</b> 🏛 경로<div class="flow">글로컬 퇴출 → 총장 사퇴·통합 중단 요구(즉시) → 통합 협약 재검토(4-12주) → 국립대 통합 정책 신뢰도 하락(12주+)</div></div><div class="path"><span class="tag w">기회</span><b>공동사업</b> 🏛 경로<div class="flow">9개 거점국립대 공동 창업 생태계 → 묶음 단위 사업 경험 축적(즉시) → 공동 재원 확보 모델(4-12주) → 연합 거버넌스 기반(12주+)</div></div>
@@ -3425,37 +3437,37 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </div></div></div>
   <p class="note-line">직책만 등록되고 이름이 비어 있어 집계되지 않은 항목: 재정경제부 장관 · 교육부 차관 · 과기정통부 장관 · 국회 교육위원장 · 부산대 총장 · 부산광역시장 — <code>data/watchlist.json</code> 에서 채우면 자동 집계됩니다.</p>
   
-  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 14건 · 교육부 50건 (최근 14일)</span></h4>
+  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)</span></h4>
   <ul class="reflist"><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
+    <div><a href="https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
+    <div><a href="https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
     <div class="meta">교육부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
+    <div><a href="https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
     <div class="meta">과학기술정보통신부 · 2026-09-10</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
+    <div><a href="https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
+    <div><a href="https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
     <div class="meta">교육부 · 2026-09-09</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
+    <div><a href="https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
+    <div><a href="https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
+    <div><a href="https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
     <div class="meta">교육부 · 2026-09-08</div></div></li><li>
     <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
-    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
+    <div><a href="https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
     <div class="meta">과학기술정보통신부 · 2026-09-08</div></div></li></ul></div>
   <h2 class="sec">정책 → 대학 전파경로</h2>
   <div class="path"><span class="tag ">활성</span><b>평가</b> 🏛 경로<div class="flow">글로컬 성과평가 D등급 → 이의신청 기각(즉시) → 통합 일정 무산 및 사업비 조정(4-12주) → 통합 추진 국립대 전반의 속도 조절(12주+)</div></div><div class="path"><span class="tag w">기회</span><b>연합</b> 🏛 경로<div class="flow">초광역 얼라이언스 출범 → 대학 간 공동 사업 설계(즉시) → 연합 단위 국비 확보 모델 검증(4-12주) → 거점국립대 연합 논의의 선행 모델(12주+)</div></div>
@@ -3535,7 +3547,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
       </div>
     </li></ul></section>
 
-<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 04:45:38 · 빌드 산출물(정적 HTML) · 데이터 소스: data/weeks.json</p>
+<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 04:54:51 · 빌드 산출물(정적 HTML) · 데이터 소스: data/weeks.json</p>
 </main>
 </div>
 </div>
@@ -3889,7 +3901,30 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     weeks.forEach(function (w) { io.observe(w); });
   }
 
+  /* ---------- 3-2. ?only=<id> — 한 주차(또는 하루)만 남긴다 ----------
+     주차별 PDF 를 굽기 위한 인쇄 전용 뷰다. pdf.mjs 가 이 쿼리로 페이지를 열어 인쇄한다. */
+  (function () {
+    var only = new URLSearchParams(location.search).get('only');
+    if (!only) return;
+    var keep = document.getElementById(only);
+    if (!keep) return;
+    document.querySelectorAll('.week').forEach(function (w) { if (w !== keep) w.remove(); });
+    var side = document.querySelector('.side'); if (side) side.remove();
+    var trend = document.querySelector('.trend'); if (trend) trend.remove();
+    var acts = document.querySelector('.acts'); if (acts) acts.remove();
+    document.body.classList.add('only-view');
+  })();
+
   /* ---------- 4. 버튼 ---------- */
+  // 날짜 선택 — 고른 회차의 PDF 로 링크를 바꾼다
+  var pdfSel = document.querySelector('[data-pdf-select]');
+  if (pdfSel) {
+    pdfSel.addEventListener('change', function () {
+      var btn = document.querySelector('[data-pdf]');
+      if (btn && pdfSel.value) btn.setAttribute('href', pdfSel.value);
+    });
+  }
+
   // PDF: 사전 생성 파일(KMI 방식). 없으면 브라우저 인쇄로 폴백.
   // 브라우저 인쇄(Ctrl+P)로 직접 뽑을 때도 기사 목록이 펼쳐지고 지도 화면이 유지되도록
   // 관련 처리는 아래 beforeprint 리스너에 모아 두었다.

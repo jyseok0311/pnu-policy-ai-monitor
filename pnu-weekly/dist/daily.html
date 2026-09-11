@@ -386,6 +386,14 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   .top h1{font-size:16px}
   .acts .btn{font-size:11px;padding:8px 3px}
 }
+/* PDF 날짜 선택 */
+.pdf-sel{background:#fff;color:var(--navy);border:0;border-radius:6px;padding:7px 9px;
+  font-size:12px;font-weight:700;font-family:inherit;max-width:190px;cursor:pointer}
+.pdf-sel:focus{outline:2px solid var(--sky)}
+/* ?only= 인쇄 전용 뷰 — 사이드바·추이·버튼을 걷어낸 한 회차짜리 화면 */
+body.only-view .shell{grid-template-columns:minmax(0,1fr)}
+body.only-view .main{padding-top:14px}
+@media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none} }
 
 .artlist{list-style:none;margin:0;padding:0}
 .artlist li{display:grid;grid-template-columns:46px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
@@ -430,7 +438,11 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   </div>
   <div class="acts">
     <a class="btn" href="index.html">주간 리포트</a>
-    <a class="btn ghost" href="pdf/PNU_Univ_Policy_AI_Daily(2026.09.11).pdf" target="_blank" rel="noopener" data-pdf title="빌드 때 미리 생성한 일일 브리핑 PDF">PDF 다운로드</a>
+    <select class="pdf-sel" data-pdf-select aria-label="PDF 날짜 선택">
+      <option value="pdf/PNU_Univ_Policy_AI_Daily_All.pdf">전체 (10일 합본)</option>
+      <option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.11).pdf">2026.09.11 (금)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.10).pdf">2026.09.10 (목)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.09).pdf">2026.09.09 (수)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.08).pdf">2026.09.08 (화)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.07).pdf">2026.09.07 (월)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.06).pdf">2026.09.06 (일)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.05).pdf">2026.09.05 (토)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.04).pdf">2026.09.04 (금)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.03).pdf">2026.09.03 (목)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.02).pdf">2026.09.02 (수)</option>
+    </select>
+    <a class="btn ghost" href="pdf/PNU_Univ_Policy_AI_Daily_All.pdf" target="_blank" rel="noopener" data-pdf title="선택한 날짜의 일일 브리핑 PDF">PDF 다운로드</a>
   </div>
 </header>
 <main class="main">
@@ -3151,7 +3163,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </ul></div>
   </details>
 </section>
-<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 04:45:38 · 데이터: data/collected/</p>
+<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 04:54:51 · 데이터: data/collected/</p>
 </main>
 </div>
 </div>
@@ -3503,7 +3515,30 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     weeks.forEach(function (w) { io.observe(w); });
   }
 
+  /* ---------- 3-2. ?only=<id> — 한 주차(또는 하루)만 남긴다 ----------
+     주차별 PDF 를 굽기 위한 인쇄 전용 뷰다. pdf.mjs 가 이 쿼리로 페이지를 열어 인쇄한다. */
+  (function () {
+    var only = new URLSearchParams(location.search).get('only');
+    if (!only) return;
+    var keep = document.getElementById(only);
+    if (!keep) return;
+    document.querySelectorAll('.week').forEach(function (w) { if (w !== keep) w.remove(); });
+    var side = document.querySelector('.side'); if (side) side.remove();
+    var trend = document.querySelector('.trend'); if (trend) trend.remove();
+    var acts = document.querySelector('.acts'); if (acts) acts.remove();
+    document.body.classList.add('only-view');
+  })();
+
   /* ---------- 4. 버튼 ---------- */
+  // 날짜 선택 — 고른 회차의 PDF 로 링크를 바꾼다
+  var pdfSel = document.querySelector('[data-pdf-select]');
+  if (pdfSel) {
+    pdfSel.addEventListener('change', function () {
+      var btn = document.querySelector('[data-pdf]');
+      if (btn && pdfSel.value) btn.setAttribute('href', pdfSel.value);
+    });
+  }
+
   // PDF: 사전 생성 파일(KMI 방식). 없으면 브라우저 인쇄로 폴백.
   // 브라우저 인쇄(Ctrl+P)로 직접 뽑을 때도 기사 목록이 펼쳐지고 지도 화면이 유지되도록
   // 관련 처리는 아래 beforeprint 리스너에 모아 두었다.

@@ -345,7 +345,30 @@
     weeks.forEach(function (w) { io.observe(w); });
   }
 
+  /* ---------- 3-2. ?only=<id> — 한 주차(또는 하루)만 남긴다 ----------
+     주차별 PDF 를 굽기 위한 인쇄 전용 뷰다. pdf.mjs 가 이 쿼리로 페이지를 열어 인쇄한다. */
+  (function () {
+    var only = new URLSearchParams(location.search).get('only');
+    if (!only) return;
+    var keep = document.getElementById(only);
+    if (!keep) return;
+    document.querySelectorAll('.week').forEach(function (w) { if (w !== keep) w.remove(); });
+    var side = document.querySelector('.side'); if (side) side.remove();
+    var trend = document.querySelector('.trend'); if (trend) trend.remove();
+    var acts = document.querySelector('.acts'); if (acts) acts.remove();
+    document.body.classList.add('only-view');
+  })();
+
   /* ---------- 4. 버튼 ---------- */
+  // 날짜 선택 — 고른 회차의 PDF 로 링크를 바꾼다
+  var pdfSel = document.querySelector('[data-pdf-select]');
+  if (pdfSel) {
+    pdfSel.addEventListener('change', function () {
+      var btn = document.querySelector('[data-pdf]');
+      if (btn && pdfSel.value) btn.setAttribute('href', pdfSel.value);
+    });
+  }
+
   // PDF: 사전 생성 파일(KMI 방식). 없으면 브라우저 인쇄로 폴백.
   // 브라우저 인쇄(Ctrl+P)로 직접 뽑을 때도 기사 목록이 펼쳐지고 지도 화면이 유지되도록
   // 관련 처리는 아래 beforeprint 리스너에 모아 두었다.

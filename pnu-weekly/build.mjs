@@ -36,7 +36,7 @@ if (errs.length) {
 }
 
 const latest = weeks[0];
-const pdfPath = `pdf/PNU_Univ_Policy_AI_Weekly(${latest.date.replace(/-/g, '.')}).pdf`;
+const pdfPath = 'pdf/PNU_Univ_Policy_AI_Weekly_All.pdf';   // 합본. 주차별 파일은 날짜가 들어간다
 
 const readOpt = (p) => { try { return json(p); } catch { return null; } };
 const world = readOpt('data/world-universities.json');

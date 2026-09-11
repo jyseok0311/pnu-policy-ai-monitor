@@ -55,6 +55,9 @@ const strip = (s) => String(s || '')
   .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ')
   .replace(/\s+/g, ' ').trim();
 
+// RSS <link> 가 CDATA 로 감싸 오는 매체가 있다. 벗기지 않으면 href 가 깨진다.
+const url = (v) => String(v || '').replace(/^\s*<!\[CDATA\[/, '').replace(/\]\]>\s*$/, '').trim();
+
 const tag = (block, name) => {
   const m = block.match(new RegExp(`<${name}[^>]*>([\\s\\S]*?)</${name}>`, 'i'));
   return m ? strip(m[1]) : '';
@@ -65,7 +68,7 @@ function parseRss(xml) {
     const b = m[0];
     return {
       title: tag(b, 'title'),
-      link: (b.match(/<link[^>]*>([\s\S]*?)<\/link>/i)?.[1] || '').trim(),
+      link: url(b.match(/<link[^>]*>([\s\S]*?)<\/link>/i)?.[1]),
       date: tag(b, 'pubDate') || tag(b, 'dc:date'),
       summary: tag(b, 'description').slice(0, 400),
       source: tag(b, 'source')

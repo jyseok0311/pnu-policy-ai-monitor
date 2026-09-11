@@ -213,6 +213,9 @@ function renderWeek(w, sources) {
   return `<section class="week" id="${w.id}">${head}${map}${summary}${articles}${changes}${watch}${weekly}${kpis}${voices}${paths}${sectors}${diag}${refs}</section>`;
 }
 
+// PDF 파일명 규칙 — pdf.mjs 가 굽는 이름과 반드시 같아야 한다
+const pdfName = (date) => `PNU_Univ_Policy_AI_Weekly(${date.replace(/-/g, '.')}).pdf`;
+
 export function renderPage({ meta, weeks, sources, css, js, pdfPath, world, joongang }) {
   const nav = weeks.map((w, i) => `
     <li><a class="${i === 0 ? 'on' : ''}" href="#${w.id}" data-nav="${w.id}">
@@ -261,7 +264,11 @@ export function renderPage({ meta, weeks, sources, css, js, pdfPath, world, joon
     </div>
   </div>
   <div class="acts">
-    <a class="btn" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf title="빌드 때 미리 생성한 PDF (지도 기본 화면, 열람자 위치 미포함)">PDF 다운로드</a>
+    <select class="pdf-sel" data-pdf-select aria-label="PDF 회차 선택">
+      <option value="${esc(pdfPath)}">전체 (${weeks.length}주차 합본)</option>
+      ${weeks.filter(w => w.complete).map(w => `<option value="pdf/${esc(pdfName(w.date))}">${esc(w.label)}</option>`).join('')}
+    </select>
+    <a class="btn" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf title="선택한 회차의 PDF (빌드 때 미리 생성, 열람자 위치 미포함)">PDF 다운로드</a>
   </div>
 </header>
 

@@ -379,3 +379,11 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   .top h1{font-size:16px}
   .acts .btn{font-size:11px;padding:8px 3px}
 }
+/* PDF 날짜 선택 */
+.pdf-sel{background:#fff;color:var(--navy);border:0;border-radius:6px;padding:7px 9px;
+  font-size:12px;font-weight:700;font-family:inherit;max-width:190px;cursor:pointer}
+.pdf-sel:focus{outline:2px solid var(--sky)}
+/* ?only= 인쇄 전용 뷰 — 사이드바·추이·버튼을 걷어낸 한 회차짜리 화면 */
+body.only-view .shell{grid-template-columns:minmax(0,1fr)}
+body.only-view .main{padding-top:14px}
+@media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none} }

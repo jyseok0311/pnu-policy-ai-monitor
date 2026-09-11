@@ -22,6 +22,10 @@ const strip = (s) => String(s || '')
   .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
   .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ')
   .replace(/\s+/g, ' ').trim();
+// RSS <link> 는 CDATA 로 감싸 오는 경우가 있다(네이버 블로그). 벗기지 않으면
+// href 가 "<![CDATA[https://...]]>" 가 되어 상대경로로 해석되고 404 가 난다.
+const url = (v) => String(v || '').replace(/^\s*<!\[CDATA\[/, '').replace(/\]\]>\s*$/, '').trim();
+
 const tag = (b, n) => { const m = b.match(new RegExp(`<${n}[^>]*>([\\s\\S]*?)</${n}>`, 'i')); return m ? strip(m[1]) : ''; };
 
 async function get(url) {
@@ -34,7 +38,7 @@ async function get(url) {
 function parse(xml) {
   const rss = [...xml.matchAll(/<item[\s>][\s\S]*?<\/item>/gi)].map((m) => ({
     title: tag(m[0], 'title'),
-    link: (m[0].match(/<link[^>]*>([\s\S]*?)<\/link>/i)?.[1] || '').trim(),
+    link: url(m[0].match(/<link[^>]*>([\s\S]*?)<\/link>/i)?.[1]),
     date: tag(m[0], 'pubDate') || tag(m[0], 'dc:date'),
     summary: tag(m[0], 'description').slice(0, 200)
   }));
