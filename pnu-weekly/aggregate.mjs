@@ -7,6 +7,7 @@
 //   refKey 에 대응하는 기사를 못 찾으면 중단한다 — 근거 없는 문장을 통과시키지 않기 위해서다.
 
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { relevant } from './src/filter.mjs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readdirSync as _rd } from 'node:fs';
@@ -26,15 +27,9 @@ console.log(`· 수집본: data/collected/${latest} (원본 ${raw.total}건)`);
 
 // ── 1. 관련성 필터 — 대학 정책과 무관한 기사를 걷어낸다
 //    '등록금' 키워드가 연예 기사를 끌어오는 등의 오탐이 실제로 관찰돼 추가한 단계다.
-const NOISE = /MC몽|아이돌|가수|연예|드라마|예능|축구|야구|프로야구|골프|복권|로또/;
-const TOPIC = /대학|학생|교수|교육|입시|수시|정시|학과|캠퍼스|등록금|국립|사립|학령|총장|학사|연구|RISE|라이즈|글로컬|전문대|교부금|정원|충원|장학/;
-// 한국 대학명은 '대학'이 아니라 '대'로 끝난다(충남대·서울대·공주대…).
-// 초기 필터가 '대학'만 봐서 거점국립대 핵심 기사를 통째로 걸러낸 적이 있어 아래 패턴을 추가했다.
-const UNIV_NAME = /[가-힣]{2,4}대(?:학교)?(?:[^가-힣]|$)/;
-const items = raw.items.filter((x) => {
-  const t = x.title + ' ' + x.summary;
-  return !NOISE.test(t) && (TOPIC.test(t) || UNIV_NAME.test(t));
-});
+// 관련성 필터는 src/filter.mjs 에 모아 두었다.
+// 이전에는 여기에 한국어 전용 규칙을 따로 두어, 해외 기사가 전부 탈락했다.
+const items = relevant(raw.items);
 console.log(`· 관련성 필터: ${raw.total} → ${items.length}건 (제외 ${raw.total - items.length})`);
 
 // ── 2. 신호 집계
@@ -134,17 +129,25 @@ const days = [...new Set(items.map((x) => x.date).filter(Boolean))].sort();
 const WD = ['일', '월', '화', '수', '목', '금', '토'];
 const articles = days.map((d) => {
   const dayItems = items.filter((x) => x.date === d);
-  const fields = [...new Set(dayItems.map((x) => x.field))]
-    .map((f) => ({ f, list: dayItems.filter((x) => x.field === f) }))
-    .sort((a, b) => b.list.length - a.list.length)
-    .slice(0, 3);
+  // 분야 × 국내/해외로 나눈다. 해외 기사는 국내 이슈의 선행·대조 사례로 읽는다.
+  const groups = [];
+  ['domestic', 'overseas'].forEach((rg) => {
+    const pool = dayItems.filter((x) => (x.region || 'domestic') === rg);
+    [...new Set(pool.map((x) => x.field))].forEach((f) => {
+      groups.push({ f, rg, list: pool.filter((x) => x.field === f) });
+    });
+  });
+  // 상위 N 만 자르면 건수가 많은 국내가 자리를 다 차지해 해외가 사라진다.
+  // 지역별로 자리를 나눠 보장한다.
+  const pick = (rg, n) => groups.filter((g) => g.rg === rg).sort((a, b) => b.list.length - a.list.length).slice(0, n);
+  const fields = [...pick('domestic', 3), ...pick('overseas', 2)];
   const dt = new Date(d);
   return {
     day: `${dt.getMonth() + 1}/${dt.getDate()}(${WD[dt.getDay()]})`,
     count: dayItems.length,
     open: d === days[days.length - 1],
-    cats: fields.map(({ f, list }) => ({
-      name: `${f} · 국내`,
+    cats: fields.map(({ f, rg, list }) => ({
+      name: `${f} · ${rg === 'overseas' ? '해외' : '국내'}`,
       count: list.length,
       items: list.sort((a, b) => ({ crisis: 0, warning: 1, watch: 2, normal: 3 })[a.level] - ({ crisis: 0, warning: 1, watch: 2, normal: 3 })[b.level])
         .slice(0, 3).map((x) => x.title)
@@ -167,6 +170,8 @@ const weeklyMetrics = [
   { name: '거버넌스 기사', value: String(field('거버넌스')), unit: '건', change: `전체의 ${pct(field('거버넌스'))}%`, dir: 'flat' },
   { name: 'AI·디지털 기사', value: String(field('AI·디지털')), unit: '건', change: `전체의 ${pct(field('AI·디지털'))}%`, dir: 'flat' },
   { name: '부산대 직접 언급', value: String(mentions.pnu), unit: '건', change: `거점국립대 1위`, dir: 'up' },
+  { name: '해외 기사', value: String(items.filter((x) => x.region === 'overseas').length), unit: '건',
+    change: `전체의 ${pct(items.filter((x) => x.region === 'overseas').length)}%`, dir: 'flat' },
   { name: '최다 출현 키워드', value: topWords[0][0], unit: '', change: `${topWords[0][1]}회`, dir: 'up' }
 ];
 
@@ -221,6 +226,9 @@ const voices = {
   }).filter((x) => x.n).sort((a, b) => b.n - a.n),
   // 이름·별칭이 모두 없어 집계 자체가 불가능한 직책만 '미등록'으로 표시
   vacantList: wl.persons.filter((p) => !p.name && !(p.aliases || []).length).map((p) => p.role),
+  // 이름은 등록됐지만 이번 주 언급이 0인 인물 — 추적 중임을 보여준다
+  quiet: wl.persons.filter((p) => p.name && !countIn([p.name, ...(p.aliases || [])].filter(Boolean)).n)
+    .map((p) => `${p.name} ${p.role}`),
   orgs: wl.orgs.map((o) => {
     const c = countIn([o.name, ...(o.aliases || [])]);
     return { label: o.name, ...c };

@@ -4,24 +4,24 @@
     "label": "2026.09.11 (Week 37)",
     "date": "2026-09-11",
     "range": "2026.09.04~2026.09.11",
-    "tier": 2,
-    "tierName": "주의",
-    "state": "Watch",
+    "tier": 3,
+    "tierName": "경계",
+    "state": "Warning",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 637건 → 관련성 필터 후 567건 · 수집일 2026-09-11",
+    "sourceNote": "무료·공개 소스 수집 1075건 → 관련성 필터 후 842건 · 수집일 2026-09-11",
     "signal": {
-      "crisis": 5.3,
-      "warning": 3.9,
-      "total": 567,
-      "trend": "stable"
+      "crisis": 4.6,
+      "warning": 5.5,
+      "total": 842,
+      "trend": "rising"
     },
     "map": {
       "levels": {
         "snu": 2,
         "knu": 3,
         "cbnu": 1,
-        "cnu": 3,
+        "cnu": 4,
         "knu2": 2,
         "jbnu": 2,
         "jnu": 2,
@@ -55,25 +55,29 @@
             "region": "서울",
             "daysLeft": 323
           },
-          "mentions": 14,
+          "mentions": 16,
           "risky": 2,
-          "riskRate": 14.3,
+          "riskRate": 12.5,
           "riskLevel": 2,
           "keywords": [
             [
-              "거점국립대",
+              "단독",
               2
             ],
             [
-              "AI",
+              "연대",
               2
             ],
             [
-              "손지수",
+              "성대",
               2
             ],
             [
-              "김효근",
+              "실적",
+              2
+            ],
+            [
+              "뚜렷",
               2
             ]
           ],
@@ -108,7 +112,7 @@
             "region": "강원",
             "daysLeft": 1572
           },
-          "mentions": 21,
+          "mentions": 22,
           "risky": 0,
           "riskRate": 0,
           "riskLevel": 0,
@@ -135,8 +139,8 @@
             ]
           ],
           "lead": {
-            "title": "강원대 캠퍼스 혁신파크 산학연혁신허브 개관… 거점국립대 최초",
-            "media": "한국대학신문",
+            "title": "한림성심대학교 2026학년도 춘천시 대학연합축제 성료…체육대회/공연/기관홍보부스 등 다채로운 프로그램 운영",
+            "media": "베리타스알파",
             "level": "normal"
           }
         },
@@ -165,7 +169,7 @@
             "region": "충북",
             "daysLeft": 476
           },
-          "mentions": 3,
+          "mentions": 4,
           "risky": 0,
           "riskRate": 0,
           "riskLevel": 0,
@@ -176,9 +180,9 @@
             ]
           ],
           "lead": {
-            "title": "“충북대 ‘서울대 10개 만들기’ 탈락, 우리 대응부터 돌아봐야”",
-            "media": "K-Life TV",
-            "level": "normal"
+            "title": "충북대 세종앵커사업본부 '2026 충청권 초광역AI 창업 아이디어 캠프'성료",
+            "media": "베리타스알파",
+            "level": "watch"
           }
         },
         "cnu": {
@@ -206,18 +210,18 @@
             "region": "대전",
             "daysLeft": 323
           },
-          "mentions": 34,
-          "risky": 6,
-          "riskRate": 17.6,
+          "mentions": 40,
+          "risky": 7,
+          "riskRate": 17.5,
           "riskLevel": 2,
           "keywords": [
             [
               "통합",
-              12
+              16
             ],
             [
               "공주대",
-              11
+              16
             ],
             [
               "거점국립대",
@@ -228,14 +232,14 @@
               8
             ],
             [
-              "최교진",
+              "만들기",
               7
             ]
           ],
           "lead": {
-            "title": "‘통합 충남대’ 성사냐 무산이냐… 8~10일 전 구성원 투표서 판가름",
-            "media": "문화일보",
-            "level": "crisis"
+            "title": "충남대-국립공주대 통합 찬반투표 ‘엇갈린 민심’…글로컬대학 사업 동력 차질 우려",
+            "media": "충청뉴스",
+            "level": "warning"
           }
         },
         "knu2": {
@@ -263,10 +267,10 @@
             "region": "대구",
             "daysLeft": 476
           },
-          "mentions": 11,
-          "risky": 0,
-          "riskRate": 0,
-          "riskLevel": 0,
+          "mentions": 12,
+          "risky": 1,
+          "riskRate": 8.3,
+          "riskLevel": 1,
           "keywords": [
             [
               "탈락",
@@ -277,7 +281,7 @@
               3
             ],
             [
-              "TK",
+              "선정",
               2
             ],
             [
@@ -285,14 +289,14 @@
               2
             ],
             [
-              "선정",
+              "TK",
               2
             ]
           ],
           "lead": {
-            "title": "경북대 등 지방거점국립대 합격선·경쟁률 ‘최근 5년새 최고’",
-            "media": "경북매일",
-            "level": "normal"
+            "title": "대구대, ‘대통령기 제48회 전국검도선수권대회’ 단체전 우승",
+            "media": "한국대학신문",
+            "level": "crisis"
           }
         },
         "jbnu": {
@@ -320,18 +324,14 @@
             "region": "전북",
             "daysLeft": 1997
           },
-          "mentions": 9,
-          "risky": 1,
-          "riskRate": 11.1,
-          "riskLevel": 1,
+          "mentions": 12,
+          "risky": 2,
+          "riskRate": 16.7,
+          "riskLevel": 2,
           "keywords": [
             [
               "AI",
               3
-            ],
-            [
-              "경쟁",
-              2
             ],
             [
               "JUMP",
@@ -344,11 +344,15 @@
             [
               "오픈",
               2
+            ],
+            [
+              "지진",
+              2
             ]
           ],
           "lead": {
-            "title": "[기획-전북 대학 AI 반도체 경쟁 소외 위기] 상-전북대 탈락이 보여준 지방대 경쟁의 현실",
-            "media": "전라일보",
+            "title": "전북대 기록·역사관 고김제환 교수 학교사 자료 기증받아.. '35년 봉직 흔적 대학 역사로'",
+            "media": "베리타스알파",
             "level": "crisis"
           }
         },
@@ -377,7 +381,7 @@
             "region": "광주",
             "daysLeft": 323
           },
-          "mentions": 14,
+          "mentions": 15,
           "risky": 0,
           "riskRate": 0,
           "riskLevel": 0,
@@ -392,20 +396,20 @@
             ],
             [
               "만들기",
-              3
+              4
             ],
             [
               "주거",
               3
             ],
             [
-              "지원",
-              2
+              "선정",
+              3
             ]
           ],
           "lead": {
-            "title": "‘서울대 10개 만들기’ 첫 지원…부산대·전남대·충남대 선정, 경상국립대 등 6개 거점국립대 제외",
-            "media": "단디뉴스",
+            "title": "전남대 여수캠퍼스, 등록금·주거 걱정 해결",
+            "media": "ddnnews.kr",
             "level": "normal"
           }
         },
@@ -434,9 +438,9 @@
             "region": "경남",
             "daysLeft": 323
           },
-          "mentions": 10,
+          "mentions": 11,
           "risky": 1,
-          "riskRate": 10,
+          "riskRate": 9.1,
           "riskLevel": 1,
           "keywords": [
             [
@@ -444,11 +448,11 @@
               3
             ],
             [
-              "경남",
+              "AI",
               2
             ],
             [
-              "AI",
+              "경남",
               2
             ]
           ],
@@ -483,7 +487,7 @@
             "region": "부산",
             "daysLeft": 842
           },
-          "mentions": 62,
+          "mentions": 65,
           "risky": 0,
           "riskRate": 0,
           "riskLevel": 0,
@@ -494,7 +498,7 @@
             ],
             [
               "선정",
-              13
+              14
             ],
             [
               "최고급",
@@ -505,13 +509,13 @@
               6
             ],
             [
-              "지원",
+              "학생성공",
               5
             ]
           ],
           "lead": {
-            "title": "‘서울대 10개 만들기’ 첫 지원…부산대·전남대·충남대 선정, 경상국립대 등 6개 거점국립대 제외",
-            "media": "단디뉴스",
+            "title": "17일 부산대학로, 록으로 깨운다",
+            "media": "채널PNU",
             "level": "normal"
           }
         },
@@ -540,35 +544,35 @@
             "region": "제주",
             "daysLeft": 323
           },
-          "mentions": 10,
+          "mentions": 17,
           "risky": 2,
-          "riskRate": 20,
-          "riskLevel": 2,
+          "riskRate": 11.8,
+          "riskLevel": 1,
           "keywords": [
             [
+              "런케이션",
+              5
+            ],
+            [
               "제주",
+              5
+            ],
+            [
+              "상명대",
               4
             ],
             [
-              "런케이션",
+              "논의",
+              4
+            ],
+            [
+              "체결",
               3
-            ],
-            [
-              "교원",
-              2
-            ],
-            [
-              "교육대학",
-              2
-            ],
-            [
-              "학생들",
-              2
             ]
           ],
           "lead": {
             "title": "제주대 교육대학 학생들 \"초등학교 교사 선발 규모 감축 전면 재검토하라\"",
-            "media": "헤드라인제주",
+            "media": "headlinejeju.co.kr",
             "level": "warning"
           }
         }
@@ -679,7 +683,7 @@
     "articles": [
       {
         "day": "9/4(금)",
-        "count": 49,
+        "count": 64,
         "open": false,
         "cats": [
           {
@@ -687,8 +691,8 @@
             "count": 21,
             "items": [
               "내년 지방국립대 신입생 '등록금 0원'..사립대 '반발'",
-              "경남도, 진주 강소연구개발특구 확대 추진… 경상국립대 칠암캠퍼스 추가",
-              "동국대 미당연구소, 제2회 미당학술상 수상자에 김언 시인·박연희 교수 선정"
+              "동국대 미당연구소, 제2회 미당학술상 수상자에 김언 시인·박연희 교수 선정",
+              "경남도, 진주 강소연구개발특구 확대 추진… 경상국립대 칠암캠퍼스 추가"
             ]
           },
           {
@@ -708,17 +712,35 @@
               "카카오, 5개 국립대 손잡고 AI 인재 육성한다",
               "[Why] 지원서도 안 썼는데 합격… 美 대학들이 학생 모셔가는 이유 - 조선비즈"
             ]
+          },
+          {
+            "name": "기타 · 해외",
+            "count": 9,
+            "items": [
+              "Tracking Trump's Crackdown on Higher Education",
+              "Trump administration pushes to remove tax exemption for private colleges with DEI policies",
+              "College loans were late due to new federal rules. Students are paying the price."
+            ]
+          },
+          {
+            "name": "거버넌스 · 해외",
+            "count": 3,
+            "items": [
+              "UPDATE: California Legislature passes community college bachelor’s degree bills after last-minute changes",
+              "Florida bans undocumented students from selective public universities",
+              "Some university leaders not happy with Legislature’s enrollment oversight"
+            ]
           }
         ]
       },
       {
         "day": "9/5(토)",
-        "count": 18,
+        "count": 24,
         "open": false,
         "cats": [
           {
             "name": "기타 · 국내",
-            "count": 9,
+            "count": 10,
             "items": [
               "한상덕 교수의 〈콧노래 에세이〉 ⑮ … 사노라면",
               "대신대학교 2027학년도 혁신 전공 및 캠퍼스 확장으로 비상 예고",
@@ -742,12 +764,27 @@
               "[지방에서 교육정책을 말한다] 기획② 등록금 0원, 지역에 뿌리내린 사립대는 누가 지키나",
               "명문대들 '연소득 20만불 이하 등록금 면제' 확대"
             ]
+          },
+          {
+            "name": "AI·디지털 · 해외",
+            "count": 2,
+            "items": [
+              "Right of centre*: Searching for higher education at Reform UK’s Annual Conference",
+              "House Passes Bill to Cut University Funding Over Israel Boycotts, 237-169"
+            ]
+          },
+          {
+            "name": "기타 · 해외",
+            "count": 1,
+            "items": [
+              "Middle Class Kids Go Tuition Free To MIT, Princeton And Other Top Colleges"
+            ]
           }
         ]
       },
       {
         "day": "9/6(일)",
-        "count": 24,
+        "count": 35,
         "open": false,
         "cats": [
           {
@@ -776,26 +813,35 @@
               "청년이면 AI 실무 준비도 '대학일자리플러스센터'에서",
               "양산부산대병원 재활의학과 ‘기술개발·실증’ 공모 선정"
             ]
+          },
+          {
+            "name": "기타 · 해외",
+            "count": 7,
+            "items": [
+              "Rethinking higher education",
+              "University As Catalyst For Societal Development (1)",
+              "UC TEAMS Expands College Access With Five Advanced Placement Courses"
+            ]
+          },
+          {
+            "name": "AI·디지털 · 해외",
+            "count": 3,
+            "items": [
+              "Alex Matrsson: It’s Time for Global Higher Education to Wake Up and Reclaim Its Purpose",
+              "How AI policies are reshaping college learning and sowing confusion",
+              "NUS and NTU top Asian universities in subject rankings again - Singapore Economic Development Board (EDB)"
+            ]
           }
         ]
       },
       {
         "day": "9/7(월)",
-        "count": 72,
+        "count": 95,
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
-            "count": 22,
-            "items": [
-              "‘통합 충남대’ 성사냐 무산이냐… 8~10일 전 구성원 투표서 판가름",
-              "지방 사립대 교수들, 국립대 신입생 등록금 전액 지원에 반발…“차별 시정해야”",
-              "벚꽃 피는 순서로 대학 폐교?…무상 국립대가 ‘트리거’[교육진담]"
-            ]
-          },
-          {
             "name": "AI·디지털 · 국내",
-            "count": 22,
+            "count": 23,
             "items": [
               "최교진, 충남대 찾아 '서울대 10개 만들기' 점검…KAIST·기업 협력 논의",
               "배터리 속 이온 움직임인 줄 알았는데 … ‘가짜 신호’였다",
@@ -803,19 +849,46 @@
             ]
           },
           {
-            "name": "기타 · 국내",
-            "count": 16,
+            "name": "거버넌스 · 국내",
+            "count": 21,
             "items": [
-              "인제대, 글로컬 대학 탈락 위기…올시티캠퍼스 실효성 부족 '원인'",
+              "‘통합 충남대’ 성사냐 무산이냐… 8~10일 전 구성원 투표서 판가름",
+              "지방 사립대 교수들, 국립대 신입생 등록금 전액 지원에 반발…“차별 시정해야”",
+              "벚꽃 피는 순서로 대학 폐교?…무상 국립대가 ‘트리거’[교육진담]"
+            ]
+          },
+          {
+            "name": "기타 · 국내",
+            "count": 18,
+            "items": [
               "[오마이포토] 호르무즈 파병? 반발하는 대학가",
+              "인제대, 글로컬 대학 탈락 위기…올시티캠퍼스 실효성 부족 '원인'",
               "‘제주 대표 스포츠 스타’ 구자철, 제주대 알림이로 뛴다"
+            ]
+          },
+          {
+            "name": "기타 · 해외",
+            "count": 12,
+            "items": [
+              "The UK’s first ‘super-university’ backed to tackle Neets crisis",
+              "GU Halts Many International Students’ Work Approvals After New Federal Guidance",
+              "EDNXT Bhopal 2026: NEP 2020 in Action: Transforming Higher Education at Scale"
+            ]
+          },
+          {
+            "name": "AI·디지털 · 해외",
+            "count": 4,
+            "items": [
+              "UP to set up mental health support cells in all higher education instts",
+              "Faculty Year Opening: ‘We’re not in a bad position’",
+              "Dordt University launches generative AI pilot program for tools access, community conversations"
             ]
           }
         ]
       },
       {
         "day": "9/8(화)",
-        "count": 92,
+        "count": 130,
         "open": false,
         "cats": [
           {
@@ -829,7 +902,7 @@
           },
           {
             "name": "기타 · 국내",
-            "count": 24,
+            "count": 26,
             "items": [
               "제주 초등교사 선발 94명→26명 72% ‘급감’…제주대 교육대학 학생들 교원 감축 '반발'",
               "제주대 교육대학 학생들 \"초등학교 교사 선발 규모 감축 전면 재검토하라\"",
@@ -838,32 +911,50 @@
           },
           {
             "name": "거버넌스 · 국내",
-            "count": 12,
+            "count": 11,
             "items": [
               "교육부 장관, 충남대 찾아 ‘거점국립대 패키지’ 본격 실행 논의",
               "충남대서 '거점국립대 패키지 지원사업 실행 방안' 논의",
               "최교진 교육부 장관, 충남대 방문…거점국립대 패키지 실행 논의"
+            ]
+          },
+          {
+            "name": "기타 · 해외",
+            "count": 14,
+            "items": [
+              "Iowa’s University Reforms Show the Way Forward",
+              "Make Colleges Pay their “Fair Share”: Congress Should Close the Endowment Tax Loophole",
+              "Gov. Pritzker Cuts Ribbon at Illinois State University's New College of Engineering"
+            ]
+          },
+          {
+            "name": "입시·학령인구 · 해외",
+            "count": 8,
+            "items": [
+              "International students face visa uncertainty as enrollment declines",
+              "NU System sees more freshmen as overall enrollment declines",
+              "UNK freshman enrollment rises as overall enrollment declines"
             ]
           }
         ]
       },
       {
         "day": "9/9(수)",
-        "count": 81,
+        "count": 110,
         "open": false,
         "cats": [
           {
             "name": "기타 · 국내",
-            "count": 27,
+            "count": 30,
             "items": [
-              "[영남시론] 대구·경북에만 없는 ‘서울대’",
               "제주대 교수회 10일 개교 74주년 특별 세미나 개최",
-              "김민석 \"서울대 10개 만들기 후속 선정 이어질 것\"…경북대 포함?"
+              "김민석 \"서울대 10개 만들기 후속 선정 이어질 것\"…경북대 포함?",
+              "“충북대 ‘서울대 10개 만들기’ 탈락, 우리 대응부터 돌아봐야”"
             ]
           },
           {
             "name": "거버넌스 · 국내",
-            "count": 23,
+            "count": 19,
             "items": [
               "최교진 교육부 장관, 충남대 방문해 거점국립대 패키지 실행방안 논의 |",
               "최교진 교육부 장관-충남대, 거점국립대 패키지 본격 실행 논의",
@@ -872,79 +963,131 @@
           },
           {
             "name": "AI·디지털 · 국내",
-            "count": 16,
+            "count": 17,
             "items": [
               "지방대 부활에 필요한 최소한의 임계질량 [아침을 열며]",
               "'대학·기업 동반성장'…강원대 캠퍼스 혁신파크 산학연혁신허브 개관",
               "강원대, 산학연혁신허브 개관·반도체공동연구소 착공… 캠퍼스 내 산학연 거점 잇달아 구축"
+            ]
+          },
+          {
+            "name": "기타 · 해외",
+            "count": 13,
+            "items": [
+              "Ontario's new high school grading scheme 'a lot more pressure' for students, teens say",
+              "[Lee Deok-hwan's Science World] Korea's plan to build 10 Seoul National Universities sidelines private universities",
+              "What is the university president’s role in today’s world?"
+            ]
+          },
+          {
+            "name": "AI·디지털 · 해외",
+            "count": 8,
+            "items": [
+              "University of Utah announces job cuts, implementing cost-cutting measures",
+              "Opinion: AI is disrupting education. Universities must change, and change fast",
+              "Australian universities urge government for cheaper housing, travel as student rents soar 40%"
             ]
           }
         ]
       },
       {
         "day": "9/10(목)",
-        "count": 193,
+        "count": 237,
         "open": false,
         "cats": [
           {
             "name": "거버넌스 · 국내",
-            "count": 64,
+            "count": 67,
             "items": [
               "충남대 반대로 국립공주대와 통합 무산… '학생 90% 반대벽 못 넘었다'",
-              "경상국립대, 100주년 기념관 건설업체 임대에 교수 반발",
+              "[취재석] 충남대·공주대, 통합은 무산됐고 이제 남은 것은 '책임'이다",
               "충남대·공주대 통합 사실상 무산…충남대 구성원 반대 우세"
             ]
           },
           {
             "name": "기타 · 국내",
-            "count": 49,
+            "count": 51,
             "items": [
+              "‘서울대 10개’ 1차 탈락 격차 우려에… 김민석 “후속 선정·대상 확대 정부 요청할 것”",
               "교육·보육 종사자 아동학대 5년간 6087명… 하루 3.6명 검거 [2026 국감]",
-              "교육부 가이드북 ‘성소수자’ 삭제… 교사 96.7% “부적절”",
-              "연세대 인구와인재연구원, 2026~2028년 사회구조 개혁 캠페인 본격 추진"
+              "교육부 가이드북 ‘성소수자’ 삭제… 교사 96.7% “부적절”"
             ]
           },
           {
             "name": "AI·디지털 · 국내",
             "count": 41,
             "items": [
-              "계명문화대 등 8개 전문대학-EBS, ‘생활 속의 AI 윤리 이야기’ 공동 개발",
+              "연세대 인구와 인재 연구원, 12대 아젠다 중심 사회구조 개혁 연구 추진",
               "금오공대, '초광역 성장엔진 인재육성사업' 주관대학 선정",
-              "가천대, '2026 초광역 성장엔진 인재육성사업' 참여"
+              "계명문화대 등 8개 전문대학-EBS, ‘생활 속의 AI 윤리 이야기’ 공동 개발"
+            ]
+          },
+          {
+            "name": "기타 · 해외",
+            "count": 14,
+            "items": [
+              "Governance dispute between University of Queensland and student union boils over",
+              "Ypsilanti Township residents voice concerns over proposed University of Michigan, Los Alamos data center| WDIV Local 4",
+              "Accreditation Reform Is Exactly What Higher Education Needs | Commentary | Education"
+            ]
+          },
+          {
+            "name": "입시·학령인구 · 해외",
+            "count": 11,
+            "items": [
+              "CU Boulder predicts first fall enrollment decline since 2020",
+              "Pasco schools seek parent input on handling enrollment decline",
+              "Mass. colleges fear new 4-year visa cap could drive away international students"
             ]
           }
         ]
       },
       {
         "day": "9/11(금)",
-        "count": 38,
+        "count": 147,
         "open": true,
         "cats": [
           {
             "name": "거버넌스 · 국내",
-            "count": 19,
+            "count": 64,
             "items": [
+              "대구대, ‘대통령기 제48회 전국검도선수권대회’ 단체전 우승",
               "충남대-국립공주대 통합 찬반투표 ‘엇갈린 민심’…글로컬대학 사업 동력 차질 우려",
-              "인하대, 15일 '인하인천미래디자인포럼' 개최…인천e음 발전 방향 논의",
-              "상명대 제주대와 상호협력협약 체결... '런케이션' 공동 추진 논의"
+              "[칼럼] 지방 국립대 78% 무상등록금…지역에서도 경제적 부담 없이 대학에 다니도록"
             ]
           },
           {
             "name": "기타 · 국내",
-            "count": 12,
+            "count": 40,
             "items": [
-              "지방 로스쿨 졸업자 10명 중 6명, 수도권 취업… “종합적 점검 필요”",
-              "‘취임 1년’ 최교진 장관… 교사노조연맹 “정책 추진력·존재감 부족”",
-              "동국대 BMC.. 고양특례시의회 환경경제위와 간담회.. '지산학 상생협력 논의'"
+              "‘무전공’ 확산에 학과는 생존경쟁… 학생 선택 따라 통폐합",
+              "전북대 기록·역사관 고김제환 교수 학교사 자료 기증받아.. '35년 봉직 흔적 대학 역사로'",
+              "지방 로스쿨 졸업자 10명 중 6명, 수도권 취업… “종합적 점검 필요”"
             ]
           },
           {
             "name": "AI·디지털 · 국내",
-            "count": 5,
+            "count": 26,
             "items": [
-              "동아보건대, 지역 산업체와 AI농생명 산학협력 강화",
-              "한국 대학생, 세계 개발자들과 AI·Web3로 맞붙는다… 28일 ‘GWDC 2026 KOREA’ 해커톤 개막",
-              "\"동남권 거점 VC\" 유니스트기술지주, 모태펀드 '관광 AI' 운용사 선정"
+              "럽디(주), '2026년 제1회 논문상' 공모…총상금 500만원, 9월 15일까지 접수",
+              "유원대, 영동군 외식업 소상공인 대상 AI·이커머스 교육 진행",
+              "대구보건대 웰니스문화산업최고위과정 19기 개강…‘AI 2.0’ 주제로 100여 명 참석"
+            ]
+          },
+          {
+            "name": "기타 · 해외",
+            "count": 3,
+            "items": [
+              "Ontario Confederation of University Faculty Associations - Doug Ford's OSAP cuts are a labour issue. Here's why.",
+              "UK universities fail to win over Reform",
+              "New Michigan College Dorms Cost Millions as Schools Compete for Fewer Students"
+            ]
+          },
+          {
+            "name": "AI·디지털 · 해외",
+            "count": 1,
+            "items": [
+              "When foreign universities come home"
             ]
           }
         ]
@@ -978,7 +1121,7 @@
       }
     ],
     "changesTitle": "전주 대비 주요 변화",
-    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 401건 vs 전주 334건.",
+    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 430건 vs 전주 334건.",
     "watch": [
       {
         "when": "초기(0-4주)",
@@ -1004,45 +1147,52 @@
     "weeklyMetrics": [
       {
         "name": "위험신호 비중",
-        "value": "6.7",
+        "value": "8.2",
         "unit": "%",
-        "change": "+0.1%p",
+        "change": "+1.6%p",
         "dir": "up"
       },
       {
         "name": "수집 기사(비교기준)",
-        "value": "401",
+        "value": "430",
         "unit": "건",
-        "change": "+67건",
+        "change": "+96건",
         "dir": "up"
       },
       {
         "name": "거버넌스 기사",
-        "value": "110",
+        "value": "111",
         "unit": "건",
-        "change": "-16건",
+        "change": "-15건",
         "dir": "down"
       },
       {
         "name": "AI·디지털 기사",
-        "value": "110",
+        "value": "117",
         "unit": "건",
-        "change": "+33건",
+        "change": "+40건",
         "dir": "up"
       },
       {
         "name": "부산대 직접 언급",
-        "value": "59",
+        "value": "62",
         "unit": "건",
-        "change": "-23건",
+        "change": "-20건",
         "dir": "down"
       },
       {
+        "name": "해외 기사",
+        "value": "155",
+        "unit": "건",
+        "change": "전체의 36.0%",
+        "dir": "flat"
+      },
+      {
         "name": "추세",
-        "value": "stable",
+        "value": "rising",
         "unit": "",
         "change": "전주 6.6%",
-        "dir": "flat"
+        "dir": "up"
       }
     ],
     "kpis": [
@@ -1302,7 +1452,7 @@
       {
         "n": 6,
         "title": "충남대 반대로 국립공주대와 통합 무산… '학생 90% 반대벽 못 넘었다'",
-        "media": "데일리한국",
+        "media": "daily.hankooki.com",
         "date": "2026-09-10",
         "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5jWFhSS0hLS1pYQnFGNEtCU2p2WGFtRmhyQjExei14S1RHVGRTcFhRTG02UGdDME9udDhuZVliTXlzWlhTVjB1Vmc5QjF3TV9WcnBOZnpBcTc0ajM2NXlLZE8tREFLOUUtZURqelFYWdIBc0FVX3lxTE5IZFA0UEtoeHhHZmEtTV9UaWdnZWUtQVRycTc4bHRlQWdSaGVQbHFuNUtOcjg5LXVwUzhfbFJvUjFHcXhLaXpLSV9IY2ZyTDJmcV9mc2dYaFZZbC1wRWVSR2FWakVjeFdXRU5ncE5zWURhQU0?oc=5",
         "direct": false
@@ -1318,7 +1468,7 @@
       {
         "n": 8,
         "title": "지방국립대 신입생 등록금 ‘0원’ 추진... 내년 30곳 대상",
-        "media": "산학뉴스",
+        "media": "sanhaknews.kr",
         "date": "2026-09-06",
         "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9mTlJXUWhGTFdrblJKOFFnTXZMX3dHT0pRT09ROXBVai1ReUhjdzA3Z1FyT0l5bkV1THFld2NJMkoxZllNWFM2NEZpZjRISnVSX2k4d1BRR29PX3VpVVAtNW5DM0VvTHpCUXNJ?oc=5",
         "direct": false
@@ -1326,7 +1476,7 @@
       {
         "n": 9,
         "title": "지방 국립대 '등록금 0원'에…사립대 교수들 \"차별 시정\"",
-        "media": "뉴시스",
+        "media": "newsis.com",
         "date": "2026-09-07",
         "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9XeVA2ZktwSmM5TDB1ZzZTZTRmWkRpTlJpZVFvWUN0cGhkRFNOVlktSGN2X0lmNTdHekx0c1dsUDE1U0Mwd2U2dEZWS21yZ2VLYU9LR1QwdDVDMkItblR1StIBeEFVX3lxTFBJYXl5ZzRULXRhN1RYS1ZTeklDWXR1ZmZPWDFPZ25GTWFTNS01TlJId2JmN1BQNWUxcmhQWFBWR3Y1dG9URGxMS0NUVm9NSWdnMGVDS2xRRUF5STZlb2IxUFNuLWVIRHNrWnlYSWQ4X2g2MHROUHBQRw?oc=5",
         "direct": false
@@ -1334,7 +1484,7 @@
       {
         "n": 10,
         "title": "지방 국립대 등록금 0원 효과? '인서울' 모의지원 5년 새 최저",
-        "media": "hankookilbo.com",
+        "media": "한국일보",
         "date": "2026-09-04",
         "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5NaThtOVc4Ml9MUEl0RFFpaWNnNFJOMDhxOEVMNUtHWV9YR0t5eVJHMWtVam5HNzI5U1dqNTZCaERtUW94R2lzX05TTnA5SmdwVEk2RFNud2p1Wk1CMTUwdEZaemJoWGRrRm43UDdR0gFzQVVfeXFMT1RiLUJBV0I5dHVmb0RWVmMzSDZNcHY2TDFoMkFrMWtRY19VNVlvbWZVeXRQNEtURTcyUjZBS2NrcXJWQl94RHVKUHFibkhUbW9oSEY2U2UzaTlHMkFTRENncGhaUXlzLVVPVGNXdk1qblQtUQ?oc=5",
         "direct": false
@@ -1382,7 +1532,7 @@
       {
         "n": 16,
         "title": "부산대 의과대학, 휴머노이드 의료로봇 활용 의학교육 시범 운영",
-        "media": "국제신문",
+        "media": "kookje.co.kr",
         "date": "2026-09-09",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOUzlIQ0g0aGQ0OHBGSFY0THlIUDh3cDRRT3ZjdEhsZlRieHBHZVZYS0RXa3BabkZUbjZCWFhBTmZ6LXNCbmZ1RW1zcXdvaDJLTm5ZN1dseVM5dm1IcnFURUlwM05aaTd3YWlEM3ZsZUxRU3lleHpYYWhFVlRGM0FKUV9xUWxNZjJFWU1GR1ZR?oc=5",
         "direct": false
@@ -1390,7 +1540,7 @@
       {
         "n": 17,
         "title": "부산대, 2027학년도 수시모집 원서접수 시작…3,587명 선발",
-        "media": "국제신문",
+        "media": "kookje.co.kr",
         "date": "2026-09-08",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNMTI4VnFzQlVOZ1hMb0NHMGhoOXBVSGZxUUI2b1BCQ0FuOF93UXc4TE5XM0h5UXZpbmZDWHdvc0xCLUdKUmdHVnBzMlFOR1lpOFBjQ2tISUN1SlNjSVFwQXpOa1UtcDgzTFRWdWczaF9hZzhkRXdPLUs4cmJaMkVXN3NQQVVXSmxmZ1JEaERR?oc=5",
         "direct": false
@@ -1402,23 +1552,24 @@
           "label": "최교진 교육부 장관",
           "who": "최교진",
           "role": "교육부 장관",
-          "n": 8,
+          "n": 9,
           "ex": {
-            "title": "최교진 교육부 장관, 충남대 방문해 거점국립대 패키지 실행방안 논의 |",
-            "media": "jbnews.com",
-            "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFA0ODNCdmlyelJpYzU0UkVFRUZaSEtNTVpvSTFGOXJpRmZNbXZtdDl0QTk2NmxLWHFSUjBMMHdRQTFrdE9wVW9jS1ByNEFrTTBLUUZRWUhvdFVTc1lqRy1wTVVUQnQ1YV9QWWxDTlBR?oc=5",
-            "date": "2026-09-09",
-            "field": "거버넌스",
-            "level": "watch",
+            "title": "최교진 1년, 서울대10개 ‘첫 발’…교부금개편 등 갈등 커져",
+            "media": "아시아투데이",
+            "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8yWVkzXzc3MlVSM0dVa3JNdEFRQ19BaGhnckhyTzNKWUtYbmo2cUFsUkZtRjhMMVhzb0xTT2x1N0RtTXJOZi05VFBRb2Fmb3dGaVhRWmpRUXdDSm1vTG5hLVp6bTBMX2hEazJyQmZR?oc=5",
+            "region": "domestic",
+            "date": "2026-09-11",
+            "field": "재정",
+            "level": "warning",
             "univ": [
-              "충남대"
+              "서울대"
             ],
-            "summary": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTFA0ODNCdmlyelJpYzU0UkVFRUZaSEtNTVpvSTFGOXJpRmZNbXZtdDl0QTk2NmxLWHFSUjBMMHdRQTFrdE9wVW9jS1ByNEFrTTBLUUZRWUhvdFVTc1lqRy1wTVVUQnQ1YV9QWWxDTlBR?o",
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE8yWVkzXzc3MlVSM0dVa3JNdEFRQ19BaGhnckhyTzNKWUtYbmo2cUFsUkZtRjhMMVhzb0xTT2x1N0RtTXJOZi05VFBRb2Fmb3dGaVhRWmpRUXdDSm1vTG5hLVp6bTBMX2hEazJyQmZR?o",
             "feeds": [
               "구글뉴스:거점국립대"
             ]
           },
-          "risky": 0
+          "risky": 1
         },
         {
           "label": "이재명 대통령",
@@ -1429,6 +1580,7 @@
             "title": "이재명 정부 '서울대 10개' 공약에 3곳 먼저 집중지원, 성과 확산 방식·시간표는 미정",
             "media": "비즈니스포스트",
             "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5BbTBhSGRwVmlGUkZTM1pGV1dLVXRtSUx0Y0hFTDFWOFFNTk9tNFM5eW1tMHB2SDF5ME9jaWI4RnBZMDk2aXhTeWZ6VGx6a25MVFdhSHA4anB6N05keTl4ZWEyX0FTSHZ0NmxqTzZn?oc=5",
+            "region": "domestic",
             "date": "2026-09-05",
             "field": "기타",
             "level": "normal",
@@ -1443,75 +1595,76 @@
           "risky": 0
         }
       ],
+      "quiet": [
+        "배경훈 부총리 겸 과학기술정보통신부 장관",
+        "전재수 부산광역시장"
+      ],
       "orgs": [
         {
           "label": "교육부",
-          "n": 28,
+          "n": 34,
           "ex": {
-            "title": "[단독] “9개 거점대 전부 지원해야”…거점국립대 총장들, 교육부에 공식 건의",
-            "media": "중앙일보",
-            "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9TWjNPWkZVbnlEMFhMdDdVTU5SWTZ4QTZ6aE16eEQ4YzlaQ0JWMHR5WTFkQ25UY19wNUpfMHBfVjRyQ1ZEVk5SajBtMHE1TDNCMER5S0pR?oc=5",
-            "date": "2026-09-04",
+            "title": "가천대, 첨단 반도체 연구 위한 수차보정 투과전자현미경실 개소",
+            "media": "한국대학신문",
+            "link": "https://news.unn.net/news/articleView.html?idxno=597287",
+            "region": "domestic",
+            "date": "2026-09-11",
             "field": "거버넌스",
             "level": "normal",
             "univ": [],
-            "summary": "<a href=\"https://news.google.com/rss/articles/CBMiVkFVX3lxTE9TWjNPWkZVbnlEMFhMdDdVTU5SWTZ4QTZ6aE16eEQ4YzlaQ0JWMHR5WTFkQ25UY19wNUpfMHBfVjRyQ1ZEVk5SajBtMHE1TDNCMER5S0pR?oc=5\" target=\"_blank\">[단독] “9개 거점",
+            "summary": "[한국대학신문 김연주 기자] 가천대학교(총장 이길여) 바이오나노융합소재 연구센터(센터장 한상윤)가 교육부로부터 83억원을 지원 받아 첨단 반도체 연구를 위한 수차보정 투과전자현미경(Cs-corrected TEM)을 도입하고 10일 대학 제3학생생활관에서 수차보정 투과전자현미경실 개소식을 가졌다.개소식에는 가천대 윤원중 부총장과 한상윤 바이오나노융합소재 연구",
             "feeds": [
-              "구글뉴스:거점국립대"
+              "한국대학신문"
             ]
           },
-          "risky": 1
+          "risky": 2
         },
         {
           "label": "과학기술정보통신부",
-          "n": 4,
+          "n": 7,
           "ex": {
-            "title": "부산대, 121억 원 규모 과기정통부 ‘AI스타펠로우십’ 사업 최종 선정",
-            "media": "한국대학신문",
-            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBzTzhnejNrTWllZjljNkV1MG43MGE5NVdIelBoaFN4M1BIdDdrZ3dmdmN2S2Fsd192Rm1vQVFuN2wybzBEYlFlNEg0NDZubjR1Nm94RmlBelV3ay1MZDJYM0xZR0JjZw?oc=5",
-            "date": "2026-09-07",
-            "field": "AI·디지털",
+            "title": "과학자도 ‘국대’ 뽑는다…‘리더급 국가과학기술자’ 1차 20명 선발한다",
+            "media": "교수신문",
+            "link": "https://www.kyosu.net/news/articleView.html?idxno=210174",
+            "region": "domestic",
+            "date": "2026-09-11",
+            "field": "기타",
             "level": "normal",
-            "univ": [
-              "부산대"
-            ],
-            "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZkFVX3lxTFBzTzhnejNrTWllZjljNkV1MG43MGE5NVdIelBoaFN4M1BIdDdrZ3dmdmN2S2Fsd192Rm1vQVFuN2wybzBEYlFlNEg0NDZubjR1Nm94RmlBelV3ay1MZDJYM0xZR0JjZw?oc=5\" targe",
+            "univ": [],
+            "summary": "[과기정통부 ‘2026년 국가과학자 지원사업’ 공고] 앞으론 과학자도 국가대표(국대)가 될 수 있다. 정부가 대한민국을 대표할 세계적 수준의 연구자를 선정해 집중 지원하는 ‘리더급 국가과학기술자’ 제도를 도입하기 때문이다. 연구 성과뿐 아니라 향후 세계 최고 수준으로 성장할 잠재력까지 평가해 국가 핵심 인재를 육성하겠다는 계획이다.",
             "feeds": [
-              "구글뉴스:부산대학교"
+              "교수신문"
             ]
           },
           "risky": 0
         },
         {
           "label": "부산광역시",
-          "n": 3,
+          "n": 4,
           "ex": {
-            "title": "부산시, AI 최고급 신진 연구자 양성 지원…부산대와 협력",
-            "media": "v.daum.net",
-            "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBsV2pTSnZsbVFHRlVrb0ZxYlZ2T0NSRm9PRkpxeHpzcmlsUlJrN0ZjTkUzY1NkTF9kaTJya1AyRUV4Z05FVlZ5STd5YmZwdThjV2hSZw?oc=5",
-            "date": "2026-09-07",
-            "field": "AI·디지털",
+            "title": "부‧울‧경, ‘초광역 협력’ 공동선언문 채택… 민선 9기 첫 정책협의회 개최",
+            "media": "한국대학신문",
+            "link": "https://news.unn.net/news/articleView.html?idxno=597288",
+            "region": "domestic",
+            "date": "2026-09-11",
+            "field": "재정",
             "level": "normal",
-            "univ": [
-              "부산대"
-            ],
-            "summary": "<a href=\"https://news.google.com/rss/articles/CBMiVEFVX3lxTFBsV2pTSnZsbVFHRlVrb0ZxYlZ2T0NSRm9PRkpxeHpzcmlsUlJrN0ZjTkUzY1NkTF9kaTJya1AyRUV4Z05FVlZ5STd5YmZwdThjV2hSZw?oc=5\" target=\"_blank\">부산시, AI 최고급 신",
+            "univ": [],
+            "summary": "[한국대학신문 김영식 기자] 부산광역시‧울산광역시‧경상남도 등 3개 시‧도가 초광역 협력 강화 방안을 담은 공동선언문을 채택했다. 앞서 정부가 지난달 26일 수도권에 대응하는 5개 초광역 경제권과 3개 특별자치도를 육성하는 내용을 골자로 ‘5극3특 초광역 국가균형성장 전략’을 발표한 가운데, 이번 부울경 협의회는 정부 발표 이후 처음 열린 3개 시‧도지사 ",
             "feeds": [
-              "구글뉴스:부산대학교",
-              "구글뉴스:부산대학교",
-              "구글뉴스:부산대학교",
-              "구글뉴스:부산대학교"
+              "한국대학신문"
             ]
           },
           "risky": 0
         },
         {
           "label": "국회 교육위원회",
-          "n": 2,
+          "n": 3,
           "ex": {
             "title": "지방 로스쿨 졸업자 10명 중 6명, 수도권 취업… “종합적 점검 필요”",
             "media": "한국대학신문",
             "link": "https://news.unn.net/news/articleView.html?idxno=597270",
+            "region": "domestic",
             "date": "2026-09-11",
             "field": "기타",
             "level": "warning",
@@ -1521,7 +1674,7 @@
               "한국대학신문"
             ]
           },
-          "risky": 2
+          "risky": 3
         }
       ],
       "feeds": [
@@ -1599,18 +1752,16 @@
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
-        "과기정통부 장관",
         "국회 교육위원장",
-        "부산대 총장",
-        "부산광역시장"
+        "부산대 총장"
       ],
       "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
     },
     "comparable": {
-      "total": 401,
-      "crisis": 3.7,
-      "warning": 3,
-      "risk": 6.7
+      "total": 430,
+      "crisis": 4.2,
+      "warning": 4,
+      "risk": 8.2
     }
   },
   {
@@ -2512,6 +2663,13 @@
         "dir": "up"
       },
       {
+        "name": "해외 기사",
+        "value": "0",
+        "unit": "건",
+        "change": "수집 전 주차",
+        "dir": "flat"
+      },
+      {
         "name": "추세",
         "value": "rising",
         "unit": "",
@@ -2823,6 +2981,10 @@
           "risky": 0
         }
       ],
+      "quiet": [
+        "배경훈 부총리 겸 과학기술정보통신부 장관",
+        "전재수 부산광역시장"
+      ],
       "orgs": [
         {
           "label": "교육부",
@@ -2976,10 +3138,8 @@
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
-        "과기정통부 장관",
         "국회 교육위원장",
-        "부산대 총장",
-        "부산광역시장"
+        "부산대 총장"
       ],
       "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
     },
@@ -3858,6 +4018,13 @@
         "dir": "up"
       },
       {
+        "name": "해외 기사",
+        "value": "0",
+        "unit": "건",
+        "change": "수집 전 주차",
+        "dir": "flat"
+      },
+      {
         "name": "추세",
         "value": "rising",
         "unit": "",
@@ -4094,6 +4261,12 @@
     ],
     "voices": {
       "persons": [],
+      "quiet": [
+        "이재명 대통령",
+        "최교진 교육부 장관",
+        "배경훈 부총리 겸 과학기술정보통신부 장관",
+        "전재수 부산광역시장"
+      ],
       "orgs": [
         {
           "label": "국가거점국립대총장협의회",
@@ -4207,10 +4380,8 @@
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
-        "과기정통부 장관",
         "국회 교육위원장",
-        "부산대 총장",
-        "부산광역시장"
+        "부산대 총장"
       ],
       "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
     },
@@ -5083,6 +5254,13 @@
         "dir": "up"
       },
       {
+        "name": "해외 기사",
+        "value": "0",
+        "unit": "건",
+        "change": "수집 전 주차",
+        "dir": "flat"
+      },
+      {
         "name": "추세",
         "value": "falling",
         "unit": "",
@@ -5285,6 +5463,12 @@
     ],
     "voices": {
       "persons": [],
+      "quiet": [
+        "이재명 대통령",
+        "최교진 교육부 장관",
+        "배경훈 부총리 겸 과학기술정보통신부 장관",
+        "전재수 부산광역시장"
+      ],
       "orgs": [],
       "feeds": [
         {
@@ -5361,10 +5545,8 @@
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
-        "과기정통부 장관",
         "국회 교육위원장",
-        "부산대 총장",
-        "부산광역시장"
+        "부산대 총장"
       ],
       "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
     },
@@ -6270,6 +6452,13 @@
         "dir": "down"
       },
       {
+        "name": "해외 기사",
+        "value": "0",
+        "unit": "건",
+        "change": "수집 전 주차",
+        "dir": "flat"
+      },
+      {
         "name": "추세",
         "value": "falling",
         "unit": "",
@@ -6494,6 +6683,12 @@
     ],
     "voices": {
       "persons": [],
+      "quiet": [
+        "이재명 대통령",
+        "최교진 교육부 장관",
+        "배경훈 부총리 겸 과학기술정보통신부 장관",
+        "전재수 부산광역시장"
+      ],
       "orgs": [
         {
           "label": "교육부",
@@ -6663,10 +6858,8 @@
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
-        "과기정통부 장관",
         "국회 교육위원장",
-        "부산대 총장",
-        "부산광역시장"
+        "부산대 총장"
       ],
       "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
     },
@@ -7579,6 +7772,13 @@
         "dir": "down"
       },
       {
+        "name": "해외 기사",
+        "value": "0",
+        "unit": "건",
+        "change": "수집 전 주차",
+        "dir": "flat"
+      },
+      {
         "name": "추세",
         "value": "rising",
         "unit": "",
@@ -7816,6 +8016,11 @@
           "risky": 0
         }
       ],
+      "quiet": [
+        "이재명 대통령",
+        "배경훈 부총리 겸 과학기술정보통신부 장관",
+        "전재수 부산광역시장"
+      ],
       "orgs": [
         {
           "label": "교육부",
@@ -7947,10 +8152,8 @@
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
-        "과기정통부 장관",
         "국회 교육위원장",
-        "부산대 총장",
-        "부산광역시장"
+        "부산대 총장"
       ],
       "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
     },
@@ -8891,6 +9094,13 @@
         "dir": "up"
       },
       {
+        "name": "해외 기사",
+        "value": "0",
+        "unit": "건",
+        "change": "수집 전 주차",
+        "dir": "flat"
+      },
+      {
         "name": "추세",
         "value": "rising",
         "unit": "",
@@ -9100,7 +9310,35 @@
       }
     ],
     "voices": {
-      "persons": [],
+      "persons": [
+        {
+          "label": "전재수 부산광역시장",
+          "who": "전재수",
+          "role": "부산광역시장",
+          "n": 1,
+          "ex": {
+            "title": "최재원 부산대총장-전재수 시장, 우리는하나",
+            "media": "한스경제",
+            "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE85Uzc2VlJKZ0R0eFgxN0xaZDdMenFyeTIyUmxZQ0N2d0c2NXhzdUZ4QnVJT3dRb3lCdW9oV0xobkVZZzhVclJsalVveUZGZ0ZFR3gta0FZczlBNHBHUVZydXlRNlRNeXkyV3Yw0gFvQVVfeXFMT3FzUG81YmRITzN5Q05Jd3NrYTZFWWExUURWYjRuOHh4SEpTcHF1enE3QXFLQ3VHcFB1UGtibjZ3T3NqWWVOcGFaRExnYWxNd2RZQ1dVcndzR21QRW95NklWeVppa1E3Q3d3MzhGc1Uw?oc=5",
+            "date": "2026-07-27",
+            "field": "거버넌스",
+            "level": "normal",
+            "univ": [
+              "부산대"
+            ],
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE85Uzc2VlJKZ0R0eFgxN0xaZDdMenFyeTIyUmxZQ0N2d0c2NXhzdUZ4QnVJT3dRb3lCdW9oV0xobkVZZzhVclJsalVveUZGZ0ZFR3gta0FZczlBNHBHUVZydXlRNlRNeXkyV3Yw0gFvQV",
+            "feeds": [
+              "구글뉴스:부산대학교"
+            ]
+          },
+          "risky": 0
+        }
+      ],
+      "quiet": [
+        "이재명 대통령",
+        "최교진 교육부 장관",
+        "배경훈 부총리 겸 과학기술정보통신부 장관"
+      ],
       "orgs": [
         {
           "label": "교육부",
@@ -9215,10 +9453,8 @@
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
-        "과기정통부 장관",
         "국회 교육위원장",
-        "부산대 총장",
-        "부산광역시장"
+        "부산대 총장"
       ],
       "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
     },
@@ -10152,6 +10388,13 @@
         "dir": "up"
       },
       {
+        "name": "해외 기사",
+        "value": "0",
+        "unit": "건",
+        "change": "전체의 0%",
+        "dir": "flat"
+      },
+      {
         "name": "최다 출현 키워드",
         "value": "AI",
         "unit": "",
@@ -10383,6 +10626,11 @@
           "risky": 0
         }
       ],
+      "quiet": [
+        "이재명 대통령",
+        "배경훈 부총리 겸 과학기술정보통신부 장관",
+        "전재수 부산광역시장"
+      ],
       "orgs": [
         {
           "label": "교육부",
@@ -10498,10 +10746,8 @@
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
-        "과기정통부 장관",
         "국회 교육위원장",
-        "부산대 총장",
-        "부산광역시장"
+        "부산대 총장"
       ],
       "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
     },

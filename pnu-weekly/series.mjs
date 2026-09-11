@@ -29,7 +29,9 @@ const stats = files.map((f) => {
   const from = raw.from || new Date(Date.parse(to) - 7 * 864e5).toISOString().slice(0, 10);
 
   // 비교 가능성: 과거 주차는 구글 뉴스로만 수집되므로 전 주차를 구글 소스로 통일한다
-  const items = relevant(googleOnly(raw.items));
+  // 주차 비교 지표는 구글 뉴스 '국내' 소스로 통일한다(과거 주차엔 해외 수집분이 없다).
+  const all = relevant(raw.items);
+  const items = googleOnly(all);
   const n = items.length || 1;
   const p = (l) => +((items.filter((x) => x.level === l).length / n) * 100).toFixed(1);
   const crisis = p('crisis'), warning = p('warning');
@@ -42,6 +44,7 @@ const stats = files.map((f) => {
     total: items.length, crisis, warning, risk: +(crisis + warning).toFixed(1),
     field: (fl) => items.filter((x) => x.field === fl).length,
     pnu: mentionsOf(items, '부산대'),
+    overseas: all.filter((x) => x.region === 'overseas').length,   // 비교 대상 아님 — 참고용
     items
   };
 }).sort((a, b) => b.to.localeCompare(a.to));   // 최신 → 과거
@@ -90,6 +93,7 @@ for (const s of stats) {
         { name: '거버넌스 기사', value: String(s.field('거버넌스')), unit: '건', change: dd(s.field('거버넌스'), prev.field('거버넌스'), '건'), dir: s.field('거버넌스') >= prev.field('거버넌스') ? 'up' : 'down' },
         { name: 'AI·디지털 기사', value: String(s.field('AI·디지털')), unit: '건', change: dd(s.field('AI·디지털'), prev.field('AI·디지털'), '건'), dir: s.field('AI·디지털') >= prev.field('AI·디지털') ? 'up' : 'down' },
         { name: '부산대 직접 언급', value: String(s.pnu), unit: '건', change: dd(s.pnu, prev.pnu, '건'), dir: s.pnu >= prev.pnu ? 'up' : 'down' },
+        { name: '해외 기사', value: String(s.overseas), unit: '건', change: s.overseas ? `전체의 ${(s.overseas / s.total * 100).toFixed(1)}%` : '수집 전 주차', dir: 'flat' },
         { name: '추세', value: trend, unit: '', change: `전주 ${prev.risk}%`, dir: trend === 'rising' ? 'up' : trend === 'falling' ? 'down' : 'flat' }
       ];
     }

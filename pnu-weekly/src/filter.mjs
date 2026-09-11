@@ -7,10 +7,15 @@ const TOPIC = /대학|학생|교수|교육|입시|수시|정시|학과|캠퍼스
 // '대학'만 보던 초기 필터가 거점국립대 핵심 기사를 통째로 걸러낸 적이 있어 추가한 패턴이다.
 const UNIV_NAME = /[가-힣]{2,4}대(?:학교)?(?:[^가-힣]|$)/;
 
+// 해외 기사는 한국어 키워드에 걸리지 않으므로 영문 조건을 따로 둔다.
+const TOPIC_EN = /universit|college|higher education|campus|tuition|enrollment|faculty|student/i;
+
 export function relevant(items) {
   return items.filter((x) => {
     const t = x.title + ' ' + x.summary;
-    return !NOISE.test(t) && (TOPIC.test(t) || UNIV_NAME.test(t));
+    if (NOISE.test(t)) return false;
+    if (x.region === 'overseas') return TOPIC_EN.test(t);
+    return TOPIC.test(t) || UNIV_NAME.test(t);
   });
 }
 

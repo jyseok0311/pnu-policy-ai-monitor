@@ -7,7 +7,7 @@
 //   분류·집계·경보는 이 정보만으로 충분하고, 서술의 근거는 공공누리 1차 소스(보도자료·법안·공고)에서 가져온다.
 //   유료 구매 경로(뉴스 아카이브·건별 구매)는 사용하지 않는다 — 전 구간 무료·공개 소스로만 운영한다.
 
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -32,19 +32,41 @@ const PRESS_FEEDS = [
   { media: '베리타스알파', url: 'https://www.veritas-a.com/rss/allArticle.xml' },
   { media: '대학지(유니프레스)', url: 'https://www.unipress.co.kr/rss/allArticle.xml' }
 ];
+// 해외 고등교육 정책 — 국내 이슈의 선행/대조 사례로 쓴다.
+// 영문 구글 뉴스는 언어·지역 파라미터만 바꾸면 된다.
+const OVERSEAS_QUERIES = [
+  'higher education policy reform',
+  'university funding cuts government',
+  'national university merger',
+  'university tuition free policy',
+  'generative AI university policy',
+  'declining student enrollment university',
+  'regional university revitalization',
+  'university world rankings policy'
+];
 const gnews = (q) => `https://news.google.com/rss/search?q=${encodeURIComponent(q + ' ' + RANGE)}&hl=ko&gl=KR&ceid=KR:ko`;
+const gnewsEn = (q) => `https://news.google.com/rss/search?q=${encodeURIComponent(q + ' ' + RANGE)}&hl=en-US&gl=US&ceid=US:en`;
 
 // ── 분류 규칙 (LLM 아님 — 결정적 규칙으로 집계해야 수치를 신뢰할 수 있다) ──
+// 분야 분류 — 해외 기사도 같은 축으로 묶어야 국내와 비교가 된다. 영문 키워드를 함께 둔다.
 const FIELDS = {
-  '거버넌스': ['통합', '연합', '거버넌스', '구조개혁', '총장', '국립대', '공공기관', '재편', '법인화'],
-  '재정': ['예산', 'RISE', '라이즈', '등록금', '재정지원', '국고', '교부금', '적자', '지원금'],
-  '입시·학령인구': ['수시', '정시', '경쟁률', '충원', '입시', '학령인구', '모집', '정원', '신입생', '수능'],
-  'AI·디지털': ['AI', '인공지능', '디지털', 'AX', '생성형', '데이터', '에이전트', 'SW', '반도체']
+  '거버넌스': ['통합', '연합', '거버넌스', '구조개혁', '총장', '국립대', '공공기관', '재편', '법인화',
+    'merger', 'governance', 'restructuring', 'chancellor', 'consolidation', 'autonomy',
+    'reform', 'accreditation', 'policy', 'regulation', 'oversight', 'crackdown', 'ban', 'law', 'bill'],
+  '재정': ['예산', 'RISE', '라이즈', '등록금', '재정지원', '국고', '교부금', '적자', '지원금',
+    'funding', 'budget', 'tuition', 'grant', 'subsidy', 'deficit', 'endowment', 'fee'],
+  '입시·학령인구': ['수시', '정시', '경쟁률', '충원', '입시', '학령인구', '모집', '정원', '신입생', '수능',
+    'enrollment', 'admission', 'applicant', 'demographic', 'intake', 'quota', 'freshman', 'undocumented', 'international student'],
+  'AI·디지털': ['AI', '인공지능', '디지털', 'AX', '생성형', '데이터', '에이전트', 'SW', '반도체',
+    'artificial intelligence', 'generative', 'digital', 'chatbot', 'semiconductor']
 };
 const RISK = {
-  crisis: ['폐교', '폐과', '통폐합', '위기', '미달', '무산', '삭감', '소송', '파행', '반발', '퇴출'],
-  warning: ['감축', '하락', '우려', '갈등', '축소', '논란', '지적', '경고', '부담', '압박', '차질'],
-  watch: ['검토', '추진', '논의', '개편', '예고', '공청회', '발의', '심사']
+  crisis: ['폐교', '폐과', '통폐합', '위기', '미달', '무산', '삭감', '소송', '파행', '반발', '퇴출',
+    'closure', 'shut down', 'crisis', 'collapse', 'lawsuit', 'scrapped', 'axed', 'slashed'],
+  warning: ['감축', '하락', '우려', '갈등', '축소', '논란', '지적', '경고', '부담', '압박', '차질',
+    'cuts', 'decline', 'concern', 'dispute', 'warning', 'pressure', 'backlash', 'shortfall'],
+  watch: ['검토', '추진', '논의', '개편', '예고', '공청회', '발의', '심사',
+    'review', 'proposal', 'plan', 'consultation', 'bill', 'reform']
 };
 
 // ── 최소 RSS 파서 (의존성 없음) ──────────────────────────────
@@ -107,8 +129,9 @@ const feedLog = [];
 
 // 언론사 RSS는 최신 50건만 제공하므로 과거 구간 수집에는 쓸 수 없다(구글 뉴스만 사용).
 const feeds = [
-  ...GOOGLE_QUERIES.map((q) => ({ kind: 'google', label: `구글뉴스:${q}`, url: gnews(q) })),
-  ...(FROM ? [] : PRESS_FEEDS.map((f) => ({ kind: 'press', label: f.media, url: f.url, media: f.media })))
+  ...GOOGLE_QUERIES.map((q) => ({ kind: 'google', region: 'domestic', label: `구글뉴스:${q}`, url: gnews(q) })),
+  ...OVERSEAS_QUERIES.map((q) => ({ kind: 'google', region: 'overseas', label: `해외:${q}`, url: gnewsEn(q) })),
+  ...(FROM ? [] : PRESS_FEEDS.map((f) => ({ kind: 'press', region: 'domestic', label: f.media, url: f.url, media: f.media })))
 ];
 
 for (const f of feeds) {
@@ -125,7 +148,7 @@ for (const f of feeds) {
       const text = title + ' ' + it.summary;
       const { field, level } = classify(text);
       items.set(key, {
-        title, media, link: it.link,
+        title, media, link: it.link, region: f.region || 'domestic',
         date: Number.isFinite(t) ? new Date(t).toISOString().slice(0, 10) : null,
         field, level,
         univ: UNIV.filter((u) => text.includes(u)),
@@ -156,6 +179,7 @@ const out = {
     watch: pct(count('level', 'watch'))
   },
   byField: Object.fromEntries(['거버넌스', '재정', '입시·학령인구', 'AI·디지털', '기타'].map((f) => [f, count('field', f)])),
+  byRegion: { 국내: count('region', 'domestic'), 해외: count('region', 'overseas') },
   byUniv: Object.fromEntries(UNIV.map((u) => [u, all.filter((x) => x.univ.includes(u)).length])),
   feeds: feedLog,
   items: all
@@ -163,11 +187,39 @@ const out = {
 
 mkdirSync(join(root, 'data/collected'), { recursive: true });
 const file = join(root, `data/collected/${TAG}.json`);
+
+// 같은 기간 파일이 이미 있으면 합친다.
+// RSS 창(window)은 시간이 지나면 오래된 기사를 밀어내므로, 덮어쓰면 재실행할 때마다
+// 기사를 잃는다. 실제로 재수집 후 서술의 각주 근거가 사라지는 일이 있었다.
+if (existsSync(file)) {
+  const prev = JSON.parse(readFileSync(file, 'utf8'));
+  const keyOf = (x) => x.title.replace(/\s+/g, '').slice(0, 40);
+  const seen2 = new Set(out.items.map(keyOf));
+  let added = 0;
+  for (const it of prev.items || []) {
+    if (seen2.has(keyOf(it))) continue;
+    seen2.add(keyOf(it));
+    out.items.push({ region: 'domestic', ...it });   // 구버전 항목엔 region 이 없다
+    added++;
+  }
+  if (added) {
+    out.items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    out.total = out.items.length;
+    const cnt = (k, v) => out.items.filter((x) => x[k] === v).length;
+    const p2 = (n) => +((n / out.total) * 100).toFixed(1);
+    out.signal = { crisis: p2(cnt('level', 'crisis')), warning: p2(cnt('level', 'warning')), watch: p2(cnt('level', 'watch')) };
+    out.byField = Object.fromEntries(['거버넌스', '재정', '입시·학령인구', 'AI·디지털', '기타'].map((f) => [f, cnt('field', f)]));
+    out.byRegion = { 국내: cnt('region', 'domestic'), 해외: cnt('region', 'overseas') };
+    out.byUniv = Object.fromEntries(UNIV.map((u) => [u, out.items.filter((x) => (x.univ || []).includes(u)).length]));
+    console.log(`· 기존 수집본과 병합 — ${added}건 보존`);
+  }
+}
 writeFileSync(file, JSON.stringify(out, null, 2), 'utf8');
 
 console.table(feedLog);
 console.log(`\n총 ${out.total}건 (중복 제거 후) · ${out.window}`);
 console.log(`위험신호  crisis ${out.signal.crisis}% / warning ${out.signal.warning}% / watch ${out.signal.watch}%  → 합산 ${(out.signal.crisis + out.signal.warning).toFixed(1)}%`);
 console.log('분야별   ', out.byField);
+console.log('국내/해외 ', out.byRegion);
 console.log('대학 언급 ', Object.fromEntries(Object.entries(out.byUniv).filter(([, v]) => v > 0)));
 console.log(`\n저장: data/collected/${TAG}.json`);

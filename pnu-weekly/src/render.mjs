@@ -189,6 +189,7 @@ function renderWeek(w, sources) {
       <div class="val">${o.n}<small>건</small></div>
       <div class="ch ${o.risky ? 'up' : 'flat'}">${o.risky ? `위험신호 ${o.risky}건` : '—'}</div>
     </div>`).join('')}</div></div>` : ''}
+  ${V.quiet && V.quiet.length ? `<p class="note-line">추적 중이나 이번 주 언급 없음: ${V.quiet.map(esc).join(' · ')}</p>` : ''}
   ${V.vacant && V.vacant.length ? `<p class="note-line">직책만 등록되고 이름이 비어 있어 집계되지 않은 항목: ${V.vacant.map(esc).join(' · ')} — <code>data/watchlist.json</code> 에서 채우면 자동 집계됩니다.</p>` : ''}
   ${V.feeds && V.feeds.length ? `
   <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">${esc(V.feedNote || '')}</span></h4>

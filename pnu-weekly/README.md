@@ -485,3 +485,41 @@ KOSIS_KEY=...       node univdata.mjs   # 국가통계포털
 - 표 하단에 `← 좌우로 밀어서 보기` 안내를 붙였다
 - 휠 안내 배지는 모바일에서 숨긴다(휠이 없으므로). 지도는 마커를 **탭하면 팝업**이 뜬다
 - 360px 이하에서는 지표 카드가 1열로 떨어진다. 375px 은 2열을 유지한다
+
+## 국내·해외 기사 분리 수집
+
+`collect.mjs` 가 구글 뉴스를 **한국어(국내)와 영문(해외)** 두 갈래로 수집한다.
+해외는 국내 이슈의 선행·대조 사례로 읽는다.
+
+```
+국내 765건 (구글뉴스 ko 9개 질의 + 언론사 RSS 4곳)
+해외 310건 (구글뉴스 en 8개 질의)
+```
+
+해외 질의: higher education policy reform / university funding cuts / national university merger /
+tuition free policy / generative AI university policy / declining enrollment / regional university
+revitalization / world rankings policy.
+
+각 항목에 `region: 'domestic' | 'overseas'` 가 붙고, 리포트의 일자별 기사 묶음이
+`거버넌스 · 국내` / `기타 · 해외` 처럼 나뉜다. 분야 분류·위험도 규칙에는 영문 키워드를 함께 넣었다
+(`merger`, `funding`, `enrollment`, `closure`, `cuts` …).
+
+### 지역별 자리를 보장해야 한다
+
+상위 N 개만 자르면 건수가 많은 국내가 자리를 다 차지해 **해외가 한 건도 안 보였다**.
+지역별로 자리를 나눠(국내 3 + 해외 2) 보장한다.
+
+### 비교 지표는 국내로 통일
+
+주차 간 비교(`comparable`)는 **구글 뉴스 국내 소스로만** 계산한다. 과거 주차에는 해외 수집분이
+없어 섞으면 추이가 왜곡된다. 해외 건수는 별도 지표로 따로 보여준다.
+
+### 재수집이 기사를 잃지 않게
+
+RSS 창은 시간이 지나면 오래된 기사를 밀어낸다. 덮어쓰기로 재수집했더니 **서술의 각주 근거가
+사라져 빌드가 멈췄다.** 이제 같은 기간 파일이 있으면 합친다(제목 기준 중복 제거).
+
+### 필터가 한 곳에 있어야 하는 이유
+
+`aggregate.mjs` 가 `src/filter.mjs` 를 쓰지 않고 한국어 전용 규칙을 따로 갖고 있었다.
+그래서 해외 기사 155건이 전부 탈락했다. 공통 모듈로 통일했다.
