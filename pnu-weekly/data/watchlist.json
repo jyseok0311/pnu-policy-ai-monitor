@@ -17,18 +17,6 @@
       "note": "2026-09 수집 기사에서 '이재명 정부', '李대통령', '이 대통령' 3개 표기 확인."
     },
     {
-      "id": "pm",
-      "role": "국무총리",
-      "name": null,
-      "org": "국무조정실",
-      "aliases": [
-        "한 총리",
-        "韓총리",
-        "한총리"
-      ],
-      "note": "기사 표기는 '한 총리'/'韓총리'로 성씨만 확인됨. 전체 성명 확인 후 name 채울 것."
-    },
-    {
       "id": "mofe-minister",
       "role": "재정경제부 장관",
       "name": null,
@@ -97,16 +85,6 @@
       ],
       "channels": {},
       "site": "https://www.president.go.kr/"
-    },
-    {
-      "id": "opm",
-      "name": "국무조정실",
-      "aliases": [
-        "국무조정실",
-        "국무총리실"
-      ],
-      "channels": {},
-      "site": "https://www.opm.go.kr/"
     },
     {
       "id": "mofe",

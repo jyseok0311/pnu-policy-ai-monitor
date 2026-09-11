@@ -389,3 +389,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 body.only-view .shell{grid-template-columns:minmax(0,1fr)}
 body.only-view .main{padding-top:14px}
 @media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none;padding:9px} }
+/* 등록됐으나 이번 주 언급이 0인 워치리스트 항목 */
+.kpi.muted{background:#fbfbfc;border-style:dashed}
+.kpi.muted .val{color:#9ca3af}
+.kpi.muted .ch{color:#b6bcc6}

@@ -210,10 +210,10 @@ function renderWeek(w, sources) {
   const voices = !V ? '' : `
   <h2 class="sec">🗣 주요 인물·기관 동향 <small>기사 언급 집계 + 기관 공식 채널 · 개인 SNS 계정은 수집하지 않음</small></h2>
   ${V.persons.length ? `<div class="kpi-group"><h4>인물 (직책 기준)</h4><div class="kpis">${V.persons.map(p => `
-    <div class="kpi${p.risky ? '' : ' live'}">
+    <div class="kpi${p.n === 0 ? ' muted' : p.risky ? '' : ' live'}">
       <div class="n"><span>${esc(p.role)}</span></div>
       <div class="val" style="font-size:15px">${esc(p.who || p.role)}</div>
-      <div class="ch ${p.risky ? 'up' : 'flat'}">${p.n}건${p.risky ? ` · 위험신호 ${p.risky}` : ''}</div>
+      <div class="ch ${p.n === 0 ? 'flat' : p.risky ? 'up' : 'flat'}">${p.n}건${p.risky ? ` · 위험신호 ${p.risky}` : p.n === 0 ? ' · 이번 주 언급 없음' : ''}</div>
     </div>`).join('')}</div></div>` : ''}
   ${V.orgs.length ? `<div class="kpi-group"><h4>기관·단체</h4><div class="kpis">${V.orgs.map(o => `
     <div class="kpi${o.risky ? '' : ' live'}">
@@ -221,7 +221,6 @@ function renderWeek(w, sources) {
       <div class="val">${o.n}<small>건</small></div>
       <div class="ch ${o.risky ? 'up' : 'flat'}">${o.risky ? `위험신호 ${o.risky}건` : '—'}</div>
     </div>`).join('')}</div></div>` : ''}
-  ${V.quiet && V.quiet.length ? `<p class="note-line">추적 중이나 이번 주 언급 없음: ${V.quiet.map(esc).join(' · ')}</p>` : ''}
   ${V.vacant && V.vacant.length ? `<p class="note-line">직책만 등록되고 이름이 비어 있어 집계되지 않은 항목: ${V.vacant.map(esc).join(' · ')} — <code>data/watchlist.json</code> 에서 채우면 자동 집계됩니다.</p>` : ''}
   ${V.feeds && V.feeds.length ? `
   <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">${esc(V.feedNote || '')}</span></h4>

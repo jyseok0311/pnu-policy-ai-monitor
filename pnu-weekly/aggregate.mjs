@@ -220,15 +220,13 @@ const countIn = (keys) => {
 };
 const voices = {
   // 이름을 몰라도 별칭('한 총리')만 있으면 집계한다.
+  // 언급 0건이어도 카드로 보여준다. 워치리스트는 '누구를 보고 있는지' 자체가 정보다.
   persons: wl.persons.filter((p) => p.name || (p.aliases || []).length).map((p) => {
     const c = countIn([p.name, ...(p.aliases || [])].filter(Boolean));
     return { label: p.name ? `${p.name} ${p.role}` : p.role, who: p.name || '', role: p.role, ...c };
-  }).filter((x) => x.n).sort((a, b) => b.n - a.n),
+  }).sort((a, b) => b.n - a.n),
   // 이름·별칭이 모두 없어 집계 자체가 불가능한 직책만 '미등록'으로 표시
   vacantList: wl.persons.filter((p) => !p.name && !(p.aliases || []).length).map((p) => p.role),
-  // 이름은 등록됐지만 이번 주 언급이 0인 인물 — 추적 중임을 보여준다
-  quiet: wl.persons.filter((p) => p.name && !countIn([p.name, ...(p.aliases || [])].filter(Boolean)).n)
-    .map((p) => `${p.name} ${p.role}`),
   orgs: wl.orgs.map((o) => {
     const c = countIn([o.name, ...(o.aliases || [])]);
     return { label: o.name, ...c };
