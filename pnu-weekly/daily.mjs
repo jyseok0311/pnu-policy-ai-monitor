@@ -15,6 +15,9 @@ const J = (p) => JSON.parse(readFileSync(join(root, p), 'utf8'));
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 const meta = J('data/meta.json');
+// PDF 파일명은 주간과 같은 기준일(최신 주차 날짜)을 쓴다 — pdf.mjs 가 굽는 이름과 맞춰야 한다
+const weeksAll = J('data/weeks.json');
+const pdfPath = `pdf/PNU_Univ_Policy_AI_Daily(${weeksAll[0].date.replace(/-/g, '.')}).pdf`;
 const TH = J('data/thresholds.json');
 const files = readdirSync(join(root, 'data/collected')).filter((f) => f.endsWith('.json')).sort();
 
@@ -161,7 +164,7 @@ const html = `<!DOCTYPE html>
   </div>
   <div class="acts">
     <a class="btn" href="index.html">주간 리포트</a>
-    <button class="btn ghost" data-print>인쇄</button>
+    <a class="btn ghost" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf title="빌드 때 미리 생성한 일일 브리핑 PDF">PDF 다운로드</a>
   </div>
 </header>
 <main class="main">

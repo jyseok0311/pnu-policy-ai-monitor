@@ -30,11 +30,18 @@ const weeks = JSON.parse(readFileSync(join(root, 'data/weeks.json'), 'utf8'));
 const latest = weeks[0];
 const outDir = join(root, 'dist/pdf');
 mkdirSync(outDir, { recursive: true });
-const out = join(outDir, `PNU_Univ_Policy_AI_Weekly(${latest.date.replace(/-/g, '.')}).pdf`);
-const src = pathToFileURL(join(root, 'dist/index.html')).href;
+const stamp = latest.date.replace(/-/g, '.');
 
+// 주간·일간 두 산출물을 같은 방식으로 굽는다. --only weekly|daily 로 하나만 지정할 수 있다.
+const only = (() => { const i = process.argv.indexOf('--only'); return i > 0 ? process.argv[i + 1] : null; })();
+const TARGETS = [
+  { key: 'weekly', page: 'dist/index.html', file: `PNU_Univ_Policy_AI_Weekly(${stamp}).pdf`, label: '대학 정책 AI 주간 모니터링' },
+  { key: 'daily', page: 'dist/daily.html', file: `PNU_Univ_Policy_AI_Daily(${stamp}).pdf`, label: '대학 정책 AI 일일 브리핑' }
+].filter((t) => (!only || t.key === only) && existsSync(join(root, t.page)));
+
+if (!TARGETS.length) { console.error('✗ 대상 페이지가 없습니다. build.mjs / daily.mjs 를 먼저 실행하세요.'); process.exit(1); }
 console.log(`· 브라우저: ${chrome}`);
-console.log(`· 입력:     dist/index.html`);
+console.log(`· 대상:     ${TARGETS.map((t) => t.page).join(', ')}`);
 
 const proc = spawn(chrome, [
   '--headless=new', '--disable-gpu', '--no-sandbox',
@@ -84,11 +91,15 @@ try {
 
   await send('Page.enable');
   await send('Emulation.setEmulatedMedia', { media: 'print' });
+
+  for (const T of TARGETS) {
+  const src = pathToFileURL(join(root, T.page)).href;
+  const out = join(outDir, T.file);
+  loaded = false;
   await send('Page.navigate', { url: src });
 
   // 3) load 이벤트 + 지도/폰트 렌더 여유
   for (let i = 0; i < 80 && !loaded; i++) await sleep(250);
-  console.log(`· load 완료: ${loaded}`);
   await sleep(6000);
 
   // 아직 안 만들어진 지도까지 강제 생성 후 타일 대기
@@ -107,12 +118,13 @@ try {
     displayHeaderFooter: true,
     headerTemplate: '<span></span>',
     footerTemplate: `<div style="width:100%;font-size:8px;color:#6b7280;padding:0 12mm;display:flex;justify-content:space-between">
-      <span>부산대 AX·정보화혁신본부 AX혁신과 · 대학 정책 AI 주간 모니터링</span>
+      <span>부산대 AX·정보화혁신본부 AX혁신과 · ${T.label}</span>
       <span class="pageNumber"></span>/<span class="totalPages"></span></div>`
   });
 
   writeFileSync(out, Buffer.from(data, 'base64'));
-  console.log(`✓ dist/pdf/${out.split(/[\\/]/).pop()}  ${(statSync(out).size / 1024).toFixed(0)} KB`);
+  console.log(`✓ dist/pdf/${T.file}  ${(statSync(out).size / 1024).toFixed(0)} KB`);
+  }
 } catch (e) {
   console.error('✗ PDF 생성 실패:', e.message);
   process.exitCode = 1;
