@@ -91,12 +91,39 @@
     });
     map.addControl(new LocateCtl());
 
-    // 긴 보고서 안의 지도이므로 휠은 항상 페이지 스크롤에 양보한다.
-    // 확대/축소는 +/- 버튼, 더블클릭, 드래그, 또는 Ctrl+휠로만.
+    /* 휠 확대/축소 — 커서 위치를 기준으로 동작한다(Leaflet 기본).
+       다만 긴 보고서 한가운데의 지도라, 켜 두면 페이지를 스크롤해 지나갈 때 휠을 빼앗긴다.
+       그래서 '지도를 클릭하면 켜지고, 마우스가 벗어나면 꺼지는' 방식으로 둔다.
+       Ctrl+휠은 활성화 여부와 무관하게 항상 동작한다. */
+    map.scrollWheelZoom.disable();
+    var hint = L.DomUtil.create('div', 'map-wheel-hint', el);
+    hint.innerHTML = '지도를 클릭하면 <b>휠 확대/축소</b>가 켜집니다 · Ctrl+휠은 바로 가능';
+
+    function wheelOn() {
+      if (map._wheelOn) return;
+      map._wheelOn = true;
+      map.scrollWheelZoom.enable();
+      el.classList.add('wheel-on');
+      hint.innerHTML = '휠 확대/축소 <b>켜짐</b> — 커서 위치 기준 · 지도 밖으로 나가면 꺼짐';
+    }
+    function wheelOff() {
+      if (!map._wheelOn) return;
+      map._wheelOn = false;
+      map.scrollWheelZoom.disable();
+      el.classList.remove('wheel-on');
+      hint.innerHTML = '지도를 클릭하면 <b>휠 확대/축소</b>가 켜집니다 · Ctrl+휠은 바로 가능';
+    }
+    map.on('click', wheelOn);
+    map.on('mouseout', wheelOff);
+    el.addEventListener('mouseleave', wheelOff);
+    document.addEventListener('keydown', function (ev) { if (ev.key === 'Escape') wheelOff(); });
+
+    // Ctrl+휠은 언제나 동작 (커서 위치 기준으로 확대)
     el.addEventListener('wheel', function (ev) {
-      if (!ev.ctrlKey) return;
+      if (!ev.ctrlKey || map._wheelOn) return;
       ev.preventDefault();
-      map.setZoom(map.getZoom() + (ev.deltaY < 0 ? 0.5 : -0.5));
+      var pt = map.mouseEventToContainerPoint(ev);
+      map.setZoomAround(map.containerPointToLatLng(pt), map.getZoom() + (ev.deltaY < 0 ? 0.5 : -0.5));
     }, { passive: false });
   }
 

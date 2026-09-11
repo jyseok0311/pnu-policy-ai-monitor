@@ -74,7 +74,7 @@ function renderWeek(w, sources) {
      <span class="k" style="background:#c9a227"></span>일부
      <span class="k" style="background:#d9822b"></span>있음
      <span class="k" style="background:#b3261e"></span>높음).
-    마커에 마우스를 올리면 <b>소재지 · QS/THE 세계대학랭킹 · 주간 주요 키워드 · 대표 기사</b>가 표시됩니다.<br>
+    마커에 마우스를 올리면 <b>소재지 · QS/THE 세계대학랭킹 · 주간 주요 키워드 · 대표 기사</b>가 표시됩니다. 지도를 <b>클릭하면 휠 확대/축소</b>가 켜지고(커서 위치 기준), 마우스가 지도를 벗어나면 꺼집니다. Ctrl+휠은 클릭 없이도 동작합니다.<br>
     ── 정책 전달 경로 | - - - 예산 배분 경로(RISE) | ·· AI 인재양성 사업
     | 교란 요인: ${esc(w.map.legend.disturb)} | 완충: ${esc(w.map.legend.buffer)}
   </div>`;
