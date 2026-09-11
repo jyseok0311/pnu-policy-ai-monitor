@@ -273,7 +273,7 @@ export function renderPage({ meta, weeks, sources, css, js, pdfPath, world, joon
 <div class="trend">
   <h3>위험신호 비중 추이 (위기+경고, 최근 ${weeks.length}주)</h3>
   <div class="cap">막대를 클릭하면 해당 주차로 이동합니다. 외부 통계가 아니라 <b>수집 기사 분류 결과에서 파이프라인이 직접 산출</b>한 값입니다. 주차 간 비교가 공정하도록 <b>구글 뉴스 소스로 통일</b>해 계산했습니다(과거 주차는 언론사 RSS 소급이 불가).</div>
-  ${sparkline(weeks)}
+  <div class="spark-wrap">${sparkline(weeks)}</div>
 </div>
 
 ${weeks.map(w => renderWeek(w, sources)).join('\n')}

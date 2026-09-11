@@ -15,7 +15,10 @@
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:15px;line-height:1.6}
 a{color:var(--sky);text-decoration:none}
 a:hover{text-decoration:underline}
-.shell{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+.shell{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:100vh}
+/* 그리드 자식은 기본이 min-width:auto 라서 내부의 넓은 표·SVG 가 열을 밀어낸다.
+   그러면 가로 스크롤 컨테이너(.tbl 등)가 무력해지고 레이아웃 뷰포트까지 넓어진다. */
+.shell > *{min-width:0}
 
 /* sidebar */
 .side{background:#f7f8fa;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;padding:14px 0}
@@ -170,7 +173,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 #toast.on{transform:translateX(-50%) translateY(0)}
 
 @media (max-width:860px){
-  .shell{grid-template-columns:1fr}
+  .shell{grid-template-columns:minmax(0,1fr)}
   .side{position:static;height:auto;max-height:180px;border-right:0;border-bottom:1px solid var(--line)}
   .side ul{display:flex;flex-wrap:wrap;gap:2px 6px;padding:0 10px}
   .side li a{padding:4px 8px}
@@ -276,6 +279,113 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .map-hint .hint-ac b{color:#1f6b42}
 .map-hint .hint-ac b.bad{color:var(--crisis)}
 .map-hint .hint-ac span{color:var(--mute)}
+
+/* ══════════════ 모바일 최적화 ══════════════
+   375px 실측에서 나온 문제를 고친다.
+   - 헤더 194px, 제목 3줄, 버튼이 세로 한 글자씩 쌓임
+   - 사이드바가 상단 180px 점유
+   - 부문별 영향표 7열이 309px 로 눌림
+   - 스파크라인 라벨이 4px 로 축소돼 안 읽힘 */
+
+.spark-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+@media (max-width:640px){
+  html,body{font-size:14.5px}
+
+  /* 헤더 — 세로 스택, 버튼은 가로 3분할 */
+  .top{flex-direction:column;align-items:stretch;gap:12px;padding:16px}
+  .brand{gap:11px}
+  .logo{width:40px;height:40px;font-size:12px;flex:none}
+  .top h1{font-size:17px;line-height:1.25;word-break:keep-all}   /* 한국어는 어절 단위로 끊는다 */
+  .top .sub{font-size:12px;word-break:keep-all}
+  .top .acts{align-self:stretch;gap:6px}
+  .acts .btn{flex:1 1 0;min-width:0;padding:9px 4px;font-size:11.5px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+
+  /* 사이드바 — 2행 랩 대신 가로 스크롤 한 줄(칩) */
+  .side{max-height:none;padding:10px 0 8px}
+  .side .go{margin:0 12px 8px;padding:7px 10px;font-size:12px}
+  .side ul{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    padding:0 12px 4px;gap:6px;scrollbar-width:thin}
+  .side li{flex:none}
+  .side li a{border:1px solid var(--line);border-radius:14px;padding:5px 10px;
+    font-size:11.5px;white-space:nowrap;background:#fff}
+  .side li a.on{box-shadow:none;border-color:var(--navy);background:var(--sky-l)}
+
+  /* 본문 여백 */
+  .main{padding:0 12px 40px}
+  .week{padding:16px 13px;border-radius:8px}
+  .notice{padding:9px 11px;font-size:12.5px}
+
+  /* 주차 헤더 */
+  .wk-head{gap:8px}
+  .wk-title{font-size:19px}
+  .tier{font-size:14px;padding:5px 11px}
+  .state{font-size:16px}
+  .signal{font-size:12.5px;line-height:1.75}
+  .live-note{flex-wrap:wrap;font-size:11.5px;margin:-8px 0 16px}
+
+  /* 제목 */
+  h2.sec{font-size:15.5px;margin:24px 0 10px;flex-wrap:wrap}
+  h2.sec small{font-size:11.5px;flex-basis:100%}
+  h3.sub{font-size:14px;padding:5px 10px}
+
+  /* 지도 — 터치에서는 마커를 탭하면 팝업이 뜬다 */
+  .lmap{height:300px}
+  .map-wheel-hint{display:none}          /* 휠이 없는 환경 */
+  .map-hint{max-width:74vw;font-size:12px}
+  .world-legend{font-size:10.5px;padding:6px 8px;bottom:28px}
+  .legend{font-size:11.5px;line-height:1.65}
+
+  /* 추이 — 라벨이 읽히도록 최소 폭 확보 후 가로 스크롤 */
+  .trend{padding:14px 13px}
+  .trend h3{font-size:14px}
+  .spark{min-width:560px}
+
+  /* 지표 카드 — 2열 고정 */
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .kpi{padding:7px 9px}
+  .kpi .n{font-size:11px}
+  .kpi .val{font-size:15px}
+  .kpi .ch{font-size:11px}
+  .freq,.warn-src{font-size:9.5px;padding:1px 4px}
+
+  /* 표 — 눌리지 않게 최소 폭을 주고 가로 스크롤 */
+  .tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;
+    border:1px solid var(--line);border-radius:6px}
+  .tbl table{min-width:660px;margin-top:0}
+  .tbl th,.tbl td{padding:7px 6px;font-size:12px}
+  .tbl::after{content:"← 좌우로 밀어서 보기";display:block;font-size:10.5px;
+    color:var(--mute);padding:4px 8px;border-top:1px dashed var(--line);position:sticky;left:0}
+
+  /* 기사·전파경로·참고문헌 */
+  details.day summary{font-size:13px;padding:8px 10px}
+  .cat ul{font-size:12.5px}
+  .path{padding:9px 11px;font-size:12.5px}
+  .path .flow{font-size:12px}
+  .watch div{gap:4px}
+  .watch span{justify-self:start;padding:2px 9px}
+  .sum li{font-size:13.5px}
+  .diag ol,.diag li{font-size:13px}
+  .reflist li{grid-template-columns:28px 1fr;font-size:12.5px}
+  .reflist .meta{font-size:11px}
+  .chg{font-size:13px}
+  .chg .why{font-size:12px}
+
+  /* 일일 브리핑 기사 목록 */
+  .artlist li{grid-template-columns:40px 1fr;font-size:12.5px;padding:6px 0}
+  .artlist .lv{font-size:10px}
+
+  #toast{left:12px;right:12px;bottom:14px;transform:translateY(140%);max-width:none;font-size:12px}
+  #toast.on{transform:translateY(0)}
+}
+
+/* 아주 좁은 화면(360px 이하) — 375px(아이폰 표준)은 2열을 유지한다 */
+@media (max-width:360px){
+  .kpis{grid-template-columns:1fr}
+  .top h1{font-size:16px}
+  .acts .btn{font-size:11px;padding:8px 3px}
+}
 
 .artlist{list-style:none;margin:0;padding:0}
 .artlist li{display:grid;grid-template-columns:46px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
@@ -3041,7 +3151,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </ul></div>
   </details>
 </section>
-<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 03:59:08 · 데이터: data/collected/</p>
+<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 04:36:06 · 데이터: data/collected/</p>
 </main>
 </div>
 </div>
