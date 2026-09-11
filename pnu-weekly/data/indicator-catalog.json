@@ -1,0 +1,348 @@
+{
+  "_comment": "대학 모니터링 지표 후보 카탈로그. 갱신주기(cadence)별로 분류. 전 URL 2026-09-11 접속 확인(HTTP 200).",
+  "_checked": "2026-09-11",
+  "_cadence": [
+    "day",
+    "week",
+    "month",
+    "quarter",
+    "year"
+  ],
+  "_collect": {
+    "api": "OpenAPI 인증키 발급 후 자동 수집 가능",
+    "rss": "RSS 구독으로 자동 수집 가능",
+    "scrape": "공개 게시판 파싱 필요 (이용약관 확인)",
+    "file": "공공데이터포털 파일(CSV/XLSX) 정기 다운로드",
+    "internal": "학내 시스템에서 직접 집계",
+    "manual": "연 1~2회 수동 입력"
+  },
+  "day": [
+    {
+      "id": "moe-press",
+      "name": "교육부 보도자료",
+      "what": "고등교육 정책 발표 당일 포착 — 리포트 본문과 각주의 1차 소스",
+      "org": "교육부",
+      "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=294&m=020402&s=moe",
+      "collect": "scrape",
+      "priority": 1
+    },
+    {
+      "id": "korea-rss",
+      "name": "대한민국 정책브리핑 RSS",
+      "what": "전 부처 보도자료를 한 곳에서 RSS로 수신 — 부처별 개별 크롤링 대체",
+      "org": "문화체육관광부",
+      "url": "https://www.korea.kr/etc/rss.do",
+      "collect": "rss",
+      "priority": 1
+    },
+    {
+      "id": "msit-press",
+      "name": "과기정통부 보도자료",
+      "what": "AI·AX·디지털 인재양성 사업 공고 및 정책",
+      "org": "과학기술정보통신부",
+      "url": "https://www.msit.go.kr/bbs/list.do?sCode=user&mPid=112&mId=113",
+      "collect": "scrape",
+      "priority": 2
+    },
+    {
+      "id": "assembly-bill",
+      "name": "열린국회정보 OpenAPI (의안)",
+      "what": "고등교육법·사립학교법 등 법안 발의/소위/본회의 처리 상태를 일 단위로 추적",
+      "org": "국회사무처",
+      "url": "https://open.assembly.go.kr/portal/openapi/main.do",
+      "ref": "https://likms.assembly.go.kr/bill/main.do",
+      "collect": "api",
+      "priority": 1
+    },
+    {
+      "id": "g2b-bid",
+      "name": "나라장터 입찰공고정보서비스",
+      "what": "대학 발주 용역·사업 공고를 일 단위 수집 → 대학별 사업 추진 동향 및 경쟁대학 투자 방향 포착",
+      "org": "조달청",
+      "url": "https://www.data.go.kr/data/15129394/openapi.do",
+      "ref": "https://www.g2b.go.kr/",
+      "collect": "api",
+      "priority": 2
+    },
+    {
+      "id": "gosims",
+      "name": "e나라도움 국고보조금 공모",
+      "what": "신규 국고보조사업 공모 공고 — 지원 가능 사업 조기 포착",
+      "org": "기획재정부",
+      "url": "https://www.gosims.go.kr/",
+      "collect": "scrape",
+      "priority": 2
+    },
+    {
+      "id": "nrf",
+      "name": "한국연구재단 사업공고",
+      "what": "연구·교육 국책사업 공고 및 마감일",
+      "org": "한국연구재단",
+      "url": "https://www.nrf.re.kr/",
+      "collect": "scrape",
+      "priority": 2
+    },
+    {
+      "id": "work24",
+      "name": "고용24(워크넷) 채용정보",
+      "what": "부산권·전공별 채용 수요 → 학과 구조개편 근거 및 취업 연계 신호",
+      "org": "고용노동부",
+      "url": "https://www.work24.go.kr/",
+      "collect": "api",
+      "priority": 3
+    },
+    {
+      "id": "self-news",
+      "name": "[자체산출] 기사 수집량·위험신호 비중",
+      "what": "수집 기사 분류 결과 집계 — 외부 의존 없이 매일 변하는 핵심 지표",
+      "org": "파이프라인",
+      "url": null,
+      "collect": "internal",
+      "priority": 1
+    },
+    {
+      "id": "self-agent",
+      "name": "[내부] 행정 AI 에이전트 사용량",
+      "what": "호출 수·처리 건수·절감 시간 — AX 성과의 유일한 일 단위 실측치",
+      "org": "AX혁신과",
+      "url": null,
+      "collect": "internal",
+      "priority": 1
+    }
+  ],
+  "week": [
+    {
+      "id": "self-field",
+      "name": "[자체산출] 분야별 기사 비중",
+      "what": "거버넌스/재정/입시/AI 각 분야 기사량과 전주 대비 증감",
+      "org": "파이프라인",
+      "url": null,
+      "collect": "internal",
+      "priority": 1
+    },
+    {
+      "id": "self-keyword",
+      "name": "[자체산출] 급상승 키워드",
+      "what": "전주 대비 출현 빈도 급증 키워드 상위 N — 신규 이슈 조기 경보",
+      "org": "파이프라인",
+      "url": null,
+      "collect": "internal",
+      "priority": 1
+    },
+    {
+      "id": "self-mention",
+      "name": "[자체산출] 대학별 언급량 비교",
+      "what": "부산대 vs 거점국립대 9곳 주간 언급량 — 리스크 지도 마커 강도의 근거",
+      "org": "파이프라인",
+      "url": null,
+      "collect": "internal",
+      "priority": 1
+    },
+    {
+      "id": "assembly-agenda",
+      "name": "국회 교육위 의사일정",
+      "what": "주간 상임위 안건 — 다음 주 정책 리스크 예보",
+      "org": "국회사무처",
+      "url": "https://open.assembly.go.kr/portal/openapi/main.do",
+      "collect": "api",
+      "priority": 2
+    },
+    {
+      "id": "g2b-weekly",
+      "name": "대학 발주 공고 주간 집계",
+      "what": "건수·금액을 주 단위로 롤업 (day: g2b-bid 재가공)",
+      "org": "조달청",
+      "url": "https://www.data.go.kr/data/15129394/openapi.do",
+      "collect": "api",
+      "priority": 3
+    },
+    {
+      "id": "adiga-rate",
+      "name": "수시·정시 실시간 경쟁률",
+      "what": "원서접수 기간(9월·12월) 한정으로 시간 단위 변동 — 해당 주에만 주간 지표로 승격",
+      "org": "한국대학교육협의회",
+      "url": "https://www.adiga.kr/",
+      "collect": "scrape",
+      "priority": 2,
+      "seasonal": true
+    }
+  ],
+  "month": [
+    {
+      "id": "kosis-employ",
+      "name": "KOSIS 고용동향 (지역별 청년 고용률)",
+      "what": "부산 15~29세 고용률·실업률 — 지역 인재 유출의 선행 신호",
+      "org": "통계청",
+      "url": "https://kosis.kr/openapi/index/index.jsp",
+      "collect": "api",
+      "priority": 1
+    },
+    {
+      "id": "kosis-move",
+      "name": "KOSIS 국내인구이동통계",
+      "what": "부산 20대 순유출 — 학령인구 지표 중 유일하게 월 단위로 움직이는 값",
+      "org": "통계청",
+      "url": "https://kosis.kr/openapi/index/index.jsp",
+      "collect": "api",
+      "priority": 1
+    },
+    {
+      "id": "moj-intl",
+      "name": "월별 외국인 유학생 국적별 현황",
+      "what": "D-2(유학)·D-4(연수) 체류자 월별 증감 — 유학생 충원 전략의 실시간 근거",
+      "org": "법무부 출입국·외국인정책본부",
+      "url": "https://www.data.go.kr/data/15100039/fileData.do",
+      "collect": "file",
+      "priority": 1
+    },
+    {
+      "id": "kosis-cpi",
+      "name": "KOSIS 소비자물가 (대학등록금 지수)",
+      "what": "등록금 규제 논의의 물가 대비 맥락",
+      "org": "통계청",
+      "url": "https://kosis.kr/openapi/index/index.jsp",
+      "collect": "api",
+      "priority": 3
+    },
+    {
+      "id": "index-go",
+      "name": "e-나라지표 고등교육 지표",
+      "what": "부처가 관리하는 공식 지표의 갱신 시점 추적",
+      "org": "국무조정실",
+      "url": "https://www.index.go.kr/",
+      "collect": "scrape",
+      "priority": 3
+    }
+  ],
+  "quarter": [
+    {
+      "id": "kosis-region",
+      "name": "KOSIS 지역경제동향",
+      "what": "부산 지역 생산·소비·고용 — RISE 성과지표의 배경",
+      "org": "통계청",
+      "url": "https://kosis.kr/openapi/index/index.jsp",
+      "collect": "api",
+      "priority": 2
+    },
+    {
+      "id": "academyinfo-adhoc",
+      "name": "대학알리미 수시공시 항목",
+      "what": "연중 수시로 갱신되는 공시 항목만 선별 추적",
+      "org": "한국대학교육협의회",
+      "url": "https://www.academyinfo.go.kr/",
+      "collect": "api",
+      "priority": 3
+    }
+  ],
+  "year": [
+    {
+      "id": "academyinfo",
+      "name": "대학알리미 정보공시",
+      "what": "충원율·재정·교원·등록금 등 핵심 공시. 4·6·8·10월 공시이며 항목별로 연 1~2회 + 수시 — '연 1회'가 아님",
+      "org": "한국대학교육협의회",
+      "url": "https://www.academyinfo.go.kr/",
+      "api": "https://www.data.go.kr/data/15037507/openapi.do",
+      "collect": "api",
+      "priority": 1
+    },
+    {
+      "id": "kess",
+      "name": "교육통계서비스(KESS) 교육통계연보",
+      "what": "4월 1일 기준 전수 통계, 연 1회 공표 — 시계열 기준선",
+      "org": "한국교육개발원",
+      "url": "https://kess.kedi.re.kr/index",
+      "collect": "file",
+      "priority": 1
+    },
+    {
+      "id": "adiga-result",
+      "name": "대교협 어디가 입시결과·전형시행계획",
+      "what": "최종 경쟁률·충원율·입결",
+      "org": "한국대학교육협의회",
+      "url": "https://www.adiga.kr/",
+      "ref": "https://www.kcue.or.kr/",
+      "collect": "scrape",
+      "priority": 1
+    },
+    {
+      "id": "fiscal",
+      "name": "열린재정 교육부 예산·결산",
+      "what": "고등교육 예산 총액 및 세부사업별 배분",
+      "org": "기획재정부",
+      "url": "https://www.openfiscaldata.go.kr/",
+      "collect": "api",
+      "priority": 1
+    },
+    {
+      "id": "qs",
+      "name": "QS 세계·아시아 대학순위",
+      "what": "매년 6월(세계)·11월(아시아) 공표",
+      "org": "Quacquarelli Symonds",
+      "url": "https://www.topuniversities.com/world-university-rankings",
+      "collect": "manual",
+      "priority": 2
+    },
+    {
+      "id": "the",
+      "name": "THE 세계대학순위",
+      "what": "매년 10월 전후 공표. 하위권은 구간(801–1000)으로 표기됨",
+      "org": "Times Higher Education",
+      "url": "https://www.timeshighereducation.com/world-university-rankings",
+      "collect": "manual",
+      "priority": 2
+    },
+    {
+      "id": "joongang",
+      "name": "중앙일보 대학평가",
+      "what": "전용 사이트 univ.joongang.co.kr 는 2026-09-11 기준 403 — 평가 지속 여부 확인 필요",
+      "org": "중앙일보",
+      "url": "https://www.joongang.co.kr/",
+      "collect": "manual",
+      "priority": 3,
+      "status": "dead"
+    },
+    {
+      "id": "edpolicy",
+      "name": "교육정책네트워크 정책자료",
+      "what": "국내외 고등교육 정책 동향 보고서 — 서술 근거 보강용",
+      "org": "한국교육개발원",
+      "url": "https://edpolicy.kedi.re.kr/",
+      "collect": "scrape",
+      "priority": 3
+    }
+  ],
+  "_newsCollection": {
+    "note": "빅카인즈 유료 전환에 따른 대안 수집 경로. collect.mjs 구현·검증 완료(2026-09-11, 7일 612건).",
+    "tiers": [
+      {
+        "tier": "1차 · 공공누리",
+        "what": "보도자료·법안·공고 — 전문 인용 가능, 서술 근거",
+        "sources": [
+          "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=294&m=020402&s=moe",
+          "https://www.data.go.kr/data/15074632/openapi.do",
+          "https://open.assembly.go.kr/portal/openapi/main.do"
+        ]
+      },
+      {
+        "tier": "2차 · 구글 뉴스 RSS",
+        "what": "이슈 탐지·건수 집계. 링크가 리디렉션 URL인 점 유의",
+        "sources": [
+          "https://news.google.com/rss/search?q=<키워드>&hl=ko&gl=KR&ceid=KR:ko"
+        ]
+      },
+      {
+        "tier": "3차 · 언론사 RSS",
+        "what": "각주 원문 링크 확보",
+        "sources": [
+          "https://news.unn.net/rss/allArticle.xml",
+          "https://www.kyosu.net/rss/allArticle.xml",
+          "https://www.veritas-a.com/rss/allArticle.xml",
+          "https://www.unipress.co.kr/rss/allArticle.xml"
+        ]
+      }
+    ],
+    "copyright": "한국언론진흥재단은 저작권법 105조 뉴스저작물 신탁관리기관(103개 언론사). 625개 공공기관이 뉴스저작권 상품 이용 중 — 크롤링 우회로도 본문 저장·배포는 동일한 문제. 본문 미저장 설계가 근본 해법.",
+    "policy": "유료 구매 경로 미사용(빅카인즈·건별 기사 구매 모두 제외). 전 구간 무료·공개 소스로만 운영한다.",
+    "fallback": "본문이 필요해 보이면 ① 보도자료 원문 ② 의안·공고 원문 ③ 언론사 직접 이용허락 문의 ④ 그래도 안 되면 제목·링크·건수로만 다루고 서술하지 않음."
+  }
+}

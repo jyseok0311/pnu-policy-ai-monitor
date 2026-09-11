@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대학 정책 AI 주간 모니터링 | PNU</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --navy:#1a2b4c; --navy-2:#243a63; --sky:#3b7dd8; --sky-l:#e6eef9;
+  --bg:#eef0f3; --paper:#fff; --ink:#1f2937; --mute:#6b7280; --line:#d9dee6;
+  --crisis:#b3261e; --warn:#d9822b; --watch:#c9a227; --ok:#2f8f5b;
+  --thead:#e3e9f2;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:15px;line-height:1.6}
+a{color:var(--sky);text-decoration:none}
+.shell{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+/* sidebar */
+.side{background:#f7f8fa;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;padding:14px 0}
+.side .go{display:block;margin:0 14px 12px;padding:8px 12px;background:var(--navy);color:#fff;border-radius:6px;font-size:13px;font-weight:600;text-align:center}
+.side ul{list-style:none;margin:0;padding:0}
+.side li a{display:flex;align-items:center;gap:8px;padding:6px 16px;font-size:12.5px;color:#374151}
+.side li a:hover,.side li a.on{background:var(--sky-l);color:var(--navy)}
+.dot{width:8px;height:8px;border-radius:50%;flex:none}
+.d4{background:var(--crisis)}.d3{background:var(--warn)}.d2{background:var(--watch)}.d1{background:var(--ok)}
+/* header */
+.top{background:var(--navy);color:#fff;padding:22px 32px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{width:48px;height:48px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-weight:800;font-size:14px;letter-spacing:.5px}
+.top h1{margin:0;font-size:22px;font-weight:700}
+.top .sub{font-size:13px;opacity:.85;margin-top:3px}
+.pdf{background:#fff;color:var(--navy);border-radius:6px;padding:6px 12px;font-size:12px;font-weight:700;align-self:center}
+.main{padding:0 32px 60px}
+.notice{border-left:3px solid var(--sky);background:#f8fafc;padding:10px 14px;font-size:13px;color:#4b5563;margin:18px 0}
+/* week card */
+.week{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px 28px;margin-bottom:30px}
+.wk-head{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.tier{background:var(--crisis);color:#fff;font-weight:800;border-radius:6px;padding:6px 14px;font-size:16px}
+.tier.t3{background:var(--warn)}.tier.t2{background:var(--watch)}.tier.t1{background:var(--ok)}
+.wk-title{font-size:22px;font-weight:800;line-height:1.2}
+.wk-range{font-size:13px;color:var(--mute)}
+.state{margin-left:auto;font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px}
+.state .dot{width:14px;height:14px}
+.state.t4{color:var(--crisis)}.state.t3{color:var(--warn)}
+.signal{margin:12px 0 22px;font-size:13.5px;color:#374151}
+.signal b{color:var(--ink)}
+h2.sec{font-size:17px;font-weight:800;margin:30px 0 12px;display:flex;align-items:center;gap:8px}
+h2.sec::before{content:"";width:12px;height:12px;background:var(--navy)}
+h3.sub{background:var(--thead);color:var(--navy);font-size:15px;font-weight:700;padding:6px 12px;margin:18px 0 8px;border-radius:4px}
+/* map */
+.mapbox{background:#dfe3e9;border-radius:8px;position:relative;overflow:hidden;border:1px solid var(--line)}
+.mapbox svg{display:block;width:100%;height:auto}
+.legend{font-size:12.5px;color:#4b5563;margin-top:10px;line-height:1.7}
+.legend .k{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle;margin-right:4px}
+/* summary */
+.sum ul{margin:0;padding-left:20px}
+.sum li{margin:6px 0}
+sup.ref{font-size:10px;color:var(--sky);margin-left:2px}
+/* articles */
+details.day{border:1px solid var(--line);border-radius:6px;margin:6px 0;background:#fafbfc}
+details.day summary{cursor:pointer;padding:8px 12px;font-weight:700;font-size:14px;list-style:none;display:flex;justify-content:space-between}
+details.day summary::-webkit-details-marker{display:none}
+details.day summary::after{content:"＋";color:var(--mute)}
+details.day[open] summary::after{content:"－"}
+.cat{padding:4px 14px 10px}
+.cat h4{margin:8px 0 3px;font-size:13px;color:var(--navy)}
+.cat ul{margin:0;padding-left:16px;font-size:13px;color:#374151}
+.cat li{margin:2px 0}
+.cat .more{color:var(--mute);font-size:12px}
+/* changes */
+.chg{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:14px;margin:6px 0}
+.chg .arrow{font-weight:800}
+.up{color:var(--crisis)}.down{color:var(--sky)}
+.chg .v{font-weight:700}
+.chg .why{color:#4b5563;font-size:13px}
+/* watch */
+.watch{display:grid;gap:8px}
+.watch div{display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:14px;align-items:start}
+.watch span{background:var(--sky-l);color:var(--navy);border-radius:4px;padding:2px 8px;font-size:12.5px;font-weight:700;text-align:center}
+/* indicators */
+.kpi-group{margin:14px 0}
+.kpi-group h4{margin:0 0 6px;font-size:13.5px;color:var(--navy);font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.kpi{background:#fafbfc;border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+.kpi .n{font-size:12px;color:var(--mute);display:flex;justify-content:space-between}
+.kpi .val{font-size:17px;font-weight:800;margin:2px 0}
+.kpi .val small{font-size:11px;font-weight:600;color:var(--mute);margin-left:2px}
+.kpi .ch{font-size:12px;font-weight:700}
+/* paths */
+.path{background:#fafbfc;border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13.5px}
+.path .tag{display:inline-block;background:var(--crisis);color:#fff;font-size:11px;border-radius:3px;padding:1px 6px;margin-right:6px;font-weight:700}
+.path .tag.w{background:var(--warn)}
+.path b{color:var(--navy)}
+.path .flow{margin-top:4px;color:#374151}
+/* table */
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th{background:var(--thead);color:var(--navy);font-weight:700;padding:8px 6px;text-align:left;border:1px solid var(--line)}
+td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
+.lv{display:inline-block;border-radius:3px;padding:1px 7px;font-size:12px;font-weight:700;color:#fff}
+.lv.s{background:var(--crisis)}.lv.i{background:var(--warn)}.lv.m{background:var(--watch)}.lv.l{background:#94a3b8}
+.dir{font-weight:700}
+/* diag */
+.diag h4{margin:14px 0 6px;font-size:14px;color:var(--navy)}
+.diag ol{margin:0;padding-left:20px;font-size:14px}
+.diag li{margin:6px 0}
+.foot{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;font-size:13px;color:var(--mute)}
+.sample{display:inline-block;background:#fff3cd;color:#7a5a00;border:1px solid #ffe08a;border-radius:4px;font-size:12px;padding:2px 8px;font-weight:700}
+@media (max-width:860px){
+  .shell{grid-template-columns:1fr}
+  .side{position:static;height:auto;max-height:180px;border-right:0;border-bottom:1px solid var(--line)}
+  .side ul{display:flex;flex-wrap:wrap;gap:2px 6px;padding:0 10px}
+  .side li a{padding:4px 8px}
+  .top,.main{padding-left:16px;padding-right:16px}
+  .week{padding:18px 16px}
+  .state{margin-left:0;width:100%}
+  .watch div,.chg{grid-template-columns:1fr}
+  .tbl{overflow:auto}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <a class="go" href="#">Go To Daily ›</a>
+  <ul>
+    <li><a class="on" href="#w36"><i class="dot d3"></i>2026.09.07 (Week 36)</a></li>
+    <li><a href="#w35"><i class="dot d3"></i>2026.08.31 (Week 35)</a></li>
+    <li><a href="#"><i class="dot d2"></i>2026.08.24 (Week 34)</a></li>
+    <li><a href="#"><i class="dot d2"></i>2026.08.17 (Week 33)</a></li>
+    <li><a href="#"><i class="dot d2"></i>2026.08.10 (Week 32)</a></li>
+    <li><a href="#"><i class="dot d1"></i>2026.08.03 (Week 31)</a></li>
+    <li><a href="#"><i class="dot d1"></i>2026.07.27 (Week 30)</a></li>
+    <li><a href="#"><i class="dot d2"></i>2026.07.20 (Week 29)</a></li>
+    <li><a href="#"><i class="dot d2"></i>2026.07.13 (Week 28)</a></li>
+    <li><a href="#"><i class="dot d3"></i>2026.07.06 (Week 27)</a></li>
+    <li><a href="#"><i class="dot d2"></i>2026.06.29 (Week 26)</a></li>
+    <li><a href="#"><i class="dot d1"></i>2026.06.22 (Week 25)</a></li>
+    <li><a href="#"><i class="dot d1"></i>2026.06.15 (Week 24)</a></li>
+    <li><a href="#"><i class="dot d2"></i>2026.06.08 (Week 23)</a></li>
+    <li><a href="#"><i class="dot d2"></i>2026.06.01 (Week 22)</a></li>
+    <li><a href="#"><i class="dot d1"></i>2026.05.25 (Week 21)</a></li>
+  </ul>
+</aside>
+
+<div>
+<header class="top">
+  <div class="brand">
+    <div class="logo">PNU</div>
+    <div>
+      <h1>대학 정책 AI 주간 모니터링</h1>
+      <div class="sub">부산대학교 AX혁신과 · ax@pusan.ac.kr</div>
+    </div>
+  </div>
+  <a class="pdf" href="#">PDF</a>
+</header>
+
+<main class="main">
+<p class="notice">본 리포트는 고등교육 정책 도메인 지식 그래프와 주간 국내외 기사를 기반으로 생성형 AI가 작성한 것으로 부산대학교의 공식 의견이 아님을 밝힙니다. <span class="sample">아래 수치·기사는 서비스 기획용 샘플 데이터입니다</span></p>
+
+<!-- ===================== WEEK 36 ===================== -->
+<section class="week" id="w36">
+  <div class="wk-head">
+    <span class="tier t3">Tier 3 경계</span>
+    <div>
+      <div class="wk-title">2026.09.07 (Week 36)</div>
+      <div class="wk-range">기사수집기간: 2026.08.31~2026.09.06</div>
+    </div>
+    <div class="state t3"><i class="dot d3"></i>Warning</div>
+  </div>
+  <div class="signal">신호: <b>Crisis 6.2%</b> | <b>Warning 31.4%</b> | 합산 37.6% | 총 1,842건 | 추세: <b>rising</b></div>
+
+  <h2 class="sec">🗺 거점국립대 정책 리스크 지도</h2>
+  <div class="mapbox">
+  <svg viewBox="0 0 520 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="거점국립대 정책 리스크 지도">
+    <defs><pattern id="g" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke="#cfd5de" stroke-width=".6"/></pattern></defs>
+    <rect width="520" height="560" fill="url(#g)"/>
+    <!-- 한반도 남부 약식 외곽 -->
+    <path d="M170 60 L215 22 L370 8 L395 55 L430 190 L440 300 L425 355 L385 385 L295 405 L150 420 L105 375 L120 300 L118 235 L85 180 L125 130 Z" fill="#f4f6f8" stroke="#aab3bf" stroke-width="1.5"/>
+    <ellipse cx="205" cy="505" rx="45" ry="20" fill="#f4f6f8" stroke="#aab3bf" stroke-width="1.5"/>
+    <!-- 이슈 전파 경로 (교육부 → 지역) -->
+    <path d="M160 100 C 240 140, 300 200, 385 300" stroke="#3b7dd8" stroke-width="2" fill="none"/>
+    <path d="M160 100 C 200 180, 190 260, 190 300" stroke="#3b7dd8" stroke-width="2" fill="none" stroke-dasharray="6 5"/>
+    <path d="M160 100 C 260 120, 300 200, 315 240" stroke="#c9a227" stroke-width="2" fill="none" stroke-dasharray="3 4"/>
+    <!-- 대학 마커: 위험도별 색/크기 -->
+    <g font-size="11" font-family="Pretendard,sans-serif" fill="#374151">
+      <circle cx="160" cy="100" r="7" fill="#3b7dd8"/><text x="172" y="96">서울대</text>
+      <circle cx="255" cy="70" r="7" fill="#c9a227"/><text x="266" y="66">강원대</text>
+      <circle cx="220" cy="150" r="7" fill="#c9a227"/><text x="232" y="146">충북대</text>
+      <circle cx="205" cy="185" r="7" fill="#c9a227"/><text x="140" y="188">충남대</text>
+      <circle cx="315" cy="240" r="10" fill="#d9822b"/><text x="330" y="236">경북대</text>
+      <circle cx="190" cy="300" r="7" fill="#c9a227"/><text x="125" y="303">전북대</text>
+      <circle cx="160" cy="345" r="8" fill="#d9822b"/><text x="95" y="349">전남대</text>
+      <circle cx="285" cy="330" r="7" fill="#c9a227"/><text x="230" y="352">경상국립대</text>
+      <circle cx="385" cy="300" r="15" fill="#b3261e" stroke="#fff" stroke-width="3"/><text x="404" y="304" font-weight="800" fill="#b3261e">부산대</text>
+      <circle cx="205" cy="505" r="7" fill="#2f8f5b"/><text x="218" y="509">제주대</text>
+    </g>
+    <text x="14" y="545" font-size="10.5" fill="#6b7280" font-family="Pretendard,sans-serif">Schematic map · 거점국립대 10개교 · 크기·색상 = 주간 리스크 신호 강도</text>
+  </svg>
+  </div>
+  <div class="legend">
+    <span class="k" style="background:var(--crisis)"></span>주요: 국립대 통합·거버넌스 재편 | <span class="k" style="background:var(--warn)"></span>부차: 신입생 충원율 하락, 재정 압박<br>
+    ── 정책 전달 경로 | - - - 예산 배분 경로(RISE) | ·· AI 인재양성 사업 | 교란 요인: 학령인구 감소, 등록금 규제, 지역 인재 유출, 공공기관 통폐합 | 완충: 글로컬대학 사업, RISE 체계, AI 교육 국비, 부산 남부 해양수도 구상
+  </div>
+
+  <h2 class="sec">상황 요약</h2>
+  <div class="sum">
+    <h3 class="sub">국립대 거버넌스·통합</h3>
+    <ul>
+      <li>이번 주(8월 31일~9월 6일) 정부의 2차 행정·공공기관 통폐합 발표와 맞물려 <b>거점국립대 기능 재편 논의</b>가 재점화됐다. 9월 3일 교육부는 거점국립대 연합체계 구축 로드맵 초안을 공개하고 하반기 공청회를 예고했다<sup class="ref">[11][12]</sup>.</li>
+      <li>9월 4일 국립대 총장협의회는 재정 자율성 없는 통합은 실효성이 없다는 입장을 발표했고, 부산 지역 정치권은 남부권 해양수도 구상과 연계한 <b>부산대 역할 강화</b>를 주장했다<sup class="ref">[15]</sup>.</li>
+    </ul>
+    <h3 class="sub">학령인구·충원</h3>
+    <ul>
+      <li>9월 1일 2027학년도 수시 원서접수가 시작된 가운데, 비수도권 거점국립대의 수시 경쟁률은 전년 대비 소폭 하락한 것으로 집계됐다<sup class="ref">[3]</sup>. 2027학년도 대학 입학 가능 인원은 전년 대비 약 3% 감소할 것으로 추정된다.</li>
+      <li>9월 5일 발표된 대학기본역량진단 후속 지표 개편안에서 <b>신입생 충원율 가중치가 상향</b>돼, 지역 대학의 재정 지원 연계 리스크가 커졌다<sup class="ref">[8]</sup>.</li>
+    </ul>
+    <h3 class="sub">AI·AX 정책</h3>
+    <ul>
+      <li>9월 2일 과기정통부·교육부 합동으로 대학 AX 선도모델 사업 2차 공모가 공고됐다<sup class="ref">[21]</sup>. 행정 AX와 교육 AX를 분리 평가하는 구조로, 행정 자동화 실증 사례 보유 대학에 가점이 부여된다.</li>
+      <li>9월 6일 국회 교육위는 대학 생성형 AI 활용 가이드라인 법제화를 논의했으며, 학습 데이터 보호와 평가 공정성 조항이 쟁점으로 부상했다<sup class="ref">[24]</sup>.</li>
+    </ul>
+    <h3 class="sub">재정</h3>
+    <ul>
+      <li>2027년 교육부 예산안에서 고등교육 예산은 전년 대비 +4.1% 증가했으나, RISE 체계 전환에 따라 <b>대학 직접 지원 비중은 감소</b>하고 지자체 경유 비중이 확대됐다<sup class="ref">[5]</sup>. 등록금 인상률 상한은 법정 기준 대비 사실상 동결 기조가 유지될 전망이다.</li>
+    </ul>
+    <h3 class="sub">부산대 영향</h3>
+    <ul>
+      <li>부산시 RISE 2차년도 배분안에서 부산대 몫은 전년 수준을 유지했으나, AI·반도체 분야 배분이 확대되고 인문·기초과학 배분이 축소됐다<sup class="ref">[17]</sup>. AX 선도모델 2차 공모는 AI 마에스트로 등 행정 AX 실증 실적을 직접 활용할 수 있는 기회로 평가된다.</li>
+    </ul>
+    <h3 class="sub">종합</h3>
+    <ul>
+      <li>기사 기반 위험신호 비중(위기+경고)은 전주 33.9%에서 37.6%로 상승했다. 거버넌스 재편 논의가 단기 불확실성을 키우는 반면, AX 공모·RISE 배분 등 확보 가능한 재원은 확대되고 있어 <b>압박과 기회가 병존하는 국면</b>으로 판단된다.</li>
+    </ul>
+  </div>
+
+  <h2 class="sec">📰 주간 참조 기사 (1,842건 · 7일)</h2>
+  <details class="day" open><summary><span>8/31(월) — 212건</span></summary>
+    <div class="cat">
+      <h4>거버넌스 · 국내 (34건)</h4>
+      <ul><li>공공기관 2차 통폐합안 발표… 국립대 재편 논의로 불똥</li><li>거점국립대 연합 모델, 이번엔 다를까</li><li>지역 국회의원들 "국립대 통합은 지역 소멸 가속"</li><li class="more">… 외 31건</li></ul>
+      <h4>입시·학령인구 · 국내 (48건)</h4>
+      <ul><li>2027 수시 원서접수 D-1… 지방 국립대 '경쟁률 방어' 총력</li><li>2027학년도 입학가능인원 3% 감소 전망</li><li class="more">… 외 46건</li></ul>
+      <h4>AI·디지털 · 해외 (19건)</h4>
+      <ul><li>OECD, 고등교육 AI 활용 지침 개정판 발표</li><li>미국 주립대 연합, 행정 업무 AI 에이전트 공동 조달 착수</li><li class="more">… 외 17건</li></ul>
+    </div>
+  </details>
+  <details class="day"><summary><span>9/1(화) — 298건</span></summary>
+    <div class="cat">
+      <h4>입시·학령인구 · 국내 (81건)</h4>
+      <ul><li>2027 수시 접수 시작… 거점국립대 첫날 경쟁률 전년 대비 하락</li><li class="more">… 외 80건</li></ul>
+      <h4>재정 · 국내 (37건)</h4>
+      <ul><li>2027 교육부 예산안, 고등교육 4.1%↑… RISE 지자체 경유분 확대</li><li class="more">… 외 36건</li></ul>
+    </div>
+  </details>
+  <details class="day"><summary><span>9/2(수) — 271건</span></summary>
+    <div class="cat">
+      <h4>AI·디지털 · 국내 (52건)</h4>
+      <ul><li>대학 AX 선도모델 2차 공모… 행정·교육 분리 평가</li><li>부산대, 행정직원 AI 에이전트 교육 3기 성과 공유</li><li class="more">… 외 50건</li></ul>
+    </div>
+  </details>
+  <details class="day"><summary><span>9/3(목) — 305건</span></summary>
+    <div class="cat"><h4>거버넌스 · 국내 (67건)</h4><ul><li>교육부, 거점국립대 연합체계 로드맵 초안 공개</li><li class="more">… 외 66건</li></ul></div>
+  </details>
+  <details class="day"><summary><span>9/4(금) — 289건</span></summary>
+    <div class="cat"><h4>거버넌스 · 국내 (58건)</h4><ul><li>국립대 총장협 "재정 자율성 없는 통합 반대"</li><li>부산 정치권, 해양수도 구상에 부산대 역할 강화 요구</li><li class="more">… 외 56건</li></ul></div>
+  </details>
+  <details class="day"><summary><span>9/5(토) — 241건</span></summary>
+    <div class="cat"><h4>재정 · 국내 (29건)</h4><ul><li>대학 진단 후속 지표 개편… 충원율 가중치 상향</li><li class="more">… 외 28건</li></ul></div>
+  </details>
+  <details class="day"><summary><span>9/6(일) — 226건</span></summary>
+    <div class="cat"><h4>AI·디지털 · 국내 (31건)</h4><ul><li>국회 교육위, 대학 생성형 AI 가이드라인 법제화 논의</li><li class="more">… 외 30건</li></ul></div>
+  </details>
+
+  <h2 class="sec">전주 대비 주요 변화</h2>
+  <div class="chg"><span class="arrow up">🔺</span><div><span class="v">위험신호 비중 33.9% → 37.6%</span><div class="why">거버넌스 재편 관련 기사 급증(+41%)으로 경고 신호 확대</div></div></div>
+  <div class="chg"><span class="arrow down">🔻</span><div><span class="v">거점국립대 수시 경쟁률(첫날) 6.8 → 6.3</span><div class="why">비수도권 지원 감소 추세 지속. 마감 후 확정치 재확인 필요</div></div></div>
+  <div class="chg"><span class="arrow up">🔺</span><div><span class="v">AI·디지털 기사 비중 14.2% → 19.8%</span><div class="why">AX 선도모델 2차 공모 및 가이드라인 법제화 논의 영향</div></div></div>
+  <div class="chg"><span class="arrow up">🔺</span><div><span class="v">고등교육 예산(2027안) 전년 대비 +4.1%</span><div class="why">총액 증가에도 대학 직접 지원 비중은 축소 — 지자체 경유 구조 강화</div></div></div>
+  <div class="chg"><span class="arrow down">🔻</span><div><span class="v">부산 RISE 인문·기초과학 배분 -8.5%</span><div class="why">AI·반도체 분야 우선 배분에 따른 상대적 축소</div></div></div>
+
+  <h2 class="sec">향후 주시 포인트</h2>
+  <div class="watch">
+    <div><span>초기(0-4주)</span>거점국립대 연합체계 공청회 일정 및 부산대 입장 정리 시점 — 재정·인사 자율성 조항 포함 여부가 핵심</div>
+    <div><span>초기(0-4주)</span>2027 수시 최종 경쟁률·충원율 확정 후 진단 지표 개편안과의 연계 영향 산출</div>
+    <div><span>중기(4-12주)</span>대학 AX 선도모델 2차 공모 신청·선정 — 행정 AX 실증 사례(AI 마에스트로)의 평가 반영 방식 확인</div>
+    <div><span>장기(12주+)</span>RISE 체계 2차년도 배분 구조 고착화 여부 및 학과 구조 개편 압력의 중장기 추이</div>
+  </div>
+
+  <h2 class="sec">📈 주간 대학 모니터링 지표 <small style="font-weight:500;color:var(--mute)">(지표명 클릭 시 원자료 확인)</small></h2>
+  <div class="kpi-group"><h4>학령인구·입시</h4><div class="kpis">
+    <div class="kpi"><div class="n"><a href="#">만18세 인구</a><span>2027</span></div><div class="val">41.2<small>만명</small></div><div class="ch down">▼ -3.1%</div></div>
+    <div class="kpi"><div class="n"><a href="#">거점국립대 수시 경쟁률</a><span>9/1</span></div><div class="val">6.3<small>:1</small></div><div class="ch down">▼ -7.4%</div></div>
+    <div class="kpi"><div class="n"><a href="#">부산대 수시 경쟁률</a><span>9/1</span></div><div class="val">7.1<small>:1</small></div><div class="ch down">▼ -4.0%</div></div>
+    <div class="kpi"><div class="n"><a href="#">지역인재 선발 비율</a><span>2027</span></div><div class="val">38.0<small>%</small></div><div class="ch">— +0.0%</div></div>
+  </div></div>
+  <div class="kpi-group"><h4>재정</h4><div class="kpis">
+    <div class="kpi"><div class="n"><a href="#">고등교육 예산(안)</a><span>2027</span></div><div class="val">15.9<small>조원</small></div><div class="ch up">▲ +4.1%</div></div>
+    <div class="kpi"><div class="n"><a href="#">RISE 부산 총액</a><span>2차년도</span></div><div class="val">1,240<small>억원</small></div><div class="ch up">▲ +6.9%</div></div>
+    <div class="kpi"><div class="n"><a href="#">등록금 인상 법정상한</a><span>2027</span></div><div class="val">5.49<small>%</small></div><div class="ch">— 동결 기조</div></div>
+    <div class="kpi"><div class="n"><a href="#">국립대 재정 자립도</a><span>2025</span></div><div class="val">27.3<small>%</small></div><div class="ch down">▼ -0.8%p</div></div>
+  </div></div>
+  <div class="kpi-group"><h4>AI·AX</h4><div class="kpis">
+    <div class="kpi"><div class="n"><a href="#">AX 선도모델 공모 규모</a><span>2차</span></div><div class="val">620<small>억원</small></div><div class="ch up">▲ +24.0%</div></div>
+    <div class="kpi"><div class="n"><a href="#">AI 관련 기사 비중</a><span>주간</span></div><div class="val">19.8<small>%</small></div><div class="ch up">▲ +5.6%p</div></div>
+    <div class="kpi"><div class="n"><a href="#">AI 마에스트로 누적 수료</a><span>3기</span></div><div class="val">148<small>명</small></div><div class="ch up">▲ +52명</div></div>
+    <div class="kpi"><div class="n"><a href="#">행정 AI 에이전트 실증</a><span>누적</span></div><div class="val">36<small>건</small></div><div class="ch up">▲ +9건</div></div>
+  </div></div>
+  <div class="kpi-group"><h4>거버넌스·지역</h4><div class="kpis">
+    <div class="kpi"><div class="n"><a href="#">거버넌스 기사 건수</a><span>주간</span></div><div class="val">412<small>건</small></div><div class="ch up">▲ +41.0%</div></div>
+    <div class="kpi"><div class="n"><a href="#">부산 청년 순유출</a><span>7월</span></div><div class="val">1,180<small>명</small></div><div class="ch up">▲ +3.2%</div></div>
+    <div class="kpi"><div class="n"><a href="#">부산 20대 고용률</a><span>8월</span></div><div class="val">56.4<small>%</small></div><div class="ch down">▼ -0.6%p</div></div>
+    <div class="kpi"><div class="n"><a href="#">외국인 유학생(부산대)</a><span>2학기</span></div><div class="val">2,310<small>명</small></div><div class="ch up">▲ +8.9%</div></div>
+  </div></div>
+
+  <h2 class="sec">정책 → 대학 전파경로</h2>
+  <div class="path"><span class="tag">활성</span><b>거버넌스</b> 🏛 경로<div class="flow">공공기관 통폐합 기조 → 거점국립대 연합체계 로드맵 초안(즉시) → 대학별 기능 조정·중복학과 통합 압력(4-12주) → 부산대 조직·정원 구조 재설계 요구(12주+)</div></div>
+  <div class="path"><span class="tag">활성</span><b>재정</b> 🏛 경로<div class="flow">고등교육 예산 지자체 경유 확대 → RISE 배분 기준 지역 산업 연계 강화(즉시) → AI·반도체 편중, 인문·기초 축소(1-2개월) → 학과 단위 재정 격차 확대(1학기)</div></div>
+  <div class="path"><span class="tag w">경계</span><b>입시</b> 🏛 경로<div class="flow">입학가능인원 3% 감소 → 수시 경쟁률 하락(즉시) → 진단 지표 충원율 가중치 상향과 결합(4주) → 재정지원 연계 리스크 상승(2027 상반기)</div></div>
+  <div class="path"><span class="tag w">기회</span><b>AX</b> 🏛 경로<div class="flow">AX 선도모델 2차 공모 → 행정 AX 실증 실적 가점(즉시) → AI 마에스트로 성과 패키징(4주) → 국비 확보 및 전 부서 확산 재원 마련(12주)</div></div>
+
+  <h2 class="sec">대학 내 부문간 전파경로</h2>
+  <div class="path"><b>재정 → 학사/교무 → 교원</b><div class="flow">RISE 배분 편중 → 학과 정원 조정 압력 → 교원 신규 채용 분야 편중 및 기초학문 교원 이탈 우려(1학기~1년)</div></div>
+  <div class="path"><b>입시 → 재정 → 행정</b><div class="flow">충원율 하락 → 등록금 수입 감소 및 진단 지표 불리 → 행정 인력 재배치·업무 효율화 요구 증대(1학기)</div></div>
+  <div class="path"><b>AX → 행정 → 전 부문</b><div class="flow">행정 AI 에이전트 확산 → 반복 업무 시간 절감 → 절감 시간의 정책기획·학생지원 재투입 여부가 성과 판단 기준(3-6개월)</div></div>
+
+  <h2 class="sec">부문별 영향 및 전파경로</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>부문</th><th>방향</th><th>초기(0-4주)</th><th>중기(4-12주)</th><th>장기(12주+)</th><th>영향 및 전파경로</th><th>변화</th></tr></thead>
+    <tbody>
+      <tr><td>기획·거버넌스</td><td class="dir">▼ 네거티브</td><td><span class="lv s">심각</span></td><td><span class="lv s">심각</span></td><td><span class="lv i">중요</span></td><td>연합체계 로드맵 공청회 대응 필요. 재정·인사 자율성 조항 확보 실패 시 조직 재설계 압력 직면. 남부 해양수도 구상 연계는 협상 카드로 활용 가능.</td><td>🔺</td></tr>
+      <tr><td>입학·학생</td><td class="dir">▼ 네거티브</td><td><span class="lv i">중요</span></td><td><span class="lv s">심각</span></td><td><span class="lv s">심각</span></td><td>수시 경쟁률 하락과 충원율 가중치 상향이 결합. 지역인재 전형 확대·유학생 유치가 완충 요인.</td><td>🔺</td></tr>
+      <tr><td>재정·회계</td><td class="dir">◆ 혼합</td><td><span class="lv i">중요</span></td><td><span class="lv i">중요</span></td><td><span class="lv m">보통</span></td><td>RISE 총액 증가는 긍정적이나 분야 편중으로 학과별 격차 확대. 등록금 동결 기조 지속으로 자체 수입 정체.</td><td>—</td></tr>
+      <tr><td>행정 AX</td><td class="dir">▲ 포지티브</td><td><span class="lv i">중요</span></td><td><span class="lv i">중요</span></td><td><span class="lv m">보통</span></td><td>AX 선도모델 2차 공모가 행정 실증 실적에 가점 부여. AI 마에스트로 3기 성과·에이전트 36건이 직접 근거 자료. 가이드라인 법제화 시 데이터 거버넌스 정비 필요.</td><td>🔺</td></tr>
+      <tr><td>교무·학사</td><td class="dir">▼ 네거티브</td><td><span class="lv m">보통</span></td><td><span class="lv i">중요</span></td><td><span class="lv i">중요</span></td><td>학과 구조개편 압력 및 기초학문 배분 축소. 생성형 AI 평가 공정성 기준 마련 요구 증가.</td><td>—</td></tr>
+      <tr><td>국제·산학</td><td class="dir">▲ 포지티브</td><td><span class="lv m">보통</span></td><td><span class="lv m">보통</span></td><td><span class="lv i">중요</span></td><td>유학생 +8.9% 증가로 충원 완충. AI·반도체 산학 배분 확대는 산학 부문에 우호적.</td><td>🔺</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2 class="sec">대학 취약점 진단 및 모니터링 권고</h2>
+  <div class="diag">
+    <h4>취약점 진단</h4>
+    <ol>
+      <li><b>거버넌스 재편 국면의 협상력 부족</b>: 연합체계 로드맵 초안이 공개된 상태에서 부산대의 공식 입장·요구 조건(재정·인사 자율성, 지역 연계 역할)이 정리되지 않으면 공청회 국면에서 수동적 위치에 놓일 수 있다.</li>
+      <li><b>충원율-재정 연계 리스크의 복합화</b>: 입학가능인원 3% 감소, 수시 경쟁률 하락, 진단 지표 충원율 가중치 상향이 동시에 진행되어 2027년 상반기 재정지원 평가에서 불리한 조합이 형성되고 있다.</li>
+      <li><b>RISE 배분 편중에 따른 내부 격차</b>: AI·반도체 편중과 인문·기초 축소는 단기 재원 확대에도 학내 갈등과 교원 이탈이라는 중장기 비용을 수반한다.</li>
+    </ol>
+    <h4>모니터링 권고</h4>
+    <ol>
+      <li>거점국립대 연합체계 공청회 일정·의제를 일별로 추적하고, 재정·인사 자율성 조항 포함 여부를 임계 지표로 설정하여 부산대 입장문을 사전 준비</li>
+      <li>2027 수시 최종 경쟁률(마감일) 확정 즉시 진단 지표 개편안 가중치를 적용한 모의 산출을 실시하고, 지역인재·유학생 완충 효과를 정량화</li>
+      <li>AX 선도모델 2차 공모 마감 전 AI 마에스트로 수료·에이전트 실증 성과를 평가 항목 구조에 맞춰 재정리하고, 행정 AX 시간 절감 지표를 부서별로 수집</li>
+      <li>RISE 배분 편중이 학과 단위 재정에 미치는 영향을 분기별로 점검하고, 인문·기초과학 보전 방안을 기획처와 공동 검토</li>
+      <li>대학 생성형 AI 가이드라인 법제화 논의를 추적하여 학습 데이터 보호·평가 공정성 조항이 행정 AX 운영 방식에 미치는 영향을 사전 점검</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== WEEK 35 (요약판) ===================== -->
+<section class="week" id="w35">
+  <div class="wk-head">
+    <span class="tier t3">Tier 3 경계</span>
+    <div>
+      <div class="wk-title">2026.08.31 (Week 35)</div>
+      <div class="wk-range">기사수집기간: 2026.08.24~2026.08.30</div>
+    </div>
+    <div class="state t3"><i class="dot d3"></i>Warning</div>
+  </div>
+  <div class="signal">신호: <b>Crisis 5.1%</b> | <b>Warning 28.8%</b> | 합산 33.9% | 총 1,706건 | 추세: <b>stable</b></div>
+  <h2 class="sec">상황 요약</h2>
+  <div class="sum">
+    <h3 class="sub">재정·RISE</h3>
+    <ul><li>8월 26일 부산시 RISE 2차년도 배분안이 공개되면서 대학별 몫과 분야 편중 논의가 시작됐다<sup class="ref">[7]</sup>. 총액은 증가했으나 지자체 성과지표 연동 조항이 신설돼 대학의 사업 설계 자율성 축소 우려가 제기됐다.</li></ul>
+    <h3 class="sub">AI·AX</h3>
+    <ul><li>8월 28일 교육부는 대학 행정 AI 활용 우수사례집을 발간했고, 부산대 AI 마에스트로가 직원 주도 에이전트 개발 사례로 수록됐다<sup class="ref">[14]</sup>.</li></ul>
+    <h3 class="sub">종합</h3>
+    <ul><li>위험신호 비중은 전주 31.2%에서 33.9%로 소폭 상승했으나 거버넌스 관련 대형 이슈는 부재했다. 재정 배분 구조 변화가 핵심 관찰 대상이었다.</li></ul>
+  </div>
+  <details class="day"><summary><span>📰 주간 참조 기사 (1,706건 · 7일) — 펼치기</span></summary>
+    <div class="cat"><h4>재정 · 국내</h4><ul><li>부산 RISE 2차년도 배분안 공개… 성과지표 연동 신설</li><li class="more">… 외 다수</li></ul>
+    <h4>AI·디지털 · 국내</h4><ul><li>교육부, 대학 행정 AI 우수사례집 발간</li><li class="more">… 외 다수</li></ul></div>
+  </details>
+</section>
+
+<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대학교 AX혁신과 · 본 페이지는 KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전 기획 시안입니다.</p>
+</main>
+</div>
+</div>
+</body>
+</html>

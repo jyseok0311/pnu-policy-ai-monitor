@@ -1,0 +1,127 @@
+{
+  "_comment": "KPI 원자료 출처 레지스트리. weeks.json 의 kpis[].src 가 이 키를 참조한다.",
+  "kosis": {
+    "name": "KOSIS 국가통계포털",
+    "url": "https://kosis.kr/",
+    "api": "https://kosis.kr/openapi/"
+  },
+  "kess": {
+    "name": "교육통계서비스(KESS)",
+    "url": "https://kess.kedi.re.kr/",
+    "api": null
+  },
+  "academyinfo": {
+    "name": "대학알리미 정보공시",
+    "url": "https://www.academyinfo.go.kr/",
+    "api": "https://www.data.go.kr/data/15037507/openapi.do",
+    "note": "4·6·8·10월 공시. 항목별로 연 1~2회 + 수시 갱신 — 단순 '연 1회'가 아님."
+  },
+  "adiga": {
+    "name": "대교협 어디가",
+    "url": "https://www.adiga.kr/",
+    "api": null
+  },
+  "moe": {
+    "name": "교육부 보도자료",
+    "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=294&m=020402&s=moe",
+    "api": null
+  },
+  "msit": {
+    "name": "과기정통부 보도자료",
+    "url": "https://www.msit.go.kr/bbs/list.do?sCode=user&mPid=112&mId=113",
+    "api": null
+  },
+  "fiscal": {
+    "name": "열린재정",
+    "url": "https://www.openfiscaldata.go.kr/",
+    "api": "https://www.openfiscaldata.go.kr/op/ko/ce/UOPKOCE0001"
+  },
+  "internal": {
+    "name": "내부 집계(파이프라인 자체 산출)",
+    "url": null,
+    "api": null
+  },
+  "moj": {
+    "name": "법무부 출입국·외국인정책본부 (월별 외국인 유학생 현황)",
+    "url": "https://www.data.go.kr/data/15100039/fileData.do",
+    "api": "https://www.data.go.kr/data/15100039/fileData.do",
+    "note": "D-2(유학)·D-4(연수) 체류자 월별 국적별 현황. 공공데이터포털 파일데이터, 매월 갱신."
+  },
+  "assembly": {
+    "name": "열린국회정보 OpenAPI (의안정보)",
+    "url": "https://open.assembly.go.kr/portal/openapi/main.do",
+    "api": "https://open.assembly.go.kr/portal/openapi/main.do",
+    "note": "고등교육법 등 법안 발의·처리 상태를 일 단위로 조회."
+  },
+  "g2b": {
+    "name": "조달청 나라장터 입찰공고정보서비스",
+    "url": "https://www.data.go.kr/data/15129394/openapi.do",
+    "api": "https://www.data.go.kr/data/15129394/openapi.do",
+    "note": "대학 발주 용역·사업 공고. 일 단위 수집 후 주간 롤업."
+  },
+  "qs": {
+    "name": "QS World University Rankings (Quacquarelli Symonds)",
+    "url": "https://www.topuniversities.com/world-university-rankings",
+    "profile": "https://www.topuniversities.com/universities/pusan-national-university",
+    "api": null,
+    "note": "공식 랭킹 포털. 봇 차단(403)이 있어 자동 수집은 불가, 연 1회 수동 갱신 권장."
+  },
+  "the": {
+    "name": "THE World University Rankings (Times Higher Education)",
+    "url": "https://www.timeshighereducation.com/world-university-rankings",
+    "profile": "https://www.timeshighereducation.com/world-university-rankings/pusan-national-university",
+    "api": null,
+    "note": "2026-09-11 접속 확인(200). 세계순위는 하위권이 구간(801–1000 등)으로 공표됨."
+  },
+  "joongang": {
+    "name": "중앙일보 대학평가",
+    "url": "https://www.joongang.co.kr/search/news?keyword=%EB%8C%80%ED%95%99%ED%8F%89%EA%B0%80",
+    "profile": null,
+    "api": null,
+    "status": "dead",
+    "note": "전용 사이트 univ.joongang.co.kr 는 2026-09-11 기준 403(응답 없음). 평가 지속 여부 확인 필요 — 당분간 기사 검색으로 연결."
+  },
+  "_freqLabels": {
+    "day": {
+      "label": "일간",
+      "cls": "f-day"
+    },
+    "week": {
+      "label": "주간",
+      "cls": "f-week"
+    },
+    "month": {
+      "label": "월간",
+      "cls": "f-month"
+    },
+    "term": {
+      "label": "학기",
+      "cls": "f-slow"
+    },
+    "season": {
+      "label": "입시철",
+      "cls": "f-slow"
+    },
+    "year": {
+      "label": "연 1회",
+      "cls": "f-slow"
+    },
+    "disclose": {
+      "label": "공시 4·6·8·10월",
+      "cls": "f-slow"
+    },
+    "event": {
+      "label": "공고시",
+      "cls": "f-slow"
+    }
+  },
+  "_excluded": {
+    "note": "배경 지표에 넣지 않기로 한 항목. 지표 블록을 다시 구성할 때 이 목록을 확인할 것.",
+    "items": [
+      {
+        "name": "AI 마에스트로 누적 수료",
+        "reason": "2026-09-11 제외 요청"
+      }
+    ]
+  }
+}

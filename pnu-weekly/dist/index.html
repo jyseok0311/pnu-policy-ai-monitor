@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대학 정책 AI 주간 모니터링 | PNU</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>:root{
+  --navy:#1a2b4c; --navy-2:#243a63; --sky:#3b7dd8; --sky-l:#e6eef9;
+  --bg:#eef0f3; --paper:#fff; --ink:#1f2937; --mute:#6b7280; --line:#d9dee6;
+  --crisis:#b3261e; --warn:#d9822b; --watch:#c9a227; --ok:#2f8f5b;
+  --thead:#e3e9f2;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:15px;line-height:1.6}
+a{color:var(--sky);text-decoration:none}
+a:hover{text-decoration:underline}
+.shell{display:grid;grid-template-columns:230px 1fr;min-height:100vh}
+
+/* sidebar */
+.side{background:#f7f8fa;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;padding:14px 0}
+.side .go{display:block;margin:0 14px 12px;padding:8px 12px;background:var(--navy);color:#fff;border-radius:6px;font-size:13px;font-weight:600;text-align:center}
+.side .go:hover{background:var(--navy-2);text-decoration:none}
+.side ul{list-style:none;margin:0;padding:0}
+.side li a{display:flex;align-items:center;gap:8px;padding:6px 16px;font-size:12.5px;color:#374151}
+.side li a:hover,.side li a.on{background:var(--sky-l);color:var(--navy);text-decoration:none}
+.side li a.on{font-weight:700;box-shadow:inset 3px 0 0 var(--navy)}
+.side li a .stub{margin-left:auto;font-size:10px;color:#9ca3af;border:1px solid #e5e7eb;border-radius:3px;padding:0 4px}
+.dot{width:8px;height:8px;border-radius:50%;flex:none}
+.d4{background:var(--crisis)}.d3{background:var(--warn)}.d2{background:var(--watch)}.d1{background:var(--ok)}
+
+/* header */
+.top{background:var(--navy);color:#fff;padding:22px 32px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;position:sticky;top:0;z-index:500}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{width:48px;height:48px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-weight:800;font-size:14px;letter-spacing:.5px}
+.top h1{margin:0;font-size:22px;font-weight:700}
+.top .sub{font-size:13px;opacity:.85;margin-top:3px}
+.top .acts{display:flex;gap:8px;align-items:center;align-self:center}
+.btn{background:#fff;color:var(--navy);border:0;border-radius:6px;padding:7px 13px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--sky-l);text-decoration:none}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+
+.main{padding:0 32px 60px}
+.notice{border-left:3px solid var(--sky);background:#f8fafc;padding:10px 14px;font-size:13px;color:#4b5563;margin:18px 0}
+.sample{display:inline-block;background:#fff3cd;color:#7a5a00;border:1px solid #ffe08a;border-radius:4px;font-size:12px;padding:2px 8px;font-weight:700}
+
+/* trend strip */
+.trend{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:22px}
+.trend h3{margin:0 0 4px;font-size:15px;font-weight:800;color:var(--navy)}
+.trend .cap{font-size:12.5px;color:var(--mute);margin-bottom:10px}
+.spark{display:block;width:100%;height:auto}
+.spark .bar{cursor:pointer}
+.spark .bar:hover rect{opacity:.75}
+
+/* week card */
+.week{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px 28px;margin-bottom:30px;scroll-margin-top:100px}
+.wk-head{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.tier{background:var(--crisis);color:#fff;font-weight:800;border-radius:6px;padding:6px 14px;font-size:16px;white-space:nowrap}
+.tier.t3{background:var(--warn)}.tier.t2{background:var(--watch)}.tier.t1{background:var(--ok)}
+.wk-title{font-size:22px;font-weight:800;line-height:1.2}
+.wk-range{font-size:13px;color:var(--mute)}
+.state{margin-left:auto;font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px}
+.state .dot{width:14px;height:14px}
+.state.t4{color:var(--crisis)}.state.t3{color:var(--warn)}.state.t2{color:var(--watch)}.state.t1{color:var(--ok)}
+.signal{margin:12px 0 22px;font-size:13.5px;color:#374151}
+.signal b{color:var(--ink)}
+
+h2.sec{font-size:17px;font-weight:800;margin:30px 0 12px;display:flex;align-items:center;gap:8px}
+h2.sec::before{content:"";width:12px;height:12px;background:var(--navy);flex:none}
+h2.sec small{font-weight:500;color:var(--mute);font-size:12.5px}
+h3.sub{background:var(--thead);color:var(--navy);font-size:15px;font-weight:700;padding:6px 12px;margin:18px 0 8px;border-radius:4px}
+
+/* map */
+.mapbox{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.lmap{height:460px;width:100%;background:#dfe3e9}
+.legend{font-size:12.5px;color:#4b5563;margin-top:10px;line-height:1.7}
+.legend .k{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle;margin-right:4px}
+.uni-label{font-weight:700;font-size:12px;color:#1f2937;text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 3px #fff;white-space:nowrap}
+.uni-label.focus{color:var(--crisis);font-size:13px;font-weight:800}
+.leaflet-container{font-family:inherit}
+
+/* summary */
+.sum ul{margin:0;padding-left:20px}
+.sum li{margin:6px 0}
+/* footnote ref */
+.ref{font-size:10px;color:var(--sky);margin-left:2px;cursor:pointer;background:none;border:0;padding:0 1px;font-family:inherit;vertical-align:super;font-weight:700}
+.ref:hover{text-decoration:underline}
+.ref.hit{background:#fff3cd;border-radius:2px}
+
+/* refs list */
+.reflist{list-style:none;margin:0;padding:0;font-size:13px}
+.reflist li{display:grid;grid-template-columns:34px 1fr;gap:8px;padding:7px 8px;border-bottom:1px dashed var(--line);scroll-margin-top:110px;border-radius:4px}
+.reflist li:last-child{border-bottom:0}
+.reflist li.hit{background:#fff8e1}
+.reflist .n{color:var(--sky);font-weight:800}
+.reflist .meta{color:var(--mute);font-size:12px;margin-top:2px}
+
+/* articles */
+details.day{border:1px solid var(--line);border-radius:6px;margin:6px 0;background:#fafbfc}
+details.day summary{cursor:pointer;padding:8px 12px;font-weight:700;font-size:14px;list-style:none;display:flex;justify-content:space-between}
+details.day summary::-webkit-details-marker{display:none}
+details.day summary::after{content:"＋";color:var(--mute)}
+details.day[open] summary::after{content:"－"}
+.cat{padding:4px 14px 10px}
+.cat h4{margin:8px 0 3px;font-size:13px;color:var(--navy)}
+.cat ul{margin:0;padding-left:16px;font-size:13px;color:#374151}
+.cat li{margin:2px 0}
+.cat .more{color:var(--mute);font-size:12px}
+
+/* changes */
+.chg{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:14px;margin:6px 0}
+.chg .arrow{font-weight:800}
+.up{color:var(--crisis)}.down{color:var(--sky)}
+.chg .v{font-weight:700}
+.chg .why{color:#4b5563;font-size:13px}
+
+/* watch */
+.watch{display:grid;gap:8px}
+.watch div{display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:14px;align-items:start}
+.watch span{background:var(--sky-l);color:var(--navy);border-radius:4px;padding:2px 8px;font-size:12.5px;font-weight:700;text-align:center}
+
+/* indicators */
+.kpi-group{margin:14px 0}
+.kpi-group h4{margin:0 0 6px;font-size:13.5px;color:var(--navy);font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:8px}
+.kpi{background:#fafbfc;border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+.kpi.live{background:#f2f8f4;border-color:#bfdccb}
+.kpi .n{font-size:12px;color:var(--mute);display:flex;justify-content:space-between;gap:6px}
+.kpi .n a{color:var(--mute)}
+.kpi .n a:hover{color:var(--sky)}
+.kpi .val{font-size:17px;font-weight:800;margin:2px 0}
+.kpi .val small{font-size:11px;font-weight:600;color:var(--mute);margin-left:2px}
+.kpi .ch{font-size:12px;font-weight:700}
+.kpi .ch.flat{color:var(--mute)}
+.freq{display:inline-block;font-size:10px;font-weight:700;border-radius:3px;padding:1px 5px;margin-top:4px;border:1px solid}
+.f-week{background:#e8f5ec;color:#1f6b42;border-color:#bfdccb}
+.f-month{background:#eef3fb;color:#2c5896;border-color:#c7d8f0}
+.f-slow{background:#f3f4f6;color:#6b7280;border-color:#e5e7eb}
+
+/* paths */
+.path{background:#fafbfc;border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13.5px}
+.path .tag{display:inline-block;background:var(--crisis);color:#fff;font-size:11px;border-radius:3px;padding:1px 6px;margin-right:6px;font-weight:700}
+.path .tag.w{background:var(--warn)}
+.path b{color:var(--navy)}
+.path .flow{margin-top:4px;color:#374151}
+
+/* table */
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th{background:var(--thead);color:var(--navy);font-weight:700;padding:8px 6px;text-align:left;border:1px solid var(--line)}
+td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
+.lv{display:inline-block;border-radius:3px;padding:1px 7px;font-size:12px;font-weight:700;color:#fff}
+.lv.s{background:var(--crisis)}.lv.i{background:var(--warn)}.lv.m{background:var(--watch)}.lv.l{background:#94a3b8}
+.dir{font-weight:700;white-space:nowrap}
+
+/* diag */
+.diag h4{margin:14px 0 6px;font-size:14px;color:var(--navy)}
+.diag ol{margin:0;padding-left:20px;font-size:14px}
+.diag li{margin:6px 0}
+
+/* stub week */
+.stub-body{color:var(--mute);font-size:13.5px;background:#fafbfc;border:1px dashed var(--line);border-radius:6px;padding:14px 16px;margin-top:14px}
+.stub-body b{color:var(--ink)}
+
+.foot{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;font-size:13px;color:var(--mute)}
+
+/* toast */
+#toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(120%);background:var(--navy);color:#fff;padding:11px 18px;border-radius:8px;font-size:13px;box-shadow:0 6px 20px rgba(0,0,0,.22);transition:transform .25s ease;z-index:9999;max-width:90vw}
+#toast.on{transform:translateX(-50%) translateY(0)}
+
+@media (max-width:860px){
+  .shell{grid-template-columns:1fr}
+  .side{position:static;height:auto;max-height:180px;border-right:0;border-bottom:1px solid var(--line)}
+  .side ul{display:flex;flex-wrap:wrap;gap:2px 6px;padding:0 10px}
+  .side li a{padding:4px 8px}
+  .side li a .stub{display:none}
+  .top{position:static}
+  .top,.main{padding-left:16px;padding-right:16px}
+  .week{padding:18px 16px}
+  .state{margin-left:0;width:100%}
+  .watch div,.chg{grid-template-columns:1fr}
+  .lmap{height:340px}
+}
+
+/* ---------- PRINT / PDF ---------- */
+@media print{
+  @page{size:A4;margin:14mm 12mm}
+  html,body{background:#fff;font-size:10.5pt}
+  .side,.top .acts,#toast,.trend .cap,.leaflet-control-container{display:none !important}
+  .shell{display:block}
+  .top{position:static;padding:14px 0;background:#fff;color:var(--navy);border-bottom:3px solid var(--navy)}
+  .top .logo{border-color:var(--navy)}
+  .main{padding:0}
+  .week{border:0;padding:0;margin:0 0 14mm;break-inside:auto}
+  .week+.week{break-before:page}
+  h2.sec{break-after:avoid}
+  details.day{break-inside:avoid}
+  details.day summary::after{content:""}
+  details.day > .cat{display:block !important}
+  /* 인쇄 시 지도 높이를 바꾸면 같은 중심이라도 다른 영역이 보인다. 화면과 같은 높이를 유지한다. */
+  .lmap{height:460px}
+  .leaflet-tile,.leaflet-container{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .leaflet-locate{display:none !important}
+  .kpi,.path,.chg,.trend{break-inside:avoid}
+  table{break-inside:auto}
+  tr{break-inside:avoid}
+  a{color:var(--ink);text-decoration:none}
+  .reflist a::after{content:" (" attr(href) ")";font-size:8pt;color:var(--mute);word-break:break-all}
+}
+
+/* 출처 상태 표시 */
+.warn-src{display:inline-block;font-size:10px;font-weight:700;border-radius:3px;padding:1px 5px;margin:4px 0 0 4px;background:#fff3cd;color:#7a5a00;border:1px solid #ffe08a;cursor:help}
+.kpi .n a.prof{margin-left:3px;font-size:11px;color:var(--sky);text-decoration:none}
+.kpi .n a.prof:hover{text-decoration:none;opacity:.7}
+#toast:empty{display:none}
+.f-day{background:#dff0e6;color:#15603a;border-color:#a9cebb}
+/* 실데이터 주차 표시 */
+.live-note{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--mute);margin:-12px 0 20px}
+.live-badge{background:#1f6b42;color:#fff;font-size:11px;font-weight:800;border-radius:4px;padding:2px 8px;flex:none}
+.note-line{font-size:13px;color:var(--mute);margin:0 0 10px;padding-left:2px}
+.src-ok{color:#1f6b42;font-weight:700}
+.src-via{color:#9ca3af}
+.tier.t0{background:#9ca3af}
+.state.t0{color:var(--mute)}
+.dot.d0{background:#9ca3af}
+/* 내 위치 버튼 */
+.leaflet-locate{width:30px;height:30px;line-height:30px;text-align:center;background:#fff;color:var(--navy);font-size:16px;font-weight:800;border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.3);text-decoration:none}
+.leaflet-locate:hover{background:var(--sky-l);text-decoration:none}
+/* 지도 마커 호버 힌트 — 대학별 주요 키워드 */
+.map-hint{position:absolute;display:none;z-index:1200;max-width:300px;background:#fff;border:1px solid var(--line);
+  border-radius:8px;box-shadow:0 6px 22px rgba(0,0,0,.18);padding:10px 12px;font-size:12.5px;line-height:1.5;pointer-events:none}
+.map-hint .hint-h{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--navy)}
+.map-hint .hint-g{color:#fff;font-size:10.5px;font-weight:800;border-radius:3px;padding:1px 6px}
+.map-hint .hint-n{color:var(--mute);font-size:12px;margin-top:2px}
+.map-hint .hint-n b{color:var(--crisis)}
+.map-hint .hint-k{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.map-hint .hint-k span{background:var(--sky-l);color:var(--navy);border-radius:3px;padding:1px 6px;font-size:11.5px;font-weight:700}
+.map-hint .hint-k i{font-style:normal;color:var(--sky);margin-left:3px;font-weight:600}
+.map-hint .hint-l{margin-top:8px;padding-top:7px;border-top:1px dashed var(--line);color:#374151;font-size:12px}
+.map-hint .hint-l .lv{margin-right:5px;font-size:10.5px}
+@media print{.map-hint{display:none !important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="side">
+  <a class="go" href="daily.html">Go To Daily ›</a>
+  <ul>
+    <li><a class="on" href="#w37" data-nav="w37">
+      <i class="dot d2"></i>2026.09.11 (Week 37)
+    </a></li>
+    <li><a class="" href="#w36" data-nav="w36">
+      <i class="dot d2"></i>2026.09.04 (Week 36)<span class="stub">미생성</span>
+    </a></li>
+    <li><a class="" href="#w35" data-nav="w35">
+      <i class="dot d1"></i>2026.08.28 (Week 35)<span class="stub">미생성</span>
+    </a></li>
+    <li><a class="" href="#w34" data-nav="w34">
+      <i class="dot d1"></i>2026.08.21 (Week 34)<span class="stub">미생성</span>
+    </a></li>
+    <li><a class="" href="#w33" data-nav="w33">
+      <i class="dot d1"></i>2026.08.14 (Week 33)<span class="stub">미생성</span>
+    </a></li>
+    <li><a class="" href="#w32" data-nav="w32">
+      <i class="dot d4"></i>2026.08.07 (Week 32)<span class="stub">미생성</span>
+    </a></li>
+    <li><a class="" href="#w31" data-nav="w31">
+      <i class="dot d2"></i>2026.07.31 (Week 31)<span class="stub">미생성</span>
+    </a></li>
+    <li><a class="" href="#w30" data-nav="w30">
+      <i class="dot d1"></i>2026.07.24 (Week 30)<span class="stub">미생성</span>
+    </a></li></ul>
+</aside>
+
+<div>
+<header class="top">
+  <div class="brand">
+    <div class="logo">PNU</div>
+    <div>
+      <h1>대학 정책 AI 주간 모니터링</h1>
+      <div class="sub">부산대 AX·정보화혁신본부 AX혁신과</div>
+    </div>
+  </div>
+  <div class="acts">
+    <a class="btn" href="pdf/PNU_Univ_Policy_AI_Weekly(2026.09.11).pdf" target="_blank" rel="noopener" data-pdf title="빌드 때 미리 생성한 표준 PDF">표준 PDF</a>
+    <button class="btn ghost" data-print title="지도를 포함해 현재 보고 있는 화면 그대로 인쇄/PDF 저장">현재 화면 PDF</button>
+    <button class="btn ghost" data-expand>기사 전체 펼치기</button>
+  </div>
+</header>
+
+<main class="main">
+<p class="notice">본 리포트는 고등교육 정책 도메인 지식 그래프와 주간 국내외 기사를 기반으로 생성형 AI가 작성한 것으로 부산대학교의 공식 의견이 아님을 밝힙니다. <span class="sample">전 주차 실데이터 (무료·공개 소스 수집) · 본문 서술은 Week 37만 생성됨</span></p>
+
+<div class="trend">
+  <h3>위험신호 비중 추이 (위기+경고, 최근 8주)</h3>
+  <div class="cap">막대를 클릭하면 해당 주차로 이동합니다. 외부 통계가 아니라 <b>수집 기사 분류 결과에서 파이프라인이 직접 산출</b>한 값입니다. 주차 간 비교가 공정하도록 <b>구글 뉴스 소스로 통일</b>해 계산했습니다(과거 주차는 언론사 RSS 소급이 불가).</div>
+  <svg class="spark" viewBox="0 0 1000 150" role="img" aria-label="주차별 위험신호 비중 추이">
+    <line x1="26" y1="126" x2="974" y2="126" stroke="#d9dee6"/><a class="bar" href="#w30" aria-label="2026.07.24 (Week 30) 4.5%">
+      <rect x="28.0" y="91.2" width="114.5" height="34.8" rx="2" fill="var(--ok)"/>
+      <text x="85.3" y="86.2" font-size="12" text-anchor="middle" fill="#4b5563">4.5</text>
+      <text x="85.3" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">30</text>
+    </a><a class="bar" href="#w31" aria-label="2026.07.31 (Week 31) 6.9%">
+      <rect x="146.5" y="72.7" width="114.5" height="53.3" rx="2" fill="var(--watch)"/>
+      <text x="203.8" y="67.7" font-size="12" text-anchor="middle" fill="#4b5563">6.9</text>
+      <text x="203.8" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">31</text>
+    </a><a class="bar" href="#w32" aria-label="2026.08.07 (Week 32) 11.7%">
+      <rect x="265.0" y="35.6" width="114.5" height="90.4" rx="2" fill="var(--crisis)"/>
+      <text x="322.3" y="30.6" font-size="12" text-anchor="middle" fill="#4b5563">11.7</text>
+      <text x="322.3" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">32</text>
+    </a><a class="bar" href="#w33" aria-label="2026.08.14 (Week 33) 3.6%">
+      <rect x="383.5" y="98.2" width="114.5" height="27.8" rx="2" fill="var(--ok)"/>
+      <text x="440.8" y="93.2" font-size="12" text-anchor="middle" fill="#4b5563">3.6</text>
+      <text x="440.8" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">33</text>
+    </a><a class="bar" href="#w34" aria-label="2026.08.21 (Week 34) 1.4%">
+      <rect x="502.0" y="115.2" width="114.5" height="10.8" rx="2" fill="var(--ok)"/>
+      <text x="559.3" y="110.2" font-size="12" text-anchor="middle" fill="#4b5563">1.4</text>
+      <text x="559.3" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">34</text>
+    </a><a class="bar" href="#w35" aria-label="2026.08.28 (Week 35) 5.9%">
+      <rect x="620.5" y="80.4" width="114.5" height="45.6" rx="2" fill="var(--ok)"/>
+      <text x="677.8" y="75.4" font-size="12" text-anchor="middle" fill="#4b5563">5.9</text>
+      <text x="677.8" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">35</text>
+    </a><a class="bar" href="#w36" aria-label="2026.09.04 (Week 36) 6.6%">
+      <rect x="739.0" y="75.0" width="114.5" height="51.0" rx="2" fill="var(--watch)"/>
+      <text x="796.3" y="70.0" font-size="12" text-anchor="middle" fill="#4b5563">6.6</text>
+      <text x="796.3" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">36</text>
+    </a><a class="bar" href="#w37" aria-label="2026.09.11 (Week 37) 6.7%">
+      <rect x="857.5" y="74.2" width="114.5" height="51.8" rx="2" fill="var(--watch)"/>
+      <text x="914.8" y="69.2" font-size="12" text-anchor="middle" fill="#4b5563">6.7</text>
+      <text x="914.8" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">37</text>
+    </a></svg>
+</div>
+
+<section class="week" id="w37">
+  <div class="wk-head">
+    <span class="tier t2">Tier 2 주의</span>
+    <div>
+      <div class="wk-title">2026.09.11 (Week 37)</div>
+      <div class="wk-range">기사수집기간: 2026.09.04~2026.09.11</div>
+    </div>
+    <div class="state t2"><i class="dot d2"></i>Watch</div>
+  </div>
+  <div class="signal">신호: <b>Crisis 5.3%</b> | <b>Warning 3.9%</b> | 합산 9.2% | 총 567건 | 추세: <b>stable</b></div>
+  <div class="live-note"><span class="live-badge">실데이터</span>무료·공개 소스 수집 637건 → 관련성 필터 후 567건 · 수집일 2026-09-11</div>
+  <h2 class="sec">🗺 거점국립대 정책 리스크 지도</h2>
+  <div class="mapbox"><div class="lmap" id="map-w37" data-week="w37"></div></div>
+  <div class="legend">
+    <span class="k" style="background:var(--crisis)"></span>주요: '서울대 10개 만들기' 1차 선정 및 거점국립대 재편
+    | <span class="k" style="background:var(--warn)"></span>부차: 지방 국립대 등록금 전액 지원, 국립대 통합 무산<br>
+    <br><b>마커 읽는 법</b> — 크기 = 주목도(주간 언급량) · 색 = 위험신호 비율
+    (<span class="k" style="background:#2f8f5b"></span>없음
+     <span class="k" style="background:#c9a227"></span>일부
+     <span class="k" style="background:#d9822b"></span>있음
+     <span class="k" style="background:#b3261e"></span>높음).
+    마커에 마우스를 올리면 해당 대학의 주요 키워드가 표시됩니다.<br>
+    ── 정책 전달 경로 | - - - 예산 배분 경로(RISE) | ·· AI 인재양성 사업
+    | 교란 요인: 미선정 지역 반발, 사립대 역차별 논쟁, 구성원 합의 난항 | 완충: 패키지 지원 선정, AI스타펠로우십, 글로컬대학 연계, PLATO 교육 AX
+  </div>
+  <h2 class="sec">상황 요약</h2>
+  <div class="sum">
+    <h3 class="sub">거점국립대 재편 — '서울대 10개 만들기' 1차 선정</h3>
+    <ul><li>9월 4일 교육부가 '서울대 10개 만들기' 패키지 지원대학으로 <b>부산대·전남대·충남대 3곳</b>을 선정했다. 9개 거점국립대 중 3곳만 1차 대상이 되면서 나머지 6곳은 제외됐다.<button class="ref" data-ref="1" title="참조 기사 보기">[1]</button><button class="ref" data-ref="2" title="참조 기사 보기">[2]</button></li><li>같은 날 거점국립대 총장들은 <b>9개교 전부를 지원 대상에 포함해야 한다</b>는 의견을 교육부에 공식 건의했고, 탈락한 경북대를 중심으로 지역 반발이 확산됐다. 사업의 성과 확산 방식과 후속 선정 시간표는 아직 제시되지 않았다.<button class="ref" data-ref="3" title="참조 기사 보기">[3]</button><button class="ref" data-ref="4" title="참조 기사 보기">[4]</button><button class="ref" data-ref="5" title="참조 기사 보기">[5]</button></li></ul>
+    <h3 class="sub">국립대 통합 — 충남대·공주대 무산</h3>
+    <ul><li>9월 10일 충남대와 국립공주대의 통합이 <b>구성원 투표에서 무산</b>됐다. 학생 반대가 결정적이었던 것으로 보도됐다. 재정 유인만으로는 통합 동력을 만들기 어렵다는 점이 다시 확인된 사례로, 향후 연합·통합 논의 전반의 속도에 영향을 줄 수 있다.<button class="ref" data-ref="6" title="참조 기사 보기">[6]</button><button class="ref" data-ref="7" title="참조 기사 보기">[7]</button></li></ul>
+    <h3 class="sub">재정 — 지방 국립대 '등록금 0원'</h3>
+    <ul><li>내년 지방 국립대 신입생 <b>등록금 전액 지원</b>이 추진되면서 이번 주 수시 국면의 최대 변수로 작용했다. 인서울 모의지원이 최근 5년 내 최저를 기록했다는 분석이 나왔고, 지방 사립대와 사립대 교수 단체는 역차별을 주장하며 반발했다.<button class="ref" data-ref="8" title="참조 기사 보기">[8]</button><button class="ref" data-ref="9" title="참조 기사 보기">[9]</button><button class="ref" data-ref="10" title="참조 기사 보기">[10]</button></li><li>지방교육재정교부금 개편을 두고도 <b>'개혁이 아니라 재원 주인만 바뀐 것'</b>이라는 비판이 제기됐다. 고등교육 재원 구조 논의가 초·중등 교부금 논쟁과 맞물려 확대되는 흐름이다.<button class="ref" data-ref="11" title="참조 기사 보기">[11]</button></li></ul>
+    <h3 class="sub">부산대 영향 — 재원·AI 양쪽에서 우호적</h3>
+    <ul><li>부산대는 이번 주 <b>'서울대 10개 만들기' 1차 선정</b>에 더해 과기정통부 <b>AI스타펠로우십 사업(121억 원 규모)</b>에 최종 선정됐다. 부산시도 AI 최고급 신진연구자 양성에서 부산대와 협력한다고 밝혀, AI 분야 재원이 집중되는 국면이다.<button class="ref" data-ref="12" title="참조 기사 보기">[12]</button><button class="ref" data-ref="13" title="참조 기사 보기">[13]</button></li><li>교육 AX 측면에서는 AI 기능을 탑재한 교육플랫폼 <b>PLATO 고도화</b>가 2학기부터 본격 서비스에 들어갔고, 글로컬대학 연계 <b>휴머노이드 의료로봇 센터</b>가 개소해 의학교육 시범 운영이 시작됐다. 행정 AX 실적과 함께 후속 공모의 근거 자료로 묶어둘 만한 성과다.<button class="ref" data-ref="14" title="참조 기사 보기">[14]</button><button class="ref" data-ref="15" title="참조 기사 보기">[15]</button><button class="ref" data-ref="16" title="참조 기사 보기">[16]</button></li><li>9월 8일 <b>2027학년도 수시모집 원서접수</b>가 시작돼 3,587명을 선발한다. 지방 국립대 등록금 전액 지원 정책이 경쟁률에 어떻게 반영되는지가 마감 직후 확인할 핵심 수치다.<button class="ref" data-ref="17" title="참조 기사 보기">[17]</button></li></ul>
+    <h3 class="sub">종합</h3>
+    <ul><li>이번 주 부산대는 <b>재원 확보 측면에서 뚜렷한 우위</b>를 확인했다. 다만 같은 사업에서 6개 거점국립대가 제외되며 형성된 지역 간 갈등 구도, 그리고 충남대·공주대 통합 무산이 보여준 구성원 합의의 어려움은 중기적으로 부산대에도 동일하게 적용될 조건이다. 선정의 성과를 <b>어떻게 확산하느냐</b>가 다음 국면의 과제다.</li></ul>
+  </div>
+  <h2 class="sec">📰 주간 참조 기사 (567건 · 7일)</h2>
+  
+  <details class="day">
+    <summary><span>9/4(금) — 49건</span></summary>
+    <div class="cat">
+      <h4>거버넌스 · 국내 (21건)</h4>
+      <ul><li>내년 지방국립대 신입생 '등록금 0원'..사립대 '반발'</li><li>경남도, 진주 강소연구개발특구 확대 추진… 경상국립대 칠암캠퍼스 추가</li><li>동국대 미당연구소, 제2회 미당학술상 수상자에 김언 시인·박연희 교수 선정</li>
+        <li class="more">… 외 18건</li>
+      </ul>
+      <h4>기타 · 국내 (14건)</h4>
+      <ul><li>“교육마저 TK 패싱하나”… ‘서울대 10개’ 탈락에 폭발한 경북대</li><li>“‘서울대 10개 만들기’ 거점대 9개 모두 선정해야”</li><li>“경북대마저 탈락” 또 ‘패싱’...TK 민심 &quot;해도 너무해&quot;</li>
+        <li class="more">… 외 11건</li>
+      </ul>
+      <h4>AI·디지털 · 국내 (7건)</h4>
+      <ul><li>부산교대 KREON 에듀포럼, AI 미래교육 논의 900명 참여</li><li>카카오, 5개 국립대 손잡고 AI 인재 육성한다</li><li>[Why] 지원서도 안 썼는데 합격… 美 대학들이 학생 모셔가는 이유 - 조선비즈</li>
+        <li class="more">… 외 4건</li>
+      </ul></div>
+  </details>
+  <details class="day">
+    <summary><span>9/5(토) — 18건</span></summary>
+    <div class="cat">
+      <h4>기타 · 국내 (9건)</h4>
+      <ul><li>한상덕 교수의 〈콧노래 에세이〉 ⑮ … 사노라면</li><li>대신대학교 2027학년도 혁신 전공 및 캠퍼스 확장으로 비상 예고</li><li>이재명 정부 '서울대 10개' 공약에 3곳 먼저 집중지원, 성과 확산 방식·시간표는 미정</li>
+        <li class="more">… 외 6건</li>
+      </ul>
+      <h4>거버넌스 · 국내 (4건)</h4>
+      <ul><li>지방국립대 ‘무상 교육’에 입시판 지각변동…사립대는 “연쇄 고사” 울분</li><li>거점국립대 3곳 확정에 그친 '서울대 10개'…학계 &quot;수도권 분산 정책 하위수단&quot; 비판</li><li>교육부, 2027년도 예산안 117조 5962억 원 편성… 유보통합·지역대학·AI 인재양성 집중</li>
+        <li class="more">… 외 1건</li>
+      </ul>
+      <h4>재정 · 국내 (3건)</h4>
+      <ul><li>윤도희 경기도의원 대학생을 지역인재로 경기도 RISE 앵커 지원 조례안 대표발의 &gt; 뉴스</li><li>[지방에서 교육정책을 말한다] 기획② 등록금 0원, 지역에 뿌리내린 사립대는 누가 지키나</li><li>명문대들 '연소득 20만불 이하 등록금 면제' 확대</li>
+        <li class="more">… 외 다수</li>
+      </ul></div>
+  </details>
+  <details class="day">
+    <summary><span>9/6(일) — 24건</span></summary>
+    <div class="cat">
+      <h4>기타 · 국내 (9건)</h4>
+      <ul><li>대학은 지금 괜찮은가 — 캠퍼스 정신건강 위기, 우리 모두의 문제입니다</li><li>정의는 차별하는 것인가? 정의가 평등이라는 말은 옳은가?</li><li>‘서울대 10개 만들기’를 넘어, 지역이 자신의 미래를 결정할 수 있어야 한다</li>
+        <li class="more">… 외 6건</li>
+      </ul>
+      <h4>거버넌스 · 국내 (7건)</h4>
+      <ul><li>지방국립대 신입생 등록금 ‘0원’ 추진... 내년 30곳 대상</li><li>[단독] 서울대, 지방 거점국립대-MIT 공동 연구 잇는다</li><li>경북대 등 지방거점국립대 합격선·경쟁률 ‘최근 5년새 최고’</li>
+        <li class="more">… 외 4건</li>
+      </ul>
+      <h4>AI·디지털 · 국내 (3건)</h4>
+      <ul><li>[기획-전북 대학 AI 반도체 경쟁 소외 위기] 상-전북대 탈락이 보여준 지방대 경쟁의 현실</li><li>청년이면 AI 실무 준비도 '대학일자리플러스센터'에서</li><li>양산부산대병원 재활의학과 ‘기술개발·실증’ 공모 선정</li>
+        <li class="more">… 외 다수</li>
+      </ul></div>
+  </details>
+  <details class="day">
+    <summary><span>9/7(월) — 72건</span></summary>
+    <div class="cat">
+      <h4>거버넌스 · 국내 (22건)</h4>
+      <ul><li>‘통합 충남대’ 성사냐 무산이냐… 8~10일 전 구성원 투표서 판가름</li><li>지방 사립대 교수들, 국립대 신입생 등록금 전액 지원에 반발…“차별 시정해야”</li><li>벚꽃 피는 순서로 대학 폐교?…무상 국립대가 ‘트리거’[교육진담]</li>
+        <li class="more">… 외 19건</li>
+      </ul>
+      <h4>AI·디지털 · 국내 (22건)</h4>
+      <ul><li>최교진, 충남대 찾아 '서울대 10개 만들기' 점검…KAIST·기업 협력 논의</li><li>배터리 속 이온 움직임인 줄 알았는데 … ‘가짜 신호’였다</li><li>“AI 썼나 안 썼나보다 배웠나가 중요”…美 대학들 과제 확 바꾼다</li>
+        <li class="more">… 외 19건</li>
+      </ul>
+      <h4>기타 · 국내 (16건)</h4>
+      <ul><li>인제대, 글로컬 대학 탈락 위기…올시티캠퍼스 실효성 부족 '원인'</li><li>[오마이포토] 호르무즈 파병? 반발하는 대학가</li><li>‘제주 대표 스포츠 스타’ 구자철, 제주대 알림이로 뛴다</li>
+        <li class="more">… 외 13건</li>
+      </ul></div>
+  </details>
+  <details class="day">
+    <summary><span>9/8(화) — 92건</span></summary>
+    <div class="cat">
+      <h4>AI·디지털 · 국내 (37건)</h4>
+      <ul><li>최교진 교육부 장관, 충남대 찾아 ‘서울대 10개 만들기’ 점검…AI 거점대학 추진</li><li>충북도의회, 지역대학·미래산업 지원 손질…조례 개정 추진</li><li>충북대 인구감소/생성형 AI 시대 대학의 역할과 과제 논의</li>
+        <li class="more">… 외 34건</li>
+      </ul>
+      <h4>기타 · 국내 (24건)</h4>
+      <ul><li>제주 초등교사 선발 94명→26명 72% ‘급감’…제주대 교육대학 학생들 교원 감축 '반발'</li><li>제주대 교육대학 학생들 &quot;초등학교 교사 선발 규모 감축 전면 재검토하라&quot;</li><li>“제주 초등교사 2년 만에 72% 급감”…교대생들 “교육현장 붕괴 우려”</li>
+        <li class="more">… 외 21건</li>
+      </ul>
+      <h4>거버넌스 · 국내 (12건)</h4>
+      <ul><li>교육부 장관, 충남대 찾아 ‘거점국립대 패키지’ 본격 실행 논의</li><li>충남대서 '거점국립대 패키지 지원사업 실행 방안' 논의</li><li>최교진 교육부 장관, 충남대 방문…거점국립대 패키지 실행 논의</li>
+        <li class="more">… 외 9건</li>
+      </ul></div>
+  </details>
+  <details class="day">
+    <summary><span>9/9(수) — 81건</span></summary>
+    <div class="cat">
+      <h4>기타 · 국내 (27건)</h4>
+      <ul><li>[영남시론] 대구·경북에만 없는 ‘서울대’</li><li>제주대 교수회 10일 개교 74주년 특별 세미나 개최</li><li>김민석 &quot;서울대 10개 만들기 후속 선정 이어질 것&quot;…경북대 포함?</li>
+        <li class="more">… 외 24건</li>
+      </ul>
+      <h4>거버넌스 · 국내 (23건)</h4>
+      <ul><li>최교진 교육부 장관, 충남대 방문해 거점국립대 패키지 실행방안 논의 |</li><li>최교진 교육부 장관-충남대, 거점국립대 패키지 본격 실행 논의</li><li>[초대석] 충남대, 첫 '거점국립대학' 선정…비전은</li>
+        <li class="more">… 외 20건</li>
+      </ul>
+      <h4>AI·디지털 · 국내 (16건)</h4>
+      <ul><li>지방대 부활에 필요한 최소한의 임계질량 [아침을 열며]</li><li>'대학·기업 동반성장'…강원대 캠퍼스 혁신파크 산학연혁신허브 개관</li><li>강원대, 산학연혁신허브 개관·반도체공동연구소 착공… 캠퍼스 내 산학연 거점 잇달아 구축</li>
+        <li class="more">… 외 13건</li>
+      </ul></div>
+  </details>
+  <details class="day">
+    <summary><span>9/10(목) — 193건</span></summary>
+    <div class="cat">
+      <h4>거버넌스 · 국내 (64건)</h4>
+      <ul><li>충남대 반대로 국립공주대와 통합 무산… '학생 90% 반대벽 못 넘었다'</li><li>경상국립대, 100주년 기념관 건설업체 임대에 교수 반발</li><li>충남대·공주대 통합 사실상 무산…충남대 구성원 반대 우세</li>
+        <li class="more">… 외 61건</li>
+      </ul>
+      <h4>기타 · 국내 (49건)</h4>
+      <ul><li>교육·보육 종사자 아동학대 5년간 6087명… 하루 3.6명 검거 [2026 국감]</li><li>교육부 가이드북 ‘성소수자’ 삭제… 교사 96.7% “부적절”</li><li>연세대 인구와인재연구원, 2026~2028년 사회구조 개혁 캠페인 본격 추진</li>
+        <li class="more">… 외 46건</li>
+      </ul>
+      <h4>AI·디지털 · 국내 (41건)</h4>
+      <ul><li>계명문화대 등 8개 전문대학-EBS, ‘생활 속의 AI 윤리 이야기’ 공동 개발</li><li>금오공대, '초광역 성장엔진 인재육성사업' 주관대학 선정</li><li>가천대, '2026 초광역 성장엔진 인재육성사업' 참여</li>
+        <li class="more">… 외 38건</li>
+      </ul></div>
+  </details>
+  <details class="day" open>
+    <summary><span>9/11(금) — 38건</span></summary>
+    <div class="cat">
+      <h4>거버넌스 · 국내 (19건)</h4>
+      <ul><li>충남대-국립공주대 통합 찬반투표 ‘엇갈린 민심’…글로컬대학 사업 동력 차질 우려</li><li>인하대, 15일 '인하인천미래디자인포럼' 개최…인천e음 발전 방향 논의</li><li>상명대 제주대와 상호협력협약 체결... '런케이션' 공동 추진 논의</li>
+        <li class="more">… 외 16건</li>
+      </ul>
+      <h4>기타 · 국내 (12건)</h4>
+      <ul><li>지방 로스쿨 졸업자 10명 중 6명, 수도권 취업… “종합적 점검 필요”</li><li>‘취임 1년’ 최교진 장관… 교사노조연맹 “정책 추진력·존재감 부족”</li><li>동국대 BMC.. 고양특례시의회 환경경제위와 간담회.. '지산학 상생협력 논의'</li>
+        <li class="more">… 외 9건</li>
+      </ul>
+      <h4>AI·디지털 · 국내 (5건)</h4>
+      <ul><li>동아보건대, 지역 산업체와 AI농생명 산학협력 강화</li><li>한국 대학생, 세계 개발자들과 AI·Web3로 맞붙는다… 28일 ‘GWDC 2026 KOREA’ 해커톤 개막</li><li>&quot;동남권 거점 VC&quot; 유니스트기술지주, 모태펀드 '관광 AI' 운용사 선정</li>
+        <li class="more">… 외 2건</li>
+      </ul></div>
+  </details>
+  <h2 class="sec">전주 대비 주요 변화</h2>
+  <p class="note-line">비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 401건 vs 전주 334건.</p>
+  <div class="chg"><span class="arrow up">🔺</span>
+    <div><span class="v">'서울대 10개 만들기' 1차 패키지 지원대학에 부산대 선정</span><div class="why">9개 거점국립대 중 3곳 선정. 6곳 제외로 지역 반발 및 추가 선정 요구 확산</div></div></div><div class="chg"><span class="arrow up">🔺</span>
+    <div><span class="v">과기정통부 AI스타펠로우십 121억 원 규모 최종 선정</span><div class="why">의료 AI 연구개발. 부산시 신진연구자 양성 협력과 연계</div></div></div><div class="chg"><span class="arrow down">🔻</span>
+    <div><span class="v">충남대·공주대 통합 구성원 투표 무산</span><div class="why">학생 반대가 결정적. 재정 유인 중심 통합 모델의 한계 노출</div></div></div><div class="chg"><span class="arrow up">🔺</span>
+    <div><span class="v">지방 국립대 신입생 등록금 0원 추진 — 수시 국면 최대 변수</span><div class="why">인서울 모의지원 5년 내 최저. 지방 사립대 역차별 반발</div></div></div><div class="chg"><span class="arrow up">🔺</span>
+    <div><span class="v">부산대 2027 수시 원서접수 개시 (3,587명 선발)</span><div class="why">등록금 정책 효과가 경쟁률에 반영되는지 마감 직후 확인 필요</div></div></div>
+  <h2 class="sec">향후 주시 포인트</h2>
+  <div class="watch"><div><span>초기(0-4주)</span>2027 수시 마감 직후 부산대·거점국립대 경쟁률 확정치 — '등록금 0원' 정책의 실제 효과를 분리 측정</div><div><span>초기(0-4주)</span>'서울대 10개 만들기' 후속 선정 일정 및 성과 확산 방식 발표 여부 — 미선정 6개교 추가 요구의 처리 방향</div><div><span>중기(4-12주)</span>AI스타펠로우십 사업 착수 체계 구성 — 의료 AI 연구와 PLATO·행정 AX 실적을 하나의 성과 패키지로 정리</div><div><span>중기(4-12주)</span>글로컬대학 3차 평가 결과 및 지방교육재정교부금 개편 논의의 고등교육 파급</div><div><span>장기(12주+)</span>충남대 사례 이후 국립대 통합·연합 논의의 재설계 방향 — 구성원 합의 절차가 선결 조건으로 부상</div></div>
+  <h2 class="sec">⚡ 주간 변동 지표 <small>수집 기사에서 파이프라인이 직접 집계 · 매주 갱신</small></h2>
+  <div class="kpis">
+    <div class="kpi live">
+      <div class="n"><span>위험신호 비중</span></div>
+      <div class="val">6.7<small>%</small></div>
+      <div class="ch up">▲ +0.1%p</div>
+      <span class="freq f-week">주간</span>
+    </div>
+    <div class="kpi live">
+      <div class="n"><span>수집 기사(비교기준)</span></div>
+      <div class="val">401<small>건</small></div>
+      <div class="ch up">▲ +67건</div>
+      <span class="freq f-week">주간</span>
+    </div>
+    <div class="kpi live">
+      <div class="n"><span>거버넌스 기사</span></div>
+      <div class="val">110<small>건</small></div>
+      <div class="ch down">▼ -16건</div>
+      <span class="freq f-week">주간</span>
+    </div>
+    <div class="kpi live">
+      <div class="n"><span>AI·디지털 기사</span></div>
+      <div class="val">110<small>건</small></div>
+      <div class="ch up">▲ +33건</div>
+      <span class="freq f-week">주간</span>
+    </div>
+    <div class="kpi live">
+      <div class="n"><span>부산대 직접 언급</span></div>
+      <div class="val">59<small>건</small></div>
+      <div class="ch down">▼ -23건</div>
+      <span class="freq f-week">주간</span>
+    </div>
+    <div class="kpi live">
+      <div class="n"><span>추세</span></div>
+      <div class="val">stable</div>
+      <div class="ch flat">— 전주 6.6%</div>
+      <span class="freq f-week">주간</span>
+    </div></div>
+  <h2 class="sec">🗣 주요 인물·기관 동향 <small>기사 언급 집계 + 기관 공식 채널 · 개인 SNS 계정은 수집하지 않음</small></h2>
+  <div class="kpi-group"><h4>인물 (직책 기준)</h4><div class="kpis">
+    <div class="kpi live">
+      <div class="n"><span>교육부 장관</span></div>
+      <div class="val" style="font-size:15px">최교진</div>
+      <div class="ch flat">8건</div>
+    </div>
+    <div class="kpi live">
+      <div class="n"><span>대통령</span></div>
+      <div class="val" style="font-size:15px">이재명</div>
+      <div class="ch flat">1건</div>
+    </div></div></div>
+  <div class="kpi-group"><h4>기관·단체</h4><div class="kpis">
+    <div class="kpi">
+      <div class="n"><span>교육부</span></div>
+      <div class="val">28<small>건</small></div>
+      <div class="ch up">위험신호 1건</div>
+    </div>
+    <div class="kpi live">
+      <div class="n"><span>과학기술정보통신부</span></div>
+      <div class="val">4<small>건</small></div>
+      <div class="ch flat">—</div>
+    </div>
+    <div class="kpi live">
+      <div class="n"><span>부산광역시</span></div>
+      <div class="val">3<small>건</small></div>
+      <div class="ch flat">—</div>
+    </div>
+    <div class="kpi">
+      <div class="n"><span>국회 교육위원회</span></div>
+      <div class="val">2<small>건</small></div>
+      <div class="ch up">위험신호 2건</div>
+    </div></div></div>
+  <p class="note-line">직책만 등록되고 이름이 비어 있어 집계되지 않은 항목: 재정경제부 장관 · 교육부 차관 · 과기정통부 장관 · 국회 교육위원장 · 부산대 총장 · 부산광역시장 — <code>data/watchlist.json</code> 에서 채우면 자동 집계됩니다.</p>
+  
+  <div class="kpi-group"><h4>기관 공식 채널 최신 글 <span style="font-weight:500;color:var(--mute);font-size:12px">재정경제부 21건 · 과학기술정보통신부 14건 · 교육부 50건 (최근 14일)</span></h4>
+  <ul class="reflist"><li>
+    <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
+    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224407183950?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!</a>
+    <div class="meta">교육부 · 2026-09-10</div></div></li><li>
+    <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
+    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224406991753?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다</a>
+    <div class="meta">교육부 · 2026-09-10</div></div></li><li>
+    <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
+    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224406355714?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">제47회 전국학생과학발명품경진대회 수상 작품 소개</a>
+    <div class="meta">과학기술정보통신부 · 2026-09-10</div></div></li><li>
+    <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
+    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405954549?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">강원대 캠퍼스 혁신파크 산학연혁신허브 개관</a>
+    <div class="meta">교육부 · 2026-09-09</div></div></li><li>
+    <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
+    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405769875?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!</a>
+    <div class="meta">교육부 · 2026-09-09</div></div></li><li>
+    <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
+    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224405752383?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">세계적 석학의 지혜와 통찰 이 찾아옵니다!</a>
+    <div class="meta">교육부 · 2026-09-09</div></div></li><li>
+    <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
+    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404655246?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속</a>
+    <div class="meta">교육부 · 2026-09-08</div></div></li><li>
+    <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
+    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404647571?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화</a>
+    <div class="meta">교육부 · 2026-09-08</div></div></li><li>
+    <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
+    <div><a href="&lt;![CDATA[https://blog.naver.com/moeblog/224404636327?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">2027학년도 대학수학능력시험 응시원서 접수 결과</a>
+    <div class="meta">교육부 · 2026-09-08</div></div></li><li>
+    <span class="n" style="font-size:11px;color:var(--mute)">네이버블로그</span>
+    <div><a href="&lt;![CDATA[https://blog.naver.com/with_msip/224404485606?fromRss=true&amp;trackingCode=rss]]&gt;" target="_blank" rel="noopener">카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷</a>
+    <div class="meta">과학기술정보통신부 · 2026-09-08</div></div></li></ul></div>
+  <h2 class="sec">정책 → 대학 전파경로</h2>
+  <div class="path"><span class="tag w">기회</span><b>재원</b> 🏛 경로<div class="flow">'서울대 10개 만들기' 1차 선정 → AI스타펠로우십 121억 확보(즉시) → 사업 착수·집행 체계 구성(4-12주) → 후속 선정·확산 단계에서의 우선권 확보(12주+)</div></div><div class="path"><span class="tag ">활성</span><b>거버넌스</b> 🏛 경로<div class="flow">9개교 중 3개교만 선정 → 미선정 6개교 추가 지원 요구 및 지역 반발(즉시) → 성과 확산 방식 논의(4-12주) → 거점국립대 간 역할 분담 구도 재편(12주+)</div></div><div class="path"><span class="tag w">경계</span><b>입시</b> 🏛 경로<div class="flow">지방 국립대 등록금 0원 추진 → 수시 지원 패턴 변화(즉시) → 경쟁률·충원율 확정(4주) → 사립대 역차별 논쟁과 재정지원 구조 재논의(12주+)</div></div><div class="path"><span class="tag w">기회</span><b>AX</b> 🏛 경로<div class="flow">PLATO 고도화 2학기 서비스 + 휴머노이드 의료로봇 의학교육 시범 → 교육 AX 실증 축적(즉시) → 행정 AX 실적과 결합해 성과 패키징(4-12주) → 후속 국비 공모 근거(12주+)</div></div>
+  <h2 class="sec">대학 내 부문간 전파경로</h2>
+  <div class="path"><b>재원 → 연구 → 교원</b><div class="flow">AI·의료 분야 대형 사업 집중 → 해당 분야 연구 인프라·인력 확충 → 비수혜 분야와의 내부 격차 관리가 과제로 부상(1학기~1년)</div></div><div class="path"><b>입시 → 재정 → 전 부문</b><div class="flow">등록금 전액 지원 정책 → 등록금 수입 구조 변화 및 국고 의존도 상승 → 정책 변동 리스크에 대한 재정 완충 설계 필요(1년+)</div></div><div class="path"><b>AX → 교육·행정 → 성과</b><div class="flow">PLATO 교육 AX + 행정 AI 에이전트 → 두 축의 실증 데이터 확보 → 공모 평가에서 '교육·행정 분리 평가' 구조에 각각 대응 가능(3-6개월)</div></div>
+  <h2 class="sec">부문별 영향 및 전파경로</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>부문</th><th>방향</th><th>초기(0-4주)</th><th>중기(4-12주)</th><th>장기(12주+)</th><th>영향 및 전파경로</th><th>변화</th></tr></thead>
+    <tbody><tr>
+      <td>기획·거버넌스</td>
+      <td class="dir">◆ 혼합</td>
+      <td><span class="lv i">중요</span></td><td><span class="lv i">중요</span></td><td><span class="lv s">심각</span></td>
+      <td>1차 선정으로 단기 입지는 강화됐으나, 미선정 6개교의 추가 지원 요구와 성과 확산 요구가 동시에 제기되는 구조. 선정 대학의 책임 입증 부담이 커진다.</td>
+      <td>🔺</td>
+    </tr><tr>
+      <td>재정·회계</td>
+      <td class="dir">▲ 포지티브</td>
+      <td><span class="lv m">보통</span></td><td><span class="lv i">중요</span></td><td><span class="lv i">중요</span></td>
+      <td>패키지 지원 및 AI스타펠로우십 121억 확보로 단기 재원은 개선. 다만 등록금 전액 지원 정책 확대 시 자체 수입 구조의 국고 의존도가 높아진다.</td>
+      <td>🔺</td>
+    </tr><tr>
+      <td>연구·산학</td>
+      <td class="dir">▲ 포지티브</td>
+      <td><span class="lv i">중요</span></td><td><span class="lv i">중요</span></td><td><span class="lv m">보통</span></td>
+      <td>의료 AI 중심 대형 과제 착수. 부산시 신진연구자 양성 협력과 글로컬 연계 의료로봇 센터가 뒷받침.</td>
+      <td>🔺</td>
+    </tr><tr>
+      <td>교육 AX</td>
+      <td class="dir">▲ 포지티브</td>
+      <td><span class="lv i">중요</span></td><td><span class="lv m">보통</span></td><td><span class="lv m">보통</span></td>
+      <td>PLATO 고도화가 2학기 전면 서비스 단계 진입. 교육 AX 실증 데이터가 공모 평가 항목에 직접 대응 가능해진다.</td>
+      <td>🔺</td>
+    </tr><tr>
+      <td>입학·학생</td>
+      <td class="dir">◆ 혼합</td>
+      <td><span class="lv i">중요</span></td><td><span class="lv i">중요</span></td><td><span class="lv i">중요</span></td>
+      <td>등록금 전액 지원 기조는 지원 유인을 키우지만, 거점국립대 전반에 동일하게 적용돼 상대적 우위로는 이어지지 않는다. 마감 후 확정치 확인 필요.</td>
+      <td>—</td>
+    </tr><tr>
+      <td>교무·학사</td>
+      <td class="dir">▼ 네거티브</td>
+      <td><span class="lv m">보통</span></td><td><span class="lv i">중요</span></td><td><span class="lv i">중요</span></td>
+      <td>AI·의료 편중 재원 배분이 지속되면 비수혜 분야의 상대적 축소 압력이 누적된다.</td>
+      <td>—</td>
+    </tr></tbody>
+  </table></div>
+  <h2 class="sec">대학 취약점 진단 및 모니터링 권고</h2>
+  <div class="diag">
+    <h4>취약점 진단</h4>
+    <ol><li><b>선정 이후의 '성과 확산' 요구에 대한 준비 부족</b>: 9개교 중 3개교만 선정된 구조에서 사업의 정당성은 성과 확산으로 입증해야 한다. 미선정 6개교와의 협력·공유 모델을 먼저 제시하지 못하면 확산 압력이 일방적 요구로 들어올 수 있다.</li><li><b>재원의 AI·의료 편중</b>: 이번 주 확보된 재원이 특정 분야에 집중됐다. 단기 성과에는 유리하나 비수혜 분야의 이탈·불만이 누적되면 중기 비용으로 되돌아온다.</li><li><b>등록금 정책 의존도 상승</b>: 등록금 전액 지원은 거점국립대 공통 조건이라 경쟁 우위가 되지 않으면서, 자체 수입 구조는 국고 정책 변동에 더 민감해진다.</li><li><b>구성원 합의 절차의 취약성</b>: 충남대·공주대 통합 무산은 재정 유인만으로 조직 변화를 만들 수 없음을 보여줬다. 향후 부산대가 구조 개편 국면에 들어갈 때 동일한 조건이 적용된다.</li></ol>
+    <h4>모니터링 권고</h4>
+    <ol><li>'서울대 10개 만들기' 성과 확산 모델을 선제적으로 설계 — 미선정 거점국립대와의 공동 프로그램·자원 공유 안을 부산대가 먼저 제시</li><li>2027 수시 마감 직후 경쟁률·지원자 구성을 전년과 비교하고, '등록금 0원' 효과와 대학 자체 요인을 분리 산출</li><li>AI스타펠로우십·PLATO·휴머노이드 의료로봇·행정 AI 에이전트를 하나의 AX 성과 패키지로 정리 — 교육 AX와 행정 AX를 분리 평가하는 공모 구조에 각각 대응</li><li>AI·의료 집중 배분이 비수혜 분야에 미치는 영향을 학기 단위로 점검하고 보전 방안을 기획처와 공동 검토</li><li>국립대 통합·연합 논의 재개에 대비해 구성원 합의 절차(설명·투표·이의 처리)를 사전 설계하고 충남대 사례를 사례 연구로 정리</li></ol>
+  </div>
+  <h2 class="sec">🔗 참조 기사 원문 <small>본문의 [번호]를 클릭하면 해당 항목으로 이동합니다</small></h2>
+  <ul class="reflist">
+    <li id="w37-ref-1">
+      <span class="n">[1]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMibEFVX3lxTFB0WXpEanpwMTgxcFljUXVQMUplYkpKbDdBdUtlUVY2SVJZZ0dHY3hwa0hlY2N2alRBYTlQbmhkOV83OTQ3WWJSRzNzTFFUTGUxZ2NzbncyQXpQbVg0bTJMcnNIdmwxc01ESFdXOdIBcEFVX3lxTE9aRVBreHhoWTJSdm9FbnFINE5FUEd2RHlwOEZ6cElTTHpkVzFpSTkzakc0aDFTN3FtY3dWQndjZUhsS0ZGcUZKbUh2Y0J5NVU4eUtCeFFmNEUwM3ZWdUdYWjcyckFnVXdKaUoteW5sSTQ?oc=5" target="_blank" rel="noopener">교육부, ‘서울대 10개 만들기’ 패키지 지원대학에 '부산대·전남대·충남대' 선정</a>
+        <div class="meta">내외뉴스통신 · 2026-09-04 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-2">
+      <span class="n">[2]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE92NFBodzliZ1V4YUJwZkJadUdrU2NWdml1QWRvdFM5X0pTVkE0M2VJMlJxaUowUU5wdjhjV2phM3ZwX0dBcTMzcnY5bHFCbTF0Z1B2Qkd6SHNrVFN3RzR4TkRST0xKcnVJNjBj?oc=5" target="_blank" rel="noopener">‘서울대 10개 만들기’ 첫 지원…부산대·전남대·충남대 선정, 경상국립대 등 6개 거점국립대 제외</a>
+        <div class="meta">단디뉴스 · 2026-09-07 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-3">
+      <span class="n">[3]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE9TWjNPWkZVbnlEMFhMdDdVTU5SWTZ4QTZ6aE16eEQ4YzlaQ0JWMHR5WTFkQ25UY19wNUpfMHBfVjRyQ1ZEVk5SajBtMHE1TDNCMER5S0pR?oc=5" target="_blank" rel="noopener">[단독] “9개 거점대 전부 지원해야”…거점국립대 총장들, 교육부에 공식 건의</a>
+        <div class="meta">중앙일보 · 2026-09-04 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-4">
+      <span class="n">[4]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE4zcVUyd3VZS1hmdl9CVmhsSGwxaHoyNndtaTdGTkpCR3dGSThqM2oxd2wtUnQ3Zzl3NWtSRjZvZmtqdVVNQlFhcGxpcXFFNkt1S1pTSnZn?oc=5" target="_blank" rel="noopener">“교육마저 TK 패싱하나”… ‘서울대 10개’ 탈락에 폭발한 경북대</a>
+        <div class="meta">중앙일보 · 2026-09-04 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-5">
+      <span class="n">[5]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE5BbTBhSGRwVmlGUkZTM1pGV1dLVXRtSUx0Y0hFTDFWOFFNTk9tNFM5eW1tMHB2SDF5ME9jaWI4RnBZMDk2aXhTeWZ6VGx6a25MVFdhSHA4anB6N05keTl4ZWEyX0FTSHZ0NmxqTzZn?oc=5" target="_blank" rel="noopener">이재명 정부 '서울대 10개' 공약에 3곳 먼저 집중지원, 성과 확산 방식·시간표는 미정</a>
+        <div class="meta">비즈니스포스트 · 2026-09-05 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-6">
+      <span class="n">[6]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE5jWFhSS0hLS1pYQnFGNEtCU2p2WGFtRmhyQjExei14S1RHVGRTcFhRTG02UGdDME9udDhuZVliTXlzWlhTVjB1Vmc5QjF3TV9WcnBOZnpBcTc0ajM2NXlLZE8tREFLOUUtZURqelFYWdIBc0FVX3lxTE5IZFA0UEtoeHhHZmEtTV9UaWdnZWUtQVRycTc4bHRlQWdSaGVQbHFuNUtOcjg5LXVwUzhfbFJvUjFHcXhLaXpLSV9IY2ZyTDJmcV9mc2dYaFZZbC1wRWVSR2FWakVjeFdXRU5ncE5zWURhQU0?oc=5" target="_blank" rel="noopener">충남대 반대로 국립공주대와 통합 무산… '학생 90% 반대벽 못 넘었다'</a>
+        <div class="meta">데일리한국 · 2026-09-10 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-7">
+      <span class="n">[7]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE5ubTFBQzJpcmtRZVJmQ2VqbWxISkFlLUZsblBIbEthMGxSekhBZWp1VHA1REtBUWk4OElEdzdnX0dvbHdMOFRiUHhlVmRJTXJK?oc=5" target="_blank" rel="noopener">‘통합 충남대’ 성사냐 무산이냐… 8~10일 전 구성원 투표서 판가름</a>
+        <div class="meta">문화일보 · 2026-09-07 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-8">
+      <span class="n">[8]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE9mTlJXUWhGTFdrblJKOFFnTXZMX3dHT0pRT09ROXBVai1ReUhjdzA3Z1FyT0l5bkV1THFld2NJMkoxZllNWFM2NEZpZjRISnVSX2k4d1BRR29PX3VpVVAtNW5DM0VvTHpCUXNJ?oc=5" target="_blank" rel="noopener">지방국립대 신입생 등록금 ‘0원’ 추진... 내년 30곳 대상</a>
+        <div class="meta">산학뉴스 · 2026-09-06 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-9">
+      <span class="n">[9]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE9XeVA2ZktwSmM5TDB1ZzZTZTRmWkRpTlJpZVFvWUN0cGhkRFNOVlktSGN2X0lmNTdHekx0c1dsUDE1U0Mwd2U2dEZWS21yZ2VLYU9LR1QwdDVDMkItblR1StIBeEFVX3lxTFBJYXl5ZzRULXRhN1RYS1ZTeklDWXR1ZmZPWDFPZ25GTWFTNS01TlJId2JmN1BQNWUxcmhQWFBWR3Y1dG9URGxMS0NUVm9NSWdnMGVDS2xRRUF5STZlb2IxUFNuLWVIRHNrWnlYSWQ4X2g2MHROUHBQRw?oc=5" target="_blank" rel="noopener">지방 국립대 '등록금 0원'에…사립대 교수들 &quot;차별 시정&quot;</a>
+        <div class="meta">뉴시스 · 2026-09-07 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-10">
+      <span class="n">[10]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE5NaThtOVc4Ml9MUEl0RFFpaWNnNFJOMDhxOEVMNUtHWV9YR0t5eVJHMWtVam5HNzI5U1dqNTZCaERtUW94R2lzX05TTnA5SmdwVEk2RFNud2p1Wk1CMTUwdEZaemJoWGRrRm43UDdR0gFzQVVfeXFMT1RiLUJBV0I5dHVmb0RWVmMzSDZNcHY2TDFoMkFrMWtRY19VNVlvbWZVeXRQNEtURTcyUjZBS2NrcXJWQl94RHVKUHFibkhUbW9oSEY2U2UzaTlHMkFTRENncGhaUXlzLVVPVGNXdk1qblQtUQ?oc=5" target="_blank" rel="noopener">지방 국립대 등록금 0원 효과? '인서울' 모의지원 5년 새 최저</a>
+        <div class="meta">hankookilbo.com · 2026-09-04 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-11">
+      <span class="n">[11]</span>
+      <div>
+        <a href="https://news.unn.net/news/articleView.html?idxno=597242" target="_blank" rel="noopener">김우철 한국재정학회장 “교부금 개편, 개혁 아니다… 교육감 돈 주인만 바뀐 것”</a>
+        <div class="meta">한국대학신문 · 2026-09-10 · <span class="src-ok">원문 URL</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-12">
+      <span class="n">[12]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTFBzTzhnejNrTWllZjljNkV1MG43MGE5NVdIelBoaFN4M1BIdDdrZ3dmdmN2S2Fsd192Rm1vQVFuN2wybzBEYlFlNEg0NDZubjR1Nm94RmlBelV3ay1MZDJYM0xZR0JjZw?oc=5" target="_blank" rel="noopener">부산대, 121억 원 규모 과기정통부 ‘AI스타펠로우십’ 사업 최종 선정</a>
+        <div class="meta">한국대학신문 · 2026-09-07 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-13">
+      <span class="n">[13]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTFBsV2pTSnZsbVFHRlVrb0ZxYlZ2T0NSRm9PRkpxeHpzcmlsUlJrN0ZjTkUzY1NkTF9kaTJya1AyRUV4Z05FVlZ5STd5YmZwdThjV2hSZw?oc=5" target="_blank" rel="noopener">부산시, AI 최고급 신진 연구자 양성 지원…부산대와 협력</a>
+        <div class="meta">v.daum.net · 2026-09-07 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-14">
+      <span class="n">[14]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMitgJBVV95cUxPUlNOM0hiQ01ESDg1Z29oWUY1V3YwcXNJNmFIOXVJeGJlajBoMlRJcmlBRXRJZy1BejdnX2h2WVhCV3pQaFNhR1lSbnVoSHVaaGhzR2xDUTBvZXpIR0pJQngyLV84ODJlVHRnV1JfMGZ2UG1obEJKbk1sQjRuTTV4dlpWNzFiQjY5WTItTUM1Skp4dmJRUlBGOFdxUTB0cXN5ZjRGdi1hRTRiR1JHLXFBN1c4RGhrWGtzZWRwQXZvanNxcTZaVDZ1cW1zaDNDdmlFYnlqNmtyY1kyb2dKNjV0dmxTdFVMMEYzaWRFbGl2RGtvbmNyUC04MUhYNG0zS29xU2l2TjhSemMyNEhSeFVoSE9jMXRxd0I3cjAwam1MU3dHRl9obzZHbHV6MEp2YTZEZnJlTDRR?oc=5" target="_blank" rel="noopener">부산대, AI 기능 탑재한 교육플랫폼 ‘PLATO’ 고도화… 2026학년도 2학기 본격 서비스</a>
+        <div class="meta">스포트라이트유 · 2026-09-07 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-15">
+      <span class="n">[15]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPTmlveG1RU19XRGx3ZHpvVm9wSllRdkk3TnBKV0hJT3Z5eGpCVmVBeWVEX01xREpYSnlBbU91bkdFVnZjcmlEaE8tNkRnVV80dUpJVGhnMlRmR0lQRFA1V3RfT0t6T0dqMXFWNlRENTJzaTRUUl9XWmpxaUV1R19EQ2RR?oc=5" target="_blank" rel="noopener">부산대, 글로컬대학 연계 ‘휴머노이드 의료로봇 센터’ 개소</a>
+        <div class="meta">부산일보 · 2026-09-04 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-16">
+      <span class="n">[16]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOUzlIQ0g0aGQ0OHBGSFY0THlIUDh3cDRRT3ZjdEhsZlRieHBHZVZYS0RXa3BabkZUbjZCWFhBTmZ6LXNCbmZ1RW1zcXdvaDJLTm5ZN1dseVM5dm1IcnFURUlwM05aaTd3YWlEM3ZsZUxRU3lleHpYYWhFVlRGM0FKUV9xUWxNZjJFWU1GR1ZR?oc=5" target="_blank" rel="noopener">부산대 의과대학, 휴머노이드 의료로봇 활용 의학교육 시범 운영</a>
+        <div class="meta">국제신문 · 2026-09-09 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li>
+    <li id="w37-ref-17">
+      <span class="n">[17]</span>
+      <div>
+        <a href="https://news.google.com/rss/articles/CBMijgFBVV95cUxNMTI4VnFzQlVOZ1hMb0NHMGhoOXBVSGZxUUI2b1BCQ0FuOF93UXc4TE5XM0h5UXZpbmZDWHdvc0xCLUdKUmdHVnBzMlFOR1lpOFBjQ2tISUN1SlNjSVFwQXpOa1UtcDgzTFRWdWczaF9hZzhkRXdPLUs4cmJaMkVXN3NQQVVXSmxmZ1JEaERR?oc=5" target="_blank" rel="noopener">부산대, 2027학년도 수시모집 원서접수 시작…3,587명 선발</a>
+        <div class="meta">국제신문 · 2026-09-08 · <span class="src-via">구글뉴스 경유</span></div>
+      </div>
+    </li></ul></section>
+<section class="week" id="w36">
+  <div class="wk-head">
+    <span class="tier t2">Tier 2 주의</span>
+    <div>
+      <div class="wk-title">2026.09.04 (Week 36)</div>
+      <div class="wk-range">기사수집기간: 2026.08.28~2026.09.04</div>
+    </div>
+    <div class="state t2"><i class="dot d2"></i>Watch</div>
+  </div>
+  <div class="signal">신호: <b>Crisis 3.3%</b> | <b>Warning 3.3%</b> | 합산 6.6% | 총 334건 | 추세: <b>rising</b></div>
+  <div class="live-note"><span class="live-badge">실데이터</span>구글 뉴스 소급 수집 · 관련 기사 334건</div>
+      <div class="stub-body"><b>이 주차는 아직 리포트가 생성되지 않았습니다.</b><br>
+      수집·분류가 끝난 신호 집계값만 보유한 상태입니다. 파이프라인(<code>collect → classify → aggregate → narrate</code>)을 해당 주차에 실행하면
+      상황요약·리스크 지도·전파경로·부문별 영향표가 이 자리에 동일한 서식으로 채워집니다.</div>
+    </section>
+<section class="week" id="w35">
+  <div class="wk-head">
+    <span class="tier t1">Tier 1 관심</span>
+    <div>
+      <div class="wk-title">2026.08.28 (Week 35)</div>
+      <div class="wk-range">기사수집기간: 2026.08.21~2026.08.28</div>
+    </div>
+    <div class="state t1"><i class="dot d1"></i>Normal</div>
+  </div>
+  <div class="signal">신호: <b>Crisis 3.9%</b> | <b>Warning 2%</b> | 합산 5.9% | 총 153건 | 추세: <b>rising</b></div>
+  <div class="live-note"><span class="live-badge">실데이터</span>구글 뉴스 소급 수집 · 관련 기사 153건</div>
+      <div class="stub-body"><b>이 주차는 아직 리포트가 생성되지 않았습니다.</b><br>
+      수집·분류가 끝난 신호 집계값만 보유한 상태입니다. 파이프라인(<code>collect → classify → aggregate → narrate</code>)을 해당 주차에 실행하면
+      상황요약·리스크 지도·전파경로·부문별 영향표가 이 자리에 동일한 서식으로 채워집니다.</div>
+    </section>
+<section class="week" id="w34">
+  <div class="wk-head">
+    <span class="tier t1">Tier 1 관심</span>
+    <div>
+      <div class="wk-title">2026.08.21 (Week 34)</div>
+      <div class="wk-range">기사수집기간: 2026.08.14~2026.08.21</div>
+    </div>
+    <div class="state t1"><i class="dot d1"></i>Normal</div>
+  </div>
+  <div class="signal">신호: <b>Crisis 1.4%</b> | <b>Warning 0%</b> | 합산 1.4% | 총 148건 | 추세: <b>falling</b></div>
+  <div class="live-note"><span class="live-badge">실데이터</span>구글 뉴스 소급 수집 · 관련 기사 148건</div>
+      <div class="stub-body"><b>이 주차는 아직 리포트가 생성되지 않았습니다.</b><br>
+      수집·분류가 끝난 신호 집계값만 보유한 상태입니다. 파이프라인(<code>collect → classify → aggregate → narrate</code>)을 해당 주차에 실행하면
+      상황요약·리스크 지도·전파경로·부문별 영향표가 이 자리에 동일한 서식으로 채워집니다.</div>
+    </section>
+<section class="week" id="w33">
+  <div class="wk-head">
+    <span class="tier t1">Tier 1 관심</span>
+    <div>
+      <div class="wk-title">2026.08.14 (Week 33)</div>
+      <div class="wk-range">기사수집기간: 2026.08.07~2026.08.14</div>
+    </div>
+    <div class="state t1"><i class="dot d1"></i>Normal</div>
+  </div>
+  <div class="signal">신호: <b>Crisis 3%</b> | <b>Warning 0.6%</b> | 합산 3.6% | 총 169건 | 추세: <b>falling</b></div>
+  <div class="live-note"><span class="live-badge">실데이터</span>구글 뉴스 소급 수집 · 관련 기사 169건</div>
+      <div class="stub-body"><b>이 주차는 아직 리포트가 생성되지 않았습니다.</b><br>
+      수집·분류가 끝난 신호 집계값만 보유한 상태입니다. 파이프라인(<code>collect → classify → aggregate → narrate</code>)을 해당 주차에 실행하면
+      상황요약·리스크 지도·전파경로·부문별 영향표가 이 자리에 동일한 서식으로 채워집니다.</div>
+    </section>
+<section class="week" id="w32">
+  <div class="wk-head">
+    <span class="tier t4">Tier 4 위기</span>
+    <div>
+      <div class="wk-title">2026.08.07 (Week 32)</div>
+      <div class="wk-range">기사수집기간: 2026.07.31~2026.08.07</div>
+    </div>
+    <div class="state t4"><i class="dot d4"></i>Crisis</div>
+  </div>
+  <div class="signal">신호: <b>Crisis 6.4%</b> | <b>Warning 5.3%</b> | 합산 11.7% | 총 188건 | 추세: <b>rising</b></div>
+  <div class="live-note"><span class="live-badge">실데이터</span>구글 뉴스 소급 수집 · 관련 기사 188건</div>
+      <div class="stub-body"><b>이 주차는 아직 리포트가 생성되지 않았습니다.</b><br>
+      수집·분류가 끝난 신호 집계값만 보유한 상태입니다. 파이프라인(<code>collect → classify → aggregate → narrate</code>)을 해당 주차에 실행하면
+      상황요약·리스크 지도·전파경로·부문별 영향표가 이 자리에 동일한 서식으로 채워집니다.</div>
+    </section>
+<section class="week" id="w31">
+  <div class="wk-head">
+    <span class="tier t2">Tier 2 주의</span>
+    <div>
+      <div class="wk-title">2026.07.31 (Week 31)</div>
+      <div class="wk-range">기사수집기간: 2026.07.24~2026.07.31</div>
+    </div>
+    <div class="state t2"><i class="dot d2"></i>Watch</div>
+  </div>
+  <div class="signal">신호: <b>Crisis 3%</b> | <b>Warning 3.9%</b> | 합산 6.9% | 총 232건 | 추세: <b>rising</b></div>
+  <div class="live-note"><span class="live-badge">실데이터</span>구글 뉴스 소급 수집 · 관련 기사 232건</div>
+      <div class="stub-body"><b>이 주차는 아직 리포트가 생성되지 않았습니다.</b><br>
+      수집·분류가 끝난 신호 집계값만 보유한 상태입니다. 파이프라인(<code>collect → classify → aggregate → narrate</code>)을 해당 주차에 실행하면
+      상황요약·리스크 지도·전파경로·부문별 영향표가 이 자리에 동일한 서식으로 채워집니다.</div>
+    </section>
+<section class="week" id="w30">
+  <div class="wk-head">
+    <span class="tier t1">Tier 1 관심</span>
+    <div>
+      <div class="wk-title">2026.07.24 (Week 30)</div>
+      <div class="wk-range">기사수집기간: 2026.07.17~2026.07.24</div>
+    </div>
+    <div class="state t1"><i class="dot d1"></i>Normal</div>
+  </div>
+  <div class="signal">신호: <b>Crisis 3%</b> | <b>Warning 1.5%</b> | 합산 4.5% | 총 197건 | 추세: <b>baseline</b></div>
+  <div class="live-note"><span class="live-badge">실데이터</span>구글 뉴스 소급 수집 · 관련 기사 197건</div>
+      <div class="stub-body"><b>이 주차는 아직 리포트가 생성되지 않았습니다.</b><br>
+      수집·분류가 끝난 신호 집계값만 보유한 상태입니다. 파이프라인(<code>collect → classify → aggregate → narrate</code>)을 해당 주차에 실행하면
+      상황요약·리스크 지도·전파경로·부문별 영향표가 이 자리에 동일한 서식으로 채워집니다.</div>
+    </section>
+
+<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 01:46:49 · 빌드 산출물(정적 HTML) · 데이터 소스: data/weeks.json</p>
+</main>
+</div>
+</div>
+<div id="toast"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script>window.__MAPDATA__ = {"universities":[{"id":"snu","name":"서울대","lat":37.4601,"lng":126.952},{"id":"knu","name":"강원대","lat":37.8688,"lng":127.7387},{"id":"cbnu","name":"충북대","lat":36.6285,"lng":127.4565},{"id":"cnu","name":"충남대","lat":36.3683,"lng":127.3455},{"id":"knu2","name":"경북대","lat":35.8888,"lng":128.6103},{"id":"jbnu","name":"전북대","lat":35.8468,"lng":127.1297},{"id":"jnu","name":"전남대","lat":35.176,"lng":126.907},{"id":"gnu","name":"경상국립대","lat":35.1535,"lng":128.0985},{"id":"pnu","name":"부산대","lat":35.2339,"lng":129.079,"focus":true},{"id":"jeju","name":"제주대","lat":33.4562,"lng":126.5619}],"hub":{"name":"교육부(세종)","lat":36.504,"lng":127.265},"weeks":{"w37":{"levels":{"snu":2,"knu":3,"cbnu":1,"cnu":3,"knu2":2,"jbnu":2,"jnu":2,"gnu":2,"pnu":4,"jeju":2},"uni":{"snu":{"name":"서울대","mentions":14,"risky":2,"riskRate":14.3,"riskLevel":2,"keywords":[["거점국립대",2],["AI",2],["손지수",2],["김효근",2]],"lead":{"title":"서울대 국종성 교수 연구팀, 탄소중립 늦어지면 남극해 탄소 흡수능력 상실","media":"한국대학신문","level":"warning"}},"knu":{"name":"강원대","mentions":21,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["산학연혁신허브",14],["개관",14],["캠퍼스",9],["혁신파크",8],["거점국립대",8]],"lead":{"title":"강원대 캠퍼스 혁신파크 산학연혁신허브 개관… 거점국립대 최초","media":"한국대학신문","level":"normal"}},"cbnu":{"name":"충북대","mentions":3,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["교통대",2]],"lead":{"title":"“충북대 ‘서울대 10개 만들기’ 탈락, 우리 대응부터 돌아봐야”","media":"K-Life TV","level":"normal"}},"cnu":{"name":"충남대","mentions":34,"risky":6,"riskRate":17.6,"riskLevel":2,"keywords":[["통합",12],["공주대",11],["거점국립대",10],["패키지",8],["최교진",7]],"lead":{"title":"‘통합 충남대’ 성사냐 무산이냐… 8~10일 전 구성원 투표서 판가름","media":"문화일보","level":"crisis"}},"knu2":{"name":"경북대","mentions":11,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["탈락",4],["만들기",3],["TK",2],["총장",2],["선정",2]],"lead":{"title":"경북대 등 지방거점국립대 합격선·경쟁률 ‘최근 5년새 최고’","media":"경북매일","level":"normal"}},"jbnu":{"name":"전북대","mentions":9,"risky":1,"riskRate":11.1,"riskLevel":1,"keywords":[["AI",3],["경쟁",2],["JUMP",2],["JUIC",2],["오픈",2]],"lead":{"title":"[기획-전북 대학 AI 반도체 경쟁 소외 위기] 상-전북대 탈락이 보여준 지방대 경쟁의 현실","media":"전라일보","level":"crisis"}},"jnu":{"name":"전남대","mentions":14,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["여수캠퍼스",4],["등록금",4],["만들기",3],["주거",3],["지원",2]],"lead":{"title":"‘서울대 10개 만들기’ 첫 지원…부산대·전남대·충남대 선정, 경상국립대 등 6개 거점국립대 제외","media":"단디뉴스","level":"normal"}},"gnu":{"name":"경상국립대","mentions":10,"risky":1,"riskRate":10,"riskLevel":1,"keywords":[["선정",3],["경남",2],["AI",2]],"lead":{"title":"경상국립대, 100주년 기념관 건설업체 임대에 교수 반발","media":"경남도민일보","level":"crisis"}},"pnu":{"name":"부산대","mentions":62,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["AI",15],["선정",13],["최고급",7],["개발",6],["지원",5]],"lead":{"title":"‘서울대 10개 만들기’ 첫 지원…부산대·전남대·충남대 선정, 경상국립대 등 6개 거점국립대 제외","media":"단디뉴스","level":"normal"}},"jeju":{"name":"제주대","mentions":10,"risky":2,"riskRate":20,"riskLevel":2,"keywords":[["제주",4],["런케이션",3],["교원",2],["교육대학",2],["학생들",2]],"lead":{"title":"제주대 교육대학 학생들 \"초등학교 교사 선발 규모 감축 전면 재검토하라\"","media":"헤드라인제주","level":"warning"}}},"flows":[{"to":"pnu","style":"solid","color":"#3b7dd8","label":"정책 전달 경로"}],"legend":{"primary":"'서울대 10개 만들기' 1차 선정 및 거점국립대 재편","secondary":"지방 국립대 등록금 전액 지원, 국립대 통합 무산","disturb":"미선정 지역 반발, 사립대 역차별 논쟁, 구성원 합의 난항","buffer":"패키지 지원 선정, AI스타펠로우십, 글로컬대학 연계, PLATO 교육 AX"}}}};</script>
+<script>/* 클라이언트 동작: Leaflet 리스크 지도, 각주 이동, 사이드바 스크롤스파이, 인쇄/PDF, 전체 펼치기 */
+(function () {
+  'use strict';
+
+  var D = window.__MAPDATA__ || { universities: [], weeks: {} };
+  // 크기 = 주목도(언급량), 색 = 위험신호 비율. 두 축을 분리한다.
+  var RADIUS = { 4: 15, 3: 10, 2: 7, 1: 6 };
+  var ATTN = { 4: '최다', 3: '많음', 2: '보통', 1: '적음' };
+  var RISKC = { 3: '#b3261e', 2: '#d9822b', 1: '#c9a227', 0: '#2f8f5b' };
+  var RISKW = { 3: '위험신호 높음', 2: '위험신호 있음', 1: '위험신호 일부', 0: '위험신호 없음' };
+  var COLOR = { 4: '#b3261e', 3: '#d9822b', 2: '#c9a227', 1: '#2f8f5b' };  // 경로선 등 기존 용도
+  var DASH = { solid: null, dash: '8,6', dot: '2,6' };
+  var MAPS = [];   // 인쇄 시 현재 화면(중심·확대)을 유지하려면 지도 인스턴스를 들고 있어야 한다
+
+  function toast(msg) {
+    var el = document.getElementById('toast');
+    if (!el) return;
+    el.textContent = msg;
+    el.classList.add('on');
+    clearTimeout(el._t);
+    el._t = setTimeout(function () { el.classList.remove('on'); }, 3200);
+  }
+
+  /* ---------- 1. 리스크 지도 ---------- */
+  function buildMap(el) {
+    var wid = el.dataset.week, cfg = D.weeks[wid];
+    if (!cfg || typeof L === 'undefined') {
+      el.innerHTML = '<div style="padding:20px;color:#6b7280;font-size:13px">' +
+        '지도 타일을 불러올 수 없습니다(오프라인). 학내망 운영 시에는 타일 서버를 내부에 두거나 GeoJSON 경계로 대체합니다.</div>';
+      return;
+    }
+    var map = L.map(el, { scrollWheelZoom: false, zoomSnap: 0.25, attributionControl: true })
+      .setView([36.3, 127.9], 6.4);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 12, minZoom: 5,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    var byId = {};
+    D.universities.forEach(function (u) { byId[u.id] = u; });
+
+    // 이슈 전파 경로 (교육부 → 대학)
+    (cfg.flows || []).forEach(function (f) {
+      var to = byId[f.to];
+      if (!to) return;
+      var mid = [(D.hub.lat + to.lat) / 2 + 0.35, (D.hub.lng + to.lng) / 2 - 0.45];
+      var pts = curve([D.hub.lat, D.hub.lng], mid, [to.lat, to.lng]);
+      L.polyline(pts, {
+        color: f.color, weight: 2.5, opacity: .85,
+        dashArray: DASH[f.style] || null
+      }).addTo(map).bindTooltip(f.label, { sticky: true });
+    });
+
+    // 교육부 허브
+    L.circleMarker([D.hub.lat, D.hub.lng], {
+      radius: 6, color: '#1a2b4c', fillColor: '#1a2b4c', fillOpacity: 1, weight: 2
+    }).addTo(map).bindTooltip(D.hub.name, { permanent: true, direction: 'top', className: 'uni-label' });
+
+    // 대학 마커 — 크기·색 = 주간 리스크 신호 강도
+    D.universities.forEach(function (u) {
+      var lv = (cfg.levels && cfg.levels[u.id]) || 1;
+      var d0 = (cfg.uni && cfg.uni[u.id]) || {};
+      var rl = d0.riskLevel || 0;
+      L.circleMarker([u.lat, u.lng], {
+        radius: RADIUS[lv], color: '#fff', weight: u.focus ? 3 : 1.5,
+        fillColor: RISKC[rl], fillOpacity: .92
+      }).addTo(map)
+        .bindTooltip(u.name, {
+          permanent: true, direction: 'right', offset: [6, 0],
+          className: 'uni-label' + (u.focus ? ' focus' : '')
+        })
+        .bindPopup(hintHtml(u, lv, cfg))
+        .on('mouseover', function (e) { showHint(el, hintHtml(u, lv, cfg), e.originalEvent); })
+        .on('mousemove', function (e) { moveHint(el, e.originalEvent); })
+        .on('mouseout', function () { hideHint(el); });
+    });
+
+    MAPS.push({ el: el, map: map });
+
+    // 내 위치 — 버튼을 눌렀을 때만 요청한다(자동 요청 안 함).
+    // 좌표는 브라우저 안에서만 쓰이고 서버로 전송되지 않는다.
+    var LocateCtl = L.Control.extend({
+      options: { position: 'topleft' },
+      onAdd: function () {
+        var b = L.DomUtil.create('a', 'leaflet-locate');
+        b.href = '#'; b.title = '내 위치 표시 (브라우저에만 사용)'; b.innerHTML = '◎';
+        L.DomEvent.on(b, 'click', function (ev) { L.DomEvent.preventDefault(ev); locate(map, b); });
+        return b;
+      }
+    });
+    map.addControl(new LocateCtl());
+
+    // 긴 보고서 안의 지도이므로 휠은 항상 페이지 스크롤에 양보한다.
+    // 확대/축소는 +/- 버튼, 더블클릭, 드래그, 또는 Ctrl+휠로만.
+    el.addEventListener('wheel', function (ev) {
+      if (!ev.ctrlKey) return;
+      ev.preventDefault();
+      map.setZoom(map.getZoom() + (ev.deltaY < 0 ? 0.5 : -0.5));
+    }, { passive: false });
+  }
+
+  /* 마커 호버 힌트 — 대학별 주요 키워드
+     키워드는 서술이 아니라 '그 대학을 언급한 기사 제목'에서 파이프라인이 집계한 값이다. */
+  var LVWORD = { crisis: '위기', warning: '경고', watch: '관찰', normal: '일반' };
+  function esc(t) {
+    return String(t == null ? '' : t)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function hintHtml(u, lv, cfg) {
+    var d = cfg.uni && cfg.uni[u.id];
+    var rl = (d && d.riskLevel) || 0;
+    var h = '<div class="hint-h"><b>' + esc(u.name) + '</b>' +
+      '<span class="hint-g" style="background:' + RISKC[rl] + '">' + RISKW[rl] + '</span></div>';
+    if (!d || !d.mentions) return h + '<div class="hint-n">이번 주 언급 없음</div>';
+    h += '<div class="hint-n">주목도 <b style="color:#1f2937">' + ATTN[lv] + '</b> · 언급 ' + d.mentions + '건' +
+      (d.risky ? ' · 위험신호 <b>' + d.risky + '건</b> (' + d.riskRate + '%)' : '') + '</div>';
+    if (d.keywords && d.keywords.length) {
+      h += '<div class="hint-k">' + d.keywords.map(function (k) {
+        return '<span>' + esc(k[0]) + '<i>' + k[1] + '</i></span>';
+      }).join('') + '</div>';
+    }
+    if (d.lead) {
+      h += '<div class="hint-l"><span class="lv ' +
+        ({ crisis: 's', warning: 'i', watch: 'm', normal: 'l' }[d.lead.level]) + '">' +
+        LVWORD[d.lead.level] + '</span>' + esc(d.lead.title) + '</div>';
+    }
+    return h;
+  }
+  function hintBox(el) {
+    if (!el._hint) {
+      var b = document.createElement('div');
+      b.className = 'map-hint';
+      el.appendChild(b);
+      el._hint = b;
+    }
+    return el._hint;
+  }
+  function showHint(el, html, ev) {
+    var b = hintBox(el);
+    b.innerHTML = html;
+    b.style.display = 'block';
+    moveHint(el, ev);
+  }
+  function moveHint(el, ev) {
+    var b = el._hint;
+    if (!b || b.style.display === 'none' || !ev) return;
+    var r = el.getBoundingClientRect();
+    var x = ev.clientX - r.left + 14, y = ev.clientY - r.top + 14;
+    if (x + b.offsetWidth > r.width - 8) x = ev.clientX - r.left - b.offsetWidth - 14;
+    if (y + b.offsetHeight > r.height - 8) y = ev.clientY - r.top - b.offsetHeight - 14;
+    b.style.left = Math.max(6, x) + 'px';
+    b.style.top = Math.max(6, y) + 'px';
+  }
+  function hideHint(el) { if (el._hint) el._hint.style.display = 'none'; }
+
+  // 내 위치 표시
+  function locate(map, btn) {
+    if (!navigator.geolocation) { toast('이 브라우저는 위치 기능을 지원하지 않습니다'); return; }
+    btn.innerHTML = '…';
+    navigator.geolocation.getCurrentPosition(function (pos) {
+      btn.innerHTML = '◎';
+      var la = pos.coords.latitude, lo = pos.coords.longitude, acc = pos.coords.accuracy || 0;
+      if (map._meLayer) map.removeLayer(map._meLayer);
+      map._meLayer = L.layerGroup([
+        L.circle([la, lo], { radius: Math.max(acc, 150), color: '#3b7dd8', weight: 1, fillColor: '#3b7dd8', fillOpacity: .15 }),
+        L.circleMarker([la, lo], { radius: 7, color: '#fff', weight: 3, fillColor: '#3b7dd8', fillOpacity: 1 })
+          .bindTooltip('현재 위치', { permanent: true, direction: 'top', className: 'uni-label' })
+      ]).addTo(map);
+
+      // 부산대까지의 거리 — 지도의 기준 대학과 얼마나 떨어져 있는지
+      var focus = null;
+      D.universities.forEach(function (u) { if (u.focus) focus = u; });
+      var msg = '현재 위치를 표시했습니다';
+      if (focus) msg += ' · ' + focus.name + '까지 약 ' + km(la, lo, focus.lat, focus.lng).toFixed(1) + 'km';
+      msg += ' (좌표는 브라우저에만 사용, 전송되지 않음)';
+      map.setView([la, lo], Math.max(map.getZoom(), 9), { animate: false });
+      toast(msg);
+    }, function (err) {
+      btn.innerHTML = '◎';
+      toast(err.code === 1 ? '위치 권한이 거부되었습니다' : '위치를 가져오지 못했습니다');
+    }, { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 });
+  }
+
+  function km(a1, o1, a2, o2) {
+    var R = 6371, r = Math.PI / 180;
+    var dA = (a2 - a1) * r, dO = (o2 - o1) * r;
+    var x = Math.sin(dA / 2) * Math.sin(dA / 2) +
+      Math.cos(a1 * r) * Math.cos(a2 * r) * Math.sin(dO / 2) * Math.sin(dO / 2);
+    return R * 2 * Math.atan2(Math.sqrt(x), Math.sqrt(1 - x));
+  }
+
+  // 2차 베지어를 폴리라인 점들로 근사
+  function curve(a, m, b) {
+    var out = [];
+    for (var t = 0; t <= 1.0001; t += 0.05) {
+      var u = 1 - t;
+      out.push([
+        u * u * a[0] + 2 * u * t * m[0] + t * t * b[0],
+        u * u * a[1] + 2 * u * t * m[1] + t * t * b[1]
+      ]);
+    }
+    return out;
+  }
+
+  /* ---------- 2. 각주 [n] → 참조 기사 목록 ---------- */
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.ref');
+    if (!btn) return;
+    var week = btn.closest('.week');
+    var li = week && week.querySelector('#' + week.id + '-ref-' + btn.dataset.ref);
+    if (!li) { toast('[' + btn.dataset.ref + '] 참조 항목을 찾을 수 없습니다'); return; }
+    document.querySelectorAll('.reflist li.hit').forEach(function (x) { x.classList.remove('hit'); });
+    li.classList.add('hit');
+    li.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(function () { li.classList.remove('hit'); }, 2600);
+  });
+
+  /* ---------- 3. 사이드바 스크롤스파이 ---------- */
+  var navs = [].slice.call(document.querySelectorAll('[data-nav]'));
+  var weeks = [].slice.call(document.querySelectorAll('.week'));
+  if ('IntersectionObserver' in window && weeks.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        navs.forEach(function (a) { a.classList.toggle('on', a.dataset.nav === en.target.id); });
+      });
+    }, { rootMargin: '-96px 0px -70% 0px' });
+    weeks.forEach(function (w) { io.observe(w); });
+  }
+
+  /* ---------- 4. 버튼 ---------- */
+  var expandBtn = document.querySelector('[data-expand]');
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function () {
+      var ds = document.querySelectorAll('details.day');
+      var open = expandBtn.dataset.on !== '1';
+      ds.forEach(function (d) { d.open = open; });
+      expandBtn.dataset.on = open ? '1' : '0';
+      expandBtn.textContent = open ? '기사 전체 접기' : '기사 전체 펼치기';
+    });
+  }
+
+  var printBtn = document.querySelector('[data-print]');
+  if (printBtn) {
+    printBtn.addEventListener('click', function () {
+      document.querySelectorAll('details.day').forEach(function (d) { d.open = true; });
+      maps.forEach(ensure);
+      toast('현재 지도 화면 그대로 인쇄합니다 — 타일을 불러온 뒤 인쇄 창이 열립니다');
+      setTimeout(function () { window.print(); }, 1200);   // 타일 로딩 여유
+    });
+  }
+
+  // PDF: 사전 생성 파일(KMI 방식). 없으면 브라우저 인쇄로 폴백.
+  var pdfBtn = document.querySelector('[data-pdf]');
+  if (pdfBtn) {
+    pdfBtn.addEventListener('click', function (e) {
+      if (location.protocol === 'file:') return; // 로컬은 그대로 열기 시도
+      e.preventDefault();
+      fetch(pdfBtn.getAttribute('href'), { method: 'HEAD' })
+        .then(function (r) {
+          if (r.ok) { window.open(pdfBtn.getAttribute('href'), '_blank'); }
+          else { toast('사전 생성 PDF가 없어 인쇄 대화상자로 대체합니다'); window.print(); }
+        })
+        .catch(function () { toast('PDF를 찾을 수 없어 인쇄로 대체합니다'); window.print(); });
+    });
+  }
+
+  /* ---------- 5. 지도 지연 생성 ---------- */
+  var maps = [].slice.call(document.querySelectorAll('.lmap'));
+
+  function ensure(el) { if (!el._built) { el._built = true; buildMap(el); } }
+
+  // 최신 주차 지도는 항상 즉시 생성한다.
+  // (IntersectionObserver 는 탭이 백그라운드거나 창이 가려지면 발화하지 않아 지도가 빈 채로 남는다)
+  if (maps.length) ensure(maps[0]);
+
+  if ('IntersectionObserver' in window) {
+    var mo = new IntersectionObserver(function (es) {
+      es.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        mo.unobserve(en.target);
+        ensure(en.target);
+      });
+    }, { rootMargin: '250px' });
+    maps.slice(1).forEach(function (m) { mo.observe(m); });
+  } else {
+    maps.forEach(ensure);
+  }
+
+  // 인쇄: 화면에서 보고 있던 중심·확대를 그대로 유지한다.
+  // 인쇄 시 컨테이너 크기가 바뀌면 Leaflet 이 다른 영역을 그리므로,
+  // invalidateSize 후 저장해 둔 중심·확대로 되돌린다.
+  window.addEventListener('beforeprint', function () {
+    maps.forEach(ensure);
+    MAPS.forEach(function (m) {
+      m.saved = { c: m.map.getCenter(), z: m.map.getZoom() };
+      m.map.invalidateSize({ animate: false });
+      m.map.setView(m.saved.c, m.saved.z, { animate: false });
+    });
+  });
+  window.addEventListener('afterprint', function () {
+    MAPS.forEach(function (m) {
+      m.map.invalidateSize({ animate: false });
+      if (m.saved) m.map.setView(m.saved.c, m.saved.z, { animate: false });
+    });
+  });
+})();
+</script>
+</body>
+</html>
