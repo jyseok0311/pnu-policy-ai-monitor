@@ -346,18 +346,9 @@
   }
 
   /* ---------- 4. 버튼 ---------- */
-  // 인쇄·PDF 생성 시에는 기사 목록을 코드가 직접 펼친다(아래 printBtn / pdf.mjs).
-  var printBtn = document.querySelector('[data-print]');
-  if (printBtn) {
-    printBtn.addEventListener('click', function () {
-      document.querySelectorAll('details.day').forEach(function (d) { d.open = true; });
-      maps.forEach(ensure);
-      toast('현재 지도 화면 그대로 인쇄합니다 — 타일을 불러온 뒤 인쇄 창이 열립니다');
-      setTimeout(function () { window.print(); }, 1200);   // 타일 로딩 여유
-    });
-  }
-
   // PDF: 사전 생성 파일(KMI 방식). 없으면 브라우저 인쇄로 폴백.
+  // 브라우저 인쇄(Ctrl+P)로 직접 뽑을 때도 기사 목록이 펼쳐지고 지도 화면이 유지되도록
+  // 관련 처리는 아래 beforeprint 리스너에 모아 두었다.
   var pdfBtn = document.querySelector('[data-pdf]');
   if (pdfBtn) {
     pdfBtn.addEventListener('click', function (e) {
@@ -398,6 +389,7 @@
   // 인쇄 시 컨테이너 크기가 바뀌면 Leaflet 이 다른 영역을 그리므로,
   // invalidateSize 후 저장해 둔 중심·확대로 되돌린다.
   window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('details.day').forEach(function (d) { d.open = true; });
     maps.forEach(ensure);
     MAPS.forEach(function (m) {
       m.saved = { c: m.map.getCenter(), z: m.map.getZoom() };

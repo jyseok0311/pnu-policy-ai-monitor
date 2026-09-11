@@ -261,8 +261,7 @@ export function renderPage({ meta, weeks, sources, css, js, pdfPath, world, joon
     </div>
   </div>
   <div class="acts">
-    <a class="btn" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf title="빌드 때 미리 생성한 표준 PDF">표준 PDF</a>
-    <button class="btn ghost" data-print title="지도를 포함해 현재 보고 있는 화면 그대로 인쇄/PDF 저장">현재 화면 PDF</button>
+    <a class="btn" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf title="빌드 때 미리 생성한 PDF (지도 기본 화면, 열람자 위치 미포함)">PDF 다운로드</a>
   </div>
 </header>
 
