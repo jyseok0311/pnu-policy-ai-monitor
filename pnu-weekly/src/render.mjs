@@ -14,28 +14,60 @@ function withRefs(text, refs) {
   return text + sup;
 }
 
-// ── 주차별 위험신호(위기+경고) 추이 스파크라인
+// ── 주차별 위험신호(위기+경고) 추이 — 막대 + 추세선 콤보
+// 막대는 그 주의 수준, 선은 주차 간 흐름을 보여준다. 둘을 겹쳐야 '얼마나'와 '어느 쪽으로'가 함께 읽힌다.
 function sparkline(weeks) {
-  const series = [...weeks].reverse(); // 오래된 주차 → 최신
+  const series = [...weeks].reverse();   // 오래된 주차 → 최신
   // 주차 간 비교는 같은 소스 구성에서만 공정하다.
-  // 완성 주차는 언론사 RSS까지 포함해 수집하므로, 추이에는 구글 소스로 통일한 comparable 값을 쓴다.
+  // 완성 주차는 언론사 RSS까지 포함해 수집하므로, 추이에는 구글 국내 소스로 통일한 comparable 값을 쓴다.
   const riskOf = (w) => +(w.comparable ? w.comparable.crisis + w.comparable.warning : w.signal.crisis + w.signal.warning).toFixed(1);
   const vals = series.map(riskOf);
-  const max = Math.max(...vals) * 1.15, W = 1000, H = 150, pad = 26;
-  const bw = (W - pad * 2) / series.length;
+
+  const W = 1000, H = 210;
+  const padL = 46, padR = 18, padT = 30, padB = 34;   // 좌측은 y축 눈금 자리
+  const plotW = W - padL - padR, plotH = H - padT - padB;
+
+  // 눈금은 읽기 쉬운 단위로 올림하되 촘촘하게 잡는다.
+  // 1·2·5 배수만 쓰면 최댓값 11.7 에 눈금 20 이 잡혀 위쪽이 크게 비었다.
+  const raw = Math.max(...vals, 1) * 1.12;
+  const mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const STEPS = [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
+  const max = STEPS.map((k) => k * mag).find((v) => v >= raw) || raw;
+
+  const slot = plotW / series.length;
+  const barW = Math.min(slot * 0.42, 46);             // 막대가 너무 굵어지지 않게 상한을 둔다
+  const cx = (i) => padL + slot * i + slot / 2;
+  const y = (v) => padT + plotH - (v / max) * plotH;
+
+  const ticks = [0, max / 2, max].map((t) => `
+    <line x1="${padL}" y1="${y(t).toFixed(1)}" x2="${W - padR}" y2="${y(t).toFixed(1)}"
+      stroke="${t === 0 ? '#c8cfd9' : '#eceff3'}" stroke-width="1"/>
+    <text x="${padL - 8}" y="${(y(t) + 4).toFixed(1)}" font-size="11" text-anchor="end" fill="#9ca3af">${Number.isInteger(t) ? t : +t.toFixed(1)}</text>`).join('');
+
   const bars = series.map((w, i) => {
-    const v = vals[i];
-    const h = (v / max) * (H - 46);
-    const x = pad + i * bw, y = H - 24 - h;
+    const v = vals[i], h = Math.max(plotH - (y(v) - padT), 1.5);
     const fill = w.tier === 4 ? 'var(--crisis)' : w.tier === 3 ? 'var(--warn)' : w.tier === 2 ? 'var(--watch)' : 'var(--ok)';
     return `<a class="bar" href="#${w.id}" aria-label="${esc(w.label)} ${v}%">
-      <rect x="${(x + 2).toFixed(1)}" y="${y.toFixed(1)}" width="${(bw - 4).toFixed(1)}" height="${h.toFixed(1)}" rx="2" fill="${fill}"/>
-      <text x="${(x + bw / 2).toFixed(1)}" y="${(y - 5).toFixed(1)}" font-size="12" text-anchor="middle" fill="#4b5563">${v}</text>
-      <text x="${(x + bw / 2).toFixed(1)}" y="${H - 8}" font-size="11" text-anchor="middle" fill="#9ca3af">${w.id.replace('w', '')}</text>
+      <rect x="${(cx(i) - barW / 2).toFixed(1)}" y="${y(v).toFixed(1)}" width="${barW.toFixed(1)}" height="${h.toFixed(1)}" rx="3" fill="${fill}" fill-opacity=".82"/>
+      <rect x="${(cx(i) - slot / 2).toFixed(1)}" y="${padT}" width="${slot.toFixed(1)}" height="${plotH}" fill="transparent"/>
+      <text x="${cx(i).toFixed(1)}" y="${(H - 12).toFixed(1)}" font-size="12" text-anchor="middle" fill="#6b7280">${esc(w.label.slice(5, 10))}</text>
+      <text x="${cx(i).toFixed(1)}" y="${(H - 24).toFixed(1)}" font-size="10.5" text-anchor="middle" fill="#b6bcc6">W${w.id.replace('w', '')}</text>
     </a>`;
   }).join('');
-  return `<svg class="spark" viewBox="0 0 ${W} ${H}" role="img" aria-label="주차별 위험신호 비중 추이">
-    <line x1="${pad}" y1="${H - 24}" x2="${W - pad}" y2="${H - 24}" stroke="#d9dee6"/>${bars}</svg>`;
+
+  const pts = series.map((w, i) => `${cx(i).toFixed(1)},${y(vals[i]).toFixed(1)}`).join(' ');
+  const dots = series.map((w, i) => `
+    <circle cx="${cx(i).toFixed(1)}" cy="${y(vals[i]).toFixed(1)}" r="4" fill="#fff" stroke="var(--navy)" stroke-width="2"/>
+    <text x="${cx(i).toFixed(1)}" y="${(y(vals[i]) - 11).toFixed(1)}" font-size="12" font-weight="700" text-anchor="middle" fill="var(--navy)">${vals[i]}</text>`).join('');
+
+  return `<svg class="spark" viewBox="0 0 ${W} ${H}" role="img"
+    aria-label="주차별 위험신호 비중 추이 — 막대는 주차별 값, 선은 흐름">
+    ${ticks}${bars}
+    <polyline points="${pts}" fill="none" stroke="var(--navy)" stroke-width="2.5"
+      stroke-linejoin="round" stroke-linecap="round" opacity=".85"/>
+    ${dots}
+    <text x="${padL - 8}" y="${(padT - 12).toFixed(1)}" font-size="10.5" text-anchor="end" fill="#9ca3af">%</text>
+  </svg>`;
 }
 
 // ── 완성 주차 본문

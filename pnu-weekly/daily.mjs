@@ -164,11 +164,11 @@ const html = `<!DOCTYPE html>
     <div class="sub">${esc(meta.org)}${meta.contact ? ' · ' + esc(meta.contact) : ''}</div></div>
   </div>
   <div class="acts">
-    <a class="btn" href="index.html">주간 리포트</a>
     <select class="pdf-sel" data-pdf-select aria-label="PDF 날짜 선택">
       <option value="${esc(pdfPath)}">전체 (${days.length}일 합본)</option>
       ${days.map((d) => `<option value="${esc(dailyPdf(d))}">${d.replace(/-/g, '.')} (${WD[new Date(Date.parse(d)).getDay()]})</option>`).join('')}
     </select>
+    <a class="btn" href="index.html">주간 리포트</a>
     <a class="btn ghost" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf title="선택한 날짜의 일일 브리핑 PDF">PDF 다운로드</a>
   </div>
 </header>

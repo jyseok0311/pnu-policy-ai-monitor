@@ -298,8 +298,10 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   .logo{width:40px;height:40px;font-size:12px;flex:none}
   .top h1{font-size:17px;line-height:1.25;word-break:keep-all}   /* 한국어는 어절 단위로 끊는다 */
   .top .sub{font-size:12px;word-break:keep-all}
-  .top .acts{align-self:stretch;gap:6px}
-  .acts .btn{flex:1 1 0;min-width:0;padding:9px 4px;font-size:11.5px;
+  /* .acts 는 기본이 nowrap 이라, 드롭다운(flex-basis 100%)과 버튼이 한 줄에 눌려
+     버튼 폭이 8px 까지 찌그러졌다. 줄바꿈을 허용하고 버튼에 최소 폭을 준다. */
+  .top .acts{align-self:stretch;gap:6px;flex-wrap:wrap}
+  .acts .btn{flex:1 1 120px;min-width:110px;padding:9px 6px;font-size:12px;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
 
   /* 사이드바 — 2행 랩 대신 가로 스크롤 한 줄(칩) */
@@ -340,7 +342,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   /* 추이 — 라벨이 읽히도록 최소 폭 확보 후 가로 스크롤 */
   .trend{padding:14px 13px}
   .trend h3{font-size:14px}
-  .spark{min-width:560px}
+  .spark{min-width:620px}   /* 막대+선 콤보라 라벨이 겹치지 않을 최소 폭 */
 
   /* 지표 카드 — 2열 고정 */
   .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
@@ -393,7 +395,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 /* ?only= 인쇄 전용 뷰 — 사이드바·추이·버튼을 걷어낸 한 회차짜리 화면 */
 body.only-view .shell{grid-template-columns:minmax(0,1fr)}
 body.only-view .main{padding-top:14px}
-@media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none} }
+@media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none;padding:9px} }
 
 .artlist{list-style:none;margin:0;padding:0}
 .artlist li{display:grid;grid-template-columns:46px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
@@ -437,11 +439,11 @@ body.only-view .main{padding-top:14px}
     <div class="sub">부산대 AX·정보화혁신본부 AX혁신과</div></div>
   </div>
   <div class="acts">
-    <a class="btn" href="index.html">주간 리포트</a>
     <select class="pdf-sel" data-pdf-select aria-label="PDF 날짜 선택">
       <option value="pdf/PNU_Univ_Policy_AI_Daily_All.pdf">전체 (10일 합본)</option>
       <option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.11).pdf">2026.09.11 (금)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.10).pdf">2026.09.10 (목)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.09).pdf">2026.09.09 (수)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.08).pdf">2026.09.08 (화)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.07).pdf">2026.09.07 (월)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.06).pdf">2026.09.06 (일)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.05).pdf">2026.09.05 (토)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.04).pdf">2026.09.04 (금)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.03).pdf">2026.09.03 (목)</option><option value="pdf/PNU_Univ_Policy_AI_Daily(2026.09.02).pdf">2026.09.02 (수)</option>
     </select>
+    <a class="btn" href="index.html">주간 리포트</a>
     <a class="btn ghost" href="pdf/PNU_Univ_Policy_AI_Daily_All.pdf" target="_blank" rel="noopener" data-pdf title="선택한 날짜의 일일 브리핑 PDF">PDF 다운로드</a>
   </div>
 </header>
@@ -3840,7 +3842,7 @@ body.only-view .main{padding-top:14px}
     </ul></div>
   </details>
 </section>
-<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 05:03:17 · 데이터: data/collected/</p>
+<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 05:13:25 · 데이터: data/collected/</p>
 </main>
 </div>
 </div>

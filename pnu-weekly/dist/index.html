@@ -299,8 +299,10 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   .logo{width:40px;height:40px;font-size:12px;flex:none}
   .top h1{font-size:17px;line-height:1.25;word-break:keep-all}   /* 한국어는 어절 단위로 끊는다 */
   .top .sub{font-size:12px;word-break:keep-all}
-  .top .acts{align-self:stretch;gap:6px}
-  .acts .btn{flex:1 1 0;min-width:0;padding:9px 4px;font-size:11.5px;
+  /* .acts 는 기본이 nowrap 이라, 드롭다운(flex-basis 100%)과 버튼이 한 줄에 눌려
+     버튼 폭이 8px 까지 찌그러졌다. 줄바꿈을 허용하고 버튼에 최소 폭을 준다. */
+  .top .acts{align-self:stretch;gap:6px;flex-wrap:wrap}
+  .acts .btn{flex:1 1 120px;min-width:110px;padding:9px 6px;font-size:12px;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
 
   /* 사이드바 — 2행 랩 대신 가로 스크롤 한 줄(칩) */
@@ -341,7 +343,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   /* 추이 — 라벨이 읽히도록 최소 폭 확보 후 가로 스크롤 */
   .trend{padding:14px 13px}
   .trend h3{font-size:14px}
-  .spark{min-width:560px}
+  .spark{min-width:620px}   /* 막대+선 콤보라 라벨이 겹치지 않을 최소 폭 */
 
   /* 지표 카드 — 2열 고정 */
   .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
@@ -394,7 +396,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 /* ?only= 인쇄 전용 뷰 — 사이드바·추이·버튼을 걷어낸 한 회차짜리 화면 */
 body.only-view .shell{grid-template-columns:minmax(0,1fr)}
 body.only-view .main{padding-top:14px}
-@media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none} }
+@media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none;padding:9px} }
 </style>
 </head>
 <body>
@@ -452,40 +454,79 @@ body.only-view .main{padding-top:14px}
 <div class="trend">
   <h3>위험신호 비중 추이 (위기+경고, 최근 8주)</h3>
   <div class="cap">막대를 클릭하면 해당 주차로 이동합니다. 외부 통계가 아니라 <b>수집 기사 분류 결과에서 파이프라인이 직접 산출</b>한 값입니다. 주차 간 비교가 공정하도록 <b>구글 뉴스 소스로 통일</b>해 계산했습니다(과거 주차는 언론사 RSS 소급이 불가).</div>
-  <div class="spark-wrap"><svg class="spark" viewBox="0 0 1000 150" role="img" aria-label="주차별 위험신호 비중 추이">
-    <line x1="26" y1="126" x2="974" y2="126" stroke="#d9dee6"/><a class="bar" href="#w30" aria-label="2026.07.24 (Week 30) 4.5%">
-      <rect x="28.0" y="91.2" width="114.5" height="34.8" rx="2" fill="var(--ok)"/>
-      <text x="85.3" y="86.2" font-size="12" text-anchor="middle" fill="#4b5563">4.5</text>
-      <text x="85.3" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">30</text>
+  <div class="spark-wrap"><svg class="spark" viewBox="0 0 1000 210" role="img"
+    aria-label="주차별 위험신호 비중 추이 — 막대는 주차별 값, 선은 흐름">
+    
+    <line x1="46" y1="176.0" x2="982" y2="176.0"
+      stroke="#c8cfd9" stroke-width="1"/>
+    <text x="38" y="180.0" font-size="11" text-anchor="end" fill="#9ca3af">0</text>
+    <line x1="46" y1="103.0" x2="982" y2="103.0"
+      stroke="#eceff3" stroke-width="1"/>
+    <text x="38" y="107.0" font-size="11" text-anchor="end" fill="#9ca3af">7.5</text>
+    <line x1="46" y1="30.0" x2="982" y2="30.0"
+      stroke="#eceff3" stroke-width="1"/>
+    <text x="38" y="34.0" font-size="11" text-anchor="end" fill="#9ca3af">15</text><a class="bar" href="#w30" aria-label="2026.07.24 (Week 30) 4.5%">
+      <rect x="81.5" y="132.2" width="46.0" height="43.8" rx="3" fill="var(--ok)" fill-opacity=".82"/>
+      <rect x="46.0" y="30" width="117.0" height="146" fill="transparent"/>
+      <text x="104.5" y="198.0" font-size="12" text-anchor="middle" fill="#6b7280">07.24</text>
+      <text x="104.5" y="186.0" font-size="10.5" text-anchor="middle" fill="#b6bcc6">W30</text>
     </a><a class="bar" href="#w31" aria-label="2026.07.31 (Week 31) 6.9%">
-      <rect x="146.5" y="72.7" width="114.5" height="53.3" rx="2" fill="var(--watch)"/>
-      <text x="203.8" y="67.7" font-size="12" text-anchor="middle" fill="#4b5563">6.9</text>
-      <text x="203.8" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">31</text>
+      <rect x="198.5" y="108.8" width="46.0" height="67.2" rx="3" fill="var(--watch)" fill-opacity=".82"/>
+      <rect x="163.0" y="30" width="117.0" height="146" fill="transparent"/>
+      <text x="221.5" y="198.0" font-size="12" text-anchor="middle" fill="#6b7280">07.31</text>
+      <text x="221.5" y="186.0" font-size="10.5" text-anchor="middle" fill="#b6bcc6">W31</text>
     </a><a class="bar" href="#w32" aria-label="2026.08.07 (Week 32) 11.7%">
-      <rect x="265.0" y="35.6" width="114.5" height="90.4" rx="2" fill="var(--crisis)"/>
-      <text x="322.3" y="30.6" font-size="12" text-anchor="middle" fill="#4b5563">11.7</text>
-      <text x="322.3" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">32</text>
+      <rect x="315.5" y="62.1" width="46.0" height="113.9" rx="3" fill="var(--crisis)" fill-opacity=".82"/>
+      <rect x="280.0" y="30" width="117.0" height="146" fill="transparent"/>
+      <text x="338.5" y="198.0" font-size="12" text-anchor="middle" fill="#6b7280">08.07</text>
+      <text x="338.5" y="186.0" font-size="10.5" text-anchor="middle" fill="#b6bcc6">W32</text>
     </a><a class="bar" href="#w33" aria-label="2026.08.14 (Week 33) 3.6%">
-      <rect x="383.5" y="98.2" width="114.5" height="27.8" rx="2" fill="var(--ok)"/>
-      <text x="440.8" y="93.2" font-size="12" text-anchor="middle" fill="#4b5563">3.6</text>
-      <text x="440.8" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">33</text>
+      <rect x="432.5" y="141.0" width="46.0" height="35.0" rx="3" fill="var(--ok)" fill-opacity=".82"/>
+      <rect x="397.0" y="30" width="117.0" height="146" fill="transparent"/>
+      <text x="455.5" y="198.0" font-size="12" text-anchor="middle" fill="#6b7280">08.14</text>
+      <text x="455.5" y="186.0" font-size="10.5" text-anchor="middle" fill="#b6bcc6">W33</text>
     </a><a class="bar" href="#w34" aria-label="2026.08.21 (Week 34) 1.4%">
-      <rect x="502.0" y="115.2" width="114.5" height="10.8" rx="2" fill="var(--ok)"/>
-      <text x="559.3" y="110.2" font-size="12" text-anchor="middle" fill="#4b5563">1.4</text>
-      <text x="559.3" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">34</text>
+      <rect x="549.5" y="162.4" width="46.0" height="13.6" rx="3" fill="var(--ok)" fill-opacity=".82"/>
+      <rect x="514.0" y="30" width="117.0" height="146" fill="transparent"/>
+      <text x="572.5" y="198.0" font-size="12" text-anchor="middle" fill="#6b7280">08.21</text>
+      <text x="572.5" y="186.0" font-size="10.5" text-anchor="middle" fill="#b6bcc6">W34</text>
     </a><a class="bar" href="#w35" aria-label="2026.08.28 (Week 35) 5.9%">
-      <rect x="620.5" y="80.4" width="114.5" height="45.6" rx="2" fill="var(--ok)"/>
-      <text x="677.8" y="75.4" font-size="12" text-anchor="middle" fill="#4b5563">5.9</text>
-      <text x="677.8" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">35</text>
+      <rect x="666.5" y="118.6" width="46.0" height="57.4" rx="3" fill="var(--ok)" fill-opacity=".82"/>
+      <rect x="631.0" y="30" width="117.0" height="146" fill="transparent"/>
+      <text x="689.5" y="198.0" font-size="12" text-anchor="middle" fill="#6b7280">08.28</text>
+      <text x="689.5" y="186.0" font-size="10.5" text-anchor="middle" fill="#b6bcc6">W35</text>
     </a><a class="bar" href="#w36" aria-label="2026.09.04 (Week 36) 6.6%">
-      <rect x="739.0" y="75.0" width="114.5" height="51.0" rx="2" fill="var(--watch)"/>
-      <text x="796.3" y="70.0" font-size="12" text-anchor="middle" fill="#4b5563">6.6</text>
-      <text x="796.3" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">36</text>
+      <rect x="783.5" y="111.8" width="46.0" height="64.2" rx="3" fill="var(--watch)" fill-opacity=".82"/>
+      <rect x="748.0" y="30" width="117.0" height="146" fill="transparent"/>
+      <text x="806.5" y="198.0" font-size="12" text-anchor="middle" fill="#6b7280">09.04</text>
+      <text x="806.5" y="186.0" font-size="10.5" text-anchor="middle" fill="#b6bcc6">W36</text>
     </a><a class="bar" href="#w37" aria-label="2026.09.11 (Week 37) 8.2%">
-      <rect x="857.5" y="62.6" width="114.5" height="63.4" rx="2" fill="var(--warn)"/>
-      <text x="914.8" y="57.6" font-size="12" text-anchor="middle" fill="#4b5563">8.2</text>
-      <text x="914.8" y="142" font-size="11" text-anchor="middle" fill="#9ca3af">37</text>
-    </a></svg></div>
+      <rect x="900.5" y="96.2" width="46.0" height="79.8" rx="3" fill="var(--warn)" fill-opacity=".82"/>
+      <rect x="865.0" y="30" width="117.0" height="146" fill="transparent"/>
+      <text x="923.5" y="198.0" font-size="12" text-anchor="middle" fill="#6b7280">09.11</text>
+      <text x="923.5" y="186.0" font-size="10.5" text-anchor="middle" fill="#b6bcc6">W37</text>
+    </a>
+    <polyline points="104.5,132.2 221.5,108.8 338.5,62.1 455.5,141.0 572.5,162.4 689.5,118.6 806.5,111.8 923.5,96.2" fill="none" stroke="var(--navy)" stroke-width="2.5"
+      stroke-linejoin="round" stroke-linecap="round" opacity=".85"/>
+    
+    <circle cx="104.5" cy="132.2" r="4" fill="#fff" stroke="var(--navy)" stroke-width="2"/>
+    <text x="104.5" y="121.2" font-size="12" font-weight="700" text-anchor="middle" fill="var(--navy)">4.5</text>
+    <circle cx="221.5" cy="108.8" r="4" fill="#fff" stroke="var(--navy)" stroke-width="2"/>
+    <text x="221.5" y="97.8" font-size="12" font-weight="700" text-anchor="middle" fill="var(--navy)">6.9</text>
+    <circle cx="338.5" cy="62.1" r="4" fill="#fff" stroke="var(--navy)" stroke-width="2"/>
+    <text x="338.5" y="51.1" font-size="12" font-weight="700" text-anchor="middle" fill="var(--navy)">11.7</text>
+    <circle cx="455.5" cy="141.0" r="4" fill="#fff" stroke="var(--navy)" stroke-width="2"/>
+    <text x="455.5" y="130.0" font-size="12" font-weight="700" text-anchor="middle" fill="var(--navy)">3.6</text>
+    <circle cx="572.5" cy="162.4" r="4" fill="#fff" stroke="var(--navy)" stroke-width="2"/>
+    <text x="572.5" y="151.4" font-size="12" font-weight="700" text-anchor="middle" fill="var(--navy)">1.4</text>
+    <circle cx="689.5" cy="118.6" r="4" fill="#fff" stroke="var(--navy)" stroke-width="2"/>
+    <text x="689.5" y="107.6" font-size="12" font-weight="700" text-anchor="middle" fill="var(--navy)">5.9</text>
+    <circle cx="806.5" cy="111.8" r="4" fill="#fff" stroke="var(--navy)" stroke-width="2"/>
+    <text x="806.5" y="100.8" font-size="12" font-weight="700" text-anchor="middle" fill="var(--navy)">6.6</text>
+    <circle cx="923.5" cy="96.2" r="4" fill="#fff" stroke="var(--navy)" stroke-width="2"/>
+    <text x="923.5" y="85.2" font-size="12" font-weight="700" text-anchor="middle" fill="var(--navy)">8.2</text>
+    <text x="38" y="18.0" font-size="10.5" text-anchor="end" fill="#9ca3af">%</text>
+  </svg></div>
 </div>
 
 <section class="week" id="w37">
@@ -3672,7 +3713,7 @@ body.only-view .main{padding-top:14px}
       </div>
     </li></ul></section>
 
-<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 05:03:17 · 빌드 산출물(정적 HTML) · 데이터 소스: data/weeks.json</p>
+<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 05:12:48 · 빌드 산출물(정적 HTML) · 데이터 소스: data/weeks.json</p>
 </main>
 </div>
 </div>

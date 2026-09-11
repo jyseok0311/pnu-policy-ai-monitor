@@ -291,8 +291,10 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   .logo{width:40px;height:40px;font-size:12px;flex:none}
   .top h1{font-size:17px;line-height:1.25;word-break:keep-all}   /* 한국어는 어절 단위로 끊는다 */
   .top .sub{font-size:12px;word-break:keep-all}
-  .top .acts{align-self:stretch;gap:6px}
-  .acts .btn{flex:1 1 0;min-width:0;padding:9px 4px;font-size:11.5px;
+  /* .acts 는 기본이 nowrap 이라, 드롭다운(flex-basis 100%)과 버튼이 한 줄에 눌려
+     버튼 폭이 8px 까지 찌그러졌다. 줄바꿈을 허용하고 버튼에 최소 폭을 준다. */
+  .top .acts{align-self:stretch;gap:6px;flex-wrap:wrap}
+  .acts .btn{flex:1 1 120px;min-width:110px;padding:9px 6px;font-size:12px;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
 
   /* 사이드바 — 2행 랩 대신 가로 스크롤 한 줄(칩) */
@@ -333,7 +335,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   /* 추이 — 라벨이 읽히도록 최소 폭 확보 후 가로 스크롤 */
   .trend{padding:14px 13px}
   .trend h3{font-size:14px}
-  .spark{min-width:560px}
+  .spark{min-width:620px}   /* 막대+선 콤보라 라벨이 겹치지 않을 최소 폭 */
 
   /* 지표 카드 — 2열 고정 */
   .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
@@ -386,4 +388,4 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 /* ?only= 인쇄 전용 뷰 — 사이드바·추이·버튼을 걷어낸 한 회차짜리 화면 */
 body.only-view .shell{grid-template-columns:minmax(0,1fr)}
 body.only-view .main{padding-top:14px}
-@media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none} }
+@media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none;padding:9px} }
