@@ -63,6 +63,7 @@ const UNI_STOP = new Set([
   '기자', '위해', '통해', '대한', '관련', '국내', '우리', '신문', '뉴스', '개최', '운영', '진행',
   '열려', '최초', '이번', '지역', '한국', '전국', '추진', '개최한다', '밝혔다', '나섰다'
 ]);
+const RANK = J('data/rankings.json');
 const uniDetail = Object.fromEntries(meta.universities.map((u) => {
   const hit = items.filter((x) => {
     let t = x.title + ' ' + x.summary;
@@ -84,8 +85,10 @@ const uniDetail = Object.fromEntries(meta.universities.map((u) => {
   const risky = hit.filter((x) => x.level === 'crisis' || x.level === 'warning');
   const lead = risky[0] || hit[0] || null;
   const rr = hit.length ? risky.length / hit.length : 0;
+  const rk = RANK.universities[u.id] || null;
   return [u.id, {
     name: u.name,
+    rank: rk ? { qs: rk.qs, the: rk.the, city: rk.city } : null,
     mentions: hit.length,
     risky: risky.length,
     riskRate: +(rr * 100).toFixed(1),
@@ -235,7 +238,15 @@ const week = {
   },
   summary, articles,
   changes: narr.changes, changesTitle: narr.changesTitle, changesNote: narr.changesNote,
-  watch: narr.watch, weeklyMetrics, kpis: [],
+  watch: narr.watch, weeklyMetrics,
+  kpis: [{
+    group: '대학평가·순위 (부산대)',
+    items: [
+      { name: 'QS 세계대학순위', period: RANK._sources.qs.name.match(/\d{4}/)[0], value: (RANK.universities.pnu.qs || '').replace('=', ''), unit: '위', change: `종합점수 ${RANK.universities.pnu.qsScore}`, dir: 'flat', freq: 'year', src: 'qs' },
+      { name: 'THE 세계대학순위', period: RANK._sources.the.name.match(/\d{4}/)[0], value: RANK.universities.pnu.the, unit: '', change: '거점국립대 중 공동 2위', dir: 'flat', freq: 'year', src: 'the' },
+      { name: '중앙일보 국내 종합', period: '최근', value: '—', unit: '', change: '출처 사이트 응답 없음', dir: 'flat', freq: 'year', src: 'joongang' }
+    ]
+  }],
   paths: narr.paths, innerPaths: narr.innerPaths, sectors: narr.sectors,
   diagnosis: narr.diagnosis, refs, voices
 };

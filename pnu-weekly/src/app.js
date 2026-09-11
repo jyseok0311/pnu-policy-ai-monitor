@@ -112,7 +112,8 @@
     var rl = (d && d.riskLevel) || 0;
     var h = '<div class="hint-h"><b>' + esc(u.name) + '</b>' +
       '<span class="hint-g" style="background:' + RISKC[rl] + '">' + RISKW[rl] + '</span></div>';
-    if (!d || !d.mentions) return h + '<div class="hint-n">이번 주 언급 없음</div>';
+    if (!d || !d.mentions) return h + rankHtml(d) + '<div class="hint-n">이번 주 언급 없음</div>';
+    h += rankHtml(d);
     h += '<div class="hint-n">주목도 <b style="color:#1f2937">' + ATTN[lv] + '</b> · 언급 ' + d.mentions + '건' +
       (d.risky ? ' · 위험신호 <b>' + d.risky + '건</b> (' + d.riskRate + '%)' : '') + '</div>';
     if (d.keywords && d.keywords.length) {
@@ -127,6 +128,16 @@
     }
     return h;
   }
+  // 세계대학랭킹 — 지도에서 위치와 함께 보여준다
+  function rankHtml(d) {
+    if (!d || !d.rank) return '';
+    var r = d.rank;
+    return '<div class="hint-r">' +
+      (r.city ? '<span class="hint-city">' + esc(r.city) + '</span>' : '') +
+      '<span class="hint-rk"><i>QS</i>' + esc(r.qs || '—') + '</span>' +
+      '<span class="hint-rk"><i>THE</i>' + esc(r.the || '—') + '</span></div>';
+  }
+
   function hintBox(el) {
     if (!el._hint) {
       var b = document.createElement('div');

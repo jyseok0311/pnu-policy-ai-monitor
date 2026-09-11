@@ -240,6 +240,11 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .map-hint .hint-l{margin-top:8px;padding-top:7px;border-top:1px dashed var(--line);color:#374151;font-size:12px}
 .map-hint .hint-l .lv{margin-right:5px;font-size:10.5px}
 @media print{.map-hint{display:none !important}}
+/* 호버 힌트 내 세계대학랭킹 */
+.map-hint .hint-r{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-top:6px}
+.map-hint .hint-city{background:#eef1f5;color:#4b5563;border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700}
+.map-hint .hint-rk{background:var(--navy);color:#fff;border-radius:3px;padding:1px 7px;font-size:11px;font-weight:700}
+.map-hint .hint-rk i{font-style:normal;opacity:.65;margin-right:4px;font-size:10px;letter-spacing:.3px}
 
 .artlist{list-style:none;margin:0;padding:0}
 .artlist li{display:grid;grid-template-columns:46px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
@@ -3005,7 +3010,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </ul></div>
   </details>
 </section>
-<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 01:46:49 · 데이터: data/collected/</p>
+<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 02:05:01 · 데이터: data/collected/</p>
 </main>
 </div>
 </div>
@@ -3124,7 +3129,8 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     var rl = (d && d.riskLevel) || 0;
     var h = '<div class="hint-h"><b>' + esc(u.name) + '</b>' +
       '<span class="hint-g" style="background:' + RISKC[rl] + '">' + RISKW[rl] + '</span></div>';
-    if (!d || !d.mentions) return h + '<div class="hint-n">이번 주 언급 없음</div>';
+    if (!d || !d.mentions) return h + rankHtml(d) + '<div class="hint-n">이번 주 언급 없음</div>';
+    h += rankHtml(d);
     h += '<div class="hint-n">주목도 <b style="color:#1f2937">' + ATTN[lv] + '</b> · 언급 ' + d.mentions + '건' +
       (d.risky ? ' · 위험신호 <b>' + d.risky + '건</b> (' + d.riskRate + '%)' : '') + '</div>';
     if (d.keywords && d.keywords.length) {
@@ -3139,6 +3145,16 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     }
     return h;
   }
+  // 세계대학랭킹 — 지도에서 위치와 함께 보여준다
+  function rankHtml(d) {
+    if (!d || !d.rank) return '';
+    var r = d.rank;
+    return '<div class="hint-r">' +
+      (r.city ? '<span class="hint-city">' + esc(r.city) + '</span>' : '') +
+      '<span class="hint-rk"><i>QS</i>' + esc(r.qs || '—') + '</span>' +
+      '<span class="hint-rk"><i>THE</i>' + esc(r.the || '—') + '</span></div>';
+  }
+
   function hintBox(el) {
     if (!el._hint) {
       var b = document.createElement('div');

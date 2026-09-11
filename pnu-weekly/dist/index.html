@@ -241,6 +241,11 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .map-hint .hint-l{margin-top:8px;padding-top:7px;border-top:1px dashed var(--line);color:#374151;font-size:12px}
 .map-hint .hint-l .lv{margin-right:5px;font-size:10.5px}
 @media print{.map-hint{display:none !important}}
+/* 호버 힌트 내 세계대학랭킹 */
+.map-hint .hint-r{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-top:6px}
+.map-hint .hint-city{background:#eef1f5;color:#4b5563;border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700}
+.map-hint .hint-rk{background:var(--navy);color:#fff;border-radius:3px;padding:1px 7px;font-size:11px;font-weight:700}
+.map-hint .hint-rk i{font-style:normal;opacity:.65;margin-right:4px;font-size:10px;letter-spacing:.3px}
 </style>
 </head>
 <body>
@@ -353,7 +358,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
      <span class="k" style="background:#c9a227"></span>일부
      <span class="k" style="background:#d9822b"></span>있음
      <span class="k" style="background:#b3261e"></span>높음).
-    마커에 마우스를 올리면 해당 대학의 주요 키워드가 표시됩니다.<br>
+    마커에 마우스를 올리면 <b>소재지 · QS/THE 세계대학랭킹 · 주간 주요 키워드 · 대표 기사</b>가 표시됩니다.<br>
     ── 정책 전달 경로 | - - - 예산 배분 경로(RISE) | ·· AI 인재양성 사업
     | 교란 요인: 미선정 지역 반발, 사립대 역차별 논쟁, 구성원 합의 난항 | 완충: 패키지 지원 선정, AI스타펠로우십, 글로컬대학 연계, PLATO 교육 AX
   </div>
@@ -548,6 +553,27 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
       <div class="ch flat">— 전주 6.6%</div>
       <span class="freq f-week">주간</span>
     </div></div>
+  <h2 class="sec">📈 배경 지표 <small>(지표명 클릭 시 원자료 사이트로 이동 · 갱신주기 배지 확인)</small></h2>
+  
+  <div class="kpi-group"><h4>대학평가·순위 (부산대)</h4><div class="kpis"><div class="kpi">
+      <div class="n"><a href="https://www.topuniversities.com/world-university-rankings" target="_blank" rel="noopener" title="원자료: QS World University Rankings (Quacquarelli Symonds)
+공식 랭킹 포털. 봇 차단(403)이 있어 자동 수집은 불가, 연 1회 수동 갱신 권장.">QS 세계대학순위</a> <a class="prof" href="https://www.topuniversities.com/universities/pusan-national-university" target="_blank" rel="noopener" title="부산대 프로필 페이지">↗</a><span>2027</span></div>
+      <div class="val">449<small>위</small></div>
+      <div class="ch flat">— 종합점수 34.6</div>
+      <span class="freq f-slow">연 1회</span>
+    </div><div class="kpi">
+      <div class="n"><a href="https://www.timeshighereducation.com/world-university-rankings" target="_blank" rel="noopener" title="원자료: THE World University Rankings (Times Higher Education)
+2026-09-11 접속 확인(200). 세계순위는 하위권이 구간(801–1000 등)으로 공표됨.">THE 세계대학순위</a> <a class="prof" href="https://www.timeshighereducation.com/world-university-rankings/pusan-national-university" target="_blank" rel="noopener" title="부산대 프로필 페이지">↗</a><span>2026</span></div>
+      <div class="val">501–600</div>
+      <div class="ch flat">— 거점국립대 중 공동 2위</div>
+      <span class="freq f-slow">연 1회</span>
+    </div><div class="kpi">
+      <div class="n"><a href="https://www.joongang.co.kr/search/news?keyword=%EB%8C%80%ED%95%99%ED%8F%89%EA%B0%80" target="_blank" rel="noopener" title="원자료: 중앙일보 대학평가
+전용 사이트 univ.joongang.co.kr 는 2026-09-11 기준 403(응답 없음). 평가 지속 여부 확인 필요 — 당분간 기사 검색으로 연결.">중앙일보 국내 종합</a><span>최근</span></div>
+      <div class="val">—</div>
+      <div class="ch flat">— 출처 사이트 응답 없음</div>
+      <span class="freq f-slow">연 1회</span><span class="warn-src" title="전용 사이트 univ.joongang.co.kr 는 2026-09-11 기준 403(응답 없음). 평가 지속 여부 확인 필요 — 당분간 기사 검색으로 연결.">⚠ 출처 확인필요</span>
+    </div></div></div>
   <h2 class="sec">🗣 주요 인물·기관 동향 <small>기사 언급 집계 + 기관 공식 채널 · 개인 SNS 계정은 수집하지 않음</small></h2>
   <div class="kpi-group"><h4>인물 (직책 기준)</h4><div class="kpis">
     <div class="kpi live">
@@ -894,13 +920,13 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
       상황요약·리스크 지도·전파경로·부문별 영향표가 이 자리에 동일한 서식으로 채워집니다.</div>
     </section>
 
-<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 01:46:49 · 빌드 산출물(정적 HTML) · 데이터 소스: data/weeks.json</p>
+<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 02:05:01 · 빌드 산출물(정적 HTML) · 데이터 소스: data/weeks.json</p>
 </main>
 </div>
 </div>
 <div id="toast"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-<script>window.__MAPDATA__ = {"universities":[{"id":"snu","name":"서울대","lat":37.4601,"lng":126.952},{"id":"knu","name":"강원대","lat":37.8688,"lng":127.7387},{"id":"cbnu","name":"충북대","lat":36.6285,"lng":127.4565},{"id":"cnu","name":"충남대","lat":36.3683,"lng":127.3455},{"id":"knu2","name":"경북대","lat":35.8888,"lng":128.6103},{"id":"jbnu","name":"전북대","lat":35.8468,"lng":127.1297},{"id":"jnu","name":"전남대","lat":35.176,"lng":126.907},{"id":"gnu","name":"경상국립대","lat":35.1535,"lng":128.0985},{"id":"pnu","name":"부산대","lat":35.2339,"lng":129.079,"focus":true},{"id":"jeju","name":"제주대","lat":33.4562,"lng":126.5619}],"hub":{"name":"교육부(세종)","lat":36.504,"lng":127.265},"weeks":{"w37":{"levels":{"snu":2,"knu":3,"cbnu":1,"cnu":3,"knu2":2,"jbnu":2,"jnu":2,"gnu":2,"pnu":4,"jeju":2},"uni":{"snu":{"name":"서울대","mentions":14,"risky":2,"riskRate":14.3,"riskLevel":2,"keywords":[["거점국립대",2],["AI",2],["손지수",2],["김효근",2]],"lead":{"title":"서울대 국종성 교수 연구팀, 탄소중립 늦어지면 남극해 탄소 흡수능력 상실","media":"한국대학신문","level":"warning"}},"knu":{"name":"강원대","mentions":21,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["산학연혁신허브",14],["개관",14],["캠퍼스",9],["혁신파크",8],["거점국립대",8]],"lead":{"title":"강원대 캠퍼스 혁신파크 산학연혁신허브 개관… 거점국립대 최초","media":"한국대학신문","level":"normal"}},"cbnu":{"name":"충북대","mentions":3,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["교통대",2]],"lead":{"title":"“충북대 ‘서울대 10개 만들기’ 탈락, 우리 대응부터 돌아봐야”","media":"K-Life TV","level":"normal"}},"cnu":{"name":"충남대","mentions":34,"risky":6,"riskRate":17.6,"riskLevel":2,"keywords":[["통합",12],["공주대",11],["거점국립대",10],["패키지",8],["최교진",7]],"lead":{"title":"‘통합 충남대’ 성사냐 무산이냐… 8~10일 전 구성원 투표서 판가름","media":"문화일보","level":"crisis"}},"knu2":{"name":"경북대","mentions":11,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["탈락",4],["만들기",3],["TK",2],["총장",2],["선정",2]],"lead":{"title":"경북대 등 지방거점국립대 합격선·경쟁률 ‘최근 5년새 최고’","media":"경북매일","level":"normal"}},"jbnu":{"name":"전북대","mentions":9,"risky":1,"riskRate":11.1,"riskLevel":1,"keywords":[["AI",3],["경쟁",2],["JUMP",2],["JUIC",2],["오픈",2]],"lead":{"title":"[기획-전북 대학 AI 반도체 경쟁 소외 위기] 상-전북대 탈락이 보여준 지방대 경쟁의 현실","media":"전라일보","level":"crisis"}},"jnu":{"name":"전남대","mentions":14,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["여수캠퍼스",4],["등록금",4],["만들기",3],["주거",3],["지원",2]],"lead":{"title":"‘서울대 10개 만들기’ 첫 지원…부산대·전남대·충남대 선정, 경상국립대 등 6개 거점국립대 제외","media":"단디뉴스","level":"normal"}},"gnu":{"name":"경상국립대","mentions":10,"risky":1,"riskRate":10,"riskLevel":1,"keywords":[["선정",3],["경남",2],["AI",2]],"lead":{"title":"경상국립대, 100주년 기념관 건설업체 임대에 교수 반발","media":"경남도민일보","level":"crisis"}},"pnu":{"name":"부산대","mentions":62,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["AI",15],["선정",13],["최고급",7],["개발",6],["지원",5]],"lead":{"title":"‘서울대 10개 만들기’ 첫 지원…부산대·전남대·충남대 선정, 경상국립대 등 6개 거점국립대 제외","media":"단디뉴스","level":"normal"}},"jeju":{"name":"제주대","mentions":10,"risky":2,"riskRate":20,"riskLevel":2,"keywords":[["제주",4],["런케이션",3],["교원",2],["교육대학",2],["학생들",2]],"lead":{"title":"제주대 교육대학 학생들 \"초등학교 교사 선발 규모 감축 전면 재검토하라\"","media":"헤드라인제주","level":"warning"}}},"flows":[{"to":"pnu","style":"solid","color":"#3b7dd8","label":"정책 전달 경로"}],"legend":{"primary":"'서울대 10개 만들기' 1차 선정 및 거점국립대 재편","secondary":"지방 국립대 등록금 전액 지원, 국립대 통합 무산","disturb":"미선정 지역 반발, 사립대 역차별 논쟁, 구성원 합의 난항","buffer":"패키지 지원 선정, AI스타펠로우십, 글로컬대학 연계, PLATO 교육 AX"}}}};</script>
+<script>window.__MAPDATA__ = {"universities":[{"id":"snu","name":"서울대","lat":37.4601,"lng":126.952},{"id":"knu","name":"강원대","lat":37.8688,"lng":127.7387},{"id":"cbnu","name":"충북대","lat":36.6285,"lng":127.4565},{"id":"cnu","name":"충남대","lat":36.3683,"lng":127.3455},{"id":"knu2","name":"경북대","lat":35.8888,"lng":128.6103},{"id":"jbnu","name":"전북대","lat":35.8468,"lng":127.1297},{"id":"jnu","name":"전남대","lat":35.176,"lng":126.907},{"id":"gnu","name":"경상국립대","lat":35.1535,"lng":128.0985},{"id":"pnu","name":"부산대","lat":35.2339,"lng":129.079,"focus":true},{"id":"jeju","name":"제주대","lat":33.4562,"lng":126.5619}],"hub":{"name":"교육부(세종)","lat":36.504,"lng":127.265},"weeks":{"w37":{"levels":{"snu":2,"knu":3,"cbnu":1,"cnu":3,"knu2":2,"jbnu":2,"jnu":2,"gnu":2,"pnu":4,"jeju":2},"uni":{"snu":{"name":"서울대","rank":{"qs":"38","the":"=58","city":"서울"},"mentions":14,"risky":2,"riskRate":14.3,"riskLevel":2,"keywords":[["거점국립대",2],["AI",2],["손지수",2],["김효근",2]],"lead":{"title":"서울대 국종성 교수 연구팀, 탄소중립 늦어지면 남극해 탄소 흡수능력 상실","media":"한국대학신문","level":"warning"}},"knu":{"name":"강원대","rank":{"qs":"1001-1200","the":"1201–1500","city":"춘천"},"mentions":21,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["산학연혁신허브",14],["개관",14],["캠퍼스",9],["혁신파크",8],["거점국립대",8]],"lead":{"title":"강원대 캠퍼스 혁신파크 산학연혁신허브 개관… 거점국립대 최초","media":"한국대학신문","level":"normal"}},"cbnu":{"name":"충북대","rank":{"qs":"951-1000","the":"1001–1200","city":"청주"},"mentions":3,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["교통대",2]],"lead":{"title":"“충북대 ‘서울대 10개 만들기’ 탈락, 우리 대응부터 돌아봐야”","media":"K-Life TV","level":"normal"}},"cnu":{"name":"충남대","rank":{"qs":"801-850","the":"1001–1200","city":"대전"},"mentions":34,"risky":6,"riskRate":17.6,"riskLevel":2,"keywords":[["통합",12],["공주대",11],["거점국립대",10],["패키지",8],["최교진",7]],"lead":{"title":"‘통합 충남대’ 성사냐 무산이냐… 8~10일 전 구성원 투표서 판가름","media":"문화일보","level":"crisis"}},"knu2":{"name":"경북대","rank":{"qs":"=481","the":"501–600","city":"대구"},"mentions":11,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["탈락",4],["만들기",3],["TK",2],["총장",2],["선정",2]],"lead":{"title":"경북대 등 지방거점국립대 합격선·경쟁률 ‘최근 5년새 최고’","media":"경북매일","level":"normal"}},"jbnu":{"name":"전북대","rank":{"qs":"=677","the":"801–1000","city":"전주"},"mentions":9,"risky":1,"riskRate":11.1,"riskLevel":1,"keywords":[["AI",3],["경쟁",2],["JUMP",2],["JUIC",2],["오픈",2]],"lead":{"title":"[기획-전북 대학 AI 반도체 경쟁 소외 위기] 상-전북대 탈락이 보여준 지방대 경쟁의 현실","media":"전라일보","level":"crisis"}},"jnu":{"name":"전남대","rank":{"qs":"781-790","the":"801–1000","city":"광주"},"mentions":14,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["여수캠퍼스",4],["등록금",4],["만들기",3],["주거",3],["지원",2]],"lead":{"title":"‘서울대 10개 만들기’ 첫 지원…부산대·전남대·충남대 선정, 경상국립대 등 6개 거점국립대 제외","media":"단디뉴스","level":"normal"}},"gnu":{"name":"경상국립대","rank":{"qs":"1001-1200","the":"1201–1500","city":"진주"},"mentions":10,"risky":1,"riskRate":10,"riskLevel":1,"keywords":[["선정",3],["경남",2],["AI",2]],"lead":{"title":"경상국립대, 100주년 기념관 건설업체 임대에 교수 반발","media":"경남도민일보","level":"crisis"}},"pnu":{"name":"부산대","rank":{"qs":"=449","the":"501–600","city":"부산"},"mentions":62,"risky":0,"riskRate":0,"riskLevel":0,"keywords":[["AI",15],["선정",13],["최고급",7],["개발",6],["지원",5]],"lead":{"title":"‘서울대 10개 만들기’ 첫 지원…부산대·전남대·충남대 선정, 경상국립대 등 6개 거점국립대 제외","media":"단디뉴스","level":"normal"}},"jeju":{"name":"제주대","rank":{"qs":"1201-1400","the":"1201–1500","city":"제주"},"mentions":10,"risky":2,"riskRate":20,"riskLevel":2,"keywords":[["제주",4],["런케이션",3],["교원",2],["교육대학",2],["학생들",2]],"lead":{"title":"제주대 교육대학 학생들 \"초등학교 교사 선발 규모 감축 전면 재검토하라\"","media":"헤드라인제주","level":"warning"}}},"flows":[{"to":"pnu","style":"solid","color":"#3b7dd8","label":"정책 전달 경로"}],"legend":{"primary":"'서울대 10개 만들기' 1차 선정 및 거점국립대 재편","secondary":"지방 국립대 등록금 전액 지원, 국립대 통합 무산","disturb":"미선정 지역 반발, 사립대 역차별 논쟁, 구성원 합의 난항","buffer":"패키지 지원 선정, AI스타펠로우십, 글로컬대학 연계, PLATO 교육 AX"}}}};</script>
 <script>/* 클라이언트 동작: Leaflet 리스크 지도, 각주 이동, 사이드바 스크롤스파이, 인쇄/PDF, 전체 펼치기 */
 (function () {
   'use strict';
@@ -1015,7 +1041,8 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     var rl = (d && d.riskLevel) || 0;
     var h = '<div class="hint-h"><b>' + esc(u.name) + '</b>' +
       '<span class="hint-g" style="background:' + RISKC[rl] + '">' + RISKW[rl] + '</span></div>';
-    if (!d || !d.mentions) return h + '<div class="hint-n">이번 주 언급 없음</div>';
+    if (!d || !d.mentions) return h + rankHtml(d) + '<div class="hint-n">이번 주 언급 없음</div>';
+    h += rankHtml(d);
     h += '<div class="hint-n">주목도 <b style="color:#1f2937">' + ATTN[lv] + '</b> · 언급 ' + d.mentions + '건' +
       (d.risky ? ' · 위험신호 <b>' + d.risky + '건</b> (' + d.riskRate + '%)' : '') + '</div>';
     if (d.keywords && d.keywords.length) {
@@ -1030,6 +1057,16 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     }
     return h;
   }
+  // 세계대학랭킹 — 지도에서 위치와 함께 보여준다
+  function rankHtml(d) {
+    if (!d || !d.rank) return '';
+    var r = d.rank;
+    return '<div class="hint-r">' +
+      (r.city ? '<span class="hint-city">' + esc(r.city) + '</span>' : '') +
+      '<span class="hint-rk"><i>QS</i>' + esc(r.qs || '—') + '</span>' +
+      '<span class="hint-rk"><i>THE</i>' + esc(r.the || '—') + '</span></div>';
+  }
+
   function hintBox(el) {
     if (!el._hint) {
       var b = document.createElement('div');
