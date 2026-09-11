@@ -408,6 +408,23 @@
     maps.forEach(ensure);
   }
 
+  /* PDF 사전 생성용 — 한반도(거점국립대 전체)가 가운데 오도록 시야를 맞춘다.
+     인쇄 시 지도 컨테이너 폭이 화면과 달라지는데, 중심·확대를 그대로 두면
+     한반도가 한쪽으로 밀린다. 실제로 PDF 에서 오른쪽으로 치우쳐 나왔다.
+     pdf.mjs 가 인쇄 직전에 이 함수를 부른다. Ctrl+P 는 기존대로 현재 화면을 유지한다. */
+  window.__pnuFitKorea = function () {
+    if (!MAPS.length || typeof L === 'undefined') return 0;
+    var pts = D.universities.map(function (u) { return [u.lat, u.lng]; });
+    if (D.hub) pts.push([D.hub.lat, D.hub.lng]);
+    var b = L.latLngBounds(pts);
+    MAPS.forEach(function (m) {
+      if (m.el.classList.contains('world-on')) return;   // 세계 레이어가 켜진 지도는 건드리지 않는다
+      m.map.invalidateSize({ animate: false });
+      m.map.fitBounds(b, { padding: [26, 26], animate: false });
+    });
+    return MAPS.length;
+  };
+
   // 인쇄: 화면에서 보고 있던 중심·확대를 그대로 유지한다.
   // 인쇄 시 컨테이너 크기가 바뀌면 Leaflet 이 다른 영역을 그리므로,
   // invalidateSize 후 저장해 둔 중심·확대로 되돌린다.

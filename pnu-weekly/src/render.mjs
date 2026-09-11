@@ -96,7 +96,7 @@ function renderWeek(w, sources) {
   }
 
   const map = `
-  <h2 class="sec">🗺 거점국립대 정책 리스크 지도</h2>
+  <h2 class="sec">🏫 거점국립대 정책 리스크 지도</h2>
   <div class="mapbox"><div class="lmap" id="map-${w.id}" data-week="${w.id}"></div></div>
   <div class="legend">
     <span class="k" style="background:var(--crisis)"></span>주요: ${esc(w.map.legend.primary)}

@@ -129,7 +129,14 @@ try {
         expression: `document.querySelectorAll('details.day').forEach(d=>d.open=true);
                      window.dispatchEvent(new Event('beforeprint')); true;`
       });
-      await sleep(T.query ? 3000 : 5000);
+      await sleep(T.query ? 2000 : 3500);
+
+      // 지도 시야를 한반도에 맞춘다. beforeprint 는 화면 중심을 유지하므로,
+      // 폭이 다른 인쇄 지면에서는 한반도가 한쪽으로 밀린다.
+      const fitted = await send('Runtime.evaluate', {
+        expression: 'window.__pnuFitKorea ? window.__pnuFitKorea() : 0', returnByValue: true
+      });
+      if (fitted.result.value) await sleep(2500);   // 새 시야의 타일 로딩 대기
 
       const { data } = await send('Page.printToPDF', {
         printBackground: true,

@@ -3856,7 +3856,7 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
     </ul></div>
   </details>
 </section>
-<p class="foot">오늘의 대학 AX정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 05:30:46 · 데이터: data/collected/</p>
+<p class="foot">오늘의 대학 AX정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 05:55:31 · 데이터: data/collected/</p>
 </main>
 </div>
 </div>
@@ -4270,6 +4270,23 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
   } else {
     maps.forEach(ensure);
   }
+
+  /* PDF 사전 생성용 — 한반도(거점국립대 전체)가 가운데 오도록 시야를 맞춘다.
+     인쇄 시 지도 컨테이너 폭이 화면과 달라지는데, 중심·확대를 그대로 두면
+     한반도가 한쪽으로 밀린다. 실제로 PDF 에서 오른쪽으로 치우쳐 나왔다.
+     pdf.mjs 가 인쇄 직전에 이 함수를 부른다. Ctrl+P 는 기존대로 현재 화면을 유지한다. */
+  window.__pnuFitKorea = function () {
+    if (!MAPS.length || typeof L === 'undefined') return 0;
+    var pts = D.universities.map(function (u) { return [u.lat, u.lng]; });
+    if (D.hub) pts.push([D.hub.lat, D.hub.lng]);
+    var b = L.latLngBounds(pts);
+    MAPS.forEach(function (m) {
+      if (m.el.classList.contains('world-on')) return;   // 세계 레이어가 켜진 지도는 건드리지 않는다
+      m.map.invalidateSize({ animate: false });
+      m.map.fitBounds(b, { padding: [26, 26], animate: false });
+    });
+    return MAPS.length;
+  };
 
   // 인쇄: 화면에서 보고 있던 중심·확대를 그대로 유지한다.
   // 인쇄 시 컨테이너 크기가 바뀌면 Leaflet 이 다른 영역을 그리므로,
