@@ -43,19 +43,19 @@ const JOBS = [];
 
 if (!only || only === 'weekly') {
   if (existsSync(join(root, 'dist/index.html'))) {
-    JOBS.push({ page: 'dist/index.html', file: 'PNU_Univ_Policy_AI_Weekly_All.pdf', label: '대학 정책 AI 주간 모니터링' });
+    JOBS.push({ page: 'dist/index.html', file: 'PNU_Univ_Policy_AI_Weekly_All.pdf', label: '대학 AX정책 AI 주간 모니터링' });
     if (!SKIP_PARTS) {
       weeks.filter((w) => w.complete).forEach((w) => JOBS.push({
         page: 'dist/index.html', query: `?only=${w.id}`,
         file: `PNU_Univ_Policy_AI_Weekly(${stamp(w.date)}).pdf`,
-        label: `대학 정책 AI 주간 모니터링 · ${w.label}`
+        label: `대학 AX정책 AI 주간 모니터링 · ${w.label}`
       }));
     }
   }
 }
 if (!only || only === 'daily') {
   if (existsSync(join(root, 'dist/daily.html'))) {
-    JOBS.push({ page: 'dist/daily.html', file: 'PNU_Univ_Policy_AI_Daily_All.pdf', label: '대학 정책 AI 일일 브리핑' });
+    JOBS.push({ page: 'dist/daily.html', file: 'PNU_Univ_Policy_AI_Daily_All.pdf', label: '대학 AX정책 AI 일일 브리핑' });
     if (!SKIP_PARTS) {
       // 일일 브리핑의 날짜 섹션 id 는 d-YYYY-MM-DD 이다
       const html = readFileSync(join(root, 'dist/daily.html'), 'utf8');
@@ -63,7 +63,7 @@ if (!only || only === 'daily') {
         const d = id.slice(2);
         JOBS.push({ page: 'dist/daily.html', query: `?only=${id}`,
           file: `PNU_Univ_Policy_AI_Daily(${stamp(d)}).pdf`,
-          label: `대학 정책 AI 일일 브리핑 · ${stamp(d)}` });
+          label: `대학 AX정책 AI 일일 브리핑 · ${stamp(d)}` });
       });
     }
   }

@@ -393,3 +393,13 @@ body.only-view .main{padding-top:14px}
 .kpi.muted{background:#fbfbfc;border-style:dashed}
 .kpi.muted .val{color:#9ca3af}
 .kpi.muted .ch{color:#b6bcc6}
+/* 추이 섹션 접기/펴기 */
+details.trend > summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px}
+details.trend > summary::-webkit-details-marker{display:none}
+details.trend > summary::after{content:"－";color:var(--mute);font-size:15px;flex:none}
+details.trend:not([open]) > summary::after{content:"＋"}
+details.trend > summary h3{margin:0}
+details.trend:not([open]){padding-bottom:14px}
+details.trend:not([open]) > summary h3{margin-bottom:0}
+@media print{ details.trend > summary::after{content:""} }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>대학 정책 AI 주간 모니터링 · 일일 브리핑 | PNU</title>
+<title>대학 AX정책 AI 주간 모니터링 · 일일 브리핑 | PNU</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>:root{
   --navy:#1a2b4c; --navy-2:#243a63; --sky:#3b7dd8; --sky-l:#e6eef9;
@@ -400,6 +400,16 @@ body.only-view .main{padding-top:14px}
 .kpi.muted{background:#fbfbfc;border-style:dashed}
 .kpi.muted .val{color:#9ca3af}
 .kpi.muted .ch{color:#b6bcc6}
+/* 추이 섹션 접기/펴기 */
+details.trend > summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px}
+details.trend > summary::-webkit-details-marker{display:none}
+details.trend > summary::after{content:"－";color:var(--mute);font-size:15px;flex:none}
+details.trend:not([open]) > summary::after{content:"＋"}
+details.trend > summary h3{margin:0}
+details.trend:not([open]){padding-bottom:14px}
+details.trend:not([open]) > summary h3{margin-bottom:0}
+@media print{ details.trend > summary::after{content:""} }
 
 .artlist{list-style:none;margin:0;padding:0}
 .artlist li{display:grid;grid-template-columns:46px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
@@ -439,7 +449,7 @@ body.only-view .main{padding-top:14px}
 <header class="top">
   <div class="brand">
     <div class="logo">PNU</div>
-    <div><h1>대학 정책 AI 주간 모니터링 · 일일 브리핑</h1>
+    <div><h1>대학 AX정책 AI 주간 모니터링 · 일일 브리핑</h1>
     <div class="sub">부산대 AX·정보화혁신본부 AX혁신과</div></div>
   </div>
   <div class="acts">
@@ -3846,7 +3856,7 @@ body.only-view .main{padding-top:14px}
     </ul></div>
   </details>
 </section>
-<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 05:18:58 · 데이터: data/collected/</p>
+<p class="foot">오늘의 대학 AX정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 05:30:46 · 데이터: data/collected/</p>
 </main>
 </div>
 </div>
