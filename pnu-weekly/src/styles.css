@@ -262,3 +262,5 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 @media print{.leaflet-world,.world-legend{display:none !important}}
 .map-hint .hint-rk.ja{background:#5b4b8a}
 .map-hint .hint-rk em{font-style:normal;opacity:.6;font-size:9.5px;margin-left:2px}
+.warn-src.via{text-decoration:none;cursor:pointer}
+.warn-src.via:hover{background:#ffe9a8;text-decoration:none}

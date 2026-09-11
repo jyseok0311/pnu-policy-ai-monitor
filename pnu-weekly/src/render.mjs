@@ -130,7 +130,12 @@ function renderWeek(w, sources) {
     const nameHtml = src.url
       ? `<a href="${esc(src.url)}" target="_blank" rel="noopener" title="${esc(tip)}">${esc(k.name)}</a>`
       : `<span title="${esc(tip)}">${esc(k.name)}</span>`;
-    const dead = src.status === 'dead' ? `<span class="warn-src" title="${esc(src.note || '')}">⚠ 출처 확인필요</span>` : '';
+    // 출처 상태 표시. 2차 출처(via)면 실제로 값을 가져온 문서로 바로 갈 수 있게 링크로 만든다.
+    const dead = src.status === 'via' && src.viaUrl
+      ? `<a class="warn-src via" href="${esc(src.viaUrl)}" target="_blank" rel="noopener" title="${esc(src.note || '')}">⚠ 2차 출처: ${esc(src.viaName || '확인 필요')} ↗</a>`
+      : src.status === 'dead'
+        ? `<span class="warn-src" title="${esc(src.note || '')}">⚠ 출처 확인필요</span>`
+        : '';
     const prof = src.profile ? ` <a class="prof" href="${esc(src.profile)}" target="_blank" rel="noopener" title="부산대 프로필 페이지">↗</a>` : '';
     return `<div class="kpi${k.freq === 'week' ? ' live' : ''}">
       <div class="n">${nameHtml}${prof}<span>${esc(k.period)}</span></div>

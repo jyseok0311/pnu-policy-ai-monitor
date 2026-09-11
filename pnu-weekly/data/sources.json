@@ -75,11 +75,15 @@
   },
   "joongang": {
     "name": "중앙일보 대학평가",
-    "url": "https://www.joongang.co.kr/search/news?keyword=%EB%8C%80%ED%95%99%ED%8F%89%EA%B0%80",
+    "url": "https://namu.wiki/w/%EC%A4%91%EC%95%99%EC%9D%BC%EB%B3%B4%20%EB%8C%80%ED%95%99%ED%8F%89%EA%B0%80",
+    "primaryUrl": "https://www.joongang.co.kr/",
+    "primaryStatus": "dead",
     "profile": null,
     "api": null,
-    "status": "dead",
-    "note": "전용 사이트 univ.joongang.co.kr 는 2026-09-11 기준 403(응답 없음). 평가 지속 여부 확인 필요 — 당분간 기사 검색으로 연결."
+    "status": "via",
+    "viaName": "나무위키",
+    "viaUrl": "https://namu.wiki/w/%EC%A4%91%EC%95%99%EC%9D%BC%EB%B3%B4%20%EB%8C%80%ED%95%99%ED%8F%89%EA%B0%80",
+    "note": "원자료 미확인 — 전용 사이트 univ.joongang.co.kr 가 2026-09-11 기준 HTTP 403(응답 없음). 현재 값은 나무위키 '중앙일보 대학평가' 문서 경유(2차 출처, 이용자 편집). QS·THE 와 달리 공식 페이지에서 직접 수집한 값이 아니므로 대외 인용 전 원자료 대조 필요. 클릭하면 나무위키 문서로 이동합니다."
   },
   "_freqLabels": {
     "day": {
