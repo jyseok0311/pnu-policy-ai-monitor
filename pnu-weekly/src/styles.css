@@ -438,3 +438,8 @@ h2.sec .sec-face{margin-right:4px}
   .sec-face,.empty-face{display:none !important}
   .tier-face .sanjini{width:34px;height:34px}
 }
+/* 헤더 — 부산대 공식 상징 */
+.logo-img{width:48px;height:48px;flex:none;display:block;
+  background:#fff;border-radius:50%;padding:2px;box-sizing:border-box}
+@media (max-width:640px){ .logo-img{width:40px;height:40px} }
+@media print{ .logo-img{width:40px;height:40px} }

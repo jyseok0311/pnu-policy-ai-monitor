@@ -618,3 +618,19 @@ node mockup.mjs   # → dist/sanjini-mockup.html
 
 `dist/assets/logo_w.png` (흰색, 171×42) · `dist/assets/flogo.png` (157×40).
 부산대 공식 홈페이지에서 받았다. 네이비 헤더에는 흰색 로고가 그대로 맞는다.
+
+## 산지니·로고 실제 자산 적용
+
+원본은 프로젝트 루트의 `산지니 케릭터/`(전신 3종 + 표정 시트 1장)와 `부산대 로고/symbol0401.jpg`.
+`tools/cut-assets.py` 가 잘라서 `dist/assets/` 에 넣는다.
+
+```bash
+python tools/cut-assets.py "<프로젝트 루트>"
+node build.mjs && node daily.mjs && node mockup.mjs
+```
+
+- 표정 시트(3열×2행)를 6칸으로 자르고, 흰 배경을 투명으로 바꾼 뒤 256×256 정사각으로 맞춘다.
+- `sanjini()` 는 `dist/assets/sanjini/<mood>.png` 가 있으면 그 이미지를, 없으면 SVG 임시본을 쓴다.
+  **현재는 실제 이미지 58곳 적용, SVG 임시본 0개.**
+- 헤더의 `PNU` 원형 텍스트를 **부산대 공식 상징**(`assets/pnu-symbol.png`)으로 교체했다.
+  흰 원형 배경을 깔아 네이비 헤더에서도 또렷하게 보이게 했다.

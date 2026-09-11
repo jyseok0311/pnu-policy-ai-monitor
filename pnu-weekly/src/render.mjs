@@ -296,7 +296,7 @@ export function renderPage({ meta, weeks, sources, css, js, pdfPath, world, joon
 <div>
 <header class="top">
   <div class="brand">
-    <div class="logo">PNU</div>
+    <img class="logo-img" src="assets/pnu-symbol.png" alt="부산대학교" width="48" height="48">
     <div>
       <h1>${esc(meta.title)}</h1>
       <div class="sub">${esc(meta.org)}${meta.contact ? ' · ' + esc(meta.contact) : ''}</div>

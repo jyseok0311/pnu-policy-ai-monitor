@@ -443,6 +443,11 @@ h2.sec .sec-face{margin-right:4px}
   .sec-face,.empty-face{display:none !important}
   .tier-face .sanjini{width:34px;height:34px}
 }
+/* 헤더 — 부산대 공식 상징 */
+.logo-img{width:48px;height:48px;flex:none;display:block;
+  background:#fff;border-radius:50%;padding:2px;box-sizing:border-box}
+@media (max-width:640px){ .logo-img{width:40px;height:40px} }
+@media print{ .logo-img{width:40px;height:40px} }
 
 .mk{max-width:1000px;margin:0 auto;padding:0 20px 60px}
 .mk h2{font-size:19px;font-weight:800;color:var(--navy);margin:34px 0 6px;
@@ -489,75 +494,28 @@ h2.sec .sec-face{margin-right:4px}
   <div class="grid g4">
     <div class="card">
       <div class="tier-row">
-        <svg class="sanjini" width="52" height="52" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 happy" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <path d="M30 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-            <path d="M54 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-    <path d="M44 62 q6 8 12 0 q-6 3 -12 0z" fill="#f5c542"/>
-  </svg>
+        <img class="sanjini" src="assets/sanjini/happy.png" width="52" height="52" alt="산지니 happy" loading="lazy">
         <div><span class="tier t1" style="font-size:13px">Tier 1 관심</span>
         <div class="state t1" style="font-size:15px;margin-top:5px">Normal</div></div>
       </div>
       <div class="why">위험신호가 낮은 주. 밝은 표정으로 "이상 없음"을 한눈에.</div>
     </div><div class="card">
       <div class="tier-row">
-        <svg class="sanjini" width="52" height="52" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 base" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
-           <circle cx="39" cy="51" r="5.4" fill="#20252d"/><circle cx="61" cy="51" r="5.4" fill="#20252d"/>
-           <circle cx="37" cy="49" r="1.8" fill="#fff"/><circle cx="59" cy="49" r="1.8" fill="#fff"/>
-    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
-  </svg>
+        <img class="sanjini" src="assets/sanjini/base.png" width="52" height="52" alt="산지니 base" loading="lazy">
         <div><span class="tier t2" style="font-size:13px">Tier 2 주의</span>
         <div class="state t2" style="font-size:15px;margin-top:5px">Watch</div></div>
       </div>
       <div class="why">평상 수준. 기본 표정 — 감정을 싣지 않는다.</div>
     </div><div class="card">
       <div class="tier-row">
-        <svg class="sanjini" width="52" height="52" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 tense" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="38" cy="50" r="7.5" fill="#fff"/><circle cx="62" cy="50" r="7.5" fill="#fff"/>
-            <circle cx="38" cy="51" r="3.6" fill="#20252d"/><circle cx="62" cy="51" r="3.6" fill="#20252d"/>
-            <path d="M28 38 q6 -4 12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-            <path d="M72 38 q-6 -4 -12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-            <path d="M79 30 q4 6 0 9 q-4 -3 0 -9z" fill="#8fc4f0"/>
-    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
-  </svg>
+        <img class="sanjini" src="assets/sanjini/tense.png" width="52" height="52" alt="산지니 tense" loading="lazy">
         <div><span class="tier t3" style="font-size:13px">Tier 3 경계</span>
         <div class="state t3" style="font-size:15px;margin-top:5px">Warning</div></div>
       </div>
       <div class="why">긴장 표정 + 땀. 아직 사고는 아니지만 지켜봐야 하는 상태.</div>
     </div><div class="card">
       <div class="tier-row">
-        <svg class="sanjini" width="52" height="52" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 angry" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="38" cy="52" r="8" fill="#fff"/><circle cx="62" cy="52" r="8" fill="#fff"/>
-            <circle cx="38" cy="53" r="4.4" fill="#20252d"/><circle cx="62" cy="53" r="4.4" fill="#20252d"/>
-            <path d="M27 38 L44 45" stroke="#20252d" stroke-width="4" stroke-linecap="round"/>
-            <path d="M73 38 L56 45" stroke="#20252d" stroke-width="4" stroke-linecap="round"/>
-            <path d="M74 24 q7 -3 9 3 q5 -1 4 5 q-7 2 -13 -1z" fill="#cbd5e1"/>
-    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
-  </svg>
+        <img class="sanjini" src="assets/sanjini/angry.png" width="52" height="52" alt="산지니 angry" loading="lazy">
         <div><span class="tier t4" style="font-size:13px">Tier 4 위기</span>
         <div class="state t4" style="font-size:15px;margin-top:5px">Crisis</div></div>
       </div>
@@ -567,20 +525,7 @@ h2.sec .sec-face{margin-right:4px}
   <div class="demo">
     <div style="font-size:12px;color:var(--mute);margin-bottom:8px">적용 예 — 주차 헤더</div>
     <div class="wk-head">
-      <svg class="sanjini" width="46" height="46" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 tense" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="38" cy="50" r="7.5" fill="#fff"/><circle cx="62" cy="50" r="7.5" fill="#fff"/>
-            <circle cx="38" cy="51" r="3.6" fill="#20252d"/><circle cx="62" cy="51" r="3.6" fill="#20252d"/>
-            <path d="M28 38 q6 -4 12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-            <path d="M72 38 q-6 -4 -12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-            <path d="M79 30 q4 6 0 9 q-4 -3 0 -9z" fill="#8fc4f0"/>
-    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
-  </svg>
+      <img class="sanjini" src="assets/sanjini/tense.png" width="46" height="46" alt="산지니 tense" loading="lazy">
       <span class="tier t3">Tier 3 경계</span>
       <div><div class="wk-title">2026.09.11 (Week 37)</div>
       <div class="wk-range">기사수집기간: 2026.09.04~2026.09.11</div></div>
@@ -593,90 +538,24 @@ h2.sec .sec-face{margin-right:4px}
     <b>세 자리에만</b> 씁니다. 남발하면 정책 보고서의 무게가 떨어집니다.</p>
   <div class="grid g3">
     <div class="card">
-      <div class="tier-row"><svg class="sanjini" width="54" height="54" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 grad" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="38" cy="52" r="9" fill="#fff"/><circle cx="62" cy="52" r="9" fill="#fff"/>
-           <circle cx="39" cy="53" r="5.4" fill="#20252d"/><circle cx="61" cy="53" r="5.4" fill="#20252d"/>
-           <circle cx="37" cy="51" r="1.8" fill="#fff"/><circle cx="59" cy="51" r="1.8" fill="#fff"/>
-           <g transform="translate(50 16)"><path d="M-26 0 L0 -9 L26 0 L0 9z" fill="#20252d"/>
-           <path d="M-13 3 L-13 12 q13 7 26 0 L13 3" fill="#20252d"/>
-           <path d="M24 1 L24 16" stroke="#f5c542" stroke-width="2.4"/><circle cx="24" cy="17" r="3" fill="#f5c542"/></g>
-    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
-  </svg>
+      <div class="tier-row"><img class="sanjini" src="assets/sanjini/grad.png" width="54" height="54" alt="산지니 grad" loading="lazy">
         <div style="font-weight:800;color:var(--navy);font-size:14.5px">리포트 읽는 법 · 상단 공지</div></div>
       <div class="why">해설자 역할. 상단에 한 번만 등장해 톤을 잡는다.</div>
     </div><div class="card">
-      <div class="tier-row"><svg class="sanjini" width="54" height="54" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 question" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
-           <circle cx="36" cy="52" r="5" fill="#20252d"/><circle cx="58" cy="52" r="5" fill="#20252d"/>
-           <path d="M28 38 q6 -3 11 0" stroke="#20252d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-           <path d="M72 38 q-6 -3 -11 0" stroke="#20252d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-           <text x="80" y="26" font-size="22" font-weight="800" fill="#4a90d9" font-family="system-ui">?</text>
-    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
-  </svg>
+      <div class="tier-row"><img class="sanjini" src="assets/sanjini/question.png" width="54" height="54" alt="산지니 question" loading="lazy">
         <div style="font-weight:800;color:var(--navy);font-size:14.5px">향후 주시 포인트 · 취약점 진단</div></div>
       <div class="why">아직 결론이 없는 영역. 물음표가 "지켜보는 중"을 나타낸다.</div>
     </div><div class="card">
-      <div class="tier-row"><svg class="sanjini" width="54" height="54" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 idea" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
-           <circle cx="39" cy="51" r="5.4" fill="#20252d"/><circle cx="61" cy="51" r="5.4" fill="#20252d"/>
-           <circle cx="37" cy="49" r="1.8" fill="#fff"/><circle cx="59" cy="49" r="1.8" fill="#fff"/>
-           <g transform="translate(74 18)"><circle r="8" fill="#ffd84d"/><rect x="-3" y="7" width="6" height="4" rx="1" fill="#c9a227"/>
-           <path d="M-13 -9 L-9 -6 M13 -9 L9 -6 M0 -15 L0 -11" stroke="#ffd84d" stroke-width="2.4" stroke-linecap="round"/></g>
-    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
-  </svg>
+      <div class="tier-row"><img class="sanjini" src="assets/sanjini/idea.png" width="54" height="54" alt="산지니 idea" loading="lazy">
         <div style="font-weight:800;color:var(--navy);font-size:14.5px">모니터링 권고 · 기회(AX) 전파경로</div></div>
       <div class="why">행동을 제안하는 자리. 전구가 권고임을 표시한다.</div>
     </div>
   </div>
   <div class="demo">
     <div style="font-size:12px;color:var(--mute);margin-bottom:8px">적용 예 — 섹션 제목</div>
-    <h2 class="sec" style="margin-top:0"><svg class="sanjini" width="30" height="30" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 question" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
-           <circle cx="36" cy="52" r="5" fill="#20252d"/><circle cx="58" cy="52" r="5" fill="#20252d"/>
-           <path d="M28 38 q6 -3 11 0" stroke="#20252d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-           <path d="M72 38 q-6 -3 -11 0" stroke="#20252d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-           <text x="80" y="26" font-size="22" font-weight="800" fill="#4a90d9" font-family="system-ui">?</text>
-    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
-  </svg> 향후 주시 포인트</h2>
+    <h2 class="sec" style="margin-top:0"><img class="sanjini" src="assets/sanjini/question.png" width="30" height="30" alt="산지니 question" loading="lazy"> 향후 주시 포인트</h2>
     <div class="watch"><div><span>초기(0-4주)</span>패키지 지원 세부 실행계획과 연차별 성과지표 확정</div></div>
-    <h2 class="sec"><svg class="sanjini" width="30" height="30" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 idea" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
-           <circle cx="39" cy="51" r="5.4" fill="#20252d"/><circle cx="61" cy="51" r="5.4" fill="#20252d"/>
-           <circle cx="37" cy="49" r="1.8" fill="#fff"/><circle cx="59" cy="49" r="1.8" fill="#fff"/>
-           <g transform="translate(74 18)"><circle r="8" fill="#ffd84d"/><rect x="-3" y="7" width="6" height="4" rx="1" fill="#c9a227"/>
-           <path d="M-13 -9 L-9 -6 M13 -9 L9 -6 M0 -15 L0 -11" stroke="#ffd84d" stroke-width="2.4" stroke-linecap="round"/></g>
-    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
-  </svg> 모니터링 권고</h2>
+    <h2 class="sec"><img class="sanjini" src="assets/sanjini/idea.png" width="30" height="30" alt="산지니 idea" loading="lazy"> 모니터링 권고</h2>
     <div class="diag"><ol style="margin:0"><li>미선정 거점국립대와의 공동 프로그램·자원 공유 모델을 부산대가 먼저 제안</li></ol></div>
   </div>
 
@@ -684,46 +563,9 @@ h2.sec .sec-face{margin-right:4px}
   <p class="lead">데이터가 없을 때가 화면이 가장 어색합니다. 지금은 회색 글씨 한 줄뿐인데,
     여기에 캐릭터를 두면 <b>“고장난 것”이 아니라 “해당 없음”</b>임이 전달됩니다.</p>
   <div class="grid g3">
-    <div class="empty"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 question" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
-           <circle cx="36" cy="52" r="5" fill="#20252d"/><circle cx="58" cy="52" r="5" fill="#20252d"/>
-           <path d="M28 38 q6 -3 11 0" stroke="#20252d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-           <path d="M72 38 q-6 -3 -11 0" stroke="#20252d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-           <text x="80" y="26" font-size="22" font-weight="800" fill="#4a90d9" font-family="system-ui">?</text>
-    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
-  </svg>
-      <div><b>이번 주 언급 없음</b><span>워치리스트에 등록됐지만 이번 주 기사에 나오지 않았습니다.</span></div></div><div class="empty"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 sad" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <path d="M31 45 L45 55 M45 45 L31 55" stroke="#20252d" stroke-width="3.2" stroke-linecap="round"/>
-          <path d="M55 45 L69 55 M69 45 L55 55" stroke="#20252d" stroke-width="3.2" stroke-linecap="round"/>
-          <path d="M70 58 q4 7 0 10 q-4 -3 0 -10z" fill="#8fc4f0"/>
-    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
-  </svg>
-      <div><b>표본 부족 — 등급 미산정</b><span>수집 기사가 30건 미만인 날은 등급을 매기지 않습니다.</span></div></div><div class="empty"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 tense" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="38" cy="50" r="7.5" fill="#fff"/><circle cx="62" cy="50" r="7.5" fill="#fff"/>
-            <circle cx="38" cy="51" r="3.6" fill="#20252d"/><circle cx="62" cy="51" r="3.6" fill="#20252d"/>
-            <path d="M28 38 q6 -4 12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-            <path d="M72 38 q-6 -4 -12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-            <path d="M79 30 q4 6 0 9 q-4 -3 0 -9z" fill="#8fc4f0"/>
-    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
-  </svg>
+    <div class="empty"><img class="sanjini" src="assets/sanjini/question.png" width="44" height="44" alt="산지니 question" loading="lazy">
+      <div><b>이번 주 언급 없음</b><span>워치리스트에 등록됐지만 이번 주 기사에 나오지 않았습니다.</span></div></div><div class="empty"><img class="sanjini" src="assets/sanjini/sad.png" width="44" height="44" alt="산지니 sad" loading="lazy">
+      <div><b>표본 부족 — 등급 미산정</b><span>수집 기사가 30건 미만인 날은 등급을 매기지 않습니다.</span></div></div><div class="empty"><img class="sanjini" src="assets/sanjini/tense.png" width="44" height="44" alt="산지니 tense" loading="lazy">
       <div><b>지도를 불러올 수 없습니다</b><span>오프라인이거나 타일 서버에 접근할 수 없습니다.</span></div></div>
   </div>
 
@@ -744,17 +586,7 @@ h2.sec .sec-face{margin-right:4px}
       <h4>비권장 — 로고 + 마스코트 동시</h4>
       <div class="hdr-demo" style="margin-top:8px">
         <img src="assets/logo_w.png" alt="부산대학교" style="height:34px">
-        <svg class="sanjini" width="38" height="38" viewBox="0 0 100 100"
-    role="img" aria-label="산지니 happy" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
-    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
-    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
-    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
-    <path d="M30 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-            <path d="M54 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
-    <path d="M44 62 q6 8 12 0 q-6 3 -12 0z" fill="#f5c542"/>
-  </svg>
+        <img class="sanjini" src="assets/sanjini/happy.png" width="38" height="38" alt="산지니 happy" loading="lazy">
         <div><h1 style="font-size:17px">대학 AX정책 AI 주간 모니터링</h1></div>
       </div>
       <p class="note">시선이 분산되고, 공문서 성격의 리포트에서 격식이 떨어집니다.</p>
