@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>산지니 활용 시안 | 대학 AX정책 AI 주간 모니터링</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>:root{
+  --navy:#1a2b4c; --navy-2:#243a63; --sky:#3b7dd8; --sky-l:#e6eef9;
+  --bg:#eef0f3; --paper:#fff; --ink:#1f2937; --mute:#6b7280; --line:#d9dee6;
+  --crisis:#b3261e; --warn:#d9822b; --watch:#c9a227; --ok:#2f8f5b;
+  --thead:#e3e9f2;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:15px;line-height:1.6}
+a{color:var(--sky);text-decoration:none}
+a:hover{text-decoration:underline}
+.shell{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:100vh}
+/* 그리드 자식은 기본이 min-width:auto 라서 내부의 넓은 표·SVG 가 열을 밀어낸다.
+   그러면 가로 스크롤 컨테이너(.tbl 등)가 무력해지고 레이아웃 뷰포트까지 넓어진다. */
+.shell > *{min-width:0}
+
+/* sidebar */
+.side{background:#f7f8fa;border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;padding:14px 0}
+.side .go{display:block;margin:0 14px 12px;padding:8px 12px;background:var(--navy);color:#fff;border-radius:6px;font-size:13px;font-weight:600;text-align:center}
+.side .go:hover{background:var(--navy-2);text-decoration:none}
+.side ul{list-style:none;margin:0;padding:0}
+.side li a{display:flex;align-items:center;gap:8px;padding:6px 16px;font-size:12.5px;color:#374151}
+.side li a:hover,.side li a.on{background:var(--sky-l);color:var(--navy);text-decoration:none}
+.side li a.on{font-weight:700;box-shadow:inset 3px 0 0 var(--navy)}
+.side li a .stub{margin-left:auto;font-size:10px;color:#9ca3af;border:1px solid #e5e7eb;border-radius:3px;padding:0 4px}
+.dot{width:8px;height:8px;border-radius:50%;flex:none}
+.d4{background:var(--crisis)}.d3{background:var(--warn)}.d2{background:var(--watch)}.d1{background:var(--ok)}
+
+/* header */
+.top{background:var(--navy);color:#fff;padding:22px 32px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;position:sticky;top:0;z-index:500}
+.brand{display:flex;gap:14px;align-items:center}
+.logo{width:48px;height:48px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-weight:800;font-size:14px;letter-spacing:.5px}
+.top h1{margin:0;font-size:22px;font-weight:700}
+.top .sub{font-size:13px;opacity:.85;margin-top:3px}
+.top .acts{display:flex;gap:8px;align-items:center;align-self:center}
+.btn{background:#fff;color:var(--navy);border:0;border-radius:6px;padding:7px 13px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--sky-l);text-decoration:none}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+
+.main{padding:0 32px 60px}
+.notice{border-left:3px solid var(--sky);background:#f8fafc;padding:10px 14px;font-size:13px;color:#4b5563;margin:18px 0}
+.sample{display:inline-block;background:#fff3cd;color:#7a5a00;border:1px solid #ffe08a;border-radius:4px;font-size:12px;padding:2px 8px;font-weight:700}
+
+/* trend strip */
+.trend{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:22px}
+.trend h3{margin:0 0 4px;font-size:15px;font-weight:800;color:var(--navy)}
+.trend .cap{font-size:12.5px;color:var(--mute);margin-bottom:10px}
+.spark{display:block;width:100%;height:auto}
+.spark .bar{cursor:pointer}
+.spark .bar:hover rect{opacity:.75}
+
+/* week card */
+.week{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px 28px;margin-bottom:30px;scroll-margin-top:100px}
+.wk-head{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.tier{background:var(--crisis);color:#fff;font-weight:800;border-radius:6px;padding:6px 14px;font-size:16px;white-space:nowrap}
+.tier.t3{background:var(--warn)}.tier.t2{background:var(--watch)}.tier.t1{background:var(--ok)}
+.wk-title{font-size:22px;font-weight:800;line-height:1.2}
+.wk-range{font-size:13px;color:var(--mute)}
+.state{margin-left:auto;font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px}
+.state .dot{width:14px;height:14px}
+.state.t4{color:var(--crisis)}.state.t3{color:var(--warn)}.state.t2{color:var(--watch)}.state.t1{color:var(--ok)}
+.signal{margin:12px 0 22px;font-size:13.5px;color:#374151}
+.signal b{color:var(--ink)}
+
+h2.sec{font-size:17px;font-weight:800;margin:30px 0 12px;display:flex;align-items:center;gap:8px}
+h2.sec::before{content:"";width:12px;height:12px;background:var(--navy);flex:none}
+h2.sec small{font-weight:500;color:var(--mute);font-size:12.5px}
+h3.sub{background:var(--thead);color:var(--navy);font-size:15px;font-weight:700;padding:6px 12px;margin:18px 0 8px;border-radius:4px}
+
+/* map */
+.mapbox{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.lmap{height:460px;width:100%;background:#dfe3e9}
+.legend{font-size:12.5px;color:#4b5563;margin-top:10px;line-height:1.7}
+.legend .k{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle;margin-right:4px}
+.uni-label{font-weight:700;font-size:12px;color:#1f2937;text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 3px #fff;white-space:nowrap}
+.uni-label.focus{color:var(--crisis);font-size:13px;font-weight:800}
+.leaflet-container{font-family:inherit}
+
+/* summary */
+.sum ul{margin:0;padding-left:20px}
+.sum li{margin:6px 0}
+/* footnote ref */
+.ref{font-size:10px;color:var(--sky);margin-left:2px;cursor:pointer;background:none;border:0;padding:0 1px;font-family:inherit;vertical-align:super;font-weight:700}
+.ref:hover{text-decoration:underline}
+.ref.hit{background:#fff3cd;border-radius:2px}
+
+/* refs list */
+.reflist{list-style:none;margin:0;padding:0;font-size:13px}
+.reflist li{display:grid;grid-template-columns:34px 1fr;gap:8px;padding:7px 8px;border-bottom:1px dashed var(--line);scroll-margin-top:110px;border-radius:4px}
+.reflist li:last-child{border-bottom:0}
+.reflist li.hit{background:#fff8e1}
+.reflist .n{color:var(--sky);font-weight:800}
+.reflist .meta{color:var(--mute);font-size:12px;margin-top:2px}
+
+/* articles */
+details.day{border:1px solid var(--line);border-radius:6px;margin:6px 0;background:#fafbfc}
+details.day summary{cursor:pointer;padding:8px 12px;font-weight:700;font-size:14px;list-style:none;display:flex;justify-content:space-between}
+details.day summary::-webkit-details-marker{display:none}
+details.day summary::after{content:"＋";color:var(--mute)}
+details.day[open] summary::after{content:"－"}
+.cat{padding:4px 14px 10px}
+.cat h4{margin:8px 0 3px;font-size:13px;color:var(--navy)}
+.cat ul{margin:0;padding-left:16px;font-size:13px;color:#374151}
+.cat li{margin:2px 0}
+.cat .more{color:var(--mute);font-size:12px}
+
+/* changes */
+.chg{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:14px;margin:6px 0}
+.chg .arrow{font-weight:800}
+.up{color:var(--crisis)}.down{color:var(--sky)}
+.chg .v{font-weight:700}
+.chg .why{color:#4b5563;font-size:13px}
+
+/* watch */
+.watch{display:grid;gap:8px}
+.watch div{display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:14px;align-items:start}
+.watch span{background:var(--sky-l);color:var(--navy);border-radius:4px;padding:2px 8px;font-size:12.5px;font-weight:700;text-align:center}
+
+/* indicators */
+.kpi-group{margin:14px 0}
+.kpi-group h4{margin:0 0 6px;font-size:13.5px;color:var(--navy);font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:8px}
+.kpi{background:#fafbfc;border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+.kpi.live{background:#f2f8f4;border-color:#bfdccb}
+.kpi .n{font-size:12px;color:var(--mute);display:flex;justify-content:space-between;gap:6px}
+.kpi .n a{color:var(--mute)}
+.kpi .n a:hover{color:var(--sky)}
+.kpi .val{font-size:17px;font-weight:800;margin:2px 0}
+.kpi .val small{font-size:11px;font-weight:600;color:var(--mute);margin-left:2px}
+.kpi .ch{font-size:12px;font-weight:700}
+.kpi .ch.flat{color:var(--mute)}
+.freq{display:inline-block;font-size:10px;font-weight:700;border-radius:3px;padding:1px 5px;margin-top:4px;border:1px solid}
+.f-week{background:#e8f5ec;color:#1f6b42;border-color:#bfdccb}
+.f-month{background:#eef3fb;color:#2c5896;border-color:#c7d8f0}
+.f-slow{background:#f3f4f6;color:#6b7280;border-color:#e5e7eb}
+
+/* paths */
+.path{background:#fafbfc;border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13.5px}
+.path .tag{display:inline-block;background:var(--crisis);color:#fff;font-size:11px;border-radius:3px;padding:1px 6px;margin-right:6px;font-weight:700}
+.path .tag.w{background:var(--warn)}
+.path b{color:var(--navy)}
+.path .flow{margin-top:4px;color:#374151}
+
+/* table */
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+th{background:var(--thead);color:var(--navy);font-weight:700;padding:8px 6px;text-align:left;border:1px solid var(--line)}
+td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
+.lv{display:inline-block;border-radius:3px;padding:1px 7px;font-size:12px;font-weight:700;color:#fff}
+.lv.s{background:var(--crisis)}.lv.i{background:var(--warn)}.lv.m{background:var(--watch)}.lv.l{background:#94a3b8}
+.dir{font-weight:700;white-space:nowrap}
+
+/* diag */
+.diag h4{margin:14px 0 6px;font-size:14px;color:var(--navy)}
+.diag ol{margin:0;padding-left:20px;font-size:14px}
+.diag li{margin:6px 0}
+
+/* stub week */
+.stub-body{color:var(--mute);font-size:13.5px;background:#fafbfc;border:1px dashed var(--line);border-radius:6px;padding:14px 16px;margin-top:14px}
+.stub-body b{color:var(--ink)}
+
+.foot{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;font-size:13px;color:var(--mute)}
+
+/* toast */
+#toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(120%);background:var(--navy);color:#fff;padding:11px 18px;border-radius:8px;font-size:13px;box-shadow:0 6px 20px rgba(0,0,0,.22);transition:transform .25s ease;z-index:9999;max-width:90vw}
+#toast.on{transform:translateX(-50%) translateY(0)}
+
+@media (max-width:860px){
+  .shell{grid-template-columns:minmax(0,1fr)}
+  .side{position:static;height:auto;max-height:180px;border-right:0;border-bottom:1px solid var(--line)}
+  .side ul{display:flex;flex-wrap:wrap;gap:2px 6px;padding:0 10px}
+  .side li a{padding:4px 8px}
+  .side li a .stub{display:none}
+  .top{position:static}
+  .top,.main{padding-left:16px;padding-right:16px}
+  .week{padding:18px 16px}
+  .state{margin-left:0;width:100%}
+  .watch div,.chg{grid-template-columns:1fr}
+  .lmap{height:340px}
+}
+
+/* ---------- PRINT / PDF ---------- */
+@media print{
+  @page{size:A4;margin:14mm 12mm}
+  html,body{background:#fff;font-size:10.5pt}
+  .side,.top .acts,#toast,.trend .cap,.leaflet-control-container{display:none !important}
+  .shell{display:block}
+  .top{position:static;padding:14px 0;background:#fff;color:var(--navy);border-bottom:3px solid var(--navy)}
+  .top .logo{border-color:var(--navy)}
+  .main{padding:0}
+  .week{border:0;padding:0;margin:0 0 14mm;break-inside:auto}
+  .week+.week{break-before:page}
+  h2.sec{break-after:avoid}
+  details.day{break-inside:avoid}
+  details.day summary::after{content:""}
+  details.day > .cat{display:block !important}
+  /* 인쇄 시 지도 높이를 바꾸면 같은 중심이라도 다른 영역이 보인다. 화면과 같은 높이를 유지한다. */
+  .lmap{height:460px}
+  .leaflet-tile,.leaflet-container{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .leaflet-locate{display:none !important}
+  .kpi,.path,.chg,.trend{break-inside:avoid}
+  table{break-inside:auto}
+  tr{break-inside:avoid}
+  a{color:var(--ink);text-decoration:none}
+  .reflist a::after{content:" (" attr(href) ")";font-size:8pt;color:var(--mute);word-break:break-all}
+}
+
+/* 출처 상태 표시 */
+.warn-src{display:inline-block;font-size:10px;font-weight:700;border-radius:3px;padding:1px 5px;margin:4px 0 0 4px;background:#fff3cd;color:#7a5a00;border:1px solid #ffe08a;cursor:help}
+.kpi .n a.prof{margin-left:3px;font-size:11px;color:var(--sky);text-decoration:none}
+.kpi .n a.prof:hover{text-decoration:none;opacity:.7}
+#toast:empty{display:none}
+.f-day{background:#dff0e6;color:#15603a;border-color:#a9cebb}
+/* 실데이터 주차 표시 */
+.live-note{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--mute);margin:-12px 0 20px}
+.live-badge{background:#1f6b42;color:#fff;font-size:11px;font-weight:800;border-radius:4px;padding:2px 8px;flex:none}
+.note-line{font-size:13px;color:var(--mute);margin:0 0 10px;padding-left:2px}
+.src-ok{color:#1f6b42;font-weight:700}
+.src-via{color:#9ca3af}
+.tier.t0{background:#9ca3af}
+.state.t0{color:var(--mute)}
+.dot.d0{background:#9ca3af}
+/* 내 위치 버튼 */
+.leaflet-locate{width:30px;height:30px;line-height:30px;text-align:center;background:#fff;color:var(--navy);font-size:16px;font-weight:800;border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.3);text-decoration:none}
+.leaflet-locate:hover{background:var(--sky-l);text-decoration:none}
+/* 지도 마커 호버 힌트 — 대학별 주요 키워드 */
+.map-hint{position:absolute;display:none;z-index:1200;max-width:300px;background:#fff;border:1px solid var(--line);
+  border-radius:8px;box-shadow:0 6px 22px rgba(0,0,0,.18);padding:10px 12px;font-size:12.5px;line-height:1.5;pointer-events:none}
+.map-hint .hint-h{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--navy)}
+.map-hint .hint-g{color:#fff;font-size:10.5px;font-weight:800;border-radius:3px;padding:1px 6px}
+.map-hint .hint-n{color:var(--mute);font-size:12px;margin-top:2px}
+.map-hint .hint-n b{color:var(--crisis)}
+.map-hint .hint-k{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.map-hint .hint-k span{background:var(--sky-l);color:var(--navy);border-radius:3px;padding:1px 6px;font-size:11.5px;font-weight:700}
+.map-hint .hint-k i{font-style:normal;color:var(--sky);margin-left:3px;font-weight:600}
+.map-hint .hint-l{margin-top:8px;padding-top:7px;border-top:1px dashed var(--line);color:#374151;font-size:12px}
+.map-hint .hint-l .lv{margin-right:5px;font-size:10.5px}
+@media print{.map-hint{display:none !important}}
+/* 호버 힌트 내 세계대학랭킹 */
+.map-hint .hint-r{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-top:6px}
+.map-hint .hint-city{background:#eef1f5;color:#4b5563;border-radius:3px;padding:1px 6px;font-size:11px;font-weight:700}
+.map-hint .hint-rk{background:var(--navy);color:#fff;border-radius:3px;padding:1px 7px;font-size:11px;font-weight:700}
+.map-hint .hint-rk i{font-style:normal;opacity:.65;margin-right:4px;font-size:10px;letter-spacing:.3px}
+/* 지도 휠 확대/축소 안내 */
+.map-wheel-hint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:1100;
+  background:rgba(26,43,76,.86);color:#fff;font-size:11.5px;line-height:1;padding:6px 11px;border-radius:14px;
+  white-space:nowrap;pointer-events:none;transition:opacity .25s;opacity:.9}
+.map-wheel-hint b{color:#9dc2f5}
+.lmap.wheel-on .map-wheel-hint{background:rgba(47,143,91,.9)}
+.lmap.wheel-on{box-shadow:inset 0 0 0 2px rgba(47,143,91,.55)}
+.lmap:hover .map-wheel-hint{opacity:1}
+@media print{.map-wheel-hint{display:none !important}}
+/* 세계 랭킹 레이어 */
+.leaflet-world{width:30px;height:30px;line-height:30px;text-align:center;background:#fff;font-size:15px;border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.3);text-decoration:none}
+.leaflet-world:hover{background:var(--sky-l);text-decoration:none}
+.leaflet-world.on{background:var(--navy);box-shadow:0 0 0 2px var(--sky)}
+.world-tip{font-size:12px}
+.world-legend{display:none;position:absolute;left:8px;bottom:34px;z-index:1100;background:rgba(255,255,255,.94);
+  border:1px solid var(--line);border-radius:6px;padding:7px 10px;font-size:11.5px;line-height:1.6;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.lmap.world-on .world-legend{display:block}
+.world-legend b{display:block;color:var(--navy);margin-bottom:3px}
+.world-legend span{display:flex;align-items:center;gap:5px;color:#4b5563}
+.world-legend i{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+.world-legend em{display:block;margin-top:4px;color:var(--mute);font-style:normal;font-size:10.5px}
+@media print{.leaflet-world,.world-legend{display:none !important}}
+.map-hint .hint-rk.ja{background:#5b4b8a}
+.map-hint .hint-rk em{font-style:normal;opacity:.6;font-size:9.5px;margin-left:2px}
+.warn-src.via{text-decoration:none;cursor:pointer}
+.warn-src.via:hover{background:#ffe9a8;text-decoration:none}
+/* 대학기관평가인증 표시 */
+.map-hint .hint-ac{margin-top:5px;font-size:11.5px;color:#374151}
+.map-hint .hint-ac b{color:#1f6b42}
+.map-hint .hint-ac b.bad{color:var(--crisis)}
+.map-hint .hint-ac span{color:var(--mute)}
+
+/* ══════════════ 모바일 최적화 ══════════════
+   375px 실측에서 나온 문제를 고친다.
+   - 헤더 194px, 제목 3줄, 버튼이 세로 한 글자씩 쌓임
+   - 사이드바가 상단 180px 점유
+   - 부문별 영향표 7열이 309px 로 눌림
+   - 스파크라인 라벨이 4px 로 축소돼 안 읽힘 */
+
+.spark-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+@media (max-width:640px){
+  html,body{font-size:14.5px}
+
+  /* 헤더 — 세로 스택, 버튼은 가로 3분할 */
+  .top{flex-direction:column;align-items:stretch;gap:12px;padding:16px}
+  .brand{gap:11px}
+  .logo{width:40px;height:40px;font-size:12px;flex:none}
+  .top h1{font-size:17px;line-height:1.25;word-break:keep-all}   /* 한국어는 어절 단위로 끊는다 */
+  .top .sub{font-size:12px;word-break:keep-all}
+  /* .acts 는 기본이 nowrap 이라, 드롭다운(flex-basis 100%)과 버튼이 한 줄에 눌려
+     버튼 폭이 8px 까지 찌그러졌다. 줄바꿈을 허용하고 버튼에 최소 폭을 준다. */
+  .top .acts{align-self:stretch;gap:6px;flex-wrap:wrap}
+  .acts .btn{flex:1 1 120px;min-width:110px;padding:9px 6px;font-size:12px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+
+  /* 사이드바 — 2행 랩 대신 가로 스크롤 한 줄(칩) */
+  .side{max-height:none;padding:10px 0 8px}
+  .side .go{margin:0 12px 8px;padding:7px 10px;font-size:12px}
+  .side ul{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    padding:0 12px 4px;gap:6px;scrollbar-width:thin}
+  .side li{flex:none}
+  .side li a{border:1px solid var(--line);border-radius:14px;padding:5px 10px;
+    font-size:11.5px;white-space:nowrap;background:#fff}
+  .side li a.on{box-shadow:none;border-color:var(--navy);background:var(--sky-l)}
+
+  /* 본문 여백 */
+  .main{padding:0 12px 40px}
+  .week{padding:16px 13px;border-radius:8px}
+  .notice{padding:9px 11px;font-size:12.5px}
+
+  /* 주차 헤더 */
+  .wk-head{gap:8px}
+  .wk-title{font-size:19px}
+  .tier{font-size:14px;padding:5px 11px}
+  .state{font-size:16px}
+  .signal{font-size:12.5px;line-height:1.75}
+  .live-note{flex-wrap:wrap;font-size:11.5px;margin:-8px 0 16px}
+
+  /* 제목 */
+  h2.sec{font-size:15.5px;margin:24px 0 10px;flex-wrap:wrap}
+  h2.sec small{font-size:11.5px;flex-basis:100%}
+  h3.sub{font-size:14px;padding:5px 10px}
+
+  /* 지도 — 터치에서는 마커를 탭하면 팝업이 뜬다 */
+  .lmap{height:300px}
+  .map-wheel-hint{display:none}          /* 휠이 없는 환경 */
+  .map-hint{max-width:74vw;font-size:12px}
+  .world-legend{font-size:10.5px;padding:6px 8px;bottom:28px}
+  .legend{font-size:11.5px;line-height:1.65}
+
+  /* 추이 — 라벨이 읽히도록 최소 폭 확보 후 가로 스크롤 */
+  .trend{padding:14px 13px}
+  .trend h3{font-size:14px}
+  .spark{min-width:620px}   /* 막대+선 콤보라 라벨이 겹치지 않을 최소 폭 */
+
+  /* 지표 카드 — 2열 고정 */
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .kpi{padding:7px 9px}
+  .kpi .n{font-size:11px}
+  .kpi .val{font-size:15px}
+  .kpi .ch{font-size:11px}
+  .freq,.warn-src{font-size:9.5px;padding:1px 4px}
+
+  /* 표 — 눌리지 않게 최소 폭을 주고 가로 스크롤 */
+  .tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;
+    border:1px solid var(--line);border-radius:6px}
+  .tbl table{min-width:660px;margin-top:0}
+  .tbl th,.tbl td{padding:7px 6px;font-size:12px}
+  .tbl::after{content:"← 좌우로 밀어서 보기";display:block;font-size:10.5px;
+    color:var(--mute);padding:4px 8px;border-top:1px dashed var(--line);position:sticky;left:0}
+
+  /* 기사·전파경로·참고문헌 */
+  details.day summary{font-size:13px;padding:8px 10px}
+  .cat ul{font-size:12.5px}
+  .path{padding:9px 11px;font-size:12.5px}
+  .path .flow{font-size:12px}
+  .watch div{gap:4px}
+  .watch span{justify-self:start;padding:2px 9px}
+  .sum li{font-size:13.5px}
+  .diag ol,.diag li{font-size:13px}
+  .reflist li{grid-template-columns:28px 1fr;font-size:12.5px}
+  .reflist .meta{font-size:11px}
+  .chg{font-size:13px}
+  .chg .why{font-size:12px}
+
+  /* 일일 브리핑 기사 목록 */
+  .artlist li{grid-template-columns:40px 1fr;font-size:12.5px;padding:6px 0}
+  .artlist .lv{font-size:10px}
+
+  #toast{left:12px;right:12px;bottom:14px;transform:translateY(140%);max-width:none;font-size:12px}
+  #toast.on{transform:translateY(0)}
+}
+
+/* 아주 좁은 화면(360px 이하) — 375px(아이폰 표준)은 2열을 유지한다 */
+@media (max-width:360px){
+  .kpis{grid-template-columns:1fr}
+  .top h1{font-size:16px}
+  .acts .btn{font-size:11px;padding:8px 3px}
+}
+/* PDF 날짜 선택 */
+.pdf-sel{background:#fff;color:var(--navy);border:0;border-radius:6px;padding:7px 9px;
+  font-size:12px;font-weight:700;font-family:inherit;max-width:190px;cursor:pointer}
+.pdf-sel:focus{outline:2px solid var(--sky)}
+/* ?only= 인쇄 전용 뷰 — 사이드바·추이·버튼을 걷어낸 한 회차짜리 화면 */
+body.only-view .shell{grid-template-columns:minmax(0,1fr)}
+body.only-view .main{padding-top:14px}
+@media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none;padding:9px} }
+/* 등록됐으나 이번 주 언급이 0인 워치리스트 항목 */
+.kpi.muted{background:#fbfbfc;border-style:dashed}
+.kpi.muted .val{color:#9ca3af}
+.kpi.muted .ch{color:#b6bcc6}
+/* 추이 섹션 접기/펴기 */
+details.trend > summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px}
+details.trend > summary::-webkit-details-marker{display:none}
+details.trend > summary::after{content:"－";color:var(--mute);font-size:15px;flex:none}
+details.trend:not([open]) > summary::after{content:"＋"}
+details.trend > summary h3{margin:0}
+details.trend:not([open]){padding-bottom:14px}
+details.trend:not([open]) > summary h3{margin-bottom:0}
+@media print{ details.trend > summary::after{content:""} }
+
+.mk{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+.mk h2{font-size:19px;font-weight:800;color:var(--navy);margin:34px 0 6px;
+  padding-bottom:7px;border-bottom:2px solid var(--navy)}
+.mk .lead{font-size:13.5px;color:#4b5563;margin:0 0 14px;line-height:1.7}
+.grid{display:grid;gap:10px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:#fff;border:1px solid var(--line);border-radius:9px;padding:14px}
+.card .why{font-size:12px;color:var(--mute);margin-top:8px;line-height:1.6}
+.sanjini{vertical-align:middle;flex:none}
+.tier-row{display:flex;align-items:center;gap:10px}
+.demo{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-top:10px}
+.bad{border-color:#f0c9c6;background:#fdf7f7}
+.bad h4{color:var(--crisis);margin:0 0 6px;font-size:14px}
+.ok{border-color:#bfdccb;background:#f5faf7}
+.ok h4{color:#1f6b42;margin:0 0 6px;font-size:14px}
+.note{font-size:12.5px;color:#4b5563;line-height:1.75;margin:6px 0 0}
+.hdr-demo{background:var(--navy);color:#fff;border-radius:10px;padding:18px 20px;display:flex;
+  align-items:center;gap:14px;flex-wrap:wrap}
+.hdr-demo h1{margin:0;font-size:19px;font-weight:700}
+.hdr-demo .sub{font-size:12.5px;opacity:.85;margin-top:3px}
+.hdr-demo .logo-slot{width:44px;height:44px;border-radius:50%;border:2px solid #fff;
+  display:grid;place-items:center;font-weight:800;font-size:12px;flex:none}
+.empty{display:flex;align-items:center;gap:12px;background:#fafbfc;border:1px dashed var(--line);
+  border-radius:8px;padding:14px 16px}
+.empty b{display:block;font-size:13.5px;color:var(--ink)}
+.empty span{font-size:12.5px;color:var(--mute)}
+.rule{display:grid;grid-template-columns:26px 1fr;gap:10px;font-size:13.5px;margin:9px 0;line-height:1.7}
+.rule i{font-style:normal;font-weight:800;color:var(--navy)}
+</style></head><body style="background:var(--bg)">
+<div class="mk">
+  <header style="padding:28px 0 6px">
+    <div style="font-size:12.5px;color:var(--mute);font-weight:700;letter-spacing:.5px">DESIGN PROPOSAL</div>
+    <h1 style="margin:6px 0 4px;font-size:27px;font-weight:800;color:var(--navy)">산지니 활용 시안</h1>
+    <p style="margin:0;color:#4b5563;font-size:14px">대학 AX정책 AI 주간 모니터링 · 부산대 AX·정보화혁신본부 AX혁신과</p>
+    <p class="note" style="margin-top:12px;max-width:760px">아래 캐릭터는 배치·크기를 검토하기 위한 <b>SVG 임시본</b>입니다.
+      실제 산지니 PNG 자산이 준비되면 같은 자리에 그대로 교체하면 됩니다.</p>
+  </header>
+
+  <h2>1. 위험 등급 → 표정 (가장 쓸모 있는 자리)</h2>
+  <p class="lead">이 리포트의 1차 신호는 <b>Tier 1~4</b>입니다. 표정을 등급에 묶으면 숫자를 읽기 전에
+    상태가 전달됩니다. 색(초록·노랑·주황·빨강)과 <b>중복되지만, 색각 이상 사용자에게는 보조 단서</b>가 됩니다.</p>
+  <div class="grid g4">
+    <div class="card">
+      <div class="tier-row">
+        <svg class="sanjini" width="52" height="52" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 happy" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <path d="M30 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+            <path d="M54 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <path d="M44 62 q6 8 12 0 q-6 3 -12 0z" fill="#f5c542"/>
+  </svg>
+        <div><span class="tier t1" style="font-size:13px">Tier 1 관심</span>
+        <div class="state t1" style="font-size:15px;margin-top:5px">Normal</div></div>
+      </div>
+      <div class="why">위험신호가 낮은 주. 밝은 표정으로 "이상 없음"을 한눈에.</div>
+    </div><div class="card">
+      <div class="tier-row">
+        <svg class="sanjini" width="52" height="52" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 base" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
+           <circle cx="39" cy="51" r="5.4" fill="#20252d"/><circle cx="61" cy="51" r="5.4" fill="#20252d"/>
+           <circle cx="37" cy="49" r="1.8" fill="#fff"/><circle cx="59" cy="49" r="1.8" fill="#fff"/>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg>
+        <div><span class="tier t2" style="font-size:13px">Tier 2 주의</span>
+        <div class="state t2" style="font-size:15px;margin-top:5px">Watch</div></div>
+      </div>
+      <div class="why">평상 수준. 기본 표정 — 감정을 싣지 않는다.</div>
+    </div><div class="card">
+      <div class="tier-row">
+        <svg class="sanjini" width="52" height="52" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 tense" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="7.5" fill="#fff"/><circle cx="62" cy="50" r="7.5" fill="#fff"/>
+            <circle cx="38" cy="51" r="3.6" fill="#20252d"/><circle cx="62" cy="51" r="3.6" fill="#20252d"/>
+            <path d="M28 38 q6 -4 12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+            <path d="M72 38 q-6 -4 -12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+            <path d="M79 30 q4 6 0 9 q-4 -3 0 -9z" fill="#8fc4f0"/>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg>
+        <div><span class="tier t3" style="font-size:13px">Tier 3 경계</span>
+        <div class="state t3" style="font-size:15px;margin-top:5px">Warning</div></div>
+      </div>
+      <div class="why">긴장 표정 + 땀. 아직 사고는 아니지만 지켜봐야 하는 상태.</div>
+    </div><div class="card">
+      <div class="tier-row">
+        <svg class="sanjini" width="52" height="52" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 angry" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="52" r="8" fill="#fff"/><circle cx="62" cy="52" r="8" fill="#fff"/>
+            <circle cx="38" cy="53" r="4.4" fill="#20252d"/><circle cx="62" cy="53" r="4.4" fill="#20252d"/>
+            <path d="M27 38 L44 45" stroke="#20252d" stroke-width="4" stroke-linecap="round"/>
+            <path d="M73 38 L56 45" stroke="#20252d" stroke-width="4" stroke-linecap="round"/>
+            <path d="M74 24 q7 -3 9 3 q5 -1 4 5 q-7 2 -13 -1z" fill="#cbd5e1"/>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg>
+        <div><span class="tier t4" style="font-size:13px">Tier 4 위기</span>
+        <div class="state t4" style="font-size:15px;margin-top:5px">Crisis</div></div>
+      </div>
+      <div class="why">화남. 다만 실제 피해 사안에는 캐릭터를 빼는 것을 권한다(아래 원칙 참조).</div>
+    </div>
+  </div>
+  <div class="demo">
+    <div style="font-size:12px;color:var(--mute);margin-bottom:8px">적용 예 — 주차 헤더</div>
+    <div class="wk-head">
+      <svg class="sanjini" width="46" height="46" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 tense" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="7.5" fill="#fff"/><circle cx="62" cy="50" r="7.5" fill="#fff"/>
+            <circle cx="38" cy="51" r="3.6" fill="#20252d"/><circle cx="62" cy="51" r="3.6" fill="#20252d"/>
+            <path d="M28 38 q6 -4 12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+            <path d="M72 38 q-6 -4 -12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+            <path d="M79 30 q4 6 0 9 q-4 -3 0 -9z" fill="#8fc4f0"/>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg>
+      <span class="tier t3">Tier 3 경계</span>
+      <div><div class="wk-title">2026.09.11 (Week 37)</div>
+      <div class="wk-range">기사수집기간: 2026.09.04~2026.09.11</div></div>
+      <div class="state t3"><i class="dot d3"></i>Warning</div>
+    </div>
+  </div>
+
+  <h2>2. 섹션 성격 → 전신 포즈</h2>
+  <p class="lead">전신 3종은 <b>섹션의 성격</b>을 나타냅니다. 모든 섹션에 붙이지 않고
+    <b>세 자리에만</b> 씁니다. 남발하면 정책 보고서의 무게가 떨어집니다.</p>
+  <div class="grid g3">
+    <div class="card">
+      <div class="tier-row"><svg class="sanjini" width="54" height="54" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 grad" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="52" r="9" fill="#fff"/><circle cx="62" cy="52" r="9" fill="#fff"/>
+           <circle cx="39" cy="53" r="5.4" fill="#20252d"/><circle cx="61" cy="53" r="5.4" fill="#20252d"/>
+           <circle cx="37" cy="51" r="1.8" fill="#fff"/><circle cx="59" cy="51" r="1.8" fill="#fff"/>
+           <g transform="translate(50 16)"><path d="M-26 0 L0 -9 L26 0 L0 9z" fill="#20252d"/>
+           <path d="M-13 3 L-13 12 q13 7 26 0 L13 3" fill="#20252d"/>
+           <path d="M24 1 L24 16" stroke="#f5c542" stroke-width="2.4"/><circle cx="24" cy="17" r="3" fill="#f5c542"/></g>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg>
+        <div style="font-weight:800;color:var(--navy);font-size:14.5px">리포트 읽는 법 · 상단 공지</div></div>
+      <div class="why">해설자 역할. 상단에 한 번만 등장해 톤을 잡는다.</div>
+    </div><div class="card">
+      <div class="tier-row"><svg class="sanjini" width="54" height="54" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 question" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
+           <circle cx="36" cy="52" r="5" fill="#20252d"/><circle cx="58" cy="52" r="5" fill="#20252d"/>
+           <path d="M28 38 q6 -3 11 0" stroke="#20252d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+           <path d="M72 38 q-6 -3 -11 0" stroke="#20252d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+           <text x="80" y="26" font-size="22" font-weight="800" fill="#4a90d9" font-family="system-ui">?</text>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg>
+        <div style="font-weight:800;color:var(--navy);font-size:14.5px">향후 주시 포인트 · 취약점 진단</div></div>
+      <div class="why">아직 결론이 없는 영역. 물음표가 "지켜보는 중"을 나타낸다.</div>
+    </div><div class="card">
+      <div class="tier-row"><svg class="sanjini" width="54" height="54" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 idea" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
+           <circle cx="39" cy="51" r="5.4" fill="#20252d"/><circle cx="61" cy="51" r="5.4" fill="#20252d"/>
+           <circle cx="37" cy="49" r="1.8" fill="#fff"/><circle cx="59" cy="49" r="1.8" fill="#fff"/>
+           <g transform="translate(74 18)"><circle r="8" fill="#ffd84d"/><rect x="-3" y="7" width="6" height="4" rx="1" fill="#c9a227"/>
+           <path d="M-13 -9 L-9 -6 M13 -9 L9 -6 M0 -15 L0 -11" stroke="#ffd84d" stroke-width="2.4" stroke-linecap="round"/></g>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg>
+        <div style="font-weight:800;color:var(--navy);font-size:14.5px">모니터링 권고 · 기회(AX) 전파경로</div></div>
+      <div class="why">행동을 제안하는 자리. 전구가 권고임을 표시한다.</div>
+    </div>
+  </div>
+  <div class="demo">
+    <div style="font-size:12px;color:var(--mute);margin-bottom:8px">적용 예 — 섹션 제목</div>
+    <h2 class="sec" style="margin-top:0"><svg class="sanjini" width="30" height="30" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 question" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
+           <circle cx="36" cy="52" r="5" fill="#20252d"/><circle cx="58" cy="52" r="5" fill="#20252d"/>
+           <path d="M28 38 q6 -3 11 0" stroke="#20252d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+           <path d="M72 38 q-6 -3 -11 0" stroke="#20252d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+           <text x="80" y="26" font-size="22" font-weight="800" fill="#4a90d9" font-family="system-ui">?</text>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg> 향후 주시 포인트</h2>
+    <div class="watch"><div><span>초기(0-4주)</span>패키지 지원 세부 실행계획과 연차별 성과지표 확정</div></div>
+    <h2 class="sec"><svg class="sanjini" width="30" height="30" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 idea" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
+           <circle cx="39" cy="51" r="5.4" fill="#20252d"/><circle cx="61" cy="51" r="5.4" fill="#20252d"/>
+           <circle cx="37" cy="49" r="1.8" fill="#fff"/><circle cx="59" cy="49" r="1.8" fill="#fff"/>
+           <g transform="translate(74 18)"><circle r="8" fill="#ffd84d"/><rect x="-3" y="7" width="6" height="4" rx="1" fill="#c9a227"/>
+           <path d="M-13 -9 L-9 -6 M13 -9 L9 -6 M0 -15 L0 -11" stroke="#ffd84d" stroke-width="2.4" stroke-linecap="round"/></g>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg> 모니터링 권고</h2>
+    <div class="diag"><ol style="margin:0"><li>미선정 거점국립대와의 공동 프로그램·자원 공유 모델을 부산대가 먼저 제안</li></ol></div>
+  </div>
+
+  <h2>3. 빈 상태 (empty state) — 효과가 가장 큰 자리</h2>
+  <p class="lead">데이터가 없을 때가 화면이 가장 어색합니다. 지금은 회색 글씨 한 줄뿐인데,
+    여기에 캐릭터를 두면 <b>“고장난 것”이 아니라 “해당 없음”</b>임이 전달됩니다.</p>
+  <div class="grid g3">
+    <div class="empty"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 question" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
+           <circle cx="36" cy="52" r="5" fill="#20252d"/><circle cx="58" cy="52" r="5" fill="#20252d"/>
+           <path d="M28 38 q6 -3 11 0" stroke="#20252d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+           <path d="M72 38 q-6 -3 -11 0" stroke="#20252d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+           <text x="80" y="26" font-size="22" font-weight="800" fill="#4a90d9" font-family="system-ui">?</text>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg>
+      <div><b>이번 주 언급 없음</b><span>워치리스트에 등록됐지만 이번 주 기사에 나오지 않았습니다.</span></div></div><div class="empty"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 sad" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <path d="M31 45 L45 55 M45 45 L31 55" stroke="#20252d" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M55 45 L69 55 M69 45 L55 55" stroke="#20252d" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M70 58 q4 7 0 10 q-4 -3 0 -10z" fill="#8fc4f0"/>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg>
+      <div><b>표본 부족 — 등급 미산정</b><span>수집 기사가 30건 미만인 날은 등급을 매기지 않습니다.</span></div></div><div class="empty"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 tense" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="7.5" fill="#fff"/><circle cx="62" cy="50" r="7.5" fill="#fff"/>
+            <circle cx="38" cy="51" r="3.6" fill="#20252d"/><circle cx="62" cy="51" r="3.6" fill="#20252d"/>
+            <path d="M28 38 q6 -4 12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+            <path d="M72 38 q-6 -4 -12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+            <path d="M79 30 q4 6 0 9 q-4 -3 0 -9z" fill="#8fc4f0"/>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg>
+      <div><b>지도를 불러올 수 없습니다</b><span>오프라인이거나 타일 서버에 접근할 수 없습니다.</span></div></div>
+  </div>
+
+  <h2>4. 헤더 — 부산대 공식 로고와의 관계</h2>
+  <p class="lead">헤더에는 <b>공식 로고만</b> 둡니다. 로고와 마스코트가 나란히 서면 둘 다 약해집니다.
+    산지니는 본문 안에서 기능적으로만 등장합니다.</p>
+  <div class="grid g3">
+    <div class="ok" style="padding:14px;border-radius:9px;border:1px solid #bfdccb">
+      <h4>권장 — 공식 로고 단독</h4>
+      <div class="hdr-demo" style="margin-top:8px">
+        <img src="assets/logo_w.png" alt="부산대학교" style="height:34px">
+        <div><h1>대학 AX정책 AI 주간 모니터링</h1>
+        <div class="sub">부산대 AX·정보화혁신본부 AX혁신과</div></div>
+      </div>
+      <p class="note">흰색 로고(<code>logo_w.png</code>)가 네이비 헤더에 그대로 맞습니다.</p>
+    </div>
+    <div class="bad" style="padding:14px;border-radius:9px;border:1px solid #f0c9c6">
+      <h4>비권장 — 로고 + 마스코트 동시</h4>
+      <div class="hdr-demo" style="margin-top:8px">
+        <img src="assets/logo_w.png" alt="부산대학교" style="height:34px">
+        <svg class="sanjini" width="38" height="38" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 happy" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <path d="M30 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+            <path d="M54 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <path d="M44 62 q6 8 12 0 q-6 3 -12 0z" fill="#f5c542"/>
+  </svg>
+        <div><h1 style="font-size:17px">대학 AX정책 AI 주간 모니터링</h1></div>
+      </div>
+      <p class="note">시선이 분산되고, 공문서 성격의 리포트에서 격식이 떨어집니다.</p>
+    </div>
+  </div>
+
+  <h2>5. 적용 원칙</h2>
+  <div class="demo">
+    <div class="rule"><i>1</i><div><b>의미가 있는 자리에만.</b> 장식으로 넣지 않습니다.
+      등급·섹션 성격·빈 상태 — 세 가지 용도로 한정합니다.</div></div>
+    <div class="rule"><i>2</i><div><b>크기는 30~54px.</b> 본문 흐름을 밀어내지 않는 선.
+      주차 헤더 46px, 섹션 제목 30px, 빈 상태 44px.</div></div>
+    <div class="rule"><i>3</i><div><b>실제 피해가 있는 사안에는 쓰지 않습니다.</b>
+      폐교·소송·구조조정처럼 사람이 다치는 내용 옆의 캐릭터는 부적절합니다.
+      Tier 4 표정은 <b>지표 카드에만</b> 쓰고 본문 서술에는 넣지 않습니다.</div></div>
+    <div class="rule"><i>4</i><div><b>인쇄물(PDF)에서는 등급 표정만 남깁니다.</b>
+      섹션 앵커·빈 상태는 <code>@media print</code> 로 숨겨 잉크와 지면을 아낍니다.</div></div>
+    <div class="rule"><i>5</i><div><b>색에 의존하지 않는 보조 단서로 씁니다.</b>
+      표정이 등급 색과 중복되는 것은 의도된 것입니다 — 색각 이상 사용자를 위한 이중 표시입니다.</div></div>
+  </div>
+
+  <h2>6. 표정 세트 매핑</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>제공 표정</th><th>쓰는 자리</th><th>뜻</th></tr></thead>
+    <tbody>
+      <tr><td>기본</td><td>Tier 2 주의</td><td>평상 수준 — 감정을 싣지 않는다</td></tr>
+      <tr><td>기쁨</td><td>Tier 1 관심</td><td>위험신호 낮음</td></tr>
+      <tr><td>긴장</td><td>Tier 3 경계 · 지도 로딩 실패</td><td>지켜봐야 하는 상태</td></tr>
+      <tr><td>화남</td><td>Tier 4 위기 (지표 카드 한정)</td><td>임계치 초과</td></tr>
+      <tr><td>슬픔</td><td>표본 부족 · 데이터 없음</td><td>판단할 수 없음</td></tr>
+      <tr><td>반함</td><td>— (미사용)</td><td>보고서 성격에 맞는 자리가 없다</td></tr>
+      <tr><td>졸업모(전신)</td><td>상단 공지 · 읽는 법</td><td>해설자</td></tr>
+      <tr><td>물음표(전신)</td><td>주시 포인트 · 취약점 진단</td><td>미결 사안</td></tr>
+      <tr><td>전구(전신)</td><td>모니터링 권고 · 기회 경로</td><td>제안</td></tr>
+    </tbody>
+  </table></div>
+
+  <p class="foot" style="margin-top:34px">시안 생성: 2026-09-11 ·
+    실제 자산 교체 시 <code>src/browser/sanjini.svg.js</code> 를 <code>&lt;img&gt;</code> 로 바꾸면 됩니다.</p>
+</div>
+</body></html>
