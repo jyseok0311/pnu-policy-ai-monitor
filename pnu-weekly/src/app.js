@@ -25,8 +25,10 @@
   function buildMap(el) {
     var wid = el.dataset.week, cfg = D.weeks[wid];
     if (!cfg || typeof L === 'undefined') {
-      el.innerHTML = '<div style="padding:20px;color:#6b7280;font-size:13px">' +
-        '지도 타일을 불러올 수 없습니다(오프라인). 학내망 운영 시에는 타일 서버를 내부에 두거나 GeoJSON 경계로 대체합니다.</div>';
+      el.innerHTML = '<div class="map-fallback">' + (window.__SANJINI_TENSE__ || '') +
+        '<div><b>지도를 불러올 수 없습니다</b>' +
+        '<span>오프라인이거나 타일 서버에 접근할 수 없습니다. 학내망 운영 시에는 ' +
+        '타일 서버를 내부에 두거나 GeoJSON 경계로 대체합니다.</span></div></div>';
       return;
     }
     var map = L.map(el, { scrollWheelZoom: false, zoomSnap: 0.25, attributionControl: true })

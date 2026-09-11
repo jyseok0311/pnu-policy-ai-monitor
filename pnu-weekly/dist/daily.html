@@ -411,6 +411,41 @@ details.trend:not([open]){padding-bottom:14px}
 details.trend:not([open]) > summary h3{margin-bottom:0}
 @media print{ details.trend > summary::after{content:""} }
 
+/* ══════════════ 산지니 (부산대 마스코트) ══════════════
+   장식이 아니라 기능으로만 쓴다 — ① 위험 등급 ② 섹션 성격 ③ 빈 상태.
+   실제 피해 사안(폐교·소송·구조조정) 본문에는 넣지 않는다. */
+.sanjini{vertical-align:middle;flex:none}
+
+/* ① 위험 등급 — 주차 헤더 */
+.tier-face{display:inline-flex;align-items:center;flex:none}
+
+/* ② 섹션 성격 — 제목 앞 */
+.sec-face{display:inline-flex;align-items:center;margin-right:6px;vertical-align:middle}
+h2.sec .sec-face{margin-right:4px}
+.diag h4 .sec-face{margin-right:4px}
+.notice-face{float:left;margin:-2px 10px 0 0}
+
+/* ③ 빈 상태 */
+.empty-face{display:block;margin-bottom:4px;opacity:.85}
+.kpi.muted .empty-face{position:absolute;right:8px;top:8px;margin:0;opacity:.5}
+.kpi{position:relative}
+.stub-body .empty-face{float:left;margin:0 12px 4px 0}
+.map-fallback{display:flex;align-items:center;gap:14px;padding:22px;color:#4b5563;font-size:13px}
+.map-fallback b{display:block;color:var(--ink);font-size:14px;margin-bottom:3px}
+.map-fallback span{font-size:12.5px;color:var(--mute);line-height:1.6}
+
+@media (max-width:640px){
+  .tier-face .sanjini{width:36px;height:36px}
+  .notice-face{margin:-2px 8px 0 0}
+  .notice-face .sanjini{width:34px;height:34px}
+}
+
+/* 인쇄물에서는 등급 표정만 남긴다 — 섹션 앵커·빈 상태는 잉크만 먹는다 */
+@media print{
+  .sec-face,.empty-face{display:none !important}
+  .tier-face .sanjini{width:34px;height:34px}
+}
+
 .artlist{list-style:none;margin:0;padding:0}
 .artlist li{display:grid;grid-template-columns:46px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
 .artlist li:last-child{border-bottom:0}
@@ -462,11 +497,37 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
   </div>
 </header>
 <main class="main">
-<p class="notice">일일 브리핑은 <b>집계와 기사 목록만</b> 제공합니다. 해석·전망·권고는 주간 리포트에서 다룹니다.
+<p class="notice"><span class="sec-face notice-face"><svg class="sanjini" width="40" height="40" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 grad" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="52" r="9" fill="#fff"/><circle cx="62" cy="52" r="9" fill="#fff"/>
+           <circle cx="39" cy="53" r="5.4" fill="#20252d"/><circle cx="61" cy="53" r="5.4" fill="#20252d"/>
+           <circle cx="37" cy="51" r="1.8" fill="#fff"/><circle cx="59" cy="51" r="1.8" fill="#fff"/>
+           <g transform="translate(50 16)"><path d="M-26 0 L0 -9 L26 0 L0 9z" fill="#20252d"/>
+           <path d="M-13 3 L-13 12 q13 7 26 0 L13 3" fill="#20252d"/>
+           <path d="M24 1 L24 16" stroke="#f5c542" stroke-width="2.4"/><circle cx="24" cy="17" r="3" fill="#f5c542"/></g>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg></span>일일 브리핑은 <b>집계와 기사 목록만</b> 제공합니다. 해석·전망·권고는 주간 리포트에서 다룹니다.
 매일 생성되며 생성형 AI 서술을 포함하지 않으므로 수치 외의 판단이 들어가지 않습니다.
 <span class="sample">일간 임계값은 일별 분포로 별도 산정한 잠정값 (Tier4 ≥13.4% / Tier3 ≥11% / Tier2 ≥8.6%) · 30건 미만인 날은 등급 미산정</span></p>
 <section class="week" id="d-2026-09-11">
   <div class="wk-head">
+    <span class="tier-face"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 base" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
+           <circle cx="39" cy="51" r="5.4" fill="#20252d"/><circle cx="61" cy="51" r="5.4" fill="#20252d"/>
+           <circle cx="37" cy="49" r="1.8" fill="#fff"/><circle cx="59" cy="49" r="1.8" fill="#fff"/>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg></span>
     <span class="tier t2">Tier 2 주의</span>
     <div>
       <div class="wk-title">2026.09.11 (금)</div>
@@ -906,6 +967,20 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
 </section>
 <section class="week" id="d-2026-09-10">
   <div class="wk-head">
+    <span class="tier-face"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 angry" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="52" r="8" fill="#fff"/><circle cx="62" cy="52" r="8" fill="#fff"/>
+            <circle cx="38" cy="53" r="4.4" fill="#20252d"/><circle cx="62" cy="53" r="4.4" fill="#20252d"/>
+            <path d="M27 38 L44 45" stroke="#20252d" stroke-width="4" stroke-linecap="round"/>
+            <path d="M73 38 L56 45" stroke="#20252d" stroke-width="4" stroke-linecap="round"/>
+            <path d="M74 24 q7 -3 9 3 q5 -1 4 5 q-7 2 -13 -1z" fill="#cbd5e1"/>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg></span>
     <span class="tier t4">Tier 4 위기</span>
     <div>
       <div class="wk-title">2026.09.10 (목)</div>
@@ -1517,6 +1592,17 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
 </section>
 <section class="week" id="d-2026-09-09">
   <div class="wk-head">
+    <span class="tier-face"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 happy" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <path d="M30 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+            <path d="M54 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <path d="M44 62 q6 8 12 0 q-6 3 -12 0z" fill="#f5c542"/>
+  </svg></span>
     <span class="tier t1">Tier 1 관심</span>
     <div>
       <div class="wk-title">2026.09.09 (수)</div>
@@ -1918,6 +2004,17 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
 </section>
 <section class="week" id="d-2026-09-08">
   <div class="wk-head">
+    <span class="tier-face"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 happy" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <path d="M30 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+            <path d="M54 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <path d="M44 62 q6 8 12 0 q-6 3 -12 0z" fill="#f5c542"/>
+  </svg></span>
     <span class="tier t1">Tier 1 관심</span>
     <div>
       <div class="wk-title">2026.09.08 (화)</div>
@@ -2382,6 +2479,18 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
 </section>
 <section class="week" id="d-2026-09-07">
   <div class="wk-head">
+    <span class="tier-face"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 base" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
+           <circle cx="39" cy="51" r="5.4" fill="#20252d"/><circle cx="61" cy="51" r="5.4" fill="#20252d"/>
+           <circle cx="37" cy="49" r="1.8" fill="#fff"/><circle cx="59" cy="49" r="1.8" fill="#fff"/>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg></span>
     <span class="tier t2">Tier 2 주의</span>
     <div>
       <div class="wk-title">2026.09.07 (월)</div>
@@ -2746,6 +2855,18 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
 </section>
 <section class="week" id="d-2026-09-06">
   <div class="wk-head">
+    <span class="tier-face"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 base" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="9" fill="#fff"/><circle cx="62" cy="50" r="9" fill="#fff"/>
+           <circle cx="39" cy="51" r="5.4" fill="#20252d"/><circle cx="61" cy="51" r="5.4" fill="#20252d"/>
+           <circle cx="37" cy="49" r="1.8" fill="#fff"/><circle cx="59" cy="49" r="1.8" fill="#fff"/>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg></span>
     <span class="tier t2">Tier 2 주의</span>
     <div>
       <div class="wk-title">2026.09.06 (일)</div>
@@ -2928,6 +3049,18 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
 </section>
 <section class="week" id="d-2026-09-05">
   <div class="wk-head">
+    <span class="tier-face"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 sad" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <path d="M31 45 L45 55 M45 45 L31 55" stroke="#20252d" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M55 45 L69 55 M69 45 L55 55" stroke="#20252d" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M70 58 q4 7 0 10 q-4 -3 0 -10z" fill="#8fc4f0"/>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg></span>
     <span class="tier t0">표본 부족</span>
     <div>
       <div class="wk-title">2026.09.05 (토)</div>
@@ -3075,6 +3208,17 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
 </section>
 <section class="week" id="d-2026-09-04">
   <div class="wk-head">
+    <span class="tier-face"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 happy" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <path d="M30 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+            <path d="M54 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <path d="M44 62 q6 8 12 0 q-6 3 -12 0z" fill="#f5c542"/>
+  </svg></span>
     <span class="tier t1">Tier 1 관심</span>
     <div>
       <div class="wk-title">2026.09.04 (금)</div>
@@ -3347,6 +3491,20 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
 </section>
 <section class="week" id="d-2026-09-03">
   <div class="wk-head">
+    <span class="tier-face"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 tense" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="38" cy="50" r="7.5" fill="#fff"/><circle cx="62" cy="50" r="7.5" fill="#fff"/>
+            <circle cx="38" cy="51" r="3.6" fill="#20252d"/><circle cx="62" cy="51" r="3.6" fill="#20252d"/>
+            <path d="M28 38 q6 -4 12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+            <path d="M72 38 q-6 -4 -12 -1" stroke="#20252d" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+            <path d="M79 30 q4 6 0 9 q-4 -3 0 -9z" fill="#8fc4f0"/>
+    <path d="M43 60 L57 60 L50 70z" fill="#f5c542"/>
+  </svg></span>
     <span class="tier t3">Tier 3 경계</span>
     <div>
       <div class="wk-title">2026.09.03 (목)</div>
@@ -3585,6 +3743,17 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
 </section>
 <section class="week" id="d-2026-09-02">
   <div class="wk-head">
+    <span class="tier-face"><svg class="sanjini" width="44" height="44" viewBox="0 0 100 100"
+    role="img" aria-label="산지니 happy" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 14 q-5 -11 4 -13 q-2 8 6 12z" fill="#2f6fb5"/>
+    <ellipse cx="50" cy="54" rx="35" ry="33" fill="#4a90d9"/>
+    <ellipse cx="50" cy="70" rx="17" ry="14" fill="#fff" opacity=".92"/>
+    <circle cx="24" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <circle cx="76" cy="62" r="6.5" fill="#f4a0a0" opacity=".8"/>
+    <path d="M30 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+            <path d="M54 52 q8 -11 16 0" stroke="#20252d" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <path d="M44 62 q6 8 12 0 q-6 3 -12 0z" fill="#f5c542"/>
+  </svg></span>
     <span class="tier t1">Tier 1 관심</span>
     <div>
       <div class="wk-title">2026.09.02 (수)</div>
@@ -3856,7 +4025,7 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
     </ul></div>
   </details>
 </section>
-<p class="foot">오늘의 대학 AX정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 05:55:31 · 데이터: data/collected/</p>
+<p class="foot">오늘의 대학 AX정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 06:10:23 · 데이터: data/collected/</p>
 </main>
 </div>
 </div>
@@ -3888,8 +4057,10 @@ details.trend:not([open]) > summary h3{margin-bottom:0}
   function buildMap(el) {
     var wid = el.dataset.week, cfg = D.weeks[wid];
     if (!cfg || typeof L === 'undefined') {
-      el.innerHTML = '<div style="padding:20px;color:#6b7280;font-size:13px">' +
-        '지도 타일을 불러올 수 없습니다(오프라인). 학내망 운영 시에는 타일 서버를 내부에 두거나 GeoJSON 경계로 대체합니다.</div>';
+      el.innerHTML = '<div class="map-fallback">' + (window.__SANJINI_TENSE__ || '') +
+        '<div><b>지도를 불러올 수 없습니다</b>' +
+        '<span>오프라인이거나 타일 서버에 접근할 수 없습니다. 학내망 운영 시에는 ' +
+        '타일 서버를 내부에 두거나 GeoJSON 경계로 대체합니다.</span></div></div>';
       return;
     }
     var map = L.map(el, { scrollWheelZoom: false, zoomSnap: 0.25, attributionControl: true })

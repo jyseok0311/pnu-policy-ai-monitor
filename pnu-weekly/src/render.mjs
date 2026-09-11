@@ -2,6 +2,11 @@
 // 파이프라인의 마지막 단계: 수집·분류·집계·LLM 서술이 끝난 결과물(weeks.json)을 HTML 한 장으로 굳힌다.
 // 여기서는 어떤 수치도 만들어내지 않는다. 오직 데이터에 있는 값만 출력한다.
 
+import { sanjini } from './browser/sanjini.svg.js';
+
+// 등급 → 산지니 표정. 숫자를 읽기 전에 상태가 전달되게 한다(등급 색의 보조 단서).
+const TIER_MOOD = { 1: 'happy', 2: 'base', 3: 'tense', 4: 'angry' };
+
 const esc = (s) => String(s ?? '')
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -77,6 +82,7 @@ function renderWeek(w, sources) {
 
   const head = `
   <div class="wk-head">
+    <span class="tier-face" title="Tier ${w.tier} ${esc(w.tierName || tierWord[w.tier])}">${sanjini(TIER_MOOD[w.tier] || 'base', 46)}</span>
     <span class="tier t${w.tier}">Tier ${w.tier} ${esc(w.tierName || tierWord[w.tier])}</span>
     <div>
       <div class="wk-title">${esc(w.label)}</div>
@@ -89,7 +95,7 @@ function renderWeek(w, sources) {
 
   if (!w.complete) {
     return `<section class="week" id="${w.id}">${head}
-      <div class="stub-body"><b>이 주차는 아직 리포트가 생성되지 않았습니다.</b><br>
+      <div class="stub-body"><span class="empty-face">${sanjini('question', 40)}</span><b>이 주차는 아직 리포트가 생성되지 않았습니다.</b><br>
       수집·분류가 끝난 신호 집계값만 보유한 상태입니다. 파이프라인(<code>collect → classify → aggregate → narrate</code>)을 해당 주차에 실행하면
       상황요약·리스크 지도·전파경로·부문별 영향표가 이 자리에 동일한 서식으로 채워집니다.</div>
     </section>`;
@@ -138,7 +144,7 @@ function renderWeek(w, sources) {
     <div><span class="v">${esc(c.v)}</span><div class="why">${esc(c.why)}</div></div></div>`).join('')}`;
 
   const watch = `
-  <h2 class="sec">향후 주시 포인트</h2>
+  <h2 class="sec"><span class="sec-face">${sanjini('question', 30)}</span>향후 주시 포인트</h2>
   <div class="watch">${w.watch.map(x => `<div><span>${esc(x.when)}</span>${esc(x.t)}</div>`).join('')}</div>`;
 
   // 주간 자체산출 지표 — 매주 실제로 변하는 값만 모은 블록
@@ -199,9 +205,9 @@ function renderWeek(w, sources) {
   const diag = !w.diagnosis ? '' : `
   <h2 class="sec">대학 취약점 진단 및 모니터링 권고</h2>
   <div class="diag">
-    <h4>취약점 진단</h4>
+    <h4><span class="sec-face">${sanjini('question', 26)}</span>취약점 진단</h4>
     <ol>${w.diagnosis.weak.map(x => `<li><b>${esc(x.b)}</b>: ${esc(x.t)}</li>`).join('')}</ol>
-    <h4>모니터링 권고</h4>
+    <h4><span class="sec-face">${sanjini('idea', 26)}</span>모니터링 권고</h4>
     <ol>${w.diagnosis.rec.map(t => `<li>${esc(t)}</li>`).join('')}</ol>
   </div>`;
 
@@ -211,6 +217,7 @@ function renderWeek(w, sources) {
   <h2 class="sec">🗣 주요 인물·기관 동향 <small>기사 언급 집계 + 기관 공식 채널 · 개인 SNS 계정은 수집하지 않음</small></h2>
   ${V.persons.length ? `<div class="kpi-group"><h4>인물 (직책 기준)</h4><div class="kpis">${V.persons.map(p => `
     <div class="kpi${p.n === 0 ? ' muted' : p.risky ? '' : ' live'}">
+      ${p.n === 0 ? `<span class="empty-face">${sanjini('question', 26)}</span>` : ''}
       <div class="n"><span>${esc(p.role)}</span></div>
       <div class="val" style="font-size:15px">${esc(p.who || p.role)}</div>
       <div class="ch ${p.n === 0 ? 'flat' : p.risky ? 'up' : 'flat'}">${p.n}건${p.risky ? ` · 위험신호 ${p.risky}` : p.n === 0 ? ' · 이번 주 언급 없음' : ''}</div>
@@ -305,7 +312,7 @@ export function renderPage({ meta, weeks, sources, css, js, pdfPath, world, joon
 </header>
 
 <main class="main">
-<p class="notice">${esc(meta.notice)} <span class="sample">${esc(meta.sampleBadge)}</span></p>
+<p class="notice"><span class="sec-face notice-face">${sanjini('grad', 40)}</span>${esc(meta.notice)} <span class="sample">${esc(meta.sampleBadge)}</span></p>
 
 <details class="trend" open>
   <summary><h3>위험신호 비중 추이 (위기+경고, 최근 ${weeks.length}주)</h3></summary>
@@ -321,7 +328,8 @@ ${weeks.map(w => renderWeek(w, sources)).join('\n')}
 </div>
 <div id="toast"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
-<script>window.__MAPDATA__ = ${JSON.stringify(mapData)};</script>
+<script>window.__MAPDATA__ = ${JSON.stringify(mapData)};
+window.__SANJINI_TENSE__ = ${JSON.stringify(sanjini('tense', 44))};</script>
 <script>${js}</script>
 </body>
 </html>`;

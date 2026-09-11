@@ -1,7 +1,27 @@
 // 산지니(부산대 마스코트) SVG — 표정 변형.
 // 실제 PNG 자산이 들어오면 이 파일 대신 <img> 로 교체하면 된다. 배치·크기 규칙은 그대로 쓴다.
 // 사용: sanjini('tense', 44)  → 44px 짜리 '긴장' 표정
+import { existsSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
+const ASSET_DIR = 'dist/assets/sanjini';
+
+/* 실제 산지니 이미지가 dist/assets/sanjini/<mood>.png 에 있으면 그걸 쓰고,
+   없으면 아래 SVG 임시본으로 대체한다. 파일을 넣는 순간 자동으로 바뀐다.
+   (아래 SVG 는 배치·크기를 검토하기 위한 것이지 실제 캐릭터가 아니다) */
 export function sanjini(mood = 'base', size = 40) {
+  for (const ext of ['png', 'PNG', 'svg', 'webp']) {
+    const rel = `${ASSET_DIR}/${mood}.${ext}`;
+    if (existsSync(join(ROOT, rel))) {
+      return `<img class="sanjini" src="assets/sanjini/${mood}.${ext}" width="${size}" height="${size}" alt="산지니 ${mood}" loading="lazy">`;
+    }
+  }
+  return sanjiniSvg(mood, size);
+}
+
+function sanjiniSvg(mood = 'base', size = 40) {
   const B = '#4a90d9';        // 몸통 파랑
   const BD = '#2f6fb5';       // 그림자
   const Y = '#f5c542';        // 부리

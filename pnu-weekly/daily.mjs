@@ -9,6 +9,8 @@ import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { relevant, mentionsOf } from './src/filter.mjs';
+import { sanjini } from './src/browser/sanjini.svg.js';
+const TIER_MOOD = { 1: 'happy', 2: 'base', 3: 'tense', 4: 'angry' };
 
 const root = dirname(fileURLToPath(import.meta.url));
 const J = (p) => JSON.parse(readFileSync(join(root, p), 'utf8'));
@@ -88,6 +90,7 @@ function renderDay(d, idx) {
 
   return `<section class="week" id="d-${d}">
   <div class="wk-head">
+    <span class="tier-face">${sanjini(s.tier ? (TIER_MOOD[s.tier] || 'base') : 'sad', 44)}</span>
     ${s.tier ? `<span class="tier t${s.tier}">Tier ${s.tier} ${WORD[s.tier]}</span>` : '<span class="tier t0">표본 부족</span>'}
     <div>
       <div class="wk-title">${d.replace(/-/g, '.')} (${WD[dt.getDay()]})</div>
@@ -173,7 +176,7 @@ const html = `<!DOCTYPE html>
   </div>
 </header>
 <main class="main">
-<p class="notice">일일 브리핑은 <b>집계와 기사 목록만</b> 제공합니다. 해석·전망·권고는 주간 리포트에서 다룹니다.
+<p class="notice"><span class="sec-face notice-face">${sanjini('grad', 40)}</span>일일 브리핑은 <b>집계와 기사 목록만</b> 제공합니다. 해석·전망·권고는 주간 리포트에서 다룹니다.
 매일 생성되며 생성형 AI 서술을 포함하지 않으므로 수치 외의 판단이 들어가지 않습니다.
 <span class="sample">일간 임계값은 일별 분포로 별도 산정한 잠정값 (Tier4 ≥${DTH.t4}% / Tier3 ≥${DTH.t3}% / Tier2 ≥${DTH.t2}%) · ${MIN_N}건 미만인 날은 등급 미산정</span></p>
 ${days.map(renderDay).join('\n')}
