@@ -566,6 +566,27 @@ h2.sec .sec-face{margin-right:4px}
 }
 :root[data-theme="dark"] .spark line{stroke:#2a3442}
 
+/* ══════════════ 주간 키워드 공기 네트워크 ══════════════ */
+.netbox{overflow-x:auto;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:6px 4px}
+.net{display:block;width:100%;min-width:600px;height:auto}
+.net .ed{stroke:var(--mute);stroke-opacity:.28}
+/* 라벨은 배경색으로 테두리를 둘러 선 위에 얹어도 읽히게 한다 */
+.net .nl{font-size:12.5px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--soft);stroke-width:3.5px}
+.net .nd{cursor:pointer}
+.net.dim .ed{stroke-opacity:.07}
+.net.dim .nd{opacity:.2}
+.net.dim .ed.on{stroke-opacity:.9;stroke:var(--navy)}
+.net.dim .nd.on{opacity:1}
+.legend .k.ring{background:transparent;border:2.5px solid var(--line);border-radius:50%;width:11px;height:11px}
+@media (max-width:640px){
+  .net{min-width:560px}
+  .net .nl{font-size:14px}
+}
+/* 인쇄: 강조 상태를 걷어내고 전체를 보여 준다 */
+@media print{ .net.dim .ed,.net.dim .nd{stroke-opacity:.28;opacity:1} .netbox{overflow:visible} }
+/* 네트워크에서 고른 키워드가 든 제목 */
+.kw-on{background:var(--hit);border-radius:3px;box-shadow:0 0 0 3px var(--hit)}
+
 .artlist{list-style:none;margin:0;padding:0}
 .artlist li{display:grid;grid-template-columns:46px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
 .artlist li:last-child{border-bottom:0}
@@ -4027,7 +4048,7 @@ h2.sec .sec-face{margin-right:4px}
     </ul></div>
   </details>
 </section>
-<p class="foot">오늘의 대학 AX정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 07:03:59 · data/collected/</p>
+<p class="foot">오늘의 대학 AX정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 07:17:30 · data/collected/</p>
 </main>
 </div>
 </div>
@@ -4514,6 +4535,63 @@ h2.sec .sec-face{margin-right:4px}
       if (!sel.value) return;
       location.href = sel.value + location.hash;
     });
+  })();
+
+
+  /* ---------- 10. 주간 키워드 네트워크 ---------- */
+  // 호버: 이웃만 남긴다. 클릭: 그 키워드가 든 기사 제목을 찾아 표시하고 그 자리로 보낸다.
+  (function network() {
+    var boxes = [].slice.call(document.querySelectorAll('[data-net] .net'));
+    if (!boxes.length) return;
+
+    boxes.forEach(function (svg) {
+      var eds = [].slice.call(svg.querySelectorAll('.ed'));
+      var nds = [].slice.call(svg.querySelectorAll('.nd'));
+
+      nds.forEach(function (g) {
+        g.addEventListener('mouseenter', function () {
+          var i = g.dataset.i, near = {};
+          near[i] = 1;
+          eds.forEach(function (e) {
+            var on = e.dataset.a === i || e.dataset.b === i;
+            e.classList.toggle('on', on);
+            if (on) { near[e.dataset.a] = 1; near[e.dataset.b] = 1; }
+          });
+          nds.forEach(function (n) { n.classList.toggle('on', !!near[n.dataset.i]); });
+          svg.classList.add('dim');
+        });
+        g.addEventListener('mouseleave', function () {
+          svg.classList.remove('dim');
+          eds.forEach(function (e) { e.classList.remove('on'); });
+          nds.forEach(function (n) { n.classList.remove('on'); });
+        });
+        g.addEventListener('click', function () { markArticles(svg, g.dataset.key); });
+      });
+    });
+
+    function markArticles(svg, key) {
+      if (!key) return;
+      var week = svg.closest('section.week');
+      if (!week) return;
+      // 앞서 표시한 것은 지운다. 두 키워드가 동시에 켜져 있으면 뭘 봤는지 알 수 없다.
+      week.querySelectorAll('.kw-on').forEach(function (el) { el.classList.remove('kw-on'); });
+
+      var hits = [];
+      week.querySelectorAll('.cat li, .reflist li, .artlist li').forEach(function (li) {
+        if (li.classList.contains('more')) return;
+        if ((li.textContent || '').indexOf(key) < 0) return;
+        li.classList.add('kw-on');
+        hits.push(li);
+        // 접힌 날짜 블록 안에 있으면 펴 준다
+        var d = li.closest('details');
+        if (d) d.open = true;
+      });
+
+      var m = (window.__PNU_NETMSG__ || {})[key] || {};
+      if (!hits.length) { toast(m.miss || key); return; }
+      toast((m.hit || key + ' {n}').replace('{n}', hits.length));
+      hits[0].scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
   })();
 
 })();

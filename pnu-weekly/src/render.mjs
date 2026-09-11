@@ -7,6 +7,7 @@
 //   서술(summary/changes/…)은 data/narrative/<id>.<lang>.json 이 있으면 그 언어로, 없으면 한국어 그대로 둔다.
 
 import { sanjini } from './browser/sanjini.svg.js';
+import { networkSvg, FIELD_COLOR, riskColor } from './network.mjs';
 import { t as pack, LANGS } from './i18n.mjs';
 
 // 등급 → 산지니 표정. 숫자를 읽기 전에 상태가 전달되게 한다(등급 색의 보조 단서).
@@ -119,6 +120,19 @@ function renderWeek(w, sources, T) {
     ${T.legHover}<br>
     ${T.legPaths}
     | ${esc(T.legDisturb)}: ${esc(w.map.legend.disturb)} | ${esc(T.legBuffer)}: ${esc(w.map.legend.buffer)}
+  </div>`;
+
+  // 🕸 주간 키워드 네트워크 — 지도가 '어디'라면 이건 '무엇끼리'다.
+  const net = !w.network || !w.network.nodes || !w.network.nodes.length ? '' : `
+  <h2 class="sec">🕸 ${esc(T.secNet)} <small>${esc(T.netSub(Math.min(w.network.nodes.length, 22), w.network.links.length, num(w.network.basis)))}</small></h2>
+  <div class="netbox" data-net>${networkSvg(w.network, { esc, id: w.id, label: T.secNet })}</div>
+  <div class="legend">
+    ${Object.entries(FIELD_COLOR).map(([f, c]) => `<span class="k" style="background:${c}"></span>${esc((T.fieldWord && T.fieldWord[f]) || f)}`).join(' ')}
+    <br><span class="k ring" style="border-color:${riskColor(0)}"></span>${esc(T.netRisk)} 0–8%
+    <span class="k ring" style="border-color:${riskColor(10)}"></span>8–20%
+    <span class="k ring" style="border-color:${riskColor(25)}"></span>20–40%
+    <span class="k ring" style="border-color:${riskColor(50)}"></span>40%+
+    <br>${T.netLegend(w.network.minEdge, w.network.minCount)}
   </div>`;
 
   const summary = `
@@ -253,7 +267,7 @@ function renderWeek(w, sources, T) {
       </div>
     </li>`).join('')}</ul>`;
 
-  return `<section class="week" id="${w.id}">${head}${map}${summary}${articles}${changes}${watch}${weekly}${kpis}${voices}${paths}${sectors}${diag}${refs}</section>`;
+  return `<section class="week" id="${w.id}">${head}${map}${net}${summary}${articles}${changes}${watch}${weekly}${kpis}${voices}${paths}${sectors}${diag}${refs}</section>`;
 }
 
 // PDF 파일명 규칙 — pdf.mjs 가 굽는 이름과 반드시 같아야 한다
@@ -297,6 +311,16 @@ export function renderPage({ meta, weeks, sources, css, js, boot, pdfPath, world
   // 언어별 meta 문구 — <field>En 이 있으면 쓰고, 없으면 한국어 원문을 그대로 둔다
   const M = (k) => (lang !== 'ko' && meta[k + lang.replace(/^(.)/, (c) => c.toUpperCase())]) || meta[k];
   const title = M('title');
+
+  // 네트워크 클릭 토스트 — 키워드마다 문구를 미리 만들어 둔다.
+  // 조사(이/가·은/는) 규칙을 클라이언트에 한 벌 더 두지 않기 위해서다. {n} 만 런타임에 채운다.
+  const netMsg = {};
+  for (const w of weeks) {
+    for (const nd of (w.network && w.network.nodes) || []) {
+      if (netMsg[nd.key]) continue;
+      netMsg[nd.key] = { hit: T.netHit(nd.key, '{n}'), miss: T.netMiss(nd.key) };
+    }
+  }
 
   return `<!DOCTYPE html>
 <html lang="${T.htmlLang}">
@@ -354,7 +378,8 @@ ${weeks.map(w => renderWeek(w, sources, T)).join('\n')}
 <div id="toast"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
 <script>window.__MAPDATA__ = ${JSON.stringify(mapData)};
-window.__SANJINI_TENSE__ = ${JSON.stringify(sanjini('tense', 44))};</script>
+window.__SANJINI_TENSE__ = ${JSON.stringify(sanjini('tense', 44))};
+window.__PNU_NETMSG__ = ${JSON.stringify(netMsg)};</script>
 <script>${js}</script>
 </body>
 </html>`;

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "pnu-weekly-dist",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["pnu-weekly/serve.mjs"],
+      "port": 8765
+    }
+  ]
+}

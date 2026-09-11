@@ -526,3 +526,24 @@ h2.sec .sec-face{margin-right:4px}
   .lang-sel{padding:8px 7px;font-size:11.5px}
 }
 :root[data-theme="dark"] .spark line{stroke:#2a3442}
+
+/* ══════════════ 주간 키워드 공기 네트워크 ══════════════ */
+.netbox{overflow-x:auto;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:6px 4px}
+.net{display:block;width:100%;min-width:600px;height:auto}
+.net .ed{stroke:var(--mute);stroke-opacity:.28}
+/* 라벨은 배경색으로 테두리를 둘러 선 위에 얹어도 읽히게 한다 */
+.net .nl{font-size:12.5px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--soft);stroke-width:3.5px}
+.net .nd{cursor:pointer}
+.net.dim .ed{stroke-opacity:.07}
+.net.dim .nd{opacity:.2}
+.net.dim .ed.on{stroke-opacity:.9;stroke:var(--navy)}
+.net.dim .nd.on{opacity:1}
+.legend .k.ring{background:transparent;border:2.5px solid var(--line);border-radius:50%;width:11px;height:11px}
+@media (max-width:640px){
+  .net{min-width:560px}
+  .net .nl{font-size:14px}
+}
+/* 인쇄: 강조 상태를 걷어내고 전체를 보여 준다 */
+@media print{ .net.dim .ed,.net.dim .nd{stroke-opacity:.28;opacity:1} .netbox{overflow:visible} }
+/* 네트워크에서 고른 키워드가 든 제목 */
+.kw-on{background:var(--hit);border-radius:3px;box-shadow:0 0 0 3px var(--hit)}

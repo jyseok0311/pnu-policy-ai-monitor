@@ -8,6 +8,7 @@
 
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { relevant } from './src/filter.mjs';
+import { extract } from './src/keywords.mjs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readdirSync as _rd } from 'node:fs';
@@ -265,6 +266,23 @@ try {
   }
 } catch { /* 피드 미수집 상태 */ }
 
+// ── 6-b. 주간 키워드 공기 네트워크
+// 같은 기사 제목에 함께 등장한 키워드를 잇는다. 좌표는 만들지 않는다 — 배치는 렌더러의 몫이다.
+// 국내 기사만 쓴다. 해외 기사는 영문 제목이라 한국어 키워드가 나오지 않는다.
+const netItems = items.filter((x) => x.region !== 'overseas');
+const kw = extract(netItems, { top: 26, minEdge: 4 });
+const network = {
+  basis: netItems.length,
+  minCount: kw.minCount,
+  minEdge: 4,
+  nodes: kw.nodes.map((x) => ({
+    key: x.key, n: x.n, risk: x.risk, field: x.field,
+    sample: x.sample ? { title: x.sample.title, link: x.sample.link, media: x.sample.media } : null
+  })),
+  links: kw.links
+};
+console.log(`  키워드 네트워크 ${network.nodes.length}개 · 연결 ${network.links.length}개 (국내 ${netItems.length}건 기준)`);
+
 // ── 7. 주차 객체 조립
 const week = {
   id: narr.id, label: narr.label, date: narr.date, range: narr.range,
@@ -276,6 +294,7 @@ const week = {
     flows: narr.flows || [{ to: 'pnu', style: 'solid', color: '#3b7dd8', label: '정책 전달 경로' }],
     legend: narr.legend
   },
+  network,
   summary, articles,
   changes: narr.changes, changesTitle: narr.changesTitle, changesNote: narr.changesNote,
   watch: narr.watch, weeklyMetrics,

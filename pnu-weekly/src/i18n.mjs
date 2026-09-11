@@ -6,6 +6,14 @@ export const LANGS = [
   { code: 'en', label: 'English', file: '.en' }     // index.en.html
 ];
 
+// 조사 선택 — 받침이 있으면 '이', 없으면 '가'. 한글이 아니면 '가'로 둔다.
+// ('등록금가 든' 같은 문장을 내보내지 않기 위해서다.)
+const iga = (w) => {
+  const c = String(w || '').trim().slice(-1).charCodeAt(0);
+  if (!(c >= 0xac00 && c <= 0xd7a3)) return '가';
+  return (c - 0xac00) % 28 ? '이' : '가';
+};
+
 const ko = {
   htmlLang: 'ko', locale: 'ko-KR', unit: '건',
   brandSub: (org) => org,
@@ -40,6 +48,16 @@ const ko = {
   legPaths: '── 정책 전달 경로 | - - - 예산 배분 경로(RISE) | ·· AI 인재양성 사업',
   legDisturb: '교란 요인', legBuffer: '완충',
 
+  secNet: '주간 키워드 네트워크',
+  netSub: (n, e, basis) => `국내 기사 ${basis}건의 제목에서 추출 · 키워드 ${n}개 · 연결 ${e}개`,
+  netLegend: (minEdge, minCount) =>
+    `원 크기 = 언급 기사 수 · 원 색 = 대표 분야 · 테두리 = 위험신호 비율 · 선 굵기 = <b>같은 기사 제목에 함께 등장한 횟수</b>(${minEdge}회 이상만 이음). ` +
+    `${minCount}회 이상 등장한 말만 남깁니다. 원에 마우스를 올리면 이웃만 남습니다. 원을 누르면 그 주 참조 기사 목록에서 해당 키워드가 든 제목을 표시하고 그 자리로 이동합니다. ` +
+    `제목만 읽고 본문은 저장하지 않습니다(저작권). 좌표는 빌드 때 한 번 계산해 고정하므로 화면과 PDF 가 같은 그림입니다.`,
+  netRisk: '위험신호 비율',
+  netNone: '이 주차는 키워드를 뽑을 기사가 부족합니다.',
+  netHit: (k, n) => `'${k}'${iga(k)} 든 제목 ${n}건을 표시했습니다`,
+  netMiss: (k) => `'${k}'${iga(k) === '이' ? '은' : '는'} 표시된 기사 목록에 없습니다 (목록은 분야별 상위 일부만 실립니다)`,
   secSummary: '상황 요약',
   secArticles: (n) => `📰 주간 참조 기사 (${n}건 · 7일)`,
   secArticlesDaily: '기사',
@@ -110,6 +128,16 @@ const en = {
   legPaths: '── policy transmission | - - - budget allocation (RISE) | ·· AI talent programmes',
   legDisturb: 'Disturbances', legBuffer: 'Buffers',
 
+  secNet: 'Weekly keyword network',
+  netSub: (n, e, basis) => `extracted from the titles of ${basis} domestic articles · ${n} keywords · ${e} links`,
+  netLegend: (minEdge, minCount) =>
+    `Circle size = articles mentioning it · fill = dominant field · outline = share of risk signals · line width = <b>times the two appeared in the same headline</b> (drawn from ${minEdge} up). ` +
+    `Only terms appearing at least ${minCount} times are kept. Hover a circle to keep just its neighbours. Click one to highlight the headlines containing that keyword in this week's article list and scroll there. ` +
+    `Only titles are read — article bodies are never stored (copyright). Coordinates are computed once at build time, so the screen and the PDF show the same picture.`,
+  netRisk: 'risk share',
+  netNone: 'Too few articles this week to extract keywords.',
+  netHit: (k, n) => `highlighted ${n} headline(s) containing ‘${k}’`,
+  netMiss: (k) => `‘${k}’ is not in the listed articles (the list shows only the top few per field)`,
   secSummary: 'Situation summary',
   secArticles: (n) => `📰 Articles referenced this week (${n} · 7 days)`,
   secArticlesDaily: 'Articles',
@@ -147,6 +175,11 @@ const en = {
 };
 
 // 방향 라벨은 표에서 자주 쓰인다
+// 분류기가 붙이는 분야 이름. 기사 제목·카테고리는 원문 그대로 두지만,
+// 내가 쓰는 범례는 읽는 언어로 맞춘다.
+ko.fieldWord = { '거버넌스': '거버넌스', '재정': '재정', '입시·학령인구': '입시·학령인구', 'AI·디지털': 'AI·디지털', '기타': '기타' };
+en.fieldWord = { '거버넌스': 'Governance', '재정': 'Finance', '입시·학령인구': 'Admissions & demographics', 'AI·디지털': 'AI & digital', '기타': 'Other' };
+
 ko.dirWord = { pos: '포지티브', neg: '네거티브', mix: '혼합' };
 en.dirWord = { pos: 'Positive', neg: 'Negative', mix: 'Mixed' };
 

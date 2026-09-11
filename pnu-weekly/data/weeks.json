@@ -592,6 +592,491 @@
         "buffer": "패키지 지원 선정, AI스타펠로우십, 글로컬대학 연계, PLATO 교육 AX"
       }
     },
+    "network": {
+      "basis": 687,
+      "minCount": 6,
+      "minEdge": 4,
+      "nodes": [
+        {
+          "key": "인공지능",
+          "n": 123,
+          "risk": 0.8,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "[기획-전북 대학 AI 반도체 경쟁 소외 위기] 상-전북대 탈락이 보여준 지방대 경쟁의 현실",
+            "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9qaGdINmtCTmNfMlVFakdraGJzaHJhNE5rcE9JOWZOQVkyUmduWnMybElBMElVYlJsUzd1eVJwbFZhM2J4b3RjUXZHQUozOEFuMlNWODZxR1FIYlJuTnk0RDFpQmo1czZULU92TGF30gFwQVVfeXFMTUMweGNHQkRfQWZQV3dneV9qOXZvdnJqRndFUXptTnBDOE52azd5SE9NODZDN09fM0tGU2FsUVV3MGFYem9XbktHQUNzZ212OXMyYU1URm03ek1uVmFJYkpPU3Vaemp4ZU5TR3A2ODJNRw?oc=5",
+            "media": "jeollailbo.com"
+          }
+        },
+        {
+          "key": "등록금",
+          "n": 69,
+          "risk": 17.4,
+          "field": "재정",
+          "sample": {
+            "title": "지방 국립대 등록금 0원 수시에 영향?…사립대 반발",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5FRkR4RzlfaE1obVRQazdEUXlVWm5ZNGpEUE5JNXlicmU0aWdsNzI4VC1uYUZwX3FGS2dJUlBjNkM3U2tnOHh5RlRYU2FlOXlrS19KNHRISU4xVzJJcFk1YXB2ZjZDdw?oc=5",
+            "media": "KBS 뉴스"
+          }
+        },
+        {
+          "key": "부산대",
+          "n": 63,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "17일 부산대학로, 록으로 깨운다",
+            "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1ZTDNFZHdtUzVyT21kblJXckNGQlhTcEticDl6Nk1LNVYyMnZkUnBzdmRyZEJDcUJsdXBfN1lCMnVKYXJhMF9sT1dEQlN0Ul90UlZHX1FxZDJVS1RwR2xxYm5NaFlNa2hxcDAxTHlnNlN5d1FHSGfSAXZBVV95cUxNWUwzRWR3bVM1ck9tZG5SV3JDRkJYU3BLYnA5ejZNSzVWMjJ2ZFJwc3ZkcmRCQ3FCbHVwXzdZQjJ1SmFyYTBfbE9XREJTdFJfdFJWR19RcWQyVUtUcEdscWJuTWhZTWtocXAwMUx5ZzZTeXdRR0hn?oc=5",
+            "media": "채널PNU"
+          }
+        },
+        {
+          "key": "수시",
+          "n": 56,
+          "risk": 44.6,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "경희대 2027학년도 수시 경쟁률 17.2대 1…마감 전 5만1천여 명 지원",
+            "link": "https://www.kyosu.net/news/articleView.html?idxno=210167",
+            "media": "교수신문"
+          }
+        },
+        {
+          "key": "선정",
+          "n": 42,
+          "risk": 2.4,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "한국공학대, 교원 창업기업 ㈜인터루얼 TIPS 선정…창업부터 정부 R&D까지 연계",
+            "link": "https://news.unn.net/news/articleView.html?idxno=597273",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "국립대",
+          "n": 39,
+          "risk": 23.1,
+          "field": "거버넌스",
+          "sample": {
+            "title": "“국립대는 0원 우리는 수백만원”⋯지방 사립대생 반발",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9sRTdzYzRDN3I0d0VhUURuMTNFSF83QjJJSFJvanFrQldYR1dwbmoyWktwak5abHVUc3NvcFFadUl6NC1la0IycmlJYlAyLVE?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "충남대",
+          "n": 38,
+          "risk": 15.8,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충남대 반대로 국립공주대와 통합 무산… '학생 90% 반대벽 못 넘었다'",
+            "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5jWFhSS0hLS1pYQnFGNEtCU2p2WGFtRmhyQjExei14S1RHVGRTcFhRTG02UGdDME9udDhuZVliTXlzWlhTVjB1Vmc5QjF3TV9WcnBOZnpBcTc0ajM2NXlLZE8tREFLOUUtZURqelFYWdIBc0FVX3lxTE5IZFA0UEtoeHhHZmEtTV9UaWdnZWUtQVRycTc4bHRlQWdSaGVQbHFuNUtOcjg5LXVwUzhfbFJvUjFHcXhLaXpLSV9IY2ZyTDJmcV9mc2dYaFZZbC1wRWVSR2FWakVjeFdXRU5ncE5zWURhQU0?oc=5",
+            "media": "daily.hankooki.com"
+          }
+        },
+        {
+          "key": "거점국립대",
+          "n": 34,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "3대 거점국립대 육성, 지방 살릴까?",
+            "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBnU2l5R0YzT1Rtb1FSVGRQQWtJb0YzNWVwMVZyY1JwVVlIMTdvaEFKZHUzOGRZN1l0d0p4NlVKcjJVdVNFU0FSYnFWWnpZTGthWmtSaFBpMlBiQTBpNmg4?oc=5",
+            "media": "ismartnews.com"
+          }
+        },
+        {
+          "key": "지방",
+          "n": 30,
+          "risk": 23.3,
+          "field": "거버넌스",
+          "sample": {
+            "title": "“국립대는 0원 우리는 수백만원”⋯지방 사립대생 반발",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9sRTdzYzRDN3I0d0VhUURuMTNFSF83QjJJSFJvanFrQldYR1dwbmoyWktwak5abHVUc3NvcFFadUl6NC1la0IycmlJYlAyLVE?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "통합",
+          "n": 29,
+          "risk": 20.7,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충남대 반대로 국립공주대와 통합 무산… '학생 90% 반대벽 못 넘었다'",
+            "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5jWFhSS0hLS1pYQnFGNEtCU2p2WGFtRmhyQjExei14S1RHVGRTcFhRTG02UGdDME9udDhuZVliTXlzWlhTVjB1Vmc5QjF3TV9WcnBOZnpBcTc0ajM2NXlLZE8tREFLOUUtZURqelFYWdIBc0FVX3lxTE5IZFA0UEtoeHhHZmEtTV9UaWdnZWUtQVRycTc4bHRlQWdSaGVQbHFuNUtOcjg5LXVwUzhfbFJvUjFHcXhLaXpLSV9IY2ZyTDJmcV9mc2dYaFZZbC1wRWVSR2FWakVjeFdXRU5ncE5zWURhQU0?oc=5",
+            "media": "daily.hankooki.com"
+          }
+        },
+        {
+          "key": "서울대 10개 만들기",
+          "n": 28,
+          "risk": 10.7,
+          "field": "기타",
+          "sample": {
+            "title": "최교진 1년, 서울대10개 ‘첫 발’…교부금개편 등 갈등 커져",
+            "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE8yWVkzXzc3MlVSM0dVa3JNdEFRQ19BaGhnckhyTzNKWUtYbmo2cUFsUkZtRjhMMVhzb0xTT2x1N0RtTXJOZi05VFBRb2Fmb3dGaVhRWmpRUXdDSm1vTG5hLVp6bTBMX2hEazJyQmZR?oc=5",
+            "media": "아시아투데이"
+          }
+        },
+        {
+          "key": "경쟁",
+          "n": 28,
+          "risk": 64.3,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "‘무전공’ 확산에 학과는 생존경쟁… 학생 선택 따라 통폐합",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBZbllLNHN2bUpEa1o0UHhBN1Z2X0JKenVRTENraENobHZDQ3lLbFBPVVRuRlpHSjFmVVRFeXRFbUdzcnBGUUE4T1ZJMjgyaVBvN3BFdEwwbXMwQ29CdlNaa19VQkJMZw?oc=5",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "사립대",
+          "n": 26,
+          "risk": 23.1,
+          "field": "거버넌스",
+          "sample": {
+            "title": "“국립대는 0원 우리는 수백만원”⋯지방 사립대생 반발",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9sRTdzYzRDN3I0d0VhUURuMTNFSF83QjJJSFJvanFrQldYR1dwbmoyWktwak5abHVUc3NvcFFadUl6NC1la0IycmlJYlAyLVE?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "모집",
+          "n": 23,
+          "risk": 26.1,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "[단독] [2027수시경쟁률] 단국대(마감전날) 6.28대1.. 교과전형 정외 건축 등 8개 모집단위 ‘미달상태’",
+            "link": "https://www.veritas-a.com/news/articleView.html?idxno=627306",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "기술",
+          "n": 21,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "동의과학대, 비슈케크 국립음악사범대학교와 ‘DIT기술교육원’ 설립 추진",
+            "link": "https://news.unn.net/news/articleView.html?idxno=597279",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "강원대",
+          "n": 21,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "교육부, 강원대 지역거점국립대 최초 ‘캠퍼스 혁신파크 산학연혁신허브’ 개관",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9fM2UzLVdVMjlwSGt6Ul94WU9YVHdVMWNfRXZJdzVldWpoSkFBUTBmMVp0cmNQSlJvQk11aklWajVUZUQzZGJZSi14a0EweFEyQ3Q1NmZoTi0zMzF5SUg4QnJWalZUVWlL?oc=5",
+            "media": "한국뉴스통신"
+          }
+        },
+        {
+          "key": "취업",
+          "n": 20,
+          "risk": 10,
+          "field": "기타",
+          "sample": {
+            "title": "호원대 앵커사업단, 지역정주 취업역량 강화 취업캠프 운영",
+            "link": "https://news.unn.net/news/articleView.html?idxno=597278",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "생성형",
+          "n": 19,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "원광디지털대, ‘생성형 AI를 활용한 수업·연구 문서 작성과 검증’교수법 워크숍 개최",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1SV0hCb0c5cUliZ0twQTRCc29aNE1RWW5MUl9TcFB2TGdhUVRHOVN2T2lzenhvNmlmd2NiQ293M0VYbm9Da2lUTVJKNzFacWt6M3NMc0tYNnRmaWFBeFB6dDdTYTJiX1k?oc=5",
+            "media": "hani.co.kr"
+          }
+        },
+        {
+          "key": "인재",
+          "n": 17,
+          "risk": 5.9,
+          "field": "기타",
+          "sample": {
+            "title": "[단독] [2027수시경쟁률] 성균관대(마감전날) 17.25대1.. ‘최저’ 교과 추천인재 인문과학계열 2.2대1",
+            "link": "https://www.veritas-a.com/news/articleView.html?idxno=627307",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "공주대",
+          "n": 16,
+          "risk": 18.8,
+          "field": "거버넌스",
+          "sample": {
+            "title": "[취재석] 충남대·공주대, 통합은 무산됐고 이제 남은 것은 '책임'이다",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1QSi1rSUFXN05ZeTd5SmlIeE1RZVBzc1JzVl9XTmU5MU10RG8xc3UySm9XSkd4YTNOYzJsSzFXX0ZINndrS2ZTTS01S3BFWDQ?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "글로컬대학",
+          "n": 16,
+          "risk": 12.5,
+          "field": "기타",
+          "sample": {
+            "title": "인제대, 글로컬 대학 탈락 위기…올시티캠퍼스 실효성 부족 '원인'",
+            "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5QNzZNSXFyWVllMFNvalNsQ0JybHlCWGJMYUNFUEdwVFMwc0lnOTYyaXRlb1hrQ05mMVY0TGRKV0NhT0hPQ3Z3cHpNc2xFMlkyR08tUUwxZk9qT2VCdUQ4TtIBeEFVX3lxTE5OX2dORHNOX3ZET0EwTklZdGJLZnlCTjk4SDl3OTlXRG03MzR0UzNsUXhNc2oweHpvaHl5bi1XMWpuYkJQRVpIUlZVRk1zbVRLUTg5MlhWbWNhcWJPc0Q4dFkwQ3ZlalpNWnRKWU5FWGU5Tzh2U3l4MA?oc=5",
+            "media": "뉴시스"
+          }
+        },
+        {
+          "key": "부산",
+          "n": 16,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "“교실 실증 넘어 공교육 진입까지”… 부산교대·부산대, 동남권 에듀테크 기업 한자리에",
+            "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1Dal9Lb01qV3BaamhCQ1ByV0dLemFwTXh6R0JqTGRnX3FPa2FLM1kwUms1M0w5YlQtRG9VS1JEWklmQ2E1QnExWUJzVEZjTVlLdWZ0WXNURWxQdDNpX2h3SFV4SmZtZEVVal8xSTkybw?oc=5",
+            "media": "welfarenews.net"
+          }
+        },
+        {
+          "key": "대구",
+          "n": 16,
+          "risk": 6.3,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "대구대, ‘대통령기 제48회 전국검도선수권대회’ 단체전 우승",
+            "link": "https://news.unn.net/news/articleView.html?idxno=597285",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "제주대",
+          "n": 16,
+          "risk": 12.5,
+          "field": "기타",
+          "sample": {
+            "title": "제주 초등교사 선발 94명→26명 72% ‘급감’…제주대 교육대학 학생들 교원 감축 '반발'",
+            "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE04elFiR0hPU1VVM0xPMUd3MzRXYlFJS0o3enppckk0X1h4dWJnOVFwbDJDRUdyQThQeXBGbmJubDBTN1FPNERYd3pZY05iN1ZaelNBaHA1SHJVZjRTS3BzQjBmeHhZOVN5NlV4UnRn0gFuQVVfeXFMTTh6UWJHSE9TVVUzTE8xR3czNFdiUUlLSjd6emlySTRfWHh1Ymc5UXBsMkNFR3JBOFB5cEZuYm5sMFM3UU80RFh3elljTmI3Vlp6U0FocDVIclVmNFNLcHNCMGZ4eFk5U3k2VXhSdGc?oc=5",
+            "media": "제주뉴스"
+          }
+        },
+        {
+          "key": "경기",
+          "n": 16,
+          "risk": 12.5,
+          "field": "기타",
+          "sample": {
+            "title": "[단독][2027수시경쟁률] 경기대(마감직전) 14대1.. ‘최저’ 교과 학교장추천 건축학과(5년제) 1.8대1",
+            "link": "https://www.veritas-a.com/news/articleView.html?idxno=627402",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "의료",
+          "n": 16,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "호원대, ‘전북 취업캠프’ 진행…지역 보건의료 취업 지원",
+            "link": "https://www.kyosu.net/news/articleView.html?idxno=210150",
+            "media": "교수신문"
+          }
+        }
+      ],
+      "links": [
+        {
+          "s": 11,
+          "t": 3,
+          "n": 24
+        },
+        {
+          "s": 5,
+          "t": 1,
+          "n": 20
+        },
+        {
+          "s": 5,
+          "t": 8,
+          "n": 20
+        },
+        {
+          "s": 6,
+          "t": 9,
+          "n": 19
+        },
+        {
+          "s": 17,
+          "t": 0,
+          "n": 19
+        },
+        {
+          "s": 2,
+          "t": 0,
+          "n": 19
+        },
+        {
+          "s": 13,
+          "t": 3,
+          "n": 18
+        },
+        {
+          "s": 1,
+          "t": 8,
+          "n": 17
+        },
+        {
+          "s": 1,
+          "t": 12,
+          "n": 17
+        },
+        {
+          "s": 1,
+          "t": 3,
+          "n": 16
+        },
+        {
+          "s": 19,
+          "t": 6,
+          "n": 15
+        },
+        {
+          "s": 19,
+          "t": 9,
+          "n": 15
+        },
+        {
+          "s": 4,
+          "t": 0,
+          "n": 14
+        },
+        {
+          "s": 5,
+          "t": 12,
+          "n": 14
+        },
+        {
+          "s": 2,
+          "t": 4,
+          "n": 14
+        },
+        {
+          "s": 15,
+          "t": 7,
+          "n": 11
+        },
+        {
+          "s": 12,
+          "t": 8,
+          "n": 11
+        },
+        {
+          "s": 7,
+          "t": 6,
+          "n": 11
+        },
+        {
+          "s": 14,
+          "t": 0,
+          "n": 9
+        },
+        {
+          "s": 10,
+          "t": 4,
+          "n": 9
+        },
+        {
+          "s": 1,
+          "t": 13,
+          "n": 8
+        },
+        {
+          "s": 21,
+          "t": 2,
+          "n": 7
+        },
+        {
+          "s": 22,
+          "t": 0,
+          "n": 6
+        },
+        {
+          "s": 5,
+          "t": 3,
+          "n": 6
+        },
+        {
+          "s": 2,
+          "t": 25,
+          "n": 6
+        },
+        {
+          "s": 10,
+          "t": 6,
+          "n": 6
+        },
+        {
+          "s": 12,
+          "t": 3,
+          "n": 5
+        },
+        {
+          "s": 21,
+          "t": 0,
+          "n": 5
+        },
+        {
+          "s": 2,
+          "t": 3,
+          "n": 5
+        },
+        {
+          "s": 7,
+          "t": 10,
+          "n": 5
+        },
+        {
+          "s": 0,
+          "t": 16,
+          "n": 4
+        },
+        {
+          "s": 14,
+          "t": 18,
+          "n": 4
+        },
+        {
+          "s": 2,
+          "t": 16,
+          "n": 4
+        },
+        {
+          "s": 21,
+          "t": 25,
+          "n": 4
+        },
+        {
+          "s": 7,
+          "t": 4,
+          "n": 4
+        },
+        {
+          "s": 4,
+          "t": 6,
+          "n": 4
+        },
+        {
+          "s": 25,
+          "t": 0,
+          "n": 4
+        },
+        {
+          "s": 2,
+          "t": 6,
+          "n": 4
+        }
+      ]
+    },
     "summary": [
       {
         "h": "거점국립대 재편 — '서울대 10개 만들기' 1차 선정",
@@ -2323,6 +2808,576 @@
         "buffer": "연 700억 규모 패키지 지원, 지역성장 거점 지정"
       }
     },
+    "network": {
+      "basis": 334,
+      "minCount": 3,
+      "minEdge": 4,
+      "nodes": [
+        {
+          "key": "부산대",
+          "n": 82,
+          "risk": 1.2,
+          "field": "기타",
+          "sample": {
+            "title": "부산대-전남대-충남대, ‘서울대 10개 만들기’ 첫 거점국립대 선정",
+            "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9IOW9UY3p4SmpBdHNUN3FfRXNOWk5wQWo2UUQxbnQ0N1VVMlE4X01uWHJSYUN0blItN3ExUmxlRGlsaHE4R3UtYjJYRzl3dTZtd2xsWTFaTmg4UUZ5d0JuZ0RuU2ZnbVFTTjgxTGFCYmFiTXA3SmfSAWZBVV95cUxQZEg2RmFlTGY3bEUyOHFiRGRrZ29YcWwtVWg3YXBiT2ZsOTROUnRDR1BveUIyTy1UYkZlbW5BVlFCUWdNWURUc3RsdmxwdmNPd0dBZjlOU3Y2R0NkdEQtMl9wbzFxWGc?oc=5",
+            "media": "donga.com"
+          }
+        },
+        {
+          "key": "등록금",
+          "n": 64,
+          "risk": 14.1,
+          "field": "거버넌스",
+          "sample": {
+            "title": "[삐딱하게] 국립대 무상 등록금 반발한 사립대, ‘준국립대’ 전환 가능할까",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE41S1B2WDJwLUNXZHpWQ3M2LUk5UmxzS0JJS2E4WGVGZVg5YVY1VW9TUlNpQ3R3Xy1LMU5HN3JCVm9ZZFRpSjJUXzIzZ1dNd0U?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "인공지능",
+          "n": 60,
+          "risk": 1.7,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "AI가 뒤흔든 대학교육, 과제 평가부터 대학 위기론까지",
+            "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1TaWJTMTNDdGFMSS15cC1pcHl6MFdtWDJVZ2lKV0lqTFBxMjNpTlZoWGtDb1EtWkM1Sm9WakxtcmtfXzBaVV9ZYmdJbENVbGhFUVN2bmQ0X1J4SENEUzNVNzg4TGN0aFBoOHc?oc=5",
+            "media": "고대신문"
+          }
+        },
+        {
+          "key": "서울대 10개 만들기",
+          "n": 57,
+          "risk": 5.3,
+          "field": "기타",
+          "sample": {
+            "title": "'서울대 10개 만들기' 본격화…거점 국립대 3곳 신속 선정",
+            "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5pemZMbGMyQnVTOWJGNjQ0YzFWa3Mxemp4em85ekFiV1lZSTZkSjJMSldYWnB1dUJlM05OMTJzcDFTTkcxZmVMUXZJa3ZOSUZVc0lGNmVFelpjNi1ZeVdrZEhhZ2p1WmRpdk5HbHV1bUlGUQ?oc=5",
+            "media": "대한민국 정책브리핑"
+          }
+        },
+        {
+          "key": "거점국립대",
+          "n": 47,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "'서울대 10개 만들기' 본격화…거점 국립대 3곳 신속 선정",
+            "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5pemZMbGMyQnVTOWJGNjQ0YzFWa3Mxemp4em85ekFiV1lZSTZkSjJMSldYWnB1dUJlM05OMTJzcDFTTkcxZmVMUXZJa3ZOSUZVc0lGNmVFelpjNi1ZeVdrZEhhZ2p1WmRpdk5HbHV1bUlGUQ?oc=5",
+            "media": "대한민국 정책브리핑"
+          }
+        },
+        {
+          "key": "국립대",
+          "n": 46,
+          "risk": 17.4,
+          "field": "거버넌스",
+          "sample": {
+            "title": "[삐딱하게] 국립대 무상 등록금 반발한 사립대, ‘준국립대’ 전환 가능할까",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE41S1B2WDJwLUNXZHpWQ3M2LUk5UmxzS0JJS2E4WGVGZVg5YVY1VW9TUlNpQ3R3Xy1LMU5HN3JCVm9ZZFRpSjJUXzIzZ1dNd0U?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "선정",
+          "n": 45,
+          "risk": 2.2,
+          "field": "거버넌스",
+          "sample": {
+            "title": "'서울대 10개 만들기' 본격화…거점 국립대 3곳 신속 선정",
+            "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5pemZMbGMyQnVTOWJGNjQ0YzFWa3Mxemp4em85ekFiV1lZSTZkSjJMSldYWnB1dUJlM05OMTJzcDFTTkcxZmVMUXZJa3ZOSUZVc0lGNmVFelpjNi1ZeVdrZEhhZ2p1WmRpdk5HbHV1bUlGUQ?oc=5",
+            "media": "대한민국 정책브리핑"
+          }
+        },
+        {
+          "key": "충남대",
+          "n": 33,
+          "risk": 9.1,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충남대·공주대 통합 반발 확산…지역사회까지 참전",
+            "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9VQ0J0OVJxd2ZRaVcteDFZRW1VeWRwYUduRHFRVGVxOTdiaklsQUZwbWROb1B2dVFPRzhZTlNTb0ttSTM2MlFRTGFPRXVjRGIybFZlbg?oc=5",
+            "media": "매일경제"
+          }
+        },
+        {
+          "key": "지방",
+          "n": 29,
+          "risk": 10.3,
+          "field": "거버넌스",
+          "sample": {
+            "title": "정부, 지방 국립대 등록금 무상화에…사립대 강하게 반발",
+            "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBlOEd5U1JTTW5nZkpwcEx0S3hhSko2RjRndnRUd1QxeTgzSm1rdVcxc19KV2dWZXY3a2pjNlVUdnVJSXhDYlpTZlFXTS1JRWMwaVZvWU81Nl9oZw?oc=5",
+            "media": "한국경제"
+          }
+        },
+        {
+          "key": "부산",
+          "n": 24,
+          "risk": 4.2,
+          "field": "기타",
+          "sample": {
+            "title": "‘서울대 10개 만들기’ 부산·충남·전남대에 3900억씩 지원",
+            "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNQ0tJM3dTaWJkVGc5cnhOMHhkNk13UkY3ckRXT2Y5c2RlT1FPYm5TV1Itdm50UWl1bkNrS3dUdGc0SjlDR0RURmNNaGRkOFYySXZEV3NtMHZwbmtYX1EzT1BTSl9jNzU5TmNfQkh1ejJMWnBGak45MXhmbTJCV0JMSUdZSkpQM2M?oc=5",
+            "media": "조선일보"
+          }
+        },
+        {
+          "key": "전남대",
+          "n": 21,
+          "risk": 4.8,
+          "field": "기타",
+          "sample": {
+            "title": "부산대-전남대-충남대, ‘서울대 10개 만들기’ 첫 거점국립대 선정",
+            "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9IOW9UY3p4SmpBdHNUN3FfRXNOWk5wQWo2UUQxbnQ0N1VVMlE4X01uWHJSYUN0blItN3ExUmxlRGlsaHE4R3UtYjJYRzl3dTZtd2xsWTFaTmg4UUZ5d0JuZ0RuU2ZnbVFTTjgxTGFCYmFiTXA3SmfSAWZBVV95cUxQZEg2RmFlTGY3bEUyOHFiRGRrZ29YcWwtVWg3YXBiT2ZsOTROUnRDR1BveUIyTy1UYkZlbW5BVlFCUWdNWURUc3RsdmxwdmNPd0dBZjlOU3Y2R0NkdEQtMl9wbzFxWGc?oc=5",
+            "media": "donga.com"
+          }
+        },
+        {
+          "key": "경상국립대",
+          "n": 17,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "경상국립대 칠암캠퍼스, ‘도심형 오픈 캠퍼스’로 전환…창업·산학협력·평생교육 결합",
+            "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVjd1cXNCZGtPZk5mOElseXFUODBvbENyNUxrNklWUWlBeThmTXVVYU1OcUUzSFJKYUVSRURUcWd4U1d4Z3JlUmxfTmFDUnliVm5peEZpUzBYalEtd0tXUUtmQnhBRGZaRlRBTERtTDViOGRYb2NVcWhCU3YzdjlwTFA3SDc3WVhJQmhQa2V3?oc=5",
+            "media": "국제신문"
+          }
+        },
+        {
+          "key": "탈락",
+          "n": 16,
+          "risk": 12.5,
+          "field": "기타",
+          "sample": {
+            "title": "반도체 이어 거점국립대도 ‘TK 패싱’…경북대, ‘서울대 10개 만들기’ 선정 탈락",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5SMEZudkUzSUx2QTQyRjRKR0lnUW5MUm01U05kTXBLWUpfUVNZRFNSOUdYM3liSWpSNmpMak9rUnZvTHJLTTFOSGhwRlRVcWs?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "혁신",
+          "n": 15,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "부산대 ‘서울대 10개 만들기’ 견인…산업혁신 거점(종합)",
+            "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNclVRbzFGS0g3WV9tUVF3TzBYaXh6OF80N2JKWmpLUExlWlZScFBpbmZyamdvc181RFZQQXVSN2M2V0c2bl9KUU1hRDY4Wk5vWWY4VWREV20xRGIzRmN2MVQ0UzdGamdFY29nZm02eWJhazcydGtvV3R6ZC1HdjBYNHB1Z2YtWHpxMGhaRHRB?oc=5",
+            "media": "국제신문"
+          }
+        },
+        {
+          "key": "사립대",
+          "n": 14,
+          "risk": 28.6,
+          "field": "거버넌스",
+          "sample": {
+            "title": "[삐딱하게] 국립대 무상 등록금 반발한 사립대, ‘준국립대’ 전환 가능할까",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE41S1B2WDJwLUNXZHpWQ3M2LUk5UmxzS0JJS2E4WGVGZVg5YVY1VW9TUlNpQ3R3Xy1LMU5HN3JCVm9ZZFRpSjJUXzIzZ1dNd0U?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "글로컬대학",
+          "n": 14,
+          "risk": 7.1,
+          "field": "기타",
+          "sample": {
+            "title": "[국립창원대] 글로컬대학 전국 유일 ‘S등급’ 전국 1위…국가연구소도 선정돼 주목",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE42RFNIeEZIYjV0V0NNU2UwMTAzQ1F0RFYtbVNRclVRbzZYVFVsNW5ZUG9lN0hMNkdaOTNSVmlxVDZxdk9mNkdjQml0b3RoTkdvX2Y3VTJTRGNsUm8zYjVZSTliUVlVUlU?oc=5",
+            "media": "kyosu.net"
+          }
+        },
+        {
+          "key": "생성형",
+          "n": 13,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "한경국립대, 생성형 AI 44종 통합 ‘Multi AI’ 전면 개방",
+            "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1vNF9rWjBRTU9ELXRZaEdoVVVheFVNRDBqS1FBcGMwZVpOTnE4UjkwNEJXSWM4c0I1Yl9zSWhuckNpbG90cnBqY0JmYUdjbTY5SmQyRTVRMjU0bk42Q0FOWU5rd1BHTHRRSG00ZENUMEM?oc=5",
+            "media": "인천일보"
+          }
+        },
+        {
+          "key": "활용",
+          "n": 12,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "부산대, 거점국립대학 선정…양산캠퍼스 활용 주목",
+            "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9xOHB6cUd5eEExY0xNZWxad2dBd0xEZVFaZHFGQXBmcDhYaHZLbHZqb2dHQ2xYVnd4MjlmRGthcmRoYXBTLTF6YnZ2TmtqX180UnZDQg?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "산대학",
+          "n": 12,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "‘우주항공방산대학’과 ‘AI대학’ 2027학년도에 함께 출범",
+            "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNSnZxZ2pLLWFyZWdHcHZMYnlZSzFXWndMdFdiMFlNeHRDSEN3SDlrZldPcDdDOVRmWXY5R1padmZWQUR4UDNDV2N5TEt3UnRVNndFeXR5X3RLMWNpY043QVBiYWxJSGcxZmdsM0xoa2lQeHNXUi1IMGJoaS1LaWtrT3VvR3JFajM3S3VIRnNB?oc=5",
+            "media": "조선일보"
+          }
+        },
+        {
+          "key": "전남",
+          "n": 11,
+          "risk": 18.2,
+          "field": "기타",
+          "sample": {
+            "title": "노소영 특별시의원 “전남광주 폐교, 한·몽 문화예술교육 거점으로 재탄생시켜야”",
+            "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE05QXpHVGRkOUw1eGxPN0Z4Zmt2R1BueEtpLUIzTGtNSHNzX29NVEVhYjZhT1hvSWxfLUNVSzJGOUZFS2VidVNPZTRjSmJMcm1PVzVNNkZ3b3JXQldXWWQ5ZUJtUzE1SWtBM1hn?oc=5",
+            "media": "비즈월드"
+          }
+        },
+        {
+          "key": "수시",
+          "n": 11,
+          "risk": 18.2,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "[위기의 경북대] 다시 높아지는 지거국 인기… 경북대도 수시 합격선 상승",
+            "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE45S0lWNW54cmJjenNveFBNLV9TYy1EMEc4Y3lCYXVyZjBRMFV6enNBWUFHYTBCemFOd3pSMEU0X1Q5eHBpZTAzNGdNLUpSdTR2SWRsR2Rfd0JDbmhUcDg0cXRn?oc=5",
+            "media": "매일신문"
+          }
+        },
+        {
+          "key": "신입생",
+          "n": 11,
+          "risk": 9.1,
+          "field": "거버넌스",
+          "sample": {
+            "title": "2027학년도 지방국립대 신입생 등록금 전액 지원…사립대는 반발",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE56cElqSHptZWNTeWJ3NHF4a0taLW5xekxabkw3enVpQmpLc3k1emJmNTVlT1dVOU5IMThVV19ldWRDcXM2UzliUTF4MnhGWDFDYXN5U3UzaHBtMDY5YzlLWE9rTWxSZw?oc=5",
+            "media": "교육을 비추다"
+          }
+        },
+        {
+          "key": "인재",
+          "n": 10,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "[사설] 거점 국립대 패키지 선정 부산대, 인재·산업 육성 기대",
+            "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOaGFCNU9HZHpBTzFRRVlaVUpQMExWZERXblI0YkE0RzRxWDQ4YXdjZUl5NjlBdV9ISUJSZTVqUU5JcExKYmVLX2VqbVdLS0ZFT3ZFcVdnRF85bVBmRHQySXI3WTcyVlRFUEJxVmU5cDM4ZXRjbWV6N1ljVEdyY20wMFQ5T0Nib2R6YUI1MTFn?oc=5",
+            "media": "국제신문"
+          }
+        },
+        {
+          "key": "최대",
+          "n": 10,
+          "risk": 0,
+          "field": "재정",
+          "sample": {
+            "title": "'서울대 10개' 탈락한 지거국 어쩌나…5년간 최대 3900억원 격차 - 머니투데이",
+            "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBPR0RLMy1TVURSc1lNUTduZWQtRmU5WW1FazRBbUhDU0xCNEFyMDZMYUgzM0dpOXJDd3lhcFNoMzlBNDk1UGdkZ0FwUy1wcThtQ0tCLW9QMVJCSEVRdFFKSm9nNkx5ZTJyaGfSAW9BVV95cUxOVHQzYkFuSW1RTmFLbTUzOC1YczNVeGxJdllpZnJvd1d5WXFOdGxUY0w4eThrUUxScDVqeFpzaW9aVDZBc0o4V2xPeHBDVHU4Mks3Q2pTSDlzZU5jYmM3X3B2TnlGZk5EZlpDOUdJcVE?oc=5",
+            "media": "머니투데이"
+          }
+        },
+        {
+          "key": "전주대",
+          "n": 10,
+          "risk": 30,
+          "field": "기타",
+          "sample": {
+            "title": "\"이사장도, 총장도 물러나라\"… '내홍 격화' 전주대 교수들 집단 반발",
+            "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE82X091UjdESW9iYk5CQUNSa0ZXem9WTkxFSGNfV2o2WVZIeDk4SDB3cGQ5em9maXY1YjB5WGRNb090WTJyRUdrTkNBWkZDQ3ZpWHJpQkllRndDQlN4TW1UYnd1Nnp2bUJDQTRUZWxn0gFzQVVfeXFMT3hHV3U3eFA5RVA4Z1ZzSXU3ajRjSHYxUWowQlh5Q19NZmhDVDhqd2MxVmRGMEpWYkJWeVoyMGEzTHVhZ0cyLXZYaGdiUFFuVHY5NWRmbEhRMElGbnZfWVhjc1NvcmxEOG8tWS1OZnpDb2pDUQ?oc=5",
+            "media": "hankookilbo.com"
+          }
+        },
+        {
+          "key": "거점",
+          "n": 9,
+          "risk": 22.2,
+          "field": "기타",
+          "sample": {
+            "title": "노소영 특별시의원 “전남광주 폐교, 한·몽 문화예술교육 거점으로 재탄생시켜야”",
+            "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE05QXpHVGRkOUw1eGxPN0Z4Zmt2R1BueEtpLUIzTGtNSHNzX29NVEVhYjZhT1hvSWxfLUNVSzJGOUZFS2VidVNPZTRjSmJMcm1PVzVNNkZ3b3JXQldXWWQ5ZUJtUzE1SWtBM1hn?oc=5",
+            "media": "비즈월드"
+          }
+        }
+      ],
+      "links": [
+        {
+          "s": 5,
+          "t": 1,
+          "n": 30
+        },
+        {
+          "s": 0,
+          "t": 3,
+          "n": 25
+        },
+        {
+          "s": 0,
+          "t": 6,
+          "n": 25
+        },
+        {
+          "s": 5,
+          "t": 8,
+          "n": 25
+        },
+        {
+          "s": 3,
+          "t": 6,
+          "n": 24
+        },
+        {
+          "s": 3,
+          "t": 7,
+          "n": 23
+        },
+        {
+          "s": 1,
+          "t": 8,
+          "n": 22
+        },
+        {
+          "s": 4,
+          "t": 6,
+          "n": 21
+        },
+        {
+          "s": 4,
+          "t": 0,
+          "n": 19
+        },
+        {
+          "s": 0,
+          "t": 10,
+          "n": 19
+        },
+        {
+          "s": 0,
+          "t": 7,
+          "n": 19
+        },
+        {
+          "s": 10,
+          "t": 7,
+          "n": 19
+        },
+        {
+          "s": 3,
+          "t": 10,
+          "n": 16
+        },
+        {
+          "s": 4,
+          "t": 3,
+          "n": 15
+        },
+        {
+          "s": 6,
+          "t": 7,
+          "n": 14
+        },
+        {
+          "s": 16,
+          "t": 2,
+          "n": 13
+        },
+        {
+          "s": 5,
+          "t": 21,
+          "n": 11
+        },
+        {
+          "s": 4,
+          "t": 7,
+          "n": 10
+        },
+        {
+          "s": 3,
+          "t": 12,
+          "n": 10
+        },
+        {
+          "s": 5,
+          "t": 14,
+          "n": 10
+        },
+        {
+          "s": 2,
+          "t": 17,
+          "n": 10
+        },
+        {
+          "s": 6,
+          "t": 10,
+          "n": 9
+        },
+        {
+          "s": 9,
+          "t": 0,
+          "n": 9
+        },
+        {
+          "s": 0,
+          "t": 2,
+          "n": 9
+        },
+        {
+          "s": 1,
+          "t": 21,
+          "n": 9
+        },
+        {
+          "s": 21,
+          "t": 8,
+          "n": 9
+        },
+        {
+          "s": 1,
+          "t": 14,
+          "n": 9
+        },
+        {
+          "s": 0,
+          "t": 18,
+          "n": 9
+        },
+        {
+          "s": 4,
+          "t": 10,
+          "n": 8
+        },
+        {
+          "s": 9,
+          "t": 3,
+          "n": 8
+        },
+        {
+          "s": 9,
+          "t": 19,
+          "n": 8
+        },
+        {
+          "s": 9,
+          "t": 7,
+          "n": 7
+        },
+        {
+          "s": 3,
+          "t": 19,
+          "n": 7
+        },
+        {
+          "s": 19,
+          "t": 7,
+          "n": 7
+        },
+        {
+          "s": 9,
+          "t": 6,
+          "n": 7
+        },
+        {
+          "s": 1,
+          "t": 23,
+          "n": 7
+        },
+        {
+          "s": 25,
+          "t": 0,
+          "n": 6
+        },
+        {
+          "s": 11,
+          "t": 2,
+          "n": 6
+        },
+        {
+          "s": 14,
+          "t": 8,
+          "n": 6
+        },
+        {
+          "s": 24,
+          "t": 12,
+          "n": 6
+        },
+        {
+          "s": 6,
+          "t": 2,
+          "n": 5
+        },
+        {
+          "s": 0,
+          "t": 13,
+          "n": 5
+        },
+        {
+          "s": 25,
+          "t": 7,
+          "n": 4
+        },
+        {
+          "s": 20,
+          "t": 8,
+          "n": 4
+        },
+        {
+          "s": 4,
+          "t": 2,
+          "n": 4
+        },
+        {
+          "s": 25,
+          "t": 3,
+          "n": 4
+        },
+        {
+          "s": 3,
+          "t": 13,
+          "n": 4
+        },
+        {
+          "s": 4,
+          "t": 8,
+          "n": 4
+        },
+        {
+          "s": 4,
+          "t": 1,
+          "n": 4
+        },
+        {
+          "s": 4,
+          "t": 20,
+          "n": 4
+        },
+        {
+          "s": 6,
+          "t": 19,
+          "n": 4
+        },
+        {
+          "s": 15,
+          "t": 24,
+          "n": 4
+        },
+        {
+          "s": 15,
+          "t": 12,
+          "n": 4
+        },
+        {
+          "s": 2,
+          "t": 13,
+          "n": 4
+        },
+        {
+          "s": 16,
+          "t": 17,
+          "n": 4
+        }
+      ]
+    },
     "summary": [
       {
         "h": "서울대 10개 만들기 — 3개교 선정",
@@ -3580,6 +4635,471 @@
         "buffer": "지역 정주형 인재 육성, 통합 준비 진전"
       }
     },
+    "network": {
+      "basis": 153,
+      "minCount": 3,
+      "minEdge": 4,
+      "nodes": [
+        {
+          "key": "인공지능",
+          "n": 36,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "“피지컬AI 수도 선언”…전북대, ‘서울대 10개 만들기’ 승부수는",
+            "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9iUF9NSmlyZzBzVUJpSldpZHZ4dlR5OGNxanNncmFrMXFLRWZIU3Rhclc5TFVmd1N4WHJMT3dYdUIwazBmZXc?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "국립대",
+          "n": 24,
+          "risk": 16.7,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충남대 등 지방 국립대 전액 장학금 추진에 국립대 '환영'·사립대 '반발'",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE94czBMa2tzdXE4YnNNdWRod0RfTHVESHZhZ3VCdDVBbVVxcmNvV1FuVUxpUUl1VWRSWV8yMWNnOEJLbHdFX19CS2w2eGRMSzRMU3RtaGJ0X3oxblN3aVZoVWdRdC04bDJyZFZQbA?oc=5",
+            "media": "충청뉴스"
+          }
+        },
+        {
+          "key": "등록금",
+          "n": 24,
+          "risk": 8.3,
+          "field": "거버넌스",
+          "sample": {
+            "title": "국립대 '등록금 0원'…강원 대학들 \"사립대 죽이기\" 반발",
+            "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBxcl9DbkE2NklfMUptazFBTTVhMzdXMkp4LTlSdzlObnhjaWZubDRLZm9jMHZwZ05vR05sV1hLZklUYmJ1TXltaEN0RjEwQm84M3c?oc=5",
+            "media": "노컷뉴스"
+          }
+        },
+        {
+          "key": "부산대",
+          "n": 24,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "부산대와 통합 앞둔 부산교대…마지막 총장 선거 3파전",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1KanZpUnk4OHJpZkFwWU5EdU5memF3dHl6aUNzdlBObjByMEhlZHpiYk5XRVNDSmYxNktrOHRQa0drMW9DWlJ0WGktcGZxcDJxTnA5eW9DMXBzQVXSAWBBVV95cUxNWmIyWHU0Z2R3Z0dCc1JuVW8zVDlERVNVeE55YXdHNXRIQWlLNEFTcjZueVVlTFRVb2NNTERua2dmb18zNnd4Z1FROEUyTkVuR3dJa3N4bGl5NkNBNElsZ2c?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "지방",
+          "n": 16,
+          "risk": 12.5,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충남대 등 지방 국립대 전액 장학금 추진에 국립대 '환영'·사립대 '반발'",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE94czBMa2tzdXE4YnNNdWRod0RfTHVESHZhZ3VCdDVBbVVxcmNvV1FuVUxpUUl1VWRSWV8yMWNnOEJLbHdFX19CS2w2eGRMSzRMU3RtaGJ0X3oxblN3aVZoVWdRdC04bDJyZFZQbA?oc=5",
+            "media": "충청뉴스"
+          }
+        },
+        {
+          "key": "대구",
+          "n": 14,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "지방 국립대 등록금 전액 지원…대구경북 등 30개 대학 신입생 혜택",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE92NFVoWGFQM0ZqQWh1Q1pwamEwOHhQUTVMWDJfZURjNEV4b3dfaDlYU2hkM09DdTBWWkxfbUdmTmZudnNMVndyekNwOHcxX00?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "혁신",
+          "n": 13,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "경북대, 대구앵커사업 성과 공유…지역 혁신전략 공개",
+            "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1JQjJuWHdKX2RJckV0SUlheHM2OVRhT3REQS12SWI3MWpWUEVXNE9RZmNEVzkwelVYMFRaa0pSSjc1ZXJXVThKdERrejEwTEM4SEJsU3Fzb3hTWUhtLXlkVGlkbjRvRVVPN3BBY29USFBMdw?oc=5",
+            "media": "웹이코노미"
+          }
+        },
+        {
+          "key": "신입생",
+          "n": 12,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "지방국립대 등록금 지원에 사립대 '신입생 모집 어떡해' 울상",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBtQTJLTUgtSXlnXzhhQ1R2ZzNqaktjQmxUcnIzT3ZqOTl0SE5uSlZGSldta1Nfa3RXUWNrTWtIZHFlellabk9uZno2N3FyRW12bzhGOGU2TzNiNUHSAWBBVV95cUxNQUFZZWY1RlFzcS1HQVVNdHFtZkZYOWNNZ3hkVE5fYkRiNDNXTDhCRFRiVU10d2lDWTZySGZxSkttRTlZYlRZWWZrYklOTTJoREpra2MwOEtEYVpUSTJiVnU?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "의대",
+          "n": 12,
+          "risk": 8.3,
+          "field": "기타",
+          "sample": {
+            "title": "의대 신설·500억 당근도 안 먹힌다…‘국립대 통합’ 잇단 무산",
+            "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1zVVQzbEVsb3pqdWx2UlJqbXVyY0tucnF6Y3phd2hPUGRqT1o4dGNkOEpWV2ZfMFlKaXVuSWJwZTFTemtZWXc?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "거점국립대",
+          "n": 10,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "거점국립대총장협 \"교육교부금 개편 환영…국립대 재정지원해야\"",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9lckR6clZjdXByTjU0bVdtM2ZyVEZwNDBLYlluTWtTMVhqenN2VW0ybkItUEU1UmVQdG1INFN5SFpBbXpiUVBUUDloNmdKYnhmWmszZGJaalo4M03SAWBBVV95cUxPdFRlODlNSzhmZE80RVI3TTgzZk0xR0ZjT3NMby1pdHVDVHgtd0NWWkVVckx1ZmFaYXNLaW01bnFmT3k1bjBzeWVqQXF2YWVvWVRMTVI2U2FwazJWeUNrZEo?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "총장",
+          "n": 10,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "거점국립대총장협 \"교육교부금 개편 환영…국립대 재정지원해야\"",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9lckR6clZjdXByTjU0bVdtM2ZyVEZwNDBLYlluTWtTMVhqenN2VW0ybkItUEU1UmVQdG1INFN5SFpBbXpiUVBUUDloNmdKYnhmWmszZGJaalo4M03SAWBBVV95cUxPdFRlODlNSzhmZE80RVI3TTgzZk0xR0ZjT3NMby1pdHVDVHgtd0NWWkVVckx1ZmFaYXNLaW01bnFmT3k1bjBzeWVqQXF2YWVvWVRMTVI2U2FwazJWeUNrZEo?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "전액",
+          "n": 10,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "지방국립대 전액 장학금, 지방생존 해법돼야",
+            "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5UZDBLQ1E4ZGl3eENXM3MxNFZKWEdsRE9BSktPbHV5cHZtZEVoeW1iMG1MeWVJbndtZTZlZktyTnJhdXlPQ1F4bVkwMm9vT3FLS1hzbGdHODJjZw?oc=5",
+            "media": "경북매일"
+          }
+        },
+        {
+          "key": "개편",
+          "n": 9,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "거점국립대총장협 \"교육교부금 개편 환영…국립대 재정지원해야\"",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9lckR6clZjdXByTjU0bVdtM2ZyVEZwNDBLYlluTWtTMVhqenN2VW0ybkItUEU1UmVQdG1INFN5SFpBbXpiUVBUUDloNmdKYnhmWmszZGJaalo4M03SAWBBVV95cUxPdFRlODlNSzhmZE80RVI3TTgzZk0xR0ZjT3NMby1pdHVDVHgtd0NWWkVVckx1ZmFaYXNLaW01bnFmT3k1bjBzeWVqQXF2YWVvWVRMTVI2U2FwazJWeUNrZEo?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "환영",
+          "n": 9,
+          "risk": 11.1,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충남대 등 지방 국립대 전액 장학금 추진에 국립대 '환영'·사립대 '반발'",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE94czBMa2tzdXE4YnNNdWRod0RfTHVESHZhZ3VCdDVBbVVxcmNvV1FuVUxpUUl1VWRSWV8yMWNnOEJLbHdFX19CS2w2eGRMSzRMU3RtaGJ0X3oxblN3aVZoVWdRdC04bDJyZFZQbA?oc=5",
+            "media": "충청뉴스"
+          }
+        },
+        {
+          "key": "모집",
+          "n": 9,
+          "risk": 0,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "지방국립대 등록금 지원에 사립대 '신입생 모집 어떡해' 울상",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBtQTJLTUgtSXlnXzhhQ1R2ZzNqaktjQmxUcnIzT3ZqOTl0SE5uSlZGSldta1Nfa3RXUWNrTWtIZHFlellabk9uZno2N3FyRW12bzhGOGU2TzNiNUHSAWBBVV95cUxNQUFZZWY1RlFzcS1HQVVNdHFtZkZYOWNNZ3hkVE5fYkRiNDNXTDhCRFRiVU10d2lDWTZySGZxSkttRTlZYlRZWWZrYklOTTJoREpra2MwOEtEYVpUSTJiVnU?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "신설",
+          "n": 9,
+          "risk": 11.1,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "의대 신설·500억 당근도 안 먹힌다…‘국립대 통합’ 잇단 무산",
+            "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE1zVVQzbEVsb3pqdWx2UlJqbXVyY0tucnF6Y3phd2hPUGRqT1o4dGNkOEpWV2ZfMFlKaXVuSWJwZTFTemtZWXc?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "부산",
+          "n": 9,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "부산대와 통합 앞둔 부산교대…마지막 총장 선거 3파전",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1KanZpUnk4OHJpZkFwWU5EdU5memF3dHl6aUNzdlBObjByMEhlZHpiYk5XRVNDSmYxNktrOHRQa0drMW9DWlJ0WGktcGZxcDJxTnA5eW9DMXBzQVXSAWBBVV95cUxNWmIyWHU0Z2R3Z0dCc1JuVW8zVDlERVNVeE55YXdHNXRIQWlLNEFTcjZueVVlTFRVb2NNTERua2dmb18zNnd4Z1FROEUyTkVuR3dJa3N4bGl5NkNBNElsZ2c?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "고등교육교부금",
+          "n": 8,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "거점국립대총장협 \"교육교부금 개편 환영…국립대 재정지원해야\"",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9lckR6clZjdXByTjU0bVdtM2ZyVEZwNDBLYlluTWtTMVhqenN2VW0ybkItUEU1UmVQdG1INFN5SFpBbXpiUVBUUDloNmdKYnhmWmszZGJaalo4M03SAWBBVV95cUxPdFRlODlNSzhmZE80RVI3TTgzZk0xR0ZjT3NMby1pdHVDVHgtd0NWWkVVckx1ZmFaYXNLaW01bnFmT3k1bjBzeWVqQXF2YWVvWVRMTVI2U2FwazJWeUNrZEo?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "사립대",
+          "n": 8,
+          "risk": 37.5,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충남대 등 지방 국립대 전액 장학금 추진에 국립대 '환영'·사립대 '반발'",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE94czBMa2tzdXE4YnNNdWRod0RfTHVESHZhZ3VCdDVBbVVxcmNvV1FuVUxpUUl1VWRSWV8yMWNnOEJLbHdFX19CS2w2eGRMSzRMU3RtaGJ0X3oxblN3aVZoVWdRdC04bDJyZFZQbA?oc=5",
+            "media": "충청뉴스"
+          }
+        },
+        {
+          "key": "공유",
+          "n": 8,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "“AI거점대학을 축으로 교육·연구·산학협력 체계 고도화” 경북대, 대구앵커사업 1차년도 성과공유회 개최",
+            "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9TMVRQZ1dUZWNTc05peTNDQ3BsTkx5MFpTOUxlQXJ4b3l6OGlNMEd1TXM5cjF4WDBXN1pNZ0xwN2RyVEZjblhrT3JMNXZtQQ?oc=5",
+            "media": "전자신문"
+          }
+        },
+        {
+          "key": "인제대",
+          "n": 8,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "인제대 화쟁인문학연구소, 인문한국 사업 선정… 6년간 120억 지원",
+            "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBvbktCdk1peC1EMk1BTU41MkJrRGMwY1RXbC1hOVdZRENKMWlJTlFoTkowbEpZS0xXcHpULW5URm1nRjJfR1gwVUR5ZGFhZkRlakNOLVZJUXYtMHhDQTRqc3RBR1dmb3VkSDZJakNR0gFzQVVfeXFMTjdFOURqOHFUN296NkRaNGRsNWdwWVp5RFY2emN4RUJhcVdxRzFFRWUwYzFONVM4Sm5HYk5wbHhyT0xsUFhZWUtjWVhjbXRwT3Fyc3E3MFFQWlV6UTdCaVFlZ3EwMzlJekttcVJET0FpUEVXOA?oc=5",
+            "media": "hankookilbo.com"
+          }
+        },
+        {
+          "key": "활용",
+          "n": 7,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "경산시-한의대, 글로컬대학 기업지원관 조성·활용 업무협약 체결",
+            "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBJcDZMWkJpR3k4cEh2MENEZ2JtQVFGWHFrcVdwZGZCOUdfYUVwdlBIU1NMb0pTZEU4T3NJT2lJM080SVNwRmZYVkdMdWdPMnJNOXVtMzdoWmNxbTAwcXJOMzVoek5ZWnpVVy0w?oc=5",
+            "media": "웹플러스뉴스"
+          }
+        },
+        {
+          "key": "수시",
+          "n": 6,
+          "risk": 0,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "[2027수시특집] '글로컬대학30' 경성대 2579명(93.1%) 모집.. '신설' MEGA학부 60명 모집",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBPR2I0anRxcjFUQlJzcWlnR3JvbVh1Q2ZEZWlwRzRCMzQ0bUdZb0pYN05jMm5XeU5od2Zkd0ZBWW9iUnpuV3JNbVNoZUhWRDRoQTUwSU1KR3VlaG5XbWVwRU0yYUUtZDBKTnRMYw?oc=5",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "생성형",
+          "n": 6,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "한국기술교육대, 에듀테크 교육혁신 포럼… 생성형 AI 활용 수업 우수사례 공유",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBYVWthRXBOVTlfZ2l6REFwNHlDRVZpeWRWbTNiLVdMbmUzWUF6eWd5Z2tHOGdMdnpjb29uVUlad0dJQURUX3BFTUhGM25najZIYURXWDBua2VfU1ZnM2xDZnphZHNWUQ?oc=5",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "재정",
+          "n": 5,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "거점국립대총장협 “국가 교육 재정 합리적 재분배해야”",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE45U01mcFdEZmVtSVhZbE9Ua1VHZWdkUUs3Q3RUelZZNDVTUDRmc0dYeHBZdlVTWlhIaEhHQVQ3aVcwVkJqcF90RlNyYk4yMnVyNGs4dk5xUENNQWFKYVQxM24tSHhIdw?oc=5",
+            "media": "KBS 뉴스"
+          }
+        },
+        {
+          "key": "글로컬대학",
+          "n": 5,
+          "risk": 0,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "[2027수시특집] '글로컬대학30' 경성대 2579명(93.1%) 모집.. '신설' MEGA학부 60명 모집",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBPR2I0anRxcjFUQlJzcWlnR3JvbVh1Q2ZEZWlwRzRCMzQ0bUdZb0pYN05jMm5XeU5od2Zkd0ZBWW9iUnpuV3JNbVNoZUhWRDRoQTUwSU1KR3VlaG5XbWVwRU0yYUUtZDBKTnRMYw?oc=5",
+            "media": "베리타스알파"
+          }
+        }
+      ],
+      "links": [
+        {
+          "s": 1,
+          "t": 4,
+          "n": 15
+        },
+        {
+          "s": 1,
+          "t": 2,
+          "n": 15
+        },
+        {
+          "s": 2,
+          "t": 4,
+          "n": 12
+        },
+        {
+          "s": 2,
+          "t": 11,
+          "n": 9
+        },
+        {
+          "s": 12,
+          "t": 9,
+          "n": 8
+        },
+        {
+          "s": 12,
+          "t": 17,
+          "n": 8
+        },
+        {
+          "s": 12,
+          "t": 13,
+          "n": 8
+        },
+        {
+          "s": 9,
+          "t": 17,
+          "n": 8
+        },
+        {
+          "s": 9,
+          "t": 13,
+          "n": 8
+        },
+        {
+          "s": 17,
+          "t": 13,
+          "n": 8
+        },
+        {
+          "s": 2,
+          "t": 7,
+          "n": 8
+        },
+        {
+          "s": 0,
+          "t": 6,
+          "n": 8
+        },
+        {
+          "s": 9,
+          "t": 10,
+          "n": 6
+        },
+        {
+          "s": 1,
+          "t": 18,
+          "n": 6
+        },
+        {
+          "s": 1,
+          "t": 11,
+          "n": 6
+        },
+        {
+          "s": 11,
+          "t": 4,
+          "n": 6
+        },
+        {
+          "s": 16,
+          "t": 3,
+          "n": 6
+        },
+        {
+          "s": 5,
+          "t": 8,
+          "n": 6
+        },
+        {
+          "s": 23,
+          "t": 0,
+          "n": 6
+        },
+        {
+          "s": 14,
+          "t": 3,
+          "n": 6
+        },
+        {
+          "s": 12,
+          "t": 10,
+          "n": 5
+        },
+        {
+          "s": 17,
+          "t": 10,
+          "n": 5
+        },
+        {
+          "s": 10,
+          "t": 13,
+          "n": 5
+        },
+        {
+          "s": 1,
+          "t": 7,
+          "n": 5
+        },
+        {
+          "s": 14,
+          "t": 7,
+          "n": 5
+        },
+        {
+          "s": 7,
+          "t": 4,
+          "n": 5
+        },
+        {
+          "s": 14,
+          "t": 15,
+          "n": 5
+        },
+        {
+          "s": 7,
+          "t": 11,
+          "n": 5
+        },
+        {
+          "s": 18,
+          "t": 4,
+          "n": 4
+        },
+        {
+          "s": 2,
+          "t": 18,
+          "n": 4
+        },
+        {
+          "s": 0,
+          "t": 21,
+          "n": 4
+        },
+        {
+          "s": 3,
+          "t": 15,
+          "n": 4
+        },
+        {
+          "s": 3,
+          "t": 7,
+          "n": 4
+        },
+        {
+          "s": 15,
+          "t": 7,
+          "n": 4
+        }
+      ]
+    },
     "summary": [
       {
         "h": "등록금 — 환영과 반발의 정면 충돌",
@@ -4785,6 +6305,361 @@
         "buffer": "LG·한화 계약학과, 동문 기부"
       }
     },
+    "network": {
+      "basis": 148,
+      "minCount": 3,
+      "minEdge": 4,
+      "nodes": [
+        {
+          "key": "인공지능",
+          "n": 34,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "서울대 10개 만들기 선정 임박…'피지컬AI' 전북대 포함될까",
+            "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1nN3hyMXdJOEV1akVTTGtwMmFDN2Z5UThmUTgyaHR4XzJsRlNSdjcweGZtYmw0VUtEWTlUYjB5aTR4bDFwSFl2VFpTZVdBRjBjXzFiR9IBWkFVX3lxTE9iNG0yMUlERUUwd0RMMDc2UnJHUHpnTVhiU1Z3UGtqX3A3d2MyRUtpeW5CcUoyY1BRV3VpVGk5aTNZWFR5bENYRTJneUZLQmNKOFMzQmozSktCdw?oc=5",
+            "media": "뉴스1"
+          }
+        },
+        {
+          "key": "부산대",
+          "n": 20,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "LG 이어 한화까지…부산대 계약학과 2개 신설로 동남권 인재 육성",
+            "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5NVFRUZUFySk1ta0xoWjg2aDRycnoxczE1VXNwTzVadlhpeVp4eFZrSF9MMHpEd3NBeVVkV0lsU1RMeXFENVdrOUZEbU5ZbFg4YmdPeVVR?oc=5",
+            "media": "중앙일보"
+          }
+        },
+        {
+          "key": "수시",
+          "n": 14,
+          "risk": 0,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "국립경국대, '학생 선택권·산학 연계' 앞세워 미래 인재 잡는다…98.8% 수시모집",
+            "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9TaDg0TXZyNFpCS2xqUVFQR3NFdGhfQTEwenBYWUUwSXI3U1hZZjk4ckVkZW12bm1xOGhKRHNkNS1yMzdxMnc?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "경상국립대",
+          "n": 13,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "[심층분석] 첨단산업 인재 키우는 경남…9개 거점국립대학 중 경상국립대만 빠져",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5KT2pQbG1tOFFDZFNBYTBRVk9idGhuSGI5b2F4MDlRUVQzVWRaWVRKcTVjYmJhbnMzLVpiaFowbWhHczhqVkNtUlJjRVBmSkRBajN1UEdoYXNvSWZaMHQ3RDd4dE00d1BC?oc=5",
+            "media": "경남뉴스"
+          }
+        },
+        {
+          "key": "통합",
+          "n": 13,
+          "risk": 15.4,
+          "field": "거버넌스",
+          "sample": {
+            "title": "통합 추진 충남대-공주대, 교명은 '충남대'…구성원 반발 ‘과제’",
+            "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1PelVDNjdRTS1iNHUzYVNmWngxUXg2RHFTRGZhTEtzcFBKbmItS2c0dFRDbzZiRHo4QV9mQm9uVUw0cEZVOVF6X3JOWXBlUzFuTktmbWFn?oc=5",
+            "media": "중앙일보"
+          }
+        },
+        {
+          "key": "국립",
+          "n": 13,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "국립경국대, '학생 선택권·산학 연계' 앞세워 미래 인재 잡는다…98.8% 수시모집",
+            "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9TaDg0TXZyNFpCS2xqUVFQR3NFdGhfQTEwenBYWUUwSXI3U1hZZjk4ckVkZW12bm1xOGhKRHNkNS1yMzdxMnc?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "등록금",
+          "n": 12,
+          "risk": 0,
+          "field": "재정",
+          "sample": {
+            "title": "[광장-윤정현] 국립대 등록금 `0원` 논의, 지역 대학 상생으로",
+            "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5QLWkyQ2l2RjJGdjczZlR6c0hLSU5vdnVOdjZ6UF9XYnBCQV91QmV0aVNWd25Oa1dOUjNVWHN3dEx4bTk4bUFMOERncTVoZ2NNRVFfcnluVERPc0xSVlFaakZR?oc=5",
+            "media": "매일신문"
+          }
+        },
+        {
+          "key": "혁신",
+          "n": 11,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "충남대 혁신 ‘구성원 공감’으로 완성한다 [충남대 빅3선도대학 총력전]",
+            "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5QWEpsaVAtNEI5djAwT3dUZVg1QkE1UEhaNE1TY2R0NS1JSWI5S0NVUWo2a2UyQlZpcktxUGk5TGthR1JxNi1LT25Bai1OamdRUTQtQg?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "인재",
+          "n": 9,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "[심층분석] 첨단산업 인재 키우는 경남…9개 거점국립대학 중 경상국립대만 빠져",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5KT2pQbG1tOFFDZFNBYTBRVk9idGhuSGI5b2F4MDlRUVQzVWRaWVRKcTVjYmJhbnMzLVpiaFowbWhHczhqVkNtUlJjRVBmSkRBajN1UEdoYXNvSWZaMHQ3RDd4dE00d1BC?oc=5",
+            "media": "경남뉴스"
+          }
+        },
+        {
+          "key": "국립대",
+          "n": 9,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "“기업·지자체 잇는 허브 대학…국립대 역할 넓힌다”",
+            "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0zdjFTMmNQZk1oZGF0Q2ZkUEp2Ykg3bGFtRWE3RjdmcmllQWhNLVZpeEVLc3pyY1VJVVhJTTVPVUJKRUpIN0dJeGo1OXhyTlRpLXZTZEhB?oc=5",
+            "media": "중앙일보"
+          }
+        },
+        {
+          "key": "의대",
+          "n": 9,
+          "risk": 11.1,
+          "field": "기타",
+          "sample": {
+            "title": "목포대·순천대 통합 사실상 무산…개별 의대 신청 수순",
+            "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE8yZWtuUUp5cVFESGxIdjM1REY0OEt1cDlPOGhIYTYxTDdUY1duZ1dqa2VTNFJRQUN5RUE0YURMSnFObEdHYzNiSG5FaURCakpfMWozT1E4a1diMWt1UFFNbdIBeEFVX3lxTE1JMlA5bmZOWTFNUVJfcnh6QWVzcG9PMjhwR3dXTXZlYkpGbzk2SlI5V0RBWHFJcFhEOWllMTRJczZ6NmxpaXBQSXRUbzBvbklLMlBOeUlmdGVybDQ4aHF1YW5zMjEyc1V5VmRZUnFGdjdnaGZTWm1YZQ?oc=5",
+            "media": "뉴시스"
+          }
+        },
+        {
+          "key": "충남대",
+          "n": 8,
+          "risk": 12.5,
+          "field": "거버넌스",
+          "sample": {
+            "title": "통합 추진 충남대-공주대, 교명은 '충남대'…구성원 반발 ‘과제’",
+            "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1PelVDNjdRTS1iNHUzYVNmWngxUXg2RHFTRGZhTEtzcFBKbmItS2c0dFRDbzZiRHo4QV9mQm9uVUw0cEZVOVF6X3JOWXBlUzFuTktmbWFn?oc=5",
+            "media": "중앙일보"
+          }
+        },
+        {
+          "key": "모집",
+          "n": 8,
+          "risk": 0,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "[2027학년도 수시모집 특집]경상국립대 2027 수시 3729명 모집… 전체의 80% 우주항공방산대학·AI대학 동시 출범",
+            "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBmZGx0WHhSQnFpSXRQVUZhNWE3c0tLRklQdnU0VEVjU0oyNldCeFpIeERjU1BJa195cnFPcFBhbzVxYmVtMmhDNUIzajZhVEJYRlNKd3FLM2JMYllqSGhiWElzUQ?oc=5",
+            "media": "경남도민뉴스"
+          }
+        },
+        {
+          "key": "경남",
+          "n": 7,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "[심층분석] 첨단산업 인재 키우는 경남…9개 거점국립대학 중 경상국립대만 빠져",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5KT2pQbG1tOFFDZFNBYTBRVk9idGhuSGI5b2F4MDlRUVQzVWRaWVRKcTVjYmJhbnMzLVpiaFowbWhHczhqVkNtUlJjRVBmSkRBajN1UEdoYXNvSWZaMHQ3RDd4dE00d1BC?oc=5",
+            "media": "경남뉴스"
+          }
+        },
+        {
+          "key": "산업",
+          "n": 7,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "[심층분석] 첨단산업 인재 키우는 경남…9개 거점국립대학 중 경상국립대만 빠져",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5KT2pQbG1tOFFDZFNBYTBRVk9idGhuSGI5b2F4MDlRUVQzVWRaWVRKcTVjYmJhbnMzLVpiaFowbWhHczhqVkNtUlJjRVBmSkRBajN1UEdoYXNvSWZaMHQ3RDd4dE00d1BC?oc=5",
+            "media": "경남뉴스"
+          }
+        },
+        {
+          "key": "신설",
+          "n": 7,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "LG 이어 한화까지…부산대 계약학과 2개 신설로 동남권 인재 육성",
+            "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5NVFRUZUFySk1ta0xoWjg2aDRycnoxczE1VXNwTzVadlhpeVp4eFZrSF9MMHpEd3NBeVVkV0lsU1RMeXFENVdrOUZEbU5ZbFg4YmdPeVVR?oc=5",
+            "media": "중앙일보"
+          }
+        },
+        {
+          "key": "미래",
+          "n": 7,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "국립경국대, '학생 선택권·산학 연계' 앞세워 미래 인재 잡는다…98.8% 수시모집",
+            "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9TaDg0TXZyNFpCS2xqUVFQR3NFdGhfQTEwenBYWUUwSXI3U1hZZjk4ckVkZW12bm1xOGhKRHNkNS1yMzdxMnc?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "대구",
+          "n": 7,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "[2027수시특집] '글로컬대학30' 대구한의대 945명(90.9%) 모집.. 자율전공학부 식품산업학과 ‘신설’",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8tUnpISkFQREx3QWpTS2l4MlpLalJteGN4YUpJamtXYkg2MFd0ZGpiSjRZeDV6amZZNjdHMjBiZ2ltaDUzVWVNUTR2ck01a2VSZVVNWXQwTUdaTTBCclR2Q21sVEoxdlBwLW1feQ?oc=5",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "동국대",
+          "n": 7,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "함은정, 알고보니 고졸이었다…\"동국대라고 얘기하는 게 민망, 등록금 내고 제적\" ('함은정')",
+            "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5VblJLVmJGdjVBYUVsX0RIanNSOXJ6dUFVeHpxeE1vRFVnLXQ0c2FzYmtoM0VSMWU4Y3N6QlcyM1JXcW5WT2FUNWpqcUFIUXBSYkRGTg?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "첨단",
+          "n": 6,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "[심층분석] 첨단산업 인재 키우는 경남…9개 거점국립대학 중 경상국립대만 빠져",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5KT2pQbG1tOFFDZFNBYTBRVk9idGhuSGI5b2F4MDlRUVQzVWRaWVRKcTVjYmJhbnMzLVpiaFowbWhHczhqVkNtUlJjRVBmSkRBajN1UEdoYXNvSWZaMHQ3RDd4dE00d1BC?oc=5",
+            "media": "경남뉴스"
+          }
+        },
+        {
+          "key": "공주대",
+          "n": 6,
+          "risk": 16.7,
+          "field": "거버넌스",
+          "sample": {
+            "title": "통합 추진 충남대-공주대, 교명은 '충남대'…구성원 반발 ‘과제’",
+            "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1PelVDNjdRTS1iNHUzYVNmWngxUXg2RHFTRGZhTEtzcFBKbmItS2c0dFRDbzZiRHo4QV9mQm9uVUw0cEZVOVF6X3JOWXBlUzFuTktmbWFn?oc=5",
+            "media": "중앙일보"
+          }
+        },
+        {
+          "key": "현장",
+          "n": 6,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "양해영 경남도의원, 경상국립대 청년 지역정착 현장 간담회 개최",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9zZVljX2kxcURFYVptbzJJNEpIVm4tSmlNdDk5Z2ZQNGQ0ZW9RbDdWV1dPeDJsTEhiTEZJelRWb2FzMFEtQnd2cHdsN2p2WktSU1hraDh0c3RTY0F0Rlp5UDlGem01NUF20gFsQVVfeXFMUHhlT21WbW40X2VEa2hrY3h4TkJOX0lhZXhJOFM4Zk5iMmo4eHdMTFVLRUUyY3lyTDhxdGprMzZHcmVIQ3BKLS1EQXdMVmJIZlBXYkt2dkljcDF6MEQ4MlN3MEhVZ1M5b3hUUHY2?oc=5",
+            "media": "진주신문"
+          }
+        },
+        {
+          "key": "글로컬대학",
+          "n": 6,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "경상국립대 글로컬대학사업단 2026학년도 하계 해외 단기연수 프로그램 성료",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVU1Sd2tNMUVoTDU5RFJMVFhORlRZaHU2TkJRbVZuRFZlcWxnZXViUVBGZkNRdE5aX215UTNna1dLeWdfZmM4Y3pWdG5DcGNTeFllczVQSEFucFVHSWhxTzF0OUpFWmY0ZVIxQg?oc=5",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "성료",
+          "n": 6,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "경상국립대 글로컬대학사업단 2026학년도 하계 해외 단기연수 프로그램 성료",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1fVU1Sd2tNMUVoTDU5RFJMVFhORlRZaHU2TkJRbVZuRFZlcWxnZXViUVBGZkNRdE5aX215UTNna1dLeWdfZmM4Y3pWdG5DcGNTeFllczVQSEFucFVHSWhxTzF0OUpFWmY0ZVIxQg?oc=5",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "역량",
+          "n": 6,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "한서대학교 특성화지방대학(글로컬대학), 美 애틀랜타서 글로벌 마케팅·창업 역량 키우다",
+            "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5ONkVvTlJPQkNjTGtMVENKa1ZZQU9qSFBhRHRNVTRxdTlOWmJDRHZjbFRvdFJCQkFObUpXcW9ScUpFeHRobzZCNndvWl96R08takFDU1JOWXY4a2hyLUkweWVjYVJiQjFtckVPOGlKRFU5UQ?oc=5",
+            "media": "투데이충남"
+          }
+        },
+        {
+          "key": "기반",
+          "n": 6,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "[초대석] 오용준 국립한밭대 총장 “도전과 변화의 4년… 새로운 100년 기반 닦아”",
+            "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5IS0lRckJ6eFRfUXFEN3NxeDI3SWg2ZkNwODYxVm11d3RZNzd4QUx2Z1gwUGpKREY4ZVhLZnpKTWxuU0pPY1l0SVY3U0owdnlUTWpQYg?oc=5",
+            "media": "v.daum.net"
+          }
+        }
+      ],
+      "links": [
+        {
+          "s": 12,
+          "t": 2,
+          "n": 8
+        },
+        {
+          "s": 3,
+          "t": 2,
+          "n": 7
+        },
+        {
+          "s": 11,
+          "t": 4,
+          "n": 6
+        },
+        {
+          "s": 0,
+          "t": 7,
+          "n": 6
+        },
+        {
+          "s": 18,
+          "t": 0,
+          "n": 6
+        },
+        {
+          "s": 20,
+          "t": 11,
+          "n": 5
+        },
+        {
+          "s": 20,
+          "t": 4,
+          "n": 5
+        },
+        {
+          "s": 3,
+          "t": 0,
+          "n": 5
+        },
+        {
+          "s": 3,
+          "t": 12,
+          "n": 4
+        },
+        {
+          "s": 2,
+          "t": 0,
+          "n": 4
+        },
+        {
+          "s": 9,
+          "t": 6,
+          "n": 4
+        },
+        {
+          "s": 0,
+          "t": 19,
+          "n": 4
+        }
+      ]
+    },
     "summary": [
       {
         "h": "통합 — 합의해도 넘지 못하는 벽",
@@ -5911,6 +7786,411 @@
         "disturb": "사립대 3중 압박, 전임교원 미달 제재, 국립대 쏠림 논쟁",
         "buffer": "대기업 계약학과, 유휴부지 활용"
       }
+    },
+    "network": {
+      "basis": 169,
+      "minCount": 3,
+      "minEdge": 4,
+      "nodes": [
+        {
+          "key": "인공지능",
+          "n": 35,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "임병택 시흥시장, 서울대·OpenAI와 손잡고 청소년 AI 역량 키운다",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE4teWRwMnJxaHA1STZwdUwwOFJ3bFo1V3Q2RWxOenlxUmVxa0dsRThSRTA3NnVWMl9kcEdBNTJVRlZsYjdIczFZenMxbXY0WHRJTVFodGlRUjRFYVZDWTE0TjQyc2NOX3Iy0gFsQVVfeXFMTy1qMmR2dWhpbXJIZVJlLWYtUEFSYTVEdUkyTDl5aE9qZVFVMlVWVnhmWnRlaXYyRWRyWk1Cd0JWWlpVTnJ2QVh5YmwyVFE4cTNfSDBPNEs4QWJxbk9acmU1UjJDSGlJekJxbk1H?oc=5",
+            "media": "필드뉴스"
+          }
+        },
+        {
+          "key": "국립대",
+          "n": 26,
+          "risk": 19.2,
+          "field": "거버넌스",
+          "sample": {
+            "title": "지방 국립대 무상 등록금 추진… 사립대 “문 닫으라는 것” 반발",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBxZFRaMVVBcGpUQjNzdVJoQjVidm5ZN18yNk9rLVdtUklfSkpRci0wbWt3Zk5HOXZRZ040RUlSUUdpZU9nZkc0RlJVTURacGs?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "등록금",
+          "n": 24,
+          "risk": 12.5,
+          "field": "거버넌스",
+          "sample": {
+            "title": "지방 국립대 무상 등록금 추진… 사립대 “문 닫으라는 것” 반발",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBxZFRaMVVBcGpUQjNzdVJoQjVidm5ZN18yNk9rLVdtUklfSkpRci0wbWt3Zk5HOXZRZ040RUlSUUdpZU9nZkc0RlJVTURacGs?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "지방",
+          "n": 19,
+          "risk": 21.1,
+          "field": "거버넌스",
+          "sample": {
+            "title": "지방 국립대 무상 등록금 추진… 사립대 “문 닫으라는 것” 반발",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBxZFRaMVVBcGpUQjNzdVJoQjVidm5ZN18yNk9rLVdtUklfSkpRci0wbWt3Zk5HOXZRZ040RUlSUUdpZU9nZkc0RlJVTURacGs?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "부산대",
+          "n": 16,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "폭염 식히고 인재 키우고…부산대 유휴부지 활용 대전환 시동",
+            "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQbGVzNHlPMTZSTXBjdVoxWmpVZWJRZjg1eUdiZDJ3NkQ2aWNwa093OWlFbjBTZzFWV2JnbXJJdnEyQ3g5cGtHX1IwSVdJVFBnRWhYTHMyUHJ3R3kwUXViLWtnZ0lTU3RzczJRd2dIdFNncUVWQTJGYVZCVWMxM3JxRmZsOWp6RUNRRWhNOEdR?oc=5",
+            "media": "국제신문"
+          }
+        },
+        {
+          "key": "경상국립대",
+          "n": 13,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "경상국립대, 5년간 총 2900억 규모 거점국립대 패키지 사업 도전장",
+            "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5ZeFRhazIwc3c4YV9CdEx6c2x1eHIxSEx3cHJYZ3JJeEhRRF9PNWVUdE5hVVJ5LXZzM2FzRHhBX3ZXZG5sWTVSU3lkTXB3QQ?oc=5",
+            "media": "전자신문"
+          }
+        },
+        {
+          "key": "사립대",
+          "n": 11,
+          "risk": 45.5,
+          "field": "거버넌스",
+          "sample": {
+            "title": "지방 국립대 무상 등록금 추진… 사립대 “문 닫으라는 것” 반발",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBxZFRaMVVBcGpUQjNzdVJoQjVidm5ZN18yNk9rLVdtUklfSkpRci0wbWt3Zk5HOXZRZ040RUlSUUdpZU9nZkc0RlJVTURacGs?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "부산",
+          "n": 10,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "부산시·경남도·한화·거점국립대 맞손… ‘동남권 지역인재’ 양성·채용 문 연다",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9LR09aa3BiaTBQdFprbG9ucURhRjVPd1pseUtrM0FaUkowWVZBdEZIRVFUdDlfR2ZqSXVLcGJnczJhaGpVQ0d1aUs2a2J0b0pqd3NQSk00VUJOc0dqMlZJWms0aDRxbV9Q?oc=5",
+            "media": "녹색경제신문"
+          }
+        },
+        {
+          "key": "우주항공",
+          "n": 10,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "경상국립대 '제2의 서울대' 향한 날갯짓…우주항공·방산 거점 노린다",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBfUDNidVAwX0xpZ2I5MFpOS3FEZ2J5S3MyaHVFek9jOEJtWENtWFI2MHlnTHBCUGhkcEF3dGhodFVadHBJXzRWUkJGTmNKcnc?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "서울대 10개 만들기",
+          "n": 9,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "`서울대 10개` 앞두고 대기업 잡는 거점국립대들…`경북대도 분발해야`",
+            "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1FaWlveGlWNV8xNDhNTlhjQks5WGNmbWlXS0wtTG9RN0wtWUtVc2k1Z2ZzN1kxX1o4UVk2SkhRRkJVU2l5UG5rSGJ6cW40VlR1cm5LWXZ5Sk5KOC03Qmp6U2J3?oc=5",
+            "media": "매일신문"
+          }
+        },
+        {
+          "key": "글로컬대학",
+          "n": 9,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "충남대·공주대, 글로컬대학 '성과전' 돌입…2차년도 전략 구체화",
+            "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBCZjd0LWFjUm1DN1E2UHh4M1NVSHdBQUdUOTBsaHg5YUdqa1EyYjZCbFBVeFlFWVNXU1I4ZkxkYk94eUlKdmlrVzF4SWNJRGpVZ0h0eW54aUFLdUVu?oc=5",
+            "media": "뉴스핌"
+          }
+        },
+        {
+          "key": "거점국립대",
+          "n": 8,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "`서울대 10개` 앞두고 대기업 잡는 거점국립대들…`경북대도 분발해야`",
+            "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1FaWlveGlWNV8xNDhNTlhjQks5WGNmbWlXS0wtTG9RN0wtWUtVc2k1Z2ZzN1kxX1o4UVk2SkhRRkJVU2l5UG5rSGJ6cW40VlR1cm5LWXZ5Sk5KOC03Qmp6U2J3?oc=5",
+            "media": "매일신문"
+          }
+        },
+        {
+          "key": "경남",
+          "n": 8,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "부산시·경남도·한화·거점국립대 맞손… ‘동남권 지역인재’ 양성·채용 문 연다",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9LR09aa3BiaTBQdFprbG9ucURhRjVPd1pseUtrM0FaUkowWVZBdEZIRVFUdDlfR2ZqSXVLcGJnczJhaGpVQ0d1aUs2a2J0b0pqd3NQSk00VUJOc0dqMlZJWms0aDRxbV9Q?oc=5",
+            "media": "녹색경제신문"
+          }
+        },
+        {
+          "key": "의료",
+          "n": 8,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "지역·필수의료 거점 국립대병원…20일부터 복지부가 맡는다",
+            "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE94em04d0tjOVhDS3diSENYOWd2T08wV3gyTGp1UV90MllJRDFzaVVSR1RYd1RTeDh2YWV2LTlORlgtT0VXVXIxN3JoMA?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "방산",
+          "n": 8,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "경상국립대 '제2의 서울대' 향한 날갯짓…우주항공·방산 거점 노린다",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBfUDNidVAwX0xpZ2I5MFpOS3FEZ2J5S3MyaHVFek9jOEJtWENtWFI2MHlnTHBCUGhkcEF3dGhodFVadHBJXzRWUkJGTmNKcnc?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "워크숍",
+          "n": 8,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "\"AI 오류, 인명피해로 이어질 수도\"…경상국립대, 국방 AI 안전관리 워크숍 개최",
+            "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5VQVVxRWZWQjNUV1BaZkw4SU1zRVE2NEFLTDA2VHpMUGFsckdNQmhsM3FjLVdSMUJRQWlZSEJrR1JsdC1PQ2Ewclp3eGJmSFo1a1FuY1pVd2wzdjBfaGw0?oc=5",
+            "media": "뉴스투게더"
+          }
+        },
+        {
+          "key": "무상",
+          "n": 7,
+          "risk": 28.6,
+          "field": "거버넌스",
+          "sample": {
+            "title": "지방 국립대 무상 등록금 추진… 사립대 “문 닫으라는 것” 반발",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBxZFRaMVVBcGpUQjNzdVJoQjVidm5ZN18yNk9rLVdtUklfSkpRci0wbWt3Zk5HOXZRZ040RUlSUUdpZU9nZkc0RlJVTURacGs?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "인재",
+          "n": 7,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "폭염 식히고 인재 키우고…부산대 유휴부지 활용 대전환 시동",
+            "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQbGVzNHlPMTZSTXBjdVoxWmpVZWJRZjg1eUdiZDJ3NkQ2aWNwa093OWlFbjBTZzFWV2JnbXJJdnEyQ3g5cGtHX1IwSVdJVFBnRWhYTHMyUHJ3R3kwUXViLWtnZ0lTU3RzczJRd2dIdFNncUVWQTJGYVZCVWMxM3JxRmZsOWp6RUNRRWhNOEdR?oc=5",
+            "media": "국제신문"
+          }
+        },
+        {
+          "key": "혁신",
+          "n": 7,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "지역 대학 중 최고점…경북대, 대학원혁신지원사업 우수대학 선정",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBPRTlVal9MeFdrTEN2WElreTdoQWFRRm0xXzEtZ2g4OF9uRXRhbTZ3VGRNclhFR0Y5STdhTV9QWUZFUjFRLWV6WFdacC1NZno5bllQUTJ1N2ozZnNWQzVzYmJMTTJrZWM?oc=5",
+            "media": "kyosu.net"
+          }
+        },
+        {
+          "key": "역량",
+          "n": 7,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "임병택 시흥시장, 서울대·OpenAI와 손잡고 청소년 AI 역량 키운다",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE4teWRwMnJxaHA1STZwdUwwOFJ3bFo1V3Q2RWxOenlxUmVxa0dsRThSRTA3NnVWMl9kcEdBNTJVRlZsYjdIczFZenMxbXY0WHRJTVFodGlRUjRFYVZDWTE0TjQyc2NOX3Iy0gFsQVVfeXFMTy1qMmR2dWhpbXJIZVJlLWYtUEFSYTVEdUkyTDl5aE9qZVFVMlVWVnhmWnRlaXYyRWRyWk1Cd0JWWlpVTnJ2QVh5YmwyVFE4cTNfSDBPNEs4QWJxbk9acmU1UjJDSGlJekJxbk1H?oc=5",
+            "media": "필드뉴스"
+          }
+        },
+        {
+          "key": "통합",
+          "n": 7,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "진주 4개 대학 학생대표 “발전공기업 통합 본사 진주에 들어서야”",
+            "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBpYXJBZFdnV3dOaTJEdHVTSmxQTjF1Z2FjaVFQUEhZbjE3OHl0dWJZUHBQaWM5OUI3R0xuTW9yN2JfV19GM0E?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "성료",
+          "n": 7,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "국립공주대-충남대, 글로컬대학사업 연합창업캠프 성료",
+            "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBpTnBSZXVWa1d5YTBKYjMzUzZEZTZIQXY3WEVxY3BNYy15VXdSVWc0V2Q5LUIyeVc3UmFXMWp4Q1QxMjBZRTA1bmZReGprWHdIV1NmRUpvRGRVSjdvcTJqem9mcEZTYlFrUHBPOER0N3JxZw?oc=5",
+            "media": "특급뉴스"
+          }
+        },
+        {
+          "key": "직원",
+          "n": 7,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "거창 국립창원대, AI로 업무 '글로컬대학 직원 역량 강화'",
+            "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE83SXZnbU5qRG8xRUJMdXBQZnFmelNtSWdGTnNMdFJnWVR3R0Fhb083U3R0Zlo2Nndzbk0zVGFaSlFXbF81R2stMVBMbkExVFdsOE9Id2VBS0xnV3A4RkxOanhReWtyUE9mWUE?oc=5",
+            "media": "경남매일"
+          }
+        },
+        {
+          "key": "도전",
+          "n": 6,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "경상국립대, 5년간 총 2900억 규모 거점국립대 패키지 사업 도전장",
+            "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5ZeFRhazIwc3c4YV9CdEx6c2x1eHIxSEx3cHJYZ3JJeEhRRF9PNWVUdE5hVVJ5LXZzM2FzRHhBX3ZXZG5sWTVSU3lkTXB3QQ?oc=5",
+            "media": "전자신문"
+          }
+        },
+        {
+          "key": "AI 교육",
+          "n": 6,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "서울대, 지역 사회 및 국가거점국립대학교와 함께 AI 교육 협력 생태계 구축",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE54QVdlQWFTTG1QVkQ0Q19BQ3V4V05LUDFYaTBXUW0zNjIwTzJLcVdTVWpXRDlJU2xJWklrZmNiNWRqVFR5MG9GS3o5ZEg1UF9aMnJ0M1dZZGJXRUpfRVA0ekU1cjVCdw?oc=5",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "활용",
+          "n": 6,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "폭염 식히고 인재 키우고…부산대 유휴부지 활용 대전환 시동",
+            "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQbGVzNHlPMTZSTXBjdVoxWmpVZWJRZjg1eUdiZDJ3NkQ2aWNwa093OWlFbjBTZzFWV2JnbXJJdnEyQ3g5cGtHX1IwSVdJVFBnRWhYTHMyUHJ3R3kwUXViLWtnZ0lTU3RzczJRd2dIdFNncUVWQTJGYVZCVWMxM3JxRmZsOWp6RUNRRWhNOEdR?oc=5",
+            "media": "국제신문"
+          }
+        }
+      ],
+      "links": [
+        {
+          "s": 1,
+          "t": 2,
+          "n": 15
+        },
+        {
+          "s": 1,
+          "t": 3,
+          "n": 15
+        },
+        {
+          "s": 2,
+          "t": 3,
+          "n": 13
+        },
+        {
+          "s": 1,
+          "t": 6,
+          "n": 10
+        },
+        {
+          "s": 5,
+          "t": 8,
+          "n": 9
+        },
+        {
+          "s": 5,
+          "t": 14,
+          "n": 8
+        },
+        {
+          "s": 14,
+          "t": 8,
+          "n": 8
+        },
+        {
+          "s": 6,
+          "t": 3,
+          "n": 8
+        },
+        {
+          "s": 1,
+          "t": 16,
+          "n": 7
+        },
+        {
+          "s": 16,
+          "t": 3,
+          "n": 7
+        },
+        {
+          "s": 2,
+          "t": 6,
+          "n": 7
+        },
+        {
+          "s": 5,
+          "t": 23,
+          "n": 6
+        },
+        {
+          "s": 19,
+          "t": 0,
+          "n": 6
+        },
+        {
+          "s": 0,
+          "t": 22,
+          "n": 6
+        },
+        {
+          "s": 23,
+          "t": 8,
+          "n": 5
+        },
+        {
+          "s": 0,
+          "t": 25,
+          "n": 5
+        },
+        {
+          "s": 7,
+          "t": 4,
+          "n": 5
+        },
+        {
+          "s": 12,
+          "t": 5,
+          "n": 4
+        },
+        {
+          "s": 2,
+          "t": 16,
+          "n": 4
+        },
+        {
+          "s": 23,
+          "t": 14,
+          "n": 4
+        },
+        {
+          "s": 15,
+          "t": 0,
+          "n": 4
+        },
+        {
+          "s": 16,
+          "t": 6,
+          "n": 4
+        }
+      ]
     },
     "summary": [
       {
@@ -7175,6 +9455,476 @@
         "disturb": "통합 일정 지연, 졸속 추진 비판, 도덕적 해이 우려",
         "buffer": "국·공립대 공동 재정 확충 요구, 국제 연구 협력"
       }
+    },
+    "network": {
+      "basis": 188,
+      "minCount": 3,
+      "minEdge": 4,
+      "nodes": [
+        {
+          "key": "인공지능",
+          "n": 36,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "충북대, 거점국립대 패키지 지원사업 도전…AI 혁신체계 구축",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1COG5fRVZ3ZFdSYjJ1RnNBVS1vd3hDM2k3UlBDZnZzd21MQ1dsZnhITVgxcXlMeGxxU3pOZUtPWHRDa2tpaXdLb1BRSXNCVHFnU1BBR0xiNGF4REHSAWBBVV95cUxQMDdOQU1yRVRFa0dCTFcycTNwaEgwMlpZel9iaFNjeW91X3FZVUY4WUw2RHJmbXd2WlQ1RjRpM0ctUDBtcHl3SXNDWEk5eTBiRHpwdGhqemxoSlVfWW5EV0I?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "국립대",
+          "n": 28,
+          "risk": 21.4,
+          "field": "거버넌스",
+          "sample": {
+            "title": "지방국립대 '0원 등록금' 추진에 술렁…\"역차별\" 커지는 반발 [지금이뉴스]",
+            "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBZOHo1RWdmcF83cGlMSGRvc2cwaUtHaGJGMlVUT0JyNUxmeEY3dGhHQTR5eGtVbTF3N1pGcXdoV3JMejdodHI5UW02MUdaLVFqNXF5VDdXY0J6ZmRCSmc?oc=5",
+            "media": "YTN"
+          }
+        },
+        {
+          "key": "부산대",
+          "n": 22,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "“등록금 18년 묶였더니 공공요금도 버겁다”…부산대 주도 전국 국·공립대, 고등교육 재정 확충 촉구",
+            "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1hUEVLRFk0ZXc0aVhtRWhKSkptaGhkcVo3UlppNUhtbDdCcThiVUNLZ2VqanlMZVFlNERPblJqRUplT2tnLWNYamdITjFVeTRV?oc=5",
+            "media": "문화일보"
+          }
+        },
+        {
+          "key": "등록금",
+          "n": 20,
+          "risk": 30,
+          "field": "거버넌스",
+          "sample": {
+            "title": "지방국립대 '0원 등록금' 추진에 술렁…\"역차별\" 커지는 반발 [지금이뉴스]",
+            "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBZOHo1RWdmcF83cGlMSGRvc2cwaUtHaGJGMlVUT0JyNUxmeEY3dGhHQTR5eGtVbTF3N1pGcXdoV3JMejdodHI5UW02MUdaLVFqNXF5VDdXY0J6ZmRCSmc?oc=5",
+            "media": "YTN"
+          }
+        },
+        {
+          "key": "지방",
+          "n": 20,
+          "risk": 30,
+          "field": "거버넌스",
+          "sample": {
+            "title": "지방국립대 '0원 등록금' 추진에 술렁…\"역차별\" 커지는 반발 [지금이뉴스]",
+            "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBZOHo1RWdmcF83cGlMSGRvc2cwaUtHaGJGMlVUT0JyNUxmeEY3dGhHQTR5eGtVbTF3N1pGcXdoV3JMejdodHI5UW02MUdaLVFqNXF5VDdXY0J6ZmRCSmc?oc=5",
+            "media": "YTN"
+          }
+        },
+        {
+          "key": "통합",
+          "n": 19,
+          "risk": 31.6,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충북대-교통대 '단계별 통합' 새 밑그림…내년 3월 출범은 무산",
+            "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9jdzZaa3FPUlY2cGRtTDVJSHl3eG5HTjY1WWpqaElKeVZpUXlXTmt2QngweDBfUG91XzlCck5BOUE0NjFaZTMwSnItdjNyM3FEWGZTa3E2bFhHUGlnRlVFM2FhLVZJRFdmdm5z?oc=5",
+            "media": "BBS불교방송"
+          }
+        },
+        {
+          "key": "거점국립대",
+          "n": 14,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "거점국립대 3곳 우선 선정…“충남대, 사활 걸어야”",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBSQ0NPR2E4M3NHRWxFejA3WWdaYUpjLU1SN3E2REg3NC1QaEJ3VXBEX0FBV0J2Z1RpZ2RVNDVObVBKLW15NFpFZVhhRmx4T1p1Qm9jYjRxUEgycW8?oc=5",
+            "media": "KBS 뉴스"
+          }
+        },
+        {
+          "key": "충북대",
+          "n": 12,
+          "risk": 25,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충북대-교통대 '단계별 통합' 새 밑그림…내년 3월 출범은 무산",
+            "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9jdzZaa3FPUlY2cGRtTDVJSHl3eG5HTjY1WWpqaElKeVZpUXlXTmt2QngweDBfUG91XzlCck5BOUE0NjFaZTMwSnItdjNyM3FEWGZTa3E2bFhHUGlnRlVFM2FhLVZJRFdmdm5z?oc=5",
+            "media": "BBS불교방송"
+          }
+        },
+        {
+          "key": "교통대",
+          "n": 12,
+          "risk": 33.3,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충북대-교통대 '단계별 통합' 새 밑그림…내년 3월 출범은 무산",
+            "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9jdzZaa3FPUlY2cGRtTDVJSHl3eG5HTjY1WWpqaElKeVZpUXlXTmt2QngweDBfUG91XzlCck5BOUE0NjFaZTMwSnItdjNyM3FEWGZTa3E2bFhHUGlnRlVFM2FhLVZJRFdmdm5z?oc=5",
+            "media": "BBS불교방송"
+          }
+        },
+        {
+          "key": "부산",
+          "n": 12,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "신라대, 부산시교육청 연계 마이크로디그리형 특별연수 성료",
+            "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5lNGtwazRFdkU4OGRLODhTRkVnaGF5MVFMUUhVU3VKNjdzNGRWSkxnVTY1MVdpNW9hTDZ1TUhYY3ZWdTZ3ZjdYVkN4Ry1zN25uMEJNdXVYUlJZS0dBOVlSUk45LXRRb0lGZ0Y3TTNaQmdmejVU?oc=5",
+            "media": "부산일보"
+          }
+        },
+        {
+          "key": "장학금",
+          "n": 11,
+          "risk": 9.1,
+          "field": "거버넌스",
+          "sample": {
+            "title": "지방국립대 신입생 등록금 '전액 장학금' 검토…위기의 사립대 '발칵'",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE95ZWs0dzBGT1pXbWxSS0ZVemFaNzBsaXFDcGg4S3Vla01FOUlqWXdMMTdDckpQbmJVeVl2QnZJNnhOZUR0MDlTLUNZbjhCQlk?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "경상국립대",
+          "n": 11,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "경남도, 경상국립대 ‘거점국립대 패키지’ 선정 총력전",
+            "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBBeFY2eE8zVHpuZUx1UDV2QVUwcGVQeTNqR1o0WG9GQUJDSFhnbHUxa2p1VF9hNVQ2cnl0UFJNdTJSak1obUFtaXg5SHctYzQxTFHSAVNBVV95cUxNcVZ2emltaFJxTlo0S0NrVHJubktFVTVCTTIzS05KUDhOU1FSYldqVnhHRUJ3WDRMSXBycDNkY24zMHljLThHS2tIUWlaOWRUQVFUWQ?oc=5",
+            "media": "서울경제"
+          }
+        },
+        {
+          "key": "선정",
+          "n": 10,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "거점국립대 3곳 우선 선정…“충남대, 사활 걸어야”",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBSQ0NPR2E4M3NHRWxFejA3WWdaYUpjLU1SN3E2REg3NC1QaEJ3VXBEX0FBV0J2Z1RpZ2RVNDVObVBKLW15NFpFZVhhRmx4T1p1Qm9jYjRxUEgycW8?oc=5",
+            "media": "KBS 뉴스"
+          }
+        },
+        {
+          "key": "혁신",
+          "n": 10,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충북대, 거점국립대 패키지 지원사업 도전…AI 혁신체계 구축",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1COG5fRVZ3ZFdSYjJ1RnNBVS1vd3hDM2k3UlBDZnZzd21MQ1dsZnhITVgxcXlMeGxxU3pOZUtPWHRDa2tpaXdLb1BRSXNCVHFnU1BBR0xiNGF4REHSAWBBVV95cUxQMDdOQU1yRVRFa0dCTFcycTNwaEgwMlpZel9iaFNjeW91X3FZVUY4WUw2RHJmbXd2WlQ1RjRpM0ctUDBtcHl3SXNDWEk5eTBiRHpwdGhqemxoSlVfWW5EV0I?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "서울대 10개 만들기",
+          "n": 9,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "'서울대 10개 만들기' 본격화…거점 국립대 3곳 신속 선정",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE01cUN3YlBSaGduQ3BqT3ZCSVM0Mi1rNm5tZmtReTlQWmQtWlBrU1Fkeklpc2d6Q2dhTkQwT3pNcDVyemc3SlJsSEdwTmQ1WDhaQUVHQ3dEcWF2X1hvakJJSHBzVk1SWnFlUkxDYg?oc=5",
+            "media": "대한민국 정책브리핑"
+          }
+        },
+        {
+          "key": "패키지",
+          "n": 9,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "강원대-강원특별자치도 교육청, ‘거점국립대 패키지 지원사업’ 공동추진 손잡다",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1yLTVXUmplVEFrU3l4U3l1bXE2UHhfclRVaDJTNl94c0FlVzFscGdFYUJPTUhkUGtCNTI4bzhDZlB2UHRUTG5YRVo5TU9TQ3A3VkQtVDBYelMtUXhHUTl4V1Vyd2NjQQ?oc=5",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "신입생",
+          "n": 9,
+          "risk": 22.2,
+          "field": "거버넌스",
+          "sample": {
+            "title": "지방국립대 신입생 등록금 '전액 장학금' 검토…위기의 사립대 '발칵'",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE95ZWs0dzBGT1pXbWxSS0ZVemFaNzBsaXFDcGg4S3Vla01FOUlqWXdMMTdDckpQbmJVeVl2QnZJNnhOZUR0MDlTLUNZbjhCQlk?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "사립대",
+          "n": 9,
+          "risk": 55.6,
+          "field": "거버넌스",
+          "sample": {
+            "title": "사립대학법 시행령 통과후 첫 경영위기대학 내년 5~7월께 발표…지난해 14곳보다 늘 듯",
+            "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBwb0hFYkl0bkNDYU9rRjRqMVV2RDlPZXk1czV2QTVCeHBqckJxUmN3amRnNXRlM19DNG9SSGJIUDlIOFNuN2pDWlZMLXR3dE5sVkp6akV1Z3AxdDFjaF9PNGpXTTnSAWhBVV95cUxNMjcyTFB3R09WeVhibDRibWVLd29jTm1RQWNpajhrQ3JXS1RnQlpxT3FmX1lBZFBvOE9JazNsVUVOdFlyZnBVM3pzMGpDeEZ0d2R5cU9tLTJ0cmZkMnZBb2NBemRvV3lFSw?oc=5",
+            "media": "usline.kr"
+          }
+        },
+        {
+          "key": "의대",
+          "n": 9,
+          "risk": 11.1,
+          "field": "기타",
+          "sample": {
+            "title": "[사설] 목포·순천대 통합, 전남의대도 물 건너 가나",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1nTXpqZGNCYUdDdkxfdTJGS2JNUjc4QWo2QnFGZnFtLVJsV3hUN3NQZjBJWU43VVl0VjIzX3IydWRfZWkza2c4UzBpX3ZuMkthSDBCY09jaDZhT0Z6Rl9QRWhCcXBnekw5SFNVYtIBcEFVX3lxTE9zZ3gxN3VDR014VmdpWVBZaG1WWXRPYVF5bDUxSlpFbi0yS1R1SjF6blY3UFdrc1V0eTRZTzh0aW5EUnpkTU5HWWVGeDR6RzRnMTA2SzdCN3BxemRTNUpFaW1fZkdqS243aVY5RFJYMWQ?oc=5",
+            "media": "남도일보"
+          }
+        },
+        {
+          "key": "대구",
+          "n": 9,
+          "risk": 11.1,
+          "field": "기타",
+          "sample": {
+            "title": "'좀비대학' 폐교하면 교직원에 위로금‥'사립대구조개선법 시행령' 의결",
+            "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFA2SEV3ZXdmTTBVQlcxYTA2bDRoVzgzcEU1UTJoZnExN3FreXdPeV9KczNfSkFVd1B5ZDJpM0dPQV82U3VuZ3JMZjZQcjJmdm5VYURYak55YVpFOVc1TU1kSDFPR21DV3JSRHFtMDVGLWN4R2lvcFNr0gF3QVVfeXFMTjV4SERwci1KQnYzQU5MRHpWUk5MLVdUZnAzMkRXeG5ZaWlfM1lPeUswTmN2RXdUQkxBMTl5WVlYeGZfUk55cFd6NXNlY0J2Z2FQUV9DTWZxbU1NYjlGc1FOODNRelZEbVlCcmp1YXVFWnZHNVowZ0U?oc=5",
+            "media": "MBC 뉴스"
+          }
+        },
+        {
+          "key": "충남대",
+          "n": 8,
+          "risk": 12.5,
+          "field": "기타",
+          "sample": {
+            "title": "거점국립대 3곳 우선 선정…“충남대, 사활 걸어야”",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBSQ0NPR2E4M3NHRWxFejA3WWdaYUpjLU1SN3E2REg3NC1QaEJ3VXBEX0FBV0J2Z1RpZ2RVNDVObVBKLW15NFpFZVhhRmx4T1p1Qm9jYjRxUEgycW8?oc=5",
+            "media": "KBS 뉴스"
+          }
+        },
+        {
+          "key": "강원대",
+          "n": 8,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "강원대-강원특별자치도 교육청, ‘거점국립대 패키지 지원사업’ 공동추진 손잡다",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1yLTVXUmplVEFrU3l4U3l1bXE2UHhfclRVaDJTNl94c0FlVzFscGdFYUJPTUhkUGtCNTI4bzhDZlB2UHRUTG5YRVo5TU9TQ3A3VkQtVDBYelMtUXhHUTl4V1Vyd2NjQQ?oc=5",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "지원사업",
+          "n": 8,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "강원대-강원특별자치도 교육청, ‘거점국립대 패키지 지원사업’ 공동추진 손잡다",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1yLTVXUmplVEFrU3l4U3l1bXE2UHhfclRVaDJTNl94c0FlVzFscGdFYUJPTUhkUGtCNTI4bzhDZlB2UHRUTG5YRVo5TU9TQ3A3VkQtVDBYelMtUXhHUTl4V1Vyd2NjQQ?oc=5",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "전액",
+          "n": 8,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "'서울대 10개' 이끌 거점대 3곳 결정…지방국립대 신입생 전액장학금 검토",
+            "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE40MkxEanNVRlNHdUw0cE82Z09lUVp3MnVPb3puYUVFWEI3bGxSMU9URy1OaGZLT3c2b051WU9GdUdkNjliYTIwY1plQzlscUo1dEZkRUc3QmJZQdIBX0FVX3lxTE9lc21pdnI2eWV1U19TNGZFOUJUSmNFS0lGQjg1MVhVWVVIRFlMUFdPYkJxeUxnWDF4dGkxc1h5SXNobVVpZzRZSkRIYU55M2xmaFp2YlRtdlZJYW50Ylpz?oc=5",
+            "media": "뉴스1"
+          }
+        },
+        {
+          "key": "교육부",
+          "n": 8,
+          "risk": 12.5,
+          "field": "거버넌스",
+          "sample": {
+            "title": "교육부 \"거점국립대 투자 대폭 확대\"",
+            "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5wbWhVbnktck1zMDdqeFRoWDF6bGFoT3I0WWpaS1J3ZmRjWW8tcU1YY0ViX2Fyc0RaRjlvSWhlVm1yUzRoal80U0U4MEVid0JLazhiUDNwb0tmbEV0bERWV2dR?oc=5",
+            "media": "충북일보"
+          }
+        },
+        {
+          "key": "글로벌",
+          "n": 8,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "[대구보건대 소식] 글로컬대학 대구보건대, 중국 하북외국어대학과 보건·뷰티 글로벌 교육협력 확대",
+            "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5pLWRsSU8zZXF3UmdKWGxPYzhPdUpnRTI0QVNFQWRTQVBjYjJZdl96ZWxKMlBzS05vT21IZzVaejNDcGg5TGI5RUd4dlZnMG5RN0V6MlNsRUNFWFNPeU9WVmRkbFFmY2VDRnZER1E0VQ?oc=5",
+            "media": "일요서울i"
+          }
+        }
+      ],
+      "links": [
+        {
+          "s": 1,
+          "t": 4,
+          "n": 18
+        },
+        {
+          "s": 1,
+          "t": 3,
+          "n": 17
+        },
+        {
+          "s": 3,
+          "t": 4,
+          "n": 13
+        },
+        {
+          "s": 8,
+          "t": 5,
+          "n": 12
+        },
+        {
+          "s": 7,
+          "t": 5,
+          "n": 10
+        },
+        {
+          "s": 1,
+          "t": 10,
+          "n": 9
+        },
+        {
+          "s": 8,
+          "t": 7,
+          "n": 9
+        },
+        {
+          "s": 2,
+          "t": 0,
+          "n": 9
+        },
+        {
+          "s": 6,
+          "t": 15,
+          "n": 8
+        },
+        {
+          "s": 22,
+          "t": 15,
+          "n": 8
+        },
+        {
+          "s": 1,
+          "t": 23,
+          "n": 8
+        },
+        {
+          "s": 21,
+          "t": 6,
+          "n": 7
+        },
+        {
+          "s": 6,
+          "t": 22,
+          "n": 7
+        },
+        {
+          "s": 1,
+          "t": 16,
+          "n": 7
+        },
+        {
+          "s": 1,
+          "t": 17,
+          "n": 7
+        },
+        {
+          "s": 21,
+          "t": 22,
+          "n": 6
+        },
+        {
+          "s": 21,
+          "t": 15,
+          "n": 6
+        },
+        {
+          "s": 0,
+          "t": 13,
+          "n": 6
+        },
+        {
+          "s": 16,
+          "t": 10,
+          "n": 6
+        },
+        {
+          "s": 16,
+          "t": 23,
+          "n": 6
+        },
+        {
+          "s": 10,
+          "t": 23,
+          "n": 6
+        },
+        {
+          "s": 10,
+          "t": 4,
+          "n": 6
+        },
+        {
+          "s": 11,
+          "t": 14,
+          "n": 6
+        },
+        {
+          "s": 17,
+          "t": 4,
+          "n": 6
+        },
+        {
+          "s": 19,
+          "t": 18,
+          "n": 5
+        },
+        {
+          "s": 3,
+          "t": 16,
+          "n": 5
+        },
+        {
+          "s": 3,
+          "t": 10,
+          "n": 5
+        },
+        {
+          "s": 3,
+          "t": 23,
+          "n": 5
+        },
+        {
+          "s": 14,
+          "t": 12,
+          "n": 4
+        },
+        {
+          "s": 23,
+          "t": 4,
+          "n": 4
+        },
+        {
+          "s": 11,
+          "t": 12,
+          "n": 4
+        },
+        {
+          "s": 3,
+          "t": 17,
+          "n": 4
+        },
+        {
+          "s": 9,
+          "t": 2,
+          "n": 4
+        },
+        {
+          "s": 25,
+          "t": 2,
+          "n": 4
+        },
+        {
+          "s": 25,
+          "t": 0,
+          "n": 4
+        }
+      ]
     },
     "summary": [
       {
@@ -8450,6 +11200,511 @@
         "buffer": "9개 거점국립대 공동사업, 부산대·부산교대 통합 준비"
       }
     },
+    "network": {
+      "basis": 232,
+      "minCount": 3,
+      "minEdge": 4,
+      "nodes": [
+        {
+          "key": "인공지능",
+          "n": 50,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "강원대·강릉시, '거점국립대 패키지 지원사업' 맞손…AI·지역전략산업 육성 본격화",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9VWmpUYXgzNV9HalEzMk5mNVFxY2d5bmswNVM0bjhndFVwR0lHblNCQ0JjSldRXzVuS0hYeUdQRjN5SHlUSkYzNEpqN0xhb3J1azQ2ckRRZWpmd2wxTFQ0RU5XaGZhWEc4?oc=5",
+            "media": "강원신문"
+          }
+        },
+        {
+          "key": "부산대",
+          "n": 42,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "부산대 등 9개 거점국립대 교육부/IBK기업은행과 창업 생태계 구축 '맞손'",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4zMFloME5BYnA4TmhNR084T2hxbDZScVlKWUdXUkplVHNFTUoxOEF4bzVFZlUycXpvVEx4NmQ2clVoWmR4Z2w4SVBkbGI2X3gxbDNYMWRkd3RoWEsyNF9Hdy1vN3k4VDdQa3BlMw?oc=5",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "거점국립대",
+          "n": 35,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "강원대·강릉시, 거점국립대 패키지 지원사업 유치 맞손",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB3ZDIwRmhkNzV5QWlteDBLa2loVFFFcVpibFl6c0JyMnFZekdocERlNi1SVVRjR003WDJGenJibFUtd2RJdEFuNVB6amxwUlV0cEUybW92QjhZalHSAWBBVV95cUxNcUtRazJadGdXeVJVTVY0Z01pMWFsdFBTb2MxRk1PQk9vM2V6OWJlaDV5b19xaDJFUXR0TDlYWUhaT0FzcHVXdVpBZXVUMEk5VlRsVGFNTnZXVlRFRzdyQWc?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "교육부",
+          "n": 28,
+          "risk": 10.7,
+          "field": "거버넌스",
+          "sample": {
+            "title": "교육부·IBK기업은행·거점국립대, 기술사업화·창업 지원 협약 체결",
+            "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE92bGt2UFFvOGE2cVpqWEtuelJ0Wnp3ZnhJU0FHcDlIRGRJOUdOVFhXb29idnFERGI3N2tEdkFXMVNud19HMURlMW5ibUpKeUg3bEl0VUNIWEplT3ZW?oc=5",
+            "media": "뉴스핌"
+          }
+        },
+        {
+          "key": "기업은행",
+          "n": 26,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "교육부·IBK기업은행·거점국립대, 기술사업화·창업 지원 협약 체결",
+            "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE92bGt2UFFvOGE2cVpqWEtuelJ0Wnp3ZnhJU0FHcDlIRGRJOUdOVFhXb29idnFERGI3N2tEdkFXMVNud19HMURlMW5ibUpKeUg3bEl0VUNIWEplT3ZW?oc=5",
+            "media": "뉴스핌"
+          }
+        },
+        {
+          "key": "혁신",
+          "n": 18,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "IBK기업은행, 9개 거점국립대와 '혁신 동맹'...지역 창업 생태계 키운다",
+            "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE56UkwxTHZ4VFE5ZTdBQVIzbVJUOVZNbl9mVXlGRzByTUEzNVcxOHBsbHdfOXR5dDVicDdzQjNzNmlMVHB6VXdxZEp2ZXRScV9MZnpHYkFFbXhaekc4Y2RwT3lwMUZkNGxQSGc?oc=5",
+            "media": "소비자경제"
+          }
+        },
+        {
+          "key": "의대",
+          "n": 17,
+          "risk": 52.9,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "장관 2명·여야 당대표 ‘거물’ 총집결 국회 교육위… 지방대 위기·의대 정상화 해법 찾나",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE52R3hvVFBYQ1pkSEVGZGR2eDRCZ0ZKMlVGSWxfZ25IdXFENjVtVm9NRHhOT3ItaDhfNU15RXVQUW02NTZXLUszU2J6QVB3ZEZac1BvQnhvdzd6aWFtUTYxUkhjcW1Zdw?oc=5",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "창업",
+          "n": 16,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "교육부·IBK기업은행·거점국립대, 기술사업화·창업 지원 협약 체결",
+            "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE92bGt2UFFvOGE2cVpqWEtuelJ0Wnp3ZnhJU0FHcDlIRGRJOUdOVFhXb29idnFERGI3N2tEdkFXMVNud19HMURlMW5ibUpKeUg3bEl0VUNIWEplT3ZW?oc=5",
+            "media": "뉴스핌"
+          }
+        },
+        {
+          "key": "총장",
+          "n": 16,
+          "risk": 18.8,
+          "field": "거버넌스",
+          "sample": {
+            "title": "한국교통대 '글로컬 퇴출' 후폭풍...교수·직원단체 \"총장 사퇴·통합 중단\" 초강수",
+            "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFB0YWM1enFKV3NpUWJJelhUQTRIbUtaQ2xwbXJVR3NBWUpaM2NnVm12NGdfRnNUSnRKTGxQZkNLcG9MNzF0bVdYNmNYbEZ2SnJzQmlZdDBqeGxXSWxZMDJGV2pn?oc=5",
+            "media": "충북일보"
+          }
+        },
+        {
+          "key": "기술",
+          "n": 15,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "교육부·IBK기업은행·거점국립대, 기술사업화·창업 지원 협약 체결",
+            "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE92bGt2UFFvOGE2cVpqWEtuelJ0Wnp3ZnhJU0FHcDlIRGRJOUdOVFhXb29idnFERGI3N2tEdkFXMVNud19HMURlMW5ibUpKeUg3bEl0VUNIWEplT3ZW?oc=5",
+            "media": "뉴스핌"
+          }
+        },
+        {
+          "key": "맞손",
+          "n": 15,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "거점국립대-교육부-IBK기업은행, 창업 생태계 구축 ‘맞손’",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5TQmZxSkdudUlpNC0tejZKampkNXh1R1VOUWt6UlU5emg3N0k5cXBEMnFmRHFid0UyaDdxSUMyOENzTng0NWlvUzNyQkw5ZTF5NVYyd1N1SE5aOGFzdDFKMDZmM2dYYzA?oc=5",
+            "media": "전북의소리"
+          }
+        },
+        {
+          "key": "통합",
+          "n": 14,
+          "risk": 28.6,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충북대-교통대, 통합 못해 공멸하나…최대 위기에도 통합 갈등 여전",
+            "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1FWGZVT1FlU0Jfb0xzZTR5eHZxR3F2WUhhLTVrd1p5SDdHdGpuNlc3NUlUcE4xaEJsNXhXellSVGRmYzRBUHRHQzdPS0NwSF9mVngyTUU5NVdTZ1c5UjY5UGNMRXJmeXpndHFRaHN3?oc=5",
+            "media": "cctoday.co.kr"
+          }
+        },
+        {
+          "key": "패키지",
+          "n": 13,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "강원대·강릉시, 거점국립대 패키지 지원사업 유치 맞손",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB3ZDIwRmhkNzV5QWlteDBLa2loVFFFcVpibFl6c0JyMnFZekdocERlNi1SVVRjR003WDJGenJibFUtd2RJdEFuNVB6amxwUlV0cEUybW92QjhZalHSAWBBVV95cUxNcUtRazJadGdXeVJVTVY0Z01pMWFsdFBTb2MxRk1PQk9vM2V6OWJlaDV5b19xaDJFUXR0TDlYWUhaT0FzcHVXdVpBZXVUMEk5VlRsVGFNTnZXVlRFRzdyQWc?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "사업화",
+          "n": 12,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "교육부·IBK기업은행·거점국립대, 기술사업화·창업 지원 협약 체결",
+            "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE92bGt2UFFvOGE2cVpqWEtuelJ0Wnp3ZnhJU0FHcDlIRGRJOUdOVFhXb29idnFERGI3N2tEdkFXMVNud19HMURlMW5ibUpKeUg3bEl0VUNIWEplT3ZW?oc=5",
+            "media": "뉴스핌"
+          }
+        },
+        {
+          "key": "강원대",
+          "n": 11,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "강원대·강릉시, 거점국립대 패키지 지원사업 유치 맞손",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB3ZDIwRmhkNzV5QWlteDBLa2loVFFFcVpibFl6c0JyMnFZekdocERlNi1SVVRjR003WDJGenJibFUtd2RJdEFuNVB6amxwUlV0cEUybW92QjhZalHSAWBBVV95cUxNcUtRazJadGdXeVJVTVY0Z01pMWFsdFBTb2MxRk1PQk9vM2V6OWJlaDV5b19xaDJFUXR0TDlYWUhaT0FzcHVXdVpBZXVUMEk5VlRsVGFNTnZXVlRFRzdyQWc?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "생태계",
+          "n": 10,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "거점국립대-교육부-IBK기업은행, 창업 생태계 구축 ‘맞손’",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5TQmZxSkdudUlpNC0tejZKampkNXh1R1VOUWt6UlU5emg3N0k5cXBEMnFmRHFid0UyaDdxSUMyOENzTng0NWlvUzNyQkw5ZTF5NVYyd1N1SE5aOGFzdDFKMDZmM2dYYzA?oc=5",
+            "media": "전북의소리"
+          }
+        },
+        {
+          "key": "경상국립대",
+          "n": 10,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "경상국립대, 교육부·IBK기업은행과 기술사업화·창업지원 '맞손'",
+            "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5GQnh2ZEplX1pOX05oSEh5cFdkZkxBWllHTklhbno4dmQ4QURGY2ZaejNNTDBqMG1aTVE3cURoTlBIcHVRbUdLQ09PSjdwQQ?oc=5",
+            "media": "전자신문"
+          }
+        },
+        {
+          "key": "글로컬",
+          "n": 10,
+          "risk": 10,
+          "field": "거버넌스",
+          "sample": {
+            "title": "한국교통대 '글로컬 퇴출' 후폭풍...교수·직원단체 \"총장 사퇴·통합 중단\" 초강수",
+            "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFB0YWM1enFKV3NpUWJJelhUQTRIbUtaQ2xwbXJVR3NBWUpaM2NnVm12NGdfRnNUSnRKTGxQZkNLcG9MNzF0bVdYNmNYbEZ2SnJzQmlZdDBqeGxXSWxZMDJGV2pn?oc=5",
+            "media": "충북일보"
+          }
+        },
+        {
+          "key": "글로컬대학",
+          "n": 10,
+          "risk": 10,
+          "field": "기타",
+          "sample": {
+            "title": "송재석 시의원 “인재양성재단 흔들리면 글로컬대학도 위기”",
+            "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFB3VDlVdktIQ0hoalFVMGtUMUNfS2o4Q0JqWDJpUmh2Q2pnMlVsYUxZTU4yS1dFazJWX1VkbXlyemdKWmhvSHVOc2x1ZnJxSjBlSEJIcUJLQURxcXJTbm1rSlM3Z3c3T2ZWeUhVYW9R?oc=5",
+            "media": "김해뉴스"
+          }
+        },
+        {
+          "key": "RISE",
+          "n": 10,
+          "risk": 0,
+          "field": "재정",
+          "sample": {
+            "title": "대구한의대 RISE사업단, AI 데이터 캠프 운영",
+            "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBEZVFSOXZhbnFQaVlOWXhYTU5jWW5iVFFmUi14TlM2d0RPemlLekZ6YUQ1RHBFejgwUFExTEs0VFBmRjhMV2cwSXg1dXdhVE5SYUJqRng5TjNYdw?oc=5",
+            "media": "한국경제"
+          }
+        },
+        {
+          "key": "국립대",
+          "n": 9,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "교육청·원주·강원대, ‘국립대 패키지’ 추진 협약",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE0yVFg1NnkzUmJsYUJsWUxyQUFtUklSa2x0WjZtMGxWbTdYQWVobGdMT09oWWZQR2cxekJBMFNENmNEa2FuRGNnSi1MN2cySFk?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "수시",
+          "n": 9,
+          "risk": 0,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "[2027 수시 부산대] 특성화 얼라이언스로 최고 수준 연구 환경 갖춘 ‘국립대 선두 주자’",
+            "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE84UF83M25CVmFrbWlMWk1feGZYZzVGbm1pNUlkMDM2QXJwaFBHU3dQMGduaWtHZWt2YVVUelB0Zm16R3BDTDAydXlRQ1RKdUFsRnpxeXpOaFNvZUdSc3oydVAtU2Y4OGwwREc4SzF4SUFUTTBV?oc=5",
+            "media": "부산일보"
+          }
+        },
+        {
+          "key": "인재",
+          "n": 9,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "[2027 수시 경상국립대] 우주항공청 배후 인재 산실… 내년 `우주항공방산대학` 확대 개편",
+            "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE54UVlUNENoaFF6a3JWbVhtaGpISkRrNjZBZDFWbnB0YnpwSURrQ2tkbFc5N3YwQW5VbHpwUVdDdXFFWFhLbEEtczBzcG84RDA2dzJWTmJxdWVacjVyUXNZSmZobTcwWl9wY2g1UTU4U19Rd3Zo?oc=5",
+            "media": "부산일보"
+          }
+        },
+        {
+          "key": "순천향대",
+          "n": 9,
+          "risk": 88.9,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "[2027 수시특집 순천향대] “AI가 대학을 바꾼다”…순천향대, 미래교육 혁신모델 만든다",
+            "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1GUFBLUHhLajBrSURFZ3k0N1lVMDVMU1lmWDRXc1UwbUxhU0hSalpoRVVnTEZoT1BmdUJ1UFRTN2hsT1I0WW8xMjFMS0tWWUJWRVd0SDRTcmw5dUNjejBJSzJEOFHSAWhBVV95cUxNMmpTckV4NHZYZnZ6ZWxaNGE2UVpCbDB6eVZpdWVUdzJSalZEVFA4cF9OUGEweHhXVThXUExfLWEwWFB6TlN5VW1IVGdjWEpWSi1RZFVFVzNzTGZPeTR6aFZJTXBKYzdVVA?oc=5",
+            "media": "usline.kr"
+          }
+        },
+        {
+          "key": "지원사업",
+          "n": 8,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "강원대·강릉시, 거점국립대 패키지 지원사업 유치 맞손",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB3ZDIwRmhkNzV5QWlteDBLa2loVFFFcVpibFl6c0JyMnFZekdocERlNi1SVVRjR003WDJGenJibFUtd2RJdEFuNVB6amxwUlV0cEUybW92QjhZalHSAWBBVV95cUxNcUtRazJadGdXeVJVTVY0Z01pMWFsdFBTb2MxRk1PQk9vM2V6OWJlaDV5b19xaDJFUXR0TDlYWUhaT0FzcHVXdVpBZXVUMEk5VlRsVGFNTnZXVlRFRzdyQWc?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "교육청",
+          "n": 8,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "강원대-강원도교육청, 거점국립대 패키지 지원사업 공동추진 > 뉴스데스크",
+            "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5nd0lDUXRIZnBiWERLV0ZoZTVWMkQyME40aHduN2luVWo5dG5wSmVOR01rQzlxVFRIREhXLUxHZ0NGRVh2d2lEZEN3Zw?oc=5",
+            "media": "MBC 강원영동"
+          }
+        }
+      ],
+      "links": [
+        {
+          "s": 2,
+          "t": 4,
+          "n": 21
+        },
+        {
+          "s": 3,
+          "t": 4,
+          "n": 20
+        },
+        {
+          "s": 2,
+          "t": 3,
+          "n": 16
+        },
+        {
+          "s": 4,
+          "t": 13,
+          "n": 11
+        },
+        {
+          "s": 4,
+          "t": 7,
+          "n": 11
+        },
+        {
+          "s": 14,
+          "t": 12,
+          "n": 10
+        },
+        {
+          "s": 1,
+          "t": 0,
+          "n": 10
+        },
+        {
+          "s": 14,
+          "t": 2,
+          "n": 9
+        },
+        {
+          "s": 2,
+          "t": 12,
+          "n": 9
+        },
+        {
+          "s": 3,
+          "t": 13,
+          "n": 9
+        },
+        {
+          "s": 9,
+          "t": 4,
+          "n": 9
+        },
+        {
+          "s": 4,
+          "t": 15,
+          "n": 9
+        },
+        {
+          "s": 0,
+          "t": 5,
+          "n": 9
+        },
+        {
+          "s": 14,
+          "t": 24,
+          "n": 8
+        },
+        {
+          "s": 2,
+          "t": 24,
+          "n": 8
+        },
+        {
+          "s": 24,
+          "t": 12,
+          "n": 8
+        },
+        {
+          "s": 2,
+          "t": 13,
+          "n": 8
+        },
+        {
+          "s": 2,
+          "t": 7,
+          "n": 8
+        },
+        {
+          "s": 3,
+          "t": 9,
+          "n": 8
+        },
+        {
+          "s": 9,
+          "t": 13,
+          "n": 8
+        },
+        {
+          "s": 2,
+          "t": 10,
+          "n": 8
+        },
+        {
+          "s": 2,
+          "t": 15,
+          "n": 8
+        },
+        {
+          "s": 2,
+          "t": 9,
+          "n": 7
+        },
+        {
+          "s": 3,
+          "t": 7,
+          "n": 7
+        },
+        {
+          "s": 4,
+          "t": 10,
+          "n": 7
+        },
+        {
+          "s": 23,
+          "t": 6,
+          "n": 7
+        },
+        {
+          "s": 3,
+          "t": 15,
+          "n": 6
+        },
+        {
+          "s": 3,
+          "t": 10,
+          "n": 5
+        },
+        {
+          "s": 10,
+          "t": 15,
+          "n": 5
+        },
+        {
+          "s": 15,
+          "t": 7,
+          "n": 5
+        },
+        {
+          "s": 8,
+          "t": 11,
+          "n": 5
+        },
+        {
+          "s": 17,
+          "t": 8,
+          "n": 5
+        },
+        {
+          "s": 19,
+          "t": 0,
+          "n": 5
+        },
+        {
+          "s": 1,
+          "t": 22,
+          "n": 5
+        },
+        {
+          "s": 14,
+          "t": 25,
+          "n": 4
+        },
+        {
+          "s": 25,
+          "t": 12,
+          "n": 4
+        },
+        {
+          "s": 9,
+          "t": 7,
+          "n": 4
+        },
+        {
+          "s": 16,
+          "t": 3,
+          "n": 4
+        },
+        {
+          "s": 16,
+          "t": 9,
+          "n": 4
+        },
+        {
+          "s": 16,
+          "t": 4,
+          "n": 4
+        },
+        {
+          "s": 16,
+          "t": 13,
+          "n": 4
+        },
+        {
+          "s": 1,
+          "t": 5,
+          "n": 4
+        }
+      ]
+    },
     "summary": [
       {
         "h": "충북대·교통대 — 갈등의 정점",
@@ -9682,6 +12937,426 @@
         "disturb": "글로컬 퇴출 압력, 구성원 갈등, 통합 일정 지연",
         "buffer": "초광역 대학 얼라이언스, 부산대 주도 연합 구도"
       }
+    },
+    "network": {
+      "basis": 197,
+      "minCount": 3,
+      "minEdge": 4,
+      "nodes": [
+        {
+          "key": "부산대",
+          "n": 30,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "[부산대] 지역 거점국립대 1위…“세계 TOP 100위 대학 도약”",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5HQjBjRmtFZUpNX2FHZU5aSDVmMXd6OXk4djBkeF9fMkp6aVJyekFLRE5qWXNsMm9DOHVCTWlTbVRVUUxrNUJlZ05qdEFvUGxuMWxfZzN2U201cWY4TlJ6Y2dzdWl2ck0?oc=5",
+            "media": "kyosu.net"
+          }
+        },
+        {
+          "key": "인공지능",
+          "n": 30,
+          "risk": 3.3,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "경상국립대, AI대학·피지컬 AI학부 신설 추진…산학협력 확대",
+            "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1RdHRkS25qR2UtUWJ5R1dDQVpwaVNxWEtwN2FncXhKLUM0UVJQWDFkQlJKWXF0bVBUZ3Rrb0l0ZHFzZ2VZeHllMmltODZ5X3NNYThZYXVvVzhidw?oc=5",
+            "media": "한국경제"
+          }
+        },
+        {
+          "key": "충북대",
+          "n": 18,
+          "risk": 22.2,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충북대·교통대 위기 현실로",
+            "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBTbVhXTEVLZ1Y2ZF9JbFdQLVhraG94cWlCaE9xdEl5UXZJbTc0aDhJcmZHLTgtN3hzUzZQWVNTY012QWtCWHI4Y00xTjNlSkYwd3dacUlzWmR5OUZIcy0wS1Rn?oc=5",
+            "media": "충북일보"
+          }
+        },
+        {
+          "key": "RISE",
+          "n": 16,
+          "risk": 0,
+          "field": "재정",
+          "sample": {
+            "title": "[대구보건대] 라이즈 ‘S등급’, 글로컬대학 ‘A등급’ 정부가 인정한 보건교육",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9RMmpMUEpkbDRELUlOVlJmTVF5dmhYV2hKbnhEcXNCR1JaRFpwb2Rha1RPcXppNnpiYkYzRkV6LXhCcHZnWllBOTc3NTNXVlYxTms0M2dfekpWcnUyLUQ5Rm84UnFQeEk?oc=5",
+            "media": "kyosu.net"
+          }
+        },
+        {
+          "key": "교통대",
+          "n": 15,
+          "risk": 26.7,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충북대·교통대 위기 현실로",
+            "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBTbVhXTEVLZ1Y2ZF9JbFdQLVhraG94cWlCaE9xdEl5UXZJbTc0aDhJcmZHLTgtN3hzUzZQWVNTY012QWtCWHI4Y00xTjNlSkYwd3dacUlzWmR5OUZIcy0wS1Rn?oc=5",
+            "media": "충북일보"
+          }
+        },
+        {
+          "key": "혁신",
+          "n": 14,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "강원대학교, 대표 브랜드 시상식 개최… 통합대학 혁신성과 공식 인증",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBLSExwcGZTZ1V6aklpaDBhNG1TY3dKSkhOTjJZN04zUzN3R0h6M2dGNUhLLXBUYU5yQmZUZnZUZDZpNWdzS3lVMFBLXzctT3Jva3RNRGt0allSRTdaeEY4Ui16cDhlVDlN?oc=5",
+            "media": "강원신문"
+          }
+        },
+        {
+          "key": "통합",
+          "n": 14,
+          "risk": 28.6,
+          "field": "거버넌스",
+          "sample": {
+            "title": "충북대·교통대, 글로컬대학 성과평가 이의신청 기각…‘D등급’ 확정·통합 무산 위기",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1XeEJ5Z2RGanlTMmNQMFRuTlJwT2dpRXdpdGJvb21XeW1OMHhaSFFnRDF0MG9LbHpLVFF0QkpMLTgxblRJemhxcnNqaHk0SnUtVDJwV1RBTlppRHNZZ1BwWU03ZUwzamc?oc=5",
+            "media": "충북뉴스"
+          }
+        },
+        {
+          "key": "글로컬대학",
+          "n": 14,
+          "risk": 7.1,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "충북대·교통대, 글로컬대학 성과평가 이의신청 기각…‘D등급’ 확정·통합 무산 위기",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1XeEJ5Z2RGanlTMmNQMFRuTlJwT2dpRXdpdGJvb21XeW1OMHhaSFFnRDF0MG9LbHpLVFF0QkpMLTgxblRJemhxcnNqaHk0SnUtVDJwV1RBTlppRHNZZ1BwWU03ZUwzamc?oc=5",
+            "media": "충북뉴스"
+          }
+        },
+        {
+          "key": "등급",
+          "n": 14,
+          "risk": 7.1,
+          "field": "재정",
+          "sample": {
+            "title": "충북대·교통대, 글로컬대학 성과평가 이의신청 기각…‘D등급’ 확정·통합 무산 위기",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1XeEJ5Z2RGanlTMmNQMFRuTlJwT2dpRXdpdGJvb21XeW1OMHhaSFFnRDF0MG9LbHpLVFF0QkpMLTgxblRJemhxcnNqaHk0SnUtVDJwV1RBTlppRHNZZ1BwWU03ZUwzamc?oc=5",
+            "media": "충북뉴스"
+          }
+        },
+        {
+          "key": "인재",
+          "n": 12,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "전북대 “K-방산 인재·산업 거점으로 도약”",
+            "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5OT1hVNUw0V1RBTTM4Qi01NXp3M2dkZE9XZFVDc245OVhfTVBISjhqWmNYdVJOT2wzdFhUa0Z0SURNb2pYZG5pWHRvVWIxaEk?oc=5",
+            "media": "v.daum.net"
+          }
+        },
+        {
+          "key": "국립",
+          "n": 12,
+          "risk": 0,
+          "field": "재정",
+          "sample": {
+            "title": "[Who Is ?] 정태주 국립경국대학교 총장",
+            "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9Xelc3aFZYZkVvaWdXX01yd0JFVXpmb19jSkVZSURtX2NIcnZuOFIwZlBsYjA1YVBaenQxY3Etem9LUkJqdkg1TGN3RUY5RjA5WkZtbGFNMWlNLU1Vck4yOWNqQWdxdUgxSWVSMjRSSGk1Z1E?oc=5",
+            "media": "비즈니스포스트"
+          }
+        },
+        {
+          "key": "초광역",
+          "n": 11,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "서울대·카이스트 11개 대학, 부산대 주도 `초광역 대학 얼라이언스` 출범",
+            "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1FOE4xaUdrVDBzV1BzSGZ6QTFzMXYtcC1HdmhrMThPNzF0VENsa1pES1NuSVVxRmV6NkUxQTl3MmxyaTFCTmJBejVSTENzWC1DOUE2UEUxaU9BX2FET19wbDRvczFSX21ZeGF1d2R0WHQxWV9U?oc=5",
+            "media": "부산일보"
+          }
+        },
+        {
+          "key": "글로컬",
+          "n": 11,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "‘글로컬대 취소’ 충북대-교통대 통합 재추진…24일 교육부와 협의",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE13MklhMlp3M19oRVptYVR4TFlIcU1HYWs5MlpWbDZpZnkydXVZMVdkcm1BMTNGa0JnY0xCbXhWTzhVQm1YSWtoUE1DdVF3R0x1aVg1T0hKdnpuaVJpRzlNa0xsUHFhVUh0?oc=5",
+            "media": "한겨레"
+          }
+        },
+        {
+          "key": "수시",
+          "n": 10,
+          "risk": 0,
+          "field": "입시·학령인구",
+          "sample": {
+            "title": "[2027 수시/전남대학교] 지역혁신 거점으로 도약… 인재 양성·산학협력·연구 혁신 기반 ‘미래 대학 모델’ 구축",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5uV0ZGTjZrbl9rbm9aME1IclVRUERHd1VtLUdiTWR5MjJOZV9UWUVCSE80SktXNkhPai1JaTRDa0FoWW8tSVVZM2h0SE1KOTBsUDhhYVVfYVU5WG1teHJxLWNiWVNWUQ?oc=5",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "육성",
+          "n": 9,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "‘3대 거점국립대 집중 육성 정책’의 한계와 개선방안",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5DdVhKNG1iWlk5ZkI1R3JSLU5TQWZFXzJNeUdLWTJ0b3N5T3pCenFGN0hmLU1wT0JmNUkzMnNnUURRTWIyZGZLZ1JBTFYwUUp3X2tGM3E2bDhKSE1FTXctY0RPTHM5ODA?oc=5",
+            "media": "kyosu.net"
+          }
+        },
+        {
+          "key": "경상국립대",
+          "n": 9,
+          "risk": 0,
+          "field": "거버넌스",
+          "sample": {
+            "title": "[칼럼] 남해 바다를 품은 거점국립대, 경상국립대의 보물섬 ‘통영캠퍼스’",
+            "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1HeklVdk1WN1c5V25MZEZBT1dLNEdBSV9IWWw1Vm5SUXFQUklmR3N1aXZfVGh3eDhhMGhMT1BBeHNoWWFYdktOcDNKZ1NLRkluTEJYYm5zV0pFY1FBdzJjQTU4Z2NkdWVKNlNYeTdYUEvSAXRBVV95cUxQR1MwR0puSS1GWmhaMS04bHVsbmN2NWhSNHdrOWNka0IzVV9xNk9QdFNPWmtnei14X0JOcEM0am9obXI0NVhDU1VQaWVvZWE3UlNxRjg0WkZ4bmh2ZHVVbG84TFlRYVRjNDVQdTRUX0JSN3c2aA?oc=5",
+            "media": "이뉴스투데이"
+          }
+        },
+        {
+          "key": "양성",
+          "n": 9,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "전남대-한전, '브랜드 단과대학' 설립 추진…에너지 인재 양성",
+            "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9hWmh6RTdBS0FLNm43Q004WXhQUTNFeWpXVzM0ZjV4MnhPaEk2cGNXNXdUNHFMbzVhSjFYN2p0SlhnaS1zYUVfMXNsdDNRT0JVeWFpZVBteW1SZTTSAWBBVV95cUxQc3Y0QTdvTUt4Rks0TGdzVVZLeHNpQzUyckFLNVJuUTFKV3U5dUNlZHM2YTRveWxTcHktR0pib1lxQVROR01Ra0xEcEprTE11QlVEYWtfNkI1VkZvNzROU3U?oc=5",
+            "media": "연합뉴스"
+          }
+        },
+        {
+          "key": "얼라이언스",
+          "n": 9,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "서울대·카이스트 11개 대학, 부산대 주도 `초광역 대학 얼라이언스` 출범",
+            "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1FOE4xaUdrVDBzV1BzSGZ6QTFzMXYtcC1HdmhrMThPNzF0VENsa1pES1NuSVVxRmV6NkUxQTl3MmxyaTFCTmJBejVSTENzWC1DOUE2UEUxaU9BX2FET19wbDRvczFSX21ZeGF1d2R0WHQxWV9U?oc=5",
+            "media": "부산일보"
+          }
+        },
+        {
+          "key": "보건대",
+          "n": 9,
+          "risk": 0,
+          "field": "재정",
+          "sample": {
+            "title": "[대구보건대] 라이즈 ‘S등급’, 글로컬대학 ‘A등급’ 정부가 인정한 보건교육",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9RMmpMUEpkbDRELUlOVlJmTVF5dmhYV2hKbnhEcXNCR1JaRFpwb2Rha1RPcXppNnpiYkYzRkV6LXhCcHZnWllBOTc3NTNXVlYxTms0M2dfekpWcnUyLUQ5Rm84UnFQeEk?oc=5",
+            "media": "kyosu.net"
+          }
+        },
+        {
+          "key": "해야",
+          "n": 8,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "'서울대 10개 만들기' 정책, 대학서열 완화 목표 회복하고 특별법으로 제도화해야",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1DQmpwcjl5cEpyWVBZZUdWVWUtQkNERk80dmUxTE9OTUsyTVktdVZxWDhiX1ZTbGp2aWE3TlRfZzVnLV9aMmhTM3BHT1hXMjdkdXlCZzZGNXJWY2o2YVVDcGZmdzU2SUNKVjRwMw?oc=5",
+            "media": "대학지성 In&Out"
+          }
+        },
+        {
+          "key": "미래",
+          "n": 8,
+          "risk": 12.5,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "‘사업비 지원 방식’ 극복해야 고등교육 미래 열린다",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0wMHduY3JVME1mTlVsUS1GQWpjekJaOTAzX293RUMyVEpuTzhMd2NmdmhhbW43ckpxSHk3WF9DbmMxUjd0LXZTVTB6RTZOVnJ5OXAxbDZKODd0ZF9adE8tMVh4ZzRaTUU?oc=5",
+            "media": "kyosu.net"
+          }
+        },
+        {
+          "key": "대구",
+          "n": 8,
+          "risk": 0,
+          "field": "재정",
+          "sample": {
+            "title": "중3 고교 선택부터 고3 수시·면접까지…대구진로진학박람회 개막",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBxOVpnQ1A4cExfYzdNby1OeDBQbFBVbkRkLVQzS3JIOWF0Z29MTjd4NmFjcFlwMnBzYnprUW5GMkZfVkxfUlprMXVydzJoZlk1ZUhkeWJlYUZ0TjJrQ0NTaGVZNTRRdw?oc=5",
+            "media": "교육을 비추다"
+          }
+        },
+        {
+          "key": "선정",
+          "n": 8,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "강원대학교, 대표 브랜드 시상식 개최…글로컬 혁신 성과 14건 선정",
+            "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5NS2ZrZkxRb1hYYmV3REU0RVBFNzBVQ1E3X2x6UUo4d1ZkQ2xsNFEwd21aR1QzNk12M2tHeWduUGdxZF9xQ1ZZb3M0UDM2d05VTVdFV21NQllQd1BVTGNOQ3FBVHQxM1Nva3hITHNtc0k?oc=5",
+            "media": "lecturernews.com"
+          }
+        },
+        {
+          "key": "생성형",
+          "n": 8,
+          "risk": 0,
+          "field": "AI·디지털",
+          "sample": {
+            "title": "성균관대 연구진, “생성형 AI 의존도 너무 높으면 오히려 학습 성적 떨어진다”",
+            "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9BamhMd24zc1A4dEd0Rzlmb3hnRC1ydThkelBDS2hoaGFVbm5KR1pwd1ZYTWR4NHhxZFRRdWFYYnNhZW1sX2xhMDBaeXhoU0lOWnA5aFhiVzk0cjYxVHp6NGx3aGpMUQ?oc=5",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "서울대 10개 만들기",
+          "n": 7,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "\"서울대 10개, 경쟁보다 대학서열 완화가 우선\"…특별법 제정 촉구",
+            "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBXNHZNYldGSXE4UEJSSFYzN09BYm9YTUFpdmtVdHFrcC05WUY0M0xuQVg1NVV4ZTNMblJLRnUteVVsYWZ2RVRTd3NKMktQWDhLUXd1OQ?oc=5",
+            "media": "이투데이"
+          }
+        },
+        {
+          "key": "글로벌",
+          "n": 7,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "“대학·정출연·기업은 공동체…대덕특구 품은 글로벌 연구중심대학 만들 것”",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBJUEk3cDYtUFdLcjhmNElvcnFqS2UwLWpXXzdGUDFldk56VHBXUEJyb3dOLXVZUW5DQzh3OWhQd0dydGtBODJHbTBqOEpqNzhMZUllR1BObElYVlJLQXZfd3lkY2xNT2c?oc=5",
+            "media": "kyosu.net"
+          }
+        }
+      ],
+      "links": [
+        {
+          "s": 4,
+          "t": 2,
+          "n": 14
+        },
+        {
+          "s": 4,
+          "t": 6,
+          "n": 10
+        },
+        {
+          "s": 17,
+          "t": 11,
+          "n": 9
+        },
+        {
+          "s": 2,
+          "t": 6,
+          "n": 9
+        },
+        {
+          "s": 3,
+          "t": 8,
+          "n": 8
+        },
+        {
+          "s": 23,
+          "t": 1,
+          "n": 8
+        },
+        {
+          "s": 0,
+          "t": 17,
+          "n": 7
+        },
+        {
+          "s": 0,
+          "t": 11,
+          "n": 7
+        },
+        {
+          "s": 12,
+          "t": 2,
+          "n": 7
+        },
+        {
+          "s": 3,
+          "t": 18,
+          "n": 7
+        },
+        {
+          "s": 16,
+          "t": 9,
+          "n": 6
+        },
+        {
+          "s": 4,
+          "t": 7,
+          "n": 5
+        },
+        {
+          "s": 7,
+          "t": 8,
+          "n": 5
+        },
+        {
+          "s": 8,
+          "t": 2,
+          "n": 5
+        },
+        {
+          "s": 4,
+          "t": 12,
+          "n": 5
+        },
+        {
+          "s": 3,
+          "t": 21,
+          "n": 5
+        },
+        {
+          "s": 21,
+          "t": 8,
+          "n": 5
+        },
+        {
+          "s": 21,
+          "t": 18,
+          "n": 5
+        },
+        {
+          "s": 8,
+          "t": 18,
+          "n": 5
+        },
+        {
+          "s": 4,
+          "t": 8,
+          "n": 4
+        },
+        {
+          "s": 7,
+          "t": 2,
+          "n": 4
+        },
+        {
+          "s": 12,
+          "t": 6,
+          "n": 4
+        },
+        {
+          "s": 10,
+          "t": 8,
+          "n": 4
+        },
+        {
+          "s": 3,
+          "t": 10,
+          "n": 4
+        },
+        {
+          "s": 0,
+          "t": 22,
+          "n": 4
+        }
+      ]
     },
     "summary": [
       {

@@ -482,4 +482,61 @@
     });
   })();
 
+
+  /* ---------- 10. 주간 키워드 네트워크 ---------- */
+  // 호버: 이웃만 남긴다. 클릭: 그 키워드가 든 기사 제목을 찾아 표시하고 그 자리로 보낸다.
+  (function network() {
+    var boxes = [].slice.call(document.querySelectorAll('[data-net] .net'));
+    if (!boxes.length) return;
+
+    boxes.forEach(function (svg) {
+      var eds = [].slice.call(svg.querySelectorAll('.ed'));
+      var nds = [].slice.call(svg.querySelectorAll('.nd'));
+
+      nds.forEach(function (g) {
+        g.addEventListener('mouseenter', function () {
+          var i = g.dataset.i, near = {};
+          near[i] = 1;
+          eds.forEach(function (e) {
+            var on = e.dataset.a === i || e.dataset.b === i;
+            e.classList.toggle('on', on);
+            if (on) { near[e.dataset.a] = 1; near[e.dataset.b] = 1; }
+          });
+          nds.forEach(function (n) { n.classList.toggle('on', !!near[n.dataset.i]); });
+          svg.classList.add('dim');
+        });
+        g.addEventListener('mouseleave', function () {
+          svg.classList.remove('dim');
+          eds.forEach(function (e) { e.classList.remove('on'); });
+          nds.forEach(function (n) { n.classList.remove('on'); });
+        });
+        g.addEventListener('click', function () { markArticles(svg, g.dataset.key); });
+      });
+    });
+
+    function markArticles(svg, key) {
+      if (!key) return;
+      var week = svg.closest('section.week');
+      if (!week) return;
+      // 앞서 표시한 것은 지운다. 두 키워드가 동시에 켜져 있으면 뭘 봤는지 알 수 없다.
+      week.querySelectorAll('.kw-on').forEach(function (el) { el.classList.remove('kw-on'); });
+
+      var hits = [];
+      week.querySelectorAll('.cat li, .reflist li, .artlist li').forEach(function (li) {
+        if (li.classList.contains('more')) return;
+        if ((li.textContent || '').indexOf(key) < 0) return;
+        li.classList.add('kw-on');
+        hits.push(li);
+        // 접힌 날짜 블록 안에 있으면 펴 준다
+        var d = li.closest('details');
+        if (d) d.open = true;
+      });
+
+      var m = (window.__PNU_NETMSG__ || {})[key] || {};
+      if (!hits.length) { toast(m.miss || key); return; }
+      toast((m.hit || key + ' {n}').replace('{n}', hits.length));
+      hits[0].scrollIntoView({ block: 'center', behavior: 'smooth' });
+    }
+  })();
+
 })();
