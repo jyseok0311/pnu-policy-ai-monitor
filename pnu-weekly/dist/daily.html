@@ -3151,7 +3151,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </ul></div>
   </details>
 </section>
-<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 04:36:06 · 데이터: data/collected/</p>
+<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 04:42:13 · 데이터: data/collected/</p>
 </main>
 </div>
 </div>
@@ -3504,17 +3504,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   }
 
   /* ---------- 4. 버튼 ---------- */
-  var expandBtn = document.querySelector('[data-expand]');
-  if (expandBtn) {
-    expandBtn.addEventListener('click', function () {
-      var ds = document.querySelectorAll('details.day');
-      var open = expandBtn.dataset.on !== '1';
-      ds.forEach(function (d) { d.open = open; });
-      expandBtn.dataset.on = open ? '1' : '0';
-      expandBtn.textContent = open ? '기사 전체 접기' : '기사 전체 펼치기';
-    });
-  }
-
+  // 인쇄·PDF 생성 시에는 기사 목록을 코드가 직접 펼친다(아래 printBtn / pdf.mjs).
   var printBtn = document.querySelector('[data-print]');
   if (printBtn) {
     printBtn.addEventListener('click', function () {

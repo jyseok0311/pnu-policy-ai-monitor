@@ -346,17 +346,7 @@
   }
 
   /* ---------- 4. 버튼 ---------- */
-  var expandBtn = document.querySelector('[data-expand]');
-  if (expandBtn) {
-    expandBtn.addEventListener('click', function () {
-      var ds = document.querySelectorAll('details.day');
-      var open = expandBtn.dataset.on !== '1';
-      ds.forEach(function (d) { d.open = open; });
-      expandBtn.dataset.on = open ? '1' : '0';
-      expandBtn.textContent = open ? '기사 전체 접기' : '기사 전체 펼치기';
-    });
-  }
-
+  // 인쇄·PDF 생성 시에는 기사 목록을 코드가 직접 펼친다(아래 printBtn / pdf.mjs).
   var printBtn = document.querySelector('[data-print]');
   if (printBtn) {
     printBtn.addEventListener('click', function () {
