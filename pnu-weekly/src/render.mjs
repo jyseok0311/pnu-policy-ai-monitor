@@ -232,6 +232,7 @@ function renderWeek(w, sources, T) {
       <div class="ch ${o.risky ? 'up' : 'flat'}">${o.risky ? esc(T.riskySuffix(o.risky)) : '—'}</div>
     </div>`).join('')}</div></div>` : ''}
   ${V.vacant && V.vacant.length ? `<p class="note-line">${T.vacantNote(V.vacant.map(esc).join(' · '))}</p>` : ''}
+  ${!(V.feeds && V.feeds.length) && V.feedNote ? `<p class="note-line">${esc(T.grpFeeds)} — ${esc(V.feedNote)}</p>` : ''}
   ${V.feeds && V.feeds.length ? `
   <div class="kpi-group"><h4>${esc(T.grpFeeds)} <span style="font-weight:500;color:var(--mute);font-size:12px">${esc(V.feedNote || '')}</span></h4>
   <ul class="reflist">${V.feeds.map(f => `<li>

@@ -1,96 +1,53 @@
-// 워치리스트 기관의 공식 채널 피드 수집 — data/feeds/<date>.json
-// 사용: node feeds.mjs [--days 7]
+// 기관 공식 홈페이지의 보도자료·소식 수집 — data/feeds/<date>.json
+// 사용: node feeds.mjs [--days 14]
 //
-// 수집 대상은 기관 공식 채널뿐이다. 개인 SNS는 받지 않는다(data/watchlist.json 의 _policy 참조).
-//   · 네이버 블로그 RSS  https://rss.blog.naver.com/<id>.xml
-//   · 유튜브 채널 RSS    https://www.youtube.com/feeds/videos.xml?channel_id=<UC...>
-// 둘 다 인증키가 필요 없고 기관이 스스로 배포하는 공개 피드다.
+// 수집 대상은 기관 공식 홈페이지의 게시판뿐이다(src/gov-sites.mjs).
+// 개인 SNS는 받지 않는다(data/watchlist.json 의 _policy 참조).
+//
+// 전에는 네이버 블로그 RSS 를 읽었다. 블로그는 홍보 편집본이라 원문 보도자료와
+// 제목·시점이 어긋나고 링크도 blog.naver.com 으로 나가 출처가 흐려졌다. 지금은 원문만 본다.
 
-import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
+import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { SITES, fetchSite } from './src/gov-sites.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const arg = (k) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : null; };
-const DAYS = Number(arg('--days')) || 7;
-const UA = 'Mozilla/5.0 (compatible; PNU-AX-Monitor/0.1)';
-
-const wl = JSON.parse(readFileSync(join(root, 'data/watchlist.json'), 'utf8'));
-
-const strip = (s) => String(s || '')
-  .replace(/<!\[CDATA\[|\]\]>/g, '').replace(/<[^>]+>/g, ' ')
-  .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
-  .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ')
-  .replace(/\s+/g, ' ').trim();
-// RSS <link> 는 CDATA 로 감싸 오는 경우가 있다(네이버 블로그). 벗기지 않으면
-// href 가 "<![CDATA[https://...]]>" 가 되어 상대경로로 해석되고 404 가 난다.
-const url = (v) => String(v || '').replace(/^\s*<!\[CDATA\[/, '').replace(/\]\]>\s*$/, '').trim();
-
-const tag = (b, n) => { const m = b.match(new RegExp(`<${n}[^>]*>([\\s\\S]*?)</${n}>`, 'i')); return m ? strip(m[1]) : ''; };
-
-async function get(url) {
-  const r = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/rss+xml,application/atom+xml,*/*' } });
-  if (!r.ok) throw new Error(`HTTP ${r.status}`);
-  return r.text();
-}
-
-// RSS(<item>)와 Atom(<entry>, 유튜브) 양쪽 처리
-function parse(xml) {
-  const rss = [...xml.matchAll(/<item[\s>][\s\S]*?<\/item>/gi)].map((m) => ({
-    title: tag(m[0], 'title'),
-    link: url(m[0].match(/<link[^>]*>([\s\S]*?)<\/link>/i)?.[1]),
-    date: tag(m[0], 'pubDate') || tag(m[0], 'dc:date'),
-    summary: tag(m[0], 'description').slice(0, 200)
-  }));
-  if (rss.length) return rss;
-  return [...xml.matchAll(/<entry[\s>][\s\S]*?<\/entry>/gi)].map((m) => ({
-    title: tag(m[0], 'title'),
-    link: (m[0].match(/<link[^>]*href="([^"]+)"/i)?.[1] || '').trim(),
-    date: tag(m[0], 'published') || tag(m[0], 'updated'),
-    summary: tag(m[0], 'media:description').slice(0, 200)
-  }));
-}
+// 부처 보도자료는 뉴스보다 뜸하다. 7일로 자르면 절반이 빈다.
+const DAYS = Number(arg('--days')) || 14;
 
 const since = Date.now() - DAYS * 864e5;
 const items = [];
 const log = [];
 
-for (const org of wl.orgs) {
-  const ch = org.channels || {};
-  const targets = [
-    ch.naverBlog && { kind: '네이버블로그', url: `https://rss.blog.naver.com/${ch.naverBlog}.xml` },
-    ch.youtube && { kind: '유튜브', url: `https://www.youtube.com/feeds/videos.xml?channel_id=${ch.youtube}` }
-  ].filter(Boolean);
-
-  for (const t of targets) {
-    try {
-      const raw = parse(await get(t.url));
-      let kept = 0;
-      for (const it of raw) {
-        const ts = Date.parse(it.date);
-        if (Number.isFinite(ts) && ts < since) continue;
-        if (!it.title || !it.link) continue;
-        items.push({
-          org: org.name, orgId: org.id, channel: t.kind,
-          title: it.title, link: it.link,
-          date: Number.isFinite(ts) ? new Date(ts).toISOString().slice(0, 10) : null,
-          summary: it.summary
-        });
-        kept++;
-      }
-      log.push({ 기관: org.name, 채널: t.kind, 수신: raw.length, [`최근${DAYS}일`]: kept, 상태: 'ok' });
-    } catch (e) {
-      log.push({ 기관: org.name, 채널: t.kind, 수신: 0, [`최근${DAYS}일`]: 0, 상태: `실패 ${e.message}` });
+for (const site of SITES) {
+  try {
+    const { items: raw, note } = await fetchSite(site);
+    let kept = 0;
+    for (const it of raw) {
+      const ts = it.date ? Date.parse(it.date) : NaN;
+      // 날짜를 못 읽은 항목은 버리지 않는다 — 목록 상단은 최신이라는 전제가 더 안전하다.
+      if (Number.isFinite(ts) && ts < since) continue;
+      items.push({
+        org: site.name, orgId: site.id, channel: site.board,
+        title: it.title, link: it.link, date: it.date, summary: ''
+      });
+      kept++;
     }
+    log.push({ 기관: site.name, 게시판: site.board, 수신: raw.length, [`최근${DAYS}일`]: kept, 상태: note || 'ok' });
+  } catch (e) {
+    log.push({ 기관: site.name, 게시판: site.board, 수신: 0, [`최근${DAYS}일`]: 0, 상태: `실패 ${e.message}`.slice(0, 60) });
   }
 }
 
-items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+items.sort((a, b) => (b.date || '9999').localeCompare(a.date || '9999'));
 
 const out = {
   collectedAt: new Date().toISOString(),
   window: `최근 ${DAYS}일`,
-  policy: wl._policy,
+  policy: '기관 공식 홈페이지 게시판만 수집. 개인 SNS·블로그는 수집하지 않는다.',
+  sources: SITES.map((s) => ({ id: s.id, name: s.name, board: s.board, home: s.home, list: s.list })),
   total: items.length,
   byOrg: Object.fromEntries([...new Set(items.map((x) => x.org))].map((o) => [o, items.filter((x) => x.org === o).length])),
   feeds: log,
@@ -105,4 +62,8 @@ console.table(log);
 console.log(`\n총 ${out.total}건 · ${out.window}`);
 console.log('기관별', out.byOrg);
 console.log(`저장: data/feeds/${tagDate}.json`);
-if (!out.total) console.log('\n⚠ 공식 채널이 등록된 기관이 적습니다. watchlist.json 의 channels 를 채우세요.');
+const failed = log.filter((l) => String(l.상태).startsWith('실패') || String(l.상태).startsWith('목록'));
+if (failed.length) {
+  console.log(`\n⚠ ${failed.length}곳 수집 실패 — 사이트 점검·개편 가능성. src/gov-sites.mjs 의 파서를 확인하세요.`);
+  failed.forEach((f) => console.log(`   ${f.기관}: ${f.상태}`));
+}

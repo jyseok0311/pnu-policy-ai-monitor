@@ -4,9 +4,9 @@
     "label": "2026.09.11 (Week 37)",
     "date": "2026-09-11",
     "range": "2026.09.04~2026.09.11",
-    "tier": 3,
-    "tierName": "경계",
-    "state": "Warning",
+    "tier": 1,
+    "tierName": "관심",
+    "state": "Normal",
     "complete": true,
     "live": true,
     "sourceNote": "무료·공개 소스 수집 1075건 → 관련성 필터 후 842건 · 수집일 2026-09-11",
@@ -14,7 +14,7 @@
       "crisis": 4.6,
       "warning": 5.5,
       "total": 842,
-      "trend": "rising"
+      "trend": "baseline"
     },
     "map": {
       "levels": {
@@ -1120,8 +1120,8 @@
         "why": "등록금 정책 효과가 경쟁률에 반영되는지 마감 직후 확인 필요"
       }
     ],
-    "changesTitle": "전주 대비 주요 변화",
-    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 430건 vs 전주 334건.",
+    "changesTitle": "이번 주 주요 변화",
+    "changesNote": "실데이터 수집 첫 주차로 전주 대비 증감은 산출하지 않았다. 다음 주차부터 주간 비교가 가능하다.",
     "watch": [
       {
         "when": "초기(0-4주)",
@@ -1147,51 +1147,51 @@
     "weeklyMetrics": [
       {
         "name": "위험신호 비중",
-        "value": "8.2",
+        "value": "10.1",
         "unit": "%",
-        "change": "+1.6%p",
-        "dir": "up"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
-        "name": "수집 기사(비교기준)",
-        "value": "430",
+        "name": "총 수집 기사",
+        "value": "842",
         "unit": "건",
-        "change": "+96건",
-        "dir": "up"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
         "name": "거버넌스 기사",
-        "value": "111",
+        "value": "229",
         "unit": "건",
-        "change": "-15건",
-        "dir": "down"
+        "change": "전체의 27.2%",
+        "dir": "flat"
       },
       {
         "name": "AI·디지털 기사",
-        "value": "117",
+        "value": "186",
         "unit": "건",
-        "change": "+40건",
-        "dir": "up"
+        "change": "전체의 22.1%",
+        "dir": "flat"
       },
       {
         "name": "부산대 직접 언급",
-        "value": "62",
+        "value": "65",
         "unit": "건",
-        "change": "-20건",
-        "dir": "down"
+        "change": "거점국립대 1위",
+        "dir": "up"
       },
       {
         "name": "해외 기사",
         "value": "155",
         "unit": "건",
-        "change": "전체의 36.0%",
+        "change": "전체의 18.4%",
         "dir": "flat"
       },
       {
-        "name": "추세",
-        "value": "rising",
+        "name": "최다 출현 키워드",
+        "value": "AI",
         "unit": "",
-        "change": "전주 6.6%",
+        "change": "123회",
         "dir": "up"
       }
     ],
@@ -1691,74 +1691,60 @@
       ],
       "feeds": [
         {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!",
-          "link": "https://blog.naver.com/moeblog/224407183950?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
+          "org": "산업통상부",
+          "channel": "보도자료",
+          "title": "지역 기업의 AI 전환, M.AX로 앞당긴다",
+          "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172187/view?mno=&pageIndex=1",
+          "date": "2026-09-11"
         },
         {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다",
-          "link": "https://blog.naver.com/moeblog/224406991753?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
+          "org": "소프트웨어정책연구소",
+          "channel": "연구자료",
+          "title": "AI G3 도약을 위한 국가 AI 인재전략 Shift",
+          "link": "https://spri.kr/posts/view/24025?code=issue_reports&study_type=&board_type=&flg=0",
+          "date": "2026-09-11"
         },
         {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "제47회 전국학생과학발명품경진대회 수상 작품 소개",
-          "link": "https://blog.naver.com/with_msip/224406355714?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
+          "org": "소프트웨어정책연구소",
+          "channel": "연구자료",
+          "title": "에이전틱 AI 시대의 핵심 자원, AX 인재: 현황 진단 및 정책 과제",
+          "link": "https://spri.kr/posts/view/24024?code=issue_reports&study_type=&board_type=&flg=0",
+          "date": "2026-09-11"
         },
         {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "강원대 캠퍼스 혁신파크 산학연혁신허브 개관",
-          "link": "https://blog.naver.com/moeblog/224405954549?fromRss=true&trackingCode=rss",
+          "org": "행정안전부",
+          "channel": "보도자료",
+          "title": "“반복 행정 줄이고 재난 대응 빨라져”… 지방정부 인공지능(AI) 혁신 한자리에",
+          "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129380",
           "date": "2026-09-09"
         },
         {
           "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!",
-          "link": "https://blog.naver.com/moeblog/224405769875?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "세계적 석학의 지혜와 통찰 이 찾아옵니다!",
-          "link": "https://blog.naver.com/moeblog/224405752383?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속",
-          "link": "https://blog.naver.com/moeblog/224404655246?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화",
-          "link": "https://blog.naver.com/moeblog/224404647571?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
+          "channel": "보도자료",
           "title": "2027학년도 대학수학능력시험 응시원서 접수 결과",
-          "link": "https://blog.naver.com/moeblog/224404636327?fromRss=true&trackingCode=rss",
+          "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107152&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
           "date": "2026-09-08"
         },
         {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷",
-          "link": "https://blog.naver.com/with_msip/224404485606?fromRss=true&trackingCode=rss",
+          "org": "교육부",
+          "channel": "보도자료",
+          "title": "지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속",
+          "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107150&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
           "date": "2026-09-08"
+        },
+        {
+          "org": "국가인공지능전략위원회",
+          "channel": "보도자료",
+          "title": "국가AI전략위 출범 1년, 대한민국 AI 대전환 성과 본격화",
+          "link": "https://www.aikorea.go.kr/web/board/brdDetail.do?menu_cd=000012&num=923",
+          "date": "2026-09-08"
+        },
+        {
+          "org": "국가인공지능전략위원회",
+          "channel": "보도자료",
+          "title": "국가AI전략위, 유럽 주요 정책ㆍ노동계 인사들과 ‘사회적 정당성을 갖춘 국가 AI 전략’ 논의",
+          "link": "https://www.aikorea.go.kr/web/board/brdDetail.do?menu_cd=000012&num=912",
+          "date": "2026-09-01"
         }
       ],
       "vacant": [
@@ -1767,13 +1753,7 @@
         "국회 교육위원장",
         "부산대 총장"
       ],
-      "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
-    },
-    "comparable": {
-      "total": 430,
-      "crisis": 4.2,
-      "warning": 4,
-      "risk": 8.2
+      "feedNote": "산업통상부 10건 · 행정안전부 10건 · 소프트웨어정책연구소 8건 · 교육부 10건 · 국가인공지능전략위원회 3건 · 교육정책네트워크 1건 (최근 14일)"
     }
   },
   {
@@ -1781,9 +1761,9 @@
     "label": "2026.09.04 (Week 36)",
     "date": "2026-09-04",
     "range": "2026.08.28~2026.09.04",
-    "tier": 2,
-    "tierName": "주의",
-    "state": "Watch",
+    "tier": 1,
+    "tierName": "관심",
+    "state": "Normal",
     "complete": true,
     "live": true,
     "sourceNote": "무료·공개 소스 수집 360건 → 관련성 필터 후 334건 · 수집일 2026-08-28",
@@ -1791,7 +1771,7 @@
       "crisis": 3.3,
       "warning": 3.3,
       "total": 334,
-      "trend": "rising"
+      "trend": "baseline"
     },
     "map": {
       "levels": {
@@ -2643,49 +2623,49 @@
         "name": "위험신호 비중",
         "value": "6.6",
         "unit": "%",
-        "change": "+0.7%p",
-        "dir": "up"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
-        "name": "수집 기사(비교기준)",
+        "name": "총 수집 기사",
         "value": "334",
         "unit": "건",
-        "change": "+181건",
-        "dir": "up"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
         "name": "거버넌스 기사",
         "value": "126",
         "unit": "건",
-        "change": "+82건",
-        "dir": "up"
+        "change": "전체의 37.7%",
+        "dir": "flat"
       },
       {
         "name": "AI·디지털 기사",
         "value": "77",
         "unit": "건",
-        "change": "+40건",
-        "dir": "up"
+        "change": "전체의 23.1%",
+        "dir": "flat"
       },
       {
         "name": "부산대 직접 언급",
         "value": "82",
         "unit": "건",
-        "change": "+58건",
+        "change": "거점국립대 1위",
         "dir": "up"
       },
       {
         "name": "해외 기사",
         "value": "0",
         "unit": "건",
-        "change": "수집 전 주차",
+        "change": "전체의 0%",
         "dir": "flat"
       },
       {
-        "name": "추세",
-        "value": "rising",
+        "name": "최다 출현 키워드",
+        "value": "부산대",
         "unit": "",
-        "change": "전주 5.9%",
+        "change": "69회",
         "dir": "up"
       }
     ],
@@ -3067,94 +3047,15 @@
           "risky": 0
         }
       ],
-      "feeds": [
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!",
-          "link": "https://blog.naver.com/moeblog/224407183950?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다",
-          "link": "https://blog.naver.com/moeblog/224406991753?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "제47회 전국학생과학발명품경진대회 수상 작품 소개",
-          "link": "https://blog.naver.com/with_msip/224406355714?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "강원대 캠퍼스 혁신파크 산학연혁신허브 개관",
-          "link": "https://blog.naver.com/moeblog/224405954549?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!",
-          "link": "https://blog.naver.com/moeblog/224405769875?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "세계적 석학의 지혜와 통찰 이 찾아옵니다!",
-          "link": "https://blog.naver.com/moeblog/224405752383?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속",
-          "link": "https://blog.naver.com/moeblog/224404655246?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화",
-          "link": "https://blog.naver.com/moeblog/224404647571?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "2027학년도 대학수학능력시험 응시원서 접수 결과",
-          "link": "https://blog.naver.com/moeblog/224404636327?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷",
-          "link": "https://blog.naver.com/with_msip/224404485606?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        }
-      ],
+      "feeds": [],
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
         "국회 교육위원장",
         "부산대 총장"
       ],
-      "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
-    },
-    "comparable": {
-      "total": 334,
-      "crisis": 3.3,
-      "warning": 3.3,
-      "risk": 6.6
-    },
-    "changesTitle": "전주 대비 주요 변화",
-    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 334건 vs 전주 153건."
+      "feedNote": "이 주차에는 기관 홈페이지 수집본이 없습니다 (보도자료는 소급 수집이 되지 않습니다)."
+    }
   },
   {
     "id": "w35",
@@ -3171,7 +3072,7 @@
       "crisis": 3.9,
       "warning": 2,
       "total": 153,
-      "trend": "rising"
+      "trend": "baseline"
     },
     "map": {
       "levels": {
@@ -3990,49 +3891,49 @@
         "name": "위험신호 비중",
         "value": "5.9",
         "unit": "%",
-        "change": "+4.5%p",
-        "dir": "up"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
-        "name": "수집 기사(비교기준)",
+        "name": "총 수집 기사",
         "value": "153",
         "unit": "건",
-        "change": "+5건",
-        "dir": "up"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
         "name": "거버넌스 기사",
         "value": "44",
         "unit": "건",
-        "change": "+0건",
-        "dir": "up"
+        "change": "전체의 28.8%",
+        "dir": "flat"
       },
       {
         "name": "AI·디지털 기사",
         "value": "37",
         "unit": "건",
-        "change": "-2건",
-        "dir": "down"
+        "change": "전체의 24.2%",
+        "dir": "flat"
       },
       {
         "name": "부산대 직접 언급",
         "value": "24",
         "unit": "건",
-        "change": "+4건",
+        "change": "거점국립대 1위",
         "dir": "up"
       },
       {
         "name": "해외 기사",
         "value": "0",
         "unit": "건",
-        "change": "수집 전 주차",
+        "change": "전체의 0%",
         "dir": "flat"
       },
       {
-        "name": "추세",
-        "value": "rising",
+        "name": "최다 출현 키워드",
+        "value": "AI",
         "unit": "",
-        "change": "전주 1.4%",
+        "change": "25회",
         "dir": "up"
       }
     ],
@@ -4336,94 +4237,15 @@
           "risky": 0
         }
       ],
-      "feeds": [
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!",
-          "link": "https://blog.naver.com/moeblog/224407183950?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다",
-          "link": "https://blog.naver.com/moeblog/224406991753?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "제47회 전국학생과학발명품경진대회 수상 작품 소개",
-          "link": "https://blog.naver.com/with_msip/224406355714?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "강원대 캠퍼스 혁신파크 산학연혁신허브 개관",
-          "link": "https://blog.naver.com/moeblog/224405954549?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!",
-          "link": "https://blog.naver.com/moeblog/224405769875?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "세계적 석학의 지혜와 통찰 이 찾아옵니다!",
-          "link": "https://blog.naver.com/moeblog/224405752383?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속",
-          "link": "https://blog.naver.com/moeblog/224404655246?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화",
-          "link": "https://blog.naver.com/moeblog/224404647571?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "2027학년도 대학수학능력시험 응시원서 접수 결과",
-          "link": "https://blog.naver.com/moeblog/224404636327?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷",
-          "link": "https://blog.naver.com/with_msip/224404485606?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        }
-      ],
+      "feeds": [],
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
         "국회 교육위원장",
         "부산대 총장"
       ],
-      "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
-    },
-    "comparable": {
-      "total": 153,
-      "crisis": 3.9,
-      "warning": 2,
-      "risk": 5.9
-    },
-    "changesTitle": "전주 대비 주요 변화",
-    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 153건 vs 전주 148건."
+      "feedNote": "이 주차에는 기관 홈페이지 수집본이 없습니다 (보도자료는 소급 수집이 되지 않습니다)."
+    }
   },
   {
     "id": "w34",
@@ -4440,7 +4262,7 @@
       "crisis": 1.4,
       "warning": 0,
       "total": 148,
-      "trend": "falling"
+      "trend": "baseline"
     },
     "map": {
       "levels": {
@@ -5253,50 +5075,50 @@
         "name": "위험신호 비중",
         "value": "1.4",
         "unit": "%",
-        "change": "-2.2%p",
-        "dir": "down"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
-        "name": "수집 기사(비교기준)",
+        "name": "총 수집 기사",
         "value": "148",
         "unit": "건",
-        "change": "-21건",
-        "dir": "down"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
         "name": "거버넌스 기사",
         "value": "44",
         "unit": "건",
-        "change": "-12건",
-        "dir": "down"
+        "change": "전체의 29.7%",
+        "dir": "flat"
       },
       {
         "name": "AI·디지털 기사",
         "value": "39",
         "unit": "건",
-        "change": "-5건",
-        "dir": "down"
+        "change": "전체의 26.4%",
+        "dir": "flat"
       },
       {
         "name": "부산대 직접 언급",
         "value": "20",
         "unit": "건",
-        "change": "+4건",
+        "change": "거점국립대 1위",
         "dir": "up"
       },
       {
         "name": "해외 기사",
         "value": "0",
         "unit": "건",
-        "change": "수집 전 주차",
+        "change": "전체의 0%",
         "dir": "flat"
       },
       {
-        "name": "추세",
-        "value": "falling",
+        "name": "최다 출현 키워드",
+        "value": "AI",
         "unit": "",
-        "change": "전주 3.6%",
-        "dir": "down"
+        "change": "32회",
+        "dir": "up"
       }
     ],
     "kpis": [
@@ -5528,94 +5350,15 @@
         }
       ],
       "orgs": [],
-      "feeds": [
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!",
-          "link": "https://blog.naver.com/moeblog/224407183950?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다",
-          "link": "https://blog.naver.com/moeblog/224406991753?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "제47회 전국학생과학발명품경진대회 수상 작품 소개",
-          "link": "https://blog.naver.com/with_msip/224406355714?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "강원대 캠퍼스 혁신파크 산학연혁신허브 개관",
-          "link": "https://blog.naver.com/moeblog/224405954549?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!",
-          "link": "https://blog.naver.com/moeblog/224405769875?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "세계적 석학의 지혜와 통찰 이 찾아옵니다!",
-          "link": "https://blog.naver.com/moeblog/224405752383?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속",
-          "link": "https://blog.naver.com/moeblog/224404655246?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화",
-          "link": "https://blog.naver.com/moeblog/224404647571?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "2027학년도 대학수학능력시험 응시원서 접수 결과",
-          "link": "https://blog.naver.com/moeblog/224404636327?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷",
-          "link": "https://blog.naver.com/with_msip/224404485606?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        }
-      ],
+      "feeds": [],
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
         "국회 교육위원장",
         "부산대 총장"
       ],
-      "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
-    },
-    "comparable": {
-      "total": 148,
-      "crisis": 1.4,
-      "warning": 0,
-      "risk": 1.4
-    },
-    "changesTitle": "전주 대비 주요 변화",
-    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 148건 vs 전주 169건."
+      "feedNote": "이 주차에는 기관 홈페이지 수집본이 없습니다 (보도자료는 소급 수집이 되지 않습니다)."
+    }
   },
   {
     "id": "w33",
@@ -5632,7 +5375,7 @@
       "crisis": 3,
       "warning": 0.6,
       "total": 169,
-      "trend": "falling"
+      "trend": "baseline"
     },
     "map": {
       "levels": {
@@ -6478,50 +6221,50 @@
         "name": "위험신호 비중",
         "value": "3.6",
         "unit": "%",
-        "change": "-8.1%p",
-        "dir": "down"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
-        "name": "수집 기사(비교기준)",
+        "name": "총 수집 기사",
         "value": "169",
         "unit": "건",
-        "change": "-19건",
-        "dir": "down"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
         "name": "거버넌스 기사",
         "value": "56",
         "unit": "건",
-        "change": "-25건",
-        "dir": "down"
+        "change": "전체의 33.1%",
+        "dir": "flat"
       },
       {
         "name": "AI·디지털 기사",
         "value": "44",
         "unit": "건",
-        "change": "+0건",
-        "dir": "up"
+        "change": "전체의 26%",
+        "dir": "flat"
       },
       {
         "name": "부산대 직접 언급",
         "value": "16",
         "unit": "건",
-        "change": "-6건",
-        "dir": "down"
+        "change": "거점국립대 1위",
+        "dir": "up"
       },
       {
         "name": "해외 기사",
         "value": "0",
         "unit": "건",
-        "change": "수집 전 주차",
+        "change": "전체의 0%",
         "dir": "flat"
       },
       {
-        "name": "추세",
-        "value": "falling",
+        "name": "최다 출현 키워드",
+        "value": "AI",
         "unit": "",
-        "change": "전주 11.7%",
-        "dir": "down"
+        "change": "40회",
+        "dir": "up"
       }
     ],
     "kpis": [
@@ -6868,103 +6611,24 @@
           "risky": 0
         }
       ],
-      "feeds": [
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!",
-          "link": "https://blog.naver.com/moeblog/224407183950?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다",
-          "link": "https://blog.naver.com/moeblog/224406991753?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "제47회 전국학생과학발명품경진대회 수상 작품 소개",
-          "link": "https://blog.naver.com/with_msip/224406355714?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "강원대 캠퍼스 혁신파크 산학연혁신허브 개관",
-          "link": "https://blog.naver.com/moeblog/224405954549?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!",
-          "link": "https://blog.naver.com/moeblog/224405769875?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "세계적 석학의 지혜와 통찰 이 찾아옵니다!",
-          "link": "https://blog.naver.com/moeblog/224405752383?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속",
-          "link": "https://blog.naver.com/moeblog/224404655246?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화",
-          "link": "https://blog.naver.com/moeblog/224404647571?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "2027학년도 대학수학능력시험 응시원서 접수 결과",
-          "link": "https://blog.naver.com/moeblog/224404636327?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷",
-          "link": "https://blog.naver.com/with_msip/224404485606?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        }
-      ],
+      "feeds": [],
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
         "국회 교육위원장",
         "부산대 총장"
       ],
-      "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
-    },
-    "comparable": {
-      "total": 169,
-      "crisis": 3,
-      "warning": 0.6,
-      "risk": 3.6
-    },
-    "changesTitle": "전주 대비 주요 변화",
-    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 169건 vs 전주 188건."
+      "feedNote": "이 주차에는 기관 홈페이지 수집본이 없습니다 (보도자료는 소급 수집이 되지 않습니다)."
+    }
   },
   {
     "id": "w32",
     "label": "2026.08.07 (Week 32)",
     "date": "2026-08-07",
     "range": "2026.07.31~2026.08.07",
-    "tier": 4,
-    "tierName": "위기",
-    "state": "Crisis",
+    "tier": 1,
+    "tierName": "관심",
+    "state": "Normal",
     "complete": true,
     "live": true,
     "sourceNote": "무료·공개 소스 수집 221건 → 관련성 필터 후 188건 · 수집일 2026-07-31",
@@ -6972,7 +6636,7 @@
       "crisis": 6.4,
       "warning": 5.3,
       "total": 188,
-      "trend": "rising"
+      "trend": "baseline"
     },
     "map": {
       "levels": {
@@ -7825,49 +7489,49 @@
         "name": "위험신호 비중",
         "value": "11.7",
         "unit": "%",
-        "change": "+4.8%p",
-        "dir": "up"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
-        "name": "수집 기사(비교기준)",
+        "name": "총 수집 기사",
         "value": "188",
         "unit": "건",
-        "change": "-44건",
-        "dir": "down"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
         "name": "거버넌스 기사",
         "value": "81",
         "unit": "건",
-        "change": "+1건",
-        "dir": "up"
+        "change": "전체의 43.1%",
+        "dir": "flat"
       },
       {
         "name": "AI·디지털 기사",
         "value": "44",
         "unit": "건",
-        "change": "-20건",
-        "dir": "down"
+        "change": "전체의 23.4%",
+        "dir": "flat"
       },
       {
         "name": "부산대 직접 언급",
         "value": "22",
         "unit": "건",
-        "change": "-20건",
-        "dir": "down"
+        "change": "거점국립대 1위",
+        "dir": "up"
       },
       {
         "name": "해외 기사",
         "value": "0",
         "unit": "건",
-        "change": "수집 전 주차",
+        "change": "전체의 0%",
         "dir": "flat"
       },
       {
-        "name": "추세",
-        "value": "rising",
+        "name": "최다 출현 키워드",
+        "value": "AI",
         "unit": "",
-        "change": "전주 6.9%",
+        "change": "39회",
         "dir": "up"
       }
     ],
@@ -8181,103 +7845,24 @@
           "risky": 0
         }
       ],
-      "feeds": [
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!",
-          "link": "https://blog.naver.com/moeblog/224407183950?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다",
-          "link": "https://blog.naver.com/moeblog/224406991753?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "제47회 전국학생과학발명품경진대회 수상 작품 소개",
-          "link": "https://blog.naver.com/with_msip/224406355714?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "강원대 캠퍼스 혁신파크 산학연혁신허브 개관",
-          "link": "https://blog.naver.com/moeblog/224405954549?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!",
-          "link": "https://blog.naver.com/moeblog/224405769875?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "세계적 석학의 지혜와 통찰 이 찾아옵니다!",
-          "link": "https://blog.naver.com/moeblog/224405752383?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속",
-          "link": "https://blog.naver.com/moeblog/224404655246?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화",
-          "link": "https://blog.naver.com/moeblog/224404647571?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "2027학년도 대학수학능력시험 응시원서 접수 결과",
-          "link": "https://blog.naver.com/moeblog/224404636327?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷",
-          "link": "https://blog.naver.com/with_msip/224404485606?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        }
-      ],
+      "feeds": [],
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
         "국회 교육위원장",
         "부산대 총장"
       ],
-      "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
-    },
-    "comparable": {
-      "total": 188,
-      "crisis": 6.4,
-      "warning": 5.3,
-      "risk": 11.7
-    },
-    "changesTitle": "전주 대비 주요 변화",
-    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 188건 vs 전주 232건."
+      "feedNote": "이 주차에는 기관 홈페이지 수집본이 없습니다 (보도자료는 소급 수집이 되지 않습니다)."
+    }
   },
   {
     "id": "w31",
     "label": "2026.07.31 (Week 31)",
     "date": "2026-07-31",
     "range": "2026.07.24~2026.07.31",
-    "tier": 2,
-    "tierName": "주의",
-    "state": "Watch",
+    "tier": 1,
+    "tierName": "관심",
+    "state": "Normal",
     "complete": true,
     "live": true,
     "sourceNote": "무료·공개 소스 수집 283건 → 관련성 필터 후 232건 · 수집일 2026-07-24",
@@ -8285,7 +7870,7 @@
       "crisis": 3,
       "warning": 3.9,
       "total": 232,
-      "trend": "rising"
+      "trend": "baseline"
     },
     "map": {
       "levels": {
@@ -9166,49 +8751,49 @@
         "name": "위험신호 비중",
         "value": "6.9",
         "unit": "%",
-        "change": "+2.4%p",
-        "dir": "up"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
-        "name": "수집 기사(비교기준)",
+        "name": "총 수집 기사",
         "value": "232",
         "unit": "건",
-        "change": "+35건",
-        "dir": "up"
+        "change": "기준치",
+        "dir": "flat"
       },
       {
         "name": "거버넌스 기사",
         "value": "80",
         "unit": "건",
-        "change": "+40건",
-        "dir": "up"
+        "change": "전체의 34.5%",
+        "dir": "flat"
       },
       {
         "name": "AI·디지털 기사",
         "value": "64",
         "unit": "건",
-        "change": "+13건",
-        "dir": "up"
+        "change": "전체의 27.6%",
+        "dir": "flat"
       },
       {
         "name": "부산대 직접 언급",
         "value": "42",
         "unit": "건",
-        "change": "+12건",
+        "change": "거점국립대 1위",
         "dir": "up"
       },
       {
         "name": "해외 기사",
         "value": "0",
         "unit": "건",
-        "change": "수집 전 주차",
+        "change": "전체의 0%",
         "dir": "flat"
       },
       {
-        "name": "추세",
-        "value": "rising",
+        "name": "최다 출현 키워드",
+        "value": "AI",
         "unit": "",
-        "change": "전주 4.5%",
+        "change": "44회",
         "dir": "up"
       }
     ],
@@ -9501,94 +9086,15 @@
           "risky": 1
         }
       ],
-      "feeds": [
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!",
-          "link": "https://blog.naver.com/moeblog/224407183950?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다",
-          "link": "https://blog.naver.com/moeblog/224406991753?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "제47회 전국학생과학발명품경진대회 수상 작품 소개",
-          "link": "https://blog.naver.com/with_msip/224406355714?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "강원대 캠퍼스 혁신파크 산학연혁신허브 개관",
-          "link": "https://blog.naver.com/moeblog/224405954549?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!",
-          "link": "https://blog.naver.com/moeblog/224405769875?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "세계적 석학의 지혜와 통찰 이 찾아옵니다!",
-          "link": "https://blog.naver.com/moeblog/224405752383?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속",
-          "link": "https://blog.naver.com/moeblog/224404655246?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화",
-          "link": "https://blog.naver.com/moeblog/224404647571?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "2027학년도 대학수학능력시험 응시원서 접수 결과",
-          "link": "https://blog.naver.com/moeblog/224404636327?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷",
-          "link": "https://blog.naver.com/with_msip/224404485606?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        }
-      ],
+      "feeds": [],
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
         "국회 교육위원장",
         "부산대 총장"
       ],
-      "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
-    },
-    "comparable": {
-      "total": 232,
-      "crisis": 3,
-      "warning": 3.9,
-      "risk": 6.9
-    },
-    "changesTitle": "전주 대비 주요 변화",
-    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 232건 vs 전주 197건."
+      "feedNote": "이 주차에는 기관 홈페이지 수집본이 없습니다 (보도자료는 소급 수집이 되지 않습니다)."
+    }
   },
   {
     "id": "w30",
@@ -10813,91 +10319,14 @@
           "risky": 0
         }
       ],
-      "feeds": [
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "만약, 이 세상에'미래대응기금'이 없었더라면...?!이건 꿈이야~!!",
-          "link": "https://blog.naver.com/moeblog/224407183950?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다",
-          "link": "https://blog.naver.com/moeblog/224406991753?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "제47회 전국학생과학발명품경진대회 수상 작품 소개",
-          "link": "https://blog.naver.com/with_msip/224406355714?fromRss=true&trackingCode=rss",
-          "date": "2026-09-10"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "강원대 캠퍼스 혁신파크 산학연혁신허브 개관",
-          "link": "https://blog.naver.com/moeblog/224405954549?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지역 성장엔진 인재 양성을 위해 지역과 대학이 뭉칩니다!",
-          "link": "https://blog.naver.com/moeblog/224405769875?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "세계적 석학의 지혜와 통찰 이 찾아옵니다!",
-          "link": "https://blog.naver.com/moeblog/224405752383?fromRss=true&trackingCode=rss",
-          "date": "2026-09-09"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "지방정부-대학-기업 손잡고 인재 기른다, 지역 주도 지역인재 양성 가속",
-          "link": "https://blog.naver.com/moeblog/224404655246?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "유학생 30만 시대, 외국인 유학생 정책 ‘질적 전환’ 본격화",
-          "link": "https://blog.naver.com/moeblog/224404647571?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "교육부",
-          "channel": "네이버블로그",
-          "title": "2027학년도 대학수학능력시험 응시원서 접수 결과",
-          "link": "https://blog.naver.com/moeblog/224404636327?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        },
-        {
-          "org": "과학기술정보통신부",
-          "channel": "네이버블로그",
-          "title": "카이랄 나노구조로 '리얼 풀 컬러' 구현 #과학한컷",
-          "link": "https://blog.naver.com/with_msip/224404485606?fromRss=true&trackingCode=rss",
-          "date": "2026-09-08"
-        }
-      ],
+      "feeds": [],
       "vacant": [
         "재정경제부 장관",
         "교육부 차관",
         "국회 교육위원장",
         "부산대 총장"
       ],
-      "feedNote": "재정경제부 21건 · 과학기술정보통신부 13건 · 교육부 50건 (최근 14일)"
-    },
-    "comparable": {
-      "total": 197,
-      "crisis": 3,
-      "warning": 1.5,
-      "risk": 4.5
+      "feedNote": "이 주차에는 기관 홈페이지 수집본이 없습니다 (보도자료는 소급 수집이 되지 않습니다)."
     }
   }
 ]

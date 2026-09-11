@@ -237,13 +237,29 @@ const voices = {
 voices.vacant = voices.vacantList;
 delete voices.vacantList;
 
-// 공식 채널 피드(있으면) 최신 글
+// 기관 공식 홈페이지 보도자료 — 그 주차에 수집한 스냅샷만 쓴다.
+// 전에는 무조건 '가장 최신' 스냅샷을 붙여서, 7월 주차 리포트에 9월 보도자료가 실렸다.
+// 피드는 소급 수집이 안 되므로(게시판에 날짜 구간 조회가 없다) 해당 주차 스냅샷이 없으면 비워 둔다.
 try {
-  const ff = _rd(join(root, 'data/feeds')).filter((f) => f.endsWith('.json')).sort().pop();
+  const inWeek = (name) => {
+    const d = name.replace('.json', '');
+    const [from, to] = narr.range.split('~').map((x) => x.trim().replace(/\./g, '-'));
+    return d >= from && d <= to;
+  };
+  const all = _rd(join(root, 'data/feeds')).filter((f) => f.endsWith('.json')).sort();
+  const ff = all.filter(inWeek).pop();
+  if (!ff) {
+    voices.feedNote = '이 주차에는 기관 홈페이지 수집본이 없습니다 (보도자료는 소급 수집이 되지 않습니다).';
+  }
   if (ff) {
     const fd = J(`data/feeds/${ff}`);
-    const HI = /대학|고등교육|학과|총장|등록금|학령|국립대|입시|수시|글로컬|RISE|라이즈|인재/;
-    voices.feeds = fd.items.filter((x) => HI.test(x.title + ' ' + x.summary)).slice(0, 10)
+    // AX 모니터링이므로 고등교육 어휘만 보면 AI·디지털 정책 자료가 통째로 걸러진다.
+    const HI = /대학|고등교육|학과|총장|등록금|학령|국립대|입시|수시|글로컬|RISE|라이즈|인재|AI|AX|인공지능|디지털|소프트웨어|SW|데이터|연구개발|R&D/;
+    const hits = fd.items.filter((x) => HI.test(x.title + ' ' + x.summary));
+    // 기관당 상한을 둔다. 한 기관이 자료를 몰아 올리면 나머지 기관이 목록에서 사라진다
+    // (실제로 SPRi 가 10칸 중 6칸을 차지했다).
+    const per = {};
+    voices.feeds = hits.filter((x) => (per[x.org] = (per[x.org] || 0) + 1) <= 2).slice(0, 10)
       .map((x) => ({ org: x.org, channel: x.channel, title: x.title, link: x.link, date: x.date }));
     voices.feedNote = `${fd.byOrg ? Object.entries(fd.byOrg).map(([k, v]) => k + ' ' + v + '건').join(' · ') : ''} (${fd.window})`;
   }
