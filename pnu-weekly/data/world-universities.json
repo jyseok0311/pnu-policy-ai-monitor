@@ -1,0 +1,7445 @@
+{
+  "_comment": "세계대학랭킹 패널(연도별) + 좌표. QS·THE 공식 페이지 + Wikidata SPARQL 결합.",
+  "collected": "2026-09-11",
+  "panel": {
+    "the": [
+      "2024",
+      "2025",
+      "2026"
+    ],
+    "qs": [
+      "2027"
+    ],
+    "latest": {
+      "the": "2026",
+      "qs": "2027"
+    }
+  },
+  "sources": {
+    "the": {
+      "name": "THE World University Rankings",
+      "url": "https://www.timeshighereducation.com/world-university-rankings",
+      "years": {
+        "2024": {
+          "total": 2671,
+          "kept": 240
+        },
+        "2025": {
+          "total": 2855,
+          "kept": 244
+        },
+        "2026": {
+          "total": 3118,
+          "kept": 243
+        }
+      }
+    },
+    "qs": {
+      "name": "QS World University Rankings",
+      "url": "https://www.topuniversities.com/world-university-rankings",
+      "years": {
+        "2027": {
+          "kept": 246,
+          "pages": 7,
+          "korea": 36
+        }
+      }
+    },
+    "coords": {
+      "name": "Wikidata (P625)",
+      "url": "https://query.wikidata.org/"
+    }
+  },
+  "stats": {
+    "total": 334,
+    "located": 319,
+    "withThe": 245,
+    "withQs": 238,
+    "both": 164,
+    "countries": 39
+  },
+  "missingCoords": [
+    "Nanyang Technological University, Singapore",
+    "Paris Sciences et Lettres – PSL Research University Paris",
+    "Washington University in St Louis",
+    "Purdue University West Lafayette",
+    "Charité – Universitätsmedizin Berlin",
+    "University of Massachusetts",
+    "University of Pittsburgh-Pittsburgh campus",
+    "Université Paris Cité",
+    "EPFL – École polytechnique fédérale de Lausanne",
+    "Trinity College Dublin, The University of Dublin",
+    "KIT, Karlsruhe Institute of Technology",
+    "National Tsing Hua University - NTHU",
+    "Farabi University (former Al - Farabi Kazakh National University)",
+    "National Yang Ming Chiao Tung University (NYCU Taiwan)",
+    "HUFS - Hankuk (Korea) University of Foreign Studies"
+  ],
+  "universities": [
+    {
+      "name": "University of Oxford",
+      "key": "University of Oxford",
+      "country": "United Kingdom",
+      "city": "Oxford",
+      "the": {
+        "2024": {
+          "rank": "1",
+          "score": "98.5"
+        },
+        "2025": {
+          "rank": "1",
+          "score": "98.5"
+        },
+        "2026": {
+          "rank": "1",
+          "score": "98.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "4",
+          "score": "98.6"
+        }
+      },
+      "lng": -1.255,
+      "lat": 51.755
+    },
+    {
+      "name": "Massachusetts Institute of Technology",
+      "key": "Massachusetts Institute of Technology",
+      "country": "United States",
+      "city": "Cambridge",
+      "the": {
+        "2024": {
+          "rank": "3",
+          "score": "97.9"
+        },
+        "2025": {
+          "rank": "2",
+          "score": "98.1"
+        },
+        "2026": {
+          "rank": "2",
+          "score": "97.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "1",
+          "score": "100"
+        }
+      },
+      "lng": -71.091944444,
+      "lat": 42.359722222
+    },
+    {
+      "name": "Stanford University",
+      "key": "Stanford University",
+      "country": "United States",
+      "city": "Stanford",
+      "the": {
+        "2024": {
+          "rank": "2",
+          "score": "98.0"
+        },
+        "2025": {
+          "rank": "6",
+          "score": "97.2"
+        },
+        "2026": {
+          "rank": "=5",
+          "score": "97.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=2",
+          "score": "99.2"
+        }
+      },
+      "lng": -122.17,
+      "lat": 37.4275
+    },
+    {
+      "name": "Imperial College London",
+      "key": "Imperial College London",
+      "country": "United Kingdom",
+      "city": "London",
+      "the": {
+        "2024": {
+          "rank": "8",
+          "score": "95.1"
+        },
+        "2025": {
+          "rank": "9",
+          "score": "94.4"
+        },
+        "2026": {
+          "rank": "8",
+          "score": "94.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=2",
+          "score": "99.2"
+        }
+      },
+      "lng": -0.176882,
+      "lat": 51.498308
+    },
+    {
+      "name": "University of Cambridge",
+      "key": "University of Cambridge",
+      "country": "United Kingdom",
+      "city": "Cambridge",
+      "the": {
+        "2024": {
+          "rank": "5",
+          "score": "97.5"
+        },
+        "2025": {
+          "rank": "5",
+          "score": "97.4"
+        },
+        "2026": {
+          "rank": "=3",
+          "score": "97.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "6",
+          "score": "97.1"
+        }
+      },
+      "lng": 0.113157269,
+      "lat": 52.205355979
+    },
+    {
+      "name": "Princeton University",
+      "key": "Princeton University",
+      "country": "United States",
+      "city": "Princeton",
+      "the": {
+        "2024": {
+          "rank": "6",
+          "score": "96.9"
+        },
+        "2025": {
+          "rank": "4",
+          "score": "97.5"
+        },
+        "2026": {
+          "rank": "=3",
+          "score": "97.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "27",
+          "score": "88.9"
+        }
+      },
+      "lng": -74.656111111,
+      "lat": 40.345277777
+    },
+    {
+      "name": "Harvard University",
+      "key": "Harvard University",
+      "country": "United States",
+      "city": "Cambridge",
+      "the": {
+        "2024": {
+          "rank": "4",
+          "score": "97.8"
+        },
+        "2025": {
+          "rank": "3",
+          "score": "97.7"
+        },
+        "2026": {
+          "rank": "=5",
+          "score": "97.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "5",
+          "score": "97.4"
+        }
+      },
+      "lng": -71.116943888,
+      "lat": 42.374443888
+    },
+    {
+      "name": "California Institute of Technology",
+      "key": "California Institute of Technology",
+      "country": "United States",
+      "city": "Pasadena",
+      "the": {
+        "2024": {
+          "rank": "7",
+          "score": "96.5"
+        },
+        "2025": {
+          "rank": "7",
+          "score": "96.3"
+        },
+        "2026": {
+          "rank": "7",
+          "score": "96.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "7",
+          "score": "96.6"
+        }
+      },
+      "lng": -118.1244,
+      "lat": 34.1385
+    },
+    {
+      "name": "ETH Zurich",
+      "key": "ETH Zurich",
+      "country": "Switzerland",
+      "city": "Zürich",
+      "the": {
+        "2024": {
+          "rank": "11",
+          "score": "93.1"
+        },
+        "2025": {
+          "rank": "11",
+          "score": "93.0"
+        },
+        "2026": {
+          "rank": "11",
+          "score": "93.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=8",
+          "score": "96.3"
+        }
+      },
+      "lng": 8.54785,
+      "lat": 47.37645
+    },
+    {
+      "name": "UCL",
+      "key": "UCL",
+      "country": "United Kingdom",
+      "city": "London",
+      "the": {
+        "2024": {
+          "rank": "22",
+          "score": "88.1"
+        },
+        "2025": {
+          "rank": "=22",
+          "score": "87.7"
+        },
+        "2026": {
+          "rank": "22",
+          "score": "87.5"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=8",
+          "score": "96.3"
+        }
+      },
+      "lng": -0.133611111,
+      "lat": 51.524722222
+    },
+    {
+      "name": "University of California, Berkeley",
+      "key": "University of California, Berkeley",
+      "country": "United States",
+      "city": "Berkeley",
+      "the": {
+        "2024": {
+          "rank": "9",
+          "score": "94.6"
+        },
+        "2025": {
+          "rank": "8",
+          "score": "94.5"
+        },
+        "2026": {
+          "rank": "9",
+          "score": "94.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=20",
+          "score": "89.7"
+        }
+      },
+      "lng": -122.258333333,
+      "lat": 37.871944444
+    },
+    {
+      "name": "Yale University",
+      "key": "Yale University",
+      "country": "United States",
+      "city": "New Haven",
+      "the": {
+        "2024": {
+          "rank": "10",
+          "score": "94.2"
+        },
+        "2025": {
+          "rank": "10",
+          "score": "94.1"
+        },
+        "2026": {
+          "rank": "10",
+          "score": "94.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=16",
+          "score": "91.5"
+        }
+      },
+      "lng": -72.926666666,
+      "lat": 41.311111111
+    },
+    {
+      "name": "National University of Singapore",
+      "key": "National University of Singapore",
+      "country": "Singapore",
+      "city": "Singapore",
+      "the": {
+        "2024": {
+          "rank": "19",
+          "score": "90.0"
+        },
+        "2025": {
+          "rank": "17",
+          "score": "89.9"
+        },
+        "2026": {
+          "rank": "17",
+          "score": "89.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "10",
+          "score": "96.2"
+        }
+      },
+      "lng": 103.776666666,
+      "lat": 1.295555555
+    },
+    {
+      "name": "The University of Hong Kong",
+      "key": "The University of Hong Kong",
+      "country": "Hong Kong SAR",
+      "city": "Hong Kong",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "11",
+          "score": "95.9"
+        }
+      },
+      "lng": 114.137777777,
+      "lat": 22.284166666
+    },
+    {
+      "name": "Tsinghua University",
+      "key": "Tsinghua University",
+      "country": "China",
+      "city": "Beijing",
+      "the": {
+        "2024": {
+          "rank": "12",
+          "score": "92.4"
+        },
+        "2025": {
+          "rank": "12",
+          "score": "92.5"
+        },
+        "2026": {
+          "rank": "12",
+          "score": "93.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "14",
+          "score": "92.1"
+        }
+      },
+      "lng": 116.326666666,
+      "lat": 40
+    },
+    {
+      "name": "Peking University",
+      "key": "Peking University",
+      "country": "China",
+      "city": "Beijing",
+      "the": {
+        "2024": {
+          "rank": "14",
+          "score": "91.8"
+        },
+        "2025": {
+          "rank": "13",
+          "score": "92.0"
+        },
+        "2026": {
+          "rank": "13",
+          "score": "92.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "13",
+          "score": "92.6"
+        }
+      },
+      "lng": 116.305277777,
+      "lat": 39.989722222
+    },
+    {
+      "name": "University of Pennsylvania",
+      "key": "University of Pennsylvania",
+      "country": "United States",
+      "city": "Philadelphia",
+      "the": {
+        "2024": {
+          "rank": "16",
+          "score": "91.0"
+        },
+        "2025": {
+          "rank": "=14",
+          "score": "90.9"
+        },
+        "2026": {
+          "rank": "14",
+          "score": "90.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "15",
+          "score": "91.7"
+        }
+      },
+      "lng": -75.193611111,
+      "lat": 39.951944444
+    },
+    {
+      "name": "The University of Chicago",
+      "key": "The University of Chicago",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "13",
+          "score": "92.1"
+        },
+        "2025": {
+          "rank": "=14",
+          "score": "90.9"
+        },
+        "2026": {
+          "rank": "15",
+          "score": "90.6"
+        }
+      },
+      "qs": {},
+      "lat": 41.789722222222,
+      "lng": -87.599722222222
+    },
+    {
+      "name": "Johns Hopkins University",
+      "key": "Johns Hopkins University",
+      "country": "United States",
+      "city": "Baltimore",
+      "the": {
+        "2024": {
+          "rank": "15",
+          "score": "91.1"
+        },
+        "2025": {
+          "rank": "16",
+          "score": "90.7"
+        },
+        "2026": {
+          "rank": "16",
+          "score": "90.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=20",
+          "score": "89.7"
+        }
+      },
+      "lng": -76.620555555,
+      "lat": 39.328888888
+    },
+    {
+      "name": "Cornell University",
+      "key": "Cornell University",
+      "country": "United States",
+      "city": "Ithaca",
+      "the": {
+        "2024": {
+          "rank": "20",
+          "score": "89.5"
+        },
+        "2025": {
+          "rank": "20",
+          "score": "89.2"
+        },
+        "2026": {
+          "rank": "=18",
+          "score": "89.5"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=16",
+          "score": "91.5"
+        }
+      },
+      "lng": -76.483888888,
+      "lat": 42.449166666
+    },
+    {
+      "name": "University of California, Los Angeles",
+      "key": "University of California, Los Angeles",
+      "country": "United States",
+      "city": "Los Angeles",
+      "the": {
+        "2024": {
+          "rank": "18",
+          "score": "90.1"
+        },
+        "2025": {
+          "rank": "=18",
+          "score": "89.8"
+        },
+        "2026": {
+          "rank": "=18",
+          "score": "89.5"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "49",
+          "score": "82.7"
+        }
+      },
+      "lng": -118.442777777,
+      "lat": 34.072222222
+    },
+    {
+      "name": "The Chinese University of Hong Kong",
+      "key": "The Chinese University of Hong Kong",
+      "country": "Hong Kong",
+      "city": "Hong Kong",
+      "the": {
+        "2024": {
+          "rank": "53",
+          "score": "75.4"
+        },
+        "2025": {
+          "rank": "44",
+          "score": "76.8"
+        },
+        "2026": {
+          "rank": "=41",
+          "score": "77.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "18",
+          "score": "89.9"
+        }
+      },
+      "lng": 114.206791666,
+      "lat": 22.419722222
+    },
+    {
+      "name": "The University of New South Wales (UNSW Sydney)",
+      "key": "The University of New South Wales",
+      "country": "Australia",
+      "city": "Sydney",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "19",
+          "score": "89.8"
+        }
+      },
+      "lng": 151.232514,
+      "lat": -33.916921
+    },
+    {
+      "name": "Columbia University",
+      "key": "Columbia University",
+      "country": "United States",
+      "city": "New York City",
+      "the": {
+        "2024": {
+          "rank": "17",
+          "score": "90.9"
+        },
+        "2025": {
+          "rank": "=18",
+          "score": "89.8"
+        },
+        "2026": {
+          "rank": "20",
+          "score": "89.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=43",
+          "score": "84"
+        }
+      },
+      "lng": -73.961944444,
+      "lat": 40.8075
+    },
+    {
+      "name": "University of Toronto",
+      "key": "University of Toronto",
+      "country": "Canada",
+      "city": "Toronto",
+      "the": {
+        "2024": {
+          "rank": "21",
+          "score": "88.6"
+        },
+        "2025": {
+          "rank": "21",
+          "score": "88.3"
+        },
+        "2026": {
+          "rank": "21",
+          "score": "88.5"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "32",
+          "score": "86.8"
+        }
+      },
+      "lng": -79.395746,
+      "lat": 43.662917
+    },
+    {
+      "name": "The University of Melbourne",
+      "key": "The University of Melbourne",
+      "country": "Australia",
+      "city": "Melbourne",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=22",
+          "score": "89.6"
+        }
+      },
+      "lng": 144.9614,
+      "lat": -37.7963
+    },
+    {
+      "name": "University of Michigan-Ann Arbor",
+      "key": "University of Michigan-Ann Arbor",
+      "country": "United States",
+      "city": "Ann Arbor",
+      "the": {
+        "2024": {
+          "rank": "23",
+          "score": "87.4"
+        },
+        "2025": {
+          "rank": "=22",
+          "score": "87.7"
+        },
+        "2026": {
+          "rank": "23",
+          "score": "86.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "51",
+          "score": "82.2"
+        }
+      },
+      "lng": -83.738055555,
+      "lat": 42.276944444
+    },
+    {
+      "name": "Carnegie Mellon University",
+      "key": "Carnegie Mellon University",
+      "country": "United States",
+      "city": "Pittsburgh",
+      "the": {
+        "2024": {
+          "rank": "24",
+          "score": "86.3"
+        },
+        "2025": {
+          "rank": "24",
+          "score": "85.7"
+        },
+        "2026": {
+          "rank": "24",
+          "score": "85.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "55",
+          "score": "81.4"
+        }
+      },
+      "lng": -79.943333333,
+      "lat": 40.4425
+    },
+    {
+      "name": "University of Chicago",
+      "key": "University of Chicago",
+      "country": "United States",
+      "city": "Chicago",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "24",
+          "score": "89.2"
+        }
+      },
+      "lng": -87.599722222,
+      "lat": 41.789722222
+    },
+    {
+      "name": "University of Washington",
+      "key": "University of Washington",
+      "country": "United States",
+      "city": "Seattle",
+      "the": {
+        "2024": {
+          "rank": "25",
+          "score": "85.3"
+        },
+        "2025": {
+          "rank": "25",
+          "score": "83.8"
+        },
+        "2026": {
+          "rank": "25",
+          "score": "83.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=92",
+          "score": "70.2"
+        }
+      },
+      "lng": -122.3037,
+      "lat": 47.6496
+    },
+    {
+      "name": "Technical University of Munich",
+      "key": "Technical University of Munich",
+      "country": "Germany",
+      "city": "Munich",
+      "the": {
+        "2024": {
+          "rank": "=30",
+          "score": "82.5"
+        },
+        "2025": {
+          "rank": "26",
+          "score": "83.5"
+        },
+        "2026": {
+          "rank": "27",
+          "score": "83.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "25",
+          "score": "89.1"
+        }
+      },
+      "lng": 11.568055555,
+      "lat": 48.148055555
+    },
+    {
+      "name": "The University of Tokyo",
+      "key": "The University of Tokyo",
+      "country": "Japan",
+      "city": "Tokyo",
+      "the": {
+        "2024": {
+          "rank": "29",
+          "score": "83.1"
+        },
+        "2025": {
+          "rank": "28",
+          "score": "83.3"
+        },
+        "2026": {
+          "rank": "26",
+          "score": "83.5"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "39",
+          "score": "84.8"
+        }
+      },
+      "lng": 139.76232,
+      "lat": 35.71339
+    },
+    {
+      "name": "Fudan University",
+      "key": "Fudan University",
+      "country": "China",
+      "city": "Shanghai",
+      "the": {
+        "2024": {
+          "rank": "44",
+          "score": "77.5"
+        },
+        "2025": {
+          "rank": "=36",
+          "score": "78.8"
+        },
+        "2026": {
+          "rank": "36",
+          "score": "79.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "26",
+          "score": "89"
+        }
+      },
+      "lng": 121.499166666,
+      "lat": 31.298888888
+    },
+    {
+      "name": "Duke University",
+      "key": "Duke University",
+      "country": "United States",
+      "city": "Durham",
+      "the": {
+        "2024": {
+          "rank": "26",
+          "score": "83.9"
+        },
+        "2025": {
+          "rank": "27",
+          "score": "83.4"
+        },
+        "2026": {
+          "rank": "28",
+          "score": "82.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "70",
+          "score": "75.8"
+        }
+      },
+      "lng": -78.938888888,
+      "lat": 36.001111111
+    },
+    {
+      "name": "The University of Sydney",
+      "key": "The University of Sydney",
+      "country": "Australia",
+      "city": "Sydney",
+      "the": {
+        "2024": {
+          "rank": "60",
+          "score": "73.8"
+        },
+        "2025": {
+          "rank": "61",
+          "score": "73.7"
+        },
+        "2026": {
+          "rank": "=53",
+          "score": "75.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "28",
+          "score": "88.4"
+        }
+      },
+      "lng": 151.19,
+      "lat": -33.8875
+    },
+    {
+      "name": "University of Edinburgh",
+      "key": "University of Edinburgh",
+      "country": "United Kingdom",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=30",
+          "score": "82.5"
+        },
+        "2025": {
+          "rank": "29",
+          "score": "82.5"
+        },
+        "2026": {
+          "rank": "29",
+          "score": "82.5"
+        }
+      },
+      "qs": {},
+      "lng": -3.187194444,
+      "lat": 55.947388888
+    },
+    {
+      "name": "Australian National University",
+      "key": "Australian National University",
+      "country": "Australia",
+      "city": "Canberra",
+      "the": {
+        "2024": {
+          "rank": "67",
+          "score": "72.6"
+        },
+        "2025": {
+          "rank": "=73",
+          "score": "70.7"
+        },
+        "2026": {
+          "rank": "=73",
+          "score": "71.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "29",
+          "score": "87.6"
+        }
+      },
+      "lng": 149.1205,
+      "lat": -35.2778
+    },
+    {
+      "name": "Northwestern University",
+      "key": "Northwestern University",
+      "country": "United States",
+      "city": "Evanston",
+      "the": {
+        "2024": {
+          "rank": "28",
+          "score": "83.2"
+        },
+        "2025": {
+          "rank": "31",
+          "score": "81.4"
+        },
+        "2026": {
+          "rank": "30",
+          "score": "81.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=45",
+          "score": "83.8"
+        }
+      },
+      "lng": -87.675267,
+      "lat": 42.0564594
+    },
+    {
+      "name": "McGill University",
+      "key": "McGill University",
+      "country": "Canada",
+      "city": "Montreal",
+      "the": {
+        "2024": {
+          "rank": "49",
+          "score": "76.0"
+        },
+        "2025": {
+          "rank": "45",
+          "score": "76.7"
+        },
+        "2026": {
+          "rank": "=41",
+          "score": "77.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "30",
+          "score": "87.5"
+        }
+      },
+      "lng": -73.5775,
+      "lat": 45.505
+    },
+    {
+      "name": "New York University",
+      "key": "New York University",
+      "country": "United States",
+      "city": "New York City",
+      "the": {
+        "2024": {
+          "rank": "27",
+          "score": "83.5"
+        },
+        "2025": {
+          "rank": "33",
+          "score": "80.3"
+        },
+        "2026": {
+          "rank": "=31",
+          "score": "81.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "58",
+          "score": "80.8"
+        }
+      },
+      "lng": -73.995,
+      "lat": 40.73
+    },
+    {
+      "name": "Monash University",
+      "key": "Monash University",
+      "country": "Australia",
+      "city": "Melbourne",
+      "the": {
+        "2024": {
+          "rank": "54",
+          "score": "75.2"
+        },
+        "2025": {
+          "rank": "=58",
+          "score": "73.8"
+        },
+        "2026": {
+          "rank": "=58",
+          "score": "74.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "31",
+          "score": "87"
+        }
+      },
+      "lng": 145.138055555,
+      "lat": -37.908333333
+    },
+    {
+      "name": "University of Hong Kong",
+      "key": "University of Hong Kong",
+      "country": "Hong Kong",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "35",
+          "score": "80.3"
+        },
+        "2025": {
+          "rank": "35",
+          "score": "79.6"
+        },
+        "2026": {
+          "rank": "33",
+          "score": "80.5"
+        }
+      },
+      "qs": {},
+      "lng": 114.137777777,
+      "lat": 22.284166666
+    },
+    {
+      "name": "The Hong Kong University of Science and Technology",
+      "key": "The Hong Kong University of Science and Technology",
+      "country": "Hong Kong",
+      "city": "Hong Kong",
+      "the": {
+        "2024": {
+          "rank": "=64",
+          "score": "73.0"
+        },
+        "2025": {
+          "rank": "66",
+          "score": "72.9"
+        },
+        "2026": {
+          "rank": "=58",
+          "score": "74.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "33",
+          "score": "86.4"
+        }
+      },
+      "lng": 114.263,
+      "lat": 22.3375
+    },
+    {
+      "name": "LMU Munich",
+      "key": "LMU Munich",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=38",
+          "score": "79.0"
+        },
+        "2025": {
+          "rank": "38",
+          "score": "78.7"
+        },
+        "2026": {
+          "rank": "34",
+          "score": "79.7"
+        }
+      },
+      "qs": {},
+      "lng": 11.580277777,
+      "lat": 48.150833333
+    },
+    {
+      "name": "Université PSL",
+      "key": "Université PSL",
+      "country": "France",
+      "city": "Paris",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "34",
+          "score": "86"
+        }
+      },
+      "lng": 2.3525628,
+      "lat": 48.8402026
+    },
+    {
+      "name": "École Polytechnique Fédérale de Lausanne",
+      "key": "École Polytechnique Fédérale de Lausanne",
+      "country": "Switzerland",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "33",
+          "score": "81.4"
+        },
+        "2025": {
+          "rank": "32",
+          "score": "80.4"
+        },
+        "2026": {
+          "rank": "35",
+          "score": "79.6"
+        }
+      },
+      "qs": {},
+      "lat": 46.520277777778,
+      "lng": 6.5655555555556
+    },
+    {
+      "name": "The University of Edinburgh",
+      "key": "The University of Edinburgh",
+      "country": "United Kingdom",
+      "city": "Edinburgh",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "35",
+          "score": "85.9"
+        }
+      },
+      "lng": -3.187194444,
+      "lat": 55.947388888
+    },
+    {
+      "name": "Shanghai Jiao Tong University",
+      "key": "Shanghai Jiao Tong University",
+      "country": "China",
+      "city": "Shanghai",
+      "the": {
+        "2024": {
+          "rank": "43",
+          "score": "77.7"
+        },
+        "2025": {
+          "rank": "52",
+          "score": "75.8"
+        },
+        "2026": {
+          "rank": "40",
+          "score": "77.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "36",
+          "score": "85.8"
+        }
+      },
+      "lng": 121.436348,
+      "lat": 31.025393
+    },
+    {
+      "name": "University of Melbourne",
+      "key": "University of Melbourne",
+      "country": "Australia",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "37",
+          "score": "79.2"
+        },
+        "2025": {
+          "rank": "39",
+          "score": "78.4"
+        },
+        "2026": {
+          "rank": "37",
+          "score": "79.0"
+        }
+      },
+      "qs": {},
+      "lng": 144.9614,
+      "lat": -37.7963
+    },
+    {
+      "name": "King’s College London",
+      "key": "King's College London",
+      "country": "United Kingdom",
+      "city": "London",
+      "the": {
+        "2024": {
+          "rank": "=38",
+          "score": "79.0"
+        },
+        "2025": {
+          "rank": "=36",
+          "score": "78.8"
+        },
+        "2026": {
+          "rank": "38",
+          "score": "78.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "37",
+          "score": "85.7"
+        }
+      },
+      "lng": -0.116111111,
+      "lat": 51.511944444
+    },
+    {
+      "name": "Seoul National University",
+      "key": "Seoul National University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "62",
+          "score": "73.4"
+        },
+        "2025": {
+          "rank": "=62",
+          "score": "73.5"
+        },
+        "2026": {
+          "rank": "=58",
+          "score": "74.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "38",
+          "score": "85.4"
+        }
+      },
+      "lng": 126.9525,
+      "lat": 37.46
+    },
+    {
+      "name": "Zhejiang University",
+      "key": "Zhejiang University",
+      "country": "China",
+      "city": "Hangzhou",
+      "the": {
+        "2024": {
+          "rank": "=55",
+          "score": "75.0"
+        },
+        "2025": {
+          "rank": "=47",
+          "score": "76.2"
+        },
+        "2026": {
+          "rank": "39",
+          "score": "78.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "47",
+          "score": "83.5"
+        }
+      },
+      "lng": 120.120833333,
+      "lat": 30.263611111
+    },
+    {
+      "name": "The University of Queensland",
+      "key": "The University of Queensland",
+      "country": "Australia",
+      "city": "Brisbane",
+      "the": {
+        "2024": {
+          "rank": "70",
+          "score": "72.0"
+        },
+        "2025": {
+          "rank": "77",
+          "score": "70.3"
+        },
+        "2026": {
+          "rank": "=80",
+          "score": "69.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=40",
+          "score": "84.6"
+        }
+      },
+      "lng": 153.013055555,
+      "lat": -27.497222222
+    },
+    {
+      "name": "The University of Manchester",
+      "key": "The University of Manchester",
+      "country": "United Kingdom",
+      "city": "Manchester",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=40",
+          "score": "84.6"
+        }
+      },
+      "lng": -2.231944444,
+      "lat": 53.466111111
+    },
+    {
+      "name": "Georgia Institute of Technology",
+      "key": "Georgia Institute of Technology",
+      "country": "United States",
+      "city": "Atlanta",
+      "the": {
+        "2024": {
+          "rank": "36",
+          "score": "80.0"
+        },
+        "2025": {
+          "rank": "40",
+          "score": "78.3"
+        },
+        "2026": {
+          "rank": "=41",
+          "score": "77.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=142",
+          "score": "62.5"
+        }
+      },
+      "lng": -84.394694444,
+      "lat": 33.775805555
+    },
+    {
+      "name": "University of Illinois at Urbana-Champaign",
+      "key": "University of Illinois at Urbana-Champaign",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "42",
+          "score": "77.9"
+        },
+        "2025": {
+          "rank": "46",
+          "score": "76.5"
+        },
+        "2026": {
+          "rank": "=41",
+          "score": "77.1"
+        }
+      },
+      "qs": {},
+      "lng": -88.228411111,
+      "lat": 40.110538888
+    },
+    {
+      "name": "Yonsei University (Seoul campus)",
+      "key": "Yonsei University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "76",
+          "score": "70.4"
+        },
+        "2025": {
+          "rank": "=102",
+          "score": "66.1"
+        },
+        "2026": {
+          "rank": "86",
+          "score": "68.5"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "42",
+          "score": "84.2"
+        }
+      },
+      "lng": 126.936944444,
+      "lat": 37.560277777
+    },
+    {
+      "name": "Institut Polytechnique de Paris",
+      "key": "Institut Polytechnique de Paris",
+      "country": "France",
+      "city": "Paris",
+      "the": {
+        "2024": {
+          "rank": "71",
+          "score": "71.3"
+        },
+        "2025": {
+          "rank": "71",
+          "score": "71.3"
+        },
+        "2026": {
+          "rank": "=68",
+          "score": "71.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=43",
+          "score": "84"
+        }
+      },
+      "lat": 48.710709,
+      "lng": 2.219011
+    },
+    {
+      "name": "University of British Columbia",
+      "key": "University of British Columbia",
+      "country": "Canada",
+      "city": "Vancouver",
+      "the": {
+        "2024": {
+          "rank": "41",
+          "score": "78.0"
+        },
+        "2025": {
+          "rank": "41",
+          "score": "77.8"
+        },
+        "2026": {
+          "rank": "45",
+          "score": "77.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=45",
+          "score": "83.9"
+        }
+      },
+      "lng": -123.252777777,
+      "lat": 49.264722222
+    },
+    {
+      "name": "KU Leuven",
+      "key": "KU Leuven",
+      "country": "Belgium",
+      "city": "Leuven",
+      "the": {
+        "2024": {
+          "rank": "45",
+          "score": "77.0"
+        },
+        "2025": {
+          "rank": "43",
+          "score": "77.0"
+        },
+        "2026": {
+          "rank": "46",
+          "score": "76.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "59",
+          "score": "80.5"
+        }
+      },
+      "lat": 50.87796336853561,
+      "lng": 4.70029370854174
+    },
+    {
+      "name": "University of California, San Diego",
+      "key": "University of California, San Diego",
+      "country": "United States",
+      "city": "San Diego",
+      "the": {
+        "2024": {
+          "rank": "34",
+          "score": "81.0"
+        },
+        "2025": {
+          "rank": "34",
+          "score": "79.9"
+        },
+        "2026": {
+          "rank": "47",
+          "score": "76.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "81",
+          "score": "73.3"
+        }
+      },
+      "lng": -117.236111111,
+      "lat": 32.878888888
+    },
+    {
+      "name": "Delft University of Technology",
+      "key": "Delft University of Technology",
+      "country": "Netherlands",
+      "city": "Delft",
+      "the": {
+        "2024": {
+          "rank": "48",
+          "score": "76.3"
+        },
+        "2025": {
+          "rank": "=56",
+          "score": "74.8"
+        },
+        "2026": {
+          "rank": "57",
+          "score": "74.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "48",
+          "score": "83.1"
+        }
+      },
+      "lng": 4.3725,
+      "lat": 52.001666666
+    },
+    {
+      "name": "Universität Heidelberg",
+      "key": "Universität Heidelberg",
+      "country": "Germany",
+      "city": "69117 Heidelberg",
+      "the": {
+        "2024": {
+          "rank": "47",
+          "score": "76.7"
+        },
+        "2025": {
+          "rank": "=47",
+          "score": "76.2"
+        },
+        "2026": {
+          "rank": "49",
+          "score": "76.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "86",
+          "score": "70.6"
+        }
+      },
+      "lat": 49.410277777778,
+      "lng": 8.7063888888889
+    },
+    {
+      "name": "University of Texas at Austin",
+      "key": "University of Texas at Austin",
+      "country": "United States",
+      "city": "Austin",
+      "the": {
+        "2024": {
+          "rank": "52",
+          "score": "75.5"
+        },
+        "2025": {
+          "rank": "=50",
+          "score": "75.9"
+        },
+        "2026": {
+          "rank": "50",
+          "score": "75.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "72",
+          "score": "75.3"
+        }
+      },
+      "lng": -97.73942,
+      "lat": 30.28614
+    },
+    {
+      "name": "The Hong Kong Polytechnic University",
+      "key": "The Hong Kong Polytechnic University",
+      "country": "Hong Kong",
+      "city": "Hong Kong",
+      "the": {
+        "2024": {
+          "rank": "=87",
+          "score": "68.2"
+        },
+        "2025": {
+          "rank": "=84",
+          "score": "68.0"
+        },
+        "2026": {
+          "rank": "80",
+          "score": "69.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "50",
+          "score": "82.3"
+        }
+      },
+      "lat": 22.305,
+      "lng": 114.18
+    },
+    {
+      "name": "University of Science and Technology of China",
+      "key": "University of Science and Technology of China",
+      "country": "China",
+      "city": "Hefei",
+      "the": {
+        "2024": {
+          "rank": "57",
+          "score": "74.8"
+        },
+        "2025": {
+          "rank": "=53",
+          "score": "75.5"
+        },
+        "2026": {
+          "rank": "51",
+          "score": "75.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=134",
+          "score": "63.9"
+        }
+      },
+      "lng": 117.258888888,
+      "lat": 31.841666666
+    },
+    {
+      "name": "London School of Economics and Political Science",
+      "key": "London School of Economics and Political Science",
+      "country": "United Kingdom",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "46",
+          "score": "76.8"
+        },
+        "2025": {
+          "rank": "=50",
+          "score": "75.9"
+        },
+        "2026": {
+          "rank": "52",
+          "score": "75.4"
+        }
+      },
+      "qs": {},
+      "lng": -0.116666666,
+      "lat": 51.513888888
+    },
+    {
+      "name": "City University of Hong Kong",
+      "key": "City University of Hong Kong",
+      "country": "Hong Kong",
+      "city": "Kowloon",
+      "the": {
+        "2024": {
+          "rank": "82",
+          "score": "69.3"
+        },
+        "2025": {
+          "rank": "78",
+          "score": "70.0"
+        },
+        "2026": {
+          "rank": "73",
+          "score": "71.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=52",
+          "score": "81.9"
+        }
+      },
+      "lng": 114.172988888,
+      "lat": 22.336422222
+    },
+    {
+      "name": "Korea University",
+      "key": "Korea University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "201–250",
+          "score": "55.9–58.6"
+        },
+        "2025": {
+          "rank": "=189",
+          "score": "59.3"
+        },
+        "2026": {
+          "rank": "=156",
+          "score": "61.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=52",
+          "score": "81.9"
+        }
+      },
+      "lng": 127.0325,
+      "lat": 37.589166666
+    },
+    {
+      "name": "Karolinska Institute",
+      "key": "Karolinska Institute",
+      "country": "Sweden",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "50",
+          "score": "75.9"
+        },
+        "2025": {
+          "rank": "49",
+          "score": "76.1"
+        },
+        "2026": {
+          "rank": "=53",
+          "score": "75.0"
+        }
+      },
+      "qs": {},
+      "lng": 18.026666666,
+      "lat": 59.348888888
+    },
+    {
+      "name": "University of Wisconsin-Madison",
+      "key": "University of Wisconsin-Madison",
+      "country": "United States",
+      "city": "Madison",
+      "the": {
+        "2024": {
+          "rank": "63",
+          "score": "73.3"
+        },
+        "2025": {
+          "rank": "=56",
+          "score": "74.8"
+        },
+        "2026": {
+          "rank": "=53",
+          "score": "75.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=131",
+          "score": "64.3"
+        }
+      },
+      "lng": -89.404166666,
+      "lat": 43.075277777
+    },
+    {
+      "name": "National Taiwan University (NTU)",
+      "key": "National Taiwan University",
+      "country": "Taiwan",
+      "city": "Taipei",
+      "the": {
+        "2024": {
+          "rank": "=152",
+          "score": "61.9"
+        },
+        "2025": {
+          "rank": "=172",
+          "score": "60.4"
+        },
+        "2026": {
+          "rank": "140",
+          "score": "62.5"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "54",
+          "score": "81.7"
+        }
+      },
+      "lng": 121.5384571,
+      "lat": 25.0168175
+    },
+    {
+      "name": "University of Manchester",
+      "key": "University of Manchester",
+      "country": "United Kingdom",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "51",
+          "score": "75.6"
+        },
+        "2025": {
+          "rank": "=53",
+          "score": "75.5"
+        },
+        "2026": {
+          "rank": "56",
+          "score": "74.9"
+        }
+      },
+      "qs": {},
+      "lng": -2.2325,
+      "lat": 53.4675
+    },
+    {
+      "name": "Universiti Malaya (UM)",
+      "key": "Universiti Malaya",
+      "country": "Malaysia",
+      "city": "Kuala Lumpur",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "56",
+          "score": "81.2"
+        }
+      },
+      "lng": 101.656388888,
+      "lat": 3.120833333
+    },
+    {
+      "name": "University of Bristol",
+      "key": "University of Bristol",
+      "country": "United Kingdom",
+      "city": "Bristol",
+      "the": {
+        "2024": {
+          "rank": "81",
+          "score": "69.8"
+        },
+        "2025": {
+          "rank": "78",
+          "score": "70.0"
+        },
+        "2026": {
+          "rank": "=80",
+          "score": "69.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "57",
+          "score": "80.9"
+        }
+      },
+      "lng": -2.604444444,
+      "lat": 51.456388888
+    },
+    {
+      "name": "University of Amsterdam",
+      "key": "University of Amsterdam",
+      "country": "Netherlands",
+      "city": "Amsterdam",
+      "the": {
+        "2024": {
+          "rank": "61",
+          "score": "73.6"
+        },
+        "2025": {
+          "rank": "=58",
+          "score": "73.8"
+        },
+        "2026": {
+          "rank": "=62",
+          "score": "73.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "60",
+          "score": "80.2"
+        }
+      },
+      "lng": 4.890277777,
+      "lat": 52.368333333
+    },
+    {
+      "name": "Kyoto University",
+      "key": "Kyoto University",
+      "country": "Japan",
+      "city": "Kyoto",
+      "the": {
+        "2024": {
+          "rank": "=55",
+          "score": "75.0"
+        },
+        "2025": {
+          "rank": "55",
+          "score": "75.2"
+        },
+        "2026": {
+          "rank": "61",
+          "score": "74.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "64",
+          "score": "78.2"
+        }
+      },
+      "lng": 135.780842,
+      "lat": 35.026212
+    },
+    {
+      "name": "Ludwig-Maximilians-Universität München",
+      "key": "Ludwig-Maximilians-Universität München",
+      "country": "Germany",
+      "city": "Munich",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "61",
+          "score": "79.6"
+        }
+      },
+      "lng": 11.580277777,
+      "lat": 48.150833333
+    },
+    {
+      "name": "Nanjing University",
+      "key": "Nanjing University",
+      "country": "China",
+      "city": "Nanjing",
+      "the": {
+        "2024": {
+          "rank": "73",
+          "score": "70.9"
+        },
+        "2025": {
+          "rank": "65",
+          "score": "73.0"
+        },
+        "2026": {
+          "rank": "=62",
+          "score": "73.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=90",
+          "score": "70.4"
+        }
+      },
+      "lng": 118.775,
+      "lat": 32.05611
+    },
+    {
+      "name": "The London School of Economics and Political Science (LSE)",
+      "key": "The London School of Economics and Political Science",
+      "country": "United Kingdom",
+      "city": "London",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "62",
+          "score": "78.8"
+        }
+      },
+      "lat": 51.513888888889,
+      "lng": -0.11666666666667
+    },
+    {
+      "name": "KFUPM",
+      "key": "KFUPM",
+      "country": "Saudi Arabia",
+      "city": "Dhahran",
+      "the": {
+        "2025": {
+          "rank": "=176",
+          "score": "60.1"
+        },
+        "2026": {
+          "rank": "=184",
+          "score": "59.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "63",
+          "score": "78.3"
+        }
+      },
+      "lat": 26.309722222222,
+      "lng": 50.143888888889
+    },
+    {
+      "name": "University of California, Davis",
+      "key": "University of California, Davis",
+      "country": "United States",
+      "city": "Davis",
+      "the": {
+        "2024": {
+          "rank": "59",
+          "score": "74.1"
+        },
+        "2025": {
+          "rank": "=62",
+          "score": "73.5"
+        },
+        "2026": {
+          "rank": "64",
+          "score": "72.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "137",
+          "score": "63"
+        }
+      },
+      "lng": -121.75,
+      "lat": 38.54
+    },
+    {
+      "name": "Brown University",
+      "key": "Brown University",
+      "country": "United States",
+      "city": "Providence",
+      "the": {
+        "2024": {
+          "rank": "=64",
+          "score": "73.0"
+        },
+        "2025": {
+          "rank": "=58",
+          "score": "73.8"
+        },
+        "2026": {
+          "rank": "65",
+          "score": "72.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "66",
+          "score": "77.4"
+        }
+      },
+      "lng": -71.403055555,
+      "lat": 41.826111111
+    },
+    {
+      "name": "KAIST",
+      "key": "KAIST",
+      "country": "South Korea",
+      "city": "Daejeon",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "65",
+          "score": "77.7"
+        }
+      },
+      "lng": 37.180555555,
+      "lat": -1.674166666
+    },
+    {
+      "name": "Wageningen University & Research",
+      "key": "Wageningen University & Research",
+      "country": "Netherlands",
+      "city": "Wageningen",
+      "the": {
+        "2024": {
+          "rank": "=64",
+          "score": "73.0"
+        },
+        "2025": {
+          "rank": "=67",
+          "score": "72.7"
+        },
+        "2026": {
+          "rank": "66",
+          "score": "72.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "154",
+          "score": "61.1"
+        }
+      },
+      "lng": 5.663666666,
+      "lat": 51.985277777
+    },
+    {
+      "name": "The University of Auckland",
+      "key": "The University of Auckland",
+      "country": "New Zealand",
+      "city": "Auckland",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "67",
+          "score": "77"
+        }
+      },
+      "lng": 174.769494444,
+      "lat": -36.850197222
+    },
+    {
+      "name": "Université Paris-Saclay",
+      "key": "Université Paris-Saclay",
+      "country": "France",
+      "city": "Paris",
+      "the": {
+        "2024": {
+          "rank": "58",
+          "score": "74.4"
+        },
+        "2025": {
+          "rank": "64",
+          "score": "73.4"
+        },
+        "2026": {
+          "rank": "=68",
+          "score": "71.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "76",
+          "score": "73.8"
+        }
+      },
+      "lng": 2.16447,
+      "lat": 48.70821
+    },
+    {
+      "name": "University of Birmingham",
+      "key": "University of Birmingham",
+      "country": "United Kingdom",
+      "city": "Birmingham",
+      "the": {
+        "2024": {
+          "rank": "101",
+          "score": "66.6"
+        },
+        "2025": {
+          "rank": "=93",
+          "score": "67.1"
+        },
+        "2026": {
+          "rank": "=98",
+          "score": "66.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=68",
+          "score": "75.9"
+        }
+      },
+      "lng": -1.930555555,
+      "lat": 52.450555555
+    },
+    {
+      "name": "University of Warwick",
+      "key": "University of Warwick",
+      "country": "United Kingdom",
+      "city": "England",
+      "the": {
+        "2024": {
+          "rank": "=106",
+          "score": "66.1"
+        },
+        "2025": {
+          "rank": "106",
+          "score": "65.7"
+        },
+        "2026": {
+          "rank": "=122",
+          "score": "64.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=68",
+          "score": "75.9"
+        }
+      },
+      "lng": -1.564804,
+      "lat": 52.385826
+    },
+    {
+      "name": "Leiden University",
+      "key": "Leiden University",
+      "country": "Netherlands",
+      "city": "Leiden",
+      "the": {
+        "2024": {
+          "rank": "77",
+          "score": "70.2"
+        },
+        "2025": {
+          "rank": "=73",
+          "score": "70.7"
+        },
+        "2026": {
+          "rank": "=70",
+          "score": "71.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=119",
+          "score": "65.6"
+        }
+      },
+      "lng": 4.485277777,
+      "lat": 52.156944444
+    },
+    {
+      "name": "Korea Advanced Institute of Science and Technology (KAIST)",
+      "key": "Korea Advanced Institute of Science and Technology",
+      "country": "South Korea",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "83",
+          "score": "69.2"
+        },
+        "2025": {
+          "rank": "82",
+          "score": "69.5"
+        },
+        "2026": {
+          "rank": "=70",
+          "score": "71.3"
+        }
+      },
+      "qs": {},
+      "lng": 127.363,
+      "lat": 36.372
+    },
+    {
+      "name": "Lund University",
+      "key": "Lund University",
+      "country": "Sweden",
+      "city": "Lund",
+      "the": {
+        "2024": {
+          "rank": "=106",
+          "score": "66.1"
+        },
+        "2025": {
+          "rank": "=95",
+          "score": "66.9"
+        },
+        "2026": {
+          "rank": "=95",
+          "score": "66.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "71",
+          "score": "75.7"
+        }
+      },
+      "lng": 13.193333333,
+      "lat": 55.705833333
+    },
+    {
+      "name": "University of California, Santa Barbara",
+      "key": "University of California, Santa Barbara",
+      "country": "United States",
+      "city": "Santa Barbara",
+      "the": {
+        "2024": {
+          "rank": "69",
+          "score": "72.1"
+        },
+        "2025": {
+          "rank": "=67",
+          "score": "72.7"
+        },
+        "2026": {
+          "rank": "72",
+          "score": "71.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "173",
+          "score": "58.3"
+        }
+      },
+      "lng": -119.8463925,
+      "lat": 34.4163232
+    },
+    {
+      "name": "University of Southern California",
+      "key": "University of Southern California",
+      "country": "United States",
+      "city": "Los Angeles",
+      "the": {
+        "2024": {
+          "rank": "74",
+          "score": "70.8"
+        },
+        "2025": {
+          "rank": "72",
+          "score": "71.0"
+        },
+        "2026": {
+          "rank": "=73",
+          "score": "71.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "153",
+          "score": "61.3"
+        }
+      },
+      "lng": -118.285278,
+      "lat": 34.021667
+    },
+    {
+      "name": "Sorbonne University",
+      "key": "Sorbonne University",
+      "country": "France",
+      "city": "Paris",
+      "the": {
+        "2024": {
+          "rank": "75",
+          "score": "70.5"
+        },
+        "2025": {
+          "rank": "76",
+          "score": "70.4"
+        },
+        "2026": {
+          "rank": "=76",
+          "score": "70.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "73",
+          "score": "74.8"
+        }
+      },
+      "lng": 2.34031211,
+      "lat": 48.850623259
+    },
+    {
+      "name": "University of Illinois Urbana-Champaign",
+      "key": "University of Illinois Urbana-Champaign",
+      "country": "United States",
+      "city": "Champaign",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "74",
+          "score": "74.7"
+        }
+      },
+      "lng": -88.228411111,
+      "lat": 40.110538888
+    },
+    {
+      "name": "Boston University",
+      "key": "Boston University",
+      "country": "United States",
+      "city": "Boston",
+      "the": {
+        "2024": {
+          "rank": "78",
+          "score": "70.1"
+        },
+        "2025": {
+          "rank": "75",
+          "score": "70.6"
+        },
+        "2026": {
+          "rank": "=76",
+          "score": "70.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "94",
+          "score": "70"
+        }
+      },
+      "lng": -71.100277777,
+      "lat": 42.348888888
+    },
+    {
+      "name": "University of Leeds",
+      "key": "University of Leeds",
+      "country": "United Kingdom",
+      "city": "Leeds",
+      "the": {
+        "2024": {
+          "rank": "129",
+          "score": "63.9"
+        },
+        "2025": {
+          "rank": "123",
+          "score": "64.5"
+        },
+        "2026": {
+          "rank": "118",
+          "score": "64.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=77",
+          "score": "73.7"
+        }
+      },
+      "lng": -1.551666666,
+      "lat": 53.807222222
+    },
+    {
+      "name": "The University of Western Australia",
+      "key": "The University of Western Australia",
+      "country": "Australia",
+      "city": "Perth",
+      "the": {
+        "2024": {
+          "rank": "=143",
+          "score": "62.7"
+        },
+        "2025": {
+          "rank": "=149",
+          "score": "62.0"
+        },
+        "2026": {
+          "rank": "153",
+          "score": "61.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=77",
+          "score": "73.7"
+        }
+      },
+      "lng": 115.818611111,
+      "lat": -31.980277777
+    },
+    {
+      "name": "University of North Carolina at Chapel Hill",
+      "key": "University of North Carolina at Chapel Hill",
+      "country": "United States",
+      "city": "Chapel Hill",
+      "the": {
+        "2024": {
+          "rank": "72",
+          "score": "71.2"
+        },
+        "2025": {
+          "rank": "70",
+          "score": "71.6"
+        },
+        "2026": {
+          "rank": "78",
+          "score": "70.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=158",
+          "score": "60.6"
+        }
+      },
+      "lng": -79.049166666,
+      "lat": 35.908611111
+    },
+    {
+      "name": "UNSW Sydney",
+      "key": "UNSW Sydney",
+      "country": "Australia",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "84",
+          "score": "68.9"
+        },
+        "2025": {
+          "rank": "83",
+          "score": "69.1"
+        },
+        "2026": {
+          "rank": "79",
+          "score": "70.0"
+        }
+      },
+      "qs": {},
+      "lng": 151.232514,
+      "lat": -33.916921
+    },
+    {
+      "name": "Adelaide University",
+      "key": "Adelaide University",
+      "country": "Australia",
+      "city": "Adelaide",
+      "the": {
+        "2026": {
+          "rank": "133",
+          "score": "63"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "79",
+          "score": "73.6"
+        }
+      },
+      "lng": 138.606796265,
+      "lat": -34.920396319
+    },
+    {
+      "name": "University of Glasgow",
+      "key": "University of Glasgow",
+      "country": "United Kingdom",
+      "city": "Glasgow",
+      "the": {
+        "2024": {
+          "rank": "=87",
+          "score": "68.2"
+        },
+        "2025": {
+          "rank": "=87",
+          "score": "67.8"
+        },
+        "2026": {
+          "rank": "84",
+          "score": "68.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "80",
+          "score": "73.4"
+        }
+      },
+      "lng": -4.288055555,
+      "lat": 55.872222222
+    },
+    {
+      "name": "University of Groningen",
+      "key": "University of Groningen",
+      "country": "Netherlands",
+      "city": "Groningen",
+      "the": {
+        "2024": {
+          "rank": "79",
+          "score": "70.0"
+        },
+        "2025": {
+          "rank": "=80",
+          "score": "69.8"
+        },
+        "2026": {
+          "rank": "82",
+          "score": "69.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "157",
+          "score": "60.7"
+        }
+      },
+      "lng": 6.562777777,
+      "lat": 53.219166666
+    },
+    {
+      "name": "KTH Royal Institute of Technology",
+      "key": "KTH Royal Institute of Technology",
+      "country": "Sweden",
+      "city": "Stockholm",
+      "the": {
+        "2024": {
+          "rank": "=97",
+          "score": "66.9"
+        },
+        "2025": {
+          "rank": "=95",
+          "score": "66.9"
+        },
+        "2026": {
+          "rank": "=98",
+          "score": "66.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=82",
+          "score": "72.7"
+        }
+      },
+      "lng": 18.072777777,
+      "lat": 59.347222222
+    },
+    {
+      "name": "The University of Sheffield",
+      "key": "The University of Sheffield",
+      "country": "United Kingdom",
+      "city": "Sheffield",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=82",
+          "score": "72.7"
+        }
+      },
+      "lng": -1.488805555,
+      "lat": 53.380722222
+    },
+    {
+      "name": "Universidad de Buenos Aires (UBA)",
+      "key": "Universidad de Buenos Aires",
+      "country": "Argentina",
+      "city": "Ciudad Autónoma de Bs. A.",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "84",
+          "score": "72.3"
+        }
+      },
+      "lng": -58.373055555,
+      "lat": -34.599722222
+    },
+    {
+      "name": "Durham University",
+      "key": "Durham University",
+      "country": "United Kingdom",
+      "city": "Durham",
+      "the": {
+        "2024": {
+          "rank": "174",
+          "score": "60.6"
+        },
+        "2025": {
+          "rank": "=172",
+          "score": "60.4"
+        },
+        "2026": {
+          "rank": "175",
+          "score": "60.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "85",
+          "score": "71.7"
+        }
+      },
+      "lng": -1.575,
+      "lat": 54.775
+    },
+    {
+      "name": "Uppsala University",
+      "key": "Uppsala University",
+      "country": "Sweden",
+      "city": "Uppsala",
+      "the": {
+        "2024": {
+          "rank": "=140",
+          "score": "62.8"
+        },
+        "2025": {
+          "rank": "=130",
+          "score": "63.6"
+        },
+        "2026": {
+          "rank": "128",
+          "score": "63.5"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=87",
+          "score": "70.5"
+        }
+      },
+      "lng": 17.628888888,
+      "lat": 59.8575
+    },
+    {
+      "name": "Sungkyunkwan University (SKKU)",
+      "key": "Sungkyunkwan University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "=145",
+          "score": "62.5"
+        },
+        "2025": {
+          "rank": "=102",
+          "score": "66.1"
+        },
+        "2026": {
+          "rank": "87",
+          "score": "68.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "108",
+          "score": "67.3"
+        }
+      },
+      "lng": 126.994166666,
+      "lat": 37.587222222
+    },
+    {
+      "name": "Politecnico di Milano",
+      "key": "Politecnico di Milano",
+      "country": "Italy",
+      "city": "Milan",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=87",
+          "score": "70.5"
+        }
+      },
+      "lat": 45.478030555555556,
+      "lng": 9.227319444444445
+    },
+    {
+      "name": "The University of Technology Sydney (UTS)",
+      "key": "The University of Technology Sydney",
+      "country": "Australia",
+      "city": "Sydney",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=87",
+          "score": "70.5"
+        }
+      },
+      "lat": -33.88325541362982,
+      "lng": 151.2004083693163
+    },
+    {
+      "name": "University of Minnesota",
+      "key": "University of Minnesota",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "85",
+          "score": "68.7"
+        },
+        "2025": {
+          "rank": "=87",
+          "score": "67.8"
+        },
+        "2026": {
+          "rank": "88",
+          "score": "67.5"
+        }
+      },
+      "qs": {},
+      "lng": -93.235277777,
+      "lat": 44.975
+    },
+    {
+      "name": "Humboldt University of Berlin",
+      "key": "Humboldt University of Berlin",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=87",
+          "score": "68.2"
+        },
+        "2025": {
+          "rank": "=84",
+          "score": "68.0"
+        },
+        "2026": {
+          "rank": "89",
+          "score": "67.2"
+        }
+      },
+      "qs": {},
+      "lng": 13.393333333,
+      "lat": 52.518055555
+    },
+    {
+      "name": "University of Copenhagen",
+      "key": "University of Copenhagen",
+      "country": "Denmark",
+      "city": "Copenhagen",
+      "the": {
+        "2024": {
+          "rank": "=103",
+          "score": "66.3"
+        },
+        "2025": {
+          "rank": "97",
+          "score": "66.6"
+        },
+        "2026": {
+          "rank": "90",
+          "score": "67.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=90",
+          "score": "70.4"
+        }
+      },
+      "lng": 12.5725,
+      "lat": 55.679722222
+    },
+    {
+      "name": "RWTH Aachen University",
+      "key": "RWTH Aachen University",
+      "country": "Germany",
+      "city": "Aachen",
+      "the": {
+        "2024": {
+          "rank": "90",
+          "score": "68.0"
+        },
+        "2025": {
+          "rank": "92",
+          "score": "67.2"
+        },
+        "2026": {
+          "rank": "=92",
+          "score": "66.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "104",
+          "score": "68"
+        }
+      },
+      "lng": 6.078055555,
+      "lat": 50.777777777
+    },
+    {
+      "name": "University of Bonn",
+      "key": "University of Bonn",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "91",
+          "score": "67.8"
+        },
+        "2025": {
+          "rank": "89",
+          "score": "67.6"
+        },
+        "2026": {
+          "rank": "=92",
+          "score": "66.7"
+        }
+      },
+      "qs": {},
+      "lng": 7.102222222,
+      "lat": 50.733888888
+    },
+    {
+      "name": "Vanderbilt University",
+      "key": "Vanderbilt University",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=92",
+          "score": "67.4"
+        },
+        "2025": {
+          "rank": "=90",
+          "score": "67.3"
+        },
+        "2026": {
+          "rank": "=92",
+          "score": "66.7"
+        }
+      },
+      "qs": {},
+      "lng": -86.8025,
+      "lat": 36.1475
+    },
+    {
+      "name": "Pennsylvania State University",
+      "key": "Pennsylvania State University",
+      "country": "United States",
+      "city": "University Park",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=92",
+          "score": "70.2"
+        }
+      },
+      "lng": -77.862777777,
+      "lat": 40.796111111
+    },
+    {
+      "name": "University of Vienna",
+      "key": "University of Vienna",
+      "country": "Austria",
+      "city": "Vienna",
+      "the": {
+        "2024": {
+          "rank": "=119",
+          "score": "65.2"
+        },
+        "2025": {
+          "rank": "=110",
+          "score": "65.5"
+        },
+        "2026": {
+          "rank": "=95",
+          "score": "66.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=140",
+          "score": "62.6"
+        }
+      },
+      "lng": 16.359722222,
+      "lat": 48.213055555
+    },
+    {
+      "name": "The University of Osaka",
+      "key": "The University of Osaka",
+      "country": "Japan",
+      "city": "Osaka City",
+      "the": {
+        "2024": {
+          "rank": "=175",
+          "score": "60.4"
+        },
+        "2025": {
+          "rank": "162",
+          "score": "61.0"
+        },
+        "2026": {
+          "rank": "=151",
+          "score": "61.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "95",
+          "score": "69.5"
+        }
+      },
+      "lng": 135.526666666,
+      "lat": 34.819166666
+    },
+    {
+      "name": "University of Alberta",
+      "key": "University of Alberta",
+      "country": "Canada",
+      "city": "Edmonton",
+      "the": {
+        "2024": {
+          "rank": "=109",
+          "score": "65.9"
+        },
+        "2025": {
+          "rank": "=116",
+          "score": "65.2"
+        },
+        "2026": {
+          "rank": "119",
+          "score": "64.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "96",
+          "score": "69.3"
+        }
+      },
+      "lng": -113.524444444,
+      "lat": 53.524444444
+    },
+    {
+      "name": "University of California, Irvine",
+      "key": "University of California, Irvine",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=92",
+          "score": "67.4"
+        },
+        "2025": {
+          "rank": "=90",
+          "score": "67.3"
+        },
+        "2026": {
+          "rank": "97",
+          "score": "66.4"
+        }
+      },
+      "qs": {},
+      "lng": -117.842641666,
+      "lat": 33.64535
+    },
+    {
+      "name": "University of Nottingham",
+      "key": "University of Nottingham",
+      "country": "United Kingdom",
+      "city": "Nottingham",
+      "the": {
+        "2024": {
+          "rank": "=130",
+          "score": "63.8"
+        },
+        "2025": {
+          "rank": "=136",
+          "score": "62.7"
+        },
+        "2026": {
+          "rank": "=145",
+          "score": "62.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=97",
+          "score": "69.2"
+        }
+      },
+      "lng": -1.196944444,
+      "lat": 52.938888888
+    },
+    {
+      "name": "Institute of Science Tokyo",
+      "key": "Institute of Science Tokyo",
+      "country": "Japan",
+      "city": "Tokyo",
+      "the": {
+        "2026": {
+          "rank": "166",
+          "score": "60.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=97",
+          "score": "69.2"
+        }
+      },
+      "lng": 139.6838,
+      "lat": 35.6066
+    },
+    {
+      "name": "University of Zurich",
+      "key": "University of Zurich",
+      "country": "Switzerland",
+      "city": "Zürich",
+      "the": {
+        "2024": {
+          "rank": "80",
+          "score": "69.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=98",
+          "score": "69"
+        }
+      },
+      "lng": 8.548333333,
+      "lat": 47.374722222
+    },
+    {
+      "name": "University of Tübingen",
+      "key": "University of Tübingen",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=95",
+          "score": "67.0"
+        },
+        "2025": {
+          "rank": "=100",
+          "score": "66.2"
+        },
+        "2026": {
+          "rank": "=98",
+          "score": "66.3"
+        }
+      },
+      "qs": {},
+      "lng": 9.058888888,
+      "lat": 48.525
+    },
+    {
+      "name": "Freie Universitaet Berlin",
+      "key": "Freie Universitaet Berlin",
+      "country": "Germany",
+      "city": "Berlin",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=98",
+          "score": "69"
+        }
+      },
+      "lat": 52.4543245,
+      "lng": 13.2934768
+    },
+    {
+      "name": "Purdue University",
+      "key": "Purdue University",
+      "country": "United States",
+      "city": "West Lafayette",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=100",
+          "score": "68.7"
+        }
+      },
+      "lng": -86.923055555,
+      "lat": 40.425
+    },
+    {
+      "name": "University College Dublin",
+      "key": "University College Dublin",
+      "country": "Ireland",
+      "city": "Dublin",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=100",
+          "score": "68.7"
+        }
+      },
+      "lng": -6.21981,
+      "lat": 53.3076
+    },
+    {
+      "name": "Aarhus University",
+      "key": "Aarhus University",
+      "country": "Denmark",
+      "city": "Aarhus",
+      "the": {
+        "2024": {
+          "rank": "=109",
+          "score": "65.9"
+        },
+        "2025": {
+          "rank": "=110",
+          "score": "65.5"
+        },
+        "2026": {
+          "rank": "101",
+          "score": "66.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=128",
+          "score": "64.9"
+        }
+      },
+      "lng": 10.201111111,
+      "lat": 56.170555555
+    },
+    {
+      "name": "Emory University",
+      "key": "Emory University",
+      "country": "United States",
+      "city": "Atlanta",
+      "the": {
+        "2024": {
+          "rank": "=106",
+          "score": "66.1"
+        },
+        "2025": {
+          "rank": "=98",
+          "score": "66.3"
+        },
+        "2026": {
+          "rank": "102",
+          "score": "65.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "183",
+          "score": "57.3"
+        }
+      },
+      "lng": -84.324166666,
+      "lat": 33.7925
+    },
+    {
+      "name": "Tohoku University",
+      "key": "Tohoku University",
+      "country": "Japan",
+      "city": "Sendai City",
+      "the": {
+        "2024": {
+          "rank": "=130",
+          "score": "63.8"
+        },
+        "2025": {
+          "rank": "120",
+          "score": "65.0"
+        },
+        "2026": {
+          "rank": "=103",
+          "score": "65.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "102",
+          "score": "68.4"
+        }
+      },
+      "lng": 140.873611111,
+      "lat": 38.254166666
+    },
+    {
+      "name": "Rice University",
+      "key": "Rice University",
+      "country": "United States",
+      "city": "Houston",
+      "the": {
+        "2024": {
+          "rank": "=119",
+          "score": "65.2"
+        },
+        "2025": {
+          "rank": "=112",
+          "score": "65.4"
+        },
+        "2026": {
+          "rank": "=103",
+          "score": "65.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "122",
+          "score": "65.5"
+        }
+      },
+      "lng": -95.402777777,
+      "lat": 29.716944444
+    },
+    {
+      "name": "Queen Mary University of London",
+      "key": "Queen Mary University of London",
+      "country": "United Kingdom",
+      "city": "London",
+      "the": {
+        "2024": {
+          "rank": "135",
+          "score": "63.1"
+        },
+        "2025": {
+          "rank": "=141",
+          "score": "62.3"
+        },
+        "2026": {
+          "rank": "=134",
+          "score": "62.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "103",
+          "score": "68.3"
+        }
+      },
+      "lng": -0.0403745,
+      "lat": 51.5240671
+    },
+    {
+      "name": "Michigan State University",
+      "key": "Michigan State University",
+      "country": "United States",
+      "city": "East Lansing",
+      "the": {
+        "2024": {
+          "rank": "=116",
+          "score": "65.4"
+        },
+        "2025": {
+          "rank": "122",
+          "score": "64.7"
+        },
+        "2026": {
+          "rank": "=105",
+          "score": "65.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "182",
+          "score": "57.4"
+        }
+      },
+      "lng": -84.482161172,
+      "lat": 42.701863748
+    },
+    {
+      "name": "University of Helsinki",
+      "key": "University of Helsinki",
+      "country": "Finland",
+      "city": "Helsinki",
+      "the": {
+        "2024": {
+          "rank": "121",
+          "score": "65.1"
+        },
+        "2025": {
+          "rank": "=107",
+          "score": "65.6"
+        },
+        "2026": {
+          "rank": "=105",
+          "score": "65.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=123",
+          "score": "65.3"
+        }
+      },
+      "lng": 24.95,
+      "lat": 60.169444444
+    },
+    {
+      "name": "Technical University of Denmark",
+      "key": "Technical University of Denmark",
+      "country": "Denmark",
+      "city": "Kongens Lyngby",
+      "the": {
+        "2024": {
+          "rank": "126",
+          "score": "64.6"
+        },
+        "2025": {
+          "rank": "124",
+          "score": "64.4"
+        },
+        "2026": {
+          "rank": "121",
+          "score": "64.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "105",
+          "score": "67.8"
+        }
+      },
+      "lng": 12.523358653,
+      "lat": 55.786154962
+    },
+    {
+      "name": "Pohang University of Science And Technology (POSTECH)",
+      "key": "Pohang University of Science And Technology",
+      "country": "South Korea",
+      "city": "Pohang",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "106",
+          "score": "67.7"
+        }
+      },
+      "lat": 36.010883333333,
+      "lng": 129.32266944444
+    },
+    {
+      "name": "Erasmus University Rotterdam",
+      "key": "Erasmus University Rotterdam",
+      "country": "Netherlands",
+      "city": "Rotterdam",
+      "the": {
+        "2024": {
+          "rank": "=99",
+          "score": "66.7"
+        },
+        "2025": {
+          "rank": "=107",
+          "score": "65.6"
+        },
+        "2026": {
+          "rank": "107",
+          "score": "65.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "148",
+          "score": "61.9"
+        }
+      },
+      "lng": 4.525830555,
+      "lat": 51.918061111
+    },
+    {
+      "name": "King Saud University",
+      "key": "King Saud University",
+      "country": "Saudi Arabia",
+      "city": "Riyadh",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "107",
+          "score": "67.4"
+        }
+      },
+      "lng": 46.627,
+      "lat": 24.722
+    },
+    {
+      "name": "Ohio State University (Main campus)",
+      "key": "Ohio State University",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=99",
+          "score": "66.7"
+        },
+        "2025": {
+          "rank": "=116",
+          "score": "65.2"
+        },
+        "2026": {
+          "rank": "=108",
+          "score": "65.4"
+        }
+      },
+      "qs": {},
+      "lng": -83.014444444,
+      "lat": 40.000555555
+    },
+    {
+      "name": "University of Sheffield",
+      "key": "University of Sheffield",
+      "country": "United Kingdom",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "105",
+          "score": "66.2"
+        },
+        "2025": {
+          "rank": "=98",
+          "score": "66.3"
+        },
+        "2026": {
+          "rank": "=108",
+          "score": "65.4"
+        }
+      },
+      "qs": {},
+      "lng": -1.488805555,
+      "lat": 53.380722222
+    },
+    {
+      "name": "University of Bern",
+      "key": "University of Bern",
+      "country": "Switzerland",
+      "city": "Bern",
+      "the": {
+        "2024": {
+          "rank": "=116",
+          "score": "65.4"
+        },
+        "2025": {
+          "rank": "=104",
+          "score": "65.8"
+        },
+        "2026": {
+          "rank": "=108",
+          "score": "65.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=191",
+          "score": "56.7"
+        }
+      },
+      "lng": 7.437,
+      "lat": 46.95
+    },
+    {
+      "name": "Penn State (Main campus)",
+      "key": "Penn State",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "122",
+          "score": "65.0"
+        },
+        "2025": {
+          "rank": "=100",
+          "score": "66.2"
+        },
+        "2026": {
+          "rank": "=108",
+          "score": "65.4"
+        }
+      },
+      "qs": {},
+      "lng": -77.862777777,
+      "lat": 40.796111111
+    },
+    {
+      "name": "Qatar University",
+      "key": "Qatar University",
+      "country": "Qatar",
+      "city": "Doha",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "109",
+          "score": "67.2"
+        }
+      },
+      "lng": 51.4902,
+      "lat": 25.3746
+    },
+    {
+      "name": "University of Southampton",
+      "key": "University of Southampton",
+      "country": "United Kingdom",
+      "city": "Southampton",
+      "the": {
+        "2024": {
+          "rank": "=97",
+          "score": "66.9"
+        },
+        "2025": {
+          "rank": "115",
+          "score": "65.3"
+        },
+        "2026": {
+          "rank": "129",
+          "score": "63.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=111",
+          "score": "66.7"
+        }
+      },
+      "lng": -1.39595,
+      "lat": 50.93463
+    },
+    {
+      "name": "Sapienza University of Rome",
+      "key": "Sapienza University of Rome",
+      "country": "Italy",
+      "city": "Rome",
+      "the": {
+        "2024": {
+          "rank": "181",
+          "score": "60.0"
+        },
+        "2025": {
+          "rank": "=185",
+          "score": "59.5"
+        },
+        "2026": {
+          "rank": "=170",
+          "score": "60.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=111",
+          "score": "66.7"
+        }
+      },
+      "lng": 12.515833333,
+      "lat": 41.903333333
+    },
+    {
+      "name": "Free University of Berlin",
+      "key": "Free University of Berlin",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "102",
+          "score": "66.5"
+        },
+        "2025": {
+          "rank": "=104",
+          "score": "65.8"
+        },
+        "2026": {
+          "rank": "=113",
+          "score": "65.2"
+        }
+      },
+      "qs": {},
+      "lat": 52.4543245,
+      "lng": 13.2934768
+    },
+    {
+      "name": "University of Oslo",
+      "key": "University of Oslo",
+      "country": "Norway",
+      "city": "Oslo",
+      "the": {
+        "2024": {
+          "rank": "127",
+          "score": "64.3"
+        },
+        "2025": {
+          "rank": "=116",
+          "score": "65.2"
+        },
+        "2026": {
+          "rank": "=113",
+          "score": "65.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=131",
+          "score": "64.3"
+        }
+      },
+      "lng": 10.722063888,
+      "lat": 59.939936111
+    },
+    {
+      "name": "University of Waterloo",
+      "key": "University of Waterloo",
+      "country": "Canada",
+      "city": "Waterloo",
+      "the": {
+        "2024": {
+          "rank": "=158",
+          "score": "61.7"
+        },
+        "2025": {
+          "rank": "=163",
+          "score": "60.9"
+        },
+        "2026": {
+          "rank": "=162",
+          "score": "60.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=113",
+          "score": "66.6"
+        }
+      },
+      "lng": -80.54,
+      "lat": 43.468888888
+    },
+    {
+      "name": "Utrecht University",
+      "key": "Utrecht University",
+      "country": "Netherlands",
+      "city": "Utrecht",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=113",
+          "score": "66.6"
+        }
+      },
+      "lng": 5.175,
+      "lat": 52.085277777
+    },
+    {
+      "name": "Lomonosov Moscow State University",
+      "key": "Lomonosov Moscow State University",
+      "country": "Russian Federation",
+      "city": "Moscow",
+      "the": {
+        "2024": {
+          "rank": "=95",
+          "score": "67.0"
+        },
+        "2025": {
+          "rank": "=107",
+          "score": "65.6"
+        },
+        "2026": {
+          "rank": "133",
+          "score": "63.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=115",
+          "score": "65.9"
+        }
+      },
+      "lng": 37.530555555,
+      "lat": 55.7025
+    },
+    {
+      "name": "Ghent University",
+      "key": "Ghent University",
+      "country": "Belgium",
+      "city": "Ghent",
+      "the": {
+        "2024": {
+          "rank": "115",
+          "score": "65.6"
+        },
+        "2025": {
+          "rank": "=112",
+          "score": "65.4"
+        },
+        "2026": {
+          "rank": "115",
+          "score": "65.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=150",
+          "score": "61.5"
+        }
+      },
+      "lng": 3.726111111,
+      "lat": 51.043888888
+    },
+    {
+      "name": "University of St Andrews",
+      "key": "University of St Andrews",
+      "country": "United Kingdom",
+      "city": "St. Andrews",
+      "the": {
+        "2024": {
+          "rank": "=193",
+          "score": "59.0"
+        },
+        "2025": {
+          "rank": "=185",
+          "score": "59.5"
+        },
+        "2026": {
+          "rank": "=162",
+          "score": "60.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=115",
+          "score": "65.9"
+        }
+      },
+      "lng": -2.793011,
+      "lat": 56.341214
+    },
+    {
+      "name": "McMaster University",
+      "key": "McMaster University",
+      "country": "Canada",
+      "city": "Hamilton",
+      "the": {
+        "2024": {
+          "rank": "=103",
+          "score": "66.3"
+        },
+        "2025": {
+          "rank": "=116",
+          "score": "65.2"
+        },
+        "2026": {
+          "rank": "=116",
+          "score": "65.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=174",
+          "score": "58.2"
+        }
+      },
+      "lng": -79.918888888,
+      "lat": 43.263333333
+    },
+    {
+      "name": "University of Maryland, College Park",
+      "key": "University of Maryland, College Park",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "114",
+          "score": "65.7"
+        },
+        "2025": {
+          "rank": "=112",
+          "score": "65.4"
+        },
+        "2026": {
+          "rank": "=116",
+          "score": "65.0"
+        }
+      },
+      "qs": {},
+      "lng": -76.9425,
+      "lat": 38.988055555
+    },
+    {
+      "name": "Indian Institute of Technology Delhi (IITD)",
+      "key": "Indian Institute of Technology Delhi",
+      "country": "India",
+      "city": "New Delhi",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "118",
+          "score": "65.7"
+        }
+      },
+      "lng": 77.19312,
+      "lat": 28.54358
+    },
+    {
+      "name": "Pontificia Universidad Católica de Chile (UC)",
+      "key": "Pontificia Universidad Católica de Chile",
+      "country": "Chile",
+      "city": "Santiago",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=119",
+          "score": "65.6"
+        }
+      },
+      "lng": -70.640694,
+      "lat": -33.441148
+    },
+    {
+      "name": "RMIT University",
+      "key": "RMIT University",
+      "country": "Australia",
+      "city": "Melbourne",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=119",
+          "score": "65.6"
+        }
+      },
+      "lng": 144.963333333,
+      "lat": -37.807777777
+    },
+    {
+      "name": "University of Basel",
+      "key": "University of Basel",
+      "country": "Switzerland",
+      "city": "Basel",
+      "the": {
+        "2024": {
+          "rank": "=123",
+          "score": "64.9"
+        },
+        "2025": {
+          "rank": "126",
+          "score": "64.2"
+        },
+        "2026": {
+          "rank": "120",
+          "score": "64.5"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=150",
+          "score": "61.5"
+        }
+      },
+      "lng": 7.58346,
+      "lat": 47.55852
+    },
+    {
+      "name": "University of Göttingen",
+      "key": "University of Göttingen",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=111",
+          "score": "65.8"
+        },
+        "2025": {
+          "rank": "121",
+          "score": "64.8"
+        },
+        "2026": {
+          "rank": "=122",
+          "score": "64.1"
+        }
+      },
+      "qs": {},
+      "lng": 9.93792,
+      "lat": 51.533979833
+    },
+    {
+      "name": "Wuhan University",
+      "key": "Wuhan University",
+      "country": "China",
+      "city": "Wuhan",
+      "the": {
+        "2024": {
+          "rank": "=164",
+          "score": "61.3"
+        },
+        "2025": {
+          "rank": "=134",
+          "score": "63.0"
+        },
+        "2026": {
+          "rank": "=122",
+          "score": "64.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=165",
+          "score": "60.1"
+        }
+      },
+      "lng": 114.361111111,
+      "lat": 30.540833333
+    },
+    {
+      "name": "Alma Mater Studiorum - Università di Bologna",
+      "key": "Alma Mater Studiorum - Università di Bologna",
+      "country": "Italy",
+      "city": "Bologna",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=123",
+          "score": "65.3"
+        }
+      },
+      "lat": 44.493888888889,
+      "lng": 11.342777777778
+    },
+    {
+      "name": "University of Hamburg",
+      "key": "University of Hamburg",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=136",
+          "score": "63.0"
+        },
+        "2025": {
+          "rank": "=132",
+          "score": "63.2"
+        },
+        "2026": {
+          "rank": "=125",
+          "score": "63.7"
+        }
+      },
+      "qs": {},
+      "lng": 9.984776342,
+      "lat": 53.565651296
+    },
+    {
+      "name": "University of Lausanne",
+      "key": "University of Lausanne",
+      "country": "Switzerland",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=143",
+          "score": "62.7"
+        },
+        "2025": {
+          "rank": "=134",
+          "score": "63.0"
+        },
+        "2026": {
+          "rank": "=125",
+          "score": "63.7"
+        }
+      },
+      "qs": {},
+      "lng": 6.579444444,
+      "lat": 46.5225
+    },
+    {
+      "name": "University of Bath",
+      "key": "University of Bath",
+      "country": "United Kingdom",
+      "city": "Bath",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "125",
+          "score": "65.1"
+        }
+      },
+      "lng": -2.328,
+      "lat": 51.3796
+    },
+    {
+      "name": "Macquarie University",
+      "key": "Macquarie University",
+      "country": "Australia",
+      "city": "Sydney",
+      "the": {
+        "2024": {
+          "rank": "180",
+          "score": "60.1"
+        },
+        "2025": {
+          "rank": "178",
+          "score": "59.9"
+        },
+        "2026": {
+          "rank": "=166",
+          "score": "60.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=126",
+          "score": "65"
+        }
+      },
+      "lng": 151.112915,
+      "lat": -33.775259
+    },
+    {
+      "name": "Aalto University",
+      "key": "Aalto University",
+      "country": "Finland",
+      "city": "Espoo (Helsinki capital region)",
+      "the": {
+        "2025": {
+          "rank": "=196",
+          "score": "58.9"
+        },
+        "2026": {
+          "rank": "=195",
+          "score": "59.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=126",
+          "score": "65"
+        }
+      },
+      "lng": 24.828611,
+      "lat": 60.186111
+    },
+    {
+      "name": "University of Rochester",
+      "key": "University of Rochester",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "133",
+          "score": "63.6"
+        },
+        "2025": {
+          "rank": "127",
+          "score": "63.9"
+        },
+        "2026": {
+          "rank": "127",
+          "score": "63.6"
+        }
+      },
+      "qs": {},
+      "lng": -77.628333,
+      "lat": 43.128333
+    },
+    {
+      "name": "Universiti Sains Malaysia (USM)",
+      "key": "Universiti Sains Malaysia",
+      "country": "Malaysia",
+      "city": "Gelugor",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=128",
+          "score": "64.9"
+        }
+      },
+      "lng": 100.301388888,
+      "lat": 5.356944444
+    },
+    {
+      "name": "University of Bologna",
+      "key": "University of Bologna",
+      "country": "Italy",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=155",
+          "score": "61.8"
+        },
+        "2025": {
+          "rank": "=146",
+          "score": "62.1"
+        },
+        "2026": {
+          "rank": "130",
+          "score": "63.3"
+        }
+      },
+      "qs": {},
+      "lng": 11.342777777,
+      "lat": 44.493888888
+    },
+    {
+      "name": "Universiti Kebangsaan Malaysia (UKM)",
+      "key": "Universiti Kebangsaan Malaysia",
+      "country": "Malaysia",
+      "city": "Bangi",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "130",
+          "score": "64.6"
+        }
+      },
+      "lat": 2.925,
+      "lng": 101.78138888888888
+    },
+    {
+      "name": "Maastricht University",
+      "key": "Maastricht University",
+      "country": "Netherlands",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=138",
+          "score": "62.9"
+        },
+        "2025": {
+          "rank": "=132",
+          "score": "63.2"
+        },
+        "2026": {
+          "rank": "=131",
+          "score": "63.2"
+        }
+      },
+      "qs": {},
+      "lng": 5.686666666,
+      "lat": 50.8471
+    },
+    {
+      "name": "Harbin Institute of Technology",
+      "key": "Harbin Institute of Technology",
+      "country": "China",
+      "city": "Harbin",
+      "the": {
+        "2024": {
+          "rank": "=168",
+          "score": "60.8"
+        },
+        "2025": {
+          "rank": "=152",
+          "score": "61.8"
+        },
+        "2026": {
+          "rank": "=131",
+          "score": "63.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "190",
+          "score": "56.8"
+        }
+      },
+      "lng": 126.630692,
+      "lat": 45.746998
+    },
+    {
+      "name": "Universidade de São Paulo",
+      "key": "Universidade de São Paulo",
+      "country": "Brazil",
+      "city": "São Paulo",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "133",
+          "score": "64.1"
+        }
+      },
+      "lng": -46.7307891,
+      "lat": -23.5613991
+    },
+    {
+      "name": "University of Florida",
+      "key": "University of Florida",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "132",
+          "score": "63.7"
+        },
+        "2025": {
+          "rank": "=130",
+          "score": "63.6"
+        },
+        "2026": {
+          "rank": "=134",
+          "score": "62.9"
+        }
+      },
+      "qs": {},
+      "lng": -84.295,
+      "lat": 30.441666666
+    },
+    {
+      "name": "Beijing Normal University",
+      "key": "Beijing Normal University",
+      "country": "China",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=177",
+          "score": "60.2"
+        },
+        "2025": {
+          "rank": "=146",
+          "score": "62.1"
+        },
+        "2026": {
+          "rank": "=134",
+          "score": "62.9"
+        }
+      },
+      "qs": {},
+      "lng": 116.3625,
+      "lat": 39.957222222
+    },
+    {
+      "name": "Indian Institute of Technology Bombay (IITB)",
+      "key": "Indian Institute of Technology Bombay",
+      "country": "India",
+      "city": "Mumbai",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=134",
+          "score": "63.9"
+        }
+      },
+      "lng": 72.916944444,
+      "lat": 19.133611111
+    },
+    {
+      "name": "University of Exeter",
+      "key": "University of Exeter",
+      "country": "United Kingdom",
+      "city": "Exeter",
+      "the": {
+        "2024": {
+          "rank": "=177",
+          "score": "60.2"
+        },
+        "2025": {
+          "rank": "=172",
+          "score": "60.4"
+        },
+        "2026": {
+          "rank": "=170",
+          "score": "60.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "136",
+          "score": "63.5"
+        }
+      },
+      "lng": -3.535,
+      "lat": 50.736111111
+    },
+    {
+      "name": "Scuola Normale Superiore di Pisa",
+      "key": "Scuola Normale Superiore di Pisa",
+      "country": "Italy",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=168",
+          "score": "60.8"
+        },
+        "2025": {
+          "rank": "=154",
+          "score": "61.7"
+        },
+        "2026": {
+          "rank": "137",
+          "score": "62.8"
+        }
+      },
+      "qs": {},
+      "lat": 43.719611,
+      "lng": 10.400225
+    },
+    {
+      "name": "University of Freiburg",
+      "key": "University of Freiburg",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "128",
+          "score": "64.1"
+        },
+        "2025": {
+          "rank": "=128",
+          "score": "63.8"
+        },
+        "2026": {
+          "rank": "=138",
+          "score": "62.6"
+        }
+      },
+      "qs": {},
+      "lng": 7.846944444,
+      "lat": 47.994166666
+    },
+    {
+      "name": "University of Arizona",
+      "key": "University of Arizona",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=155",
+          "score": "61.8"
+        },
+        "2025": {
+          "rank": "=136",
+          "score": "62.7"
+        },
+        "2026": {
+          "rank": "=138",
+          "score": "62.6"
+        }
+      },
+      "qs": {},
+      "lng": -110.9525,
+      "lat": 32.231944444
+    },
+    {
+      "name": "Universiti Putra Malaysia (UPM)",
+      "key": "Universiti Putra Malaysia",
+      "country": "Malaysia",
+      "city": "Serdang",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "138",
+          "score": "62.9"
+        }
+      },
+      "lng": 101.707777777,
+      "lat": 2.999166666
+    },
+    {
+      "name": "University of Liverpool",
+      "key": "University of Liverpool",
+      "country": "United Kingdom",
+      "city": "Liverpool",
+      "the": {
+        "2024": {
+          "rank": "=168",
+          "score": "60.8"
+        },
+        "2025": {
+          "rank": "=160",
+          "score": "61.1"
+        },
+        "2026": {
+          "rank": "143",
+          "score": "62.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "139",
+          "score": "62.8"
+        }
+      },
+      "lng": -2.967,
+      "lat": 53.406
+    },
+    {
+      "name": "Humboldt-Universität zu Berlin",
+      "key": "Humboldt-Universität zu Berlin",
+      "country": "Germany",
+      "city": "Berlin",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=140",
+          "score": "62.6"
+        }
+      },
+      "lng": 13.393333333,
+      "lat": 52.518055555
+    },
+    {
+      "name": "Pohang University of Science and Technology (POSTECH)",
+      "key": "Pohang University of Science and Technology",
+      "country": "South Korea",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "149",
+          "score": "62.2"
+        },
+        "2025": {
+          "rank": "151",
+          "score": "61.9"
+        },
+        "2026": {
+          "rank": "=141",
+          "score": "62.3"
+        }
+      },
+      "qs": {},
+      "lng": 129.322669444,
+      "lat": 36.010883333
+    },
+    {
+      "name": "Tongji University",
+      "key": "Tongji University",
+      "country": "China",
+      "city": "Shanghai",
+      "the": {
+        "2024": {
+          "rank": "=185",
+          "score": "59.6"
+        },
+        "2025": {
+          "rank": "=154",
+          "score": "61.7"
+        },
+        "2026": {
+          "rank": "=141",
+          "score": "62.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "146",
+          "score": "62.2"
+        }
+      },
+      "lng": 121.506631944,
+      "lat": 31.2827
+    },
+    {
+      "name": "Western University",
+      "key": "Western University",
+      "country": "Canada",
+      "city": "London",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=142",
+          "score": "62.5"
+        }
+      },
+      "lng": -81.273776516,
+      "lat": 43.009643504
+    },
+    {
+      "name": "Newcastle University",
+      "key": "Newcastle University",
+      "country": "United Kingdom",
+      "city": "Newcastle upon Tyne",
+      "the": {
+        "2024": {
+          "rank": "=168",
+          "score": "60.8"
+        },
+        "2025": {
+          "rank": "=157",
+          "score": "61.4"
+        },
+        "2026": {
+          "rank": "144",
+          "score": "62.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "149",
+          "score": "61.6"
+        }
+      },
+      "lng": 151.704444444,
+      "lat": -32.892777777
+    },
+    {
+      "name": "University of Technology Sydney",
+      "key": "University of Technology Sydney",
+      "country": "Australia",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "148",
+          "score": "62.3"
+        },
+        "2025": {
+          "rank": "=154",
+          "score": "61.7"
+        },
+        "2026": {
+          "rank": "=145",
+          "score": "62.0"
+        }
+      },
+      "qs": {},
+      "lng": 151.200408369,
+      "lat": -33.883255413
+    },
+    {
+      "name": "University of Barcelona",
+      "key": "University of Barcelona",
+      "country": "Spain",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=152",
+          "score": "61.9"
+        },
+        "2025": {
+          "rank": "=149",
+          "score": "62.0"
+        },
+        "2026": {
+          "rank": "=145",
+          "score": "62.0"
+        }
+      },
+      "qs": {},
+      "lng": 2.163888888,
+      "lat": 41.386666666
+    },
+    {
+      "name": "Case Western Reserve University",
+      "key": "Case Western Reserve University",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=164",
+          "score": "61.3"
+        },
+        "2025": {
+          "rank": "159",
+          "score": "61.2"
+        },
+        "2026": {
+          "rank": "=145",
+          "score": "62.0"
+        }
+      },
+      "qs": {},
+      "lng": -81.608,
+      "lat": 41.504
+    },
+    {
+      "name": "University of Macau",
+      "key": "University of Macau",
+      "country": "Macao",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=193",
+          "score": "59.0"
+        },
+        "2025": {
+          "rank": "=180",
+          "score": "59.7"
+        },
+        "2026": {
+          "rank": "=145",
+          "score": "62.0"
+        }
+      },
+      "qs": {},
+      "lng": 113.545757,
+      "lat": 22.13033
+    },
+    {
+      "name": "Universidad Nacional Autónoma de México (UNAM)",
+      "key": "Universidad Nacional Autónoma de México",
+      "country": "Mexico",
+      "city": "Mexico City",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "145",
+          "score": "62.3"
+        }
+      },
+      "lng": -99.043263588,
+      "lat": 19.474973588
+    },
+    {
+      "name": "Khalifa University",
+      "key": "Khalifa University",
+      "country": "United Arab Emirates",
+      "city": "Abu Dhabi",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "147",
+          "score": "62"
+        }
+      },
+      "lng": 54.39494,
+      "lat": 24.44736
+    },
+    {
+      "name": "Université de Montréal",
+      "key": "Université de Montréal",
+      "country": "Canada",
+      "city": "Montreal",
+      "the": {
+        "2024": {
+          "rank": "=111",
+          "score": "65.8"
+        },
+        "2025": {
+          "rank": "125",
+          "score": "64.3"
+        },
+        "2026": {
+          "rank": "150",
+          "score": "61.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=162",
+          "score": "60.4"
+        }
+      },
+      "lng": -73.61433,
+      "lat": 45.50414
+    },
+    {
+      "name": "Texas A&M University",
+      "key": "Texas A&M University",
+      "country": "United States",
+      "city": "College Station",
+      "the": {
+        "2024": {
+          "rank": "118",
+          "score": "65.3"
+        },
+        "2025": {
+          "rank": "=143",
+          "score": "62.2"
+        },
+        "2026": {
+          "rank": "=151",
+          "score": "61.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "169",
+          "score": "59.5"
+        }
+      },
+      "lng": -96.344056,
+      "lat": 30.610369
+    },
+    {
+      "name": "Eindhoven University of Technology",
+      "key": "Eindhoven University of Technology",
+      "country": "Netherlands",
+      "city": "Eindhoven",
+      "the": {
+        "2024": {
+          "rank": "=168",
+          "score": "60.8"
+        },
+        "2025": {
+          "rank": "=185",
+          "score": "59.5"
+        },
+        "2026": {
+          "rank": "=192",
+          "score": "59.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "152",
+          "score": "61.4"
+        }
+      },
+      "lng": 5.489722222,
+      "lat": 51.448055555
+    },
+    {
+      "name": "Radboud University Nijmegen",
+      "key": "Radboud University Nijmegen",
+      "country": "Netherlands",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=140",
+          "score": "62.8"
+        },
+        "2025": {
+          "rank": "=143",
+          "score": "62.2"
+        },
+        "2026": {
+          "rank": "=154",
+          "score": "61.5"
+        }
+      },
+      "qs": {},
+      "lng": 5.865278,
+      "lat": 51.819444
+    },
+    {
+      "name": "University of York",
+      "key": "University of York",
+      "country": "United Kingdom",
+      "city": "York",
+      "the": {
+        "2024": {
+          "rank": "147",
+          "score": "62.4"
+        },
+        "2025": {
+          "rank": "=146",
+          "score": "62.1"
+        },
+        "2026": {
+          "rank": "=154",
+          "score": "61.5"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=158",
+          "score": "60.6"
+        }
+      },
+      "lng": -1.0525,
+      "lat": 53.94659
+    },
+    {
+      "name": "Hanyang University",
+      "key": "Hanyang University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "301–350",
+          "score": "51.1–53.0"
+        },
+        "2025": {
+          "rank": "251–300",
+          "score": "53.7–55.7"
+        },
+        "2026": {
+          "rank": "251–300",
+          "score": "54.3–56.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "155",
+          "score": "60.9"
+        }
+      },
+      "lng": 127.04444444,
+      "lat": 37.55638889
+    },
+    {
+      "name": "University of Auckland",
+      "key": "University of Auckland",
+      "country": "New Zealand",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=150",
+          "score": "62.0"
+        },
+        "2025": {
+          "rank": "=152",
+          "score": "61.8"
+        },
+        "2026": {
+          "rank": "=156",
+          "score": "61.4"
+        }
+      },
+      "qs": {},
+      "lng": 174.769494444,
+      "lat": -36.850197222
+    },
+    {
+      "name": "Nagoya University",
+      "key": "Nagoya University",
+      "country": "Japan",
+      "city": "Nagoya",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "156",
+          "score": "60.8"
+        }
+      },
+      "lng": 136.968611111,
+      "lat": 35.1525
+    },
+    {
+      "name": "Technische Universität Berlin (TU Berlin)",
+      "key": "Technische Universität Berlin",
+      "country": "Germany",
+      "city": "Berlin",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=158",
+          "score": "60.6"
+        }
+      },
+      "lng": 13.326388888,
+      "lat": 52.511944444
+    },
+    {
+      "name": "Universiti Teknologi Malaysia (UTM)",
+      "key": "Universiti Teknologi Malaysia",
+      "country": "Malaysia",
+      "city": "Skudai",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=158",
+          "score": "60.6"
+        }
+      },
+      "lng": 103.641389,
+      "lat": 1.559167
+    },
+    {
+      "name": "University of Colorado Boulder",
+      "key": "University of Colorado Boulder",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=138",
+          "score": "62.9"
+        },
+        "2025": {
+          "rank": "=143",
+          "score": "62.2"
+        },
+        "2026": {
+          "rank": "159",
+          "score": "61.3"
+        }
+      },
+      "qs": {},
+      "lng": -105.267222222,
+      "lat": 40.006666666
+    },
+    {
+      "name": "Technical University of Berlin",
+      "key": "Technical University of Berlin",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=136",
+          "score": "63.0"
+        },
+        "2025": {
+          "rank": "140",
+          "score": "62.4"
+        },
+        "2026": {
+          "rank": "=160",
+          "score": "61.0"
+        }
+      },
+      "qs": {},
+      "lng": 13.326388888,
+      "lat": 52.511944444
+    },
+    {
+      "name": "Southern University of Science and Technology (SUSTech)",
+      "key": "Southern University of Science and Technology",
+      "country": "China",
+      "city": null,
+      "the": {
+        "2025": {
+          "rank": "=183",
+          "score": "59.6"
+        },
+        "2026": {
+          "rank": "=160",
+          "score": "61.0"
+        }
+      },
+      "qs": {},
+      "lng": 113.994722222,
+      "lat": 22.600555555
+    },
+    {
+      "name": "Washington University in St. Louis",
+      "key": "Washington University in St. Louis",
+      "country": "United States",
+      "city": "St. Louis",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=162",
+          "score": "60.4"
+        }
+      },
+      "lat": 38.648,
+      "lng": -90.305
+    },
+    {
+      "name": "Lancaster University",
+      "key": "Lancaster University",
+      "country": "United Kingdom",
+      "city": "Lancaster",
+      "the": {
+        "2024": {
+          "rank": "=155",
+          "score": "61.8"
+        },
+        "2025": {
+          "rank": "=168",
+          "score": "60.7"
+        },
+        "2026": {
+          "rank": "=184",
+          "score": "59.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "164",
+          "score": "60.3"
+        }
+      },
+      "lng": -2.788238888,
+      "lat": 54.010661111
+    },
+    {
+      "name": "University of Cologne",
+      "key": "University of Cologne",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "160",
+          "score": "61.5"
+        },
+        "2025": {
+          "rank": "=157",
+          "score": "61.4"
+        },
+        "2026": {
+          "rank": "=164",
+          "score": "60.8"
+        }
+      },
+      "qs": {},
+      "lng": 6.928611111,
+      "lat": 50.928055555
+    },
+    {
+      "name": "University of Cape Town",
+      "key": "University of Cape Town",
+      "country": "South Africa",
+      "city": "Cape Town",
+      "the": {
+        "2024": {
+          "rank": "167",
+          "score": "60.9"
+        },
+        "2025": {
+          "rank": "=180",
+          "score": "59.7"
+        },
+        "2026": {
+          "rank": "=164",
+          "score": "60.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "184",
+          "score": "57.2"
+        }
+      },
+      "lng": 18.460555555,
+      "lat": -33.9575
+    },
+    {
+      "name": "Universitat de Barcelona",
+      "key": "Universitat de Barcelona",
+      "country": "Spain",
+      "city": "Barcelona",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=165",
+          "score": "60.1"
+        }
+      },
+      "lng": 2.163888888,
+      "lat": 41.386666666
+    },
+    {
+      "name": "Karlsruhe Institute of Technology",
+      "key": "Karlsruhe Institute of Technology",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=140",
+          "score": "62.8"
+        },
+        "2025": {
+          "rank": "=166",
+          "score": "60.8"
+        },
+        "2026": {
+          "rank": "=166",
+          "score": "60.7"
+        }
+      },
+      "qs": {},
+      "lng": 8.4319,
+      "lat": 49.0996
+    },
+    {
+      "name": "University of Virginia (Main campus)",
+      "key": "University of Virginia",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "166",
+          "score": "61.1"
+        },
+        "2025": {
+          "rank": "=163",
+          "score": "60.9"
+        },
+        "2026": {
+          "rank": "=166",
+          "score": "60.7"
+        }
+      },
+      "qs": {},
+      "lng": -78.503333333,
+      "lat": 38.035555555
+    },
+    {
+      "name": "University of Geneva",
+      "key": "University of Geneva",
+      "country": "Switzerland",
+      "city": "Geneva",
+      "the": {
+        "2024": {
+          "rank": "183",
+          "score": "59.8"
+        },
+        "2025": {
+          "rank": "171",
+          "score": "60.6"
+        },
+        "2026": {
+          "rank": "=166",
+          "score": "60.7"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "168",
+          "score": "59.7"
+        }
+      },
+      "lng": 6.14446,
+      "lat": 46.19899
+    },
+    {
+      "name": "Stockholm University",
+      "key": "Stockholm University",
+      "country": "Sweden",
+      "city": "Stockholm",
+      "the": {
+        "2024": {
+          "rank": "=185",
+          "score": "59.6"
+        },
+        "2025": {
+          "rank": "=191",
+          "score": "59.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "167",
+          "score": "59.8"
+        }
+      },
+      "lng": 18.060555555,
+      "lat": 59.363055555
+    },
+    {
+      "name": "University of Antwerp",
+      "key": "University of Antwerp",
+      "country": "Belgium",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=161",
+          "score": "61.4"
+        },
+        "2025": {
+          "rank": "=168",
+          "score": "60.7"
+        },
+        "2026": {
+          "rank": "=170",
+          "score": "60.6"
+        }
+      },
+      "qs": {},
+      "lng": 4.41,
+      "lat": 51.222777777
+    },
+    {
+      "name": "Indian Institute of Technology Madras (IITM)",
+      "key": "Indian Institute of Technology Madras",
+      "country": "India",
+      "city": "Chennai",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "170",
+          "score": "59.3"
+        }
+      },
+      "lng": 80.233888888,
+      "lat": 12.991666666
+    },
+    {
+      "name": "Kyushu University",
+      "key": "Kyushu University",
+      "country": "Japan",
+      "city": "Fukuoka City",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "171",
+          "score": "58.8"
+        }
+      },
+      "lng": 130.217777777,
+      "lat": 33.595722222
+    },
+    {
+      "name": "Arizona State University (Tempe)",
+      "key": "Arizona State University",
+      "country": "United States",
+      "city": "Phoenix",
+      "the": {
+        "2024": {
+          "rank": "182",
+          "score": "59.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "172",
+          "score": "58.4"
+        }
+      },
+      "lng": -111.935555555,
+      "lat": 33.423611111
+    },
+    {
+      "name": "Trinity College Dublin",
+      "key": "Trinity College Dublin",
+      "country": "Ireland",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "134",
+          "score": "63.2"
+        },
+        "2025": {
+          "rank": "139",
+          "score": "62.5"
+        },
+        "2026": {
+          "rank": "173",
+          "score": "60.5"
+        }
+      },
+      "qs": {},
+      "lat": 53.3444,
+      "lng": -6.2577
+    },
+    {
+      "name": "TU Dresden",
+      "key": "TU Dresden",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=161",
+          "score": "61.4"
+        },
+        "2025": {
+          "rank": "=160",
+          "score": "61.1"
+        },
+        "2026": {
+          "rank": "174",
+          "score": "60.4"
+        }
+      },
+      "qs": {},
+      "lng": 13.710690693,
+      "lat": 51.033964576
+    },
+    {
+      "name": "Chalmers University of Technology",
+      "key": "Chalmers University of Technology",
+      "country": "Sweden",
+      "city": "Gothenburg",
+      "the": {
+        "2024": {
+          "rank": "189",
+          "score": "59.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=174",
+          "score": "58.2"
+        }
+      },
+      "lng": 11.976666666,
+      "lat": 57.688333333
+    },
+    {
+      "name": "Queen’s University Belfast",
+      "key": "Queen's University Belfast",
+      "country": "United Kingdom",
+      "city": "Belfast",
+      "the": {
+        "2026": {
+          "rank": "=198",
+          "score": "58.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=174",
+          "score": "58.2"
+        }
+      },
+      "lng": -5.934722222,
+      "lat": 54.584166666
+    },
+    {
+      "name": "Vrije Universiteit Amsterdam",
+      "key": "Vrije Universiteit Amsterdam",
+      "country": "Netherlands",
+      "city": "Amsterdam",
+      "the": {
+        "2024": {
+          "rank": "125",
+          "score": "64.7"
+        },
+        "2025": {
+          "rank": "=136",
+          "score": "62.7"
+        },
+        "2026": {
+          "rank": "=176",
+          "score": "60.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=185",
+          "score": "57.1"
+        }
+      },
+      "lng": 4.8657199,
+      "lat": 52.3337568
+    },
+    {
+      "name": "Huazhong University of Science and Technology",
+      "key": "Huazhong University of Science and Technology",
+      "country": "China",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=158",
+          "score": "61.7"
+        },
+        "2025": {
+          "rank": "=166",
+          "score": "60.8"
+        },
+        "2026": {
+          "rank": "=176",
+          "score": "60.2"
+        }
+      },
+      "qs": {},
+      "lng": 114.41,
+      "lat": 30.51
+    },
+    {
+      "name": "University of Würzburg",
+      "key": "University of Würzburg",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=175",
+          "score": "60.4"
+        },
+        "2025": {
+          "rank": "=163",
+          "score": "60.9"
+        },
+        "2026": {
+          "rank": "179",
+          "score": "60.1"
+        }
+      },
+      "qs": {},
+      "lng": 9.935277777,
+      "lat": 49.788055555
+    },
+    {
+      "name": "Cardiff University",
+      "key": "Cardiff University",
+      "country": "United Kingdom",
+      "city": "Cardiff",
+      "the": {
+        "2024": {
+          "rank": "190",
+          "score": "59.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=179",
+          "score": "57.6"
+        }
+      },
+      "lng": -3.178230555,
+      "lat": 51.487433333
+    },
+    {
+      "name": "Hokkaido University",
+      "key": "Hokkaido University",
+      "country": "Japan",
+      "city": "Sapporo",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=179",
+          "score": "57.6"
+        }
+      },
+      "lng": 141.340833333,
+      "lat": 43.074722222
+    },
+    {
+      "name": "Queen's University at Kingston",
+      "key": "Queen's University at Kingston",
+      "country": "Canada",
+      "city": "Kingston",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=179",
+          "score": "57.6"
+        }
+      },
+      "lng": -76.495,
+      "lat": 44.225
+    },
+    {
+      "name": "Dartmouth College",
+      "key": "Dartmouth College",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=161",
+          "score": "61.4"
+        },
+        "2025": {
+          "rank": "=168",
+          "score": "60.7"
+        },
+        "2026": {
+          "rank": "180",
+          "score": "60.0"
+        }
+      },
+      "qs": {},
+      "lng": -72.288333333,
+      "lat": 43.703333333
+    },
+    {
+      "name": "University of California, Santa Cruz",
+      "key": "University of California, Santa Cruz",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2025": {
+          "rank": "=196",
+          "score": "58.9"
+        },
+        "2026": {
+          "rank": "=181",
+          "score": "59.9"
+        }
+      },
+      "qs": {},
+      "lng": -122.060833333,
+      "lat": 36.991388888
+    },
+    {
+      "name": "Medical University of Vienna",
+      "key": "Medical University of Vienna",
+      "country": "Austria",
+      "city": null,
+      "the": {
+        "2026": {
+          "rank": "=181",
+          "score": "59.9"
+        }
+      },
+      "qs": {},
+      "lng": 16.359722,
+      "lat": 48.213056
+    },
+    {
+      "name": "Universitat Autònoma de Barcelona (UAB)",
+      "key": "Universitat Autònoma de Barcelona",
+      "country": "Spain",
+      "city": null,
+      "the": {
+        "2025": {
+          "rank": "=199",
+          "score": "58.7"
+        },
+        "2026": {
+          "rank": "183",
+          "score": "59.8"
+        }
+      },
+      "qs": {},
+      "lng": 2.107777777,
+      "lat": 41.500277777
+    },
+    {
+      "name": "Université Catholique de Louvain",
+      "key": "Université Catholique de Louvain",
+      "country": "Belgium",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=168",
+          "score": "60.8"
+        },
+        "2025": {
+          "rank": "175",
+          "score": "60.2"
+        },
+        "2026": {
+          "rank": "=184",
+          "score": "59.7"
+        }
+      },
+      "qs": {},
+      "lat": 50.669687,
+      "lng": 4.615591
+    },
+    {
+      "name": "Technische Universität Dresden",
+      "key": "Technische Universität Dresden",
+      "country": "Germany",
+      "city": "Dresden",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=185",
+          "score": "57.1"
+        }
+      },
+      "lng": 13.710690693,
+      "lat": 51.033964576
+    },
+    {
+      "name": "Universidad de Chile",
+      "key": "Universidad de Chile",
+      "country": "Chile",
+      "city": "Santiago",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=185",
+          "score": "57.1"
+        }
+      },
+      "lng": -70.650953888,
+      "lat": -33.444548888
+    },
+    {
+      "name": "University of Ottawa",
+      "key": "University of Ottawa",
+      "country": "Canada",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=177",
+          "score": "60.2"
+        },
+        "2025": {
+          "rank": "=191",
+          "score": "59.2"
+        },
+        "2026": {
+          "rank": "=187",
+          "score": "59.5"
+        }
+      },
+      "qs": {},
+      "lng": -75.6824,
+      "lat": 45.4222
+    },
+    {
+      "name": "Pompeu Fabra University",
+      "key": "Pompeu Fabra University",
+      "country": "Spain",
+      "city": null,
+      "the": {
+        "2025": {
+          "rank": "=176",
+          "score": "60.1"
+        },
+        "2026": {
+          "rank": "=187",
+          "score": "59.5"
+        }
+      },
+      "qs": {},
+      "lng": 2.179508333,
+      "lat": 41.379166666
+    },
+    {
+      "name": "Tecnológico de Monterrey",
+      "key": "Tecnológico de Monterrey",
+      "country": "Mexico",
+      "city": "Monterrey",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "188",
+          "score": "57"
+        }
+      },
+      "lng": -100.290686,
+      "lat": 25.651435
+    },
+    {
+      "name": "Tufts University",
+      "key": "Tufts University",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=191",
+          "score": "59.2"
+        },
+        "2025": {
+          "rank": "179",
+          "score": "59.8"
+        },
+        "2026": {
+          "rank": "189",
+          "score": "59.4"
+        }
+      },
+      "qs": {},
+      "lng": -71.11982,
+      "lat": 42.406949
+    },
+    {
+      "name": "Curtin University",
+      "key": "Curtin University",
+      "country": "Australia",
+      "city": "Perth",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "189",
+          "score": "56.9"
+        }
+      },
+      "lng": 115.8936669,
+      "lat": -32.0048589
+    },
+    {
+      "name": "University of Twente",
+      "key": "University of Twente",
+      "country": "Netherlands",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "184",
+          "score": "59.7"
+        },
+        "2025": {
+          "rank": "=180",
+          "score": "59.7"
+        },
+        "2026": {
+          "rank": "=190",
+          "score": "59.3"
+        }
+      },
+      "qs": {},
+      "lng": 6.8525,
+      "lat": 52.2425
+    },
+    {
+      "name": "National Cheng Kung University (NCKU)",
+      "key": "National Cheng Kung University",
+      "country": "Taiwan",
+      "city": "Tainan City",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=191",
+          "score": "56.7"
+        }
+      },
+      "lng": 120.216666666,
+      "lat": 23
+    },
+    {
+      "name": "Technische Universität Wien",
+      "key": "Technische Universität Wien",
+      "country": "Austria",
+      "city": "Vienna",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=191",
+          "score": "56.7"
+        }
+      },
+      "lng": 16.37077,
+      "lat": 48.19862
+    },
+    {
+      "name": "Universitas Indonesia",
+      "key": "Universitas Indonesia",
+      "country": "Indonesia",
+      "city": "Depok",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=191",
+          "score": "56.7"
+        }
+      },
+      "lng": 106.8272343,
+      "lat": -6.3606229
+    },
+    {
+      "name": "University of Leicester",
+      "key": "University of Leicester",
+      "country": "United Kingdom",
+      "city": null,
+      "the": {
+        "2025": {
+          "rank": "=191",
+          "score": "59.2"
+        },
+        "2026": {
+          "rank": "=192",
+          "score": "59.2"
+        }
+      },
+      "qs": {},
+      "lng": -1.124444444,
+      "lat": 52.621388888
+    },
+    {
+      "name": "University of Notre Dame",
+      "key": "University of Notre Dame",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2025": {
+          "rank": "=196",
+          "score": "58.9"
+        },
+        "2026": {
+          "rank": "194",
+          "score": "59.1"
+        }
+      },
+      "qs": {},
+      "lng": -86.238888888,
+      "lat": 41.7
+    },
+    {
+      "name": "University of Münster",
+      "key": "University of Münster",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=193",
+          "score": "59.0"
+        },
+        "2025": {
+          "rank": "188",
+          "score": "59.4"
+        },
+        "2026": {
+          "rank": "=195",
+          "score": "59.0"
+        }
+      },
+      "qs": {},
+      "lng": 7.613,
+      "lat": 51.964
+    },
+    {
+      "name": "The Education University of Hong Kong",
+      "key": "The Education University of Hong Kong",
+      "country": "Hong Kong",
+      "city": null,
+      "the": {
+        "2026": {
+          "rank": "=195",
+          "score": "59.0"
+        }
+      },
+      "qs": {},
+      "lng": 114.194,
+      "lat": 22.4689
+    },
+    {
+      "name": "University of Wollongong",
+      "key": "University of Wollongong",
+      "country": "Australia",
+      "city": "Wollongong",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "195",
+          "score": "56.6"
+        }
+      },
+      "lng": 150.879536111,
+      "lat": -34.406166666
+    },
+    {
+      "name": "Université catholique de Louvain (UCLouvain)",
+      "key": "Université catholique de Louvain",
+      "country": "Belgium",
+      "city": "Louvain-la-Neuve",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=196",
+          "score": "56.5"
+        }
+      },
+      "lng": 4.615591,
+      "lat": 50.669687
+    },
+    {
+      "name": "University of Reading",
+      "key": "University of Reading",
+      "country": "United Kingdom",
+      "city": "Reading",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=196",
+          "score": "56.5"
+        }
+      },
+      "lng": -0.945555555,
+      "lat": 51.441944444
+    },
+    {
+      "name": "Indiana University",
+      "key": "Indiana University",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "198",
+          "score": "58.9"
+        },
+        "2025": {
+          "rank": "=189",
+          "score": "59.3"
+        },
+        "2026": {
+          "rank": "=198",
+          "score": "58.8"
+        }
+      },
+      "qs": {},
+      "lng": -86.521389,
+      "lat": 39.167222
+    },
+    {
+      "name": "University of Otago",
+      "key": "University of Otago",
+      "country": "New Zealand",
+      "city": "Dunedin",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "198",
+          "score": "56.3"
+        }
+      },
+      "lng": 170.513888888,
+      "lat": -45.865555555
+    },
+    {
+      "name": "Complutense University of Madrid",
+      "key": "Complutense University of Madrid",
+      "country": "Spain",
+      "city": "Madrid",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "199",
+          "score": "56.2"
+        }
+      },
+      "lng": -3.727030555,
+      "lat": 40.449038888
+    },
+    {
+      "name": "King Abdulaziz University (KAU)",
+      "key": "King Abdulaziz University",
+      "country": "Saudi Arabia",
+      "city": "Jeddah",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "200",
+          "score": "55.9"
+        }
+      },
+      "lng": 39.2535,
+      "lat": 21.493472222
+    },
+    {
+      "name": "The Ohio State University",
+      "key": "The Ohio State University",
+      "country": "United States",
+      "city": "Columbus",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=201",
+          "score": "55.7"
+        }
+      },
+      "lng": -83.014444444,
+      "lat": 40.000555555
+    },
+    {
+      "name": "Waseda University",
+      "key": "Waseda University",
+      "country": "Japan",
+      "city": "Tokyo",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=201",
+          "score": "55.7"
+        }
+      },
+      "lng": 139.719333333,
+      "lat": 35.709202777
+    },
+    {
+      "name": "Loughborough University",
+      "key": "Loughborough University",
+      "country": "United Kingdom",
+      "city": "Loughborough",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "203",
+          "score": "55.5"
+        }
+      },
+      "lng": -1.228611111,
+      "lat": 52.768333333
+    },
+    {
+      "name": "Università di Padova",
+      "key": "Università di Padova",
+      "country": "Italy",
+      "city": "Padova",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "204",
+          "score": "55.4"
+        }
+      },
+      "lng": 11.87,
+      "lat": 45.42
+    },
+    {
+      "name": "Indian Institute of Technology Kharagpur (IIT-KGP)",
+      "key": "Indian Institute of Technology Kharagpur",
+      "country": "India",
+      "city": "Kharagpur",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "205",
+          "score": "55.1"
+        }
+      },
+      "lng": 87.309963888,
+      "lat": 22.319713888
+    },
+    {
+      "name": "Gadjah Mada University",
+      "key": "Gadjah Mada University",
+      "country": "Indonesia",
+      "city": "Yogyakarta",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=206",
+          "score": "55"
+        }
+      },
+      "lng": 110.378983333,
+      "lat": -7.769494444
+    },
+    {
+      "name": "Politecnico di Torino",
+      "key": "Politecnico di Torino",
+      "country": "Italy",
+      "city": "Turin",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=206",
+          "score": "55"
+        }
+      },
+      "lng": 7.661075,
+      "lat": 45.063094444
+    },
+    {
+      "name": "Tel Aviv University",
+      "key": "Tel Aviv University",
+      "country": "Israel",
+      "city": "Tel Aviv",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "208",
+          "score": "54.9"
+        }
+      },
+      "lng": 34.805,
+      "lat": 32.1125
+    },
+    {
+      "name": "Rheinische Friedrich-Wilhelms-Universität Bonn",
+      "key": "Rheinische Friedrich-Wilhelms-Universität Bonn",
+      "country": "Germany",
+      "city": "Bonn",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=209",
+          "score": "54.8"
+        }
+      },
+      "lng": 7.102222222,
+      "lat": 50.733888888
+    },
+    {
+      "name": "Universität Hamburg",
+      "key": "Universität Hamburg",
+      "country": "Germany",
+      "city": "Hamburg",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "=209",
+          "score": "54.8"
+        }
+      },
+      "lng": 9.984776342,
+      "lat": 53.565651296
+    },
+    {
+      "name": "Ulsan National Institute of Science and Technology (UNIST)",
+      "key": "Ulsan National Institute of Science and Technology",
+      "country": "South Korea",
+      "city": "Ulsan",
+      "the": {
+        "2024": {
+          "rank": "=199",
+          "score": "58.7"
+        },
+        "2025": {
+          "rank": "201–250",
+          "score": "55.8–58.6"
+        },
+        "2026": {
+          "rank": "201–250",
+          "score": "56.4–58.6"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "299",
+          "score": "46"
+        }
+      },
+      "lng": 129.19,
+      "lat": 35.573
+    },
+    {
+      "name": "Kyung Hee University",
+      "key": "Kyung Hee University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "251–300",
+          "score": "53.1–55.8"
+        },
+        "2025": {
+          "rank": "251–300",
+          "score": "53.7–55.7"
+        },
+        "2026": {
+          "rank": "251–300",
+          "score": "54.3–56.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=309",
+          "score": "44.8"
+        }
+      },
+      "lng": 127.052,
+      "lat": 37.5967
+    },
+    {
+      "name": "Gwangju Institute of Science and Technology (GIST)",
+      "key": "Gwangju Institute of Science and Technology",
+      "country": "South Korea",
+      "city": "Gwangju",
+      "the": {
+        "2024": {
+          "rank": "401–500",
+          "score": "45.4–49.0"
+        },
+        "2025": {
+          "rank": "401–500",
+          "score": "46.0–49.2"
+        },
+        "2026": {
+          "rank": "401–500",
+          "score": "46.2–49.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=379",
+          "score": "39.7"
+        }
+      },
+      "lng": 126.84,
+      "lat": 35.22652778
+    },
+    {
+      "name": "Daegu Gyeongbuk Institute of Science and Technology (DGIST)",
+      "key": "Daegu Gyeongbuk Institute of Science and Technology",
+      "country": "South Korea",
+      "city": "Daegu",
+      "the": {
+        "2024": {
+          "rank": "351–400",
+          "score": "49.1–51.0"
+        },
+        "2025": {
+          "rank": "351–400",
+          "score": "49.4–51.0"
+        },
+        "2026": {
+          "rank": "351–400",
+          "score": "49.9–51.5"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=385",
+          "score": "39.3"
+        }
+      },
+      "lng": 128.45711111,
+      "lat": 35.70527778
+    },
+    {
+      "name": "Sejong University",
+      "key": "Sejong University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "251–300",
+          "score": "53.1–55.8"
+        },
+        "2025": {
+          "rank": "201–250",
+          "score": "55.8–58.6"
+        },
+        "2026": {
+          "rank": "251–300",
+          "score": "54.3–56.3"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=398",
+          "score": "38.2"
+        }
+      },
+      "lng": 127.073889,
+      "lat": 37.550833
+    },
+    {
+      "name": "Chung-Ang University",
+      "key": "Chung-Ang University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "401–500",
+          "score": "45.4–49.0"
+        },
+        "2025": {
+          "rank": "401–500",
+          "score": "46.0–49.2"
+        },
+        "2026": {
+          "rank": "401–500",
+          "score": "46.2–49.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=432",
+          "score": "35.5"
+        }
+      },
+      "lng": 126.95503,
+      "lat": 37.50489
+    },
+    {
+      "name": "Pusan National University",
+      "key": "Pusan National University",
+      "country": "South Korea",
+      "city": "Busan",
+      "the": {
+        "2024": {
+          "rank": "501–600",
+          "score": "41.9–45.3"
+        },
+        "2025": {
+          "rank": "501–600",
+          "score": "43.3–45.9"
+        },
+        "2026": {
+          "rank": "501–600",
+          "score": "43.6–46.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=449",
+          "score": "34.6"
+        }
+      },
+      "lng": 129.07931,
+      "lat": 35.23398
+    },
+    {
+      "name": "Kyungpook National University (KNU)",
+      "key": "Kyungpook National University",
+      "country": "South Korea",
+      "city": "Daegu",
+      "the": {
+        "2024": {
+          "rank": "501–600",
+          "score": "41.9–45.3"
+        },
+        "2025": {
+          "rank": "501–600",
+          "score": "43.3–45.9"
+        },
+        "2026": {
+          "rank": "501–600",
+          "score": "43.6–46.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=481",
+          "score": "33.3"
+        }
+      },
+      "lng": 128.610555555,
+      "lat": 35.891388888
+    },
+    {
+      "name": "Ewha Womans University",
+      "key": "Ewha Womans University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "601–800",
+          "score": "37.0–41.8"
+        },
+        "2025": {
+          "rank": "601–800",
+          "score": "38.2–43.2"
+        },
+        "2026": {
+          "rank": "501–600",
+          "score": "43.6–46.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=488",
+          "score": "33"
+        }
+      },
+      "lng": 126.945,
+      "lat": 37.5625
+    },
+    {
+      "name": "Sogang University",
+      "key": "Sogang University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "801–1000",
+          "score": "32.7–36.9"
+        },
+        "2025": {
+          "rank": "801–1000",
+          "score": "34.5–38.1"
+        },
+        "2026": {
+          "rank": "801–1000",
+          "score": "35.5–38.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=494",
+          "score": "32.7"
+        }
+      },
+      "lng": 126.941111111,
+      "lat": 37.551111111
+    },
+    {
+      "name": "Dongguk University",
+      "key": "Dongguk University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "520",
+          "score": "31.4"
+        }
+      },
+      "lng": 127.000194,
+      "lat": 37.55825
+    },
+    {
+      "name": "Inha University",
+      "key": "Inha University",
+      "country": "South Korea",
+      "city": "Incheon",
+      "the": {
+        "2024": {
+          "rank": "801–1000",
+          "score": "32.7–36.9"
+        },
+        "2025": {
+          "rank": "801–1000",
+          "score": "34.5–38.1"
+        },
+        "2026": {
+          "rank": "801–1000",
+          "score": "35.5–38.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=555",
+          "score": "29.7"
+        }
+      },
+      "lng": 126.65444444,
+      "lat": 37.44944444
+    },
+    {
+      "name": "Ajou University",
+      "key": "Ajou University",
+      "country": "South Korea",
+      "city": "Suwon",
+      "the": {
+        "2024": {
+          "rank": "501–600",
+          "score": "41.9–45.3"
+        },
+        "2025": {
+          "rank": "501–600",
+          "score": "43.3–45.9"
+        },
+        "2026": {
+          "rank": "401–500",
+          "score": "46.2–49.8"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=570",
+          "score": "29.1"
+        }
+      },
+      "lng": 127.04607,
+      "lat": 37.282913
+    },
+    {
+      "name": "The Catholic University of Korea (CUK)",
+      "key": "The Catholic University of Korea",
+      "country": "South Korea",
+      "city": "Gyeonggi",
+      "the": {
+        "2024": {
+          "rank": "601–800",
+          "score": "37.0–41.8"
+        },
+        "2025": {
+          "rank": "601–800",
+          "score": "38.2–43.2"
+        },
+        "2026": {
+          "rank": "601–800",
+          "score": "39.0–43.5"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=652",
+          "score": "26.9"
+        }
+      },
+      "lat": 37.501736,
+      "lng": 127.004716
+    },
+    {
+      "name": "Jeonbuk National University",
+      "key": "Jeonbuk National University",
+      "country": "South Korea",
+      "city": "Jeonju",
+      "the": {
+        "2024": {
+          "rank": "801–1000",
+          "score": "32.7–36.9"
+        },
+        "2025": {
+          "rank": "801–1000",
+          "score": "34.5–38.1"
+        },
+        "2026": {
+          "rank": "801–1000",
+          "score": "35.5–38.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=677",
+          "score": "26.1"
+        }
+      },
+      "lng": 127.12935,
+      "lat": 35.84682
+    },
+    {
+      "name": "Konkuk University",
+      "key": "Konkuk University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "601–800",
+          "score": "37.0–41.8"
+        },
+        "2025": {
+          "rank": "501–600",
+          "score": "43.3–45.9"
+        },
+        "2026": {
+          "rank": "501–600",
+          "score": "43.6–46.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "=683",
+          "score": "26"
+        }
+      },
+      "lng": 127.076388888,
+      "lat": 37.541944444
+    },
+    {
+      "name": "Hongik University",
+      "key": "Hongik University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2025": {
+          "rank": "1501+",
+          "score": "10.5–25.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "1401",
+          "score": null
+        }
+      },
+      "lng": 126.92583333,
+      "lat": 37.55055556
+    },
+    {
+      "name": "Chosun University",
+      "key": "Chosun University",
+      "country": "South Korea",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "1201–1500",
+          "score": "22.8–28.2"
+        },
+        "2025": {
+          "rank": "1201–1500",
+          "score": "25.2–30.6"
+        },
+        "2026": {
+          "rank": "1501+",
+          "score": "10.3–27.2"
+        }
+      },
+      "qs": {},
+      "lng": 126.933055555,
+      "lat": 35.142222222
+    },
+    {
+      "name": "Dankook University",
+      "key": "Dankook University",
+      "country": "South Korea",
+      "city": "Jukjeon",
+      "the": {
+        "2025": {
+          "rank": "1501+",
+          "score": "10.5–25.1"
+        },
+        "2026": {
+          "rank": "1501+",
+          "score": "10.3–27.2"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "1001-1200",
+          "score": null
+        }
+      },
+      "lng": 127.126111111,
+      "lat": 37.321944444
+    },
+    {
+      "name": "University of Adelaide",
+      "key": "University of Adelaide",
+      "country": "Australia",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=111",
+          "score": "65.8"
+        },
+        "2025": {
+          "rank": "=128",
+          "score": "63.8"
+        }
+      },
+      "qs": {},
+      "lng": 138.605361111,
+      "lat": -34.920666666
+    },
+    {
+      "name": "Sichuan University",
+      "key": "Sichuan University",
+      "country": "China",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=150",
+          "score": "62.0"
+        }
+      },
+      "qs": {},
+      "lng": 104.086377,
+      "lat": 30.634471
+    },
+    {
+      "name": "Georgetown University",
+      "key": "Georgetown University",
+      "country": "United States",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=187",
+          "score": "59.5"
+        }
+      },
+      "qs": {},
+      "lng": -77.072777777,
+      "lat": 38.907222222
+    },
+    {
+      "name": "University of Mannheim",
+      "key": "University of Mannheim",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=187",
+          "score": "59.5"
+        }
+      },
+      "qs": {},
+      "lng": 8.461811111,
+      "lat": 49.483
+    },
+    {
+      "name": "Tokyo Institute of Technology",
+      "key": "Tokyo Institute of Technology",
+      "country": "Japan",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=191",
+          "score": "59.2"
+        },
+        "2025": {
+          "rank": "195",
+          "score": "59.1"
+        }
+      },
+      "qs": {},
+      "lng": 139.683888888,
+      "lat": 35.605
+    },
+    {
+      "name": "Ulm University",
+      "key": "Ulm University",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=193",
+          "score": "59.0"
+        },
+        "2025": {
+          "rank": "=199",
+          "score": "58.7"
+        }
+      },
+      "qs": {},
+      "lng": 9.953805555,
+      "lat": 48.422111111
+    },
+    {
+      "name": "University of Erlangen-Nuremberg",
+      "key": "University of Erlangen-Nuremberg",
+      "country": "Germany",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=193",
+          "score": "59.0"
+        }
+      },
+      "qs": {},
+      "lng": 11.00472236,
+      "lat": 49.600717498
+    },
+    {
+      "name": "Queensland University of Technology",
+      "key": "Queensland University of Technology",
+      "country": "Australia",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "=199",
+          "score": "58.7"
+        }
+      },
+      "qs": {},
+      "lng": 153.028055555,
+      "lat": -27.476944444
+    },
+    {
+      "name": "Incheon National University",
+      "key": "Incheon National University",
+      "country": "South Korea",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "1201–1500",
+          "score": "22.8–28.2"
+        },
+        "2025": {
+          "rank": "1201–1500",
+          "score": "25.2–30.6"
+        },
+        "2026": {
+          "rank": "1201–1500",
+          "score": "27.3–32.0"
+        }
+      },
+      "qs": {},
+      "lng": 126.63331111,
+      "lat": 37.37561389
+    },
+    {
+      "name": "Soongsil University",
+      "key": "Soongsil University",
+      "country": "South Korea",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "1201–1500",
+          "score": "22.8–28.2"
+        },
+        "2025": {
+          "rank": "1201–1500",
+          "score": "25.2–30.6"
+        }
+      },
+      "qs": {},
+      "lng": 126.95627,
+      "lat": 37.496295
+    },
+    {
+      "name": "Hanseo University",
+      "key": "Hanseo University",
+      "country": "South Korea",
+      "city": null,
+      "the": {
+        "2024": {
+          "rank": "Reporter",
+          "score": "n/a"
+        },
+        "2025": {
+          "rank": "Reporter",
+          "score": "n/a"
+        },
+        "2026": {
+          "rank": "Reporter",
+          "score": "n/a"
+        }
+      },
+      "qs": {},
+      "lng": 126.583861,
+      "lat": 36.6905
+    },
+    {
+      "name": "Abu Dhabi University",
+      "key": "Abu Dhabi University",
+      "country": "United Arab Emirates",
+      "city": null,
+      "the": {
+        "2025": {
+          "rank": "=191",
+          "score": "59.2"
+        }
+      },
+      "qs": {},
+      "lng": 54.564444444,
+      "lat": 24.366666666
+    },
+    {
+      "name": "Woosong University",
+      "key": "Woosong University",
+      "country": "South Korea",
+      "city": null,
+      "the": {
+        "2025": {
+          "rank": "1201–1500",
+          "score": "25.2–30.6"
+        },
+        "2026": {
+          "rank": "1201–1500",
+          "score": "27.3–32.0"
+        }
+      },
+      "qs": {},
+      "lng": 127.446111111,
+      "lat": 36.338055555
+    },
+    {
+      "name": "Kyungdong University",
+      "key": "Kyungdong University",
+      "country": "South Korea",
+      "city": null,
+      "the": {
+        "2026": {
+          "rank": "Reporter",
+          "score": "n/a"
+        }
+      },
+      "qs": {},
+      "lng": 128.55549,
+      "lat": 38.250857
+    },
+    {
+      "name": "Sookmyung Women's University",
+      "key": "Sookmyung Women's University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "1201-1400",
+          "score": null
+        }
+      },
+      "lng": 126.964649,
+      "lat": 37.545419
+    },
+    {
+      "name": "Sungshin Women's University",
+      "key": "Sungshin Women's University",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {},
+      "qs": {
+        "2027": {
+          "rank": "1201-1400",
+          "score": null
+        }
+      },
+      "lng": 127.02213889,
+      "lat": 37.59130556
+    },
+    {
+      "name": "University of Ulsan",
+      "key": "University of Ulsan",
+      "country": "South Korea",
+      "city": "Ulsan",
+      "the": {
+        "2024": {
+          "rank": "501–600",
+          "score": "41.9–45.3"
+        },
+        "2025": {
+          "rank": "501–600",
+          "score": "43.3–45.9"
+        },
+        "2026": {
+          "rank": "501–600",
+          "score": "43.6–46.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "851-900",
+          "score": null
+        }
+      },
+      "lng": 129.256725,
+      "lat": 35.542773
+    },
+    {
+      "name": "Yeungnam University",
+      "key": "Yeungnam University",
+      "country": "South Korea",
+      "city": "Gyeongsan",
+      "the": {
+        "2024": {
+          "rank": "601–800",
+          "score": "37.0–41.8"
+        },
+        "2025": {
+          "rank": "601–800",
+          "score": "38.2–43.2"
+        },
+        "2026": {
+          "rank": "501–600",
+          "score": "43.6–46.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "791-800",
+          "score": null
+        }
+      },
+      "lng": 128.758055555,
+      "lat": 35.834166666
+    },
+    {
+      "name": "Gachon University",
+      "key": "Gachon University",
+      "country": "South Korea",
+      "city": "Seongnam",
+      "the": {
+        "2025": {
+          "rank": "601–800",
+          "score": "38.2–43.2"
+        },
+        "2026": {
+          "rank": "501–600",
+          "score": "43.6–46.1"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "901-950",
+          "score": null
+        }
+      },
+      "lng": 127.129278,
+      "lat": 37.45125
+    },
+    {
+      "name": "Chonnam National University",
+      "key": "Chonnam National University",
+      "country": "South Korea",
+      "city": "Gwangju",
+      "the": {
+        "2024": {
+          "rank": "801–1000",
+          "score": "32.7–36.9"
+        },
+        "2025": {
+          "rank": "801–1000",
+          "score": "34.5–38.1"
+        },
+        "2026": {
+          "rank": "801–1000",
+          "score": "35.5–38.9"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "781-790",
+          "score": null
+        }
+      },
+      "lng": 126.908055555,
+      "lat": 35.176388888
+    },
+    {
+      "name": "Chungnam National University",
+      "key": "Chungnam National University",
+      "country": "South Korea",
+      "city": "Daejeon",
+      "the": {
+        "2024": {
+          "rank": "801–1000",
+          "score": "32.7–36.9"
+        },
+        "2025": {
+          "rank": "1001–1200",
+          "score": "30.7–34.4"
+        },
+        "2026": {
+          "rank": "1001–1200",
+          "score": "32.1–35.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "801-850",
+          "score": null
+        }
+      },
+      "lng": 127.346111111,
+      "lat": 36.368888888
+    },
+    {
+      "name": "University of Seoul",
+      "key": "University of Seoul",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "801–1000",
+          "score": "32.7–36.9"
+        },
+        "2025": {
+          "rank": "801–1000",
+          "score": "34.5–38.1"
+        },
+        "2026": {
+          "rank": "1001–1200",
+          "score": "32.1–35.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "851-900",
+          "score": null
+        }
+      },
+      "lng": 127.05838611,
+      "lat": 37.583325
+    },
+    {
+      "name": "Chungbuk National University",
+      "key": "Chungbuk National University",
+      "country": "South Korea",
+      "city": "Cheongju",
+      "the": {
+        "2024": {
+          "rank": "1201–1500",
+          "score": "22.8–28.2"
+        },
+        "2025": {
+          "rank": "1001–1200",
+          "score": "30.7–34.4"
+        },
+        "2026": {
+          "rank": "1001–1200",
+          "score": "32.1–35.4"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "951-1000",
+          "score": null
+        }
+      },
+      "lng": 127.45709167,
+      "lat": 36.62901111
+    },
+    {
+      "name": "Gyeongsang National University",
+      "key": "Gyeongsang National University",
+      "country": "South Korea",
+      "city": "Jinju-si",
+      "the": {
+        "2024": {
+          "rank": "1201–1500",
+          "score": "22.8–28.2"
+        },
+        "2025": {
+          "rank": "1201–1500",
+          "score": "25.2–30.6"
+        },
+        "2026": {
+          "rank": "1201–1500",
+          "score": "27.3–32.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "1001-1200",
+          "score": null
+        }
+      },
+      "lng": 128.098,
+      "lat": 35.1541
+    },
+    {
+      "name": "Hallym University",
+      "key": "Hallym University",
+      "country": "South Korea",
+      "city": "Chuncheon",
+      "the": {
+        "2024": {
+          "rank": "1201–1500",
+          "score": "22.8–28.2"
+        },
+        "2025": {
+          "rank": "1201–1500",
+          "score": "25.2–30.6"
+        },
+        "2026": {
+          "rank": "1201–1500",
+          "score": "27.3–32.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "1001-1200",
+          "score": null
+        }
+      },
+      "lng": 127.7383348,
+      "lat": 37.8861045
+    },
+    {
+      "name": "Kangwon National University",
+      "key": "Kangwon National University",
+      "country": "South Korea",
+      "city": "South Korea",
+      "the": {
+        "2024": {
+          "rank": "1201–1500",
+          "score": "22.8–28.2"
+        },
+        "2025": {
+          "rank": "1201–1500",
+          "score": "25.2–30.6"
+        },
+        "2026": {
+          "rank": "1201–1500",
+          "score": "27.3–32.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "1001-1200",
+          "score": null
+        }
+      },
+      "lng": 127.74416667,
+      "lat": 37.86944444
+    },
+    {
+      "name": "Seoul National University of Science and Technology (SeoulTech)",
+      "key": "Seoul National University of Science and Technology",
+      "country": "South Korea",
+      "city": "Seoul",
+      "the": {
+        "2024": {
+          "rank": "1201–1500",
+          "score": "22.8–28.2"
+        },
+        "2025": {
+          "rank": "1201–1500",
+          "score": "25.2–30.6"
+        },
+        "2026": {
+          "rank": "1201–1500",
+          "score": "27.3–32.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "1001-1200",
+          "score": null
+        }
+      },
+      "lng": 127.07861111,
+      "lat": 37.63166667
+    },
+    {
+      "name": "Soonchunhyang University",
+      "key": "Soonchunhyang University",
+      "country": "South Korea",
+      "city": "Asan",
+      "the": {
+        "2024": {
+          "rank": "1201–1500",
+          "score": "22.8–28.2"
+        },
+        "2025": {
+          "rank": "1201–1500",
+          "score": "25.2–30.6"
+        },
+        "2026": {
+          "rank": "1201–1500",
+          "score": "27.3–32.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "1001-1200",
+          "score": null
+        }
+      },
+      "lng": 126.931604,
+      "lat": 36.77077
+    },
+    {
+      "name": "Kookmin University",
+      "key": "Kookmin University",
+      "country": "South Korea",
+      "city": "Seongbuk-gu",
+      "the": {
+        "2024": {
+          "rank": "1501+",
+          "score": "9.7–22.7"
+        },
+        "2025": {
+          "rank": "1201–1500",
+          "score": "25.2–30.6"
+        },
+        "2026": {
+          "rank": "1201–1500",
+          "score": "27.3–32.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "1001-1200",
+          "score": null
+        }
+      },
+      "lng": 126.995583,
+      "lat": 37.611139
+    },
+    {
+      "name": "Jeju National University",
+      "key": "Jeju National University",
+      "country": "South Korea",
+      "city": "Jeju City",
+      "the": {
+        "2024": {
+          "rank": "1201–1500",
+          "score": "22.8–28.2"
+        },
+        "2025": {
+          "rank": "1001–1200",
+          "score": "30.7–34.4"
+        },
+        "2026": {
+          "rank": "1201–1500",
+          "score": "27.3–32.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "1201-1400",
+          "score": null
+        }
+      },
+      "lng": 126.5619,
+      "lat": 33.455972222
+    },
+    {
+      "name": "Pukyong National University",
+      "key": "Pukyong National University",
+      "country": "South Korea",
+      "city": "Busan",
+      "the": {
+        "2024": {
+          "rank": "1201–1500",
+          "score": "22.8–28.2"
+        },
+        "2025": {
+          "rank": "1201–1500",
+          "score": "25.2–30.6"
+        },
+        "2026": {
+          "rank": "1201–1500",
+          "score": "27.3–32.0"
+        }
+      },
+      "qs": {
+        "2027": {
+          "rank": "1201-1400",
+          "score": null
+        }
+      },
+      "lng": 129.10361111,
+      "lat": 35.13416667
+    }
+  ]
+}

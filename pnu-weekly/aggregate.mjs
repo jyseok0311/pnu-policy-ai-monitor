@@ -17,7 +17,10 @@ const J = (p) => JSON.parse(readFileSync(join(root, p), 'utf8'));
 
 // ── 입력
 const narr = J(`data/narrative/${ID}.json`);
-const latest = readdirSync(join(root, 'data/collected')).filter((f) => f.endsWith('.json')).sort().pop();
+// 서술 파일이 collected 를 지정하면 그 수집본을, 아니면 가장 최근 것을 쓴다.
+const files = readdirSync(join(root, 'data/collected')).filter((f) => f.endsWith('.json')).sort();
+const latest = narr.collected ? `${narr.collected}.json` : files[files.length - 1];
+if (!files.includes(latest)) { console.error(`✗ 수집본 없음: data/collected/${latest}`); process.exit(1); }
 const raw = J(`data/collected/${latest}`);
 console.log(`· 수집본: data/collected/${latest} (원본 ${raw.total}건)`);
 
@@ -64,6 +67,16 @@ const UNI_STOP = new Set([
   '열려', '최초', '이번', '지역', '한국', '전국', '추진', '개최한다', '밝혔다', '나섰다'
 ]);
 const RANK = J('data/rankings.json');
+const JA = (() => { try { return J('data/joongang-ranking.json'); } catch { return null; } })();
+// 중앙일보는 연도별 패널이라 가장 최근 등재 연도를 뽑아 쓴다
+const jaLatest = (id) => {
+  const u = JA && JA.universities[id];
+  if (!u) return null;
+  const years = Object.keys(u.ranks).filter((y) => u.ranks[y] != null).sort();
+  if (!years.length) return null;
+  const y = years[years.length - 1];
+  return { year: y, rank: u.ranks[y], series: u.ranks };
+};
 const uniDetail = Object.fromEntries(meta.universities.map((u) => {
   const hit = items.filter((x) => {
     let t = x.title + ' ' + x.summary;
@@ -88,7 +101,7 @@ const uniDetail = Object.fromEntries(meta.universities.map((u) => {
   const rk = RANK.universities[u.id] || null;
   return [u.id, {
     name: u.name,
-    rank: rk ? { qs: rk.qs, the: rk.the, city: rk.city } : null,
+    rank: rk ? { qs: rk.qs, the: rk.the, city: rk.city, ja: jaLatest(u.id) } : null,
     mentions: hit.length,
     risky: risky.length,
     riskRate: +(rr * 100).toFixed(1),
@@ -228,13 +241,8 @@ const week = {
   signal,
   map: {
     levels, uni: uniDetail,
-    flows: [{ to: 'pnu', style: 'solid', color: '#3b7dd8', label: '정책 전달 경로' }],
-    legend: {
-      primary: "'서울대 10개 만들기' 1차 선정 및 거점국립대 재편",
-      secondary: '지방 국립대 등록금 전액 지원, 국립대 통합 무산',
-      disturb: '미선정 지역 반발, 사립대 역차별 논쟁, 구성원 합의 난항',
-      buffer: '패키지 지원 선정, AI스타펠로우십, 글로컬대학 연계, PLATO 교육 AX'
-    }
+    flows: narr.flows || [{ to: 'pnu', style: 'solid', color: '#3b7dd8', label: '정책 전달 경로' }],
+    legend: narr.legend
   },
   summary, articles,
   changes: narr.changes, changesTitle: narr.changesTitle, changesNote: narr.changesNote,
@@ -244,7 +252,13 @@ const week = {
     items: [
       { name: 'QS 세계대학순위', period: RANK._sources.qs.name.match(/\d{4}/)[0], value: (RANK.universities.pnu.qs || '').replace('=', ''), unit: '위', change: `종합점수 ${RANK.universities.pnu.qsScore}`, dir: 'flat', freq: 'year', src: 'qs' },
       { name: 'THE 세계대학순위', period: RANK._sources.the.name.match(/\d{4}/)[0], value: RANK.universities.pnu.the, unit: '', change: '거점국립대 중 공동 2위', dir: 'flat', freq: 'year', src: 'the' },
-      { name: '중앙일보 국내 종합', period: '최근', value: '—', unit: '', change: '출처 사이트 응답 없음', dir: 'flat', freq: 'year', src: 'joongang' }
+      (() => { const j = jaLatest('pnu');
+        return j
+          ? { name: '중앙일보 국내 종합', period: j.year, value: String(j.rank), unit: '위',
+              change: Object.keys(j.series).filter((y) => j.series[y] != null).map((y) => y.slice(2) + '년 ' + j.series[y] + '위').join(' · '),
+              dir: 'flat', freq: 'year', src: 'joongang' }
+          : { name: '중앙일보 국내 종합', period: '최근', value: '—', unit: '', change: '자료 없음', dir: 'flat', freq: 'year', src: 'joongang' };
+      })()
     ]
   }],
   paths: narr.paths, innerPaths: narr.innerPaths, sectors: narr.sectors,

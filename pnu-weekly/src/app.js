@@ -33,7 +33,7 @@
       .setView([36.3, 127.9], 6.4);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 12, minZoom: 5,
+      maxZoom: 12, minZoom: 2,   // 세계 랭킹 레이어를 켜면 전 세계를 봐야 한다
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
@@ -77,6 +77,7 @@
     });
 
     MAPS.push({ el: el, map: map });
+    addWorldLayer(map, el);
 
     // 내 위치 — 버튼을 눌렀을 때만 요청한다(자동 요청 안 함).
     // 좌표는 브라우저 안에서만 쓰이고 서버로 전송되지 않는다.
@@ -162,7 +163,9 @@
     return '<div class="hint-r">' +
       (r.city ? '<span class="hint-city">' + esc(r.city) + '</span>' : '') +
       '<span class="hint-rk"><i>QS</i>' + esc(r.qs || '—') + '</span>' +
-      '<span class="hint-rk"><i>THE</i>' + esc(r.the || '—') + '</span></div>';
+      '<span class="hint-rk"><i>THE</i>' + esc(r.the || '—') + '</span>' +
+      (r.ja ? '<span class="hint-rk ja"><i>중앙</i>' + esc(r.ja.rank) + '위 <em>' + esc(r.ja.year) + '</em></span>' : '') +
+      '</div>';
   }
 
   function hintBox(el) {
@@ -191,6 +194,78 @@
     b.style.top = Math.max(6, y) + 'px';
   }
   function hideHint(el) { if (el._hint) el._hint.style.display = 'none'; }
+
+  /* 세계 랭킹 레이어 — QS·THE 에 오른 대학의 위치와 순위.
+     기본은 꺼져 있고 🌐 버튼으로 켠다. 켜면 세계가 보이도록 시야를 넓힌다. */
+  function rankBand(r) {
+    var n = parseInt(String(r || '').replace(/[^0-9]/g, ''), 10);
+    if (!n) return 4;
+    return n <= 50 ? 0 : n <= 200 ? 1 : n <= 500 ? 2 : 3;
+  }
+  var WCOLOR = ['#7c1d6f', '#b3261e', '#d9822b', '#3b7dd8', '#94a3b8'];
+  var WLABEL = ['1–50위', '51–200위', '201–500위', '501위+', '순위 미상'];
+
+  function addWorldLayer(map, el) {
+    var W = D.world;
+    if (!W || !W.rows || !W.rows.length) return;
+    var home = map.getCenter(), homeZoom = map.getZoom();
+    var layer = L.layerGroup();
+
+    W.rows.forEach(function (r) {
+      var name = r[0], country = r[1], lat = r[2], lng = r[3], the = r[4], qs = r[5], hist = r[6] || [];
+      if (lat == null || lng == null) return;
+      var band = rankBand(the || qs);
+      var m = L.circleMarker([lat, lng], {
+        radius: band === 0 ? 6 : band === 1 ? 5 : 4,
+        color: '#fff', weight: 1, fillColor: WCOLOR[band], fillOpacity: .85
+      });
+      var trend = hist.length > 1
+        ? '<div class="hint-n">THE 추이 ' + hist.map(function (h) { return h[0] + ' ' + h[1]; }).join(' → ') + '</div>' : '';
+      m.bindTooltip('<b>' + esc(name) + '</b><br>' + esc(country || '') +
+        '<br>QS ' + esc(qs || '—') + ' · THE ' + esc(the || '—'),
+        { direction: 'top', className: 'world-tip' });
+      m.bindPopup('<div class="hint-h"><b>' + esc(name) + '</b></div>' +
+        '<div class="hint-r"><span class="hint-city">' + esc(country || '') + '</span>' +
+        '<span class="hint-rk"><i>QS</i>' + esc(qs || '—') + '</span>' +
+        '<span class="hint-rk"><i>THE</i>' + esc(the || '—') + '</span></div>' + trend);
+      layer.addLayer(m);
+    });
+
+    var on = false;
+    var Ctl = L.Control.extend({
+      options: { position: 'topright' },
+      onAdd: function () {
+        var b = L.DomUtil.create('a', 'leaflet-world');
+        b.href = '#'; b.innerHTML = '🌐';
+        b.title = '세계 랭킹 대학 표시 (QS ' + W.panel.qs.join('/') + ' · THE ' + W.panel.the.join('/') + ')';
+        L.DomEvent.on(b, 'click', function (ev) {
+          L.DomEvent.preventDefault(ev);
+          on = !on;
+          if (on) {
+            layer.addTo(map);
+            // 실제 마커 분포에 맞춰 시야를 맞춘다(고정 좌표보다 안정적)
+            try { map.fitBounds(layer.getBounds(), { padding: [24, 24], animate: false }); }
+            catch (e) { map.setView([20, 10], 2, { animate: false }); }
+            b.classList.add('on');
+            el.classList.add('world-on');
+          } else {
+            map.removeLayer(layer);
+            map.setView(home, homeZoom, { animate: false });
+            b.classList.remove('on');
+            el.classList.remove('world-on');
+          }
+        });
+        return b;
+      }
+    });
+    map.addControl(new Ctl());
+
+    // 범례 (레이어가 켜졌을 때만 보인다)
+    var lg = L.DomUtil.create('div', 'world-legend', el);
+    lg.innerHTML = '<b>세계 랭킹</b>' + WLABEL.map(function (t, i) {
+      return '<span><i style="background:' + WCOLOR[i] + '"></i>' + t + '</span>';
+    }).join('') + '<em>QS ' + W.panel.qs.join('/') + ' · THE ' + W.panel.the.join('/') + '</em>';
+  }
 
   // 내 위치 표시
   function locate(map, btn) {

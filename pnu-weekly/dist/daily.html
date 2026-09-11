@@ -254,6 +254,21 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .lmap.wheel-on{box-shadow:inset 0 0 0 2px rgba(47,143,91,.55)}
 .lmap:hover .map-wheel-hint{opacity:1}
 @media print{.map-wheel-hint{display:none !important}}
+/* 세계 랭킹 레이어 */
+.leaflet-world{width:30px;height:30px;line-height:30px;text-align:center;background:#fff;font-size:15px;border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.3);text-decoration:none}
+.leaflet-world:hover{background:var(--sky-l);text-decoration:none}
+.leaflet-world.on{background:var(--navy);box-shadow:0 0 0 2px var(--sky)}
+.world-tip{font-size:12px}
+.world-legend{display:none;position:absolute;left:8px;bottom:34px;z-index:1100;background:rgba(255,255,255,.94);
+  border:1px solid var(--line);border-radius:6px;padding:7px 10px;font-size:11.5px;line-height:1.6;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.lmap.world-on .world-legend{display:block}
+.world-legend b{display:block;color:var(--navy);margin-bottom:3px}
+.world-legend span{display:flex;align-items:center;gap:5px;color:#4b5563}
+.world-legend i{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+.world-legend em{display:block;margin-top:4px;color:var(--mute);font-style:normal;font-size:10.5px}
+@media print{.leaflet-world,.world-legend{display:none !important}}
+.map-hint .hint-rk.ja{background:#5b4b8a}
+.map-hint .hint-rk em{font-style:normal;opacity:.6;font-size:9.5px;margin-left:2px}
 
 .artlist{list-style:none;margin:0;padding:0}
 .artlist li{display:grid;grid-template-columns:46px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
@@ -3019,7 +3034,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     </ul></div>
   </details>
 </section>
-<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 02:13:53 · 데이터: data/collected/</p>
+<p class="foot">오늘의 대학 정책 AI 브리핑 · 부산대 AX·정보화혁신본부 AX혁신과 · KMI 「글로벌 공급망 AI 주간 모니터링」 구조를 벤치마킹한 대학 버전입니다.<br>생성: 2026-09-11 02:38:02 · 데이터: data/collected/</p>
 </main>
 </div>
 </div>
@@ -3059,7 +3074,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
       .setView([36.3, 127.9], 6.4);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 12, minZoom: 5,
+      maxZoom: 12, minZoom: 2,   // 세계 랭킹 레이어를 켜면 전 세계를 봐야 한다
       attribution: '&copy; OpenStreetMap contributors'
     }).addTo(map);
 
@@ -3103,6 +3118,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     });
 
     MAPS.push({ el: el, map: map });
+    addWorldLayer(map, el);
 
     // 내 위치 — 버튼을 눌렀을 때만 요청한다(자동 요청 안 함).
     // 좌표는 브라우저 안에서만 쓰이고 서버로 전송되지 않는다.
@@ -3188,7 +3204,9 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     return '<div class="hint-r">' +
       (r.city ? '<span class="hint-city">' + esc(r.city) + '</span>' : '') +
       '<span class="hint-rk"><i>QS</i>' + esc(r.qs || '—') + '</span>' +
-      '<span class="hint-rk"><i>THE</i>' + esc(r.the || '—') + '</span></div>';
+      '<span class="hint-rk"><i>THE</i>' + esc(r.the || '—') + '</span>' +
+      (r.ja ? '<span class="hint-rk ja"><i>중앙</i>' + esc(r.ja.rank) + '위 <em>' + esc(r.ja.year) + '</em></span>' : '') +
+      '</div>';
   }
 
   function hintBox(el) {
@@ -3217,6 +3235,78 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
     b.style.top = Math.max(6, y) + 'px';
   }
   function hideHint(el) { if (el._hint) el._hint.style.display = 'none'; }
+
+  /* 세계 랭킹 레이어 — QS·THE 에 오른 대학의 위치와 순위.
+     기본은 꺼져 있고 🌐 버튼으로 켠다. 켜면 세계가 보이도록 시야를 넓힌다. */
+  function rankBand(r) {
+    var n = parseInt(String(r || '').replace(/[^0-9]/g, ''), 10);
+    if (!n) return 4;
+    return n <= 50 ? 0 : n <= 200 ? 1 : n <= 500 ? 2 : 3;
+  }
+  var WCOLOR = ['#7c1d6f', '#b3261e', '#d9822b', '#3b7dd8', '#94a3b8'];
+  var WLABEL = ['1–50위', '51–200위', '201–500위', '501위+', '순위 미상'];
+
+  function addWorldLayer(map, el) {
+    var W = D.world;
+    if (!W || !W.rows || !W.rows.length) return;
+    var home = map.getCenter(), homeZoom = map.getZoom();
+    var layer = L.layerGroup();
+
+    W.rows.forEach(function (r) {
+      var name = r[0], country = r[1], lat = r[2], lng = r[3], the = r[4], qs = r[5], hist = r[6] || [];
+      if (lat == null || lng == null) return;
+      var band = rankBand(the || qs);
+      var m = L.circleMarker([lat, lng], {
+        radius: band === 0 ? 6 : band === 1 ? 5 : 4,
+        color: '#fff', weight: 1, fillColor: WCOLOR[band], fillOpacity: .85
+      });
+      var trend = hist.length > 1
+        ? '<div class="hint-n">THE 추이 ' + hist.map(function (h) { return h[0] + ' ' + h[1]; }).join(' → ') + '</div>' : '';
+      m.bindTooltip('<b>' + esc(name) + '</b><br>' + esc(country || '') +
+        '<br>QS ' + esc(qs || '—') + ' · THE ' + esc(the || '—'),
+        { direction: 'top', className: 'world-tip' });
+      m.bindPopup('<div class="hint-h"><b>' + esc(name) + '</b></div>' +
+        '<div class="hint-r"><span class="hint-city">' + esc(country || '') + '</span>' +
+        '<span class="hint-rk"><i>QS</i>' + esc(qs || '—') + '</span>' +
+        '<span class="hint-rk"><i>THE</i>' + esc(the || '—') + '</span></div>' + trend);
+      layer.addLayer(m);
+    });
+
+    var on = false;
+    var Ctl = L.Control.extend({
+      options: { position: 'topright' },
+      onAdd: function () {
+        var b = L.DomUtil.create('a', 'leaflet-world');
+        b.href = '#'; b.innerHTML = '🌐';
+        b.title = '세계 랭킹 대학 표시 (QS ' + W.panel.qs.join('/') + ' · THE ' + W.panel.the.join('/') + ')';
+        L.DomEvent.on(b, 'click', function (ev) {
+          L.DomEvent.preventDefault(ev);
+          on = !on;
+          if (on) {
+            layer.addTo(map);
+            // 실제 마커 분포에 맞춰 시야를 맞춘다(고정 좌표보다 안정적)
+            try { map.fitBounds(layer.getBounds(), { padding: [24, 24], animate: false }); }
+            catch (e) { map.setView([20, 10], 2, { animate: false }); }
+            b.classList.add('on');
+            el.classList.add('world-on');
+          } else {
+            map.removeLayer(layer);
+            map.setView(home, homeZoom, { animate: false });
+            b.classList.remove('on');
+            el.classList.remove('world-on');
+          }
+        });
+        return b;
+      }
+    });
+    map.addControl(new Ctl());
+
+    // 범례 (레이어가 켜졌을 때만 보인다)
+    var lg = L.DomUtil.create('div', 'world-legend', el);
+    lg.innerHTML = '<b>세계 랭킹</b>' + WLABEL.map(function (t, i) {
+      return '<span><i style="background:' + WCOLOR[i] + '"></i>' + t + '</span>';
+    }).join('') + '<em>QS ' + W.panel.qs.join('/') + ' · THE ' + W.panel.the.join('/') + '</em>';
+  }
 
   // 내 위치 표시
   function locate(map, btn) {

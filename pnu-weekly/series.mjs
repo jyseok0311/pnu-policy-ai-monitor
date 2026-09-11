@@ -64,7 +64,9 @@ console.log(`· 재설정 임계값: Tier4 ≥${TH.t4}% · Tier3 ≥${TH.t3}% ·
 
 // ── weeks.json 재구성: 실데이터만 남긴다 (기획용 샘플 주차는 제거)
 const existing = J('data/weeks.json');
-const full = existing.find((w) => w.live);             // aggregate.mjs 가 만든 완성 주차
+// aggregate.mjs 가 만든 완성 주차를 전부 보존한다.
+// (예전에는 find 로 하나만 잡아 나머지 완성 주차가 신호만으로 덮이는 버그가 있었다)
+const fullById = new Map(existing.filter((w) => w.complete).map((w) => [w.id, w]));
 const weeks = [];
 
 for (const s of stats) {
@@ -72,7 +74,8 @@ for (const s of stats) {
   const prev = stats.find((x) => x.to < s.to);
   const trend = !prev ? 'baseline' : s.risk > prev.risk * 1.1 ? 'rising' : s.risk < prev.risk * 0.9 ? 'falling' : 'stable';
 
-  if (full && s.id === full.id) {
+  const full = fullById.get(s.id);
+  if (full) {
     // 완성 주차: 서술·지도·표는 유지하고 비교 가능 지표만 갱신
     full.tier = tier; full.tierName = WORD[tier]; full.state = STATE[tier];
     full.signal.trend = trend;

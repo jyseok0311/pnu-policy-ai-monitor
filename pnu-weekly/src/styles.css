@@ -247,3 +247,18 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .lmap.wheel-on{box-shadow:inset 0 0 0 2px rgba(47,143,91,.55)}
 .lmap:hover .map-wheel-hint{opacity:1}
 @media print{.map-wheel-hint{display:none !important}}
+/* 세계 랭킹 레이어 */
+.leaflet-world{width:30px;height:30px;line-height:30px;text-align:center;background:#fff;font-size:15px;border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.3);text-decoration:none}
+.leaflet-world:hover{background:var(--sky-l);text-decoration:none}
+.leaflet-world.on{background:var(--navy);box-shadow:0 0 0 2px var(--sky)}
+.world-tip{font-size:12px}
+.world-legend{display:none;position:absolute;left:8px;bottom:34px;z-index:1100;background:rgba(255,255,255,.94);
+  border:1px solid var(--line);border-radius:6px;padding:7px 10px;font-size:11.5px;line-height:1.6;box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.lmap.world-on .world-legend{display:block}
+.world-legend b{display:block;color:var(--navy);margin-bottom:3px}
+.world-legend span{display:flex;align-items:center;gap:5px;color:#4b5563}
+.world-legend i{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+.world-legend em{display:block;margin-top:4px;color:var(--mute);font-style:normal;font-size:10.5px}
+@media print{.leaflet-world,.world-legend{display:none !important}}
+.map-hint .hint-rk.ja{background:#5b4b8a}
+.map-hint .hint-rk em{font-style:normal;opacity:.6;font-size:9.5px;margin-left:2px}

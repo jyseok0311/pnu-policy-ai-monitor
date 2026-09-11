@@ -38,8 +38,12 @@ if (errs.length) {
 const latest = weeks[0];
 const pdfPath = `pdf/PNU_Univ_Policy_AI_Weekly(${latest.date.replace(/-/g, '.')}).pdf`;
 
+const readOpt = (p) => { try { return json(p); } catch { return null; } };
+const world = readOpt('data/world-universities.json');
+const joongang = readOpt('data/joongang-ranking.json');
+
 const html = renderPage({
-  meta, weeks, sources,
+  meta, weeks, sources, world, joongang,
   css: read('src/styles.css'),
   js: read('src/app.js'),
   pdfPath
@@ -51,5 +55,7 @@ writeFileSync(join(root, 'dist/index.html'), html, 'utf8');
 const kb = (Buffer.byteLength(html) / 1024).toFixed(0);
 const done = weeks.filter((w) => w.complete).length;
 console.log(`✓ dist/index.html  ${kb} KB`);
+if (world) console.log(`  세계 랭킹 ${world.stats.located}개교 · ${world.stats.countries}개국 (THE ${world.panel.the.join('/')}, QS ${world.panel.qs.join('/')})`);
+if (joongang) console.log(`  중앙일보 패널 ${Object.keys(joongang.universities).length}개교`);
 console.log(`  주차 ${weeks.length}개 (본문 생성 ${done} / 신호만 ${weeks.length - done})`);
 console.log(`  PDF 링크 대상: ${pdfPath}`);

@@ -69,6 +69,7 @@ function renderWeek(w, sources) {
   <div class="legend">
     <span class="k" style="background:var(--crisis)"></span>주요: ${esc(w.map.legend.primary)}
     | <span class="k" style="background:var(--warn)"></span>부차: ${esc(w.map.legend.secondary)}<br>
+    <br><b>세계 랭킹 레이어</b> — 지도 오른쪽 위 <b>🌐</b> 버튼을 누르면 QS·THE 랭킹 대학의 위치와 순위가 함께 표시됩니다.
     <br><b>마커 읽는 법</b> — 크기 = 주목도(주간 언급량) · 색 = 위험신호 비율
     (<span class="k" style="background:#2f8f5b"></span>없음
      <span class="k" style="background:#c9a227"></span>일부
@@ -207,7 +208,7 @@ function renderWeek(w, sources) {
   return `<section class="week" id="${w.id}">${head}${map}${summary}${articles}${changes}${watch}${weekly}${kpis}${voices}${paths}${sectors}${diag}${refs}</section>`;
 }
 
-export function renderPage({ meta, weeks, sources, css, js, pdfPath }) {
+export function renderPage({ meta, weeks, sources, css, js, pdfPath, world, joongang }) {
   const nav = weeks.map((w, i) => `
     <li><a class="${i === 0 ? 'on' : ''}" href="#${w.id}" data-nav="${w.id}">
       <i class="dot d${w.tier}"></i>${esc(w.label)}${w.complete ? '' : '<span class="stub">미생성</span>'}
@@ -216,6 +217,15 @@ export function renderPage({ meta, weeks, sources, css, js, pdfPath }) {
   const mapData = {
     universities: meta.universities,
     hub: meta.hub,
+    // 세계 랭킹 대학(좌표 포함) — 지도 레이어로 켤 수 있다
+    world: world ? {
+      panel: world.panel,
+      rows: world.universities.map((u) => [u.name, u.country, u.lat, u.lng,
+        (u.the && u.the[world.panel.latest.the] || {}).rank || null,
+        (u.qs && u.qs[world.panel.latest.qs] || {}).rank || null,
+        u.the ? Object.keys(u.the).map((y) => [y, u.the[y].rank]) : []])
+    } : null,
+    joongang: joongang ? joongang.universities : null,
     weeks: Object.fromEntries(weeks.filter(w => w.complete).map(w => [w.id, w.map]))
   };
 
