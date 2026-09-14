@@ -24,7 +24,10 @@ export const riskColor = (r) => (r >= 40 ? '#b3261e' : r >= 20 ? '#d9822b' : r >
 // 판을 비스듬히 본다. 정면에서 보면 판이 선으로 겹쳐 아무것도 안 보인다.
 // net3d.js 가 같은 값을 써야 첫 화면과 회전 후가 이어진다.
 export const CAM = { f: 900, z0: 1150, yaw: 0.46, pitch: 0.30 };
-export const MAXYAW = 0.16, MAXPITCH = 0.10;   // 마우스 시차는 좁게 — 판이 기울면 읽기 나빠진다
+// 화면에서는 끌어서 360° 돌릴 수 있다. 마우스를 가만히 올렸을 때의 시차는 좁게 둔다.
+// 위아래는 묶는다 — 판을 위에서 내려다보면 다섯 겹이 포개져 아무것도 안 보인다.
+export const MAXYAW = 0.16, MAXPITCH = 0.10;
+export const PITCH_MIN = -0.22, PITCH_MAX = 0.58;   // 위아래는 좁게 — 내려다보면 다섯 겹이 포개진다
 export const PLANE = { hw: 300, hh: 200, gap: 210 };
 
 // 판 순서. AI·디지털을 맨 뒤에 두면 거버넌스·재정과의 연결선이 앞으로 흐른다.
@@ -250,11 +253,43 @@ export function networkSvg(net, opt = {}) {
 
   const planeData = used.map((f) => ({ f, z: planeZ[f], c: FIELD_COLOR[f] || FIELD_COLOR['기타'] }));
 
+  // 화면용 회전 범위 — 360° 어느 각도에서도 잘리지 않는 틀.
+  // 인쇄용 viewBox(box)는 정면에 딱 맞춘 것이라 돌리면 넘친다. 둘을 따로 둔다.
+  const spin = (() => {
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+    const eat = (q, pad) => {
+      x0 = Math.min(x0, q.x - pad); x1 = Math.max(x1, q.x + pad);
+      y0 = Math.min(y0, q.y - pad); y1 = Math.max(y1, q.y + pad);
+    };
+    for (let a = 0; a < 24; a++) {
+      const yaw = (a / 24) * Math.PI * 2;
+      for (let b = 0; b <= 4; b++) {
+        const pitch = PITCH_MIN + (b / 4) * (PITCH_MAX - PITCH_MIN);
+        // 판 외곽선은 기준에서 뺀다. 회전하면 판 모서리가 가장 멀리 나가는데,
+        // 그것까지 담으려면 틀이 1157×1054 로 커져 쉬고 있을 때 화면이 헐거워진다.
+        // 모서리가 살짝 잘려도 옅은 선이라 읽는 데 지장이 없다. 노드와 글자만 지킨다.
+        nodes.forEach((n, i) => {
+          const q = project(P[i], W, H, yaw, pitch);
+          eat(q, rOf(n) * q.s + 15 * q.s);
+        });
+      }
+    }
+    // 정면 기준으로 가운데를 맞춘다. 모든 각도의 합집합을 그대로 쓰면 쉬고 있을 때
+    // 아래쪽이 크게 빈다(회전해야 채워지는 자리라서). 중심은 정면에, 크기는 회전 여유만큼.
+    const cx = (box.x + box.w / 2), cy = (box.y + box.h / 2);
+    // 정면 틀(판 포함)보다 작아지면 안 된다. 노드만 기준으로 잡으면 판이 좁은 주차에서
+    // 쉬고 있을 때부터 판 모서리가 잘린다(실제로 -23% 까지 줄었다).
+    const hx = Math.max(cx - x0, x1 - cx, box.w / 2);
+    const hy = Math.max(cy - y0, y1 - cy, box.h / 2);
+    return { x: cx - hx, y: cy - hy, w: hx * 2, h: hy * 2 };
+  })();
+
   return `<canvas class="net-gl" data-gl aria-hidden="true"></canvas>
 <svg class="net" id="net-${id}" viewBox="${box.x.toFixed(1)} ${box.y.toFixed(1)} ${box.w.toFixed(1)} ${box.h.toFixed(1)}"
     data-w="${W}" data-h="${H}" data-vx="${box.x.toFixed(1)}" data-vy="${box.y.toFixed(1)}"
     data-vw="${box.w.toFixed(1)}" data-vh="${box.h.toFixed(1)}"
     data-planes="${esc(JSON.stringify(planeData))}" data-hw="${PLANE.hw}" data-hh="${PLANE.hh}"
+    data-rx="${spin.x.toFixed(1)}" data-ry="${spin.y.toFixed(1)}" data-rw="${spin.w.toFixed(1)}" data-rh="${spin.h.toFixed(1)}"
     role="img" aria-label="${esc(opt.label || '주간 키워드 네트워크 — 분야별 깊이판')}">
     ${defs}<g class="planes">${planes}</g><g class="edges">${edges}</g><g class="nodes">${circles}</g></svg>`;
 }

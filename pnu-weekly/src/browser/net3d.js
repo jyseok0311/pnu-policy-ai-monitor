@@ -15,7 +15,9 @@
   'use strict';
 
   var CAM = { f: 900, z0: 1150, yaw: 0.46, pitch: 0.30 };
-  var MAXYAW = 0.16, MAXPITCH = 0.10;   // 시차는 좁게 — 판이 많이 기울면 오히려 읽기 나쁘다
+  var MAXYAW = 0.16, MAXPITCH = 0.10;   // 가만히 올렸을 때의 시차는 좁게
+  // 끌면 가로로 360° 돈다. 위아래는 묶는다 — 내려다보면 다섯 겹이 포개져 아무것도 안 보인다.
+  var PITCH_MIN = -0.22, PITCH_MAX = 0.58;
 
   function hex(c) {
     var m = /^#?([0-9a-f]{6})$/i.exec(String(c || '').trim());
@@ -36,7 +38,10 @@
     var ctx = cv.getContext('2d');
     if (!ctx) return null;
 
-    var VX = +svg.dataset.vx, VY = +svg.dataset.vy, VW = +svg.dataset.vw, VH = +svg.dataset.vh;
+    // 화면은 '돌려도 안 잘리는 틀'(data-r*)을 쓴다. 인쇄용 viewBox(data-v*)는 정면에 딱 맞춘 것이라
+    // 그대로 쓰면 돌리는 순간 바깥 판이 잘린다.
+    var VX = +svg.dataset.rx, VY = +svg.dataset.ry, VW = +svg.dataset.rw, VH = +svg.dataset.rh;
+    if (!isFinite(VW) || !VW) { VX = +svg.dataset.vx; VY = +svg.dataset.vy; VW = +svg.dataset.vw; VH = +svg.dataset.vh; }
     var W = +svg.dataset.w || 1000, H = +svg.dataset.h || 640;
     var HW = +svg.dataset.hw || 300, HH = +svg.dataset.hh || 200;
     var PLANES = [];
@@ -76,7 +81,10 @@
     var INK = [30, 38, 52];
 
     var yaw = CAM.yaw, pitch = CAM.pitch, tYaw = CAM.yaw, tPitch = CAM.pitch;
+    // 끌어서 돌린 각도가 새 기준이 된다. 마우스를 떼도 정면으로 튕겨 돌아가지 않는다.
+    var base = { yaw: CAM.yaw, pitch: CAM.pitch };
     var hot = -1, raf = null, dpr = 1, cw = 0, ch = 0, scale = 1, hover = false;
+    var drag = null;
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function resize() {
@@ -211,9 +219,17 @@
 
     box.addEventListener('pointermove', function (ev) {
       hover = true;
+      if (drag) {
+        // 끌어서 돌리기 — 가로는 제한 없이 360°, 세로는 판이 포개지지 않는 범위로 묶는다
+        tYaw = drag.yaw + (ev.clientX - drag.x) * 0.008;
+        tPitch = clamp(drag.pitch + (ev.clientY - drag.y) * 0.005, PITCH_MIN, PITCH_MAX);
+        if (hooks && hooks.tip) hooks.tip(null);
+        schedule();
+        return;
+      }
       var r = box.getBoundingClientRect();
-      tYaw = CAM.yaw + ((ev.clientX - r.left) / r.width - 0.5) * 2 * MAXYAW;
-      tPitch = CAM.pitch + ((ev.clientY - r.top) / r.height - 0.5) * 2 * MAXPITCH;
+      tYaw = base.yaw + ((ev.clientX - r.left) / r.width - 0.5) * 2 * MAXYAW;
+      tPitch = clamp(base.pitch + ((ev.clientY - r.top) / r.height - 0.5) * 2 * MAXPITCH, PITCH_MIN, PITCH_MAX);
       var h = pick(ev);
       if (h !== hot) {
         hot = h;
@@ -224,14 +240,36 @@
     });
     ['pointerleave', 'mouseleave'].forEach(function (e) {
       box.addEventListener(e, function () {
-        hover = false; hot = -1; tYaw = CAM.yaw; tPitch = CAM.pitch;
+        hover = false; hot = -1; drag = null;
+        tYaw = base.yaw; tPitch = base.pitch;
+        cv.style.cursor = 'grab';
         if (hooks && hooks.tip) hooks.tip(null);
         schedule();
       });
     });
-    cv.addEventListener('click', function (ev) {
-      var h = pick(ev);
-      if (h >= 0 && hooks && hooks.pick) hooks.pick(N[h].key);
+    cv.addEventListener('pointerdown', function (ev) {
+      drag = { x: ev.clientX, y: ev.clientY, yaw: tYaw, pitch: tPitch, moved: 0 };
+      cv.style.cursor = 'grabbing';
+      if (cv.setPointerCapture) { try { cv.setPointerCapture(ev.pointerId); } catch (e) {} }
+    });
+    cv.addEventListener('pointerup', function (ev) {
+      var was = drag;
+      drag = null;
+      cv.style.cursor = 'grab';
+      // 끌지 않고 누르기만 했으면 '클릭'으로 친다 — 기사 표시
+      if (was && Math.hypot(ev.clientX - was.x, ev.clientY - was.y) < 4) {
+        var h = pick(ev);
+        if (h >= 0 && hooks && hooks.pick) hooks.pick(N[h].key);
+      } else if (was) {
+        // 끌어서 돌린 각도를 기준으로 삼는다. 마우스를 떼도 되돌아가지 않는다.
+        base.yaw = tYaw; base.pitch = tPitch;
+      }
+    });
+    // 두 번 누르면 처음 각도로
+    cv.addEventListener('dblclick', function () {
+      base.yaw = CAM.yaw; base.pitch = CAM.pitch;
+      tYaw = CAM.yaw; tPitch = CAM.pitch;
+      schedule();
     });
 
     var ro = window.ResizeObserver ? new ResizeObserver(function () { if (resize()) { compute(); schedule(); } }) : null;
@@ -249,6 +287,7 @@
     schedule = function () { if (visible) origSchedule(); };
 
     if (!resize()) return null;
+    cv.style.cursor = 'grab';
     compute();
     box.classList.add('gl-on');
     schedule();
