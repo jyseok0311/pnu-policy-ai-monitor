@@ -179,7 +179,9 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 
 @media (max-width:860px){
   .shell{grid-template-columns:minmax(0,1fr)}
-  .side{position:static;height:auto;max-height:180px;border-right:0;border-bottom:1px solid var(--line)}
+  /* 회차를 오가는 칩 띠를 붙박이로 둔다 — 읽는 내내 쓰는 것은 이쪽이다. */
+  .side{position:sticky;top:0;z-index:600;height:auto;max-height:180px;
+    border-right:0;border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(10,18,34,.12)}
   .side ul{display:flex;flex-wrap:wrap;gap:2px 6px;padding:0 10px}
   .side li a{padding:4px 8px}
   .side li a .stub{display:none}
@@ -508,20 +510,9 @@ h2.sec .sec-face{margin-right:4px}
 .artmeta{color:var(--mute);font-size:12px;white-space:nowrap}
 @media (max-width:860px){.artlist li{grid-template-columns:46px 1fr}.artmeta{display:none}}
 
-/* ── 모바일: 날짜 선택만 고정 ──────────────────────────────
-   좁은 화면에서는 주차 칩(95px) + 헤더(165px) 로 260px 를 먹었다.
-   제목은 한 번 읽으면 그만이지만 회차를 바꾸는 일은 어디서든 생긴다.
-   그래서 스크롤을 내리면 제목 줄은 흘려보내고 날짜 선택만 남긴다.
-   넓은 화면(PC)은 고정하지 않는다 — 스크롤 여유가 있어 붙박이가 본문만 가린다.
-   접는 건 app.js 가 .top 에 .min 을 붙여서 한다(스크롤 위치는 CSS 로 알 수 없다). */
-@media (max-width:860px){
-  .top{position:sticky;top:0;z-index:600;box-shadow:0 2px 10px rgba(10,18,34,.18)}
-  .top.min{padding:8px 14px;gap:0}
-  .top.min .brand{display:none}          /* 제목·소속·로고는 흘려보낸다 */
-  .top.min .acts .btn{display:none}      /* PDF·링크 버튼도 흘려보낸다 */
-  .top.min .acts{align-self:stretch;width:100%}
-  .top.min .pdf-sel{flex:1 1 100%;width:100%;max-width:none}
-}
+/* 헤더는 어디서도 고정하지 않는다.
+   헤더의 선택 상자는 'PDF 를 어느 회차로 받을까' 이지 화면을 옮기는 것이 아니다.
+   회차를 오가는 것은 .side 의 칩 띠이고, 모바일에서 고정하는 것은 그쪽이다(위 860px 블록). */
 @media (max-width:640px){
   .top{padding:12px 14px;gap:9px;transition:padding .16s ease}
   .top .brand{align-items:center;gap:10px}
@@ -529,7 +520,5 @@ h2.sec .sec-face{margin-right:4px}
   .pdf-sel{flex:1 1 auto;min-width:0;max-width:none;padding:8px;font-size:11.5px}
   .acts .btn{flex:0 0 auto;padding:8px 11px;font-size:11.5px;white-space:nowrap}
 
-  /* 스크롤을 내린 상태 — 날짜 선택만 남는다(제목은 .brand 째로 감춘다) */
-  .top.min .pdf-sel,.top.min .acts .btn{padding:7px 9px;font-size:11.5px}
 }
-@media print{ .top{position:static !important;box-shadow:none} }
+@media print{ .top,.side{position:static !important;box-shadow:none} }

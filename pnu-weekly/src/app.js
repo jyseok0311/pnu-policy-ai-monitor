@@ -519,24 +519,8 @@
     }
   })();
 
-  /* ---------- 10. 모바일 고정 헤더 ---------- */
-  // 좁은 화면에서 헤더는 붙박이다. 스크롤을 내리면 소속과 여백을 접어 절반으로 줄인다.
-  // 넓은 화면에서는 아무것도 하지 않는다 — CSS 만으로 이미 붙어 있다.
-  (function stickyHead() {
-    var top = document.querySelector('header.top');
-    if (!top) return;
-    // 고정은 좁은 화면에서만. CSS 의 sticky 범위(860px)와 같은 값을 쓴다.
-    var mq = window.matchMedia('(max-width:860px)');
-    var ticking = false;
-    function apply() {
-      ticking = false;
-      top.classList.toggle('min', mq.matches && window.scrollY > 64);
-    }
-    window.addEventListener('scroll', function () {
-      if (!ticking) { ticking = true; requestAnimationFrame(apply); }
-    }, { passive: true });
-    if (mq.addEventListener) mq.addEventListener('change', apply);
-    apply();
-  })();
+  /* ---------- 10. 모바일 고정 ---------- */
+  // 모바일에서 고정하는 것은 헤더가 아니라 날짜 칩 띠(.side)다.
+  // 그건 CSS 의 position:sticky 만으로 되므로 헤더를 접던 stickyHead() 는 없앴다.
 
 })();
