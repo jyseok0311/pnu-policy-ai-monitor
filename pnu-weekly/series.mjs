@@ -122,7 +122,8 @@ for (const s of stats) {
 }
 
 writeFileSync(join(root, 'data/weeks.json'), JSON.stringify(weeks, null, 2), 'utf8');
-writeFileSync(join(root, 'data/thresholds.json'), JSON.stringify({ ...TH, method: '중앙값 + MAD(최소 1.0%p)', median: M, mad: +MAD.toFixed(2), samples: stats.length, note: '표본이 12주 미만이면 잠정값으로 취급할 것', updated: new Date().toISOString().slice(0, 10) }, null, 2), 'utf8');
+// samples 는 임계값 표본 = 완결 주차 수. 진행 중 주차는 weeksTotal 에만 잡힌다.
+writeFileSync(join(root, 'data/thresholds.json'), JSON.stringify({ ...TH, method: '중앙값 + MAD(최소 1.0%p)', median: M, mad: +MAD.toFixed(2), samples: risks.length, weeksTotal: stats.length, note: '표본이 12주 미만이면 잠정값으로 취급할 것', updated: new Date().toISOString().slice(0, 10) }, null, 2), 'utf8');
 
 console.log('주차   기간                    기사   위험신호  Tier  추세');
 weeks.forEach((w) => {

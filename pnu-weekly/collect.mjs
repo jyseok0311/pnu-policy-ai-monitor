@@ -118,10 +118,24 @@ function parseRss(xml) {
   });
 }
 
+// 일부 언론사 서버는 GitHub 러너(미국 IP)에서 봇 UA 를 끊는다 — 유니프레스가 로컬은 200, 러너는 'fetch failed'.
+// 1차는 정직한 봇 UA, 실패하면 브라우저 UA 로 한 번 더. 그래도 안 되면 그 피드만 '실패'로 남기고 넘어간다.
+const BROWSER_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36';
 async function get(url) {
-  const r = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/rss+xml,application/xml,text/xml,*/*' } });
-  if (!r.ok) throw new Error(`HTTP ${r.status}`);
-  return r.text();
+  const once = async (ua) => {
+    const c = new AbortController();
+    const t = setTimeout(() => c.abort(), 20000);   // 응답 없는 서버 하나가 전체 수집을 잡아먹지 않게
+    try {
+      const r = await fetch(url, { headers: { 'User-Agent': ua, Accept: 'application/rss+xml,application/xml,text/xml,*/*' }, signal: c.signal });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return await r.text();
+    } finally { clearTimeout(t); }
+  };
+  try { return await once(UA); }
+  catch (e) {
+    if (/HTTP 4(0[0-9]|1[0-9])/.test(e.message)) throw e;   // 404 같은 건 UA 를 바꿔도 같다
+    return once(BROWSER_UA);
+  }
 }
 
 // 구글 뉴스 제목은 "제목 - 매체명" 형태
