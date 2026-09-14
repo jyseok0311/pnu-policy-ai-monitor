@@ -289,7 +289,7 @@ const overseas = {
       items: g.list
         .sort((a, b) => (LV[a.level] - LV[b.level]) || (b.date || '').localeCompare(a.date || ''))
         .slice(0, 10)
-        .map((x) => ({ title: x.title, media: x.media, date: x.date, link: x.link, level: x.level }))
+        .map((x) => ({ title: x.title, media: x.media, date: x.date, link: x.link, level: x.level, why: x.why || null }))
     }))
 };
 

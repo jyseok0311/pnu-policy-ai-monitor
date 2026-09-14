@@ -101,6 +101,7 @@ function renderDay(d, idx, T) {
   </div>
   <div class="signal">${D.signal(s.crisis, s.warning, s.risk, s.n, deltaHtml)}</div>
   <div class="live-note"><span class="live-badge">${esc(T.liveBadge)}</span>${esc(D.liveNote)}</div>
+  <p class="note-line">${esc(D.ruleNote)}</p>
 
   <h2 class="sec">${esc(D.secFields)} <small>${esc(D.dayTotal(s.n))}</small></h2>
   <div class="kpis">${byField.map(({ f, list }) => {
@@ -121,7 +122,7 @@ function renderDay(d, idx, T) {
   <details class="day"${f === byField[0].f ? ' open' : ''}>
     <summary><span>${esc(f)} — ${esc(D.count(list.length))}</span></summary>
     <div class="cat"><ul class="artlist">${list.slice(0, 40).map((x) => `
-      <li><span class="lv ${LVCLS[x.level]}">${esc(D.lvWord[x.level])}</span>
+      <li><span class="lv ${LVCLS[x.level]}"${x.why ? ` title="${esc(D.whyTip(D.lvWord[x.level], x.why))}"` : ''}>${esc(D.lvWord[x.level])}</span>
       <a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a>
       <span class="artmeta">${esc(x.media)}</span></li>`).join('')}
       ${list.length > 40 ? `<li class="more">${esc(D.more(list.length - 40))}</li>` : ''}
@@ -132,7 +133,7 @@ function renderDay(d, idx, T) {
   <details class="day">
     <summary><span>${esc(D.overseas(ov.length))}</span></summary>
     <div class="cat"><ul class="artlist">${ov.slice(0, 30).map((x) => `
-      <li><span class="lv ${LVCLS[x.level]}">${esc(D.lvWord[x.level])}</span>
+      <li><span class="lv ${LVCLS[x.level]}"${x.why ? ` title="${esc(D.whyTip(D.lvWord[x.level], x.why))}"` : ''}>${esc(D.lvWord[x.level])}</span>
       <a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a>
       <span class="artmeta">${esc(x.media)}</span></li>`).join('')}
       ${ov.length > 30 ? `<li class="more">${esc(D.more(ov.length - 30))}</li>` : ''}

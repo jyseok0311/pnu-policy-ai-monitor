@@ -162,7 +162,7 @@ function renderWeek(w, sources, T) {
   <details class="day">
     <summary><span>${esc(g.field)} — ${cnt(g.count)}</span></summary>
     <div class="cat"><ul class="artlist">${g.items.map(x => `
-      <li><span class="lv ${LVC[x.level] || 'l'}">${esc(LVW[x.level] || x.level)}</span>
+      <li><span class="lv ${LVC[x.level] || 'l'}"${x.why ? ` title="${esc(T.whyTip(LVW[x.level] || x.level, x.why))}"` : ''}>${esc(LVW[x.level] || x.level)}</span>
       <a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a>
       <span class="artmeta">${esc(x.media || '')}${x.date ? ' · ' + esc(x.date) : ''}</span></li>`).join('')}
       ${g.count > g.items.length ? `<li class="more">${esc(T.more(g.count - g.items.length))}</li>` : ''}

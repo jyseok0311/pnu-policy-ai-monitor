@@ -9,6 +9,7 @@
 
 import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { classify } from './src/classify.mjs';
 import { fileURLToPath } from 'node:url';
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -67,28 +68,6 @@ const OVERSEAS_QUERIES = [
 const gnews = (q) => `https://news.google.com/rss/search?q=${encodeURIComponent(q + ' ' + RANGE)}&hl=ko&gl=KR&ceid=KR:ko`;
 const gnewsEn = (q) => `https://news.google.com/rss/search?q=${encodeURIComponent(q + ' ' + RANGE)}&hl=en-US&gl=US&ceid=US:en`;
 
-// ── 분류 규칙 (LLM 아님 — 결정적 규칙으로 집계해야 수치를 신뢰할 수 있다) ──
-// 분야 분류 — 해외 기사도 같은 축으로 묶어야 국내와 비교가 된다. 영문 키워드를 함께 둔다.
-const FIELDS = {
-  '거버넌스': ['통합', '연합', '거버넌스', '구조개혁', '총장', '국립대', '공공기관', '재편', '법인화',
-    'merger', 'governance', 'restructuring', 'chancellor', 'consolidation', 'autonomy',
-    'reform', 'accreditation', 'policy', 'regulation', 'oversight', 'crackdown', 'ban', 'law', 'bill'],
-  '재정': ['예산', 'RISE', '라이즈', '등록금', '재정지원', '국고', '교부금', '적자', '지원금',
-    'funding', 'budget', 'tuition', 'grant', 'subsidy', 'deficit', 'endowment', 'fee'],
-  '입시·학령인구': ['수시', '정시', '경쟁률', '충원', '입시', '학령인구', '모집', '정원', '신입생', '수능',
-    'enrollment', 'admission', 'applicant', 'demographic', 'intake', 'quota', 'freshman', 'undocumented', 'international student'],
-  'AI·디지털': ['AI', '인공지능', '디지털', 'AX', '생성형', '데이터', '에이전트', 'SW', '반도체',
-    'artificial intelligence', 'generative', 'digital', 'chatbot', 'semiconductor']
-};
-const RISK = {
-  crisis: ['폐교', '폐과', '통폐합', '위기', '미달', '무산', '삭감', '소송', '파행', '반발', '퇴출',
-    'closure', 'shut down', 'crisis', 'collapse', 'lawsuit', 'scrapped', 'axed', 'slashed'],
-  warning: ['감축', '하락', '우려', '갈등', '축소', '논란', '지적', '경고', '부담', '압박', '차질',
-    'cuts', 'decline', 'concern', 'dispute', 'warning', 'pressure', 'backlash', 'shortfall'],
-  watch: ['검토', '추진', '논의', '개편', '예고', '공청회', '발의', '심사',
-    'review', 'proposal', 'plan', 'consultation', 'bill', 'reform']
-};
-
 // ── 최소 RSS 파서 (의존성 없음) ──────────────────────────────
 const strip = (s) => String(s || '')
   .replace(/<!\[CDATA\[|\]\]>/g, '')
@@ -145,14 +124,6 @@ function splitMedia(item) {
   return m ? { title: m[1], media: m[2] } : { title: item.title, media: '미상' };
 }
 
-function classify(text) {
-  const hit = (ws) => ws.filter((w) => text.includes(w)).length;
-  let field = '기타', best = 0;
-  for (const [f, ws] of Object.entries(FIELDS)) { const n = hit(ws); if (n > best) { best = n; field = f; } }
-  const level = hit(RISK.crisis) ? 'crisis' : hit(RISK.warning) ? 'warning' : hit(RISK.watch) ? 'watch' : 'normal';
-  return { field, level };
-}
-
 const UNIV = ['부산대', '경북대', '전남대', '전북대', '충남대', '충북대', '강원대', '경상국립대', '제주대', '서울대'];
 
 // ── 실행 ────────────────────────────────────────────────────
@@ -179,12 +150,12 @@ for (const f of feeds) {
       const { title, media } = f.kind === 'google' ? splitMedia(it) : { title: it.title, media: f.media };
       const key = title.replace(/\s+/g, '').slice(0, 40);
       if (items.has(key)) { items.get(key).feeds.push(f.label); continue; }
-      const text = title + ' ' + it.summary;
-      const { field, level } = classify(text);
+      // 분류는 제목만 본다 — 요약(기사 첫 문단)을 섞으면 본문 소재가 등급을 만든다.
+      const { field, level, why } = classify(title);
       items.set(key, {
         title, media, link: it.link, region: f.region || 'domestic',
         date: Number.isFinite(t) ? new Date(t).toISOString().slice(0, 10) : null,
-        field, level,
+        field, level, ...(why ? { why } : {}),
         univ: UNIV.filter((u) => text.includes(u)),
         summary: it.summary.slice(0, 200),   // 매체가 RSS로 배포한 요약만. 본문 저장 안 함
         feeds: [f.label]
