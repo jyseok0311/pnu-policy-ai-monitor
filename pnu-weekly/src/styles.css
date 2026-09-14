@@ -33,7 +33,7 @@ a:hover{text-decoration:underline}
 .d4{background:var(--crisis)}.d3{background:var(--warn)}.d2{background:var(--watch)}.d1{background:var(--ok)}
 
 /* header */
-.top{background:var(--head-bg);color:var(--head-ink);padding:22px 32px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;position:sticky;top:0;z-index:500}
+.top{background:var(--head-bg);color:var(--head-ink);padding:22px 32px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
 .brand{display:flex;gap:14px;align-items:center}
 .logo{width:48px;height:48px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-weight:800;font-size:14px;letter-spacing:.5px}
 .top h1{margin:0;font-size:22px;font-weight:700}
@@ -502,12 +502,17 @@ h2.sec .sec-face{margin-right:4px}
 .artmeta{color:var(--mute);font-size:12px;white-space:nowrap}
 @media (max-width:860px){.artlist li{grid-template-columns:46px 1fr}.artmeta{display:none}}
 
-/* ── 모바일: 상단 메뉴 고정 ──────────────────────────────
+/* ── 모바일: 날짜 선택만 고정 ──────────────────────────────
    좁은 화면에서는 주차 칩(95px) + 헤더(165px) 로 260px 를 먹었다.
-   헤더를 붙박이로 두되, 스크롤을 내리면 소속·여백을 접어 절반으로 줄인다.
+   제목은 한 번 읽으면 그만이지만 회차를 바꾸는 일은 어디서든 생긴다.
+   그래서 스크롤을 내리면 제목 줄은 흘려보내고 날짜 선택만 남긴다.
+   넓은 화면(PC)은 고정하지 않는다 — 스크롤 여유가 있어 붙박이가 본문만 가린다.
    접는 건 app.js 가 .top 에 .min 을 붙여서 한다(스크롤 위치는 CSS 로 알 수 없다). */
 @media (max-width:860px){
   .top{position:sticky;top:0;z-index:600;box-shadow:0 2px 10px rgba(10,18,34,.18)}
+  .top.min{padding:8px 14px;gap:0}
+  .top.min .brand{display:none}          /* 제목·소속·로고는 흘려보낸다 */
+  .top.min .acts{align-self:stretch;width:100%}
 }
 @media (max-width:640px){
   .top{padding:12px 14px;gap:9px;transition:padding .16s ease}
@@ -516,12 +521,7 @@ h2.sec .sec-face{margin-right:4px}
   .pdf-sel{flex:1 1 auto;min-width:0;max-width:none;padding:8px;font-size:11.5px}
   .acts .btn{flex:0 0 auto;padding:8px 11px;font-size:11.5px;white-space:nowrap}
 
-  /* 스크롤을 내린 상태 — 제목 한 줄과 PDF 만 남긴다 */
-  .top.min{padding:7px 14px;gap:6px}
-  .top.min .sub{display:none}
-  .top.min .logo-img{width:28px;height:28px;padding:1px}
-  .top.min h1{font-size:14px;line-height:1.25;
-    display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
-  .top.min .pdf-sel,.top.min .acts .btn{padding:6px 9px;font-size:11px}
+  /* 스크롤을 내린 상태 — 날짜 선택만 남는다(제목은 .brand 째로 감춘다) */
+  .top.min .pdf-sel,.top.min .acts .btn{padding:7px 9px;font-size:11.5px}
 }
 @media print{ .top{position:static !important;box-shadow:none} }

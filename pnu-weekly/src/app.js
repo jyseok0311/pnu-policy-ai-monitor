@@ -525,7 +525,8 @@
   (function stickyHead() {
     var top = document.querySelector('header.top');
     if (!top) return;
-    var mq = window.matchMedia('(max-width:640px)');
+    // 고정은 좁은 화면에서만. CSS 의 sticky 범위(860px)와 같은 값을 쓴다.
+    var mq = window.matchMedia('(max-width:860px)');
     var ticking = false;
     function apply() {
       ticking = false;
