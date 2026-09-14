@@ -164,7 +164,8 @@ const weeklyMetrics = [
   { name: '위험신호 비중', value: String(risk), unit: '%', change: '기준치', dir: 'flat' },
   { name: '총 수집 기사', value: n.toLocaleString('ko-KR'), unit: '건', change: '기준치', dir: 'flat' },
   { name: '정책/철학 기사', value: String(field('정책/철학')), unit: '건', change: `전체의 ${pct(field('정책/철학'))}%`, dir: 'flat' },
-  { name: '증강인재교육 기사', value: String(field('증강인재교육')), unit: '건', change: `전체의 ${pct(field('증강인재교육'))}%`, dir: 'flat' },
+  { name: '산업 기사', value: String(field('적응형행정') + field('AX 기술 동향')), unit: '건', change: `적응형행정 ${field('적응형행정')} · AX기술 ${field('AX 기술 동향')}`, dir: 'flat' },
+  { name: '부울경 연계 기사', value: String(items.filter((x) => x.local).length), unit: '건', change: `전체의 ${pct(items.filter((x) => x.local).length)}%`, dir: 'flat' },
   { name: '부산대 직접 언급', value: String(mentions.pnu), unit: '건', change: `거점국립대 1위`, dir: 'up' },
   { name: '해외 기사 (참고)', value: String(overseasItems.length), unit: '건', change: '신호·지표 미반영 · 별도 항목', dir: 'flat' },
   { name: '최다 출현 키워드', value: topWords[0][0], unit: '', change: `${topWords[0][1]}회`, dir: 'up' }

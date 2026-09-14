@@ -45,7 +45,11 @@ const UA = 'Mozilla/5.0 (compatible; PNU-AX-Monitor/0.1; +ax@pusan.ac.kr)';
 // ── 수집 대상 ────────────────────────────────────────────────
 const GOOGLE_QUERIES = [
   '거점국립대', '국립대 통합', '글로컬대학', 'RISE 지역혁신중심 대학지원',
-  '대학 정원 감축', '대학 등록금', '대학 생성형 AI', '대학 구조개혁', '부산대학교'
+  '대학 정원 감축', '대학 등록금', '대학 생성형 AI', '대학 구조개혁', '부산대학교',
+  // 적응형행정(AURA A) — 대학·공공의 행정 AX.
+  // 대학 기사만 봐서는 주당 서너 건뿐이라 분야 판이 그려지지 않았다.
+  '대학 행정 AI', '대학 학사행정 시스템', '공공부문 생성형 AI', '공공기관 AI 행정혁신',
+  '생성형 AI 업무 도입'
 ];
 const PRESS_FEEDS = [
   { media: '한국대학신문', url: 'https://news.unn.net/rss/allArticle.xml' },
@@ -151,12 +155,12 @@ for (const f of feeds) {
       const key = title.replace(/\s+/g, '').slice(0, 40);
       if (items.has(key)) { items.get(key).feeds.push(f.label); continue; }
       // 분류는 제목만 본다 — 요약(기사 첫 문단)을 섞으면 본문 소재가 등급을 만든다.
-      const { field, level, why } = classify(title);
+      const { field, group, local, level, why } = classify(title);
       items.set(key, {
         title, media, link: it.link, region: f.region || 'domestic',
         date: Number.isFinite(t) ? new Date(t).toISOString().slice(0, 10) : null,
-        field, level, ...(why ? { why } : {}),
-        univ: UNIV.filter((u) => text.includes(u)),
+        field, group, ...(local ? { local: true } : {}), level, ...(why ? { why } : {}),
+        univ: UNIV.filter((u) => title.includes(u)),   // 제목만 본다 — 분류와 같은 기준
         summary: it.summary.slice(0, 200),   // 매체가 RSS로 배포한 요약만. 본문 저장 안 함
         feeds: [f.label]
       });

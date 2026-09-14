@@ -1,3 +1,4 @@
+import { groupOf } from './classify.mjs';
 // 기사 제목에서 키워드와 공기(共起) 관계를 뽑는다.
 //
 // 형태소 분석기를 쓰지 않는다. 외부 의존성 없이 빌드 한 번으로 끝나야 하고,
@@ -32,6 +33,15 @@ const LEXICON = [
   ['국립대', '국립대학'], ['사립대', '사립대학'], ['전문대', '전문대학'],
   ['거점국립대', '거점 국립대', '9개 거점국립대'],
   ['한국대학교육협의회', '대교협'], ['한국전문대학교육협의회', '전문대교협'],
+  // 적응형행정 — 행정에 AI 를 쓰는 쪽
+  ['학사행정', '학사 행정'], ['행정혁신', '행정 혁신'], ['업무 자동화', '업무자동화'],
+  ['챗봇', 'AI 챗봇'], ['대학 ERP', 'ERP'], ['수강신청'], ['정보시스템', '통합정보시스템'],
+  ['전자결재'], ['스마트캠퍼스', '스마트 캠퍼스'], ['정보보호'], ['개인정보'],
+  ['공공 AX', '공공AX'], ['AI 행정'], ['디지털 정부', '전자정부'],
+  // AX 기술 동향 — 기술 자체의 움직임
+  ['생성형 AI', '생성형AI', '생성형'], ['거대언어모델', 'LLM'], ['AI 에이전트', 'AI에이전트'],
+  ['소버린 AI', '소버린AI'], ['AI 반도체'], ['챗GPT', 'ChatGPT'], ['오픈AI', 'OpenAI'],
+  ['엔비디아', 'NVIDIA'], ['멀티모달'], ['온디바이스'], ['AI 모델'], ['클라우드'],
   // 대학 (지도와 같은 표기)
   ['부산대'], ['경북대'], ['전남대'], ['충남대'], ['충북대'], ['전북대'],
   ['경상국립대', '경상대'], ['강원대'], ['제주대'], ['서울대'],
@@ -164,15 +174,33 @@ export function extract(items, opt = {}) {
     }
   }
 
-  const nodes = [...stat.values()]
+  const ranked = [...stat.values()]
     .filter((s) => s.n >= MIN)
     .map((s) => ({
       ...s,
       risk: +((s.risky / s.n) * 100).toFixed(1),
       field: Object.entries(s.fields).sort((a, b) => b[1] - a[1])[0][0]   // 대표 분야
     }))
-    .sort((a, b) => b.n - a.n)
-    .slice(0, TOP);
+    .sort((a, b) => b.n - a.n);
+
+  // 대분류별 최소 자리. 언급 수로만 자르면 기사가 많은 교육이 자리를 다 가져가,
+  // 산업 판이 빈 채로 남는다. 자리를 남겨 두되 후보가 없으면 채우지 않는다.
+  const QUOTA = { '산업': Math.min(5, Math.round(TOP * 0.2)) };
+  const picked = [], taken = new Set();
+  for (const [g, q] of Object.entries(QUOTA)) {
+    for (const n of ranked) {
+      if (picked.filter((x) => groupOf(x.field) === g).length >= q) break;
+      if (groupOf(n.field) !== g || taken.has(n.key)) continue;
+      picked.push(n); taken.add(n.key);
+    }
+  }
+  for (const n of ranked) {
+    if (picked.length >= TOP) break;
+    if (taken.has(n.key)) continue;
+    picked.push(n); taken.add(n.key);
+  }
+  // 자리 보장은 '들어갈 자격'만 준다. 그린 뒤 크기 순서는 그대로 언급 수다.
+  const nodes = picked.sort((a, b) => b.n - a.n);
 
   const idx = new Map(nodes.map((n, i) => [n.key, i]));
 

@@ -25,7 +25,7 @@ for (const f of files) {
   const J = JSON.parse(readFileSync(p, 'utf8'));
   for (const it of J.items) {
     totalItems++;
-    const { field, level, why } = classify(it.title);
+    const { field, group, local, level, why } = classify(it.title);
     if (it.level !== level) {
       changedLevel++;
       // 위험신호에서 빠지거나 새로 들어온 것만 따로 본다 — 수치가 실제로 움직이는 건 이쪽이다
@@ -35,6 +35,8 @@ for (const f of files) {
       it.level = level;
     }
     if (it.field !== field) { changedField++; it.field = field; }
+    it.group = group;
+    if (local) it.local = true; else delete it.local;
     if (why) it.why = why; else delete it.why;
   }
 

@@ -51,6 +51,8 @@ const stats = files.map((f) => {
     range: `${fmt(from)}~${fmt(to)}`,
     total: items.length, crisis, warning, risk: +(crisis + warning).toFixed(1),
     field: (fl) => items.filter((x) => x.field === fl).length,
+    industry: items.filter((x) => x.group === '산업').length,
+    local: items.filter((x) => x.local).length,
     pnu: mentionsOf(items, '부산대'),
     overseas: all.filter((x) => x.region === 'overseas').length,   // 비교 대상 아님 — 참고용
     items
@@ -102,6 +104,8 @@ for (const s of stats) {
         { name: '수집 기사(비교기준)', value: s.total.toLocaleString('ko-KR'), unit: '건', change: dd(s.total, prev.total, '건'), dir: s.total > prev.total ? 'up' : 'down' },
         { name: '정책/철학 기사', value: String(s.field('정책/철학')), unit: '건', change: dd(s.field('정책/철학'), prev.field('정책/철학'), '건'), dir: s.field('정책/철학') >= prev.field('정책/철학') ? 'up' : 'down' },
         { name: '증강인재교육 기사', value: String(s.field('증강인재교육')), unit: '건', change: dd(s.field('증강인재교육'), prev.field('증강인재교육'), '건'), dir: s.field('증강인재교육') >= prev.field('증강인재교육') ? 'up' : 'down' },
+        { name: '산업 기사', value: String(s.industry), unit: '건', change: dd(s.industry, prev.industry, '건'), dir: s.industry >= prev.industry ? 'up' : 'down' },
+        { name: '부울경 연계', value: String(s.local), unit: '건', change: dd(s.local, prev.local, '건'), dir: s.local >= prev.local ? 'up' : 'down' },
         { name: '부산대 직접 언급', value: String(s.pnu), unit: '건', change: dd(s.pnu, prev.pnu, '건'), dir: s.pnu >= prev.pnu ? 'up' : 'down' },
         // 해외 기사는 참고 항목이다. 비율(전체의 n%)로 적으면 국내 지표에 섞인 것처럼 읽힌다.
         { name: '해외 기사 (참고)', value: String(s.overseas), unit: '건', change: s.overseas ? '신호·지표 미반영 · 별도 항목' : '수집 전 주차', dir: 'flat' },

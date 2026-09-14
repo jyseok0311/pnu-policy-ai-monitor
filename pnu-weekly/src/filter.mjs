@@ -19,6 +19,11 @@ const UNIV_ABBR = /\b(?:KAIST|GIST|DGIST|UNIST|POSTECH|KENTECH|K-MOOC)\b/;
 //   · 부속기관이 붙는 경우 — '부산대병원'·'양산부산대병원'·'부산대치병'.
 const UNIV_NAME = /[가-힣]{2,4}대(?:학교)?(?:병원|치병|치과병원|한방병원|산학협력단)?(?:[^가-힣]|$|(?:은|는|이|가|을|를|의|에|와|과|도|만|로|에서|에게|부터|까지|마저|조차|처럼|보다)(?![가-힣]))/;
 
+// 행정 AX 기사는 제목에 대학 낱말이 없는 경우가 많다('공공부문 생성형 AI 도입 가이드라인').
+// AURA 의 적응형행정은 공공 AX 까지 포함하므로 이 길을 따로 낸다.
+// 'AI' 한 낱말로 열면 온갖 기사가 들어오므로 '공공·행정·학사·업무' 가 붙은 꼴만 받는다.
+const AX_ADMIN = /(?:공공|행정|학사|업무|기관|부처|지자체)\s?(?:부문\s?)?(?:생성형\s?AI|AI\s?전환|AX|AI\s?도입|AI\s?활용)|생성형\s?AI\s?(?:도입|활용|행정|업무|전환)|공공\s?AX|행정\s?AX|AI\s?행정|대학\s?ERP|학사\s?행정/;
+
 // 해외 기사는 한국어 키워드에 걸리지 않으므로 영문 조건을 따로 둔다.
 const TOPIC_EN = /universit|college|higher education|campus|tuition|enrollment|faculty|student/i;
 
@@ -33,7 +38,7 @@ export function relevant(items) {
     const title = String(x.title || '');
     if (NOISE.test(title + ' ' + x.summary)) return false;
     if (x.region === 'overseas') return TOPIC_EN.test(title);
-    return TOPIC.test(title) || UNIV_NAME.test(title) || UNIV_ABBR.test(title);
+    return TOPIC.test(title) || UNIV_NAME.test(title) || UNIV_ABBR.test(title) || AX_ADMIN.test(title);
   });
 }
 

@@ -25,6 +25,19 @@
 // 강한 말(3점)은 분야를 거의 확정짓는 말, 약한 말(1점)은 거들기만 하는 말이다.
 // 가중치를 둔 이유: 한 단어씩 세면 '교육' 같은 흔한 말이 '대학 ERP' 같은 결정적인 말을 이긴다.
 // 어느 분야도 0점이면 '기타' 로 둔다 — 억지로 넷 중 하나에 넣으면 없는 정확도를 꾸며 내는 셈이다.
+// 대분류. 네트워크 깊이판을 이 둘로 나눈다 — 판을 가로지르는 선이 곧 '교육-산업 연계'다.
+export const FIELD_GROUP = {
+  '정책/철학': '교육', '융합연구': '교육', '증강인재교육': '교육',
+  '적응형행정': '산업', 'AX 기술 동향': '산업',
+  '기타': '기타'
+};
+export const groupOf = (field) => FIELD_GROUP[field] || '기타';
+
+// 지역(부울경)은 분야가 아니라 태그다. 주제와 다른 축이라 분야로 두면
+// '부울경 산학협력' 기사가 융합연구와 지역 중 한쪽에서 사라진다.
+const BUKYEONG = /부울경|동남권|부산|울산|경남|창원|김해|양산|진주|거제|통영|밀양|사천|함안|거창|합천/;
+export const isLocal = (title) => BUKYEONG.test(String(title || ''));
+
 export const FIELDS = {
   '정책/철학': {
     strong: ['서울대 10개', '대학서열', '거점국립대', '글로컬대학', 'RISE', '라이즈', '고등교육법', '특별법',
@@ -74,9 +87,22 @@ export const FIELDS = {
       '대학 ERP', 'ERP', '챗봇', '업무 자동화', '행정 자동화', '정보화', '전산시스템', '통합관리시스템',
       '대시보드', '데이터 기반 행정', '내부통제', '정보보호', '개인정보',
       'AI 에이전트', '학사일정', '휴학', '복학', '수강', '증명서', '학생지원시스템',
+      '공공 AX', '행정 AX', '공공AX', '행정AX', 'AI 행정', '행정혁신', '공공부문 AI',
+      '생성형 AI 도입', '생성형 AI 활용', '생성형 AI 업무', '생성형 AI 행정', 'AI 업무',
+      'AI 전환', '디지털 전환', '업무 효율화', '공공기관 AI', '지자체 AI',
       'administration', 'automation', 'workflow', 'chatbot',
       'admin system', 'IT system', 'data platform', 'digital transformation', 'back office'],
-    weak: [/(?:대학|학사|교무|학생|교직원|캠퍼스|입학|등록)s*행정|행정s*(?:혁신|전산|시스템|업무|절차|효율)/, '업무', '자동화', '전산', '민원', '프로세스', '클라우드', '조직개편', '규정', '운영체계']
+    weak: [/(?:대학|학사|교무|학생|교직원|캠퍼스|입학|등록)\s*행정|행정\s*(?:혁신|전산|시스템|업무|절차|효율)/, '업무', '자동화', '전산', '민원', '프로세스', '클라우드', '조직개편', '규정', '운영체계']
+  },
+  'AX 기술 동향': {
+    strong: ['거대언어모델', 'LLM', '파운데이션 모델', '소버린 AI', '온디바이스', '멀티모달',
+      'AI 반도체', 'AI 데이터센터', 'AI 모델', 'AI 기술', 'AI 산업', 'AI 시장', 'AI 생태계',
+      'AI 투자', 'AI 인프라', 'AI 서비스', 'AI 플랫폼', 'AI 솔루션', 'AX 기술', 'AX 전환',
+      '챗GPT', 'ChatGPT', '오픈AI', 'OpenAI', '엔비디아', 'NVIDIA', '딥러닝', '머신러닝',
+      'GPU', 'NPU', 'RAG', 'MCP', '피지컬 AI', 'AI 윤리기술',
+      'foundation model', 'large language model'],
+    weak: ['인공지능', '생성형', '알고리즘', '모델', '데이터센터', '반도체', '클라우드', '오픈소스',
+      '기술 동향', '상용화', '고도화']
   }
 };
 
@@ -150,8 +176,8 @@ export function classify(title) {
   for (const lv of LEVELS) {
     for (const pat of RISK[lv]) {
       const w = riskHit(text, pat);
-      if (w) return { field, level: lv, why: w };
+      if (w) return { field, group: groupOf(field), local: isLocal(text), level: lv, why: w };
     }
   }
-  return { field, level: 'normal', why: null };
+  return { field, group: groupOf(field), local: isLocal(text), level: 'normal', why: null };
 }

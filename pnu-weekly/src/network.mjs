@@ -12,13 +12,20 @@
 // 여기서 만든 SVG 가 그대로 쓰인다. 좌표는 빌드 때 한 번 계산해 굳힌다 —
 // 열 때마다 달라지면 화면과 PDF 가 어긋난다.
 
+import { groupOf } from './classify.mjs';
+
 export const FIELD_COLOR = {
+  // 교육 — 차가운 계열
   '정책/철학': '#3b6fb8',
-  '적응형행정': '#8a5fc0',
-  '증강인재교육': '#c07b2a',
   '융합연구': '#1f8f7a',
+  '증강인재교육': '#6b5bd2',
+  // 산업 — 따뜻한 계열
+  '적응형행정': '#c07b2a',
+  'AX 기술 동향': '#b3495e',
   '기타': '#7a8595'
 };
+// 판(대분류) 색. 판은 5% 남짓으로 옅게 깔리므로 계열을 대표하는 색 하나면 된다.
+export const GROUP_COLOR = { '교육': '#3b6fb8', '산업': '#c07b2a', '기타': '#7a8595' };
 export const riskColor = (r) => (r >= 40 ? '#b3261e' : r >= 20 ? '#d9822b' : r >= 8 ? '#c9a227' : '#2f8f5b');
 // 점을 판·후광보다 한 단계 진하게 찍는다. 작아진 만큼 또렷해야 위치가 읽힌다.
 const shade = (hex, k) => {
@@ -36,15 +43,18 @@ export const MAXYAW = 0.16, MAXPITCH = 0.10;
 export const PITCH_MIN = -0.22, PITCH_MAX = 0.58;   // 위아래는 좁게 — 내려다보면 다섯 겹이 포개진다
 export const PLANE = { hw: 300, hh: 200, gap: 210 };
 
-// 판 순서 = AURA 순서. 앞에서 뒤로 A(정책/철학) → U(융합연구) → R(증강인재교육) → A(적응형행정).
-const FIELD_ORDER = ['정책/철학', '융합연구', '증강인재교육', '적응형행정', '기타'];
+// 판은 대분류로 나눈다. 판이 둘이면 판을 가로지르는 선이 곧 '교육-산업 연계'가 되어,
+// 이 그림에서 가장 잘 보이는 정보가 가장 중요한 정보가 된다.
+// 소분류는 색이 맡는다 — 교육은 차가운 색, 산업은 따뜻한 색.
+const GROUP_ORDER = ['교육', '산업', '기타'];
+const planeOf = (n) => groupOf(n.field);
 
 /**
  * 분야별 깊이판 배치.
  * 판 안에서만 2D 로 편다 — 판을 가로지르는 선까지 당기면 판이 흐트러진다.
  */
 export function layoutLayers(nodes, links, maxE, steps = 700) {
-  const used = FIELD_ORDER.filter((f) => nodes.some((n) => n.field === f));
+  const used = GROUP_ORDER.filter((g) => nodes.some((n) => planeOf(n) === g));
   const z0 = -((used.length - 1) / 2) * PLANE.gap;
   const planeZ = {};
   used.forEach((f, i) => { planeZ[f] = z0 + i * PLANE.gap; });
@@ -52,7 +62,7 @@ export function layoutLayers(nodes, links, maxE, steps = 700) {
   const P = nodes.map((n, i) => ({
     x: Math.cos(i * 2.399) * 150,
     y: Math.sin(i * 2.399) * 110,
-    z: planeZ[n.field] !== undefined ? planeZ[n.field] : 0
+    z: planeZ[planeOf(n)] !== undefined ? planeZ[planeOf(n)] : 0
   }));
 
   for (let s = 0; s < steps; s++) {
@@ -87,7 +97,7 @@ export function layoutLayers(nodes, links, maxE, steps = 700) {
 
   // 판마다 가운데로 모으고, 판 밖으로 나간 노드는 안으로 넣는다
   used.forEach((f) => {
-    const idx = nodes.map((n, i) => (n.field === f ? i : -1)).filter((i) => i >= 0);
+    const idx = nodes.map((n, i) => (planeOf(n) === f ? i : -1)).filter((i) => i >= 0);
     if (!idx.length) return;
     const cx = idx.reduce((a, i) => a + P[i].x, 0) / idx.length;
     const cy = idx.reduce((a, i) => a + P[i].y, 0) / idx.length;
@@ -118,13 +128,32 @@ const esc0 = (s) => String(s ?? '')
  * @param net  { nodes:[{key,n,risk,field,sample}], links:[{s,t,n}] }
  * @param opt  { esc, id, W, H, max, label }
  */
+// 상한을 지키되 대분류 자리를 남긴다. 화면(net3d.js)도 같은 규칙을 쓴다.
+export function capByGroup(all, max, quota = Math.min(4, Math.round(max * 0.2))) {
+  if (all.length <= max) return all.slice();
+  const out = [], taken = new Set();
+  for (const n of all) {
+    if (out.length >= quota) break;
+    if (groupOf(n.field) !== '산업') continue;
+    out.push(n); taken.add(n.key);
+  }
+  for (const n of all) {
+    if (out.length >= max) break;
+    if (taken.has(n.key)) continue;
+    out.push(n); taken.add(n.key);
+  }
+  return out.sort((a, b) => b.n - a.n);
+}
+
 export function networkSvg(net, opt = {}) {
   const esc = opt.esc || esc0;
   const W = opt.W || 1000, H = opt.H || 640;
   const MAX = opt.max || 22;
   const id = esc(opt.id || 'x');
 
-  const nodes = net.nodes.slice(0, MAX);
+  // 그냥 앞에서 자르면 언급이 적은 산업 노드가 떨어져 나가 산업 판이 빈다.
+  // 산업 몫을 먼저 덜어 두고 나머지를 언급 순으로 채운다.
+  const nodes = capByGroup(net.nodes, MAX);
   if (!nodes.length) return '';
   const pos = new Map(nodes.map((n, i) => [n.key, i]));
   const links = net.links
@@ -219,7 +248,7 @@ export function networkSvg(net, opt = {}) {
 
   // ── 판: 뒤에서 앞으로
   const planes = used.map((f) => ({ f, z: planeZ[f] })).sort((a, b) => a.z - b.z).map((pl) => {
-    const c = FIELD_COLOR[pl.f] || FIELD_COLOR['기타'];
+    const c = GROUP_COLOR[pl.f] || GROUP_COLOR['기타'];
     const pts = [[-PLANE.hw, -PLANE.hh], [PLANE.hw, -PLANE.hh], [PLANE.hw, PLANE.hh], [-PLANE.hw, PLANE.hh]]
       .map((p) => project({ x: p[0], y: p[1], z: pl.z }, W, H));
     const lab = pts[0];
@@ -252,7 +281,7 @@ export function networkSvg(net, opt = {}) {
       data-x="${P[i].x.toFixed(2)}" data-y="${P[i].y.toFixed(2)}" data-z="${P[i].z.toFixed(2)}"
       data-r="${rOf(n).toFixed(2)}"
       data-fill="${FIELD_COLOR[n.field] || FIELD_COLOR['기타']}" data-ring="${riskColor(n.risk)}"
-      data-cnt="${n.n}" data-risk="${n.risk}" data-field="${esc(n.field)}">
+      data-cnt="${n.n}" data-risk="${n.risk}" data-field="${esc(n.field)}" data-group="${esc(groupOf(n.field))}">
       <line class="stem" x1="${q.x.toFixed(1)}" y1="${q.y.toFixed(1)}" x2="${q.x.toFixed(1)}" y2="${foot.y.toFixed(1)}"
         stroke="${FIELD_COLOR[n.field] || '#7a8595'}" stroke-opacity=".22" stroke-width="1" stroke-dasharray="3 3"/>
       <circle class="nhalo" cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" r="${(halo(n) * q.s).toFixed(1)}" fill="url(#${haloOf(n)})"/>
@@ -263,7 +292,7 @@ export function networkSvg(net, opt = {}) {
     </g>`;
   }).join('');
 
-  const planeData = used.map((f) => ({ f, z: planeZ[f], c: FIELD_COLOR[f] || FIELD_COLOR['기타'] }));
+  const planeData = used.map((f) => ({ f, z: planeZ[f], c: GROUP_COLOR[f] || GROUP_COLOR['기타'] }));
 
   // 화면용 회전 범위 — 360° 어느 각도에서도 잘리지 않는 틀.
   // 인쇄용 viewBox(box)는 정면에 딱 맞춘 것이라 돌리면 넘친다. 둘을 따로 둔다.

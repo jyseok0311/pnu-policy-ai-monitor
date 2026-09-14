@@ -59,14 +59,25 @@
     var LABEL = narrow ? 13.5 : 12;
     if (nds.length > CAP) {
       nds.sort(function (a, b) { return (+b.dataset.cnt) - (+a.dataset.cnt); });
-      nds = nds.slice(0, CAP);
+      // 언급 순으로만 자르면 산업 노드가 떨어져 나가 산업 판이 빈다 — 자리를 먼저 덜어 둔다.
+      var quota = Math.min(4, Math.round(CAP * 0.2));
+      var pick = [], seen = {};
+      nds.forEach(function (g) {
+        if (pick.length >= quota || g.dataset.group !== '산업') return;
+        pick.push(g); seen[g.dataset.i] = 1;
+      });
+      nds.forEach(function (g) {
+        if (pick.length >= CAP || seen[g.dataset.i]) return;
+        pick.push(g); seen[g.dataset.i] = 1;
+      });
+      nds = pick.sort(function (a, b) { return (+b.dataset.cnt) - (+a.dataset.cnt); });
     }
     var N = nds.map(function (g) {
       return {
         i: g.dataset.i, key: g.dataset.key,
         x: +g.dataset.x, y: +g.dataset.y, z: +g.dataset.z, r: (+g.dataset.r) * NODE,
         fill: hex(g.dataset.fill), ring: hex(g.dataset.ring),
-        cnt: +g.dataset.cnt, risk: +g.dataset.risk, field: g.dataset.field,
+        cnt: +g.dataset.cnt, risk: +g.dataset.risk, field: g.dataset.field, group: g.dataset.group,
         tip: (g.querySelector('title') || {}).textContent || ''
       };
     });
@@ -152,7 +163,7 @@
       var dim = hot >= 0;
       var near = {};
       if (dim) { near[hot] = 1; L.forEach(function (l) { if (l.a === hot || l.b === hot) { near[l.a] = 1; near[l.b] = 1; } }); }
-      var hotField = dim ? N[hot].field : null;
+      var hotField = dim ? (N[hot].group || N[hot].field) : null;
 
       // ── 판: 뒤에서 앞으로
       PLANES.forEach(function (pl) {
