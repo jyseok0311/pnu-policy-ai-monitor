@@ -1,6 +1,6 @@
 # 매일 아침 기사·보도자료를 수집하고, 사이트를 새로 빌드해 GitHub Pages 에 올린다.
 #
-# 흐름:  collect → feeds → 검증 → series → daily/build/viz-lab → pdf → 데이터 커밋 → Pages 배포
+# 흐름:  collect → feeds → 검증 → series → daily/build/viz-lab/net-lab → pdf → 데이터 커밋 → Pages 배포
 #
 # 설계 메모
 # - dist/ 는 git 에 없다. 매번 여기서 새로 빌드해 Pages 아티팩트로 올린다.
@@ -82,6 +82,7 @@ jobs:
           node daily.mjs
           node build.mjs
           node viz-lab.mjs
+          node net-lab.mjs        # 3D 시안 비교 — 결정 근거로 남긴다
 
       - name: PDF
         env:
