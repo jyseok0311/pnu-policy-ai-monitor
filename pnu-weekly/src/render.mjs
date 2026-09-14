@@ -264,7 +264,7 @@ function renderWeek(w, sources, T) {
   ${!(V.feeds && V.feeds.length) && V.feedNote ? `<p class="note-line">${esc(T.grpFeeds)} — ${esc(V.feedNote)}</p>` : ''}
   ${V.feeds && V.feeds.length ? `
   <div class="kpi-group"><h4>${esc(T.grpFeeds)} <span style="font-weight:500;color:var(--mute);font-size:12px">${esc(V.feedNote || '')}</span></h4>
-  <ul class="reflist">${V.feeds.map(f => `<li>
+  <ul class="reflist feedlist">${V.feeds.map(f => `<li>
     <span class="n" style="font-size:11px;color:var(--mute)">${esc(f.channel)}</span>
     <div><a href="${esc(f.link)}" target="_blank" rel="noopener">${esc(f.title)}</a>
     <div class="meta">${esc(f.org)} · ${esc(f.date || '')}</div></div></li>`).join('')}</ul></div>` : ''}`;

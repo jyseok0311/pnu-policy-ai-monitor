@@ -98,6 +98,11 @@ h3.sub{background:var(--thead);color:var(--navy);font-size:15px;font-weight:700;
 .reflist li.hit{background:var(--hit)}
 .reflist .n{color:var(--sky);font-weight:800}
 .reflist .meta{color:var(--mute);font-size:12px;margin-top:2px}
+/* 기관 홈페이지 목록은 첫 칸에 게시판 이름이 들어간다('보도자료'·'연구자료').
+   참조 기사 목록의 34px 는 [1] 에 맞춘 폭이라 네 글자가 두 줄로 접혔다.
+   공유하는 .reflist 를 건드리면 기사 목록까지 벌어지므로 이 목록에만 준다. */
+.feedlist li{grid-template-columns:58px 1fr}
+.feedlist .n{white-space:nowrap}
 
 /* articles */
 details.day{border:1px solid var(--line);border-radius:6px;margin:6px 0;background:var(--soft)}
@@ -369,6 +374,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   .sum li{font-size:13.5px}
   .diag ol,.diag li{font-size:13px}
   .reflist li{grid-template-columns:28px 1fr;font-size:12.5px}
+  .feedlist li{grid-template-columns:54px 1fr}
   .reflist .meta{font-size:11px}
   .chg{font-size:13px}
   .chg .why{font-size:12px}
