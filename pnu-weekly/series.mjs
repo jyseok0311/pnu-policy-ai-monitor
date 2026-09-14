@@ -100,8 +100,8 @@ for (const s of stats) {
       full.weeklyMetrics = [
         { name: '위험신호 비중', value: String(s.risk), unit: '%', change: dd(s.risk, prev.risk, '%p'), dir: s.risk > prev.risk ? 'up' : s.risk < prev.risk ? 'down' : 'flat' },
         { name: '수집 기사(비교기준)', value: s.total.toLocaleString('ko-KR'), unit: '건', change: dd(s.total, prev.total, '건'), dir: s.total > prev.total ? 'up' : 'down' },
-        { name: '거버넌스 기사', value: String(s.field('거버넌스')), unit: '건', change: dd(s.field('거버넌스'), prev.field('거버넌스'), '건'), dir: s.field('거버넌스') >= prev.field('거버넌스') ? 'up' : 'down' },
-        { name: 'AI·디지털 기사', value: String(s.field('AI·디지털')), unit: '건', change: dd(s.field('AI·디지털'), prev.field('AI·디지털'), '건'), dir: s.field('AI·디지털') >= prev.field('AI·디지털') ? 'up' : 'down' },
+        { name: '정책/철학 기사', value: String(s.field('정책/철학')), unit: '건', change: dd(s.field('정책/철학'), prev.field('정책/철학'), '건'), dir: s.field('정책/철학') >= prev.field('정책/철학') ? 'up' : 'down' },
+        { name: '증강인재교육 기사', value: String(s.field('증강인재교육')), unit: '건', change: dd(s.field('증강인재교육'), prev.field('증강인재교육'), '건'), dir: s.field('증강인재교육') >= prev.field('증강인재교육') ? 'up' : 'down' },
         { name: '부산대 직접 언급', value: String(s.pnu), unit: '건', change: dd(s.pnu, prev.pnu, '건'), dir: s.pnu >= prev.pnu ? 'up' : 'down' },
         // 해외 기사는 참고 항목이다. 비율(전체의 n%)로 적으면 국내 지표에 섞인 것처럼 읽힌다.
         { name: '해외 기사 (참고)', value: String(s.overseas), unit: '건', change: s.overseas ? '신호·지표 미반영 · 별도 항목' : '수집 전 주차', dir: 'flat' },

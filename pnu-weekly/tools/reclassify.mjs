@@ -16,7 +16,7 @@ const dir = join(root, 'data/collected');
 const files = readdirSync(dir).filter((f) => f.endsWith('.json')).sort();
 
 const UNIV = ['부산대', '경북대', '전남대', '전북대', '충남대', '충북대', '강원대', '경상국립대', '제주대', '서울대'];
-const FIELD_KEYS = ['거버넌스', '재정', '입시·학령인구', 'AI·디지털', '기타'];
+const FIELD_KEYS = ['정책/철학', '융합연구', '증강인재교육', '적응형행정', '기타'];
 const moved = [];
 let totalItems = 0, changedLevel = 0, changedField = 0;
 

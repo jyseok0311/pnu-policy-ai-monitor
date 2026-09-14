@@ -13,16 +13,71 @@
 //
 // 판정 근거를 why 로 함께 돌려준다 — 나중에 "왜 위기야?" 라는 질문에 답할 수 있어야 한다.
 
+// ── 분야: AURA (2026-09 재분류)
+//   A 정책/철학    대학이 어디로 갈 것인가 — 제도·거버넌스·재정·윤리
+//   U 융합연구      학문 간 융합과 산학 — 연구·기술·창업
+//   R 증강인재교육  AI 로 증강된 배움 — 교육과정·학생·인재양성
+//   A 적응형행정    행정 자체의 AX — 학사행정·업무 자동화·정보시스템
+//
+// 전에는 'AI·디지털' 이 한 분야였다. AURA 에서는 AI 가 분야가 아니라 전제다.
+// 그래서 맨 'AI' 로는 분야를 정하지 않고 'AI 교육'·'AI 에이전트' 처럼 쓰임이 붙은 말만 센다.
+//
+// 강한 말(3점)은 분야를 거의 확정짓는 말, 약한 말(1점)은 거들기만 하는 말이다.
+// 가중치를 둔 이유: 한 단어씩 세면 '교육' 같은 흔한 말이 '대학 ERP' 같은 결정적인 말을 이긴다.
+// 어느 분야도 0점이면 '기타' 로 둔다 — 억지로 넷 중 하나에 넣으면 없는 정확도를 꾸며 내는 셈이다.
 export const FIELDS = {
-  '거버넌스': ['통합', '연합', '거버넌스', '구조개혁', '총장', '국립대', '공공기관', '재편', '법인화',
-    'merger', 'governance', 'restructuring', 'chancellor', 'consolidation', 'autonomy',
-    'reform', 'accreditation', 'policy', 'regulation', 'oversight', 'crackdown', 'ban', 'law', 'bill'],
-  '재정': ['예산', 'RISE', '라이즈', '등록금', '재정지원', '국고', '교부금', '적자', '지원금',
-    'funding', 'budget', 'tuition', 'grant', 'subsidy', 'deficit', 'endowment', 'fee'],
-  '입시·학령인구': ['수시', '정시', '경쟁률', '충원', '입시', '학령인구', '모집', '정원', '신입생', '수능',
-    'enrollment', 'admission', 'applicant', 'demographic', 'intake', 'quota', 'freshman', 'undocumented', 'international student'],
-  'AI·디지털': ['AI', '인공지능', '디지털', 'AX', '생성형', '데이터', '에이전트', 'SW', '반도체',
-    'artificial intelligence', 'generative', 'digital', 'chatbot', 'semiconductor']
+  '정책/철학': {
+    strong: ['서울대 10개', '대학서열', '거점국립대', '글로컬대학', 'RISE', '라이즈', '고등교육법', '특별법',
+      '구조개혁', '법인화', '대학체제', '거버넌스', '국가장학금', '교부금', '고등교육', '대학정책',
+      '기본계획', '시행령', '국정과제', '규제완화', 'AI 기본법', '윤리', '철학',
+      'governance', 'policy', 'regulation', 'ethics', 'accreditation', 'autonomy',
+      'higher education', 'minister', 'government', 'legislation', 'merger', 'job cuts',
+      'cost-cutting', 'budget cut', 'union', 'faculty association', 'chancellor', 'board of',
+      'watchdog', 'inquiry', 'crisis', 'super-university', 'league table', 'ranking'],
+    weak: ['총장', '교육부', '국회', '정부', '정책', '제도', '법안', '규제', '재편', '통합', '연합',
+      '예산', '국고', '재정지원', '등록금', '무상', '전액', '지원사업', '선정', '탈락', '공청회',
+      '평가', '인증', '진흥', '개편', '조례', '의결', '발의',
+      '선도대학', '1도1국립대', '서열', '순위', '랭킹', '경쟁력', '위기', '존폐', '폐교', '정원감축',
+      '유치', '공모', '협의회', '대학혁신', '자율혁신', '재정지원사업', '무전공', '학과 통폐합',
+      '글로컬', '지정 취소', '대학지원체계', '국립대병원', '지역의료', '필수의료', '의대', '등급',
+      'reform', 'law', 'bill', 'budget', 'funding', 'tuition', 'subsidy', 'grant']
+  },
+  '융합연구': {
+    strong: ['산학협력', '지산학', '공동연구', '연구중심', '연구개발', '연구비', '연구소', '연구단', '연구진',
+      '논문', '특허', '학술', 'R&D', '기술이전', '실증', '클러스터', '연구특구', '강소연구', '컨소시엄',
+      '얼라이언스', '성장엔진', '초광역', '창업', '스타트업', '융합연구', '학제간', '소셜벤처', '벤처', '기술사업화',
+      'research', 'convergence', 'patent', 'startup', 'collaboration',
+      'laboratory', 'institute', 'science', 'scientist', 'engineering', 'spin-out',
+      'AI research', 'breakthrough', 'clinical trial'],
+    weak: [/융합(?!고)/, '연구', '기술', '산업', '반도체', '바이오', '제약', '소재', '로봇', '양자', '우주',
+      '에너지', '방산', '2차전지', '특구', '앵커', '협약', '맞손', '산단', '산학',
+      'industry', 'innovation']
+  },
+  '증강인재교육': {
+    strong: ['인재양성', '인재 양성', '교육과정', '커리큘럼', '교수학습', '교수법', '비교과', '마이크로디그리',
+      '리터러시', '부트캠프', '평생교육', '재교육', '학습자', '수시모집', '정시모집', '입학정원', '학령인구',
+      'AI 교육', '디지털 교육', '학생 지원', '현장실습', '교육혁신', '학사구조',
+      'AI 과목', 'AI 연수', 'AI 아카데미', '교직원 대상', '디지털 역량', 'AI 활용 역량',
+      'curriculum', 'learning', 'literacy', 'enrollment', 'admission',
+      'enrolment', 'entry rate', 'undergraduate', 'postgraduate', 'degree', 'course',
+      'teaching', 'lecturer', 'graduate', 'tuition fee', 'scholarship', 'campus life',
+      'international student', 'applicant'],
+    weak: [/교육(?!부|청|감|단체|위원|국|장관|계|계청)/, '학생', '인재', '양성', '육성', '강의', '수업', '학습',
+      '역량', '교과', '학과', '전공', '학부', '대학원', '신입생', '재학생', '졸업', '학점', '학년도',
+      '취업', '진로', '채용', '청년', '인턴', '수시', '정시', '입시', '경쟁률', '모집', '선발', '정원',
+      '충원', '수능', '장학', '교원', '학칙',
+      '연수', '특강', '아카데미', '캠프', '세미나', '워크숍', '교직원', '과목', '실습', '멘토링',
+      'student', 'talent', 'freshman', 'quota']
+  },
+  '적응형행정': {
+    strong: ['학사행정', '행정혁신', '업무혁신', '수강신청', '전자결재', '스마트캠퍼스', '정보시스템', '학사관리',
+      '대학 ERP', 'ERP', '챗봇', '업무 자동화', '행정 자동화', '정보화', '전산시스템', '통합관리시스템',
+      '대시보드', '데이터 기반 행정', '내부통제', '정보보호', '개인정보',
+      'AI 에이전트', '학사일정', '휴학', '복학', '수강', '증명서', '학생지원시스템',
+      'administration', 'automation', 'workflow', 'chatbot',
+      'admin system', 'IT system', 'data platform', 'digital transformation', 'back office'],
+    weak: [/(?:대학|학사|교무|학생|교직원|캠퍼스|입학|등록)s*행정|행정s*(?:혁신|전산|시스템|업무|절차|효율)/, '업무', '자동화', '전산', '민원', '프로세스', '클라우드', '조직개편', '규정', '운영체계']
+  }
 };
 
 // 위험어 바로 뒤에 이런 말이 오면 그 단어는 위험을 뜻하지 않는다.
@@ -68,6 +123,15 @@ function riskHit(text, pat) {
   return null;
 }
 
+/** 분야어가 제목에 있는가. 문자열은 그대로, 정규식은 그 꼴일 때만. */
+// 영문 분류어는 대소문자를 가리지 않는다 — 제목은 'Faculty Associations' 처럼 대문자로 온다.
+// 다만 대문자가 든 말(RISE·ERP·R&D·AI 교육)은 그대로 찾는다. 소문자로 낮추면
+// RISE 가 'sunrise' 에, ERP 가 엉뚱한 말에 걸린다.
+const has = (text, w) => {
+  if (w instanceof RegExp) return w.test(text);
+  return /[A-Z]/.test(w) ? text.includes(w) : text.toLowerCase().includes(w);
+};
+
 const LEVELS = ['crisis', 'warning', 'watch'];
 
 /**
@@ -78,8 +142,8 @@ export function classify(title) {
   const text = String(title || '');
 
   let field = '기타', best = 0;
-  for (const [f, ws] of Object.entries(FIELDS)) {
-    const n = ws.filter((w) => text.includes(w)).length;
+  for (const [f, g] of Object.entries(FIELDS)) {
+    const n = g.strong.filter((w) => has(text, w)).length * 3 + g.weak.filter((w) => has(text, w)).length;
     if (n > best) { best = n; field = f; }
   }
 

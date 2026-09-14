@@ -183,7 +183,7 @@ const out = {
     warning: pct(count('level', 'warning')),
     watch: pct(count('level', 'watch'))
   },
-  byField: Object.fromEntries(['거버넌스', '재정', '입시·학령인구', 'AI·디지털', '기타'].map((f) => [f, count('field', f)])),
+  byField: Object.fromEntries(['정책/철학', '융합연구', '증강인재교육', '적응형행정', '기타'].map((f) => [f, count('field', f)])),
   byRegion: { 국내: count('region', 'domestic'), 해외: count('region', 'overseas') },
   byUniv: Object.fromEntries(UNIV.map((u) => [u, all.filter((x) => x.univ.includes(u)).length])),
   feeds: feedLog,
@@ -193,7 +193,7 @@ const out = {
 mkdirSync(join(root, 'data/collected'), { recursive: true });
 const file = join(root, `data/collected/${TAG}.json`);
 const keyOf = (x) => x.title.replace(/\s+/g, '').slice(0, 40);
-const FIELD_NAMES = ['거버넌스', '재정', '입시·학령인구', 'AI·디지털', '기타'];
+const FIELD_NAMES = ['정책/철학', '융합연구', '증강인재교육', '적응형행정', '기타'];
 
 // 항목 배열이 바뀌면 집계값을 전부 다시 센다. 손으로 일부만 고치면 어긋난다.
 function recompute(o) {

@@ -26,10 +26,10 @@ const files = readdirSync(join(root, 'data/collected')).filter((f) => f.endsWith
 // 분야 색 — 리포트의 등급 색과 겹치지 않게 별도 팔레트를 쓴다.
 // 등급(위기·경고)은 빨강 계열이 이미 차지하고 있다.
 const FIELD_COLOR = {
-  '거버넌스': '#3b6fb8',
-  '재정': '#8a5fc0',
-  '입시·학령인구': '#c07b2a',
-  'AI·디지털': '#1f8f7a',
+  '정책/철학': '#3b6fb8',
+  '적응형행정': '#8a5fc0',
+  '증강인재교육': '#c07b2a',
+  '융합연구': '#1f8f7a',
   '기타': '#7a8595'
 };
 const riskColor = (r) => (r >= 40 ? '#b3261e' : r >= 20 ? '#d9822b' : r >= 8 ? '#c9a227' : '#2f8f5b');

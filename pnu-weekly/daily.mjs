@@ -74,7 +74,7 @@ calibrateDaily(days.map((d) => {
   return +(q('crisis') + q('warning')).toFixed(1);
 }));
 
-const FIELDS = ['거버넌스', '재정', '입시·학령인구', 'AI·디지털', '기타'];
+const FIELDS = ['정책/철학', '융합연구', '증강인재교육', '적응형행정', '기타'];
 const wd = (d, T) => T.daily.weekday[new Date(Date.parse(d)).getDay()];
 
 function renderDay(d, idx, T) {
