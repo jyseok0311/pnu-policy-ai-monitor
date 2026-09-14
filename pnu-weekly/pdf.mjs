@@ -31,6 +31,8 @@ const chrome = CANDIDATES.find((p) => existsSync(p));
 if (!chrome) { console.error('✗ Chrome/Edge를 찾지 못했습니다. CHROME_PATH 환경변수로 지정하세요.'); process.exit(1); }
 
 const PORT = 9333 + (process.pid % 200);
+// A4(210mm) - 좌우 여백(12mm×2) = 186mm. CSS 는 1in=96px, 1in=25.4mm 로 센다.
+const PAPER_W = Math.round((210 - 24) / 25.4 * 96);   // = 703
 const profile = join(tmpdir(), `pnu-pdf-${process.pid}`);
 const outDir = join(root, 'dist/pdf');
 mkdirSync(outDir, { recursive: true });
@@ -114,6 +116,14 @@ try {
 
   await send('Page.enable');
   await send('Emulation.setEmulatedMedia', { media: 'print' });
+  // 뷰포트를 '종이 본문 폭'으로 맞춘다.
+  //   printToPDF 는 종이 크기로 레이아웃을 다시 잡는데, 그 전에 도는 스크립트(지도 fitBounds 등)는
+  //   브라우저 창 폭(1262px)을 보고 계산한다. 그래서 한반도를 1262px 기준으로 가운데 맞춰 놓으면
+  //   종이(703px)로 잘릴 때 오른쪽으로 밀려 나왔다 — 실제로 PDF 에서 그랬다.
+  //   @page{size:A4;margin:14mm 12mm} → 본문 폭 210-24=186mm = 703 CSS px.
+  await send('Emulation.setDeviceMetricsOverride', {
+    width: PAPER_W, height: 1600, deviceScaleFactor: 1, mobile: false
+  });
 
   for (const T of JOBS) {
     const src = pathToFileURL(join(root, T.page)).href + (T.query || '');
@@ -151,7 +161,7 @@ try {
       });
       writeFileSync(out, Buffer.from(data, 'base64'));
       ok++;
-      console.log(`  ✓ ${T.file}  ${(statSync(out).size / 1024).toFixed(0)} KB`);
+      console.log(`  ✓ ${T.file}  ${(statSync(out).size / 1024).toFixed(0)} KB${fitted.result.value && fitted.result.value.center ? `  [지도 ${fitted.result.value.w}px 중심 ${fitted.result.value.center[1]}°E z${fitted.result.value.zoom}]` : ""}`);
     } catch (e) {
       fail++;
       console.log(`  ✗ ${T.file} — ${e.message.slice(0, 60)}`);

@@ -424,7 +424,15 @@
       m.map.invalidateSize({ animate: false });
       m.map.fitBounds(b, { padding: [26, 26], animate: false });
     });
-    return MAPS.length;
+    // 검증용으로 결과를 돌려준다. pdf.mjs 는 값이 있는지만 본다.
+    var first = MAPS[0];
+    return {
+      n: MAPS.length,
+      w: first ? Math.round(first.el.getBoundingClientRect().width) : 0,
+      h: first ? Math.round(first.el.getBoundingClientRect().height) : 0,
+      center: first ? [+first.map.getCenter().lat.toFixed(3), +first.map.getCenter().lng.toFixed(3)] : null,
+      zoom: first ? +first.map.getZoom().toFixed(2) : null
+    };
   };
 
   // 인쇄: 화면에서 보고 있던 중심·확대를 그대로 유지한다.
