@@ -486,9 +486,14 @@
         var s0 = CAM.f / (CAM.z0 - p.z);
         p.sw0 = p.sw / s0;
       });
+      // .nd 는 '깊이 순'으로 그려져 있어서 DOM 순서와 노드 번호가 다르다.
+      // 엣지의 data-a/data-b 는 노드 번호이므로, 번호 → P 자리 로 옮겨 줘야 한다.
+      // 이걸 빼먹으면 회전하는 순간 선이 엉뚱한 노드에 가서 붙는다.
+      var slotOf = {};
+      P.forEach(function (p, k) { slotOf[p.i] = k; });
       var E2 = eds.map(function (e) {
-        return { e: e, a: +e.dataset.a, b: +e.dataset.b, w0: +e.getAttribute('stroke-width'), n: +e.dataset.n };
-      });
+        return { e: e, a: slotOf[e.dataset.a], b: slotOf[e.dataset.b], w0: +e.getAttribute('stroke-width'), n: +e.dataset.n };
+      }).filter(function (l) { return l.a !== undefined && l.b !== undefined; });
       // 선 굵기도 같은 방식으로 기준값을 복원한다
       E2.forEach(function (l) {
         var sa = CAM.f / (CAM.z0 - P[l.a].z), sb = CAM.f / (CAM.z0 - P[l.b].z);
