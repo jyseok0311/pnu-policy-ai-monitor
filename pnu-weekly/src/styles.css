@@ -178,7 +178,6 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   .side ul{display:flex;flex-wrap:wrap;gap:2px 6px;padding:0 10px}
   .side li a{padding:4px 8px}
   .side li a .stub{display:none}
-  .top{position:static}
   .top,.main{padding-left:16px;padding-right:16px}
   .week{padding:18px 16px}
   .state{margin-left:0;width:100%}
@@ -458,7 +457,7 @@ h2.sec .sec-face{margin-right:4px}
    (시안 비교 페이지 viz-lab 처럼 캔버스를 안 쓰는 곳도 있다). */
 .netbox{position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--line);
   background:var(--soft);touch-action:pan-y}
-.netbox.gl-on{border-color:#1b2434;background:#0b1018}
+.netbox.gl-on{border-color:var(--line);background:#fbfcfe}
 .net-gl{display:none;width:100%;height:auto;vertical-align:top}
 .netbox.gl-on .net-gl{display:block}
 .netbox.gl-on .net{display:none}          /* 캔버스가 자리를 잡으면 SVG 는 물러난다 */
@@ -469,12 +468,16 @@ h2.sec .sec-face{margin-right:4px}
 .net .nl{font-weight:700;fill:#1e2634;paint-order:stroke;stroke:var(--soft);stroke-width:3.5px}
 
 /* 캔버스 위에 뜨는 말풍선 */
-.net-tip{position:fixed;z-index:9998;pointer-events:none;max-width:320px;
-  background:rgba(11,16,24,.96);color:#e6ecf6;border:1px solid #27334a;border-radius:8px;
-  padding:8px 11px;font-size:12.5px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.45)}
-.net-tip b{display:block;font-size:14px;margin-bottom:2px}
-.net-tip .t-meta{display:block;color:#9fb0c8;font-size:11.5px}
-.net-tip .t-art{display:block;margin-top:6px;padding-top:6px;border-top:1px dashed #2c3950;color:#c8d4e6}
+.net-tip{position:fixed;z-index:9998;pointer-events:none;max-width:300px;
+  background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:8px;
+  padding:8px 11px;font-size:12.5px;line-height:1.5;box-shadow:0 8px 22px rgba(26,43,76,.18)}
+.net-tip b{display:block;font-size:14px;margin-bottom:2px;color:var(--navy)}
+.net-tip .t-meta{display:block;color:var(--mute);font-size:11.5px}
+.net-tip .t-art{display:block;margin-top:6px;padding-top:6px;border-top:1px dashed var(--line);color:var(--ink-3)}
+/* 좁은 화면에서는 손가락이 가리지 않도록 말풍선을 아래에 폭 넓게 깐다 */
+@media (max-width:640px){
+  .net-tip{left:8px !important;right:8px;max-width:none;width:auto}
+}
 
 .legend .k.ring{background:transparent;border:2.5px solid var(--line);border-radius:50%;width:11px;height:11px}
 
@@ -496,3 +499,27 @@ h2.sec .sec-face{margin-right:4px}
 .artlist .lv{text-align:center;font-size:11px}
 .artmeta{color:var(--mute);font-size:12px;white-space:nowrap}
 @media (max-width:860px){.artlist li{grid-template-columns:46px 1fr}.artmeta{display:none}}
+
+/* ── 모바일: 상단 메뉴 고정 ──────────────────────────────
+   좁은 화면에서는 주차 칩(95px) + 헤더(165px) 로 260px 를 먹었다.
+   헤더를 붙박이로 두되, 스크롤을 내리면 소속·여백을 접어 절반으로 줄인다.
+   접는 건 app.js 가 .top 에 .min 을 붙여서 한다(스크롤 위치는 CSS 로 알 수 없다). */
+@media (max-width:860px){
+  .top{position:sticky;top:0;z-index:600;box-shadow:0 2px 10px rgba(10,18,34,.18)}
+}
+@media (max-width:640px){
+  .top{padding:12px 14px;gap:9px;transition:padding .16s ease}
+  .top .brand{align-items:center;gap:10px}
+  .top .acts{flex-wrap:nowrap;gap:6px}
+  .pdf-sel{flex:1 1 auto;min-width:0;max-width:none;padding:8px;font-size:11.5px}
+  .acts .btn{flex:0 0 auto;padding:8px 11px;font-size:11.5px;white-space:nowrap}
+
+  /* 스크롤을 내린 상태 — 제목 한 줄과 PDF 만 남긴다 */
+  .top.min{padding:7px 14px;gap:6px}
+  .top.min .sub{display:none}
+  .top.min .logo-img{width:28px;height:28px;padding:1px}
+  .top.min h1{font-size:14px;line-height:1.25;
+    display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+  .top.min .pdf-sel,.top.min .acts .btn{padding:6px 9px;font-size:11px}
+}
+@media print{ .top{position:static !important;box-shadow:none} }

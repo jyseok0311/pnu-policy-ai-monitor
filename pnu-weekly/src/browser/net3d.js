@@ -44,10 +44,20 @@
 
     var nds = [].slice.call(svg.querySelectorAll('.nd'));
     if (!nds.length) return null;
+    // 좁은 화면에서는 원과 글자가 서로 덮는다. 노드 수부터 줄이고(언급 많은 순),
+    // 남은 것도 작게 그린다. 잘라 낸 노드에 걸린 선은 아래에서 함께 빠진다.
+    var narrow = Math.min(window.innerWidth || 1200, screen.width || 1200) < 680;
+    var CAP = narrow ? 14 : 22;
+    var NODE = narrow ? 0.72 : 1;        // 원 크기 배율
+    var LABEL = narrow ? 15 : 12.5;      // 라벨 글자(px) — 작은 화면일수록 상대적으로 키운다
+    if (nds.length > CAP) {
+      nds.sort(function (a, b) { return (+b.dataset.cnt) - (+a.dataset.cnt); });
+      nds = nds.slice(0, CAP);
+    }
     var N = nds.map(function (g) {
       return {
         i: g.dataset.i, key: g.dataset.key,
-        x: +g.dataset.x, y: +g.dataset.y, z: +g.dataset.z, r: +g.dataset.r,
+        x: +g.dataset.x, y: +g.dataset.y, z: +g.dataset.z, r: (+g.dataset.r) * NODE,
         fill: hex(g.dataset.fill), ring: hex(g.dataset.ring),
         cnt: +g.dataset.cnt, risk: +g.dataset.risk, field: g.dataset.field,
         tip: (g.querySelector('title') || {}).textContent || ''
@@ -61,8 +71,9 @@
     }).filter(function (l) { return l.a !== undefined && l.b !== undefined; });
     var maxE = L.reduce(function (m, l) { return Math.max(m, l.n); }, 1);
 
-    var BG0 = [12, 17, 28], BG1 = [7, 10, 18];     // 배경 그라디언트(가운데가 조금 밝다)
-    var FOG = [10, 14, 24];                        // 뒤로 갈수록 이 색에 잠긴다
+    // 밝은 판. 뒤로 갈수록 배경색에 잠기게 해서 거리감을 준다(대기 원근).
+    var BG0 = [252, 253, 255], BG1 = [234, 240, 248];
+    var FOG = [236, 241, 248];
 
     var yaw = 0, pitch = 0, tYaw = 0, tPitch = 0, spin = 0;
     var hot = -1;                                  // 마우스가 올라간 노드
@@ -103,6 +114,29 @@
     // 깊이 → 0(뒤) ~ 1(앞)
     var zMax = N.reduce(function (m, p) { return Math.max(m, Math.abs(p.z)); }, 1);
     function depth(z) { return Math.max(0, Math.min(1, (z + zMax) / (2 * zMax))); }
+
+    // 화면에 남은 노드에 맞춰 보기 범위를 다시 잡는다.
+    // SVG 의 viewBox 는 노드 22개 기준이라, 좁은 화면에서 14개로 줄이면 빈 자리가 크게 남는다.
+    // 회전으로 깊이가 가로·세로로 돌아 나오는 만큼(zMax·sin) 미리 비워 둔다.
+    (function fitView() {
+      var cy = 1, sy = 0, cp = 1, sp = 0;
+      var x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+      N.forEach(function (p) {
+        var q = project(p, cy, sy, cp, sp);
+        var r = p.r * q.s;
+        x0 = Math.min(x0, q.x - r); x1 = Math.max(x1, q.x + r);
+        y0 = Math.min(y0, q.y - r); y1 = Math.max(y1, q.y + r + LABEL * 1.5 * q.s);
+      });
+      var padX = 10 + zMax * Math.sin(MAXYAW);
+      var padY = 10 + zMax * Math.sin(MAXPITCH);
+      x0 -= padX; x1 += padX; y0 -= padY; y1 += padY;
+      var bw = x1 - x0, bh = y1 - y0;
+      // 좁은 화면은 세로로 긴 판이 낫다(가로 스크롤 없이 크게 보인다).
+      var want = narrow ? 1.15 : Math.max(1.4, Math.min(bw / bh, 2.1));
+      if (bw / bh < want) { var t = bh * want; x0 -= (t - bw) / 2; bw = t; }
+      else { var u = bw / want; y0 -= (u - bh) / 2; bh = u; }
+      VX = x0; VY = y0; VW = bw; VH = bh;
+    })();
 
     function draw(ts) {
       raf = null;
@@ -147,10 +181,10 @@
         // 양 끝 노드 색을 이어 흐르게 한다 — 어느 묶음에 속한 선인지 색으로 읽힌다.
         var ca = N[l.a].fill, cb = N[l.b].fill;
         var grad = ctx.createLinearGradient(A[0], A[1], B[0], B[1]);
-        // 선은 얇고 또렷하게. 굵고 흐리면 노드 발광에 묻혀 구조가 안 보인다.
-        var al = (on ? 0.42 + d * 0.45 : 0.07) * (0.55 + (l.n / maxE) * 0.45);
-        grad.addColorStop(0, rgba(mix(ca, [190, 214, 246], 0.42 * d), al));
-        grad.addColorStop(1, rgba(mix(cb, [190, 214, 246], 0.42 * d), al));
+        // 밝은 바탕에서는 선을 '밝게' 섞으면 배경에 묻힌다. 뒤쪽일수록 배경색에 잠기게 한다.
+        var al = (on ? 0.34 + d * 0.4 : 0.06) * (0.55 + (l.n / maxE) * 0.45);
+        grad.addColorStop(0, rgba(mix(ca, FOG, (1 - d) * 0.55), al));
+        grad.addColorStop(1, rgba(mix(cb, FOG, (1 - d) * 0.55), al));
         ctx.strokeStyle = grad;
         ctx.lineWidth = (0.55 + (l.n / maxE) * 2.0) * (0.55 + d * 0.45) * scale * (on ? 1 : 0.8);
         ctx.beginPath();
@@ -170,20 +204,20 @@
         var col = mix(n.fill, FOG, (1 - d) * 0.4);
         var alpha = on ? 1 : 0.2;
 
-        // 발광 — 뒤쪽은 약하게, 위험신호가 높으면 테두리 색으로 번진다.
+        // 밝은 바탕에서는 '빛나는' 대신 옅은 색 무리로 띄운다. 번쩍이면 지저분해진다.
         var glowC = n.risk >= 20 ? n.ring : n.fill;
-        var gR = r * 1.85;
-        var gr = ctx.createRadialGradient(P0[0], P0[1], r * 0.85, P0[0], P0[1], gR);
-        gr.addColorStop(0, rgba(glowC, (0.3 + d * 0.2) * alpha));
+        var gR = r * 1.5;
+        var gr = ctx.createRadialGradient(P0[0], P0[1], r * 0.9, P0[0], P0[1], gR);
+        gr.addColorStop(0, rgba(glowC, (0.1 + d * 0.09) * alpha));
         gr.addColorStop(1, rgba(glowC, 0));
         ctx.fillStyle = gr;
         ctx.beginPath(); ctx.arc(P0[0], P0[1], gR, 0, 6.2832); ctx.fill();
 
         // 구체 — 왼쪽 위에서 빛이 온다
         var sg = ctx.createRadialGradient(P0[0] - r * 0.34, P0[1] - r * 0.36, r * 0.1, P0[0], P0[1], r);
-        sg.addColorStop(0, rgba(mix(col, [255, 255, 255], 0.55), alpha));
+        sg.addColorStop(0, rgba(mix(col, [255, 255, 255], 0.6), alpha));
         sg.addColorStop(0.45, rgba(col, alpha));
-        sg.addColorStop(1, rgba(mix(col, [0, 0, 0], 0.32), alpha));
+        sg.addColorStop(1, rgba(mix(col, [0, 0, 0], 0.22), alpha));
         ctx.fillStyle = sg;
         ctx.beginPath(); ctx.arc(P0[0], P0[1], r, 0, 6.2832); ctx.fill();
 
@@ -192,15 +226,15 @@
         ctx.lineWidth = (n.risk >= 20 ? 2.4 : 1.3) * q.s * scale;
         ctx.beginPath(); ctx.arc(P0[0], P0[1], r, 0, 6.2832); ctx.stroke();
 
-        // 라벨 — 뒤쪽은 흐리게. 글자에 어두운 테두리를 둘러 선 위에서도 읽히게 한다.
-        var fs = 12.5 * q.s * scale;
+        // 라벨 — 어두운 글자에 밝은 테두리를 둘러 선 위에서도 읽히게 한다. 뒤쪽은 흐리게.
+        var fs = LABEL * q.s * scale;
         ctx.font = '700 ' + fs.toFixed(1) + 'px Pretendard, "Apple SD Gothic Neo", system-ui, sans-serif';
         ctx.textAlign = 'center'; ctx.textBaseline = 'top';
         var ly = P0[1] + r + 4 * scale;
         ctx.lineWidth = Math.max(2.6 * scale, 2);
-        ctx.strokeStyle = rgba(BG1, 0.92 * alpha);
+        ctx.strokeStyle = rgba([255, 255, 255], 0.92 * alpha);
         ctx.strokeText(n.key, P0[0], ly);
-        ctx.fillStyle = rgba(mix([232, 240, 250], FOG, (1 - d) * 0.34), alpha);
+        ctx.fillStyle = rgba(mix([30, 38, 52], FOG, (1 - d) * 0.42), alpha);
         ctx.fillText(n.key, P0[0], ly);
       });
 
