@@ -16,9 +16,29 @@ const arg = (k) => { const i = process.argv.indexOf(k); return i > 0 ? process.a
 const FROM = arg('--from');            // YYYY-MM-DD (포함)
 const TO = arg('--to');                // YYYY-MM-DD (미포함)
 const DAYS = Number(arg('--days')) || 7;
+// --week : 매일 돌리는 모드. 이번 주차 파일에 누적한다.
+//   주차 경계는 금요일이다(weeks.json 의 모든 range 가 금→금).
+//   파일 이름은 '그 주가 시작한 금요일'로 통일한다. 수집한 날짜로 이름을 붙이면
+//   같은 주차가 여러 파일로 흩어지고, 어떤 파일이 어느 주차인지 이름만 봐서는 알 수 없다.
+const WEEKLY = process.argv.includes('--week');
+// 주차 경계는 한국 시간으로 따진다. GitHub Actions 러너는 UTC 라서,
+// 그냥 UTC 로 계산하면 금요일 아침 07:00 KST(=목요일 22:00 UTC) 실행분이
+// 지난 주차 파일에 들어간다. 9시간을 더해 한국 날짜로 맞춘다.
+// --today YYYY-MM-DD : 실행 날짜를 고정한다(검증용). 금요일 경계 처리는 금요일에만 도는데,
+//   그날까지 기다려서 확인할 수는 없으므로 날짜를 꾸며 넣어 미리 돌려 본다.
+const TODAY = arg('--today') ? new Date(arg('--today') + 'T00:00:00Z') : new Date();
+const KST = (d = TODAY) => new Date(d.getTime() + 9 * 3600e3);
+const kstDate = (d = TODAY) => KST(d).toISOString().slice(0, 10);
+function weekStart(d = TODAY) {
+  const k = KST(d);
+  const x = new Date(Date.UTC(k.getUTCFullYear(), k.getUTCMonth(), k.getUTCDate()));
+  // getUTCDay: 0=일 … 5=금. 그 주가 시작한 금요일까지 거슬러 올라간다.
+  x.setUTCDate(x.getUTCDate() - ((x.getUTCDay() - 5 + 7) % 7));
+  return x.toISOString().slice(0, 10);
+}
 // 구글 뉴스 RSS는 after:/before: 로 과거 구간 검색을 지원한다 — 지난 주차 소급 수집에 쓴다.
 const RANGE = FROM && TO ? `after:${FROM} before:${TO}` : `when:${DAYS}d`;
-const TAG = FROM && TO ? FROM : new Date().toISOString().slice(0, 10);
+const TAG = FROM && TO ? FROM : WEEKLY ? weekStart() : kstDate();
 const UA = 'Mozilla/5.0 (compatible; PNU-AX-Monitor/0.1; +ax@pusan.ac.kr)';
 
 // ── 수집 대상 ────────────────────────────────────────────────
@@ -170,8 +190,8 @@ const pct = (n) => all.length ? +((n / all.length) * 100).toFixed(1) : 0;
 
 const out = {
   collectedAt: new Date().toISOString(),
-  window: FROM ? `${FROM} ~ ${TO}` : `최근 ${DAYS}일`,
-  from: FROM, to: TO,
+  window: FROM ? `${FROM} ~ ${TO}` : WEEKLY ? `${TAG} ~ (진행 중)` : `최근 ${DAYS}일`,
+  from: FROM || (WEEKLY ? TAG : null), to: TO,
   total: all.length,
   signal: {
     crisis: pct(count('level', 'crisis')),
@@ -187,34 +207,71 @@ const out = {
 
 mkdirSync(join(root, 'data/collected'), { recursive: true });
 const file = join(root, `data/collected/${TAG}.json`);
+const keyOf = (x) => x.title.replace(/\s+/g, '').slice(0, 40);
+const FIELD_NAMES = ['거버넌스', '재정', '입시·학령인구', 'AI·디지털', '기타'];
 
-// 같은 기간 파일이 이미 있으면 합친다.
+// 항목 배열이 바뀌면 집계값을 전부 다시 센다. 손으로 일부만 고치면 어긋난다.
+function recompute(o) {
+  o.items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  o.total = o.items.length;
+  const cnt = (k, v) => o.items.filter((x) => x[k] === v).length;
+  const p = (n) => (o.total ? +((n / o.total) * 100).toFixed(1) : 0);
+  o.signal = { crisis: p(cnt('level', 'crisis')), warning: p(cnt('level', 'warning')), watch: p(cnt('level', 'watch')) };
+  o.byField = Object.fromEntries(FIELD_NAMES.map((f) => [f, cnt('field', f)]));
+  o.byRegion = { 국내: cnt('region', 'domestic'), 해외: cnt('region', 'overseas') };
+  o.byUniv = Object.fromEntries(UNIV.map((u) => [u, o.items.filter((x) => (x.univ || []).includes(u)).length]));
+  return o;
+}
+
+// 같은 기간 파일이 이미 있으면 합친다. 덮어쓰지 않는다.
 // RSS 창(window)은 시간이 지나면 오래된 기사를 밀어내므로, 덮어쓰면 재실행할 때마다
 // 기사를 잃는다. 실제로 재수집 후 서술의 각주 근거가 사라지는 일이 있었다.
-if (existsSync(file)) {
-  const prev = JSON.parse(readFileSync(file, 'utf8'));
-  const keyOf = (x) => x.title.replace(/\s+/g, '').slice(0, 40);
-  const seen2 = new Set(out.items.map(keyOf));
+function mergeInto(path, fresh) {
+  const prev = existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : null;
+  const base = prev ? (prev.items || []).map((it) => ({ region: 'domestic', ...it })) : [];   // 구버전 항목엔 region 이 없다
+  const seen = new Set(base.map(keyOf));
   let added = 0;
-  for (const it of prev.items || []) {
-    if (seen2.has(keyOf(it))) continue;
-    seen2.add(keyOf(it));
-    out.items.push({ region: 'domestic', ...it });   // 구버전 항목엔 region 이 없다
-    added++;
+  for (const it of fresh) {
+    const k = keyOf(it);
+    if (seen.has(k)) continue;
+    seen.add(k); base.push(it); added++;
   }
-  if (added) {
-    out.items.sort((a, b) => (b.date || '').localeCompare(a.date || ''));
-    out.total = out.items.length;
-    const cnt = (k, v) => out.items.filter((x) => x[k] === v).length;
-    const p2 = (n) => +((n / out.total) * 100).toFixed(1);
-    out.signal = { crisis: p2(cnt('level', 'crisis')), warning: p2(cnt('level', 'warning')), watch: p2(cnt('level', 'watch')) };
-    out.byField = Object.fromEntries(['거버넌스', '재정', '입시·학령인구', 'AI·디지털', '기타'].map((f) => [f, cnt('field', f)]));
-    out.byRegion = { 국내: cnt('region', 'domestic'), 해외: cnt('region', 'overseas') };
-    out.byUniv = Object.fromEntries(UNIV.map((u) => [u, out.items.filter((x) => (x.univ || []).includes(u)).length]));
-    console.log(`· 기존 수집본과 병합 — ${added}건 보존`);
-  }
+  // 기존 파일의 창(window/from/to)은 그대로 둔다 — 닫힌 주차에 항목을 더해도 주차 정의는 바뀌지 않는다.
+  const o = prev ? { ...prev, items: base, collectedAt: out.collectedAt, feeds: out.feeds } : { ...out, items: base };
+  recompute(o);
+  writeFileSync(path, JSON.stringify(o, null, 2), 'utf8');
+  return { added, kept: prev ? (prev.items || []).length : 0, total: o.total };
 }
-writeFileSync(file, JSON.stringify(out, null, 2), 'utf8');
+
+if (WEEKLY) {
+  // 기사를 '날짜'로 주차에 배정한다. 창이 경계를 넘겨 물어 오기 때문이다.
+  //   이번 주차(TAG 이후)   → 이번 주차 파일
+  //   지난 주차             → 지난 주차 파일에 추가. 금요일 아침 실행은 목요일 오후·저녁 기사를 처음 보는데,
+  //                           이걸 버리면 닫힌 주차의 마지막 날이 늘 반쪽만 남는다.
+  //   그보다 오래된 것       → 버림
+  const prevTag = weekStart(new Date(Date.parse(TAG) - 864e5));
+  const cur = out.items.filter((x) => !x.date || x.date >= TAG);
+  const late = out.items.filter((x) => x.date && x.date >= prevTag && x.date < TAG);
+  const dropped = out.items.length - cur.length - late.length;
+
+  const r = mergeInto(file, cur);
+  if (r.kept) console.log(`· 이번 주차(${TAG}) 파일과 병합 — 기존 ${r.kept}건 보존, ${r.added}건 추가`);
+  if (late.length) {
+    const pf = join(root, `data/collected/${prevTag}.json`);
+    if (existsSync(pf)) {
+      const r2 = mergeInto(pf, late);
+      console.log(`· 지난 주차(${prevTag}) 파일에 ${r2.added}건 추가 (마감 전날 오후 기사 · 중복 ${late.length - r2.added}건)`);
+    } else {
+      console.log(`· 지난 주차 파일이 없어 ${late.length}건 버림 (${prevTag}.json)`);
+    }
+  }
+  if (dropped) console.log(`· 주차 경계 밖 ${dropped}건 제외`);
+  Object.assign(out, JSON.parse(readFileSync(file, 'utf8')));   // 아래 요약 출력은 이번 주차 파일 기준
+} else {
+  const r = mergeInto(file, out.items);
+  if (r.kept) console.log(`· 기존 수집본과 병합 — ${r.kept}건 보존`);
+  Object.assign(out, JSON.parse(readFileSync(file, 'utf8')));
+}
 
 console.table(feedLog);
 console.log(`\n총 ${out.total}건 (중복 제거 후) · ${out.window}`);

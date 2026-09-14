@@ -11,3 +11,6 @@ desktop.ini
 
 # 로컬 백업
 *.bak
+
+# 빌드 산출물 — Pages 는 Actions 가 매번 새로 빌드해 올린다. git 에 넣으면 PDF 때문에 저장소가 하루 수십 MB 씩 불어난다.
+pnu-weekly/dist/

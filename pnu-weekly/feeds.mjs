@@ -55,7 +55,8 @@ const out = {
 };
 
 mkdirSync(join(root, 'data/feeds'), { recursive: true });
-const tagDate = new Date().toISOString().slice(0, 10);
+// 파일 이름은 한국 날짜다. 러너는 UTC 라서 07:00 KST 실행이 전날 이름을 받는다.
+const tagDate = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
 writeFileSync(join(root, `data/feeds/${tagDate}.json`), JSON.stringify(out, null, 2), 'utf8');
 
 console.table(log);

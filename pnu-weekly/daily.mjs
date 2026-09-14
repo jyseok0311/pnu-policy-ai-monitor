@@ -5,7 +5,7 @@
 // 일간은 서술(LLM)을 두지 않는다. 집계와 기사 목록만으로 구성해 매일 돌려도 비용이 들지 않게 했다.
 // 해석이 필요한 판단은 주간 리포트가 맡는다.
 
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, cpSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { relevant, mentionsOf } from './src/filter.mjs';
@@ -133,6 +133,8 @@ const pageFor = (code) => (code === 'ko' ? 'daily.html' : 'daily.' + code + '.ht
 const weeklyFor = (code) => (code === 'ko' ? 'index.html' : 'index.' + code + '.html');
 const hrefs = Object.fromEntries(LANGS.map((L) => [L.code, pageFor(L.code)]));
 
+// 원본 자산(assets/)을 산출물 옆으로 복사한다. dist/ 는 git 에 없으므로 빌드가 매번 채워야 한다.
+cpSync(join(root, 'assets'), join(root, 'dist/assets'), { recursive: true });
 const css = readFileSync(join(root, 'src/styles.css'), 'utf8');
 const js = readFileSync(join(root, 'src/app.js'), 'utf8');
 const boot = readFileSync(join(root, 'src/theme-boot.js'), 'utf8');

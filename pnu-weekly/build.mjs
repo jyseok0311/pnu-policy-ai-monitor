@@ -1,6 +1,6 @@
 // 빌드: data/*.json + src/* → dist/index.html (자기완결 정적 파일 1장) · 언어판마다 한 장
 // 사용: node build.mjs
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, cpSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderPage } from './src/render.mjs';
@@ -49,6 +49,8 @@ const boot = read('src/theme-boot.js');
 const pageFor = (code) => (code === 'ko' ? 'index.html' : 'index.' + code + '.html');
 const hrefs = Object.fromEntries(LANGS.map((L) => [L.code, pageFor(L.code)]));
 
+// 원본 자산(assets/)을 산출물 옆으로 복사한다. dist/ 는 git 에 없으므로 빌드가 매번 채워야 한다.
+cpSync(join(root, 'assets'), join(root, 'dist/assets'), { recursive: true });
 mkdirSync(join(root, 'dist/pdf'), { recursive: true });
 
 // 언어판을 나눠 굽는다. 서술(narrative)은 data/narrative/<id>.<lang>.json 이 있으면 갈아끼우고,

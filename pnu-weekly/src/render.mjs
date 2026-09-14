@@ -100,8 +100,8 @@ function renderWeek(w, sources, T) {
 
   if (!w.complete) {
     return `<section class="week" id="${w.id}">${head}
-      <div class="stub-body"><span class="empty-face">${sanjini('question', 40)}</span><b>${esc(T.stubTitle)}</b><br>
-      ${T.stubBody}</div>
+      <div class="stub-body"><span class="empty-face">${sanjini(w.partial ? 'base' : 'question', 40)}</span><b>${esc(w.partial ? T.progressTitle : T.stubTitle)}</b><br>
+      ${w.partial ? esc(T.progressBody) : T.stubBody}</div>
     </section>`;
   }
 
@@ -290,7 +290,7 @@ export function renderPage({ meta, weeks, sources, css, js, boot, pdfPath, world
 
   const nav = weeks.map((w, i) => `
     <li><a class="${i === 0 ? 'on' : ''}" href="#${w.id}" data-nav="${w.id}">
-      <i class="dot d${w.tier}"></i>${esc(w.label)}${w.complete ? '' : `<span class="stub">${esc(T.stubBadge)}</span>`}
+      <i class="dot d${w.tier}"></i>${esc(w.label)}${w.complete ? '' : `<span class="stub${w.partial ? ' live' : ''}">${esc(w.partial ? T.progressBadge : T.stubBadge)}</span>`}
     </a></li>`).join('');
 
   const mapData = {

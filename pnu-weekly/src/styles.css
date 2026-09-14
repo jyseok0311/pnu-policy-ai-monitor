@@ -547,3 +547,5 @@ h2.sec .sec-face{margin-right:4px}
 @media print{ .net.dim .ed,.net.dim .nd{stroke-opacity:.28;opacity:1} .netbox{overflow:visible} }
 /* 네트워크에서 고른 키워드가 든 제목 */
 .kw-on{background:var(--hit);border-radius:3px;box-shadow:0 0 0 3px var(--hit)}
+/* 진행 중 주차 배지 — 미생성(회색)과 구분한다 */
+.side li a .stub.live{color:#1f6b42;border-color:#bfdccb;background:var(--live-bg)}

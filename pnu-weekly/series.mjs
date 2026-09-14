@@ -23,10 +23,15 @@ const fmt = (iso) => iso.replace(/-/g, '.');
 
 // ── 수집본 → 주차 통계
 const files = readdirSync(join(root, 'data/collected')).filter((f) => f.endsWith('.json')).sort();
+const addDays = (iso, n) => new Date(Date.parse(iso) + n * 864e5).toISOString().slice(0, 10);
 const stats = files.map((f) => {
   const raw = J(`data/collected/${f}`);
-  const to = raw.to || raw.collectedAt.slice(0, 10);
-  const from = raw.from || new Date(Date.parse(to) - 7 * 864e5).toISOString().slice(0, 10);
+  // 진행 중 주차(to 가 비어 있음)의 끝은 '그 주가 닫히는 금요일'로 잡는다.
+  // 수집한 날로 잡으면 토·일에 돌린 실행분이 ISO 주차 번호상 지난 주차와 같은 id 를 얻어
+  // 완성 주차를 덮어쓴다(금~일이 같은 ISO 주에 들어간다).
+  const partial = !raw.to && !!raw.from;
+  const to = raw.to || (raw.from ? addDays(raw.from, 7) : raw.collectedAt.slice(0, 10));
+  const from = raw.from || addDays(to, -7);
 
   // 비교 가능성: 과거 주차는 구글 뉴스로만 수집되므로 전 주차를 구글 소스로 통일한다
   // 주차 비교 지표는 구글 뉴스 '국내' 소스로 통일한다(과거 주차엔 해외 수집분이 없다).
@@ -36,8 +41,11 @@ const stats = files.map((f) => {
   const p = (l) => +((items.filter((x) => x.level === l).length / n) * 100).toFixed(1);
   const crisis = p('crisis'), warning = p('warning');
   const d = new Date(Date.parse(to));
+  // 진행 중 주차가 실제로 담고 있는 마지막 기사 날짜 — 화면에 '어디까지 모였는지' 적기 위해서다
+  const dates = items.map((x) => x.date).filter(Boolean).sort();
   return {
-    file: f, from, to, week: isoWeek(d),
+    file: f, from, to, partial, upto: dates[dates.length - 1] || from, days: new Set(dates).size,
+    week: isoWeek(d),
     id: 'w' + isoWeek(d),
     label: `${fmt(to)} (Week ${isoWeek(d)})`,
     range: `${fmt(from)}~${fmt(to)}`,
@@ -52,7 +60,9 @@ const stats = files.map((f) => {
 // ── 임계값 재설정 (중앙값 + MAD)
 // 사분위로 뽑았더니 표본이 8주뿐이라 Tier4(6.9%)와 Tier3(6.7%)이 붙어 구분이 무의미해졌다.
 // 중앙값에서 MAD(중앙절대편차) 간격으로 띄워 밴드가 항상 분리되도록 한다.
-const risks = stats.map((s) => s.risk).sort((a, b) => a - b);
+// 임계값은 '완결된 주차'로만 잡는다. 3일치만 모인 진행 중 주차를 섞으면
+// 표본 크기가 다른 값이 분포에 끼어들어 밴드가 흔들린다.
+const risks = stats.filter((s) => !s.partial).map((s) => s.risk).sort((a, b) => a - b);
 const med = (a) => { const b = [...a].sort((x, y) => x - y), m = b.length >> 1; return b.length % 2 ? b[m] : (b[m - 1] + b[m]) / 2; };
 const M = med(risks);
 const MAD = Math.max(med(risks.map((r) => Math.abs(r - M))), 1.0);  // 최소 간격 1.0%p 보장
@@ -102,8 +112,10 @@ for (const s of stats) {
     weeks.push({
       id: s.id, label: s.label, date: s.to, range: s.range,
       tier, tierName: WORD[tier], state: STATE[tier],
-      complete: false, live: true,
-      sourceNote: `구글 뉴스 소급 수집 · 관련 기사 ${s.total}건`,
+      complete: false, live: true, partial: s.partial,
+      sourceNote: s.partial
+        ? `진행 중 — ${fmt(s.from)}부터 ${fmt(s.upto)}까지 ${s.days}일치 수집 · 관련 기사 ${s.total}건 (주차 마감 후 본문 생성)`
+        : `구글 뉴스 소급 수집 · 관련 기사 ${s.total}건`,
       signal: { crisis: s.crisis, warning: s.warning, total: s.total, trend }
     });
   }

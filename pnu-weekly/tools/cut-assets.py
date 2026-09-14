@@ -4,7 +4,7 @@ import os, sys
 from PIL import Image
 
 SRC = sys.argv[1]          # 프로젝트 루트
-OUT = os.path.join(SRC, 'pnu-weekly', 'dist', 'assets', 'sanjini')
+OUT = os.path.join(SRC, 'pnu-weekly', 'assets', 'sanjini')
 os.makedirs(OUT, exist_ok=True)
 CH = os.path.join(SRC, '산지니 케릭터')
 
@@ -87,7 +87,7 @@ if os.path.exists(sym):
     cv = Image.new('RGBA', (side, side), (0, 0, 0, 0))
     cv.paste(im, ((side - im.size[0]) // 2, (side - im.size[1]) // 2), im)
     cv.resize((256, 256), Image.LANCZOS).save(
-        os.path.join(SRC, 'pnu-weekly', 'dist', 'assets', 'pnu-symbol.png'))
+        os.path.join(SRC, 'pnu-weekly', 'assets', 'pnu-symbol.png'))
     print('  상징 pnu-symbol.png')
 
 print('완료 →', OUT)

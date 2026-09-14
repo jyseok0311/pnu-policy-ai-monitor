@@ -6,9 +6,9 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '../..');
-const ASSET_DIR = 'dist/assets/sanjini';
+const ASSET_DIR = 'assets/sanjini';   // 원본 자산. build 가 dist/assets 로 복사한다
 
-/* 실제 산지니 이미지가 dist/assets/sanjini/<mood>.png 에 있으면 그걸 쓰고,
+/* 실제 산지니 이미지가 assets/sanjini/<mood>.png 에 있으면 그걸 쓰고,
    없으면 아래 SVG 임시본으로 대체한다. 파일을 넣는 순간 자동으로 바뀐다.
    (아래 SVG 는 배치·크기를 검토하기 위한 것이지 실제 캐릭터가 아니다) */
 export function sanjini(mood = 'base', size = 40) {

@@ -28,6 +28,9 @@ const ko = {
   langLabel: '언어 선택',
   themeLabel: '화면 테마', themeAuto: '자동', themeLight: '밝게', themeDark: '어둡게',
   themeAutoTip: '기기(OS)의 밝게/어둡게 설정을 따릅니다', stubBadge: '미생성',
+  progressBadge: '진행 중',
+  progressTitle: '이번 주차는 아직 진행 중입니다.',
+  progressBody: '매일 아침 기사가 자동으로 쌓이고 있습니다. 위의 신호 수치는 지금까지 모인 기사로 계산한 잠정값이며, 주차가 금요일에 마감되면 상황요약·리스크 지도·전파경로가 이 자리에 채워집니다.',
 
   trendTitle: (n) => `위험신호 비중 추이 (위기+경고, 최근 ${n}주)`,
   trendCap: '막대를 클릭하면 해당 주차로 이동합니다. 외부 통계가 아니라 <b>수집 기사 분류 결과에서 파이프라인이 직접 산출</b>한 값입니다. 주차 간 비교가 공정하도록 <b>구글 뉴스 소스로 통일</b>해 계산했습니다(과거 주차는 언론사 RSS 소급이 불가).',
@@ -108,6 +111,9 @@ const en = {
   langLabel: 'Language',
   themeLabel: 'Colour theme', themeAuto: 'Auto', themeLight: 'Light', themeDark: 'Dark',
   themeAutoTip: 'Follows your device (OS) light/dark setting', stubBadge: 'not written',
+  progressBadge: 'in progress',
+  progressTitle: 'This week is still in progress.',
+  progressBody: 'Articles are collected automatically every morning. The signal figures above are provisional, computed from what has been gathered so far; once the week closes on Friday the summary, risk map and transmission paths are written into this space.',
 
   trendTitle: (n) => `Risk signal share (Crisis + Warning), last ${n} weeks`,
   trendCap: 'Click a bar to jump to that week. These are <b>not external statistics</b> — the pipeline computes them from its own classification of collected articles. To keep weeks comparable, figures use <b>Google News sources only</b> (press RSS cannot be backfilled for past weeks).',
