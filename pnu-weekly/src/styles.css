@@ -518,7 +518,9 @@ h2.sec .sec-face{margin-right:4px}
   .top{position:sticky;top:0;z-index:600;box-shadow:0 2px 10px rgba(10,18,34,.18)}
   .top.min{padding:8px 14px;gap:0}
   .top.min .brand{display:none}          /* 제목·소속·로고는 흘려보낸다 */
+  .top.min .acts .btn{display:none}      /* PDF·링크 버튼도 흘려보낸다 */
   .top.min .acts{align-self:stretch;width:100%}
+  .top.min .pdf-sel{flex:1 1 100%;width:100%;max-width:none}
 }
 @media (max-width:640px){
   .top{padding:12px 14px;gap:9px;transition:padding .16s ease}
