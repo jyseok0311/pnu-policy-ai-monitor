@@ -286,7 +286,6 @@ const CARDS = [
 ];
 
 const css = readFileSync(join(root, 'src/styles.css'), 'utf8');
-const boot = readFileSync(join(root, 'src/theme-boot.js'), 'utf8');
 
 const html = `<!DOCTYPE html>
 <html lang="ko">
@@ -294,7 +293,6 @@ const html = `<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>키워드·네트워크 시각화 시안 | PNU</title>
-<script>${boot}</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>${css}
 .lab{max-width:1120px;margin:0 auto}
@@ -326,8 +324,6 @@ const html = `<!DOCTYPE html>
 .kchip.down{background:#e9f4ee;color:#1f6b42}
 .kchip.flat{background:var(--soft);color:var(--mute)}
 .kchip.new{background:var(--head-bg);color:var(--head-ink)}
-:root[data-theme="dark"] .kchip.up{background:#3a1e1c;color:#e88a80}
-:root[data-theme="dark"] .kchip.down{background:#16281f;color:#7fd0a4}
 
 /* 시안 B */
 .netbox{overflow-x:auto}
@@ -366,11 +362,6 @@ const html = `<!DOCTYPE html>
   </div>
   <div class="acts">
     <a class="btn" href="index.html">‹ 주간 리포트</a>
-    <div class="ctl" data-theme-ctl role="group" aria-label="화면 테마">
-      <button type="button" data-theme="auto" aria-pressed="false">자동</button>
-      <button type="button" data-theme="light" aria-pressed="false">밝게</button>
-      <button type="button" data-theme="dark" aria-pressed="false">어둡게</button>
-    </div>
   </div>
 </header>
 <main class="main lab">
@@ -403,17 +394,6 @@ ${CARDS.map((c) => `
 </div>
 <div id="toast"></div>
 <script>
-${boot.includes('__pnuTheme') ? '' : ''}
-// 테마 버튼
-(function () {
-  var box = document.querySelector('[data-theme-ctl]');
-  if (!box || !window.__pnuTheme) return;
-  var btns = [].slice.call(box.querySelectorAll('button'));
-  function paint() { btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.theme === window.__pnuTheme.pref)); }); }
-  btns.forEach(function (b) { b.addEventListener('click', function () { window.__pnuTheme.apply(b.dataset.theme); paint(); }); });
-  paint();
-})();
-
 // 시안 B — 원에 올리면 이웃만 남긴다
 (function () {
   var svg = document.querySelector('.net');

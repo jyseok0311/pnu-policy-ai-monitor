@@ -4,7 +4,6 @@ import { readFileSync, writeFileSync, mkdirSync, cpSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderPage } from './src/render.mjs';
-import { LANGS } from './src/i18n.mjs';
 
 const root = dirname(fileURLToPath(import.meta.url));
 const read = (p) => readFileSync(join(root, p), 'utf8');
@@ -43,34 +42,14 @@ const joongang = readOpt('data/joongang-ranking.json');
 
 const css = read('src/styles.css');
 const js = read('src/app.js');
-const boot = read('src/theme-boot.js');
-
-// 언어별 파일명 — ko 는 index.html, 나머지는 index.<code>.html
-const pageFor = (code) => (code === 'ko' ? 'index.html' : 'index.' + code + '.html');
-const hrefs = Object.fromEntries(LANGS.map((L) => [L.code, pageFor(L.code)]));
 
 // 원본 자산(assets/)을 산출물 옆으로 복사한다. dist/ 는 git 에 없으므로 빌드가 매번 채워야 한다.
 cpSync(join(root, 'assets'), join(root, 'dist/assets'), { recursive: true });
 mkdirSync(join(root, 'dist/pdf'), { recursive: true });
 
-// 언어판을 나눠 굽는다. 서술(narrative)은 data/narrative/<id>.<lang>.json 이 있으면 갈아끼우고,
-// 없으면 한국어 본문을 그대로 쓴다 — i18n 의 narrNotice 가 그 사실을 화면에 알린다.
-for (const L of LANGS) {
-  let translated = 0;
-  const localized = L.code === 'ko' ? weeks : weeks.map((w) => {
-    const over = readOpt('data/narrative/' + w.id + '.' + L.code + '.json');
-    if (over) translated++;
-    return over ? { ...w, ...over } : w;
-  });
-  const html = renderPage({
-    meta, weeks: localized, sources, world, joongang,
-    css, js, boot, pdfPath, lang: L.code, hrefs
-  });
-  writeFileSync(join(root, 'dist/' + pageFor(L.code)), html, 'utf8');
-  const kb = (Buffer.byteLength(html) / 1024).toFixed(0);
-  const note = L.code === 'ko' ? '' : `  본문 번역 ${translated}/${weeks.length}주차`;
-  console.log(`✓ dist/${pageFor(L.code)}  ${kb} KB  [${L.label}]${note}`);
-}
+const html = renderPage({ meta, weeks, sources, world, joongang, css, js, pdfPath });
+writeFileSync(join(root, 'dist/index.html'), html, 'utf8');
+console.log(`✓ dist/index.html  ${(Buffer.byteLength(html) / 1024).toFixed(0)} KB`);
 
 const done = weeks.filter((w) => w.complete).length;
 if (world) console.log(`  세계 랭킹 ${world.stats.located}개교 · ${world.stats.countries}개국 (THE ${world.panel.the.join('/')}, QS ${world.panel.qs.join('/')})`);

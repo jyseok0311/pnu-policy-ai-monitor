@@ -10,8 +10,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { relevant, mentionsOf } from './src/filter.mjs';
 import { sanjini } from './src/browser/sanjini.svg.js';
-import { t as pack, LANGS } from './src/i18n.mjs';
-import { headerControls } from './src/render.mjs';
+import { T } from './src/strings.mjs';
 const TIER_MOOD = { 1: 'happy', 2: 'base', 3: 'tense', 4: 'angry' };
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -128,22 +127,14 @@ function renderDay(d, idx, T) {
 </section>`;
 }
 
-// 언어별 파일명 — ko 는 daily.html, 나머지는 daily.<code>.html
-const pageFor = (code) => (code === 'ko' ? 'daily.html' : 'daily.' + code + '.html');
-const weeklyFor = (code) => (code === 'ko' ? 'index.html' : 'index.' + code + '.html');
-const hrefs = Object.fromEntries(LANGS.map((L) => [L.code, pageFor(L.code)]));
-
 // 원본 자산(assets/)을 산출물 옆으로 복사한다. dist/ 는 git 에 없으므로 빌드가 매번 채워야 한다.
 cpSync(join(root, 'assets'), join(root, 'dist/assets'), { recursive: true });
 const css = readFileSync(join(root, 'src/styles.css'), 'utf8');
 const js = readFileSync(join(root, 'src/app.js'), 'utf8');
-const boot = readFileSync(join(root, 'src/theme-boot.js'), 'utf8');
 
-function renderDaily(lang) {
-  const T = pack(lang), D = T.daily;
-  // 언어별 meta 문구 — <field>En 이 있으면 쓰고, 없으면 한국어 원문을 그대로 둔다
-  const M = (k) => (lang !== 'ko' && meta[k + lang.replace(/^(.)/, (c) => c.toUpperCase())]) || meta[k];
-  const title = M('title') + ' · ' + D.suffix;
+function renderDaily() {
+  const D = T.daily;
+  const title = meta.title + ' · ' + D.suffix;
 
   const nav = days.map((d, i) => {
     const s = stat(all.filter((x) => x.date === d));
@@ -153,12 +144,11 @@ function renderDaily(lang) {
   }).join('');
 
   return `<!DOCTYPE html>
-<html lang="${T.htmlLang}">
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)} | PNU</title>
-<script>${boot}</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>${css}
 .artlist{list-style:none;margin:0;padding:0}
@@ -172,7 +162,7 @@ function renderDaily(lang) {
 <body>
 <div class="shell">
 <aside class="side">
-  <a class="go" href="${weeklyFor(lang)}">${esc(T.navWeekly)}</a>
+  <a class="go" href="index.html">${esc(T.navWeekly)}</a>
   <ul>${nav}</ul>
 </aside>
 <div>
@@ -187,16 +177,15 @@ function renderDaily(lang) {
       <option value="${esc(pdfPath)}">${esc(T.pdfAllDays(days.length))}</option>
       ${days.map((d) => `<option value="${esc(dailyPdf(d))}">${d.replace(/-/g, '.')} (${esc(wd(d, T))})</option>`).join('')}
     </select>
-    <a class="btn" href="${weeklyFor(lang)}">${esc(T.weeklyLink)}</a>
+    <a class="btn" href="index.html">${esc(T.weeklyLink)}</a>
     <a class="btn ghost" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf>${esc(T.pdfDownload)}</a>
-    ${headerControls(T, lang, hrefs)}
   </div>
 </header>
 <main class="main">
 <p class="notice"><span class="sec-face notice-face">${sanjini('grad', 40)}</span>${D.notice}
 <span class="sample">${esc(D.thresholdNote(DTH, MIN_N))}</span></p>
 ${days.map((d, i) => renderDay(d, i, T)).join('\n')}
-<p class="foot">${esc(M('foot'))}<br>${esc(T.genAt)}: ${new Date().toISOString().slice(0, 19).replace('T', ' ')} · data/collected/</p>
+<p class="foot">${esc(meta.foot)}<br>${esc(T.genAt)}: ${new Date().toISOString().slice(0, 19).replace('T', ' ')} · data/collected/</p>
 </main>
 </div>
 </div>
@@ -206,11 +195,9 @@ ${days.map((d, i) => renderDay(d, i, T)).join('\n')}
 </html>`;
 }
 
-for (const L of LANGS) {
-  const html = renderDaily(L.code);
-  writeFileSync(join(root, 'dist/' + pageFor(L.code)), html, 'utf8');
-  console.log(`✓ dist/${pageFor(L.code)}  ${(Buffer.byteLength(html) / 1024).toFixed(0)} KB  [${L.label}]`);
-}
+const html = renderDaily();
+writeFileSync(join(root, 'dist/daily.html'), html, 'utf8');
+console.log(`✓ dist/daily.html  ${(Buffer.byteLength(html) / 1024).toFixed(0)} KB`);
 console.log(`  ${days.length}일치 · 총 ${all.length}건`);
 console.log(`  일간 임계값 T4≥${DTH.t4}% T3≥${DTH.t3}% T2≥${DTH.t2}% (표본 ${MIN_N}건 미만은 미산정)`);
 days.forEach((d) => { const s = stat(all.filter((x) => x.date === d)); console.log(`  ${d}  ${String(s.n).padStart(3)}건  위험신호 ${String(s.risk).padStart(5)}%  ${s.tier ? 'T' + s.tier : '—'}`); });

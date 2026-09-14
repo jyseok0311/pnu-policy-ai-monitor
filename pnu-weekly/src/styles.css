@@ -3,12 +3,11 @@
   --bg:#eef0f3; --paper:#fff; --ink:#1f2937; --mute:#6b7280; --line:#d9dee6;
   --crisis:#b3261e; --warn:#d9822b; --watch:#c9a227; --ok:#2f8f5b;
   --thead:#e3e9f2;
-  /* 다크 모드 대응으로 뽑아낸 토큰 — 밝은 테마 기본값.
-     이 목록과 :root[data-theme="dark"] 의 목록은 같은 키를 가져야 한다. */
+  /* 표면·잉크 토큰 — 하드코딩 색을 한 곳에 모아 둔 것. 컴포넌트 규칙은 이 이름만 쓴다. */
   --side-bg:#f7f8fa; --soft:#fafbfc; --pop:#fff; --pop-ink:#1a2b4c; --pop-90:rgba(255,255,255,.94);
   --btn-bg:#fff; --btn-ink:#1a2b4c; --ink-2:#374151; --ink-3:#4b5563; --faint:#9ca3af;
   --chip-bg:#eef1f5; --map-bg:#dfe3e9; --halo:#fff; --hit:#fff8e1;
-  --live-bg:#f2f8f4; --live-line:#bfdccb; --tile:none;
+  --live-bg:#f2f8f4; --live-line:#bfdccb;
   --head-bg:#1a2b4c; --head-bg2:#243a63; --head-ink:#fff;
   color-scheme:light;
 }
@@ -451,82 +450,6 @@ h2.sec .sec-face{margin-right:4px}
   background:#fff;border-radius:50%;padding:2px;box-sizing:border-box}
 @media (max-width:640px){ .logo-img{width:40px;height:40px} }
 @media print{ .logo-img{width:40px;height:40px} }
-/* ══════════════ 다크 모드 ══════════════
-   토큰만 갈아끼운다. 컴포넌트 규칙은 손대지 않는다.
-   data-theme 속성이 없으면 OS 설정(prefers-color-scheme)을 따른다 = '자동'.
-   두 블록의 값은 반드시 같아야 한다. 한쪽만 고치면 '자동'과 '어둡게'가 달라진다. */
-:root[data-theme="dark"]{
-  --navy:#9ec2f0;              /* 다크에서 --navy 는 배경이 아니라 제목 강조색이다 */
-  --navy-2:#b5d2f7; --sky:#79aef2; --sky-l:#1e2c42;
-  --bg:#0f141c; --paper:#161d27; --ink:#e6eaf1; --mute:#99a3b2; --line:#2a3442;
-  --thead:#1e2836;
-  --crisis:#e06054; --warn:#e3a054; --watch:#d6bb48; --ok:#4fb383;
-  --side-bg:#121822; --soft:#1a2230; --pop:#1c2431; --pop-ink:#e6eaf1;
-  --pop-90:rgba(28,36,49,.95);
-  --btn-bg:#e8eef7; --btn-ink:#14203a;
-  --ink-2:#c3cbd7; --ink-3:#aeb7c4; --faint:#7b8695;
-  --chip-bg:#232d3c; --map-bg:#0c1017; --halo:#0f141c; --hit:#3a3320;
-  --live-bg:#16281f; --live-line:#2c5240;
-  --head-bg:#0c1220; --head-bg2:#16213a; --head-ink:#e9eef6;
-  --tile:invert(1) hue-rotate(180deg) brightness(.86) contrast(.92) saturate(.8);
-  color-scheme:dark;
-}
-
-/* '자동'은 CSS 가 아니라 부트 스크립트가 결정한다.
-   저장값이 auto 면 matchMedia 결과를 보고 data-theme 에 light/dark 를 직접 박는다.
-   그래서 다크 토큰 블록은 위 하나뿐이다 — 두 벌을 어긋나게 관리할 일이 없다. */
-
-/* OSM 타일은 밝게 만들어져 있다. 다크에서는 반전시켜야 지도만 흰 판으로 뜨지 않는다. */
-.leaflet-tile-pane{filter:var(--tile)}
-
-/* 다크에서 흰 배지류는 대비가 지나치다. 잉크만 낮춘다. */
-:root[data-theme="dark"] .sample,
-:root[data-theme="dark"] .warn-src,
-:root[data-theme="dark"] .ref.hit{background:#3a3320;color:#f0d98a;border-color:#5c5030}
-:root[data-theme="dark"] .f-week{background:#16281f;color:#7fd0a4;border-color:#2c5240}
-:root[data-theme="dark"] .f-day{background:#16281f;color:#7fd0a4;border-color:#2c5240}
-:root[data-theme="dark"] .f-month{background:#1b2740;color:#93b6ec;border-color:#2f4468}
-:root[data-theme="dark"] .f-slow{background:#232d3c;color:#9aa4b2;border-color:#333e4e}
-:root[data-theme="dark"] .live-badge{background:#2c5240;color:#d6f2e2}
-:root[data-theme="dark"] .src-ok{color:#7fd0a4}
-:root[data-theme="dark"] .logo-img{background:#e9eef6}
-:root[data-theme="dark"] .sanjini{filter:drop-shadow(0 0 1px rgba(255,255,255,.25))}
-:root[data-theme="dark"] .spark text{fill:var(--mute)}
-:root[data-theme="dark"] .spark circle{fill:var(--paper)}
-
-/* 인쇄는 언제나 밝은 테마다. PDF 를 검은 바탕으로 굽지 않는다. */
-@media print{
-  :root,:root[data-theme="dark"]{
-    --navy:#1a2b4c; --navy-2:#243a63; --sky:#3b7dd8; --sky-l:#e6eef9;
-    --bg:#fff; --paper:#fff; --ink:#1f2937; --mute:#6b7280; --line:#d9dee6;
-    --thead:#e3e9f2; --crisis:#b3261e; --warn:#d9822b; --watch:#c9a227; --ok:#2f8f5b;
-    --side-bg:#f7f8fa; --soft:#fafbfc; --pop:#fff; --pop-ink:#1a2b4c;
-    --btn-bg:#fff; --btn-ink:#1a2b4c; --ink-2:#374151; --ink-3:#4b5563; --faint:#9ca3af;
-    --chip-bg:#eef1f5; --map-bg:#dfe3e9; --halo:#fff; --hit:#fff8e1;
-    --live-bg:#f2f8f4; --live-line:#bfdccb;
-    --head-bg:#1a2b4c; --head-bg2:#243a63; --head-ink:#fff;
-    --tile:none; color-scheme:light;
-  }
-}
-
-/* ── 헤더 컨트롤: 언어 / 테마 ───────────────────────────── */
-.ctl{display:inline-flex;align-items:center;background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.28);border-radius:6px;overflow:hidden;flex:none}
-.ctl button{background:transparent;border:0;color:var(--head-ink);font-family:inherit;
-  font-size:11.5px;font-weight:700;padding:6px 9px;cursor:pointer;line-height:1.5;opacity:.72}
-.ctl button+button{border-left:1px solid rgba(255,255,255,.22)}
-.ctl button:hover{background:rgba(255,255,255,.14);opacity:1}
-.ctl button[aria-pressed="true"]{background:#fff;color:#14203a;opacity:1}
-.lang-sel{background:var(--btn-bg);color:var(--btn-ink);border:0;border-radius:6px;
-  padding:7px 9px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer}
-.lang-sel:focus,.ctl button:focus-visible{outline:2px solid var(--sky);outline-offset:1px}
-@media print{ .ctl,.lang-sel{display:none !important} }
-@media (max-width:640px){
-  .ctl button{padding:7px 8px;font-size:11px}
-  .lang-sel{padding:8px 7px;font-size:11.5px}
-}
-:root[data-theme="dark"] .spark line{stroke:#2a3442}
-
 /* ══════════════ 주간 키워드 공기 네트워크 ══════════════ */
 .netbox{overflow-x:auto;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:6px 4px}
 .net{display:block;width:100%;min-width:600px;height:auto}

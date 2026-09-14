@@ -2,13 +2,11 @@
 // 파이프라인의 마지막 단계: 수집·분류·집계·LLM 서술이 끝난 결과물(weeks.json)을 HTML 한 장으로 굳힌다.
 // 여기서는 어떤 수치도 만들어내지 않는다. 오직 데이터에 있는 값만 출력한다.
 //
-// 언어: UI 문자열만 src/i18n.mjs 에서 가져온다.
-//   기사 제목·언론사명은 번역하지 않는다 — 원문 그대로가 출처다.
-//   서술(summary/changes/…)은 data/narrative/<id>.<lang>.json 이 있으면 그 언어로, 없으면 한국어 그대로 둔다.
+// UI 문자열(라벨·범례·안내문)은 src/strings.mjs 한 곳에서 가져온다.
 
 import { sanjini } from './browser/sanjini.svg.js';
 import { networkSvg, FIELD_COLOR, riskColor } from './network.mjs';
-import { t as pack, LANGS } from './i18n.mjs';
+import { T } from './strings.mjs';
 
 // 등급 → 산지니 표정. 숫자를 읽기 전에 상태가 전달되게 한다(등급 색의 보조 단서).
 const TIER_MOOD = { 1: 'happy', 2: 'base', 3: 'tense', 4: 'angry' };
@@ -127,7 +125,7 @@ function renderWeek(w, sources, T) {
   <h2 class="sec">🕸 ${esc(T.secNet)} <small>${esc(T.netSub(Math.min(w.network.nodes.length, 22), w.network.links.length, num(w.network.basis)))}</small></h2>
   <div class="netbox" data-net>${networkSvg(w.network, { esc, id: w.id, label: T.secNet })}</div>
   <div class="legend">
-    ${Object.entries(FIELD_COLOR).map(([f, c]) => `<span class="k" style="background:${c}"></span>${esc((T.fieldWord && T.fieldWord[f]) || f)}`).join(' ')}
+    ${Object.entries(FIELD_COLOR).map(([f, c]) => `<span class="k" style="background:${c}"></span>${esc(f)}`).join(' ')}
     <br><span class="k ring" style="border-color:${riskColor(0)}"></span>${esc(T.netRisk)} 0–8%
     <span class="k ring" style="border-color:${riskColor(10)}"></span>8–20%
     <span class="k ring" style="border-color:${riskColor(25)}"></span>20–40%
@@ -181,15 +179,15 @@ function renderWeek(w, sources, T) {
   <div class="kpi-group"><h4>${esc(g.group)}</h4><div class="kpis">${g.items.map(k => {
     const src = sources[k.src] || {};
     const f = F[k.freq] || F.year;
-    const tip = [(T.htmlLang === 'en' ? 'Source: ' : '원자료: ') + (src.name || '—'), src.note].filter(Boolean).join('\n');
+    const tip = ['원자료: ' + (src.name || '—'), src.note].filter(Boolean).join('\n');
     const nameHtml = src.url
       ? `<a href="${esc(src.url)}" target="_blank" rel="noopener" title="${esc(tip)}">${esc(k.name)}</a>`
       : `<span title="${esc(tip)}">${esc(k.name)}</span>`;
     // 출처 상태 표시. 2차 출처(via)면 실제로 값을 가져온 문서로 바로 갈 수 있게 링크로 만든다.
     const dead = src.status === 'via' && src.viaUrl
-      ? `<a class="warn-src via" href="${esc(src.viaUrl)}" target="_blank" rel="noopener" title="${esc(src.note || '')}">⚠ ${T.htmlLang === 'en' ? 'secondary source' : '2차 출처'}: ${esc(src.viaName || '')} ↗</a>`
+      ? `<a class="warn-src via" href="${esc(src.viaUrl)}" target="_blank" rel="noopener" title="${esc(src.note || '')}">⚠ 2차 출처: ${esc(src.viaName || '')} ↗</a>`
       : src.status === 'dead'
-        ? `<span class="warn-src" title="${esc(src.note || '')}">⚠ ${T.htmlLang === 'en' ? 'source needs review' : '출처 확인필요'}</span>`
+        ? `<span class="warn-src" title="${esc(src.note || '')}">⚠ 출처 확인필요</span>`
         : '';
     const prof = src.profile ? ` <a class="prof" href="${esc(src.profile)}" target="_blank" rel="noopener" title="PNU">↗</a>` : '';
     return `<div class="kpi${k.freq === 'week' ? ' live' : ''}">
@@ -212,7 +210,7 @@ function renderWeek(w, sources, T) {
     <thead><tr><th>${esc(T.thSector)}</th><th>${esc(T.thDir)}</th><th>${esc(T.thEarly)}</th><th>${esc(T.thMid)}</th><th>${esc(T.thLate)}</th><th>${esc(T.thImpact)}</th><th>${esc(T.thChange)}</th></tr></thead>
     <tbody>${w.sectors.map(x => `<tr>
       <td>${esc(x.name)}</td>
-      <td class="dir">${x.d === 'pos' ? '▲' : x.d === 'neg' ? '▼' : '◆'} ${esc(T.htmlLang === 'en' ? (T.dirWord[x.d] || x.dir) : x.dir)}</td>
+      <td class="dir">${x.d === 'pos' ? '▲' : x.d === 'neg' ? '▼' : '◆'} ${esc(x.dir)}</td>
       ${x.lv.map(l => `<td><span class="lv ${l}">${esc(T.lvWord[l])}</span></td>`).join('')}
       <td>${esc(x.desc)}</td>
       <td>${x.chg === 'up' ? '🔺' : x.chg === 'down' ? '🔻' : '—'}</td>
@@ -273,20 +271,7 @@ function renderWeek(w, sources, T) {
 // PDF 파일명 규칙 — pdf.mjs 가 굽는 이름과 반드시 같아야 한다
 const pdfName = (date) => `PNU_Univ_Policy_AI_Weekly(${date.replace(/-/g, '.')}).pdf`;
 
-// 헤더의 언어 / 테마 컨트롤. daily.mjs 도 같은 마크업을 쓴다.
-export function headerControls(T, lang, hrefs) {
-  const opts = LANGS.map((L) => `<option value="${esc(hrefs[L.code] || '')}"${L.code === lang ? ' selected' : ''}>${esc(L.label)}</option>`).join('');
-  return `
-    <select class="lang-sel" data-lang-select aria-label="${esc(T.langLabel)}">${opts}</select>
-    <div class="ctl" data-theme-ctl role="group" aria-label="${esc(T.themeLabel)}">
-      <button type="button" data-theme="auto"  aria-pressed="false" title="${esc(T.themeAutoTip)}">${esc(T.themeAuto)}</button>
-      <button type="button" data-theme="light" aria-pressed="false">${esc(T.themeLight)}</button>
-      <button type="button" data-theme="dark"  aria-pressed="false">${esc(T.themeDark)}</button>
-    </div>`;
-}
-
-export function renderPage({ meta, weeks, sources, css, js, boot, pdfPath, world, joongang, lang = 'ko', hrefs = {} }) {
-  const T = pack(lang);
+export function renderPage({ meta, weeks, sources, css, js, pdfPath, world, joongang }) {
 
   const nav = weeks.map((w, i) => `
     <li><a class="${i === 0 ? 'on' : ''}" href="#${w.id}" data-nav="${w.id}">
@@ -308,9 +293,7 @@ export function renderPage({ meta, weeks, sources, css, js, boot, pdfPath, world
     weeks: Object.fromEntries(weeks.filter(w => w.complete).map(w => [w.id, w.map]))
   };
 
-  // 언어별 meta 문구 — <field>En 이 있으면 쓰고, 없으면 한국어 원문을 그대로 둔다
-  const M = (k) => (lang !== 'ko' && meta[k + lang.replace(/^(.)/, (c) => c.toUpperCase())]) || meta[k];
-  const title = M('title');
+  const title = meta.title;
 
   // 네트워크 클릭 토스트 — 키워드마다 문구를 미리 만들어 둔다.
   // 조사(이/가·은/는) 규칙을 클라이언트에 한 벌 더 두지 않기 위해서다. {n} 만 런타임에 채운다.
@@ -323,12 +306,11 @@ export function renderPage({ meta, weeks, sources, css, js, boot, pdfPath, world
   }
 
   return `<!DOCTYPE html>
-<html lang="${T.htmlLang}">
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)} | PNU</title>
-<script>${boot}</script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>${css}</style>
@@ -336,7 +318,7 @@ export function renderPage({ meta, weeks, sources, css, js, boot, pdfPath, world
 <body>
 <div class="shell">
 <aside class="side">
-  <a class="go" href="${lang === 'ko' ? 'daily.html' : 'daily.' + lang + '.html'}">${esc(T.navDaily)}</a>
+  <a class="go" href="daily.html">${esc(T.navDaily)}</a>
   <ul>${nav}</ul>
 </aside>
 
@@ -355,13 +337,11 @@ export function renderPage({ meta, weeks, sources, css, js, boot, pdfPath, world
       ${weeks.filter(w => w.complete).map(w => `<option value="pdf/${esc(pdfName(w.date))}">${esc(w.label)}</option>`).join('')}
     </select>
     <a class="btn" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf>${esc(T.pdfDownload)}</a>
-    ${headerControls(T, lang, hrefs)}
   </div>
 </header>
 
 <main class="main">
-<p class="notice"><span class="sec-face notice-face">${sanjini('grad', 40)}</span>${esc(M('notice'))} <span class="sample">${esc(M('sampleBadge'))}</span></p>
-${T.narrNotice ? `<p class="note-line lang-note">${esc(T.narrNotice)}</p>` : ''}
+<p class="notice"><span class="sec-face notice-face">${sanjini('grad', 40)}</span>${esc(meta.notice)} <span class="sample">${esc(meta.sampleBadge)}</span></p>
 
 <details class="trend" open>
   <summary><h3>${esc(T.trendTitle(weeks.length))}</h3></summary>
@@ -371,7 +351,7 @@ ${T.narrNotice ? `<p class="note-line lang-note">${esc(T.narrNotice)}</p>` : ''}
 
 ${weeks.map(w => renderWeek(w, sources, T)).join('\n')}
 
-<p class="foot">${esc(M('foot'))}<br>${esc(T.genAt)}: ${new Date().toISOString().slice(0, 19).replace('T', ' ')} · data/weeks.json</p>
+<p class="foot">${esc(meta.foot)}<br>${esc(T.genAt)}: ${new Date().toISOString().slice(0, 19).replace('T', ' ')} · data/weeks.json</p>
 </main>
 </div>
 </div>
