@@ -14,6 +14,8 @@ const ko = {
   locale: 'ko-KR', unit: '건', stubBadge: '미생성',
   brandSub: (org) => org,
   navDaily: 'Go To Daily ›',
+  navCount: (n) => `${n}건`,
+  navTotal: (w, n) => `${w}개 주차 · 국내 기사 ${n.toLocaleString('ko-KR')}건`,
   navWeekly: '‹ Go To Weekly',
   weeklyLink: '주간 리포트',
   pdfDownload: 'PDF 다운로드',

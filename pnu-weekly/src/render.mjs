@@ -290,10 +290,17 @@ const pdfName = (date) => `PNU_Univ_Policy_AI_Weekly(${date.replace(/-/g, '.')})
 
 export function renderPage({ meta, weeks, sources, css, js, net3d, pdfPath, world, joongang }) {
 
-  const nav = weeks.map((w, i) => `
+  // 주차마다 취합한 국내 기사 수를 단다 — 어느 주가 조용했는지 목록만 훑어도 보인다.
+  // signal.total 은 리포트 머리글의 '국내 기사 N건' 과 같은 수다(비교용 구글 한정 수치가 아니다).
+  const navTotal = weeks.reduce((a, w) => a + ((w.signal && w.signal.total) || 0), 0);
+  const nav = weeks.map((w, i) => {
+    const n = (w.signal && w.signal.total) || 0;
+    const badge = w.complete ? '' : `<span class="stub${w.partial ? ' live' : ''}">${esc(w.partial ? T.progressBadge : T.stubBadge)}</span>`;
+    return `
     <li><a class="${i === 0 ? 'on' : ''}" href="#${w.id}" data-nav="${w.id}">
-      <i class="dot d${w.tier}"></i>${esc(w.label)}${w.complete ? '' : `<span class="stub${w.partial ? ' live' : ''}">${esc(w.partial ? T.progressBadge : T.stubBadge)}</span>`}
-    </a></li>`).join('');
+      <i class="dot d${w.tier}"></i>${esc(w.label)}${n ? `<span class="cnt">${esc(T.navCount(n))}</span>` : ''}${badge}
+    </a></li>`;
+  }).join('');
 
   const mapData = {
     universities: meta.universities,
@@ -336,6 +343,7 @@ export function renderPage({ meta, weeks, sources, css, js, net3d, pdfPath, worl
 <div class="shell">
 <aside class="side">
   <a class="go" href="daily.html">${esc(T.navDaily)}</a>
+  <div class="side-sum">${esc(T.navTotal(weeks.length, navTotal))}</div>
   <ul>${nav}</ul>
 </aside>
 
