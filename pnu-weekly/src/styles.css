@@ -450,24 +450,34 @@ h2.sec .sec-face{margin-right:4px}
   background:#fff;border-radius:50%;padding:2px;box-sizing:border-box}
 @media (max-width:640px){ .logo-img{width:40px;height:40px} }
 @media print{ .logo-img{width:40px;height:40px} }
-/* ══════════════ 주간 키워드 공기 네트워크 ══════════════ */
-.netbox{overflow-x:auto;background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:6px 4px}
-.net{display:block;width:100%;min-width:600px;height:auto}
-.net .ed{stroke:var(--mute);stroke-opacity:.28}
-/* 라벨은 배경색으로 테두리를 둘러 선 위에 얹어도 읽히게 한다 */
-.net .nl{font-size:12.5px;font-weight:700;fill:var(--ink);paint-order:stroke;stroke:var(--soft);stroke-width:3.5px}
+/* ══════════════ 주간 키워드 공기 네트워크 (3D) ══════════════
+   좌표는 빌드 때 3차원으로 계산해 굳히고, app.js 가 마우스 위치로 카메라만 돌린다.
+   WebGL 이 아니라 SVG 인 이유는 PDF 때문이다 — 벡터로 남아야 인쇄에서 글자가 산다. */
+.netbox{overflow:hidden;border:1px solid var(--line);border-radius:10px;
+  background:radial-gradient(120% 120% at 30% 18%, #f4f7fb 0%, #e9eef6 55%, #e2e8f2 100%);
+  touch-action:pan-y}
+.net{display:block;width:100%;height:auto;cursor:crosshair}
+.net .ed{stroke:#46536b;fill:none;stroke-linecap:round;transition:stroke .15s}
+.net .nl{font-weight:700;fill:#1e2634;paint-order:stroke;stroke:#eef2f8;stroke-width:3.5px;pointer-events:none}
 .net .nd{cursor:pointer}
-.net.dim .ed{stroke-opacity:.07}
-.net.dim .nd{opacity:.2}
-.net.dim .ed.on{stroke-opacity:.9;stroke:var(--navy)}
+.net .halo{pointer-events:none}
+/* 강조: 이웃만 남기고 나머지는 물러난다 */
+.net.dim .ed{stroke-opacity:.05 !important}
+.net.dim .nd{opacity:.18}
+.net.dim .ed.on{stroke-opacity:.85 !important;stroke:var(--navy)}
 .net.dim .nd.on{opacity:1}
 .legend .k.ring{background:transparent;border:2.5px solid var(--line);border-radius:50%;width:11px;height:11px}
 @media (max-width:640px){
-  .net{min-width:560px}
-  .net .nl{font-size:14px}
+  .net .nl{stroke-width:3px}
 }
-/* 인쇄: 강조 상태를 걷어내고 전체를 보여 준다 */
-@media print{ .net.dim .ed,.net.dim .nd{stroke-opacity:.28;opacity:1} .netbox{overflow:visible} }
+/* 인쇄: 강조 상태를 걷어내고 전체를 보여 준다. 배경 그라디언트는 잉크만 먹는다. */
+@media print{
+  .netbox{background:#fff;border-color:#d9dee6}
+  .net{cursor:auto}
+  .net.dim .ed{stroke-opacity:.3 !important}
+  .net.dim .nd{opacity:1}
+}
+
 /* 네트워크에서 고른 키워드가 든 제목 */
 .kw-on{background:var(--hit);border-radius:3px;box-shadow:0 0 0 3px var(--hit)}
 /* 진행 중 주차 배지 — 미생성(회색)과 구분한다 */

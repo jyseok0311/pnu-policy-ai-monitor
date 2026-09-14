@@ -446,16 +446,128 @@
     });
   });
 
-  /* ---------- 9. 주간 키워드 네트워크 ---------- */
-  // 호버: 이웃만 남긴다. 클릭: 그 키워드가 든 기사 제목을 찾아 표시하고 그 자리로 보낸다.
-  (function network() {
-    var boxes = [].slice.call(document.querySelectorAll('[data-net] .net'));
+  /* ---------- 9. 주간 키워드 네트워크 (3D) ---------- */
+  // 좌표(x,y,z)는 빌드 때 계산해 노드에 박혀 있다. 여기서는 카메라만 돌린다.
+  // 마우스가 상자 위를 지나면 그 위치에 따라 yaw/pitch 를 주고, 벗어나면 0 으로 돌아온다.
+  // 회전·투영식은 src/network.mjs 의 layout3d/project 와 같아야 첫 화면과 이어진다.
+  (function network3d() {
+    var boxes = [].slice.call(document.querySelectorAll('[data-net]'));
     if (!boxes.length) return;
 
-    boxes.forEach(function (svg) {
-      var eds = [].slice.call(svg.querySelectorAll('.ed'));
-      var nds = [].slice.call(svg.querySelectorAll('.nd'));
+    var CAM = { f: 1150, z0: 1250 };
+    // src/network.mjs 의 MAXYAW/MAXPITCH 와 같아야 한다 — 뷰박스 여백을 그 각도 기준으로 잡았다.
+    var MAXYAW = 0.42, MAXPITCH = 0.26;
+    // 움직임을 줄여 달라는 설정이면 '따라가는 감속'만 끈다. 포인터에 직접 반응하는 것은
+    // 저절로 움직이는 장식이 아니라 조작이므로 기능 자체를 없애지는 않는다.
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var EASE = still ? 1 : 0.18;
 
+    boxes.forEach(function (box) {
+      var svg = box.querySelector('.net');
+      if (!svg) return;
+      var W = +svg.dataset.w || 1000, H = +svg.dataset.h || 580;
+      var nds = [].slice.call(svg.querySelectorAll('.nd'));
+      var eds = [].slice.call(svg.querySelectorAll('.ed'));
+      var nodesG = svg.querySelector('.nodes');
+      if (!nds.length || !nodesG) return;
+
+      // 노드 정보를 한 번만 읽어 둔다. 프레임마다 DOM 을 다시 읽으면 버벅인다.
+      var P = nds.map(function (g) {
+        return {
+          g: g, i: g.dataset.i,
+          x: +g.dataset.x, y: +g.dataset.y, z: +g.dataset.z, r: +g.dataset.r,
+          ball: g.querySelector('.ball'), halo: g.querySelector('.halo'), shadow: g.querySelector('.shadow'),
+          label: g.querySelector('.nl'),
+          sw: +(g.querySelector('.ball').getAttribute('stroke-width')) || 1.4
+        };
+      });
+      // 테두리 굵기는 첫 렌더에서 이미 배율이 곱해져 있다. 원래 값으로 되돌려 둔다.
+      P.forEach(function (p) {
+        var s0 = CAM.f / (CAM.z0 - p.z);
+        p.sw0 = p.sw / s0;
+      });
+      var E2 = eds.map(function (e) {
+        return { e: e, a: +e.dataset.a, b: +e.dataset.b, w0: +e.getAttribute('stroke-width'), n: +e.dataset.n };
+      });
+      // 선 굵기도 같은 방식으로 기준값을 복원한다
+      E2.forEach(function (l) {
+        var sa = CAM.f / (CAM.z0 - P[l.a].z), sb = CAM.f / (CAM.z0 - P[l.b].z);
+        l.base = l.w0 / ((sa + sb) / 2);
+        l.op0 = +l.e.getAttribute('stroke-opacity');
+      });
+
+      var yaw = 0, pitch = 0, tYaw = 0, tPitch = 0, raf = null;
+
+      function project(p, cy, sy, cp, sp) {
+        // y축(yaw) 회전 → x축(pitch) 회전
+        var x1 = p.x * cy + p.z * sy;
+        var z1 = -p.x * sy + p.z * cy;
+        var y2 = p.y * cp - z1 * sp;
+        var z2 = p.y * sp + z1 * cp;
+        var s = CAM.f / (CAM.z0 - z2);
+        return { x: W / 2 + x1 * s, y: H / 2 + y2 * s, s: s, z: z2 };
+      }
+
+      function draw() {
+        raf = null;
+        yaw += (tYaw - yaw) * EASE;
+        pitch += (tPitch - pitch) * EASE;
+        var cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
+
+        var pts = P.map(function (p) { return project(p, cy, sy, cp, sp); });
+
+        P.forEach(function (p, i) {
+          var q = pts[i], r = p.r * q.s;
+          p.g.setAttribute('transform', 'translate(' + q.x.toFixed(1) + ' ' + q.y.toFixed(1) + ')');
+          p.ball.setAttribute('r', r.toFixed(1));
+          p.ball.setAttribute('stroke-width', (p.sw0 * q.s).toFixed(2));
+          p.halo.setAttribute('r', (r + 5).toFixed(1));
+          if (p.shadow) { p.shadow.setAttribute('r', r.toFixed(1)); p.shadow.setAttribute('cy', (r * 0.14).toFixed(1)); }
+          p.label.setAttribute('y', (r + 13 * q.s).toFixed(1));
+          p.label.setAttribute('font-size', (12.5 * q.s).toFixed(2));
+        });
+
+        E2.forEach(function (l) {
+          var a = pts[l.a], b = pts[l.b];
+          var dx = b.x - a.x, dy = b.y - a.y;
+          var len = Math.hypot(dx, dy) || 1;
+          var bow = Math.min(len * 0.12, 26);
+          var mx = (a.x + b.x) / 2 - (dy / len) * bow, my = (a.y + b.y) / 2 + (dx / len) * bow;
+          l.e.setAttribute('d', 'M' + a.x.toFixed(1) + ' ' + a.y.toFixed(1) + ' Q' + mx.toFixed(1) + ' ' + my.toFixed(1) + ' ' + b.x.toFixed(1) + ' ' + b.y.toFixed(1));
+          var depth = (a.s + b.s) / 2;
+          l.e.setAttribute('stroke-width', (l.base * depth).toFixed(2));
+          l.e.setAttribute('stroke-opacity', (0.18 + depth * 0.16).toFixed(3));
+        });
+
+        // 앞의 원이 뒤를 가려야 깊이가 읽힌다. 순서가 실제로 바뀔 때만 DOM 을 손댄다.
+        var ord = P.map(function (_, i) { return i; }).sort(function (a, b) { return pts[a].z - pts[b].z; });
+        var key = ord.join(',');
+        if (key !== svg.__order) {
+          svg.__order = key;
+          ord.forEach(function (i) { nodesG.appendChild(P[i].g); });
+        }
+
+        if (Math.abs(tYaw - yaw) > 1e-4 || Math.abs(tPitch - pitch) > 1e-4) schedule();
+      }
+      function schedule() { if (raf == null) raf = requestAnimationFrame(draw); }
+
+      box.addEventListener('pointermove', function (ev) {
+        var b = box.getBoundingClientRect();
+        tYaw = ((ev.clientX - b.left) / b.width - 0.5) * 2 * MAXYAW;
+        tPitch = ((ev.clientY - b.top) / b.height - 0.5) * 2 * MAXPITCH;
+        schedule();
+      });
+      // pointerleave 와 mouseleave 를 둘 다 듣는다. 둘 중 하나만 두면 환경에 따라
+      // 포인터가 상자를 벗어나도 돌아간 채로 굳는다.
+      ['pointerleave', 'mouseleave'].forEach(function (ev) {
+        box.addEventListener(ev, function () { tYaw = 0; tPitch = 0; schedule(); });
+      });
+      // 인쇄는 정면에서. 돌아간 채로 굽으면 화면과 PDF 가 달라진다.
+      window.addEventListener('beforeprint', function () {
+        tYaw = 0; tPitch = 0; yaw = 0; pitch = 0; draw();
+      });
+
+      // ── 호버: 이웃만 남긴다 / 클릭: 그 키워드가 든 기사 제목을 찾아 표시한다
       nds.forEach(function (g) {
         g.addEventListener('mouseenter', function () {
           var i = g.dataset.i, near = {};
@@ -490,7 +602,6 @@
         if ((li.textContent || '').indexOf(key) < 0) return;
         li.classList.add('kw-on');
         hits.push(li);
-        // 접힌 날짜 블록 안에 있으면 펴 준다
         var d = li.closest('details');
         if (d) d.open = true;
       });
