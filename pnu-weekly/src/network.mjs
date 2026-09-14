@@ -20,6 +20,12 @@ export const FIELD_COLOR = {
   '기타': '#7a8595'
 };
 export const riskColor = (r) => (r >= 40 ? '#b3261e' : r >= 20 ? '#d9822b' : r >= 8 ? '#c9a227' : '#2f8f5b');
+// 점을 판·후광보다 한 단계 진하게 찍는다. 작아진 만큼 또렷해야 위치가 읽힌다.
+const shade = (hex, k) => {
+  const m = /^#?([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(String(hex).trim());
+  if (!m) return hex;
+  return '#' + [1, 2, 3].map((i) => Math.round(parseInt(m[i], 16) * (1 - k)).toString(16).padStart(2, '0')).join('');
+};
 
 // 판을 비스듬히 본다. 정면에서 보면 판이 선으로 겹쳐 아무것도 안 보인다.
 // net3d.js 가 같은 값을 써야 첫 화면과 회전 후가 이어진다.
@@ -193,17 +199,23 @@ export function networkSvg(net, opt = {}) {
     return { x: x0 - pad, y: y0 - pad, w: x1 - x0 + pad * 2, h: y1 - y0 + pad * 2 };
   })();
 
-  // 분야마다 구(球)처럼 보이는 그라디언트
+  // 분야마다 옅게 번지는 후광. 면적은 후광이 맡고 위치는 점이 맡는다.
+  // 필터(feGaussianBlur)를 쓰면 PDF 에서 래스터로 굳어 파일이 부푼다 — 그라디언트는 벡터로 남는다.
   const fields = [...new Set(nodes.map((n) => n.field))];
   const defs = `<defs>${fields.map((f, i) => {
     const c = FIELD_COLOR[f] || FIELD_COLOR['기타'];
-    return `<radialGradient id="g${id}-${i}" cx="34%" cy="30%" r="72%">
-      <stop offset="0%" stop-color="#fff" stop-opacity=".6"/>
-      <stop offset="42%" stop-color="${c}" stop-opacity=".97"/>
-      <stop offset="100%" stop-color="${c}" stop-opacity=".84"/>
+    return `<radialGradient id="h${id}-${i}" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="${c}" stop-opacity=".42"/>
+      <stop offset="50%" stop-color="${c}" stop-opacity=".2"/>
+      <stop offset="100%" stop-color="${c}" stop-opacity="0"/>
     </radialGradient>`;
   }).join('')}</defs>`;
-  const gradOf = (n) => `g${id}-${fields.indexOf(n.field)}`;
+  const haloOf = (n) => `h${id}-${fields.indexOf(n.field)}`;
+  // 후광 반지름: 언급량을 0~1 로 편 값. 화면(net3d.js)과 같은 식이다.
+  const rLo = Math.min(...nodes.map(rOf)), rHi = Math.max(...nodes.map(rOf));
+  const halo = (n) => 12 + (rHi > rLo ? (rOf(n) - rLo) / (rHi - rLo) : 0.5) * 28;
+  const DOT = 6;
+  const dotColor = (n) => (n.risk >= 8 ? riskColor(n.risk) : shade(FIELD_COLOR[n.field] || FIELD_COLOR['기타'], 0.2));
 
   // ── 판: 뒤에서 앞으로
   const planes = used.map((f) => ({ f, z: planeZ[f] })).sort((a, b) => a.z - b.z).map((pl) => {
@@ -233,7 +245,7 @@ export function networkSvg(net, opt = {}) {
   // ── 노드: 뒤에서 앞으로. 판까지 기둥을 내려 어느 판에 속하는지 보인다.
   const order = nodes.map((_, i) => i).sort((a, b) => P[a].z - P[b].z);
   const circles = order.map((i) => {
-    const n = nodes[i], q = pr(i), r = rOf(n) * q.s;
+    const n = nodes[i], q = pr(i);
     const foot = project({ x: P[i].x, y: PLANE.hh, z: P[i].z }, W, H);
     const tip = [`${n.key} — ${n.n}건 · 위험신호 ${n.risk}% · ${n.field}`, n.sample ? n.sample.title : null].filter(Boolean).join('\n');
     return `<g class="nd" data-i="${i}" data-key="${esc(n.key)}"
@@ -243,9 +255,9 @@ export function networkSvg(net, opt = {}) {
       data-cnt="${n.n}" data-risk="${n.risk}" data-field="${esc(n.field)}">
       <line class="stem" x1="${q.x.toFixed(1)}" y1="${q.y.toFixed(1)}" x2="${q.x.toFixed(1)}" y2="${foot.y.toFixed(1)}"
         stroke="${FIELD_COLOR[n.field] || '#7a8595'}" stroke-opacity=".22" stroke-width="1" stroke-dasharray="3 3"/>
-      <circle class="ball" cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" r="${r.toFixed(1)}" fill="url(#${gradOf(n)})"
-        stroke="${riskColor(n.risk)}" stroke-width="${((n.risk >= 20 ? 2.3 : 1.2) * q.s).toFixed(2)}"/>
-      <text class="nl" x="${q.x.toFixed(1)}" y="${(q.y + r + 12 * q.s).toFixed(1)}" text-anchor="middle"
+      <circle class="nhalo" cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" r="${(halo(n) * q.s).toFixed(1)}" fill="url(#${haloOf(n)})"/>
+      <circle class="ndot" cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" r="${(DOT * q.s).toFixed(1)}" fill="${dotColor(n)}"/>
+      <text class="nl" x="${q.x.toFixed(1)}" y="${(q.y + DOT * q.s + 13 * q.s).toFixed(1)}" text-anchor="middle"
         font-size="${(12 * q.s).toFixed(2)}">${esc(n.key)}</text>
       <title>${esc(tip)}</title>
     </g>`;

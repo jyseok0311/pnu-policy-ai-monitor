@@ -76,6 +76,11 @@
       return { a: slot[e.dataset.a], b: slot[e.dataset.b], n: +e.dataset.n || 1 };
     }).filter(function (l) { return l.a !== undefined && l.b !== undefined; });
     var maxE = L.reduce(function (m, l) { return Math.max(m, l.n); }, 1);
+    // 후광은 언급량을 나타낸다. 원 반지름(√언급수)을 0~1 로 펴서 쓴다.
+    var rMin = Math.min.apply(null, N.map(function (n) { return n.r; }));
+    var rMax = Math.max.apply(null, N.map(function (n) { return n.r; }));
+    var norm = function (n) { return rMax > rMin ? (n.r - rMin) / (rMax - rMin) : 0.5; };
+    var DOT = 6 * NODE, HALO0 = 12 * NODE, HALO1 = 40 * NODE;
 
     var BG0 = [252, 253, 255], BG1 = [237, 242, 249];
     var INK = [30, 38, 52];
@@ -85,6 +90,11 @@
     var base = { yaw: CAM.yaw, pitch: CAM.pitch };
     var hot = -1, raf = null, dpr = 1, cw = 0, ch = 0, scale = 1, hover = false;
     var drag = null;
+    // 확대/축소. 1 = 틀에 딱 맞은 기본 크기.
+    var zoom = 1, panX = 0, panY = 0, ZMIN = 0.75, ZMAX = 4;
+    // 휠은 눌러서 켠 뒤에만 듣는다. 안 그러면 페이지를 내리다 그림에 걸려 멈춘다 — 지도와 같은 규칙.
+    var wheelOn = false;
+    var ptrs = {}, pinch = null;
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function resize() {
@@ -95,9 +105,12 @@
       cv.width = Math.round(cw * dpr); cv.height = Math.round(ch * dpr);
       cv.style.width = cw + 'px'; cv.style.height = ch + 'px';
       scale = cw / VW;
+      clampPan();   // 창이 바뀌면 확대해 둔 위치도 다시 묶는다
       return true;
     }
-    function toPx(x, y) { return [(x - VX) * scale, (y - VY) * scale]; }
+    // 세계 좌표 → 화면 픽셀. 확대·이동은 여기 한 곳에서만 건다.
+    function toPx(x, y) { return [(x - VX) * scale * zoom + panX, (y - VY) * scale * zoom + panY]; }
+    function ss() { return scale * zoom; }
 
     function project(p) {
       var cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
@@ -105,7 +118,7 @@
       var y2 = p.y * cp - z1 * sp, z2 = p.y * sp + z1 * cp;
       var s = CAM.f / Math.max(CAM.z0 - z2, 80);
       var P0 = toPx(W / 2 + x1 * s, H / 2 + y2 * s);
-      return { x: P0[0], y: P0[1], s: s * scale, z: z2 };
+      return { x: P0[0], y: P0[1], s: s * ss(), z: z2 };
     }
 
     var pts = [];
@@ -154,12 +167,12 @@
         ctx.fillStyle = rgba(c, on ? 0.06 : 0.025);
         ctx.fill();
         ctx.strokeStyle = rgba(c, on ? 0.32 : 0.12);
-        ctx.lineWidth = 1.1 * scale;
+        ctx.lineWidth = 1.1 * ss();
         ctx.stroke();
-        ctx.font = '800 ' + (11.5 * scale).toFixed(1) + 'px Pretendard, system-ui, sans-serif';
+        ctx.font = '800 ' + (11.5 * ss()).toFixed(1) + 'px Pretendard, system-ui, sans-serif';
         ctx.textAlign = 'left'; ctx.textBaseline = 'bottom';
         ctx.fillStyle = rgba(c, on ? 0.95 : 0.35);
-        ctx.fillText(pl.f, q[0].x + 6 * scale, q[0].y - 4 * scale);
+        ctx.fillText(pl.f, q[0].x + 6 * ss(), q[0].y - 4 * ss());
       });
 
       // ── 선: 판을 가로지르는 것만 진하게
@@ -169,7 +182,7 @@
         var on = !dim || (near[l.a] && near[l.b]);
         ctx.strokeStyle = rgba(cross ? mix(N[l.a].fill, N[l.b].fill, 0.5) : [150, 162, 180],
           (on ? (cross ? 0.52 : 0.17) : 0.04) * (0.5 + (l.n / maxE) * 0.5));
-        ctx.lineWidth = (cross ? 0.8 + (l.n / maxE) * 2.4 : 0.6) * scale;
+        ctx.lineWidth = (cross ? 0.8 + (l.n / maxE) * 2.4 : 0.6) * ss();
         ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
       });
 
@@ -178,31 +191,68 @@
         .forEach(function (i) {
           var n = N[i], q = pts[i];
           var on = !dim || near[i], al = on ? 1 : 0.18;
-          var r = n.r * q.s;
           var foot = project({ x: n.x, y: HH, z: n.z });
 
           ctx.strokeStyle = rgba(n.fill, 0.22 * al);
-          ctx.lineWidth = 1 * scale;
-          ctx.setLineDash([3 * scale, 3 * scale]);
+          ctx.lineWidth = 1 * ss();
+          ctx.setLineDash([3 * ss(), 3 * ss()]);
           ctx.beginPath(); ctx.moveTo(q.x, q.y); ctx.lineTo(q.x, foot.y); ctx.stroke();
           ctx.setLineDash([]);
 
-          var sg = ctx.createRadialGradient(q.x - r * 0.34, q.y - r * 0.36, r * 0.1, q.x, q.y, r);
-          sg.addColorStop(0, rgba(mix(n.fill, [255, 255, 255], 0.6), al));
-          sg.addColorStop(0.45, rgba(n.fill, al));
-          sg.addColorStop(1, rgba(mix(n.fill, [0, 0, 0], 0.2), al));
-          ctx.fillStyle = sg;
-          ctx.beginPath(); ctx.arc(q.x, q.y, r, 0, 6.2832); ctx.fill();
-          ctx.strokeStyle = rgba(n.ring, (n.risk >= 20 ? 0.95 : 0.5) * al);
-          ctx.lineWidth = (n.risk >= 20 ? 2.3 : 1.2) * q.s;
-          ctx.beginPath(); ctx.arc(q.x, q.y, r, 0, 6.2832); ctx.stroke();
+          // 점 + 후광: 위치는 작은 점이, 언급량은 옅은 후광이 맡는다.
+          // 면적을 점으로 줄여야 판을 가로지르는 선이 가려지지 않는다.
+          var hr = (HALO0 + norm(n) * (HALO1 - HALO0)) * q.s;
+          var hg = ctx.createRadialGradient(q.x, q.y, hr * 0.15, q.x, q.y, hr);
+          hg.addColorStop(0, rgba(n.fill, 0.34 * al));
+          hg.addColorStop(1, rgba(n.fill, 0));
+          ctx.fillStyle = hg;
+          ctx.beginPath(); ctx.arc(q.x, q.y, hr, 0, 6.2832); ctx.fill();
 
-          label(n.key, q.x, q.y + r + 3 * scale, LABEL * q.s, al);
+          var dr = DOT * q.s;
+          ctx.fillStyle = rgba(n.risk >= 8 ? n.ring : mix(n.fill, [0, 0, 0], 0.2), al);
+          ctx.beginPath(); ctx.arc(q.x, q.y, dr, 0, 6.2832); ctx.fill();
+
+          label(n.key, q.x, q.y + dr + 4 * ss(), LABEL * q.s, al);
         });
 
       if (Math.abs(tYaw - yaw) > 1e-4 || Math.abs(tPitch - pitch) > 1e-4) schedule();
     }
     function schedule() { if (raf == null) raf = requestAnimationFrame(draw); }
+
+    // 확대하면 그림이 틀보다 커진다. 빈 여백이 생기지 않게 이동량을 묶는다.
+    function clampPan() {
+      var ew = cw * zoom, eh = ch * zoom;
+      panX = ew <= cw ? (cw - ew) / 2 : Math.min(0, Math.max(cw - ew, panX));
+      panY = eh <= ch ? (ch - eh) / 2 : Math.min(0, Math.max(ch - eh, panY));
+    }
+    // 가리키는 자리를 고정한 채 확대한다 — 보고 있던 곳이 손가락/커서 밑에 그대로 남는다.
+    function setZoom(z, fx, fy) {
+      var nz = Math.max(ZMIN, Math.min(ZMAX, z));
+      if (Math.abs(nz - zoom) < 1e-4) return false;
+      panX = fx - (fx - panX) * (nz / zoom);
+      panY = fy - (fy - panY) * (nz / zoom);
+      zoom = nz; clampPan(); return true;
+    }
+    function local(ev) { var r = cv.getBoundingClientRect(); return [ev.clientX - r.left, ev.clientY - r.top]; }
+
+    // 보고 있는 각도·배율을 밖에서 읽을 수 있게 걸어 둔다. 그리는 것은 rAF 에 달려 있어
+    // 창이 가려지면 멈추지만, 이 값은 조작 즉시 바뀌므로 확인에 쓸 수 있다(지도의 __pnuFitKorea 와 같은 쓰임).
+    box.__netView = function () {
+      return { yaw: +tYaw.toFixed(3), pitch: +tPitch.toFixed(3), zoom: +zoom.toFixed(3),
+        panX: Math.round(panX), panY: Math.round(panY), wheelOn: wheelOn, pinch: !!pinch };
+    };
+
+    cv.addEventListener('wheel', function (ev) {
+      if (!wheelOn && !ev.ctrlKey && !ev.metaKey) return;   // 안 켜졌으면 페이지가 내려가게 둔다
+      var f = local(ev);
+      // deltaMode 0=픽셀 1=줄 2=쪽. 장치마다 단위가 달라 부호만 쓰고 한 칸씩 움직인다.
+      var dir = ev.deltaY > 0 ? -1 : 1;
+      if (setZoom(zoom * (dir > 0 ? 1.18 : 1 / 1.18), f[0], f[1])) {
+        if (ev.cancelable) ev.preventDefault();
+        if (hooks && hooks.tip) hooks.tip(null);
+        schedule();
+      }
+    }, { passive: false });
 
     function pick(ev) {
       var r = cv.getBoundingClientRect();
@@ -210,7 +260,8 @@
       var best = -1, bd = 1e9;
       for (var i = 0; i < N.length; i++) {
         var q = pts[i]; if (!q) continue;
-        var rr = N[i].r * q.s;
+        // 점은 작지만 집기는 후광 크기로 받는다 — 안 그러면 누르기가 까다롭다.
+        var rr = Math.max((DOT + 8) * q.s, (HALO0 + norm(N[i]) * (HALO1 - HALO0)) * q.s * 0.6);
         var d = Math.hypot(q.x - mx, q.y - my);
         if (d <= rr + 4 && d < bd) { bd = d; best = i; }
       }
@@ -219,6 +270,21 @@
 
     box.addEventListener('pointermove', function (ev) {
       hover = true;
+      if (ptrs[ev.pointerId]) { ptrs[ev.pointerId].x = ev.clientX; ptrs[ev.pointerId].y = ev.clientY; }
+      if (pinch) {
+        var ids = Object.keys(ptrs);
+        if (ids.length < 2) return;
+        var a = ptrs[ids[0]], c = ptrs[ids[1]];
+        var r = cv.getBoundingClientRect();
+        var mx = (a.x + c.x) / 2, my = (a.y + c.y) / 2;
+        // 두 손가락을 함께 움직이면 그림도 따라 옮긴다
+        panX = pinch.panX + (mx - pinch.mx); panY = pinch.panY + (my - pinch.my);
+        setZoom(pinch.z * (Math.hypot(a.x - c.x, a.y - c.y) / pinch.d), mx - r.left, my - r.top);
+        clampPan();
+        if (ev.cancelable) ev.preventDefault();
+        schedule();
+        return;
+      }
       if (drag) {
         // 끌어서 돌리기 — 가로는 제한 없이 360°, 세로는 판이 포개지지 않는 범위로 묶는다
         tYaw = drag.yaw + (ev.clientX - drag.x) * 0.008;
@@ -241,6 +307,7 @@
     ['pointerleave', 'mouseleave'].forEach(function (e) {
       box.addEventListener(e, function () {
         hover = false; hot = -1; drag = null;
+        wheelOn = false; pinch = null; ptrs = {};
         tYaw = base.yaw; tPitch = base.pitch;
         cv.style.cursor = 'grab';
         if (hooks && hooks.tip) hooks.tip(null);
@@ -248,9 +315,24 @@
       });
     });
     cv.addEventListener('pointerdown', function (ev) {
+      ptrs[ev.pointerId] = { x: ev.clientX, y: ev.clientY };
+      var ids = Object.keys(ptrs);
+      if (ids.length === 2) {
+        // 손가락 두 개 — 벌리면 확대, 오므리면 축소. 돌리기는 잠시 멈춘다.
+        var a = ptrs[ids[0]], c = ptrs[ids[1]];
+        pinch = { d: Math.hypot(a.x - c.x, a.y - c.y) || 1, z: zoom,
+          mx: (a.x + c.x) / 2, my: (a.y + c.y) / 2, panX: panX, panY: panY };
+        drag = null; wheelOn = true;
+        if (hooks && hooks.tip) hooks.tip(null);
+        return;
+      }
+      wheelOn = true;   // 한 번 누르면 휠 확대가 켜진다
       drag = { x: ev.clientX, y: ev.clientY, yaw: tYaw, pitch: tPitch, moved: 0 };
       cv.style.cursor = 'grabbing';
       if (cv.setPointerCapture) { try { cv.setPointerCapture(ev.pointerId); } catch (e) {} }
+    });
+    ['pointerup', 'pointercancel'].forEach(function (t) {
+      cv.addEventListener(t, function (ev) { delete ptrs[ev.pointerId]; if (Object.keys(ptrs).length < 2) pinch = null; });
     });
     cv.addEventListener('pointerup', function (ev) {
       var was = drag;
@@ -269,6 +351,7 @@
     cv.addEventListener('dblclick', function () {
       base.yaw = CAM.yaw; base.pitch = CAM.pitch;
       tYaw = CAM.yaw; tPitch = CAM.pitch;
+      zoom = 1; panX = 0; panY = 0; clampPan();
       schedule();
     });
 
