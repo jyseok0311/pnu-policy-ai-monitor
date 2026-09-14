@@ -265,7 +265,10 @@ export function networkSvg(net, opt = {}) {
     const fs = (12.5 * p.s).toFixed(2);
     return `<g class="nd" data-i="${i}" data-key="${esc(n.key)}"
       data-x="${P[i].x.toFixed(2)}" data-y="${P[i].y.toFixed(2)}" data-z="${P[i].z.toFixed(2)}"
-      data-r="${rOf(n).toFixed(2)}" transform="translate(${p.x.toFixed(1)} ${p.y.toFixed(1)})">
+      data-r="${rOf(n).toFixed(2)}"
+      data-fill="${FIELD_COLOR[n.field] || FIELD_COLOR['기타']}" data-ring="${riskColor(n.risk)}"
+      data-cnt="${n.n}" data-risk="${n.risk}" data-field="${esc(n.field)}"
+      transform="translate(${p.x.toFixed(1)} ${p.y.toFixed(1)})">
       <circle class="halo" r="${(r + 5).toFixed(1)}" fill="${riskColor(n.risk)}" fill-opacity="${n.risk >= 20 ? 0.22 : 0.1}"/>
       <circle class="shadow" r="${r.toFixed(1)}" cy="${(r * 0.14).toFixed(1)}" fill="#0b1220" fill-opacity=".17"/>
       <circle class="ball" r="${r.toFixed(1)}" fill="url(#${gradOf(n)})"
@@ -275,7 +278,10 @@ export function networkSvg(net, opt = {}) {
     </g>`;
   }).join('');
 
-  return `<svg class="net" id="net-${id}" viewBox="${box.x.toFixed(1)} ${box.y.toFixed(1)} ${box.w.toFixed(1)} ${box.h.toFixed(1)}" data-w="${W}" data-h="${H}"
+  // 화면에서는 캔버스가 그리고(발광·안개·자동 회전), 인쇄와 자바스크립트 미동작 시에는 이 SVG 가 그대로 쓰인다.
+  return `<canvas class="net-gl" data-gl aria-hidden="true"></canvas>
+<svg class="net" id="net-${id}" viewBox="${box.x.toFixed(1)} ${box.y.toFixed(1)} ${box.w.toFixed(1)} ${box.h.toFixed(1)}" data-w="${W}" data-h="${H}"
+    data-vx="${box.x.toFixed(1)}" data-vy="${box.y.toFixed(1)}" data-vw="${box.w.toFixed(1)}" data-vh="${box.h.toFixed(1)}"
     role="img" aria-label="${esc(opt.label || '주간 키워드 공기 네트워크')}">
     ${defs}<g class="edges">${edges}</g><g class="nodes">${circles}</g></svg>`;
 }

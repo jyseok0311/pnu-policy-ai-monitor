@@ -288,7 +288,7 @@ function renderWeek(w, sources, T) {
 // PDF 파일명 규칙 — pdf.mjs 가 굽는 이름과 반드시 같아야 한다
 const pdfName = (date) => `PNU_Univ_Policy_AI_Weekly(${date.replace(/-/g, '.')}).pdf`;
 
-export function renderPage({ meta, weeks, sources, css, js, pdfPath, world, joongang }) {
+export function renderPage({ meta, weeks, sources, css, js, net3d, pdfPath, world, joongang }) {
 
   const nav = weeks.map((w, i) => `
     <li><a class="${i === 0 ? 'on' : ''}" href="#${w.id}" data-nav="${w.id}">
@@ -377,6 +377,7 @@ ${weeks.map(w => renderWeek(w, sources, T)).join('\n')}
 <script>window.__MAPDATA__ = ${JSON.stringify(mapData)};
 window.__SANJINI_TENSE__ = ${JSON.stringify(sanjini('tense', 44))};
 window.__PNU_NETMSG__ = ${JSON.stringify(netMsg)};</script>
+<script>${net3d || ''}</script>
 <script>${js}</script>
 </body>
 </html>`;

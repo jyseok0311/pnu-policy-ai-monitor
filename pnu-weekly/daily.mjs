@@ -146,6 +146,7 @@ function renderDay(d, idx, T) {
 cpSync(join(root, 'assets'), join(root, 'dist/assets'), { recursive: true });
 const css = readFileSync(join(root, 'src/styles.css'), 'utf8');
 const js = readFileSync(join(root, 'src/app.js'), 'utf8');
+const net3d = readFileSync(join(root, 'src/browser/net3d.js'), 'utf8');
 
 function renderDaily() {
   const D = T.daily;
@@ -199,6 +200,7 @@ ${days.map((d, i) => renderDay(d, i, T)).join('\n')}
 </div>
 </div>
 <div id="toast"></div>
+<script>${net3d}</script>
 <script>${js}</script>
 </body>
 </html>`;

@@ -42,12 +42,13 @@ const joongang = readOpt('data/joongang-ranking.json');
 
 const css = read('src/styles.css');
 const js = read('src/app.js');
+const net3d = read('src/browser/net3d.js');   // 캔버스 렌더러 — app.js 보다 먼저 실려야 한다
 
 // 원본 자산(assets/)을 산출물 옆으로 복사한다. dist/ 는 git 에 없으므로 빌드가 매번 채워야 한다.
 cpSync(join(root, 'assets'), join(root, 'dist/assets'), { recursive: true });
 mkdirSync(join(root, 'dist/pdf'), { recursive: true });
 
-const html = renderPage({ meta, weeks, sources, world, joongang, css, js, pdfPath });
+const html = renderPage({ meta, weeks, sources, world, joongang, css, js, net3d, pdfPath });
 writeFileSync(join(root, 'dist/index.html'), html, 'utf8');
 console.log(`✓ dist/index.html  ${(Buffer.byteLength(html) / 1024).toFixed(0)} KB`);
 
