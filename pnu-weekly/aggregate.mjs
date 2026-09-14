@@ -30,8 +30,11 @@ console.log(`· 수집본: data/collected/${latest} (원본 ${raw.total}건)`);
 //    '등록금' 키워드가 연예 기사를 끌어오는 등의 오탐이 실제로 관찰돼 추가한 단계다.
 // 관련성 필터는 src/filter.mjs 에 모아 두었다.
 // 이전에는 여기에 한국어 전용 규칙을 따로 두어, 해외 기사가 전부 탈락했다.
-const items = relevant(raw.items);
-console.log(`· 관련성 필터: ${raw.total} → ${items.length}건 (제외 ${raw.total - items.length})`);
+const relevantAll = relevant(raw.items);
+// 해외 기사는 참고 항목이다. 신호·지표·참조 기사·네트워크 어디에도 섞지 않는다 — 따로 모아 별도 섹션에만 싣는다.
+const items = relevantAll.filter((x) => x.region !== 'overseas');
+const overseasItems = relevantAll.filter((x) => x.region === 'overseas');
+console.log(`· 관련성 필터: ${raw.total} → ${relevantAll.length}건 (국내 ${items.length} · 해외 참고 ${overseasItems.length} · 제외 ${raw.total - relevantAll.length})`);
 
 // ── 2. 신호 집계
 const n = items.length;
@@ -131,24 +134,16 @@ const WD = ['일', '월', '화', '수', '목', '금', '토'];
 const articles = days.map((d) => {
   const dayItems = items.filter((x) => x.date === d);
   // 분야 × 국내/해외로 나눈다. 해외 기사는 국내 이슈의 선행·대조 사례로 읽는다.
-  const groups = [];
-  ['domestic', 'overseas'].forEach((rg) => {
-    const pool = dayItems.filter((x) => (x.region || 'domestic') === rg);
-    [...new Set(pool.map((x) => x.field))].forEach((f) => {
-      groups.push({ f, rg, list: pool.filter((x) => x.field === f) });
-    });
-  });
-  // 상위 N 만 자르면 건수가 많은 국내가 자리를 다 차지해 해외가 사라진다.
-  // 지역별로 자리를 나눠 보장한다.
-  const pick = (rg, n) => groups.filter((g) => g.rg === rg).sort((a, b) => b.list.length - a.list.length).slice(0, n);
-  const fields = [...pick('domestic', 3), ...pick('overseas', 2)];
+  // items 는 국내만이다(해외는 별도 참고 섹션). 분야별로 묶어 상위 4개만 보인다.
+  const groups = [...new Set(dayItems.map((x) => x.field))].map((f) => ({ f, list: dayItems.filter((x) => x.field === f) }));
+  const fields = groups.sort((a, b) => b.list.length - a.list.length).slice(0, 4);
   const dt = new Date(d);
   return {
     day: `${dt.getMonth() + 1}/${dt.getDate()}(${WD[dt.getDay()]})`,
     count: dayItems.length,
     open: d === days[days.length - 1],
-    cats: fields.map(({ f, rg, list }) => ({
-      name: `${f} · ${rg === 'overseas' ? '해외' : '국내'}`,
+    cats: fields.map(({ f, list }) => ({
+      name: f,
       count: list.length,
       items: list.sort((a, b) => ({ crisis: 0, warning: 1, watch: 2, normal: 3 })[a.level] - ({ crisis: 0, warning: 1, watch: 2, normal: 3 })[b.level])
         .slice(0, 3).map((x) => x.title)
@@ -171,8 +166,7 @@ const weeklyMetrics = [
   { name: '거버넌스 기사', value: String(field('거버넌스')), unit: '건', change: `전체의 ${pct(field('거버넌스'))}%`, dir: 'flat' },
   { name: 'AI·디지털 기사', value: String(field('AI·디지털')), unit: '건', change: `전체의 ${pct(field('AI·디지털'))}%`, dir: 'flat' },
   { name: '부산대 직접 언급', value: String(mentions.pnu), unit: '건', change: `거점국립대 1위`, dir: 'up' },
-  { name: '해외 기사', value: String(items.filter((x) => x.region === 'overseas').length), unit: '건',
-    change: `전체의 ${pct(items.filter((x) => x.region === 'overseas').length)}%`, dir: 'flat' },
+  { name: '해외 기사 (참고)', value: String(overseasItems.length), unit: '건', change: '신호·지표 미반영 · 별도 항목', dir: 'flat' },
   { name: '최다 출현 키워드', value: topWords[0][0], unit: '', change: `${topWords[0][1]}회`, dir: 'up' }
 ];
 
@@ -269,7 +263,7 @@ try {
 // ── 6-b. 주간 키워드 공기 네트워크
 // 같은 기사 제목에 함께 등장한 키워드를 잇는다. 좌표는 만들지 않는다 — 배치는 렌더러의 몫이다.
 // 국내 기사만 쓴다. 해외 기사는 영문 제목이라 한국어 키워드가 나오지 않는다.
-const netItems = items.filter((x) => x.region !== 'overseas');
+const netItems = items;   // items 는 이미 국내만이다
 const kw = extract(netItems, { top: 26, minEdge: 4 });
 const network = {
   basis: netItems.length,
@@ -283,11 +277,27 @@ const network = {
 };
 console.log(`  키워드 네트워크 ${network.nodes.length}개 · 연결 ${network.links.length}개 (국내 ${netItems.length}건 기준)`);
 
+// ── 6-c. 해외 동향 (참고) — 분야별로 묶어 제목·매체·날짜·링크만 싣는다. 어떤 수치에도 넣지 않는다.
+const LV = { crisis: 0, warning: 1, watch: 2, normal: 3 };
+const overseas = {
+  total: overseasItems.length,
+  groups: [...new Set(overseasItems.map((x) => x.field))]
+    .map((f) => ({ field: f, list: overseasItems.filter((x) => x.field === f) }))
+    .sort((a, b) => b.list.length - a.list.length)
+    .map((g) => ({
+      field: g.field, count: g.list.length,
+      items: g.list
+        .sort((a, b) => (LV[a.level] - LV[b.level]) || (b.date || '').localeCompare(a.date || ''))
+        .slice(0, 10)
+        .map((x) => ({ title: x.title, media: x.media, date: x.date, link: x.link, level: x.level }))
+    }))
+};
+
 // ── 7. 주차 객체 조립
 const week = {
   id: narr.id, label: narr.label, date: narr.date, range: narr.range,
   tier, tierName: { 4: '위기', 3: '경계', 2: '주의', 1: '관심' }[tier], state, complete: true, live: true,
-  sourceNote: `무료·공개 소스 수집 ${raw.total}건 → 관련성 필터 후 ${n}건 · 수집일 ${latest.replace('.json', '')}`,
+  sourceNote: `무료·공개 소스 수집 ${raw.total}건 → 관련성 필터 후 국내 ${n}건 (해외 ${overseasItems.length}건은 참고 항목으로 별도) · 수집일 ${latest.replace('.json', '')}`,
   signal,
   map: {
     levels, uni: uniDetail,
@@ -295,7 +305,7 @@ const week = {
     legend: narr.legend
   },
   network,
-  summary, articles,
+  summary, articles, overseas,
   changes: narr.changes, changesTitle: narr.changesTitle, changesNote: narr.changesNote,
   watch: narr.watch, weeklyMetrics,
   kpis: [{

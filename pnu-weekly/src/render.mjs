@@ -152,6 +152,23 @@ function renderWeek(w, sources, T) {
       </ul>`).join('')}</div>
   </details>`).join('')}`;
 
+  // 🌐 해외 동향 — 참고용. 신호·지표·네트워크 어디에도 들어가지 않으므로 참조 기사 뒤에 따로 둔다.
+  const LVW = { crisis: '위기', warning: '경고', watch: '관찰', normal: '일반' };
+  const LVC = { crisis: 's', warning: 'i', watch: 'm', normal: 'l' };
+  const O = w.overseas;
+  const overseasRef = !O ? '' : `
+  <h2 class="sec">${esc(T.secOverseas(num(O.total)))} <small>${esc(T.overseasSub)}</small></h2>
+  ${!O.total ? `<p class="note-line">${esc(T.overseasNone)}</p>` : O.groups.map(g => `
+  <details class="day">
+    <summary><span>${esc(g.field)} — ${cnt(g.count)}</span></summary>
+    <div class="cat"><ul class="artlist">${g.items.map(x => `
+      <li><span class="lv ${LVC[x.level] || 'l'}">${esc(LVW[x.level] || x.level)}</span>
+      <a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a>
+      <span class="artmeta">${esc(x.media || '')}${x.date ? ' · ' + esc(x.date) : ''}</span></li>`).join('')}
+      ${g.count > g.items.length ? `<li class="more">${esc(T.more(g.count - g.items.length))}</li>` : ''}
+    </ul></div>
+  </details>`).join('')}`;
+
   const changes = `
   <h2 class="sec">${esc(w.changesTitle || T.changesDefault)}</h2>
   ${w.changesNote ? `<p class="note-line">${esc(w.changesNote)}</p>` : ''}
@@ -265,7 +282,7 @@ function renderWeek(w, sources, T) {
       </div>
     </li>`).join('')}</ul>`;
 
-  return `<section class="week" id="${w.id}">${head}${map}${net}${summary}${articles}${changes}${watch}${weekly}${kpis}${voices}${paths}${sectors}${diag}${refs}</section>`;
+  return `<section class="week" id="${w.id}">${head}${map}${net}${summary}${articles}${overseasRef}${changes}${watch}${weekly}${kpis}${voices}${paths}${sectors}${diag}${refs}</section>`;
 }
 
 // PDF 파일명 규칙 — pdf.mjs 가 굽는 이름과 반드시 같아야 한다

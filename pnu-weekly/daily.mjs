@@ -24,12 +24,14 @@ const TH = J('data/thresholds.json');
 const files = readdirSync(join(root, 'data/collected')).filter((f) => f.endsWith('.json')).sort();
 
 // 최근 수집본들을 합쳐 일자별로 재구성 (중복은 제목 기준 제거)
-const seen = new Set(); const all = [];
+const seen = new Set(); const all = []; const allOverseas = [];
 for (const f of files.slice(-2)) {
   for (const it of relevant(J(`data/collected/${f}`).items)) {
     const k = it.title.replace(/\s+/g, '').slice(0, 40);
     if (seen.has(k) || !it.date) continue;
-    seen.add(k); all.push(it);
+    seen.add(k);
+    // 해외 기사는 참고 항목이다. 등급·분야·대학 집계에 넣지 않고 날짜별 참고 목록에만 싣는다.
+    (it.region === 'overseas' ? allOverseas : all).push(it);
   }
 }
 const days = [...new Set(all.map((x) => x.date))].sort().reverse().slice(0, 10);
@@ -78,6 +80,7 @@ const wd = (d, T) => T.daily.weekday[new Date(Date.parse(d)).getDay()];
 function renderDay(d, idx, T) {
   const D = T.daily;
   const items = all.filter((x) => x.date === d).sort((a, b) => ORDER[a.level] - ORDER[b.level]);
+  const ov = allOverseas.filter((x) => x.date === d).sort((a, b) => ORDER[a.level] - ORDER[b.level]);
   const s = stat(items);
   const prev = days[idx + 1] ? stat(all.filter((x) => x.date === days[idx + 1])) : null;
   const delta = prev ? (s.risk - prev.risk).toFixed(1) : null;
@@ -124,6 +127,17 @@ function renderDay(d, idx, T) {
       ${list.length > 40 ? `<li class="more">${esc(D.more(list.length - 40))}</li>` : ''}
     </ul></div>
   </details>`).join('')}
+  ${!ov.length ? '' : `
+  <h2 class="sec">${esc(D.overseas(ov.length))} <small>${esc(D.overseasNote)}</small></h2>
+  <details class="day">
+    <summary><span>${esc(D.overseas(ov.length))}</span></summary>
+    <div class="cat"><ul class="artlist">${ov.slice(0, 30).map((x) => `
+      <li><span class="lv ${LVCLS[x.level]}">${esc(D.lvWord[x.level])}</span>
+      <a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a>
+      <span class="artmeta">${esc(x.media)}</span></li>`).join('')}
+      ${ov.length > 30 ? `<li class="more">${esc(D.more(ov.length - 30))}</li>` : ''}
+    </ul></div>
+  </details>`}
 </section>`;
 }
 
@@ -151,12 +165,6 @@ function renderDaily() {
 <title>${esc(title)} | PNU</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>${css}
-.artlist{list-style:none;margin:0;padding:0}
-.artlist li{display:grid;grid-template-columns:46px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
-.artlist li:last-child{border-bottom:0}
-.artlist .lv{text-align:center;font-size:11px}
-.artmeta{color:var(--mute);font-size:12px;white-space:nowrap}
-@media (max-width:860px){.artlist li{grid-template-columns:46px 1fr}.artmeta{display:none}}
 </style>
 </head>
 <body>
@@ -198,6 +206,6 @@ ${days.map((d, i) => renderDay(d, i, T)).join('\n')}
 const html = renderDaily();
 writeFileSync(join(root, 'dist/daily.html'), html, 'utf8');
 console.log(`✓ dist/daily.html  ${(Buffer.byteLength(html) / 1024).toFixed(0)} KB`);
-console.log(`  ${days.length}일치 · 총 ${all.length}건`);
+console.log(`  ${days.length}일치 · 국내 ${all.length}건 · 해외 참고 ${allOverseas.length}건`);
 console.log(`  일간 임계값 T4≥${DTH.t4}% T3≥${DTH.t3}% T2≥${DTH.t2}% (표본 ${MIN_N}건 미만은 미산정)`);
 days.forEach((d) => { const s = stat(all.filter((x) => x.date === d)); console.log(`  ${d}  ${String(s.n).padStart(3)}건  위험신호 ${String(s.risk).padStart(5)}%  ${s.tier ? 'T' + s.tier : '—'}`); });

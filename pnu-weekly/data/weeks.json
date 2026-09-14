@@ -28,11 +28,11 @@
     "state": "Warning",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 1189건 → 관련성 필터 후 903건 · 수집일 2026-09-04",
+    "sourceNote": "무료·공개 소스 수집 1189건 → 관련성 필터 후 국내 729건 (해외 174건은 참고 항목으로 별도) · 수집일 2026-09-04",
     "signal": {
-      "crisis": 4.7,
-      "warning": 5.4,
-      "total": 903,
+      "crisis": 5.6,
+      "warning": 4.3,
+      "total": 729,
       "trend": "rising"
     },
     "map": {
@@ -1226,11 +1226,11 @@
     "articles": [
       {
         "day": "9/4(금)",
-        "count": 64,
+        "count": 49,
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 21,
             "items": [
               "내년 지방국립대 신입생 '등록금 0원'..사립대 '반발'",
@@ -1239,7 +1239,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 14,
             "items": [
               "“교육마저 TK 패싱하나”… ‘서울대 10개’ 탈락에 폭발한 경북대",
@@ -1248,7 +1248,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 7,
             "items": [
               "부산교대 KREON 에듀포럼, AI 미래교육 논의 900명 참여",
@@ -1257,32 +1257,23 @@
             ]
           },
           {
-            "name": "기타 · 해외",
-            "count": 9,
+            "name": "재정",
+            "count": 5,
             "items": [
-              "Tracking Trump's Crackdown on Higher Education",
-              "Trump administration pushes to remove tax exemption for private colleges with DEI policies",
-              "College loans were late due to new federal rules. Students are paying the price."
-            ]
-          },
-          {
-            "name": "거버넌스 · 해외",
-            "count": 3,
-            "items": [
-              "UPDATE: California Legislature passes community college bachelor’s degree bills after last-minute changes",
-              "Florida bans undocumented students from selective public universities",
-              "Some university leaders not happy with Legislature’s enrollment oversight"
+              "경기도의회 윤도희 의원, “대학생을 지역인재로”... 경기도 RISE·앵커 지원 조례안 대표발의",
+              "윤도희 경기도의원, “대학생을 지역인재로”…경기도 RISE·앵커 지원 조례안 대표발의",
+              "“아버지, 저 ‘등록금 0원’ 지방대로 갈게요”…‘인서울’ 지원 5년 최저, 지방대는 최고 [세상&]"
             ]
           }
         ]
       },
       {
         "day": "9/5(토)",
-        "count": 24,
+        "count": 19,
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 10,
             "items": [
               "한상덕 교수의 〈콧노래 에세이〉 ⑮ … 사노라면",
@@ -1291,7 +1282,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 4,
             "items": [
               "지방국립대 ‘무상 교육’에 입시판 지각변동…사립대는 “연쇄 고사” 울분",
@@ -1300,7 +1291,7 @@
             ]
           },
           {
-            "name": "재정 · 국내",
+            "name": "재정",
             "count": 3,
             "items": [
               "윤도희 경기도의원 대학생을 지역인재로 경기도 RISE 앵커 지원 조례안 대표발의 > 뉴스",
@@ -1309,29 +1300,22 @@
             ]
           },
           {
-            "name": "AI·디지털 · 해외",
+            "name": "AI·디지털",
             "count": 2,
             "items": [
-              "Right of centre*: Searching for higher education at Reform UK’s Annual Conference",
-              "House Passes Bill to Cut University Funding Over Israel Boycotts, 237-169"
-            ]
-          },
-          {
-            "name": "기타 · 해외",
-            "count": 1,
-            "items": [
-              "Middle Class Kids Go Tuition Free To MIT, Princeton And Other Top Colleges"
+              "“이 논문, 누가 썼습니까”…AI가 흔든 연구윤리의 경계",
+              "AI 시대 한문고전번역을 국가 인문학 R&D로 격상해야 하는 이유"
             ]
           }
         ]
       },
       {
         "day": "9/6(일)",
-        "count": 35,
+        "count": 24,
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 9,
             "items": [
               "대학은 지금 괜찮은가 — 캠퍼스 정신건강 위기, 우리 모두의 문제입니다",
@@ -1340,7 +1324,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 7,
             "items": [
               "지방국립대 신입생 등록금 ‘0원’ 추진... 내년 30곳 대상",
@@ -1349,7 +1333,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 3,
             "items": [
               "[기획-전북 대학 AI 반도체 경쟁 소외 위기] 상-전북대 탈락이 보여준 지방대 경쟁의 현실",
@@ -1358,32 +1342,23 @@
             ]
           },
           {
-            "name": "기타 · 해외",
-            "count": 7,
-            "items": [
-              "Rethinking higher education",
-              "University As Catalyst For Societal Development (1)",
-              "UC TEAMS Expands College Access With Five Advanced Placement Courses"
-            ]
-          },
-          {
-            "name": "AI·디지털 · 해외",
+            "name": "재정",
             "count": 3,
             "items": [
-              "Alex Matrsson: It’s Time for Global Higher Education to Wake Up and Reclaim Its Purpose",
-              "How AI policies are reshaping college learning and sowing confusion",
-              "NUS and NTU top Asian universities in subject rankings again - Singapore Economic Development Board (EDB)"
+              "한국교통대 'RISE 홍보' 캠퍼스에 새바람",
+              "경북대 ‘등록금 0원’ 카드…7일 수시부터 대구 사립대 흔들까",
+              "지역 대학 가면 등록금 전액 지원? ‘지역 균형 발전 장학금’이란 [지식용어]"
             ]
           }
         ]
       },
       {
         "day": "9/7(월)",
-        "count": 95,
+        "count": 76,
         "open": false,
         "cats": [
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 23,
             "items": [
               "최교진, 충남대 찾아 '서울대 10개 만들기' 점검…KAIST·기업 협력 논의",
@@ -1392,7 +1367,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 21,
             "items": [
               "‘통합 충남대’ 성사냐 무산이냐… 8~10일 전 구성원 투표서 판가름",
@@ -1401,7 +1376,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 18,
             "items": [
               "[오마이포토] 호르무즈 파병? 반발하는 대학가",
@@ -1410,32 +1385,23 @@
             ]
           },
           {
-            "name": "기타 · 해외",
-            "count": 12,
+            "name": "입시·학령인구",
+            "count": 7,
             "items": [
-              "The UK’s first ‘super-university’ backed to tackle Neets crisis",
-              "GU Halts Many International Students’ Work Approvals After New Federal Guidance",
-              "EDNXT Bhopal 2026: NEP 2020 in Action: Transforming Higher Education at Scale"
-            ]
-          },
-          {
-            "name": "AI·디지털 · 해외",
-            "count": 4,
-            "items": [
-              "UP to set up mental health support cells in all higher education instts",
-              "Faculty Year Opening: ‘We’re not in a bad position’",
-              "Dordt University launches generative AI pilot program for tools access, community conversations"
+              "[2027 수시모집] 전북대학교",
+              "[이슈페이퍼 vol.03] 충원율 98.9%의 유효기간",
+              "‘국립대 등록금 0원’, 올해 수시모집 판도 바꿀까"
             ]
           }
         ]
       },
       {
         "day": "9/8(화)",
-        "count": 130,
+        "count": 94,
         "open": false,
         "cats": [
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 37,
             "items": [
               "최교진 교육부 장관, 충남대 찾아 ‘서울대 10개 만들기’ 점검…AI 거점대학 추진",
@@ -1444,7 +1410,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 26,
             "items": [
               "제주 초등교사 선발 94명→26명 72% ‘급감’…제주대 교육대학 학생들 교원 감축 '반발'",
@@ -1453,7 +1419,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 11,
             "items": [
               "교육부 장관, 충남대 찾아 ‘거점국립대 패키지’ 본격 실행 논의",
@@ -1462,32 +1428,23 @@
             ]
           },
           {
-            "name": "기타 · 해외",
-            "count": 14,
+            "name": "재정",
+            "count": 11,
             "items": [
-              "Iowa’s University Reforms Show the Way Forward",
-              "Make Colleges Pay their “Fair Share”: Congress Should Close the Endowment Tax Loophole",
-              "Gov. Pritzker Cuts Ribbon at Illinois State University's New College of Engineering"
-            ]
-          },
-          {
-            "name": "입시·학령인구 · 해외",
-            "count": 8,
-            "items": [
-              "International students face visa uncertainty as enrollment declines",
-              "NU System sees more freshmen as overall enrollment declines",
-              "UNK freshman enrollment rises as overall enrollment declines"
+              "[수시특집] 대덕대, 등록금 부담 제로화로 경쟁력 갖춘다",
+              "RISE 개편 혁신모델 ‘앵커’ 첫 성과 공유…경과원, 67개 대학과 포럼",
+              "\"RISE 넘은 앵커로\" 경기도 대학 67곳 '지역성장·인재양성' 길 찾다 - 머니투데이"
             ]
           }
         ]
       },
       {
         "day": "9/9(수)",
-        "count": 135,
+        "count": 99,
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 37,
             "items": [
               "제주대 교수회 10일 개교 74주년 특별 세미나 개최",
@@ -1496,7 +1453,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 25,
             "items": [
               "최교진 교육부 장관, 충남대 방문해 거점국립대 패키지 실행방안 논의 |",
@@ -1505,7 +1462,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 18,
             "items": [
               "충북대, 인구감소·생성형 AI 시대 대학의 역할과 과제 논의",
@@ -1514,32 +1471,23 @@
             ]
           },
           {
-            "name": "기타 · 해외",
+            "name": "재정",
             "count": 16,
             "items": [
-              "Ontario's new high school grading scheme 'a lot more pressure' for students, teens say",
-              "[Lee Deok-hwan's Science World] Korea's plan to build 10 Seoul National Universities sidelines private universities",
-              "What is the university president’s role in today’s world?"
-            ]
-          },
-          {
-            "name": "AI·디지털 · 해외",
-            "count": 10,
-            "items": [
-              "University of Utah announces job cuts, implementing cost-cutting measures",
-              "Opinion: AI is disrupting education. Universities must change, and change fast",
-              "Australian universities urge government for cheaper housing, travel as student rents soar 40%"
+              "국·공립대 교수들 국·공립대 시설·운영비 전액 국고 부담하고, 블록펀딩 도입하라",
+              "윤도희 경기도의원 “1,281억 지역대학 지원, 지역동반성장 조례로 뒷받침”… RISE·앵커 조례안 상임위 통과",
+              "사립 일반대 104곳, 적립금 쌓고도 올해 등록금 인상…2025년 사립 일반대 누적 적립금 10조원 육박"
             ]
           }
         ]
       },
       {
         "day": "9/10(목)",
-        "count": 273,
+        "count": 226,
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 73,
             "items": [
               "충남대 반대로 국립공주대와 통합 무산… '학생 90% 반대벽 못 넘었다'",
@@ -1548,7 +1496,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 57,
             "items": [
               "‘서울대 10개’ 1차 탈락 격차 우려에… 김민석 “후속 선정·대상 확대 정부 요청할 것”",
@@ -1557,7 +1505,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 48,
             "items": [
               "연세대 인구와 인재 연구원, 12대 아젠다 중심 사회구조 개혁 연구 추진",
@@ -1566,32 +1514,23 @@
             ]
           },
           {
-            "name": "기타 · 해외",
-            "count": 17,
+            "name": "입시·학령인구",
+            "count": 30,
             "items": [
-              "Governance dispute between University of Queensland and student union boils over",
-              "Ypsilanti Township residents voice concerns over proposed University of Michigan, Los Alamos data center| WDIV Local 4",
-              "Accreditation Reform Is Exactly What Higher Education Needs | Commentary | Education"
-            ]
-          },
-          {
-            "name": "입시·학령인구 · 해외",
-            "count": 13,
-            "items": [
-              "CU Boulder predicts first fall enrollment decline since 2020",
-              "Pasco schools seek parent input on handling enrollment decline",
-              "Mass. colleges fear new 4-year visa cap could drive away international students"
+              "[단독][2027수시경쟁률] 홍익대(마감전날) 7.42대1.. ‘최저’ 교과 학교장추천자 컴퓨터공학과 1.05대1",
+              "[단독][2027수시경쟁률] 숭실대(마감전날) 11.71대1.. ‘최저’ 교과우수자-학교장추천 회계 1대1",
+              "[단독][2027수시경쟁률] 경기대(마감전날) 8.55대1.. ‘최저’ 교과 학교장추천 건축학과(5년제) 1.4대1"
             ]
           }
         ]
       },
       {
         "day": "9/11(금)",
-        "count": 147,
+        "count": 142,
         "open": true,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 64,
             "items": [
               "대구대, ‘대통령기 제48회 전국검도선수권대회’ 단체전 우승",
@@ -1600,7 +1539,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 40,
             "items": [
               "‘무전공’ 확산에 학과는 생존경쟁… 학생 선택 따라 통폐합",
@@ -1609,7 +1548,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 26,
             "items": [
               "럽디(주), '2026년 제1회 논문상' 공모…총상금 500만원, 9월 15일까지 접수",
@@ -1618,24 +1557,402 @@
             ]
           },
           {
-            "name": "기타 · 해외",
-            "count": 3,
+            "name": "입시·학령인구",
+            "count": 7,
             "items": [
-              "Ontario Confederation of University Faculty Associations - Doug Ford's OSAP cuts are a labour issue. Here's why.",
-              "UK universities fail to win over Reform",
-              "New Michigan College Dorms Cost Millions as Schools Compete for Fewer Students"
-            ]
-          },
-          {
-            "name": "AI·디지털 · 해외",
-            "count": 1,
-            "items": [
-              "When foreign universities come home"
+              "경희대 2027학년도 수시 경쟁률 17.2대 1…마감 전 5만1천여 명 지원",
+              "[단독][2027수시경쟁률] 성신여대(마감직전) 10.38대1.. 교과 지역균형 4개 학과 ‘미달상태’",
+              "[단독][2027수시경쟁률] 경기대(마감직전) 14대1.. ‘최저’ 교과 학교장추천 건축학과(5년제) 1.8대1"
             ]
           }
         ]
       }
     ],
+    "overseas": {
+      "total": 174,
+      "groups": [
+        {
+          "field": "기타",
+          "count": 79,
+          "items": [
+            {
+              "title": "The UK’s first ‘super-university’ backed to tackle Neets crisis",
+              "media": "Newswav",
+              "date": "2026-09-07",
+              "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOcm1WNnNRY2g3Z21KUWs0Vl81VklnVjZpVDhXbU1tMUNTSUE2Z2Y3dVFuR0o4ay1hRG04aGxvVWljeTlvOWE2dWNZV1UyUEk5dzlQUURJbEYxcGwzRUU1MEYxdUNsZzJxajNfRWRldEFjRExsUzVFUFZuM3RjbVgzOFRZVXZPMGxEOTJrY0RPU3hGLVRTTWY5VE5DLThmS3FEaEt6dA?oc=5",
+              "level": "crisis"
+            },
+            {
+              "title": "Ontario Confederation of University Faculty Associations - Doug Ford's OSAP cuts are a labour issue. Here's why.",
+              "media": "educationnewscanada.com",
+              "date": "2026-09-11",
+              "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPYzl1bHRKQTR2cHZ0S0pCaGZlbkxTdHo0eV9hWE9ONnRtbTRBRFQzdGdCNEp4OWpqZ05VZEJpU2NaVGs2ckU4VDBaS1JTMXRlS2JuRmYtS3VnMHMxUmhGc0owd2lpcksxMkJUOTJYX004ci1VaVJsU1BpWnhDZDBSV3hRdmF1Nm5POTEzSk1xbkVYekNuYXhCWlRPdUtHUU5Rb1VuZ09JaFZXNjJkNWo5VnE0dV8yQW1ZVGlaSHpHNllkb2R6ZkdDWHlRVVF6SHc?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "Governance dispute between University of Queensland and student union boils over",
+              "media": "ABC News & Headlines – Australian Broadcasting Corporation",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMDY4bm5ycWVjdzN1MU5ablVVcTYtNmVzQ0ZsbXA4eTBPOUZhYVhMaldmUFg2cGx1YTJSMmxsWXc0ZGFRVFFrLTdNdzhfbXIwajgzUHFPTEdZRUZULXoxZ0twMVJxRl8yT0ZPbUh6TTJUMDEzXzl4QTFiMWxEMEp4X0xYd0JkdENJTVd2dnJGOTI4RDhQNW5rekk3SV9BU2xSbG5CR1NBV1NHaTZwbHkyWg?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "Ypsilanti Township residents voice concerns over proposed University of Michigan, Los Alamos data center| WDIV Local 4",
+              "media": "ClickOnDetroit | WDIV Local 4",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPdExmbzNwdW44bk16UUhOY3d4UUhQWHZKa2hoZ1lEYk1yY3QyUU1lOXlLRXpvUlIzQ1lTZTNKdlVha3lYV2drbGpFcExfZFJCY0dndzJpczc2ejdRTFFOR212NzA3ZVY3N0UweVBWdXJZbWM0MVBocndpNkdUVVNXLXpkY3JRM3dkT3d2TUhKUVFHUDJMa2lnNXlKTUZLMERWRlNFMkMwU214SU9uZWs1ZXRiM0VPaXJwSVdkUm96bkZmdGpxbmZOaUVGTDJqejdzQjZFbzFtWXVrOHhQUTI3b09qYkxLV25WdThGMktqM3pYXzU4a1pxaVBtQzVoamM?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "Ontario's new high school grading scheme 'a lot more pressure' for students, teens say",
+              "media": "CBC",
+              "date": "2026-09-09",
+              "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQYktvVW9Ua0dObUZnZlYwQ0VKNlE3QlB5R0pnTE5NbFR6Q0J4NlJlM0xhU1NVUGxzNTJ5NkpXNHdzSjZYRXl4VFd6S3ctOFF5dEpfME1vdEtqczJBZk5kb0s3RV9pb0U1NG93aHdlbDZDTjNxRnpNR0VHZlFxbVVOZGFzWURhVTdVWGc?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "[Lee Deok-hwan's Science World] Korea's plan to build 10 Seoul National Universities sidelines private universities",
+              "media": "DongA Science",
+              "date": "2026-09-09",
+              "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9wcXktQjhEOFNPSDlhb0c5TWlQYldEQkdWM2NhNUpsOVRldmEwcmRLd04zZnZOdm1nMVRpenYtRkVGVDcwOXdqY3QzeERzTUdic0F5Zg?oc=5",
+              "level": "watch"
+            },
+            {
+              "title": "UK universities fail to win over Reform",
+              "media": "Financial Times",
+              "date": "2026-09-11",
+              "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNNVUyenhrMUU3dHFVdmxGQ3c3cXVkM2I2NmRqak1Yc21oNjNzRmRJZUhFMGFzRDgxTnZ5cmEwTFdrUUpnVFJrYWtRNk1meGR5YWFSb1M5X2E3aENkXzlwMHg2U2tXZC03S2kxeFRCejBLbUl2czRsVXpiaGVXM1ZERThDanE?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "New Michigan College Dorms Cost Millions as Schools Compete for Fewer Students",
+              "media": "wowo.com",
+              "date": "2026-09-11",
+              "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNa3dqMm5aM3FIY3RSSHNXNjRQWEhCOW42dDIyUS1tS1RNdVU5YU1DMjJDZ3d6RVhmQzl4ZlNTb2NTeGxiVzF1X1J1V1B2dUh6Mkp4UHo3eXlidnBoOWUtUnFHOHVwYVloeHlUa1FjMU1vazRtQXFpeHE0V2RLNVA1RGtuRXNPV0Rmb1VOU1EzeUh1Sl82MFVCVmNPYWM?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "Accreditation Reform Is Exactly What Higher Education Needs | Commentary | Education",
+              "media": "America First Policy Institute",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPbVE0Q1RXbDExMlg1UG5wOTh4blVXTlFkOXJXbDdRRDEyZ0RxMXRPdG5ST3pXMFU1alU3dGNHZnZvSHVULTB0a2ZBRUl4WVJVNjlOV0cxREctb1A5azlGdElmSHdGUG4xUlpIUENQVVRuTlplblhUeUhUYXlLS2hFdlQ5eVpuQ2h0dWdFTG1aanItc3NnTEVhVGpQTVoxUjduR3V3?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "International Students Face New Immigration Hurdles This Year",
+              "media": "American Council on Education",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNcEV0c1Fpdm9YV1JSY1ZZT21JVUdkY2tMVmFaQjRUbEhzc1pIVjFzcXZ5NW1seVh4ald4YmNNUV9JbUoxQ2c1M25tMFdPcUZ1QlhJVk5oM1JyNVYyeWpVQ2ItT1MtVlBEbFFIeDNBencxd1RqaThTRlVnT3ZZSjRxczFxQmZyRVdKbnF2QjNIRmVXR3ZiOWxXN0ZiNjRxYnBINUxYeVlhQV9PQQ?oc=5",
+              "level": "normal"
+            }
+          ]
+        },
+        {
+          "field": "AI·디지털",
+          "count": 35,
+          "items": [
+            {
+              "title": "UK university entry rate declines everywhere bar Scotland – Ucas",
+              "media": "Times Higher Education",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNMjRIZ2VsaVVGcVZzMnVBQVFUd3RsbzgxRDZFR2cxeC1aNnVsQkpqZ3BlNGoxNUZRWXFtUDVQcmZFdW5RMDdrc0RndzI4NXBKWEcxeVZuTGRPSkRzVm5QNXlmdkVaZzc4SmMwaTlYZVFVTENIckkxemZzZDhIUHhISWFiNU9JWndUZXNFb0xoQ0wwd2thbWxmUXkzd29lWkpHRnFZdnpvQ0FQa3c?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "University of Utah announces job cuts, implementing cost-cutting measures",
+              "media": "ABC4 Utah",
+              "date": "2026-09-09",
+              "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9lNDkzdUpJNk01X0JBNHZEdlRvQU5nUDI3QjlYZ0VuUWtSXzNPaGhJRnR6b0JpUGdKZ0gtNkVDUm1RcHNJek1QME12dF92cGhURUNNbjdwbm5SdDhXSk00clB5d1VEWlQ2WXFORVhacHjSAXZBVV95cUxQMWpDOTdjNC1CeDE1dkRYQS1ha0FGUWR6aW15U25TVzBRNkU5Z0VLV3NTWEJ1WThFVnVsNUZuLTNnMDdzNHpIX1lKbWVFTHItQ2FOSjhic3U1dGd1Qkhud1VYWG1odWpueFpzUTNlUE1XUl9uRjl3?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "When foreign universities come home",
+              "media": "The Hindu",
+              "date": "2026-09-11",
+              "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQeUQ1OHJjUEhkWnlMLVZhdmxldTlpRmUyWUI1LWhvQXljcURDb29HZU8yal9VU3ZHWXBGQVptMGZzUnprRUZVTDhYZ2N1eE9GTkdPaE93YjJrQVI3U1NLbjdOM1c0dXlnbTJ0Zy01RGUxT2N4MklSWWtpeTRpakp1OWZySVY5bjZYMUFTVzJOREJNYnBhaXh2elJZRkR5NVBMRkExVG9Eb0E2cmNJMFHSAa4BQVVfeXFMUHlENThyY1BIZFp5TC1WYXZsZXU5aUZlMllCNS1ob0F5Y3FEQ29vR2VPMmpfVVN2R1lwRkFabTBmc1J6a0VGVUw4WGdjdXhPRk5HT2hPd2Iya0FSN1NTS243TjNXNHV5Z20ydGctNURlMU9jeDJJUllraXk0aWpKdTlmcklWOW42WDFBU1cyTkRCTWJwYWl4dnpSWUZEeTVQTEZBMVRvRG9BNnJjSTBR?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "Chungnam, Kongju National Universities Merger Canceled",
+              "media": "조선일보",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxORTViRmJOLW9DdXdabENnUTF6N2w0akphd1JXWWp4SGRfNEI4Xzh4VzZRU2VZNHk0UlVYMlVwR3BSWjNuWXJKQ1QySkJuYzJxSk0xMFZSRUFlbHcwai15aVkxelctU21kZ0RLMERfSjBzaWlQMmg1YTZ1bGNELThJeWpKZkJHV1dM?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "'Debate' on overseas students 'a big challenge', UUKI head suggests",
+              "media": "Times Higher Education",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOS3dKVG1NMEh6OV9TZ2dSWW1UaDlxTzlRcldzaEJsQ09SOHppeGpXdVZIeXYzbE54b2hfZWVmRTl5WXZzTWJZUnROSmRzM3lzUlUwMVNhbUt6WkZ0RExEYWhaUzZoXzVPMXBZaEJWUWgtaXAteDFvMW5RWTBhRWJuUXBIaHNWMUw5RDM1VEE3U0N6aGdkSzdmaTIzWllBNmt1?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "How To Use AI Responsibly When Applying To College",
+              "media": "Forbes",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxONjJwTDJNSmhJWWU5bnVoOFlPaFdjTW0xYzloUW1BNFNwN2tudXY0QlFpcUxWdmpmUWNGN1dRRWh1OVRQRl9JTEVIcTE4c2lpWGtjaC1PdXJPNm9KSmxhN01VcUo4S2h2X3N1UG5zRWtnanlPQVNveTl4b2JHR0VNdlk5QXNZX2dNajMtbHB1YTl3ZnUySVE?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "ChatGPT use raises assignment scores by 0.86 points, universities face task of teaching effective use",
+              "media": "디지털투데이",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOX3dwMUdiVXF0TnFZQk1LNThVQzF4SVBleU15QkRVSTNTcUF3aExsU01FWGNCM1Y2WS1nOFFFSERrWUpkUVpfcEtmaG11b1pBSW9pRzVsS2tHcXJjQ3gtbVpobC1vX1FNSmpsM0Z6UjJjWjRTdm5JTWhXbmlBZXp3MnZaVUNscG11NWpoam5rZmNvNHNVR0FpV2pDcDBxMmswaHlJVGxPMUVQYkN5QUlReGNqaXVNMzV4U1BueXBxengxTDJkRHdaSlJCWENFN2pJdUdzeXV2WHU5RFFsaDVn?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "Faculty Councils Push '10 Seoul National Universities' Pledge for Balanced Growth",
+              "media": "조선일보",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNQkMwSndwOE82ZDFuSEg1SkVMeFVEaFk2dVBRRnltMkViMFpUUkltSXVwS0FLQkdoSUFUSGtOOWRta0g4S2J0UVBBTENkZFY2dG9TTWRNWDRQVlhHWTFDQUNUd2RramZxQnRXaU9wM1hQQzVZOGFxWHI4MXpCV0xmbnB0VEdNSWlr?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "Should You Use AI To Write Your College Essay? Here’s What Admissions Experts Say",
+              "media": "Forbes",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQTTBBQ1ZjNXo5LXM0MzR0SWpuUlFmVURHUEEzaXVmRnhWakd6NkVBRm1YWDEyMGZkUXloYlVFbi1KWkU4TTJnTUJOcXdSSmFWZ1NZam1ienlZWVppVnIwR19fVWZaVGZsMUpoSktKdUxfVjA5WHFkLXdCeUtkVl94Q1FGSzJQaElfYXc?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "BRAC University conclave calls for ethical AI use and stronger academic integrity frameworks",
+              "media": "thefinancialexpress.com.bd",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPMnZVRFF3WGZBYlhYRzhlaUd3aUhNdW1KbWFMbE45NkxzTTN3RDdzMlBmS24xT29zbmlDbG5EQ0xWRkVFRDRMeUZkS1ZZaFdVYVdQcHFjMF9NeFpYTDA3R0lZY1J0b09rby1DaGo2RFdPdFRUSXFianQwYmlOOUtOOUdpMGNscnp3OTBkVlE0Sjg2bWh4X0VjNmlLRnNSQmpPaEQ2dVZqZndUUS1FOUJGWTBOa3BpYnRGT19tdEhmVEhLaGpNbl9IZlVVNnVxLWpl?oc=5",
+              "level": "normal"
+            }
+          ]
+        },
+        {
+          "field": "입시·학령인구",
+          "count": 30,
+          "items": [
+            {
+              "title": "CU Boulder sees first fall enrollment decline since 2020",
+              "media": "Daily Camera",
+              "date": "2026-09-11",
+              "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5CRmY4RF9XajNSaUVndDJQWlVNb0ZGcjRETlhxVDlRalVFYUtJT0N6X2dBbDRfQkdUM1VpSzZsQURUYnh3bFhqY2xlUFd4RktkbmxQUGVCdHRWU0dNb0FhQ2V0Wk9kc24wZTdfY0JCMG5KSVN6X0JfZA?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "CU Boulder predicts first fall enrollment decline since 2020",
+              "media": "Longmont Times-Call",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBaYkdiNUxrRUo5OFdEN2VMSXRhT1pRUjE0UE5abEZwb2lUcEhEcGtqSEdYQ01FVzlSM2NhdXJQLVRpZlNvRTJhTTIyLVota05GSzRBOGNEd25RXzgyRFZ2SkV0TTdQWDRHRkF5Y0ctTmRyek1vTHc?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "Pasco schools seek parent input on handling enrollment decline",
+              "media": "Yahoo",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNcFNvaUZ6YkpodThrRzdkVHduZ29TTlB5RWU3ZHVXdVVVQ0hOYU9ENW1yT1hkbmNJXzgzUjAxT05wSnl5cUpJemlCX0tuRm1NeVpTQl9qYnBvSk55Tm5QOGxudXItTFowSGEyR1JFU21zbGNNZmVfWUF1endPZDFEOU43MnVBb3JQWm1HWl9R?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "University of Nebraska-Lincoln sees second year of enrollment decline",
+              "media": "dailynebraskan.com",
+              "date": "2026-09-09",
+              "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPc2FDQVcwRVBMMzBiNDJxZnhwZHpJWlFCM1NmTTc3MTJ0eVlVLTFFUkF6WTc1RWhFdjh2MTd5ejQ5MzlZX3NjaUlsMHlwb2IxWl9wUnBJR1VNV0RiR3c1VXRYS2wybTZzSk1pTlVqbHBFb0toNnBJNEdwUUpVbVBxRFNHTkxPbUFlOG1uN0pvaGVESkk1MUtwODRvM1lteFlORmlNbGl6ZUQyTzF4RkxqUnFMb2ZpY2JzMUlDcUx3TnlzQWw2Yy1UZXllUTd3ZFFuNjVuZ0ttNlFvckhzMzVySjFEYnZpbU9lTmlJ?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "NMU sees decline in enrollment for fall semester; launches new resources for students",
+              "media": "WZMQ 19 News",
+              "date": "2026-09-09",
+              "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQaW5oWm9kcU1UOXAwRjBjLUZOeklGQjNNclJRZ1FueHI3Tzh4UWhNenJjbFFPZE5QQXdra1dWYVUtM1p5QVZNQ0xFYURSaWVBNktwTXhObXpMTTg4dnVsYTV6aWE1cTJwSjM1LTc0NDhkNUMyTnRFV1F2MUIzOW9Ua2JLSWhEVVFDMGw5aG1USzlxQ2hpZ0stWjZQYmN2QnRqekRQNXY0aWtyTkl3NFlvYnNHRTZreFU?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "International students face visa uncertainty as enrollment declines",
+              "media": "PantherNOW",
+              "date": "2026-09-08",
+              "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOV3d2S1pIQVJrSmVDQ3RCRnRjb2lEb3dVY0M5TVBxMjNYeG0yU2xNcmstSEJXNGIyWE9GQkxweXlubEdxR1ZtVTV3SFdUUVh3eklOOVN1SS1ST2daMlR2YmFpY1BvYjZUeXRidjEyZ1luWHBTaUFVS25PX0I2X1B3TUUyS1N6OV9SMy1nMmlpSGFpN1NPQm5NTHJDdXB3QmhrZWVpYQ?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "NU System sees more freshmen as overall enrollment declines",
+              "media": "Central News Channel Nebraska",
+              "date": "2026-09-08",
+              "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPekN5M2ZqT1V2UmY2a3NNODhWeUNBaWxvcXFUWXZvTFR1VXZRaGp2RjBnMHItdFBTRzVNbVhsNlJickhBbVgzQnU5VS1Lb2xDTkFEYkdGMDJRbFM3X1RKQUR2VXc1TFNvSTVnMEpTemdTVWRyWlg1VWNTejJBS1g0TkUzUkNLSThrUnlJQ1d0VXI1N3huMVc3VGk3WTJMMnowMnFXWkZEQmdrUXF5NW92QTI0SkFwUQ?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "UNK freshman enrollment rises as overall enrollment declines",
+              "media": "Panhandle News Channel Nebraska",
+              "date": "2026-09-08",
+              "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNbk5jWEs4X1k0UWMxM2VXYkhtSHExY25GeV9qRU44RW1GM0JWZU14T3g3UWFLQ1ZmODAxVjc5eG84YlhEYXBxbG45aFB3WnJnU2FQUmkwWkRKdVU1eU42aDRCNVZhZi1WQ1RtVEtnOUFPaVBQWTdGelU5WXVHbi1xRnRXM3hGRnh5S0tUQkxtQ2JlME4xTHBmWVlIY3VrNGZ1c19NRTloRnFrOEdVXzRhUGpNVl9KaGgwdXc?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "Loyola keeps stable international enrollment as the U.S. faces a decline",
+              "media": "loyolamaroon.com",
+              "date": "2026-09-05",
+              "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVldrN3dmVm5XcHBUdGxFNFlJWHdJVU91dzJueVQ1aVEzY0YwbnhGM3dKUFJfYVZhN3o4b3ktYmx0bW94dEVEdFpOR3VnVjBBWU1BOEV2azlDSzY1TjUydGJhWkNqVEVranNKM1JUbGxJclR5RElHV29VTnR0dDJjTTNILWNyc2tYeGFyY192Wlg3Y2lkWHl4a0F6SGxZNC1lYVRlbGhzaGdOWGZ5M25fNg?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "Mass. colleges fear new 4-year visa cap could drive away international students",
+              "media": "New England News Collaborative",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNbXRCejJaOFdSNmtkUjItMlg3LVFBUXJHOGVQM3lUdFFaX2VfRFVJRVI4TDJKQWJzSlBqTFJEbGkyVXV2eEJmRG0tb3FWQ2FIU2gzNlpVeENBcEx1Wk0zM1kyVFBVbHQtSEFDb3Q2ZlQ3Uy02RFM4WXBnMjhDdE5pMUlBMTlIMWM5cXZTVVBDc2NMVjNaY0JETW5naXlQZlE5Yy1ZWHhLWTdWRkY3NHJqOE9yemhvdw?oc=5",
+              "level": "normal"
+            }
+          ]
+        },
+        {
+          "field": "거버넌스",
+          "count": 17,
+          "items": [
+            {
+              "title": "Higher education researcher outlines concerns of proposed changes to accreditation",
+              "media": "pittnews.com",
+              "date": "2026-09-08",
+              "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUDJhR1k3a2ZSTjd3UFhTZm05WlhMV0lwdnROc3hvcXBSLUllUmNfX2thMndfYy12T3dRRk5SS19uRDFXRGxXTjlnWUdXRGx0MFU0TXN3WG9ZZWhzRUdndVJ0QkZyMUdGRWFEa1FhUVRUd3JtUGVGUk9nQVdCYVY3WUJUZjYyZVNKUTd5RE9jc1BVWVFITXYtSEpMUjlaWlYyTmRGMGZDZGp6cXl4RzRicUhqdk9pNVZudXJzMGdBcWNLZ9IBxwFBVV95cUxNY0M0bWlFSlFEU1VPZHk4aEI3SmZRbGoweHhHd0dYUEpJZ041U0Q0VENsdDNteDVobksyNXB6UnFXdW9xaDB5TWFrRHBDMHdXYzVRMGgwSnRvTVM0TzlPSENCb1UxX1Y4RzZxelhJeHQ3dFRtTWJMMWpxS0tZRjNvUkttc2xJYlItZDlvSldMRVp0RWs1Y3VKaDFySlVPQzl2OC1FN0liZl9pSGRURTRBMEhGeDhkdkdxMVh5NDgxbTJHRTRfUE1J?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "Telangana higher education reforms need effective implementation: TGCHE chief",
+              "media": "Telangana Today",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPMElITTRkMjBjUXpaU1liOEtzU0RPOEtfM1VkZUJ3Q19XaEJnTGRHSjV3RFc1ZW45LVMxeXdKcUl1cmRjMUNpUlp5NEZYQTdtR2k0am5YUUFUVXJMT1NybmRkaXVTeHFfSC00RTBhTkcwRHhPNzlHa0x6eVoxdXo1RUhYekdjamJRSHF2S1pVMDdnaDliOEQxQzRrbFJadXRzb25yUl9n?oc=5",
+              "level": "watch"
+            },
+            {
+              "title": "[Breaking] Chungnam National University-Gongju National University merger proposal rejected in member vote",
+              "media": "헤럴드경제",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1Pa0phQWtCSS1DdUFiYTRrRFFzZTYycm0tYWpaNVowT1pGZFozZ1ViWDZucVRzX1F0akd2N3I2SGlzRjl4TURfWFpXZC1jMk1ZZHVxTFFmWQ?oc=5",
+              "level": "watch"
+            },
+            {
+              "title": "Federal policy changes jeopardize career plans, Penn international students say",
+              "media": "The Daily Pennsylvanian",
+              "date": "2026-09-09",
+              "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOQW0zNV9iOXVjRS0xajNhTWw5SlRxRnUzNlNyTWotNkRNcklUYmVBUHktbmFzVkQtTVhELVdqZEl6V3N4c2JkcHVaSUQyOWFSblZ0eVRZYkJJZ3V4eGJFdUZQc2ZlU3V4dWZiZ3Nrc25wbXhhaEVBamJoWVhRY3ItZkM0cEF3U3Z2UkY3N0VVUVM?oc=5",
+              "level": "watch"
+            },
+            {
+              "title": "Oxford University, ShikshaLokam develop playbook for effective education reform",
+              "media": "The Times of India",
+              "date": "2026-09-08",
+              "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPelY0UThYNHlsTHV6ZzJidElvc0NMcFo3YXVUYUxhcVJvYlQtQ0J0aFlkTGpxdjZPdWJiMG5wLWJHMm1DYmc2eWJNRDl5Z2g3eEFZUjJ4OE9WaWxwY1hodjFHQzZyM0Y4MDdFUk5Zd0dzNE5oVUtQbzdmRHBVTGdpVWl0aG1uUU84RlNPcXZ4VTNMZGI5bEhkNHJwTk9sdlgxMmNkcUtrRWFsN29kUzBIQ1pPc190ZDkzZXlvbGNmdGRWTFpwSTdxQllPS1dqZXRObVc3WXU2VjhtSTN6RWZvTEFST2dDUGhnQTZN0gHwAUFVX3lxTE5maVRBdU9LbERzd05WdUNJTzl0ZVdDWUcxQnk1VUExZnNXcUxnQmR0Wkltc28xMnpkaWFEMFF5S3RZRC1obXNnSGRzZ09IVHpSaFd5ck5HWjBIdWZnbFR2VndPWjhaSFNwZEFHSk5HMDFiajhBZU9QaFpwQVUyVmhjaTJqLW1kdGNRcmhmbHc5djY5TklSNzY3eTd4QmtvS0hZbTd3WnFrbVNlTG9KWk5kRktaSFJIQTVWSjlRbnFjX3RsSTFyZWNuOFFsT2ZkVC1XQ1FvOHdqcWxOdVVzUk82SmJnQ3c2dk5sTjFTQUl1Sw?oc=5",
+              "level": "watch"
+            },
+            {
+              "title": "University-college status: The reform Nigeria’s colleges of education need",
+              "media": "Punch Newspapers",
+              "date": "2026-09-08",
+              "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNYnpjVWo1T0NxWnR0c0hKYWZtZ0syaVVNRXpRMVZka2tfWnFIeUIzU0Vmb2s1OTZZc2IwbjVFQlJrV3J4dDlTOXVDa2NuNnh4Qm9WR0kybWRVN1ZXdVZsRHQtNE1HQU5uR3NpM25aTWJwRW1mRG02aHZOSmlTSHo4TXFfVkYtcmQ5ZF9OSTBaNTdxRlJxS3hGQg?oc=5",
+              "level": "watch"
+            },
+            {
+              "title": "Irish citizenship reforms ‘may hit overseas student recruitment’",
+              "media": "Times Higher Education",
+              "date": "2026-09-07",
+              "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPS1EtZUREMW9UNjBBQ2MtWWZNYlBraW5HZl8tM0dKeFJ4dVV2cE42SjRMaFpteTNRdkd1TTlXWHJOMkxiT0hJakpVRTVmZUJuNm85TE1meXhvaUloU2F1emdRVGJuRGpzTVBEYWFDQ0Z6cl8wdzRoOEVleGU2cVdGWkh1Y1hSZGNDdC1XVWtvOUZCZm10ZmxIcUhyNktFc1FoSXZrQ3ZZaw?oc=5",
+              "level": "watch"
+            },
+            {
+              "title": "UPDATE: California Legislature passes community college bachelor’s degree bills after last-minute changes",
+              "media": "EdSource",
+              "date": "2026-09-04",
+              "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOaDRxeDN6ZUE2eGFhZ3dYeDJxajFqUDZUUVlhX3NFVWZNTVVhcDQtaFc0dVdMaTBoajJDWkk4NGo3akt1WXYtRTdxQnNsX2hPakpoN255QzltejVLRjEyc05EQmhHdUhNV0M2WTQ2cnpvMnVjMUVERVVoZWxVZGNVQVJqa2lrM2lUMmF5NWpRTV9KQ2I0NVN3VXZ3cVZ1VWlIV29zUExmN1NQX3ZuTVdGd3BqS2w?oc=5",
+              "level": "watch"
+            },
+            {
+              "title": "Bengal’s new university transfer law: Reform or control?",
+              "media": "National Herald",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOOU1aajllTklsRHYxb0hPWUM5NmdaMWdWbDBfMU1TbWZhLThVTFg3Z1ZfbUc3R25OZjRuUVlSdVlLTEZVYlpiWmFFUVI1QzVTV011bkN6Uk91a0h2ekVSa2hack9GTmktMGlvY1hOREZNdUFJd2JRSmE4dVJHU2RIeml3RFZ5RnZUUDlsVWJrMTZNODRCdUM1dkNRUW1rdHdlSWZsNVpoZzVya1lf0gGsAUFVX3lxTE45TVpqOWVOSWxEdjFvSE9ZQzk2Z1oxZ1ZsMF8xTVNtZmEtOFVMWDdnVl9tRzdHbk5mNG5RWVJ1WUtMRlViWmJaYUVRUjVDNVNXTXVuQ3pST3VrSHZ6RVJraFpyT0ZOaS0waW9jWE5ERk11QUl3YlFKYTh1UkdTZEh6aXdEVnlGdlRQOWxVYmsxNk04NEJ1QzV2Q1FRbWt0d2VJZmw1WmhnNXJrWV8?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "Harvard College has adopted a new college-specific hazing policy for the new academic year in its student handbook.",
+              "media": "facebook.com",
+              "date": "2026-09-09",
+              "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNa09SUm5SVUp3RjBMRG1nRlUxNFFpT3hoRWJoTHJkV0VTSGV5MDdXOEwtM2s4X3lhUFU0U0JhMV9hcFJCcXZfUE5EZFF5cUd1U0xSaFlUZ05BMVRmSDhKN0s0U3h6aUFWNGNNQ2wwYnRlNzJHTjZqcC15WjdDT0FMUDY2VkVtQ2FRb3RQdmhVaUJ3cDh0WnliLVZsQTRfTmg5eG9qOHRQVzVZNTBkTk5xcENjSzJualp6XzRDLUJzT0dVM3l5bVg0MmRrb2lHMzlZV0ZsRjZlZjZJUQ?oc=5",
+              "level": "normal"
+            }
+          ]
+        },
+        {
+          "field": "재정",
+          "count": 13,
+          "items": [
+            {
+              "title": "State Superintendent calls to restore budget cuts, notes student improvements",
+              "media": "My Bellingham Now",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNeHRnZVNXMkFTcmZfZzRhRkx4VW1VaVF2dFRwYTVrY2ZTOU4xMThNU1NpQlN3MHZPZHZQaTAwQ0VjbG1kRjBxczVGTUo4QkVieWRscHV1ZXJ4WW1yZ2VOU2ZIMGNIVGRhR1lsSWp5OEhfRTBQRmZEbENtdE14c2E2SWY1bmR4amdBNGF2NmtsbGNpUzY5aXE1Ml9kY3p2elc0N1dZc0k4VEFTUE5sSWVqMDdXaWVkczdZ?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "'I need to just work as many shifts as I can': Students weigh in on impacts of OSAP grant cuts | CBC News",
+              "media": "CBC",
+              "date": "2026-09-08",
+              "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQaVd5elNvc1Q3QmtLU3Q2czRlN0xDR19PbVIyQmRQaW1JaFBvNXVVZy1pZWtJNS16eFR1Um1seVZibUJfcjI5Q3d2bUdORG1YTlZsR2Z3eEpQQUhlcFBDVmRrRm1CQ1hCUi1ta1lVUFhlSmp0QkdYNXpMOTBvbF9yVmJR?oc=5",
+              "level": "warning"
+            },
+            {
+              "title": "Wellesley goes tuition free for families making under $200,000",
+              "media": "The Wellesley News",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQU3lONFVLZk92eG4tWHp3T3o0eld4a3J6VGQxTmYzQVZyWlFVdGE1YXhyNlp0VGNPNGNiaHlJNUtmbkZjVkQtWUJGSzJkd00yb0ZFMW9SWEFLX3ZmMFVsX3lubDZBQ1NTamNkR1NsR2NHY0NvMWoxblg1Z3dtN1dDbGhFYTVqSTBKeklMb3N2MlZybVQ2N0F5NTF3RGtEaHl4YmpaMHZhb0JXUXp3UDBETHhKN01Edw?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "Wellesley College announced it will begin offering free tuition to students from families earning $200,000 or less per year, starting next year.",
+              "media": "facebook.com",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYUhHenFfWDM3RkpNQ3lwRWIwRTFqTWtjVkJvcWFfWXdmQUpiNzZSR291VjhTaF9rVk5vYVF1X1B1REM2WkJiYUpXR3R0SXMtaWp6Wmh6c3NKeWJMUUNoUjZLNXZnVmhwbmZyZjdEd0FiUFVvMjEzZklYM0FnQkdpclRaeVBSME1sQi1OX2ZYMnpxUVd0Y3lKdEtieGtkMDlmN1VxYmNZaERuY3VBWko2ZzYtZTM1ZlNTaEdKTXVGZmtYc21sZTBCZGlCYy1ESWppY2V5NUZvQ2FDQQ?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "Judge rules Kansas students lacking legal status will not receive in-state tuition",
+              "media": "FOX4KC.com",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPa1A3RjFiUkUzTmxjMWh5MG9mdXJpby00Tm90VlZ1UTJTMXhudVFFcXkwLXl4Wk85OGp6WVlLbDNGMlpTYk44V3c1cmhDb1dIS2pacDNGdTFrRkw5SDI4R1NrVy1UbzdYYmRfYldTM1Y2TVpNaXpHU1hJSFdxXzVKY2ZIQ1RlazBUckxXZDdiSk5Cb2pWT0tFVHFRSFVmX0ZTV2FqdFV2OUdDZlMxZmpYcTNNWW9DUXVz0gG-AUFVX3lxTE1BSUhXQTdoTkhvd0NvdjE2REItZUtaZHB4UmxPNWJ2SDQzTkVGTUNnNDVsWjZUX3AzS3hxbFBrT2FYYlFpem85N2NCZU9WQ21ySVNOaUlsRUZnWVY2RGtLTzhIRWxpcV82X2FXTjZMRFlaS3psYmZScjJFRlJ6NGs5dkhpdG1odjVBRW10TG5YTGRjdlg3UTh2N19QMFRkWlFaM3JMeXJyRXEwekNfNkFUNGtEMkFrZC1URHJja3c?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "Student Senate convenes, restores full funding to Choral Arts and Wind Ensemble",
+              "media": "The Brown and White",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOMTNkUHRXcl9KM2ItS25MQ1pjcnJMc1F6bFRXTlRGVXc5VGVQSGNFM1VxOXF2SGZ4RElubXV2S0hGTEJ0MXhJNWk3RnFCSFFSM3hXS3BoTlh0b1Q5aE9xclJoNHVqUFJMZkM3UGlzNDRCQTZsLTNob2R3WkZCNFZSOFJsNFpsRUJQM2RROHZfTm5uZ0pPNll6OXBWOG5waC1qRTFuSWpTODAyRU5TS3hmYmhZRktqeThUWWVR?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "Wellesley College offers free tuition to families earning less than $200K",
+              "media": "MassLive.com",
+              "date": "2026-09-10",
+              "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQTEh1NDNxUmRKSnU4dnZCNGpCak5Nam1oU1RjUEdiWGtuZDdqOGtXVXZtcWpqZW5relFXNWljSHhPSTFuWTd4d0wySW1OUHFTOFp1RTBJWXU4VVpTMl9xVlMtRDVvUm1weE45WTB2NnprVG9rZTlvcmpQNEVqem1vS0d2S3R2WE81azNJOEF5WVk3X1lVXy0tc1N3TGpFYTZkWTBYUTFlNEhHYUtVQnlZLUhWUlJWeFRybDR4SQ?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "Changes proposed to Australian university funding overhaul",
+              "media": "Times Higher Education",
+              "date": "2026-09-09",
+              "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOVmJsV29LM1dLUnpFTTdZR2RKaFplSzI2VFNvYU1CM05vaVJqaGJ5dGxqYzdpWjlfdVpVSk1rc0RyU3VQdHF3aWtNRTBWcDZSeTVOQmdfR0l4OV9hZldxTmhqcGMySlB6NlphRjE4dm9zN29BU0FGZzNzeUdNZ2d6ZlkwbzJlWU5lalN3UEZ4LWtKTUY2NGVpR1BmbGpWUQ?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "Wellesley College to offer free tuition to students",
+              "media": "Boston 25 News",
+              "date": "2026-09-09",
+              "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNRWlWN1JtVUxYdF95aXNXR3hZSFVqQVV6MFFwdGp2ZDBSM3g5NDBtcGNJMU5mTlRlQkQ2TmFxQXIwXzRTZ2Nud3c4c2pzNlJadlF2bFMxT2kxSGhyanRmdXB3Z2w4SFR1U0VrcUJuYmZWbGZIcG85dGd0Q05wN3J0dzZVazJUa1hLb0l2cTJvNlhCNzRuMTRuQVhzUWdrUjA0NWJFZ0NjeTlzNnp3OFV0dVNWTdIBxwFBVV95cUxPWGk4OGdxV19ZakF4TXJ2cV94eW5RMFpYcWlDZTVZdHJmX1F3MExGdFpocVhrUU42MWlTYzdOU1RRWlNjY21IVzRxZ1VMbzlQWGFEUkd4aTNMa2xmTEhtcWRhUXFKTVZnWlFJckdMcHR1Sl9HWVY2bXJwNDJ0Z19DbExkVDlNa0pBdEl1YnI4TlA3TVFOX0F3cG91V1poVGwydjI2UlB1NjhaTm1xY2NLT1VFYjVNOEg5UXFzTFJNZjhsTC1VMmlF?oc=5",
+              "level": "normal"
+            },
+            {
+              "title": "‘Knowledge is free’: Students without permanent legal status navigate Illinois in-state tuition changes",
+              "media": "Chicago Tribune",
+              "date": "2026-09-08",
+              "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSUxIUlRPYW5vYi1oRzhseEl4YkQ4SElQRDIxV0tIZDh1Qldla3FtM2E1Q0YyQThCRlFlZV9LYzZoOTZyZGV4VHMyNnFYcGdMYlRBRXB5WEF2RFRFWXZoeGhMQmplTW12Tm1CeUJ0ZUpuemdnZFp4LWNuRUJmR0JWVDdR?oc=5",
+              "level": "normal"
+            }
+          ]
+        }
+      ]
+    },
     "changes": [
       {
         "dir": "up",
@@ -1724,10 +2041,10 @@
         "dir": "down"
       },
       {
-        "name": "해외 기사",
+        "name": "해외 기사 (참고)",
         "value": "174",
         "unit": "건",
-        "change": "전체의 36.9%",
+        "change": "신호·지표 미반영 · 별도 항목",
         "dir": "flat"
       },
       {
@@ -2315,7 +2632,7 @@
     "state": "Watch",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 360건 → 관련성 필터 후 334건 · 수집일 2026-08-28",
+    "sourceNote": "무료·공개 소스 수집 360건 → 관련성 필터 후 국내 334건 (해외 0건은 참고 항목으로 별도) · 수집일 2026-08-28",
     "signal": {
       "crisis": 3.3,
       "warning": 3.3,
@@ -2359,7 +2676,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 4,
           "risky": 0,
@@ -2400,7 +2717,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1572
+            "daysLeft": 1569
           },
           "mentions": 1,
           "risky": 0,
@@ -2449,7 +2766,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 3,
           "risky": 0,
@@ -2490,7 +2807,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 33,
           "risky": 3,
@@ -2547,7 +2864,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 9,
           "risky": 2,
@@ -2604,7 +2921,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1997
+            "daysLeft": 1994
           },
           "mentions": 1,
           "risky": 0,
@@ -2653,7 +2970,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 21,
           "risky": 1,
@@ -2710,7 +3027,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 16,
           "risky": 0,
@@ -2767,7 +3084,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 842
+            "daysLeft": 839
           },
           "mentions": 82,
           "risky": 1,
@@ -2824,7 +3141,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 2,
           "risky": 0,
@@ -3496,7 +3813,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 17,
             "items": [
               "고3 32% “등록금 ‘0원’이면 지역거점국립대 간다”…4.3%P 상승",
@@ -3505,7 +3822,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 9,
             "items": [
               "[국립창원대] 글로컬대학 전국 유일 ‘S등급’ 전국 1위…국가연구소도 선정돼 주목",
@@ -3514,12 +3831,19 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 9,
             "items": [
               "대학 과제에 챗GPT 써도 될까?...AI 활용 가이드라인 나왔다",
               "대학과제에 AI 활용하면 \"사실 공개해야\"…가이드라인 확정",
               "한국기술대, 에듀테크 교육 혁신 포럼 개최…생성형 AI 수업 모델 공유"
+            ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 1,
+            "items": [
+              "[2027 수시/경상국립대학교] 수시 3729명 모집 전체의 80.3%… 우주항공방산대학·AI대학 동시 출범"
             ]
           }
         ]
@@ -3530,7 +3854,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 2,
             "items": [
               "내년부터 지방국립대 신입생 ‘등록금 0원’ …사립대 총장들 “불공정”",
@@ -3538,7 +3862,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 2,
             "items": [
               "[AI 정책] “대학 과제에 AI 쓰면 공개 의무”…정부, 사용 범위까지 ‘세세히 규정’",
@@ -3553,7 +3877,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 13,
             "items": [
               "정부, 지방 국립대 등록금 무상화에…사립대 강하게 반발",
@@ -3562,7 +3886,7 @@
             ]
           },
           {
-            "name": "재정 · 국내",
+            "name": "재정",
             "count": 9,
             "items": [
               "내·외국인 등록금 이원화에 유학생 부담 가중",
@@ -3571,12 +3895,21 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 4,
             "items": [
               "제주대학교 글로컬대학사업단, 지역·국제 연계 비교과프로그램 성과 공유",
               "사총협, “지역 균형 장학금 학생·지역 기준으로 재설계해야”",
               "\"2040년 대학생 8만명 부족\" 정부, 한계대학 옥석 가린다"
+            ]
+          },
+          {
+            "name": "AI·디지털",
+            "count": 3,
+            "items": [
+              "노소영 특별시의원 “전남광주 폐교, 한·몽 문화예술교육 거점으로 재탄생시켜야”",
+              "[수시특집]경일대, AI 무제한·현장형 교육으로 미래인재 키운다",
+              "동국대 WISE캠퍼스, 교수 대상 AI 역량 강화 프로그램 운영 119명 교수 참여…대학 AI 교육혁신 본격화"
             ]
           }
         ]
@@ -3587,7 +3920,7 @@
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 17,
             "items": [
               "건양대 글로컬대학추진단 '국방사업관리 전문인력 양성 … \"충청권 K-국방산업 견인\"",
@@ -3596,7 +3929,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 15,
             "items": [
               "전남광주에 국립의대 신설될까…순천대, 경북과 최종 경쟁 돌입",
@@ -3605,12 +3938,21 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 7,
             "items": [
               "2027학년도 지방국립대 신입생 등록금 전액 지원…사립대는 반발",
               "[삐딱하게] 국립대 등록금 면제, 한국1~8대학 초석되나",
               "경상국립대, 우주항공·AI 품고 세계적 국가거점대 도약"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 5,
+            "items": [
+              "국립목포대 RISE사업단, '우리동네 리빙랩 프로젝트 주민 자서전 출판기념회' 개최",
+              "“대학 모든 예·결산 투명히 보고… 등록금, 정말로 자율에 맡겨야”",
+              "구미대, 6년 연속 장학금 1위…등록금 95% 돌려주는 대학 - 머니투데이"
             ]
           }
         ]
@@ -3621,7 +3963,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 38,
             "items": [
               "국공립대교수노조, 3개大 선별지원에 \"국립대 서열화 가능성\" 우려",
@@ -3630,7 +3972,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 29,
             "items": [
               "[위기의 지역 대학] 정부 수백억 투자 수혜 놓쳐…대학 경쟁력 5년 후 더 뒤처진다",
@@ -3639,12 +3981,21 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 23,
             "items": [
               "AI가 뒤흔든 대학교육, 과제 평가부터 대학 위기론까지",
               "반도체 이어 거점국립대도 ‘TK 패싱’…경북대, ‘서울대 10개 만들기’ 선정 탈락",
               "'서울대 10개' 탈락한 지거국 어쩌나…5년간 최대 3900억원 격차 - 머니투데이"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 8,
+            "items": [
+              "[2027예산] 미래기금 '교육부 몫' 4조9천억…영유아·지역청년·AI인재 투입",
+              "성남시, 셋째 자녀부터 대학 등록금 지원…학기당 최대 100만 원",
+              "김영옥, 김구라 늦둥이 딸에 통 큰 선물…\"대학 등록금에 보탤 예정\" [동상이몽2]"
             ]
           }
         ]
@@ -3655,7 +4006,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 27,
             "items": [
               "[삐딱하게] 국립대 무상 등록금 반발한 사립대, ‘준국립대’ 전환 가능할까",
@@ -3664,7 +4015,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 14,
             "items": [
               "왜 탈락했나…‘서울대 10개’ 놓친 경북대, 평가기준 논란 속 대학간 격차 확대 우려",
@@ -3673,12 +4024,21 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 14,
             "items": [
               "한경국립대, 생성형 AI 44종 통합 ‘Multi AI’ 전면 개방",
               "오경훈 시의원 \"경상국립대 AI 데이터센터, 진주 AI 산업 출발점 삼아야\"",
               "공주대도 살리고, 글로컬대학도 되는 해법 제안"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 9,
+            "items": [
+              "[사설] 제주RISE사업 교수간 나눠먹기 안된다",
+              "대학 등록금 전액 지원서 빠진 인천대… 인천시도 발전기금 약속액 ‘절반’만 편성",
+              "등록금 무상지원 만능주의의 함정 [인구의 경제학]"
             ]
           }
         ]
@@ -3689,7 +4049,7 @@
         "open": true,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 22,
             "items": [
               "충남대·공주대 통합 반발 확산…지역사회까지 참전",
@@ -3698,7 +4058,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 11,
             "items": [
               "“이사장·총장 물러나라”…글로컬대학 탈락 전주대 학내 갈등 격화",
@@ -3707,17 +4067,30 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 11,
             "items": [
               "신안산대학교, 교직원 하계 연수 및 대학 특성화 추진 설명회 개최",
               "'서울대 10개만들기' 집중지원 3개大 첫 선정 후폭풍 거세",
               "국립창원대-LG전자, 산학연공동 기술개발과제 속도 낸다"
             ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 5,
+            "items": [
+              "[위기의 경북대] 다시 높아지는 지거국 인기… 경북대도 수시 합격선 상승",
+              "지방거점국립대 정시경쟁률 최근 5년간 최고치",
+              "지방거점국립대 정시 경쟁률 5년 새 최고치…수시 합격선도 상승"
+            ]
           }
         ]
       }
     ],
+    "overseas": {
+      "total": 0,
+      "groups": []
+    },
     "changes": [],
     "watch": [
       {
@@ -3774,7 +4147,7 @@
         "dir": "up"
       },
       {
-        "name": "해외 기사",
+        "name": "해외 기사 (참고)",
         "value": "0",
         "unit": "건",
         "change": "수집 전 주차",
@@ -4194,7 +4567,7 @@
     "state": "Normal",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 180건 → 관련성 필터 후 153건 · 수집일 2026-08-21",
+    "sourceNote": "무료·공개 소스 수집 180건 → 관련성 필터 후 국내 153건 (해외 0건은 참고 항목으로 별도) · 수집일 2026-08-21",
     "signal": {
       "crisis": 3.9,
       "warning": 2,
@@ -4238,7 +4611,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 1,
           "risky": 0,
@@ -4279,7 +4652,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1572
+            "daysLeft": 1569
           },
           "mentions": 1,
           "risky": 0,
@@ -4328,7 +4701,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 1,
           "risky": 0,
@@ -4377,7 +4750,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 2,
           "risky": 1,
@@ -4418,7 +4791,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 4,
           "risky": 0,
@@ -4463,7 +4836,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1997
+            "daysLeft": 1994
           },
           "mentions": 2,
           "risky": 0,
@@ -4504,7 +4877,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 1,
           "risky": 0,
@@ -4553,7 +4926,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 1,
           "risky": 0,
@@ -4602,7 +4975,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 842
+            "daysLeft": 839
           },
           "mentions": 24,
           "risky": 0,
@@ -4659,7 +5032,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 3,
           "risky": 0,
@@ -5236,7 +5609,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 5,
             "items": [
               "日 11개 주요 사립대, 이공계 확대하고 문과 정원 축소",
@@ -5245,7 +5618,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 5,
             "items": [
               "대구과학대, AI로 중환자 간호교육 혁신…몰입형 시뮬레이션 워크숍",
@@ -5254,12 +5627,19 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 3,
             "items": [
               "【현장점검】 150억 투입 남원글로컬캠퍼스…‘2027년 개교’ 일정 차질 불가피",
               "35년 숙원 ‘전남권 국립의대’ 물거품되나",
               "창원대 거창캠퍼스, 방산 3D메이커 리더 양성 프로그램"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 1,
+            "items": [
+              "호치민시 은행대학교, 연체 등록금 벌금에 대해 발언"
             ]
           }
         ]
@@ -5270,7 +5650,7 @@
         "open": false,
         "cats": [
           {
-            "name": "재정 · 국내",
+            "name": "재정",
             "count": 2,
             "items": [
               "경남대 RISE사업단, 지산학연 포럼서 리빙랩 성과 공유",
@@ -5278,7 +5658,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 2,
             "items": [
               "전남대 소프트웨어중심대학사업단-업스테이지, '광주·전라권 AI 에이전트 핸즈온 교육' 성료",
@@ -5286,10 +5666,17 @@
             ]
           },
           {
-            "name": "입시·학령인구 · 국내",
+            "name": "입시·학령인구",
             "count": 1,
             "items": [
               "[기획 | 2035 대학의 위기 ① 착시] 충원율 98.9%, 대학은 정말 괜찮은가"
+            ]
+          },
+          {
+            "name": "기타",
+            "count": 1,
+            "items": [
+              "[김준환의 교육&시선] 가속화되는 대학 간 통페합, 제구포신(除舊布新)의 결단이 필요할 때"
             ]
           }
         ]
@@ -5300,7 +5687,7 @@
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 4,
             "items": [
               "경북 북부권 3개 대학, 日 니가타서 `지역혁신 해법` 찾는다",
@@ -5309,7 +5696,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 2,
             "items": [
               "대구정책연구원 “거점국립대 ‘브랜드 단과대’ 지정 필요”",
@@ -5317,11 +5704,18 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 2,
             "items": [
               "강원도립대학교, 강원권 교육기관 종사자 대상 ‘생성형 AI 활용 역량강화 워크숍’ 개최",
               "취업률 1위 AI캠퍼스…‘취업사관학교’ 경동대학교, 끝없는 진화 이어간다"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 1,
+            "items": [
+              "대학 AX, 지금 필요한 것은 예산보다 답이다"
             ]
           }
         ]
@@ -5332,7 +5726,7 @@
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 12,
             "items": [
               "경산시-대구한의대, '글로컬대학 기업지원관' 건립·활용",
@@ -5341,7 +5735,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 8,
             "items": [
               "\"AI로 그리는 미래도시 김해\"…인제대, 글로컬 청년 창작 생태계 연다 - 머니투데이",
@@ -5350,12 +5744,20 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 4,
             "items": [
               "의대 신설·500억 당근도 안 먹힌다…‘국립대 통합’ 잇단 무산",
               "안양대·성결대·한세대·서울신학대, 연합 취업캠프",
               "\"규제·노동·교육 분야 구조개혁으로 AI 시대 청년 일자리 창출\""
+            ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 2,
+            "items": [
+              "경인여대, AI 교육혁신·입시 대응 전략 공유…대학 경쟁력 강화",
+              "[2027학년도 4년제 수시특집] 경일대, AI 무제한·생활밀착 복지로 학생 지원 박차"
             ]
           }
         ]
@@ -5366,7 +5768,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 16,
             "items": [
               "거점국립대총장협 \"교육교부금 개편 환영…국립대 재정지원해야\"",
@@ -5375,7 +5777,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 9,
             "items": [
               "지방교육재정 개편 놓고 교육계 엇갈린 목소리",
@@ -5384,12 +5786,21 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 8,
             "items": [
               "[기획 | 2035 대학의 위기 ③ 가치] 학위는 남고, 대학의 설명은 약해졌다",
               "[기획 | 2035 대학의 위기 ④ 전환] 줄이는 순서보다 닫는 절차가 먼저다",
               "N수생 ‘극단적 상향 지원’·비수도권 학생 ‘지역 대학 선호’"
+            ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 6,
+            "items": [
+              "[수시특집] ‘글로컬대학’ 국립목포대, AI융합대학 신설·취업률 전국 1위 ‘역대급 혁신’",
+              "[2027학년도 4년제 수시특집] 대구한의대, 전공 선택 폭 넓히고 장학 혜택 키워 '글로컬 인재' 양성",
+              "부산대, LG전자 계약학과 첫 신입생 모집…AI대학 신설"
             ]
           }
         ]
@@ -5400,7 +5811,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 13,
             "items": [
               "충남대 등 지방 국립대 전액 장학금 추진에 국립대 '환영'·사립대 '반발'",
@@ -5409,7 +5820,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 8,
             "items": [
               "인제대 화쟁인문학연구소, 인문한국 사업 선정… 6년간 120억 지원",
@@ -5418,12 +5829,21 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 7,
             "items": [
               "국립경국대 글로컬대학추진단, SK바이오사이언스·국제백신연구소 연계 국내 인턴십 성료",
               "“피지컬AI 수도 선언”…전북대, ‘서울대 10개 만들기’ 승부수는",
               "경북대, 피지컬AI 단과대학 만든다… `서울대 10개 만들기` 정조준"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 4,
+            "items": [
+              "목포대 RISE사업단, 소재·부품 연구 인력 양성…R&D 지원 프로그램 가동",
+              "등록금 두 배여도 '인 서울' 외치는 아이들, 그 속내가",
+              "대덕대, 2027학년도 신입생 등록금 ‘전액 지원’"
             ]
           }
         ]
@@ -5434,7 +5854,7 @@
         "open": true,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 7,
             "items": [
               "[기고] 서울대 10개 만들기 전북대가 되어야 하는 이유",
@@ -5443,7 +5863,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 4,
             "items": [
               "“AI거점대학을 축으로 교육·연구·산학협력 체계 고도화” 경북대, 대구앵커사업 1차년도 성과공유회 개최",
@@ -5452,17 +5872,30 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 4,
             "items": [
               "‘국립대 등록금 0원’ 대비 지역 사립대, TF 구성 ‘비상경영’ 검토",
               "국립대병원 의료장비 30%가량 노후화…\"점검·관리해야\"",
               "경상국립대, K-STAR 비자트랙 우수 외국인 인재 6명 추천"
             ]
+          },
+          {
+            "name": "재정",
+            "count": 3,
+            "items": [
+              "“하노이서 찾은 창업 아이디어”…대구대 RISE사업단, 해외 창업 프로그램 운영",
+              "하학열 군수 공약...고성 대학생 내년부터 등록금 전액 지원되나?",
+              "대덕대, 2027학년도 신입생 등록금 전액 지원"
+            ]
           }
         ]
       }
     ],
+    "overseas": {
+      "total": 0,
+      "groups": []
+    },
     "changes": [],
     "watch": [
       {
@@ -5515,7 +5948,7 @@
         "dir": "up"
       },
       {
-        "name": "해외 기사",
+        "name": "해외 기사 (참고)",
         "value": "0",
         "unit": "건",
         "change": "수집 전 주차",
@@ -5857,7 +6290,7 @@
     "state": "Normal",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 176건 → 관련성 필터 후 148건 · 수집일 2026-08-14",
+    "sourceNote": "무료·공개 소스 수집 176건 → 관련성 필터 후 국내 148건 (해외 0건은 참고 항목으로 별도) · 수집일 2026-08-14",
     "signal": {
       "crisis": 1.4,
       "warning": 0,
@@ -5901,7 +6334,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 1,
           "risky": 0,
@@ -5950,7 +6383,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1572
+            "daysLeft": 1569
           },
           "mentions": 0,
           "risky": 0,
@@ -5982,7 +6415,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 2,
           "risky": 0,
@@ -6031,7 +6464,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 8,
           "risky": 1,
@@ -6084,7 +6517,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 1,
           "risky": 0,
@@ -6133,7 +6566,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1997
+            "daysLeft": 1994
           },
           "mentions": 2,
           "risky": 0,
@@ -6182,7 +6615,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 2,
           "risky": 0,
@@ -6231,7 +6664,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 13,
           "risky": 0,
@@ -6288,7 +6721,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 842
+            "daysLeft": 839
           },
           "mentions": 20,
           "risky": 0,
@@ -6345,7 +6778,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 5,
           "risky": 0,
@@ -6792,7 +7225,7 @@
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 10,
             "items": [
               "LG 이어 한화까지…부산대 계약학과 2개 신설로 동남권 인재 육성",
@@ -6801,7 +7234,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 6,
             "items": [
               "충남대-공주대 통합 합의...교명은 '충남대'·본부 기능은 '분산'",
@@ -6810,7 +7243,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 4,
             "items": [
               "기업·대학 경계 허문 동남권…인재양성부터 채용까지 연결",
@@ -6826,7 +7259,7 @@
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 3,
             "items": [
               "[기획③] 대한민국 제1호 분산형 국립의대…전남이 새로운 모델 만들 수 있다",
@@ -6835,17 +7268,24 @@
             ]
           },
           {
-            "name": "입시·학령인구 · 국내",
+            "name": "입시·학령인구",
             "count": 1,
             "items": [
               "경상국립대, 2027 수시모집 3729명 선발…전체의 80%"
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 1,
             "items": [
               "국립대 교수들 “지방 국립대 ‘등록금 0원’ 환영… 반값 등록금 전철 밟지 말아야”"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 1,
+            "items": [
+              "함은정, 알고보니 고졸이었다…\"동국대라고 얘기하는 게 민망, 등록금 내고 제적\" ('함은정')"
             ]
           }
         ]
@@ -6856,7 +7296,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 3,
             "items": [
               "통합 추진 충남대-공주대, 교명은 '충남대'…구성원 반발 ‘과제’",
@@ -6865,7 +7305,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 3,
             "items": [
               "제주대 의과대학, 지역 의료기관과 ‘협력기관 현판식’ 개최... 지역 완결형 의료인재 양성 가속화",
@@ -6881,7 +7321,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 5,
             "items": [
               "충남대-공주대 2028 통합 추진…수험생은 ‘교명’보다 학과·정원을 봐야 한다",
@@ -6890,7 +7330,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 4,
             "items": [
               "서울대 10개 만들기 선정 임박…'피지컬AI' 전북대 포함될까",
@@ -6899,7 +7339,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 1,
             "items": [
               "국립한국교통대학교, 해외 교육기관 네트워크 강화…글로벌 유학생 유치 기반 확대"
@@ -6913,7 +7353,7 @@
         "open": false,
         "cats": [
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 13,
             "items": [
               "충남대 혁신 ‘구성원 공감’으로 완성한다 [충남대 빅3선도대학 총력전]",
@@ -6922,7 +7362,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 11,
             "items": [
               "'서울대 10개 만들기' 심사 돌입…충청권 승부처는",
@@ -6931,12 +7371,21 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 10,
             "items": [
               "목포대·순천대 통합 사실상 무산…개별 의대 신청 수순",
               "[심층분석] 첨단산업 인재 키우는 경남…9개 거점국립대학 중 경상국립대만 빠져",
               "국립창원대 4개 캠퍼스 통합 순항…캠퍼스통합관리원 안정적 정착"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 5,
+            "items": [
+              "지역을 살리고 청년을 남기는 힘…계명문화대학교, RISE 성과 잇는 앵커사업으로 지역혁신 새 도약",
+              "[기획] 등록금 면제하면 지방대학 간다고?",
+              "2학기 등록금 학자금대출 지금 바로 신청하세요"
             ]
           }
         ]
@@ -6947,7 +7396,7 @@
         "open": false,
         "cats": [
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 10,
             "items": [
               "국립순천대, 반려된 의과대학 신설 추진계획서 재제출",
@@ -6956,7 +7405,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 9,
             "items": [
               "전남대생들은 美 연구현장으로…전세계 학생은 광주로",
@@ -6965,12 +7414,20 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 3,
             "items": [
               "국립대병원, 21년 만에 복지부 품으로…‘특화분야’ 집중 투자한다",
               "[기고] 대학 간 경계 허무는 충청권 국립대 연합체계",
               "‘지역 국립대 내년부터 등록금 0원’에 대학가 엇갈린 표정"
+            ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 2,
+            "items": [
+              "[2027수시특집] '글로컬대학30' 울산대 2353명(95.07%) 모집.. '신설' 학교장추천 40명, 지역의사제 5명",
+              "[2027수시특집] '글로컬대학30' 대구한의대 945명(90.9%) 모집.. 자율전공학부 식품산업학과 ‘신설’"
             ]
           }
         ]
@@ -6981,7 +7438,7 @@
         "open": true,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 16,
             "items": [
               "[광장-윤정현] 국립대 등록금 `0원` 논의, 지역 대학 상생으로",
@@ -6990,7 +7447,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 10,
             "items": [
               "\"대학, 지역 기업들 난제 푸는 싱크탱크 돼야\"",
@@ -6999,17 +7456,30 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 8,
             "items": [
               "인제대, 경남테크노파크 등과 AI·SW 교육 협약 체결…지역 과학문화 확산 추진",
               "조선대-인공지능산업융합사업단, AI 기반 웰에이징 혁신 추진",
               "대구보건대, 디지털 치과산업 교원연수 실시"
             ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 4,
+            "items": [
+              "[2027학년도 수시모집 특집]경상국립대 2027 수시 3729명 모집… 전체의 80% 우주항공방산대학·AI대학 동시 출범",
+              "경상국립대 2027 수시 3729명 모집… 우주항공방산대학·AI대학 첫 신입생 선발",
+              "경상국립대, 2027학년도 수시 3729명 모집"
+            ]
           }
         ]
       }
     ],
+    "overseas": {
+      "total": 0,
+      "groups": []
+    },
     "changes": [],
     "watch": [
       {
@@ -7062,7 +7532,7 @@
         "dir": "up"
       },
       {
-        "name": "해외 기사",
+        "name": "해외 기사 (참고)",
         "value": "0",
         "unit": "건",
         "change": "수집 전 주차",
@@ -7333,7 +7803,7 @@
     "state": "Normal",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 201건 → 관련성 필터 후 169건 · 수집일 2026-08-07",
+    "sourceNote": "무료·공개 소스 수집 201건 → 관련성 필터 후 국내 169건 (해외 0건은 참고 항목으로 별도) · 수집일 2026-08-07",
     "signal": {
       "crisis": 3,
       "warning": 0.6,
@@ -7377,7 +7847,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 4,
           "risky": 0,
@@ -7430,7 +7900,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1572
+            "daysLeft": 1569
           },
           "mentions": 1,
           "risky": 0,
@@ -7479,7 +7949,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 1,
           "risky": 0,
@@ -7528,7 +7998,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 5,
           "risky": 0,
@@ -7585,7 +8055,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 3,
           "risky": 0,
@@ -7634,7 +8104,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1997
+            "daysLeft": 1994
           },
           "mentions": 0,
           "risky": 0,
@@ -7666,7 +8136,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 1,
           "risky": 0,
@@ -7715,7 +8185,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 11,
           "risky": 0,
@@ -7772,7 +8242,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 842
+            "daysLeft": 839
           },
           "mentions": 16,
           "risky": 0,
@@ -7829,7 +8299,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 4,
           "risky": 0,
@@ -8344,7 +8814,7 @@
         "open": false,
         "cats": [
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 6,
             "items": [
               "충남대·공주대, 글로컬대학 '성과전' 돌입…2차년도 전략 구체화",
@@ -8353,7 +8823,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 6,
             "items": [
               "지방국립대 '등록금 무상' 추진…사립대 \"학생 쏠림 심화\" 반발",
@@ -8362,12 +8832,20 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 3,
             "items": [
               "총신대학교, 우간다 개혁신학대학과 MOU 체결… 현지 한국어교육센터 협력 추진",
               "지역 대학 중 최고점…경북대, 대학원혁신지원사업 우수대학 선정",
               "[CHECK 책] 대학 공문서 작성의 노하우를 집대성한 실무 레시피"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 2,
+            "items": [
+              "7~8월 해외 등록금 납부 시즌 본격화…유학생이 놓치기 쉬운 ‘유학비 혜택’은",
+              "[사설] 지방대 살리기 해법이 왜 하필 등록금 면제인가"
             ]
           }
         ]
@@ -8378,21 +8856,21 @@
         "open": false,
         "cats": [
           {
-            "name": "입시·학령인구 · 국내",
+            "name": "입시·학령인구",
             "count": 1,
             "items": [
               "\"자칫 이념 투쟁\"…거리두던 입시 정책 말 꺼낸 李 [청와대는 지금]"
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 1,
             "items": [
               "2022년 미국 대학 중 학비 비싼 대학 순위/랭킹"
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 1,
             "items": [
               "\"수업 설계에 AI 접목\"…동신대, 맞춤형 교육 호응"
@@ -8406,7 +8884,7 @@
         "open": false,
         "cats": [
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 3,
             "items": [
               "지역 살리고 인재 키우라면서…정작 대학은 병들고 있다",
@@ -8415,7 +8893,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 3,
             "items": [
               "지방 국립대 무상 등록금 추진… 사립대 “문 닫으라는 것” 반발",
@@ -8424,10 +8902,17 @@
             ]
           },
           {
-            "name": "입시·학령인구 · 국내",
+            "name": "입시·학령인구",
             "count": 1,
             "items": [
               "해수부 이전에 달라진 부산 대학 입시전략"
+            ]
+          },
+          {
+            "name": "기타",
+            "count": 1,
+            "items": [
+              "간짜장·동래파전의 의미는? …부산대·동래구, 세계 속 부산 음식 시민강좌"
             ]
           }
         ]
@@ -8438,7 +8923,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 19,
             "items": [
               "사립대 총장들, 지방국립대 전액 장학금에 반발 \"지역 사립대도 동등 지원해야\"",
@@ -8447,7 +8932,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 6,
             "items": [
               "경남도와 국립경상대, 우주항공·방산 특화 ‘2900억 국책사업’ 도전",
@@ -8456,12 +8941,21 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 4,
             "items": [
               "[박종문의 캠퍼스 오디세이] 차별받는 지방 사립대",
               "서울대 10개 만들기와 종교학과 10개 만들기 [한승훈 칼럼]",
               "“글로컬대학30 사업 핵심 기반시설” 원광대, 생명융합관 첫삽"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 4,
+            "items": [
+              "국립목포대 RISE사업단, 초광역 지역문제해결 프로젝트 '섬섬 프로젝트 in 여수' 성료",
+              "경북보건대 신중년 노인돌봄 생활지원사 자격과정 성공 마무리.. 'RISE 사업'",
+              "초당대 RISE사업단, 무안 망운면서 '우리마을 구강건강 지킴이 프로젝트' 성료"
             ]
           }
         ]
@@ -8472,7 +8966,7 @@
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 9,
             "items": [
               "법원, 전임교원 미달 대학 '교육 불인증' 처분 \"정당\"",
@@ -8481,7 +8975,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 8,
             "items": [
               "[생생뉴스] 지방 국립대 신입생 전액 장학금 지급 계획에 사립대 반발",
@@ -8490,12 +8984,21 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 7,
             "items": [
               "경북과학대 간호학과, ‘푸드·AI·헬스케어’ 융합 인재 키운다",
               "영남이공대, 교수자 AI 활용·학생 상담 역량 강화 워크숍",
               "엘리스그룹, 대학·기관 AI 연구용 GPU 인프라 지원"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 4,
+            "items": [
+              "등록금은 묶이고, 예산은 국립대로…사립대, 신입생 모집까지 '3중 압박'",
+              "[포커스] ‘등록금 0원’의 배수진, 지방대는 살아날까",
+              "유아 영어학원비가 대학 등록금 수준…월 200만원 육박"
             ]
           }
         ]
@@ -8506,7 +9009,7 @@
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 15,
             "items": [
               "이인선 “서울대 10개 만들기, 영남권 하나로 묶어선 안 돼”…경북대 육성전략 촉구",
@@ -8515,7 +9018,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 13,
             "items": [
               "정부, 지방국립대 등록금 '0원' 검토…'인서울 쏠림' 막나",
@@ -8524,12 +9027,20 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 10,
             "items": [
               "부산대, 한화그룹과 채용형 계약학과 설립 추진",
               "거창 국립창원대, AI로 업무 '글로컬대학 직원 역량 강화'",
               "순천향대, 4개 부속병원 의료 AI 연구허브 구축"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 2,
+            "items": [
+              "논산시 건양대 국방반도체공학과 신입생 등록금 전액 지원 4년째",
+              "등록금 동결되면 뭐해, 월세 7.7% 올랐는데…서울 대학가 평균이"
             ]
           }
         ]
@@ -8540,7 +9051,7 @@
         "open": true,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 18,
             "items": [
               "원광대, 제1차 글로컬대학위원회 개최…지역 협력·산업 발전 논의",
@@ -8549,7 +9060,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 11,
             "items": [
               "임병택 시흥시장, 서울대·OpenAI와 손잡고 청소년 AI 역량 키운다",
@@ -8558,17 +9069,29 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 7,
             "items": [
               "`서울대 10개` 앞두고 대기업 잡는 거점국립대들…`경북대도 분발해야`",
               "서울대, 지역 사회 및 국가거점국립대학교와 함께 AI 교육 협력 생태계 구축",
               "한경국립대 중장년장애성인 맞춤형 AI교육 실시 …AI 덕분에 사장님 됐어요"
             ]
+          },
+          {
+            "name": "재정",
+            "count": 2,
+            "items": [
+              "용인대 앵커(RISE) 사업, 34개 대학·컨소시엄 연차평가서 '매우 우수' 선정",
+              "함은정, 알고 보니 ‘고졸’이었다…“등록금 1년치 내고 제적”"
+            ]
           }
         ]
       }
     ],
+    "overseas": {
+      "total": 0,
+      "groups": []
+    },
     "changes": [],
     "watch": [
       {
@@ -8621,7 +9144,7 @@
         "dir": "down"
       },
       {
-        "name": "해외 기사",
+        "name": "해외 기사 (참고)",
         "value": "0",
         "unit": "건",
         "change": "수집 전 주차",
@@ -9007,7 +9530,7 @@
     "state": "Crisis",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 221건 → 관련성 필터 후 188건 · 수집일 2026-07-31",
+    "sourceNote": "무료·공개 소스 수집 221건 → 관련성 필터 후 국내 188건 (해외 0건은 참고 항목으로 별도) · 수집일 2026-07-31",
     "signal": {
       "crisis": 6.4,
       "warning": 5.3,
@@ -9051,7 +9574,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 5,
           "risky": 0,
@@ -9108,7 +9631,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1572
+            "daysLeft": 1569
           },
           "mentions": 8,
           "risky": 0,
@@ -9165,7 +9688,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 12,
           "risky": 3,
@@ -9222,7 +9745,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 8,
           "risky": 1,
@@ -9279,7 +9802,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 0,
           "risky": 0,
@@ -9311,7 +9834,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1997
+            "daysLeft": 1994
           },
           "mentions": 0,
           "risky": 0,
@@ -9343,7 +9866,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 2,
           "risky": 0,
@@ -9392,7 +9915,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 11,
           "risky": 0,
@@ -9449,7 +9972,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 842
+            "daysLeft": 839
           },
           "mentions": 22,
           "risky": 0,
@@ -9506,7 +10029,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 2,
           "risky": 0,
@@ -10085,7 +10608,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 11,
             "items": [
               "충북대·교통대 통합 무산…새로운 단계적 통합 방안 추진",
@@ -10094,7 +10617,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 7,
             "items": [
               "국립공주대-고려대 세종캠퍼스 지역혁신 공동협력 맞손",
@@ -10103,12 +10626,21 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 4,
             "items": [
               "서울대에서 AI 배우고 창업까지 체험한다… ‘SNU AI Academy’ 중학생 대상 운영 - 스타트업엔(StartupN)",
               "서울대학교, 서울런과 함께 중학생 대상 'SNU AI Academy' 개최",
               "국립창원대 SW중심대학사업단 ‘부울경 AI융합 해커톤’ 본선서 AI 보안 솔루션 제시"
+            ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 3,
+            "items": [
+              "순천향의대 2026학년도 신입생 11명 초과선발…의협 “정원 감축, 수험생에 전가”",
+              "'입시 비리' 의혹으로 번진 '순천향대 의대 초과 선발' 논란",
+              "순천향의대 정원 초과 선발···의대협, “경위 공개·실질적 책임 없이 입시 신뢰 회복되지 않아”"
             ]
           }
         ]
@@ -10119,7 +10651,7 @@
         "open": false,
         "cats": [
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 6,
             "items": [
               "국립공주대-충남대, 글로컬 1호 사업 '미래융합대학원' 출범",
@@ -10128,7 +10660,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 3,
             "items": [
               "2년 연속 C등급 인제대 글로컬대학…커지는 사업 차질 우려",
@@ -10137,11 +10669,18 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 2,
             "items": [
               "\"행정과 학문의 만남\"…대구한의대, 김종수 경북도 실장에 명예이학박사 수여",
               "제자에게 ‘지잡대놈’ 이라던 건국대 교수, 제자 논문 표절"
+            ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 1,
+            "items": [
+              "의대협, 순천향의대 정원 초과 선발 해명 규탄 \"투명하게 공개해야\""
             ]
           }
         ]
@@ -10152,7 +10691,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 9,
             "items": [
               "한국교통대 통합 갈등 격화",
@@ -10161,7 +10700,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 5,
             "items": [
               "공주대·충남대, 글로컬대학 첫 성과…미래융합대학원 문 연다",
@@ -10170,10 +10709,17 @@
             ]
           },
           {
-            "name": "입시·학령인구 · 국내",
+            "name": "입시·학령인구",
             "count": 1,
             "items": [
               "신입생 11명 초과 선발한 순천향대…의협∙의대협 \"미래 수험생에게 책임 떠넘겨\""
+            ]
+          },
+          {
+            "name": "AI·디지털",
+            "count": 1,
+            "items": [
+              "“칼퇴 속도 올린다”… 성균관대·서울AI허브·메가존클라우드, 서울시민 AI 실무 일타강사 나섰다"
             ]
           }
         ]
@@ -10184,7 +10730,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 20,
             "items": [
               "충북대-교통대 '단계별 통합' 새 밑그림…내년 3월 출범은 무산",
@@ -10193,7 +10739,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 15,
             "items": [
               "원광대 '생성형 AI 콘텐츠 창작 초급과정' 성료",
@@ -10202,12 +10748,21 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 12,
             "items": [
               "교사 10명 중 9명 “학생 수 기준 교원 감축 멈춰야… 학급 수 기준 삼아야”",
               "순천향대 의대 초과선발 후속…교육부, '고의·중과실' 대학 재정패널티 검토",
               "“논문 수보다 '지역 변화'로 대학평가 해달라”"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 3,
+            "items": [
+              "교부금 개편…고등교육 해법은?",
+              "라이즈(RISE), 예산 내역·대학 지원 결과 ‘깜깜이’ 수준 … “공시체계 정비해 사업 투명성 높여야”",
+              "우송대 RISE 사업 2년 차…성과 중심으로 예산 다시 짰다"
             ]
           }
         ]
@@ -10218,7 +10773,7 @@
         "open": false,
         "cats": [
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 6,
             "items": [
               "[교육소식]대구보건대, 인니 자카르타 갔다…전공봉사 등",
@@ -10227,7 +10782,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 6,
             "items": [
               "'좀비대학' 폐교하면 교직원에 위로금‥'사립대구조개선법 시행령' 의결",
@@ -10236,12 +10791,20 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 5,
             "items": [
               "국공립대총장협 \"교육재정교부금 개편해 고등교육재정 확충해야\"",
               "아이넥스, 싱가포르 국립대병원 뚫었다…내시경 AI 'ENAD' 정식 공급",
               "한경국립대, 국내 최초 ‘장애인기업가 역량강화센터’ 7일 개소"
+            ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 2,
+            "items": [
+              "순천향의대 논란 의식했나…교육부 대학 초과모집 '수사의뢰'까지 검토",
+              "건양대, 학생·학부모 참여 ‘글로컬대학으로의 소풍’ 입시설명회 성황리 개최"
             ]
           }
         ]
@@ -10252,7 +10815,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 16,
             "items": [
               "임형석 전남광주통합특별시의회 기획재정위원장 \"광양보건대 폐교부지 공공매입·글로컬대 특성화 캠퍼스 유치해야\"",
@@ -10261,7 +10824,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 8,
             "items": [
               "임형석 전남광주시의원, '광양보건대 폐교 부지 공공 매입으로 글로컬대학 유치' 주장",
@@ -10270,12 +10833,19 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 7,
             "items": [
               "안양대-경과원, 바이오·AI 실무형 인재양성 첫 성과",
               "[발언대] 대학의 책무성, 유학생 ‘생성형 AI 교육’에서 시작된다",
               "전남대 SW중심대학사업단, 韓·美 AI 집중교육 운영…전통시장 활성화 아이디어 발굴"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 1,
+            "items": [
+              "박홍근 \"교육교부금 개혁 더 늦출 수 없어, 증가 추세는 보장\""
             ]
           }
         ]
@@ -10286,7 +10856,7 @@
         "open": true,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 17,
             "items": [
               "지방국립대 '0원 등록금' 추진에 술렁…\"역차별\" 커지는 반발 [지금이뉴스]",
@@ -10295,7 +10865,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 7,
             "items": [
               "사립대학법 시행령 통과후 첫 경영위기대학 내년 5~7월께 발표…지난해 14곳보다 늘 듯",
@@ -10304,17 +10874,28 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 5,
             "items": [
               "국립한국방송통신대학교, 교육부 ‘AID 30+ 집중캠프’ 선정… 경남 재직자 AI 실무교육 추진",
               "성신여대, 한국장학재단 ‘청소년 AI교육멘토링 사업 선정’, IT융합대학생 30명 멘토로 나선다",
               "강원TP, AI 서비스 개인정보 활용 실무교육"
             ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 1,
+            "items": [
+              "미국 영주권과 미국투자이민, 대학 입시보다 먼저 살펴야 할 ‘신분의 경제학’"
+            ]
           }
         ]
       }
     ],
+    "overseas": {
+      "total": 0,
+      "groups": []
+    },
     "changes": [],
     "watch": [
       {
@@ -10367,7 +10948,7 @@
         "dir": "down"
       },
       {
-        "name": "해외 기사",
+        "name": "해외 기사 (참고)",
         "value": "0",
         "unit": "건",
         "change": "수집 전 주차",
@@ -10719,7 +11300,7 @@
     "state": "Watch",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 283건 → 관련성 필터 후 232건 · 수집일 2026-07-24",
+    "sourceNote": "무료·공개 소스 수집 283건 → 관련성 필터 후 국내 232건 (해외 0건은 참고 항목으로 별도) · 수집일 2026-07-24",
     "signal": {
       "crisis": 3,
       "warning": 3.9,
@@ -10763,7 +11344,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 3,
           "risky": 0,
@@ -10816,7 +11397,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1572
+            "daysLeft": 1569
           },
           "mentions": 11,
           "risky": 0,
@@ -10873,7 +11454,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 7,
           "risky": 3,
@@ -10930,7 +11511,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 2,
           "risky": 0,
@@ -10979,7 +11560,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 1,
           "risky": 0,
@@ -11028,7 +11609,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1997
+            "daysLeft": 1994
           },
           "mentions": 3,
           "risky": 0,
@@ -11085,7 +11666,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 7,
           "risky": 0,
@@ -11142,7 +11723,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 10,
           "risky": 0,
@@ -11199,7 +11780,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 842
+            "daysLeft": 839
           },
           "mentions": 42,
           "risky": 0,
@@ -11256,7 +11837,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 1,
           "risky": 0,
@@ -11862,7 +12443,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 14,
             "items": [
               "한국교통대 '글로컬 퇴출' 후폭풍...교수·직원단체 \"총장 사퇴·통합 중단\" 초강수",
@@ -11871,7 +12452,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 14,
             "items": [
               "전남대·전남광주특별시 ‘연 600억’ 패키지 지원대학 유치 맞손",
@@ -11880,12 +12461,21 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 12,
             "items": [
               "[100대 위기] 30강. 자녀교육비 부담",
               "'서울대 10개 만들기' 성공하려면⋯\"전임교원 최대 5850명·2조원 필요\"",
               "내 고민 해결해줄 교육부 청년 지원정책 - 정책뉴스 | 뉴스"
+            ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 3,
+            "items": [
+              "[2027수시박람회] 인제대 '지역과 함께 세계로 뻗는 글로컬대학'",
+              "부산디지털대, 2학기 신·편입생 2차 모집...16개 학과 접수",
+              "[2027수시특집] 수도권 의약계열 강자에서 ‘급부상’ AI특성화대학 2027가천대"
             ]
           }
         ]
@@ -11896,7 +12486,7 @@
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 4,
             "items": [
               "전남광주특별시-전남대, ‘서울대 10개 만들기’ 도전",
@@ -11905,7 +12495,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 3,
             "items": [
               "교육부 ‘패키지 지원대학’ 공모 총력",
@@ -11914,7 +12504,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 1,
             "items": [
               "전남광주통합특별시-전남대학교, 교육부 '패키지 지원대학' 공모 총력"
@@ -11928,7 +12518,7 @@
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 6,
             "items": [
               "‘서울대 10개 만들기’ 지역산업 인재양성 사업으로 변질 ... 대학서열 해소/지역균형성장 관계 정립 필요",
@@ -11937,7 +12527,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 2,
             "items": [
               "\"글로컬대학 좌초 책임져라\"…한국교통대 교수회·직원단체, 총장 사퇴 촉구",
@@ -11945,10 +12535,17 @@
             ]
           },
           {
-            "name": "입시·학령인구 · 국내",
+            "name": "입시·학령인구",
             "count": 1,
             "items": [
               "한국장학재단, 수능 끝나고 찾던 장학금, 입시 단계부터 붙인다"
+            ]
+          },
+          {
+            "name": "AI·디지털",
+            "count": 1,
+            "items": [
+              "AI 활용부터 스마트스토어까지…구미 농업인대학 유통·마케팅 과정 수료"
             ]
           }
         ]
@@ -11959,7 +12556,7 @@
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 13,
             "items": [
               "대학이 잘못하고, 다음 수험생이 자리 잃는다… 순천향대 의대 11명·연세대 58명 감축",
@@ -11968,7 +12565,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 13,
             "items": [
               "전북대-고려대, ‘서울대 10개 만들기’ 협력모델 첫발",
@@ -11977,12 +12574,21 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 5,
             "items": [
               "충북대-교통대, 통합 못해 공멸하나…최대 위기에도 통합 갈등 여전",
               "교육부-IBK기업은행-거점국립대 업무협약…기술이전·창업 활성",
               "'자체 통합' 충북대·교통대…단계적 통합 갈까"
+            ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 3,
+            "items": [
+              "의대생 11명 실수로 더 뽑은 순천향대…“2028학년도 정원서 감축”",
+              "‘착오’로 신입생 11명 더 뽑은 순천향대 의대…교육부 “내년 입시서 정원 감축”",
+              "순천향대, 의대 합격자 11명 실수로 더 뽑아…교육부 초과 인원만큼 내년 입시서 정원 감축"
             ]
           }
         ]
@@ -11993,7 +12599,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 24,
             "items": [
               "이병운 순천대 총장, '한쪽으로 기운 의료벨트'…초광역 통합의료벨트 재검토 촉구",
@@ -12002,7 +12608,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 12,
             "items": [
               "장관 2명·여야 당대표 ‘거물’ 총집결 국회 교육위… 지방대 위기·의대 정상화 해법 찾나",
@@ -12011,12 +12617,21 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 8,
             "items": [
               "[더밸류 브리핑] 오늘의 IBK기업은행 소식...대학교 지역 창업생태계 지원·‘I-포켓몬 체크카드’ 출시",
               "글로컬 대학 취소 '후폭풍'...계약직 해지·장학금 반토막",
               "국립창원대 \"융복합 인재양성 글로컬 셀-GRP 적극 지원한다\""
+            ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 6,
+            "items": [
+              "순천향대 의대 11명 실수로 더 뽑아 “2028년 정원감축”",
+              "순천향대 의대 정원보다 11명 초과 선발…2028학년도 모집인원 감축",
+              "순천향대 의대, 착오로 신입생 11명 초과 선발…2028학년도 정원 감축"
             ]
           }
         ]
@@ -12027,7 +12642,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 24,
             "items": [
               "강원대-강원도, 거점국립대 패키지 지원사업 공동 추진",
@@ -12036,7 +12651,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 11,
             "items": [
               "송재석 시의원 “인재양성재단 흔들리면 글로컬대학도 위기”",
@@ -12045,12 +12660,19 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 10,
             "items": [
               "경상국립대, AI 인재양성 체계 확대…우주항공·방산 경쟁력 강화",
               "중앙대, 서울 RISE 10 챌린지 최종 선정…AI 기반 탄소중립 연구 본격화 - 머니투데이",
               "[2027 수시 동의대] 디지털 전환 시대 주도할 ‘혁신 특성화 인재’ 집중 육성 전략"
+            ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 1,
+            "items": [
+              "[2027 수시 인제대] “학생은 학업에만 전념하세요”… 연 450만 원 든든한 장학 제도"
             ]
           }
         ]
@@ -12061,7 +12683,7 @@
         "open": true,
         "cats": [
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 11,
             "items": [
               "광주은행, 전남대와 AI 인재 양성 협력…거점국립대 도약 지원",
@@ -12070,7 +12692,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 11,
             "items": [
               "부산대, 남아공 `노스웨스트대` 대표단과 교육 연구 국제협력 확대방안 논의",
@@ -12079,17 +12701,29 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 10,
             "items": [
               "강원대-강원도교육청, 거점국립대 패키지 지원사업 공동추진 > 뉴스데스크",
               "강원교육청·강원대 '거점국립대 패키지 지원사업' 공동 추진",
               "교육청·원주·강원대, ‘국립대 패키지’ 추진 협약"
             ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 2,
+            "items": [
+              "순천향의대 11명 초과선발, “정원감축으로 끝낼 일 아냐”",
+              "의협, “교육부, 전국 의과대학 정원 관리 실태 전수 조사하라”"
+            ]
           }
         ]
       }
     ],
+    "overseas": {
+      "total": 0,
+      "groups": []
+    },
     "changes": [],
     "watch": [
       {
@@ -12142,7 +12776,7 @@
         "dir": "up"
       },
       {
-        "name": "해외 기사",
+        "name": "해외 기사 (참고)",
         "value": "0",
         "unit": "건",
         "change": "수집 전 주차",
@@ -12473,7 +13107,7 @@
     "state": "Normal",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 219건 → 관련성 필터 후 197건 · 수집일 2026-07-17",
+    "sourceNote": "무료·공개 소스 수집 219건 → 관련성 필터 후 국내 197건 (해외 0건은 참고 항목으로 별도) · 수집일 2026-07-17",
     "signal": {
       "crisis": 3,
       "warning": 1.5,
@@ -12517,7 +13151,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 5,
           "risky": 0,
@@ -12570,7 +13204,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1572
+            "daysLeft": 1569
           },
           "mentions": 4,
           "risky": 0,
@@ -12623,7 +13257,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 18,
           "risky": 4,
@@ -12680,7 +13314,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 3,
           "risky": 0,
@@ -12729,7 +13363,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 476
+            "daysLeft": 473
           },
           "mentions": 1,
           "risky": 0,
@@ -12778,7 +13412,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1997
+            "daysLeft": 1994
           },
           "mentions": 6,
           "risky": 0,
@@ -12835,7 +13469,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 5,
           "risky": 0,
@@ -12892,7 +13526,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 9,
           "risky": 0,
@@ -12945,7 +13579,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 842
+            "daysLeft": 839
           },
           "mentions": 30,
           "risky": 0,
@@ -13002,7 +13636,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 323
+            "daysLeft": 320
           },
           "mentions": 1,
           "risky": 0,
@@ -13523,7 +14157,7 @@
         "open": false,
         "cats": [
           {
-            "name": "입시·학령인구 · 국내",
+            "name": "입시·학령인구",
             "count": 3,
             "items": [
               "[2027 수시/전남대학교] 지역혁신 거점으로 도약… 인재 양성·산학협력·연구 혁신 기반 ‘미래 대학 모델’ 구축",
@@ -13532,7 +14166,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 3,
             "items": [
               "한동대, '환동해 소셜벤처' 6개 팀에 최대 5000만원 지원",
@@ -13541,12 +14175,20 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 3,
             "items": [
               "경기과학기술대,AI 활용 창업 교육 4건 특허 출원",
               "춘해보건대학교 AI·DX센터, 교직원 대상 ‘단계별 AI 연수’ 성료",
               "AI는 조수, 학생은 작가… 협성대 발달장애 학생 5명의 동화가 세상에 나왔다"
+            ]
+          },
+          {
+            "name": "거버넌스",
+            "count": 2,
+            "items": [
+              "거점국립대 단 3곳 '5천억'..\"충남대 운명은?\"",
+              "충남도의회 기경위 “충남연구원 조직 통합, 조례 개정보다 앞서 진행”"
             ]
           }
         ]
@@ -13557,7 +14199,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 2,
             "items": [
               "강원대학교, 대표 브랜드 시상식 개최… 통합대학 혁신성과 공식 인증",
@@ -13565,7 +14207,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 2,
             "items": [
               "충남대학교·충북대학교, 중부권 초광역 공유대학 협력 본격화…‘5극3특’ 사업 추진",
@@ -13573,10 +14215,17 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 1,
             "items": [
               "\"서울대 10개, 경쟁보다 대학서열 완화가 우선\"…특별법 제정 촉구"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 1,
+            "items": [
+              "[단독] \"막대한 예산 쓰면서 성과는 비공개?...교육청, 깜깜이 재정 끝내야\""
             ]
           }
         ]
@@ -13587,7 +14236,7 @@
         "open": false,
         "cats": [
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 3,
             "items": [
               "“글로컬대학 S등급”…국립창원대 저력, 베트남 현지서 증명",
@@ -13596,7 +14245,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 3,
             "items": [
               "한동대, 포항형 글로컬 F&B 성장전략 제시…\"지역 안에서도 세계로\"",
@@ -13605,12 +14254,20 @@
             ]
           },
           {
-            "name": "재정 · 국내",
+            "name": "재정",
             "count": 3,
             "items": [
               "대구보건대, 대구시 RISE 사업 평가서 10개 대학 유일 ‘S등급’",
               "대구보건대, 대구시 RISE 사업 자체평가 유일한 S등급",
               "대구보건대, 대구시 RISE(앵커) 사업 평가서 유일하게 S등급 획득"
+            ]
+          },
+          {
+            "name": "거버넌스",
+            "count": 2,
+            "items": [
+              "강원대 ‘대표 브랜드’ 발굴로 1도1국립대 성과 확산",
+              "“국립대병원, 지역필수의료 컨트롤타워 역할 수행”"
             ]
           }
         ]
@@ -13621,7 +14278,7 @@
         "open": false,
         "cats": [
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 13,
             "items": [
               "충북대·교통대, 글로컬대학 성과평가 이의신청 기각…‘D등급’ 확정·통합 무산 위기",
@@ -13630,7 +14287,7 @@
             ]
           },
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 12,
             "items": [
               "한동대, 경북도와 글로컬대학 3차년도 전략 논의",
@@ -13639,12 +14296,21 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 12,
             "items": [
               "“AI가 통역하는데 영어 왜 배우나”…中대학들, 영어 강의 축소 잇따라",
               "충북대·교통대, 글로컬대학 2년 연속 ‘D등급’ 확정… 이의신청 기각돼",
               "한동대, 다같이 함께하니 결과도 UP! 글로컬 3차년도 도약 선언"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 6,
+            "items": [
+              "교부금, '내국세 연동제' 개편 두고 줄다리기…\"방만 운영 우려\" vs \"교육은 미래 투자\"",
+              "라이즈(RISE)에서 앵커(ANCHOR)로의 전환, 성공의 닻을 내리려면",
+              "경북보건대학교, 경북 RISE사업 1차년도 성과 공유… 지역혁신·인재양성체계 고도화"
             ]
           }
         ]
@@ -13655,7 +14321,7 @@
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 14,
             "items": [
               "“춘천·강릉·삼척·원주 4개 캠퍼스 지역산업 특성화 거점 육성”",
@@ -13664,7 +14330,7 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 7,
             "items": [
               "“바다 없이 해군 키우나” 사관학교 통합 반발 확산… 與 “군 교육개혁” 野 “졸속책”",
@@ -13673,12 +14339,21 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 5,
             "items": [
               "최교진 장관, 아세안+3 공동의장 맡아…AI 교육 협력 주도",
               "'2년 연속 D등급'… 충북대·교통대 글로컬 대학 지정 취소 절차",
               "만 30세 이상 성인학습자 위한 동아대학교 미래라이프대학 실무·학위 모두 잡는다"
+            ]
+          },
+          {
+            "name": "입시·학령인구",
+            "count": 3,
+            "items": [
+              "[한국대학신문] 한양대, 2027학년도 수시모집 개편… 첨단학과 증원 및 수시전형 다각화",
+              "[경남대, 2027 수시 특집] 80년의 저력 위에 AI 혁신을 더하다",
+              "지역의사 선발 늘렸더니 지원자 감소…지역의사제 정원 줄이는 日의대"
             ]
           }
         ]
@@ -13689,7 +14364,7 @@
         "open": false,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 17,
             "items": [
               "충북대·교통대 위기 현실로",
@@ -13698,7 +14373,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 13,
             "items": [
               "국립공주대 글로컬대학사업단, 지역사회 리빙랩 협의체 출범",
@@ -13707,12 +14382,21 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 7,
             "items": [
               "전남대-한전, '브랜드 단과대학' 설립 추진…에너지 인재 양성",
               "[칼럼] 남해 바다를 품은 거점국립대, 경상국립대의 보물섬 ‘통영캠퍼스’",
               "[부산대] 지역 거점국립대 1위…“세계 TOP 100위 대학 도약”"
+            ]
+          },
+          {
+            "name": "재정",
+            "count": 5,
+            "items": [
+              "강경숙 \"지방교육재정교부금 개편 철회해야\"…교육시민사회와 공동 기자회견",
+              "[대구보건대] 라이즈 ‘S등급’, 글로컬대학 ‘A등급’ 정부가 인정한 보건교육",
+              "인천대, RISE 사업 기반 피지컬 AI 인재 양성 본격화"
             ]
           }
         ]
@@ -13723,7 +14407,7 @@
         "open": true,
         "cats": [
           {
-            "name": "기타 · 국내",
+            "name": "기타",
             "count": 21,
             "items": [
               "'서울대 10개 만들기' 불꽃 경쟁!",
@@ -13732,7 +14416,7 @@
             ]
           },
           {
-            "name": "AI·디지털 · 국내",
+            "name": "AI·디지털",
             "count": 13,
             "items": [
               "경기대, 재학생 ‘생성형 AI 활용 실무역량 강화’ 추진",
@@ -13741,17 +14425,30 @@
             ]
           },
           {
-            "name": "거버넌스 · 국내",
+            "name": "거버넌스",
             "count": 7,
             "items": [
               "경상국립대, AI대학·피지컬 AI학부 신설 추진…산학협력 확대",
               "‘글로컬대 취소’ 충북대-교통대 통합 재추진…24일 교육부와 협의",
               "[Who Is ?] 정태주 국립경국대학교 총장"
             ]
+          },
+          {
+            "name": "재정",
+            "count": 5,
+            "items": [
+              "노스웨스턴대•시카고대 등록금 소송 합의",
+              "국립한밭대, 대전 RISE사업 ‘A등급’ 획득",
+              "국립한밭대, 대전 RISE사업 1차연도 평가 'A등급'…AI·산학 협력 성과 인정 - 보도자료 | 기사"
+            ]
           }
         ]
       }
     ],
+    "overseas": {
+      "total": 0,
+      "groups": []
+    },
     "changes": [],
     "watch": [
       {
@@ -13804,10 +14501,10 @@
         "dir": "up"
       },
       {
-        "name": "해외 기사",
+        "name": "해외 기사 (참고)",
         "value": "0",
         "unit": "건",
-        "change": "전체의 0%",
+        "change": "신호·지표 미반영 · 별도 항목",
         "dir": "flat"
       },
       {

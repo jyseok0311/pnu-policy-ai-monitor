@@ -103,7 +103,8 @@ for (const s of stats) {
         { name: '거버넌스 기사', value: String(s.field('거버넌스')), unit: '건', change: dd(s.field('거버넌스'), prev.field('거버넌스'), '건'), dir: s.field('거버넌스') >= prev.field('거버넌스') ? 'up' : 'down' },
         { name: 'AI·디지털 기사', value: String(s.field('AI·디지털')), unit: '건', change: dd(s.field('AI·디지털'), prev.field('AI·디지털'), '건'), dir: s.field('AI·디지털') >= prev.field('AI·디지털') ? 'up' : 'down' },
         { name: '부산대 직접 언급', value: String(s.pnu), unit: '건', change: dd(s.pnu, prev.pnu, '건'), dir: s.pnu >= prev.pnu ? 'up' : 'down' },
-        { name: '해외 기사', value: String(s.overseas), unit: '건', change: s.overseas ? `전체의 ${(s.overseas / s.total * 100).toFixed(1)}%` : '수집 전 주차', dir: 'flat' },
+        // 해외 기사는 참고 항목이다. 비율(전체의 n%)로 적으면 국내 지표에 섞인 것처럼 읽힌다.
+        { name: '해외 기사 (참고)', value: String(s.overseas), unit: '건', change: s.overseas ? '신호·지표 미반영 · 별도 항목' : '수집 전 주차', dir: 'flat' },
         { name: '추세', value: trend, unit: '', change: `전주 ${prev.risk}%`, dir: trend === 'rising' ? 'up' : trend === 'falling' ? 'down' : 'flat' }
       ];
     }

@@ -472,3 +472,11 @@ h2.sec .sec-face{margin-right:4px}
 .kw-on{background:var(--hit);border-radius:3px;box-shadow:0 0 0 3px var(--hit)}
 /* 진행 중 주차 배지 — 미생성(회색)과 구분한다 */
 .side li a .stub.live{color:#1f6b42;border-color:#bfdccb;background:var(--live-bg)}
+
+/* 기사 목록(등급 배지 · 제목 · 매체) — 일일 브리핑과 주간 해외 참고 섹션이 같이 쓴다 */
+.artlist{list-style:none;margin:0;padding:0}
+.artlist li{display:grid;grid-template-columns:46px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.artlist li:last-child{border-bottom:0}
+.artlist .lv{text-align:center;font-size:11px}
+.artmeta{color:var(--mute);font-size:12px;white-space:nowrap}
+@media (max-width:860px){.artlist li{grid-template-columns:46px 1fr}.artmeta{display:none}}
