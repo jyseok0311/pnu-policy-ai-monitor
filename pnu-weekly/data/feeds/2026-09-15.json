@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-09-15T00:16:48.311Z",
+  "collectedAt": "2026-09-15T00:41:15.010Z",
   "window": "최근 14일",
   "policy": "기관 공식 홈페이지 게시판만 수집. 개인 SNS·블로그는 수집하지 않는다.",
   "sources": [
@@ -53,8 +53,11 @@
       "list": "https://www.aikorea.go.kr/web/board/newsList.do?menu_cd=000012&screenTp=USER"
     }
   ],
-  "total": 8,
+  "total": 38,
   "byOrg": {
+    "산업통상부": 10,
+    "교육부": 10,
+    "행정안전부": 10,
     "소프트웨어정책연구소": 6,
     "국가인공지능전략위원회": 1,
     "교육정책네트워크": 1
@@ -63,30 +66,30 @@
     {
       "기관": "교육부",
       "게시판": "보도자료",
-      "수신": 0,
-      "최근14일": 0,
-      "상태": "실패 fetch failed"
+      "수신": 10,
+      "최근14일": 10,
+      "상태": "ok"
     },
     {
       "기관": "과학기술정보통신부",
       "게시판": "보도자료",
       "수신": 0,
       "최근14일": 0,
-      "상태": "실패 fetch failed"
+      "상태": "실패 사이트 점검 중: 시스템 점검 안내 | 과학기술정보통신부"
     },
     {
       "기관": "산업통상부",
       "게시판": "보도자료",
-      "수신": 0,
-      "최근14일": 0,
-      "상태": "실패 fetch failed"
+      "수신": 10,
+      "최근14일": 10,
+      "상태": "ok"
     },
     {
       "기관": "행정안전부",
       "게시판": "보도자료",
-      "수신": 0,
-      "최근14일": 0,
-      "상태": "실패 fetch failed"
+      "수신": 10,
+      "최근14일": 10,
+      "상태": "ok"
     },
     {
       "기관": "소프트웨어정책연구소",
@@ -112,6 +115,222 @@
   ],
   "items": [
     {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "가스안전, 현장의 노력에 답하다",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172199/view?mno=&pageIndex=1",
+      "date": "2026-09-15",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "학생맞춤통합지원을 위해 교육청.지역사회 협력체계를 강화한다",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107205&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "폐교를 지역의 활력 거점으로, 교육부-행안부 폐교 활용 지원사업 7건 선정",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107204&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "WTO 개혁, 민관이 함께 대응전략 논의",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172197/view?mno=&pageIndex=1",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "2026년 8월 정보통신산업(ICT) 수출입 동향",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172196/view?mno=&pageIndex=1",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "세계 최고 기업연구소로 키운다. 6년간 2,895억원 투입 ‘GATC’ 본격 가동",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172195/view?mno=&pageIndex=1",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "(참고자료)정부, 중동 정세 불안정성 대비 원유 수급상황 긴급 점검",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172194/view?mno=&pageIndex=1",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "한-중앙아 6개국 산업장관회의 개최, 다자 간 산업‧핵심광물 협의 첫 발",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172193/view?mno=&pageIndex=1",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "“지역의 힘을 미래로, 기업의 도전을 세계로” K-산업단지 대전환",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172192/view?mno=&pageIndex=1",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "고려인 이주 역사 기록 바다 건너 품는다 한-카자흐스탄 기록 협력 재정비",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129465",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "불공정은 단호하게, 민생경제는 살뜰히 범정부 추석 명절 합동점검 실시",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129464",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "폐교를 지역의 활력 거점으로, 행안부-교육부 폐교 활용 지원사업 7건 선정",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129463",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "행안부, 민원 담당자 교육 ‘정부24’ 안전성 높이고, ‘서류없는 행정’가속화",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129462",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "9월 가뭄 예·경보 발표",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129452",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "어린이 보호구역 교통사고 다발지역 93개소 점검, 위험요인 개선한다",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129447",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "세계 각지의 이북도민 44명, 그리운 고국 찾는다",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129446",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "전국 곳곳 봉사로 채우는 한가위... 행안부, ‘추석맞이 자원봉사 집중기간’ 운영",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129444",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "공공 누리집에 숨은 불법광고, 국민이 직접 잡는다",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129443",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "“초연결 시대 더 살기 좋은 지역 만들기“ 행안부, 지자체 우수 정보통신서비스 발굴",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129442",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "교육부 대교협 대입 원서접수시스템 장애 관련 구제 방안 공동으로 마련",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107203&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-13",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "“우리 아이 미래 경쟁력” 영유아 보호자가 묻고, 인지과학이 답하다!",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107198&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-13",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "(참고자료)통상교섭본부장, 英 기업혁신과학통상부 장관과 대러 LNG 수입 제재 등 현안 논의",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172191/view?mno=&pageIndex=1",
+      "date": "2026-09-11",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "국표원-한국소비자원 등 충북 농촌마을 가전제품 안전사용 캠페인 실시",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172189/view?mno=&pageIndex=1",
+      "date": "2026-09-11",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "제1차 한-베트남 수출통제대화 개최, 공급망 안정 및 현지 진출기업 지원 강화",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172188/view?mno=&pageIndex=1",
+      "date": "2026-09-11",
+      "summary": ""
+    },
+    {
       "org": "소프트웨어정책연구소",
       "orgId": "spri",
       "channel": "연구자료",
@@ -127,6 +346,15 @@
       "title": "에이전틱 AI 시대의 핵심 자원, AX 인재: 현황 진단 및 정책 과제",
       "link": "https://spri.kr/posts/view/24024?code=issue_reports&study_type=&board_type=&flg=0",
       "date": "2026-09-11",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "우즈베키스탄 한국어교육 지역 거점 마련하고 지역 한국어교사 양성한다",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107188&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-10",
       "summary": ""
     },
     {
@@ -154,6 +382,51 @@
       "title": "AI인재 성장경로 분석을 통한 AI 최고급 인재 양성 방안",
       "link": "https://spri.kr/posts/view/24019?code=research&study_type=&board_type=&flg=0",
       "date": "2026-09-10",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "강원대 캠퍼스 혁신파크 산학연혁신허브 개관",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107164&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-09",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "2026년 1차 학교폭력 실태조사 결과 발표",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107165&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-09",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "2027학년도 공립 유치원·초등·특수(유치원·초등)교사 임용후보자 선정경쟁시험 모집공고 현황",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107182&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-09",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "경제협력개발기구(OECD), 국제 학업성취도 평가(PISA) 2025 결과 발표",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107148&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-08",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "학교안전법 시행령 일부개정령안 국무회의 통과",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107153&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-08",
       "summary": ""
     },
     {

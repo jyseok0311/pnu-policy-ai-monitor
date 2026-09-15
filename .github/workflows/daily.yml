@@ -1,4 +1,5 @@
-# 매일 아침 기사·보도자료를 수집하고, 사이트를 새로 빌드해 GitHub Pages 에 올린다.
+# 매시 기사를 수집하고, 사이트를 새로 빌드해 GitHub Pages 에 올린다.
+# 하루 한 번(07:00 KST)은 기관 보도자료까지 함께 걷는 '전체 실행'이다.
 #
 # 흐름:  collect → feeds → 검증 → series → daily/build/viz-lab/net-lab/node-lab → pdf → 데이터 커밋 → Pages 배포
 #
@@ -11,11 +12,16 @@
 # - 주간 리포트 '본문'은 만들지 않는다. 서술은 사람이 LLM 으로 쓰고 narrative/ 에 넣는 부분이다.
 #   여기서는 수치·일일 브리핑·진행 중 주차의 신호만 갱신한다.
 
-name: 매일 수집 · 빌드 · 배포
+name: 수집 · 빌드 · 배포
 
 on:
   schedule:
-    - cron: '0 22 * * *'          # 매일 07:00 KST (= 전날 22:00 UTC)
+    # 전체 실행 — 기사 + 기관 보도자료. 매일 07:00 KST (= 전날 22:00 UTC)
+    - cron: '0 22 * * *'
+    # 매시 실행 — 기사만. 22시(UTC)만 빼서 전체 실행과 겹치지 않게 한다.
+    #   GitHub 예약 실행은 제때 돈다는 보장이 없다(몇 시간 밀리거나 아예 건너뛴다).
+    #   수집 창을 2일로 두는 이유가 이것이다 — 한두 번 걸러도 다음 실행이 주워 담는다.
+    - cron: '0 0-21,23 * * *'
   workflow_dispatch:
     inputs:
       days:
@@ -59,13 +65,29 @@ jobs:
         uses: browser-actions/setup-chrome@v1
       - run: sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji > /dev/null
 
+      # ── 실행 모드 — 전체(기관 보도자료 포함)인가, 매시(기사만)인가
+      - name: 실행 모드
+        id: mode
+        run: |
+          if [ "${{ github.event.schedule }}" = "0 22 * * *" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo 'full=true'  >> "$GITHUB_OUTPUT"
+            echo 'days=${{ inputs.days || '3' }}' >> "$GITHUB_OUTPUT"
+            echo '· 전체 실행 (기사 + 기관 보도자료)'
+          else
+            echo 'full=false' >> "$GITHUB_OUTPUT"
+            echo 'days=2'     >> "$GITHUB_OUTPUT"
+            echo '· 매시 실행 (기사만)'
+          fi
+
       # ── 수집 (스케줄·수동 실행에서만)
       - name: 기사 수집
         if: github.event_name != 'push'
-        run: node collect.mjs --week --days ${{ inputs.days || '3' }}
+        run: node collect.mjs --week --days ${{ steps.mode.outputs.days }}
 
+      # 기관 보도자료는 14일 창으로 걷는다. 매시 돌 이유가 없고, 부처 사이트는
+      # 해외 러너를 막는 일이 잦아 실패만 쌓인다. 전체 실행에서만 건드린다.
       - name: 기관 보도자료 수집
-        if: github.event_name != 'push'
+        if: github.event_name != 'push' && steps.mode.outputs.full == 'true'
         continue-on-error: true     # 정부 사이트가 해외 IP 를 막을 수 있다. 실패는 파일 안에 기록된다.
         run: node feeds.mjs
 
@@ -102,7 +124,7 @@ jobs:
             echo "변경 없음 — 커밋 생략"
             exit 0
           fi
-          git commit -q -m "자동 수집 $(TZ=Asia/Seoul date +%Y-%m-%d) [skip ci]"
+          git commit -q -m "자동 수집 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') [skip ci]"
           git pull --rebase -q origin main
           git push -q
 
