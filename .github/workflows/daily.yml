@@ -44,7 +44,10 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # 저장소 변수 RUNNER_LABEL 을 두면 그 러너로 옮겨 간다(예: self-hosted).
+    # 비워 두면 지금처럼 GitHub 러너에서 돈다 — 러너가 없는데 self-hosted 로
+    # 박아 두면 모든 실행이 큐에 걸린 채 멈추므로 기본값은 건드리지 않는다.
+    runs-on: ${{ vars.RUNNER_LABEL || 'ubuntu-latest' }}
     timeout-minutes: 30
     defaults:
       run:
@@ -63,7 +66,10 @@ jobs:
       - name: 크롬 · CJK 폰트
         id: chrome
         uses: browser-actions/setup-chrome@v1
-      - run: sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji > /dev/null
+      # PDF 에 한글·한자(共起)가 빠지지 않으려면 시스템 CJK 폰트가 있어야 한다.
+      # 자체 호스팅 러너에는 미리 깔아 두고 여기서는 건너뛴다(매번 apt 를 돌릴 이유가 없다).
+      - if: runner.environment == 'github-hosted'
+        run: sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji > /dev/null
 
       # ── 실행 모드 — 전체(기관 보도자료 포함)인가, 매시(기사만)인가
       - name: 실행 모드
@@ -143,7 +149,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RUNNER_LABEL || 'ubuntu-latest' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -155,7 +161,7 @@ jobs:
   alert:
     needs: [build, deploy]
     if: failure()
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RUNNER_LABEL || 'ubuntu-latest' }}
     steps:
       - name: 이슈 열기 또는 댓글
         env:
