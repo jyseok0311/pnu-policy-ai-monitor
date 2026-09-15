@@ -7,7 +7,7 @@
 // 전에는 네이버 블로그 RSS 를 읽었다. 블로그는 홍보 편집본이라 원문 보도자료와
 // 제목·시점이 어긋나고 링크도 blog.naver.com 으로 나가 출처가 흐려졌다. 지금은 원문만 본다.
 
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, readFileSync, readdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SITES, fetchSite } from './src/gov-sites.mjs';
@@ -20,6 +20,7 @@ const DAYS = Number(arg('--days')) || 14;
 const since = Date.now() - DAYS * 864e5;
 const items = [];
 const log = [];
+const down = [];
 
 for (const site of SITES) {
   try {
@@ -37,7 +38,41 @@ for (const site of SITES) {
     }
     log.push({ 기관: site.name, 게시판: site.board, 수신: raw.length, [`최근${DAYS}일`]: kept, 상태: note || 'ok' });
   } catch (e) {
+    down.push({ site, why: e.message });
     log.push({ 기관: site.name, 게시판: site.board, 수신: 0, [`최근${DAYS}일`]: 0, 상태: `실패 ${e.message}`.slice(0, 60) });
+  }
+}
+
+// ── 실패한 기관은 직전 수집분에서 이월한다.
+//    응답이 없다는 것이 '아무것도 안 냈다'는 뜻은 아니다. 창이 14일이라 직전 항목도
+//    아직 유효하다. 이월분은 carriedOver 에 적어 두어 어디서 온 값인지 남긴다.
+const carried = {};
+if (down.length) {
+  const dir = join(root, 'data/feeds');
+  const snaps = existsSync(dir)
+    ? readdirSync(dir).filter((x) => x.endsWith('.json')).sort().reverse()
+    : [];
+  for (const { site } of down) {
+    for (const snap of snaps) {
+      let prev;
+      try { prev = JSON.parse(readFileSync(join(dir, snap), 'utf8')); } catch { continue; }
+      const mine = (prev.items || []).filter((x) => x.orgId === site.id
+        && (!x.date || !Number.isFinite(Date.parse(x.date)) || Date.parse(x.date) >= since));
+      if (!mine.length) continue;
+      const seen = new Set(items.filter((x) => x.orgId === site.id).map((x) => x.link));
+      let n = 0;
+      for (const it of mine) {
+        if (seen.has(it.link)) continue;
+        items.push({ ...it, carriedFrom: snap.replace('.json', '') });
+        n++;
+      }
+      if (n) {
+        carried[site.name] = { 건수: n, 출처: snap.replace('.json', '') };
+        const row = log.find((L) => L.기관 === site.name);
+        if (row) row.상태 = `${row.상태} → ${snap.replace('.json', '')} 이월 ${n}건`;
+      }
+      break;   // 가장 최근 스냅샷 하나만 쓴다
+    }
   }
 }
 
@@ -51,6 +86,7 @@ const out = {
   total: items.length,
   byOrg: Object.fromEntries([...new Set(items.map((x) => x.org))].map((o) => [o, items.filter((x) => x.org === o).length])),
   feeds: log,
+  ...(Object.keys(carried).length ? { carriedOver: carried } : {}),
   items
 };
 
@@ -61,6 +97,7 @@ writeFileSync(join(root, `data/feeds/${tagDate}.json`), JSON.stringify(out, null
 
 console.table(log);
 console.log(`\n총 ${out.total}건 · ${out.window}`);
+if (Object.keys(carried).length) console.log('이월', carried);
 console.log('기관별', out.byOrg);
 console.log(`저장: data/feeds/${tagDate}.json`);
 const failed = log.filter((l) => String(l.상태).startsWith('실패') || String(l.상태).startsWith('목록'));
