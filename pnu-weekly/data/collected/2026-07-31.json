@@ -5,8 +5,8 @@
   "to": "2026-08-07",
   "total": 671,
   "signal": {
-    "crisis": 3.4,
-    "warning": 4.5,
+    "crisis": 3,
+    "warning": 4.6,
     "watch": 9.8
   },
   "byField": {
@@ -237,13 +237,14 @@
       "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9CMjV2REJDMGdLZmZiaW1qTlROcUFya0xNNVJvSFI1aWpsSmRoYldXMW5LbzN4Q0N3dHpGckRtX3JyYjVaS3o2VUxTdmp0N1U?oc=5",
       "date": "2026-08-06",
       "field": "기타",
-      "level": "normal",
+      "level": "warning",
       "univ": [],
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiT0FVX3lxTE9CMjV2REJDMGdLZmZiaW1qTlROcUFya0xNNVJvSFI1aWpsSmRoYldXMW5LbzN4Q0N3dHpGckRtX3JyYjVaS3o2VUxTdmp0N1U?oc=5\" target=\"_blank\">李 ‘육사 쿠데타’ 발언 후폭풍, 국",
       "feeds": [
         "구글뉴스:국립대 통합"
       ],
-      "group": "기타"
+      "group": "기타",
+      "why": "후폭풍"
     },
     {
       "region": "domestic",
@@ -315,13 +316,12 @@
       "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFA2M1Rrd3ZvdExXcHcxOEpoWlBwaURPM3pxcXhuUWd4a282dmFIT3hpMlhRLVZpTzhwLVFwWlBMVWZkU2E5UGswZnFNT2pqeThFNkdGYm1pR2tIckZv?oc=5",
       "date": "2026-08-06",
       "field": "정책/철학",
-      "level": "crisis",
+      "level": "normal",
       "univ": [],
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiXEFVX3lxTFA2M1Rrd3ZvdExXcHcxOEpoWlBwaURPM3pxcXhuUWd4a282dmFIT3hpMlhRLVZpTzhwLVFwWlBMVWZkU2E5UGswZnFNT2pqeThFNkdGYm1pR2tIckZv?oc=5\" target=\"_blank\">임형석",
       "feeds": [
         "구글뉴스:글로컬대학"
       ],
-      "why": "폐교",
       "group": "교육"
     },
     {
@@ -1392,13 +1392,12 @@
       "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5tNkxkUHNrWDVoR0Z4Tk9HdTdsZ0VUS0J2MnFicFBZQk90N2xNQXBKa0hyRjgwUG5lblJfNm1COHNfZGNNcDRtUUhiaW5xZGM?oc=5",
       "date": "2026-08-05",
       "field": "정책/철학",
-      "level": "crisis",
+      "level": "normal",
       "univ": [],
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiT0FVX3lxTE5tNkxkUHNrWDVoR0Z4Tk9HdTdsZ0VUS0J2MnFicFBZQk90N2xNQXBKa0hyRjgwUG5lblJfNm1COHNfZGNNcDRtUUhiaW5xZGM?oc=5\" target=\"_blank\">임형석 전남광주시의원, '광양보건대 ",
       "feeds": [
         "구글뉴스:글로컬대학"
       ],
-      "why": "폐교",
       "group": "교육"
     },
     {
@@ -1408,13 +1407,12 @@
       "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1zang4VDROVnR5bUpwTzJwYmlTR2RDWV8xalc3WjZYZ1ludTBMWUlnd2tVd2FMSzdiallxS2tZZnFvY09BV3RVd002MWNpdlFKV1ZhbnhDQkJwR1BZY25JcHRNQ3QteDUxYk1FSg?oc=5",
       "date": "2026-08-05",
       "field": "정책/철학",
-      "level": "crisis",
+      "level": "normal",
       "univ": [],
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1zang4VDROVnR5bUpwTzJwYmlTR2RDWV8xalc3WjZYZ1ludTBMWUlnd2tVd2FMSzdiallxS2tZZnFvY09BV3RVd002MWNpdlFKV1ZhbnhDQkJwR1BZY25JcHRNQ3QteDUxYk1FSg?oc=",
       "feeds": [
         "구글뉴스:글로컬대학"
       ],
-      "why": "폐교",
       "group": "교육"
     },
     {
@@ -10698,5 +10696,5 @@
     "국내": 425,
     "해외": 246
   },
-  "reclassifiedAt": "2026-09-14"
+  "reclassifiedAt": "2026-09-17"
 }

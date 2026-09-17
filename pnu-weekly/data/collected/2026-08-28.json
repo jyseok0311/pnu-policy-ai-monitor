@@ -5,7 +5,7 @@
   "to": "2026-09-04",
   "total": 805,
   "signal": {
-    "crisis": 4.2,
+    "crisis": 4.1,
     "warning": 4.6,
     "watch": 4.7
   },
@@ -382,7 +382,7 @@
       "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE14MzFUWm1nZEJGcmZEcGQyb1lyQkR5VC1nYm93RFFKOEJva0R3dmp1UDRyQkpQRnZQckM4eXo0S0hoOXhhX3UtTU50QWQ5dEtUOUVFSmZNTThXVUdlbmlyY0s4RDVHRWc4YUlUMQ?oc=5",
       "date": "2026-09-03",
       "field": "정책/철학",
-      "level": "normal",
+      "level": "warning",
       "univ": [
         "서울대"
       ],
@@ -390,7 +390,8 @@
       "feeds": [
         "구글뉴스:거점국립대"
       ],
-      "group": "교육"
+      "group": "교육",
+      "why": "후폭풍"
     },
     {
       "region": "domestic",
@@ -7633,8 +7634,7 @@
       "region": "domestic",
       "date": "2026-09-01",
       "field": "기타",
-      "level": "warning",
-      "why": "감축",
+      "level": "normal",
       "univ": [],
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxPZ3BnRjdwLUdOS1BOS3JZUllQZ3JyMTZvOGlzaGVDQWJGYzZCbkxjbkVtTlVMbnJRcUdGRXBIdVJ6Q3VwcmJVUFlWYVRRWG1xNHBuemFzQ2MweVpILWFpeVlIUmZmekNlVWs0cktvTF",
       "feeds": [
@@ -9489,8 +9489,7 @@
       "region": "domestic",
       "date": "2026-08-31",
       "field": "기타",
-      "level": "warning",
-      "why": "감축",
+      "level": "normal",
       "univ": [],
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiT0FVX3lxTE5hN1JpZElGSlIybUNmc1NtNk9kNG54ekE1Y3FMV3JBaWVuVktNSmhiX2xCeDBaVXpyTnZLYzc2WGl3Q0RaRUVQWGZhcUxIcFU?oc=5\" target=\"_blank\">기업 AI 도입 28.6%…인력 감축",
       "feeds": [
@@ -10238,13 +10237,12 @@
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE05QXpHVGRkOUw1eGxPN0Z4Zmt2R1BueEtpLUIzTGtNSHNzX29NVEVhYjZhT1hvSWxfLUNVSzJGOUZFS2VidVNPZTRjSmJMcm1PVzVNNkZ3b3JXQldXWWQ5ZUJtUzE1SWtBM1hn?oc=5",
       "date": "2026-08-30",
       "field": "정책/철학",
-      "level": "crisis",
+      "level": "normal",
       "univ": [],
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE05QXpHVGRkOUw1eGxPN0Z4Zmt2R1BueEtpLUIzTGtNSHNzX29NVEVhYjZhT1hvSWxfLUNVSzJGOUZFS2VidVNPZTRjSmJMcm1PVzVNNkZ3b3JXQldXWWQ5ZUJtUzE1SWtBM1hn?oc=5\"",
       "feeds": [
         "구글뉴스:국립대 통합"
       ],
-      "why": "폐교",
       "group": "교육"
     },
     {
@@ -10642,13 +10640,14 @@
       "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBZa2ZHaUl0WUZXU2FSb2cwd21jX1NTYXRMTlNIdTduUmRSUW10aVFIQnV2V254bnpNb3VHcDBXcm5JYWNzeExGWHhGRlhzeGVqNFNSRw?oc=5",
       "date": "2026-08-30",
       "field": "정책/철학",
-      "level": "normal",
+      "level": "warning",
       "univ": [],
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiVEFVX3lxTFBZa2ZHaUl0WUZXU2FSb2cwd21jX1NTYXRMTlNIdTduUmRSUW10aVFIQnV2V254bnpNb3VHcDBXcm5JYWNzeExGWHhGRlhzeGVqNFNSRw?oc=5\" target=\"_blank\">\"2040년 대학생 8만",
       "feeds": [
         "구글뉴스:대학 구조개혁"
       ],
-      "group": "교육"
+      "group": "교육",
+      "why": "한계대학"
     },
     {
       "region": "domestic",
@@ -13008,5 +13007,5 @@
     "국내": 543,
     "해외": 262
   },
-  "reclassifiedAt": "2026-09-14"
+  "reclassifiedAt": "2026-09-17"
 }
