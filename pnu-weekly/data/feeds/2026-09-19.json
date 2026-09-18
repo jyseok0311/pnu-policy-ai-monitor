@@ -1,0 +1,459 @@
+{
+  "collectedAt": "2026-09-18T23:52:05.963Z",
+  "window": "최근 14일",
+  "policy": "기관 공식 홈페이지 게시판만 수집. 개인 SNS·블로그는 수집하지 않는다.",
+  "sources": [
+    {
+      "id": "moe",
+      "name": "교육부",
+      "board": "보도자료",
+      "home": "https://www.moe.go.kr/main.do?s=moe",
+      "list": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=294&m=020402&s=moe"
+    },
+    {
+      "id": "msit",
+      "name": "과학기술정보통신부",
+      "board": "보도자료",
+      "home": "https://www.msit.go.kr/index.do",
+      "list": "https://www.msit.go.kr/bbs/list.do?sCode=user&mId=113&mPid=112"
+    },
+    {
+      "id": "motir",
+      "name": "산업통상부",
+      "board": "보도자료",
+      "home": "https://www.motir.go.kr/",
+      "list": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c"
+    },
+    {
+      "id": "mois",
+      "name": "행정안전부",
+      "board": "보도자료",
+      "home": "https://www.mois.go.kr/frt/a01/frtMain.do",
+      "list": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardList.do?bbsId=BBSMSTR_000000000008"
+    },
+    {
+      "id": "spri",
+      "name": "소프트웨어정책연구소",
+      "board": "연구자료",
+      "home": "https://spri.kr/",
+      "list": "https://spri.kr/posts?code=data_all"
+    },
+    {
+      "id": "edpolicy",
+      "name": "교육정책네트워크",
+      "board": "국내교육동향",
+      "home": "https://edpolicy.kedi.re.kr/edpolicy",
+      "list": "https://edpolicy.kedi.re.kr/edpolicy/board/226"
+    },
+    {
+      "id": "aikorea",
+      "name": "국가인공지능전략위원회",
+      "board": "보도자료",
+      "home": "https://www.aikorea.go.kr/web/board/brdList.do?menu_cd=000012",
+      "list": "https://www.aikorea.go.kr/web/board/newsList.do?menu_cd=000012&screenTp=USER"
+    }
+  ],
+  "total": 38,
+  "byOrg": {
+    "산업통상부": 10,
+    "행정안전부": 10,
+    "소프트웨어정책연구소": 7,
+    "교육부": 10,
+    "국가인공지능전략위원회": 1
+  },
+  "feeds": [
+    {
+      "기관": "교육부",
+      "게시판": "보도자료",
+      "수신": 10,
+      "최근14일": 10,
+      "상태": "ok"
+    },
+    {
+      "기관": "과학기술정보통신부",
+      "게시판": "보도자료",
+      "수신": 0,
+      "최근14일": 0,
+      "상태": "실패 사이트 점검 중: 시스템 점검 안내 | 과학기술정보통신부"
+    },
+    {
+      "기관": "산업통상부",
+      "게시판": "보도자료",
+      "수신": 10,
+      "최근14일": 10,
+      "상태": "ok"
+    },
+    {
+      "기관": "행정안전부",
+      "게시판": "보도자료",
+      "수신": 10,
+      "최근14일": 10,
+      "상태": "ok"
+    },
+    {
+      "기관": "소프트웨어정책연구소",
+      "게시판": "연구자료",
+      "수신": 12,
+      "최근14일": 7,
+      "상태": "ok"
+    },
+    {
+      "기관": "교육정책네트워크",
+      "게시판": "국내교육동향",
+      "수신": 10,
+      "최근14일": 0,
+      "상태": "ok"
+    },
+    {
+      "기관": "국가인공지능전략위원회",
+      "게시판": "보도자료",
+      "수신": 10,
+      "최근14일": 1,
+      "상태": "ok"
+    }
+  ],
+  "items": [
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "(참고자료)코스타리카, 디지털경제동반자협정 가입 발효",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172225/view?mno=&pageIndex=1",
+      "date": "2026-09-18",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "(참고자료)10차 최고가격 동결, 중동정세 불안으로 민생경제 보호",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172224/view?mno=&pageIndex=1",
+      "date": "2026-09-18",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "EU 新통상 규제, 우리 기업 부담은 낮추고 협력 기회는 넓힌다",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172222/view?mno=&pageIndex=1",
+      "date": "2026-09-18",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "일일이 누리집 안 찾아도 된다 국가 기록·역사 자료, 인공지능으로 한곳에서 검색",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129563",
+      "date": "2026-09-18",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "한성숙 총리, “철저한 준비와 반복적인 훈련이 국민의 생명과 안전 지키는 길”",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129561",
+      "date": "2026-09-18",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "아이들의 안전한 학교생활 위해, 개학기 학교 주변 안전관리 현장 점검",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129559",
+      "date": "2026-09-18",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "환희의 순간부터 변화한 도시와 일상까지 기록으로 다시 읽는 86·88 국제스포츠대회",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129558",
+      "date": "2026-09-18",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "8월 호우 피해 이재민, 추석 전 주거 안정 총력 지원",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129557",
+      "date": "2026-09-18",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "따뜻한·안전한 추석대비 민생안정대책 논의, 2026년 제7회 중앙지방정책협의회 개최",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129571",
+      "date": "2026-09-18",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "저연차가 만드는 공직문화 변화, 조직문화 새로고침(F5) 3기 새출발!",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129570",
+      "date": "2026-09-18",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "8.28.~9.1. 호우 피해 특별재난지역 선포",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129569",
+      "date": "2026-09-18",
+      "summary": ""
+    },
+    {
+      "org": "소프트웨어정책연구소",
+      "orgId": "spri",
+      "channel": "연구자료",
+      "title": "글로벌 AI 벤처투자 동향과 투자 집중구조: 국내 현황과 시사점",
+      "link": "https://spri.kr/posts/view/24028?code=issue_reports&study_type=&board_type=&flg=0",
+      "date": "2026-09-18",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "유웨이어플라이 수시 원서접수시스템 장애 관련 조치 결과 발표",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107228&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-17",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "한-중앙아시아, 교육협력의 지평을 넓힌다",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107225&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-17",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "중국산 H형강, 봉강 덤핑조사 판정",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172221/view?mno=&pageIndex=1",
+      "date": "2026-09-17",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "(참고자료)국민성장펀드에 더 많은 전문가들이 참여하여의사결정의 객관성과 투명성을 강화합니다",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172219/view?mno=&pageIndex=1",
+      "date": "2026-09-17",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "(참고자료)제3기 소재부품장비산업 특화단지 선정",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172218/view?mno=&pageIndex=1",
+      "date": "2026-09-17",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "｢2026 WTO 퍼블릭포럼｣ 계기 WTO 투자원활화 협정 조속한 이행 논의",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172217/view?mno=&pageIndex=1",
+      "date": "2026-09-17",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "글로벌 소부장 기업, 대한민국에서 협력 기회 찾는다",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172216/view?mno=&pageIndex=1",
+      "date": "2026-09-17",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "농어촌 환경·사회·거버넌스(ESG) 우수기업·기관 인정으로 농어촌 기여를 넓힌다",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172215/view?mno=&pageIndex=1",
+      "date": "2026-09-17",
+      "summary": ""
+    },
+    {
+      "org": "산업통상부",
+      "orgId": "motir",
+      "channel": "보도자료",
+      "title": "K-디스플레이, 한뜻으로 대체 불가 초격차 연다",
+      "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172214/view?mno=&pageIndex=1",
+      "date": "2026-09-17",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "「지방자치법」 개정안 국회 통과 자치분권·균형성장 제도적 기반 확대",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129553",
+      "date": "2026-09-17",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "재난안전관리본부장, 태풍 대응체계부터 추석 안전까지 빈틈없이 챙긴다",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129544",
+      "date": "2026-09-17",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "‘2026 에듀테크 코리아 페어’, 9월 17일(목)부터 3일간 코엑스에서 개최",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107218&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-16",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "대한민국 최고 권위의 학술상, 제71회 대한민국학술원상 시상식 개최",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107217&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-16",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "40개 공공기관, 2026년 인적자원개발 우수기관으로 인증",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107216&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-16",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "2026학년도 대학수학능력시험 성적 분석 결과 발표 보도자료",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107215&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-16",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "[보도참고자료] 유웨이 수시 원서접수시스템 장애 관련 조치 진행 현황",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107214&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-16",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "2027학년도 대학수학능력시험 9월 모의평가 이의신청 심사 결과 발표",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107212&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-15",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "함께 만드는 안전한 학교 문화, 학교폭력 예방 어울림 더하기 선도학교 운영",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107210&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-15",
+      "summary": ""
+    },
+    {
+      "org": "교육부",
+      "orgId": "moe",
+      "channel": "보도자료",
+      "title": "학생맞춤통합지원을 위해 교육청.지역사회 협력체계를 강화한다",
+      "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107205&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+      "date": "2026-09-14",
+      "summary": ""
+    },
+    {
+      "org": "소프트웨어정책연구소",
+      "orgId": "spri",
+      "channel": "연구자료",
+      "title": "AI G3 도약을 위한 국가 AI 인재전략 Shift",
+      "link": "https://spri.kr/posts/view/24025?code=issue_reports&study_type=&board_type=&flg=0",
+      "date": "2026-09-11",
+      "summary": ""
+    },
+    {
+      "org": "소프트웨어정책연구소",
+      "orgId": "spri",
+      "channel": "연구자료",
+      "title": "에이전틱 AI 시대의 핵심 자원, AX 인재: 현황 진단 및 정책 과제",
+      "link": "https://spri.kr/posts/view/24024?code=issue_reports&study_type=&board_type=&flg=0",
+      "date": "2026-09-11",
+      "summary": ""
+    },
+    {
+      "org": "소프트웨어정책연구소",
+      "orgId": "spri",
+      "channel": "연구자료",
+      "title": "기업가형 AI 인재 육성 전략 연구",
+      "link": "https://spri.kr/posts/view/24021?code=research&study_type=&board_type=&flg=0",
+      "date": "2026-09-10",
+      "summary": ""
+    },
+    {
+      "org": "소프트웨어정책연구소",
+      "orgId": "spri",
+      "channel": "연구자료",
+      "title": "해외 거주 디지털 인재 확보 및 활용을 위한 정책 방안 연구",
+      "link": "https://spri.kr/posts/view/24020?code=research&study_type=&board_type=&flg=0",
+      "date": "2026-09-10",
+      "summary": ""
+    },
+    {
+      "org": "소프트웨어정책연구소",
+      "orgId": "spri",
+      "channel": "연구자료",
+      "title": "AI인재 성장경로 분석을 통한 AI 최고급 인재 양성 방안",
+      "link": "https://spri.kr/posts/view/24019?code=research&study_type=&board_type=&flg=0",
+      "date": "2026-09-10",
+      "summary": ""
+    },
+    {
+      "org": "소프트웨어정책연구소",
+      "orgId": "spri",
+      "channel": "연구자료",
+      "title": "데이터 기반 가상융합(XR) 기술 콘텐츠 글로벌 동향 분석",
+      "link": "https://spri.kr/posts/view/24018?code=issue_reports&study_type=&board_type=&flg=0",
+      "date": "2026-09-08",
+      "summary": ""
+    },
+    {
+      "org": "국가인공지능전략위원회",
+      "orgId": "aikorea",
+      "channel": "보도자료",
+      "title": "국가AI전략위 출범 1년, 대한민국 AI 대전환 성과 본격화",
+      "link": "https://www.aikorea.go.kr/web/board/brdDetail.do?menu_cd=000012&num=923",
+      "date": "2026-09-08",
+      "summary": ""
+    }
+  ]
+}
