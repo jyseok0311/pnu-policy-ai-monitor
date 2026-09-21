@@ -29,8 +29,13 @@ const stats = files.map((f) => {
   // 진행 중 주차(to 가 비어 있음)의 끝은 '그 주가 닫히는 금요일'로 잡는다.
   // 수집한 날로 잡으면 토·일에 돌린 실행분이 ISO 주차 번호상 지난 주차와 같은 id 를 얻어
   // 완성 주차를 덮어쓴다(금~일이 같은 ISO 주에 들어간다).
-  const partial = !raw.to && !!raw.from;
   const to = raw.to || (raw.from ? addDays(raw.from, 7) : raw.collectedAt.slice(0, 10));
+  // '진행 중'은 아직 안 끝난 주차만이다.
+  // collect --week 는 새 주차 파일을 시작할 뿐 지난 파일을 닫지 않아 to 가 null 로 남는다.
+  // 그래서 to 가 비었는지만 보면 지나간 주차까지 영원히 '진행 중'이 된다(Week 38 이 그랬다).
+  // 파일이 아니라 달력을 기준으로 판단한다 — 닫히는 금요일이 아직 오지 않았을 때만 진행 중이다.
+  const kstToday = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+  const partial = !raw.to && !!raw.from && to > kstToday;
   const from = raw.from || addDays(to, -7);
 
   // 비교 가능성: 과거 주차는 구글 뉴스로만 수집되므로 전 주차를 구글 소스로 통일한다

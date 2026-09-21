@@ -7,7 +7,7 @@
 //   분류·집계·경보는 이 정보만으로 충분하고, 서술의 근거는 공공누리 1차 소스(보도자료·법안·공고)에서 가져온다.
 //   유료 구매 경로(뉴스 아카이브·건별 구매)는 사용하지 않는다 — 전 구간 무료·공개 소스로만 운영한다.
 
-import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
+import { writeFileSync, mkdirSync, existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { classify } from './src/classify.mjs';
 import { fileURLToPath } from 'node:url';
@@ -30,6 +30,8 @@ const WEEKLY = process.argv.includes('--week');
 const TODAY = arg('--today') ? new Date(arg('--today') + 'T00:00:00Z') : new Date();
 const KST = (d = TODAY) => new Date(d.getTime() + 9 * 3600e3);
 const kstDate = (d = TODAY) => KST(d).toISOString().slice(0, 10);
+// 'YYYY-MM-DD' 에 며칠을 더한다. 주차 파일을 닫을 때 끝 날짜를 구하는 데 쓴다.
+const addDaysStr = (s, n) => new Date(Date.parse(s + 'T00:00:00Z') + n * 864e5).toISOString().slice(0, 10);
 function weekStart(d = TODAY) {
   const k = KST(d);
   const x = new Date(Date.UTC(k.getUTCFullYear(), k.getUTCMonth(), k.getUTCDate()));
@@ -255,6 +257,20 @@ if (WEEKLY) {
     }
   }
   if (dropped) console.log(`· 주차 경계 밖 ${dropped}건 제외`);
+
+  // 지나간 주차 파일을 닫는다. 새 주차 파일을 만들기만 하고 이전 것을 닫지 않으면
+  // to 가 null 로 남아 그 주차가 영원히 '진행 중'으로 보인다(Week 38 이 그랬다).
+  for (const f of readdirSync(join(root, 'data/collected')).filter((x) => x.endsWith('.json'))) {
+    const p = join(root, 'data/collected', f);
+    const o = JSON.parse(readFileSync(p, 'utf8'));
+    if (o.to || !o.from || o.from >= TAG) continue;      // 이미 닫혔거나 이번·앞으로의 주차
+    o.to = addDaysStr(o.from, 7);
+    o.window = `${o.from} ~ ${o.to}`;
+    o.closedAt = kstDate();
+    writeFileSync(p, JSON.stringify(o, null, 2), 'utf8');
+    console.log(`· 지난 주차 ${f} 를 닫았다 (${o.from} ~ ${o.to})`);
+  }
+
   Object.assign(out, JSON.parse(readFileSync(file, 'utf8')));   // 아래 요약 출력은 이번 주차 파일 기준
 } else {
   const r = mergeInto(file, out.items);
