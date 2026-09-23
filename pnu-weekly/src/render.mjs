@@ -318,6 +318,7 @@ export function renderPage({ meta, weeks, sources, css, js, net3d, pdfPath, worl
   };
 
   const title = meta.title;
+  const brand = meta.brand || "PNU";
 
   // 네트워크 클릭 토스트 — 키워드마다 문구를 미리 만들어 둔다.
   // 조사(이/가·은/는) 규칙을 클라이언트에 한 벌 더 두지 않기 위해서다. {n} 만 런타임에 채운다.
@@ -334,7 +335,8 @@ export function renderPage({ meta, weeks, sources, css, js, net3d, pdfPath, worl
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(title)} | PNU</title>
+<title>${esc(brand)} | ${esc(title)}</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>${css}</style>
@@ -352,8 +354,8 @@ export function renderPage({ meta, weeks, sources, css, js, net3d, pdfPath, worl
   <div class="brand">
     <img class="logo-img" src="assets/pnu-symbol.png" alt="PNU" width="48" height="48">
     <div>
-      <h1>${esc(title)}</h1>
-      <div class="sub">${esc(T.brandSub(meta.org))}${meta.contact ? ' · ' + esc(meta.contact) : ''}</div>
+      <h1 class="bmark">${esc(brand)}</h1>
+      <div class="sub">${esc(T.brandSub(meta.org, title))}${meta.contact ? ' · ' + esc(meta.contact) : ''}</div>
     </div>
   </div>
   <div class="acts">

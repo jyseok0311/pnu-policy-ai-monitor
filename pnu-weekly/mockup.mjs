@@ -31,7 +31,7 @@ const EMPTY = [
 const html = `<!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>산지니 활용 시안 | 대학 AX정책 AI 주간 모니터링</title>
+<title>산지니 활용 시안 | AXON</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>${css}
 .mk{max-width:1000px;margin:0 auto;padding:0 20px 60px}

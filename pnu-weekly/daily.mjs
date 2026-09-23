@@ -151,6 +151,7 @@ const net3d = readFileSync(join(root, 'src/browser/net3d.js'), 'utf8');
 function renderDaily() {
   const D = T.daily;
   const title = meta.title + ' · ' + D.suffix;
+  const brand = meta.brand || 'PNU';
 
   const nav = days.map((d, i) => {
     const s = stat(all.filter((x) => x.date === d));
@@ -164,7 +165,8 @@ function renderDaily() {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(title)} | PNU</title>
+<title>${esc(brand)} | ${esc(title)}</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>${css}
 </style>
@@ -179,8 +181,8 @@ function renderDaily() {
 <header class="top">
   <div class="brand">
     <img class="logo-img" src="assets/pnu-symbol.png" alt="PNU" width="48" height="48">
-    <div><h1>${esc(title)}</h1>
-    <div class="sub">${esc(T.brandSub(meta.org))}${meta.contact ? ' · ' + esc(meta.contact) : ''}</div></div>
+    <div><h1 class="bmark">${esc(brand)}</h1>
+    <div class="sub">${esc(T.brandSub(meta.org, title))}${meta.contact ? ' · ' + esc(meta.contact) : ''}</div></div>
   </div>
   <div class="acts">
     <select class="pdf-sel" data-pdf-select aria-label="${esc(T.pdfDateLabel)}">

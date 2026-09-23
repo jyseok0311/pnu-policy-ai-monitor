@@ -41,6 +41,9 @@ a:hover{text-decoration:underline}
 .brand{display:flex;gap:14px;align-items:center}
 .logo{width:48px;height:48px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-weight:800;font-size:14px;letter-spacing:.5px}
 .top h1{margin:0;font-size:22px;font-weight:700}
+/* 사이트 이름(워드마크). 설명문은 부제로 내려갔으므로 이 자리엔 이름만 남는다.
+   자간을 벌려 제목이 아니라 이름으로 읽히게 한다. */
+.top h1.bmark{font-size:27px;font-weight:800;letter-spacing:.15em;line-height:1.1}
 .top .sub{font-size:13px;opacity:.85;margin-top:3px}
 .top .acts{display:flex;gap:8px;align-items:center;align-self:center}
 .btn{background:var(--btn-bg);color:var(--btn-ink);border:0;border-radius:6px;padding:7px 13px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
@@ -310,6 +313,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   .brand{gap:11px}
   .logo{width:40px;height:40px;font-size:12px;flex:none}
   .top h1{font-size:17px;line-height:1.25;word-break:keep-all}   /* 한국어는 어절 단위로 끊는다 */
+  .top h1.bmark{font-size:20px;letter-spacing:.12em}
   .top .sub{font-size:12px;word-break:keep-all}
   /* .acts 는 기본이 nowrap 이라, 드롭다운(flex-basis 100%)과 버튼이 한 줄에 눌려
      버튼 폭이 8px 까지 찌그러졌다. 줄바꿈을 허용하고 버튼에 최소 폭을 준다. */
@@ -400,6 +404,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 @media (max-width:360px){
   .kpis{grid-template-columns:1fr}
   .top h1{font-size:16px}
+  .top h1.bmark{font-size:18px}
   .acts .btn{font-size:11px;padding:8px 3px}
 }
 /* PDF 날짜 선택 */
