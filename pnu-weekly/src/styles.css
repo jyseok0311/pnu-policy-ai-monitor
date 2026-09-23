@@ -1,19 +1,26 @@
 :root{
   --navy:#1a2b4c; --navy-2:#243a63; --sky:#3b7dd8; --sky-l:#e6eef9;
-  --bg:#eef0f3; --paper:#fff; --ink:#1f2937; --mute:#6b7280; --line:#d9dee6;
+  --bg:#eef0f3; --paper:#fff; --ink:#1f2937; --mute:#676d7b; --line:#d9dee6;
   --crisis:#b3261e; --warn:#d9822b; --watch:#c9a227; --ok:#2f8f5b;
   --thead:#e3e9f2;
   /* 표면·잉크 토큰 — 하드코딩 색을 한 곳에 모아 둔 것. 컴포넌트 규칙은 이 이름만 쓴다. */
   --side-bg:#f7f8fa; --soft:#fafbfc; --pop:#fff; --pop-ink:#1a2b4c; --pop-90:rgba(255,255,255,.94);
-  --btn-bg:#fff; --btn-ink:#1a2b4c; --ink-2:#374151; --ink-3:#4b5563; --faint:#9ca3af;
+  --btn-bg:#fff; --btn-ink:#1a2b4c; --ink-2:#374151; --ink-3:#4b5563; --faint:#6a6e77;
   --chip-bg:#eef1f5; --map-bg:#dfe3e9; --halo:#fff; --hit:#fff8e1;
+  /* 흰 글씨를 얹는 배지·칩 전용. 면(지도 마커·차트 막대)에는 위의 밝은 색을 그대로 쓴다.
+     WCAG AA(4.5:1) 를 넘기는 가장 밝은 값으로 잡았다 — 더 어둡게 하면 등급 간 색 차이가 죽는다. */
+  --watch-ink:#896f1b; --warn-ink:#a56221; --ok-ink:#2a8152; --slate-ink:#697382;
+  --link:#2f68bd;   /* 글자용 파랑(5.47:1). 면·선에는 --sky 를 그대로 쓴다 */
+  /* 본문 한 줄 길이 상한. 1440px 에서 한 줄에 한글 81자가 들어가 눈이 줄을 놓쳤다.
+     680px ≈ 45자 — 지도·네트워크·표는 넓은 폭이 필요하므로 산문에만 건다. */
+  --measure:680px;
   --live-bg:#f2f8f4; --live-line:#bfdccb;
   --head-bg:#1a2b4c; --head-bg2:#243a63; --head-ink:#fff;
   color-scheme:light;
 }
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;font-size:15px;line-height:1.6}
-a{color:var(--sky);text-decoration:none}
+a{color:var(--link);text-decoration:none}
 a:hover{text-decoration:underline}
 .shell{display:grid;grid-template-columns:230px minmax(0,1fr);min-height:100vh}
 /* 그리드 자식은 기본이 min-width:auto 라서 내부의 넓은 표·SVG 가 열을 밀어낸다.
@@ -29,6 +36,7 @@ a:hover{text-decoration:underline}
 .side li a:hover,.side li a.on{background:var(--sky-l);color:var(--navy);text-decoration:none}
 .side li a.on{font-weight:700;box-shadow:inset 3px 0 0 var(--navy)}
 .side li a .cnt{margin-left:auto;font-size:10.5px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+.side li a.on .cnt,.side li a.on .stub{color:var(--ink-3)}   /* 활성 행은 바탕이 옅은 파랑이라 한 단계 더 진하게 */
 .side li a .stub{margin-left:6px;font-size:10px;color:var(--faint);border:1px solid var(--line);border-radius:3px;padding:0 4px;white-space:nowrap;flex:none}
 .side li a .cnt + .stub{margin-left:6px}
 /* 주차 목록 위에 전체 합계를 한 줄로 */
@@ -67,43 +75,60 @@ a:hover{text-decoration:underline}
 .week{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:26px 28px;margin-bottom:30px;scroll-margin-top:100px}
 .wk-head{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap}
 .tier{background:var(--crisis);color:#fff;font-weight:800;border-radius:6px;padding:6px 14px;font-size:16px;white-space:nowrap}
-.tier.t3{background:var(--warn)}.tier.t2{background:var(--watch)}.tier.t1{background:var(--ok)}
+.no-tier{margin-left:auto;align-self:center;color:var(--mute);font-size:13px}
+.tier .st{font-weight:600;opacity:.82;font-size:13px;margin-left:7px;padding-left:8px;border-left:1px solid rgba(255,255,255,.4)}
+.tier.t3{background:var(--warn-ink)}.tier.t2{background:var(--watch-ink)}.tier.t1{background:var(--ok-ink)}
 .wk-title{font-size:22px;font-weight:800;line-height:1.2}
 .wk-range{font-size:13px;color:var(--mute)}
-.state{margin-left:auto;font-weight:800;font-size:18px;display:flex;align-items:center;gap:8px}
-.state .dot{width:14px;height:14px}
-.state.t4{color:var(--crisis)}.state.t3{color:var(--warn)}.state.t2{color:var(--watch)}.state.t1{color:var(--ok)}
 .signal{margin:12px 0 22px;font-size:13.5px;color:var(--ink-2)}
 .signal b{color:var(--ink)}
 
 h2.sec{font-size:17px;font-weight:800;margin:30px 0 12px;display:flex;align-items:center;gap:8px}
 h2.sec::before{content:"";width:12px;height:12px;background:var(--navy);flex:none}
 h2.sec small{font-weight:500;color:var(--mute);font-size:12.5px}
-h3.sub{background:var(--thead);color:var(--navy);font-size:15px;font-weight:700;padding:6px 12px;margin:18px 0 8px;border-radius:4px}
+h3.sub{background:var(--thead);color:var(--navy);font-size:15px;font-weight:700;padding:6px 12px;margin:18px 0 8px;border-radius:4px;
+  max-width:var(--measure)}   /* 아래 본문과 폭을 맞춘다 */
 
 /* map */
 .mapbox{border-radius:8px;overflow:hidden;border:1px solid var(--line)}
 .lmap{height:460px;width:100%;background:var(--map-bg)}
 .legend{font-size:12.5px;color:var(--ink-3);margin-top:10px;line-height:1.7}
+/* 소제목을 왼쪽에 세워 항목을 끊어 읽게 한다 — 줄글로 이어 두니 일곱 가지가 한 덩어리였다 */
+dl.legend.keyed{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:5px 14px;margin:10px 0 0;max-width:var(--measure)}
+dl.legend.keyed dt{color:var(--navy);font-weight:700;white-space:nowrap}
+dl.legend.keyed dd{margin:0}
+@media (max-width:640px){
+  dl.legend.keyed{grid-template-columns:1fr;gap:2px}
+  dl.legend.keyed dd{margin:0 0 6px}
+}
 .legend .k{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:middle;margin-right:4px}
 .uni-label{font-weight:700;font-size:12px;color:var(--ink);text-shadow:0 0 3px var(--halo),0 0 3px var(--halo),0 0 3px var(--halo);white-space:nowrap}
 .uni-label.focus{color:var(--crisis);font-size:13px;font-weight:800}
 .leaflet-container{font-family:inherit}
 
+/* 읽는 글의 줄 길이 — 자세한 이유는 :root 의 --measure 주석 참고 */
+.sum ul,.diag ol,.watch,.legend,.note-line,.trend .cap,.stub-body,
+.path .flow,.chg .why,.live-note,.foot,.notice{max-width:var(--measure)}
+/* 한국어는 어절 단위로 끊는다. keep-all 만 두면 긴 URL·영문이 넘치므로 짝을 지어 준다.
+   모바일에서 '추/세', '391건/은' 처럼 어절 중간이 갈라지던 것을 막는다. */
+.signal,.live-note,.stub-body,.legend,.note-line,.wk-range,.kpi .ch,
+.sum li,.diag li,.watch div,.path .flow{word-break:keep-all;overflow-wrap:break-word}
+
 /* summary */
 .sum ul{margin:0;padding-left:20px}
 .sum li{margin:6px 0}
 /* footnote ref */
-.ref{font-size:10px;color:var(--sky);margin-left:2px;cursor:pointer;background:none;border:0;padding:0 1px;font-family:inherit;vertical-align:super;font-weight:700}
+.ref{font-size:10px;color:var(--link);margin-left:2px;cursor:pointer;background:none;border:0;padding:0 1px;font-family:inherit;vertical-align:super;font-weight:700}
 .ref:hover{text-decoration:underline}
 .ref.hit{background:#fff3cd;border-radius:2px}
 
 /* refs list */
-.reflist{list-style:none;margin:0;padding:0;font-size:13px}
+.reflist{list-style:none;margin:0;padding:0;font-size:13px;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(430px,1fr));gap:0 26px}
 .reflist li{display:grid;grid-template-columns:34px 1fr;gap:8px;padding:7px 8px;border-bottom:1px dashed var(--line);scroll-margin-top:110px;border-radius:4px}
 .reflist li:last-child{border-bottom:0}
 .reflist li.hit{background:var(--hit)}
-.reflist .n{color:var(--sky);font-weight:800}
+.reflist .n{color:var(--link);font-weight:800}
 .reflist .meta{color:var(--mute);font-size:12px;margin-top:2px}
 /* 기관 홈페이지 목록은 첫 칸에 게시판 이름이 들어간다('보도자료'·'연구자료').
    참조 기사 목록의 34px 는 [1] 에 맞춘 폭이라 네 글자가 두 줄로 접혔다.
@@ -121,12 +146,12 @@ details.day[open] summary::after{content:"－"}
 .cat h4{margin:8px 0 3px;font-size:13px;color:var(--navy)}
 .cat ul{margin:0;padding-left:16px;font-size:13px;color:var(--ink-2)}
 .cat li{margin:2px 0}
-.cat .more{color:var(--mute);font-size:12px}
+.cat .more{color:var(--mute);font-size:12px;cursor:default;font-style:italic}
 
 /* changes */
 .chg{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;font-size:14px;margin:6px 0}
 .chg .arrow{font-weight:800}
-.up{color:var(--crisis)}.down{color:var(--sky)}
+.up{color:var(--crisis)}.down{color:var(--link)}
 .chg .v{font-weight:700}
 .chg .why{color:var(--ink-3);font-size:13px}
 
@@ -151,28 +176,42 @@ details.day[open] summary::after{content:"－"}
 .freq{display:inline-block;font-size:10px;font-weight:700;border-radius:3px;padding:1px 5px;margin-top:4px;border:1px solid}
 .f-week{background:#e8f5ec;color:#1f6b42;border-color:#bfdccb}
 .f-month{background:#eef3fb;color:#2c5896;border-color:#c7d8f0}
-.f-slow{background:#f3f4f6;color:#6b7280;border-color:#e5e7eb}
+.f-slow{background:#f3f4f6;color:#656c79;border-color:#e5e7eb}
 
 /* paths */
 .path{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13.5px}
 .path .tag{display:inline-block;background:var(--crisis);color:#fff;font-size:11px;border-radius:3px;padding:1px 6px;margin-right:6px;font-weight:700}
-.path .tag.w{background:var(--warn)}
+.path .tag.w{background:var(--warn-ink)}
 .path b{color:var(--navy)}
 .path .flow{margin-top:4px;color:var(--ink-2)}
 
 /* table */
 .tbl{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
-th{background:var(--thead);color:var(--navy);font-weight:700;padding:8px 6px;text-align:left;border:1px solid var(--line)}
+th{background:var(--thead);color:var(--navy);font-weight:700;padding:8px 6px;text-align:left;border:1px solid var(--line);white-space:nowrap}
 td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .lv{display:inline-block;border-radius:3px;padding:1px 7px;font-size:12px;font-weight:700;color:#fff}
-.lv.s{background:var(--crisis)}.lv.i{background:var(--warn)}.lv.m{background:var(--watch)}.lv.l{background:#94a3b8}
+.lv.s{background:var(--crisis)}.lv.i{background:var(--warn-ink)}.lv.m{background:var(--watch-ink)}.lv.l{background:var(--slate-ink)}
 .dir{font-weight:700;white-space:nowrap}
 
 /* diag */
 .diag h4{margin:14px 0 6px;font-size:14px;color:var(--navy)}
 .diag ol{margin:0;padding-left:20px;font-size:14px}
 .diag li{margin:6px 0}
+
+/* 지난 주차는 접어 둔다.
+   10주차를 모두 펼쳐 두니 문서가 68,921px(약 85화면)에 DOM 9,821개였다.
+   맨 위 주차만 펼치고 나머지는 제목줄만 남긴다 — 사이드바에서 바로 뛰어올 수 있으므로 손해가 없다. */
+.wkbody > summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:7px;
+  margin-top:14px;padding:7px 14px;border:1px solid var(--line);border-radius:6px;
+  background:var(--soft);color:var(--navy);font-size:13px;font-weight:700}
+.wkbody > summary::-webkit-details-marker{display:none}
+.wkbody > summary::after{content:"▾";font-size:11px;color:var(--mute)}
+.wkbody[open] > summary{margin-bottom:2px}
+.wkbody[open] > summary::after{content:"▴"}
+.wkbody > summary:hover{background:var(--sky-l);border-color:var(--sky)}
+/* 인쇄에는 접힘이 없어야 한다 — app.js 가 print 미디어에서 전부 펼친다 */
+@media print{ .wkbody > summary{display:none !important} }
 
 /* stub week */
 .stub-body{color:var(--mute);font-size:13.5px;background:var(--soft);border:1px dashed var(--line);border-radius:6px;padding:14px 16px;margin-top:14px}
@@ -197,7 +236,10 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   .side-sum{margin:0 12px 8px;font-size:11px}
   .top,.main{padding-left:16px;padding-right:16px}
   .week{padding:18px 16px}
-  .state{margin-left:0;width:100%}
+  /* 고정 칩 띠(최대 180px + 그림자) 밑으로 제목이 들어가지 않도록 앵커 여백을 띠보다 크게 잡는다 */
+  .week{scroll-margin-top:136px}
+  .reflist li{scroll-margin-top:146px}
+  .reflist{grid-template-columns:1fr}
   .watch div,.chg{grid-template-columns:1fr}
   .lmap{height:340px}
 }
@@ -230,7 +272,7 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 
 /* 출처 상태 표시 */
 .warn-src{display:inline-block;font-size:10px;font-weight:700;border-radius:3px;padding:1px 5px;margin:4px 0 0 4px;background:#fff3cd;color:#7a5a00;border:1px solid #ffe08a;cursor:help}
-.kpi .n a.prof{margin-left:3px;font-size:11px;color:var(--sky);text-decoration:none}
+.kpi .n a.prof{margin-left:3px;font-size:11px;color:var(--link);text-decoration:none}
 .kpi .n a.prof:hover{text-decoration:none;opacity:.7}
 #toast:empty{display:none}
 .f-day{background:#dff0e6;color:#15603a;border-color:#a9cebb}
@@ -239,9 +281,8 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 .live-badge{background:#1f6b42;color:#fff;font-size:11px;font-weight:800;border-radius:4px;padding:2px 8px;flex:none}
 .note-line{font-size:13px;color:var(--mute);margin:0 0 10px;padding-left:2px}
 .src-ok{color:#1f6b42;font-weight:700}
-.src-via{color:#9ca3af}
-.tier.t0{background:#9ca3af}
-.state.t0{color:var(--mute)}
+.src-via{color:var(--faint)}
+.tier.t0{background:var(--slate-ink)}
 .dot.d0{background:#9ca3af}
 /* 내 위치 버튼 */
 .leaflet-locate{width:30px;height:30px;line-height:30px;text-align:center;background:var(--pop);color:var(--pop-ink);font-size:16px;font-weight:800;border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.3);text-decoration:none}
@@ -340,7 +381,6 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
   .wk-head{gap:8px}
   .wk-title{font-size:19px}
   .tier{font-size:14px;padding:5px 11px}
-  .state{font-size:16px}
   .signal{font-size:12.5px;line-height:1.75}
   .live-note{flex-wrap:wrap;font-size:11.5px;margin:-8px 0 16px}
 
@@ -417,8 +457,8 @@ body.only-view .main{padding-top:14px}
 @media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none;padding:9px} }
 /* 등록됐으나 이번 주 언급이 0인 워치리스트 항목 */
 .kpi.muted{background:var(--soft);border-style:dashed}
-.kpi.muted .val{color:#9ca3af}
-.kpi.muted .ch{color:#b6bcc6}
+.kpi.muted .val{color:var(--mute)}
+.kpi.muted .ch{color:var(--mute)}
 /* 추이 섹션 접기/펴기 */
 details.trend > summary{cursor:pointer;list-style:none;display:flex;align-items:center;
   justify-content:space-between;gap:8px}

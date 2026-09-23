@@ -321,6 +321,48 @@
     return out;
   }
 
+  /* ---------- 1-2. 접힌 주차 펼치기 ----------
+     지난 주차는 접어 둔다(펼친 열 주차 = 68,921px). 접혀 있으면 그 안의 앵커로 못 뛰므로,
+     주차로 향하는 모든 길목에서 먼저 펼친다 — 사이드바 칩, 추이 그래프 막대, 주소창 #해시. */
+  function unfold(el) {
+    for (var d = el && el.closest('details'); d; d = d.parentElement && d.parentElement.closest('details')) d.open = true;
+  }
+  function unfoldAll() {
+    document.querySelectorAll('details.wkbody').forEach(function (d) { d.open = true; });
+  }
+  function gotoHash(hash, smooth) {
+    if (!hash || hash.length < 2) return;
+    var el = null;
+    try { el = document.getElementById(decodeURIComponent(hash.slice(1))); } catch (_) { return; }
+    if (!el) return;
+    unfold(el);
+    // 펼치면 문서 높이가 바뀐다. 브라우저가 이미 계산해 둔 위치는 틀리므로 다시 맞춘다.
+    requestAnimationFrame(function () {
+      el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+    });
+  }
+  // 같은 문서 안의 링크(사이드바·막대·목차)를 가로채 먼저 펼친다
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var h = a.getAttribute('href');
+    if (!h || h === '#') return;
+    var el = document.getElementById(decodeURIComponent(h.slice(1)));
+    if (!el) return;
+    e.preventDefault();
+    if (location.hash !== h) history.pushState(null, '', h);
+    gotoHash(h, true);
+  });
+  window.addEventListener('hashchange', function () { gotoHash(location.hash, true); });
+  if (location.hash) setTimeout(function () { gotoHash(location.hash, false); }, 0);
+
+  // 인쇄에는 접힘이 없어야 한다.
+  //  · 브라우저 인쇄 → beforeprint
+  //  · pdf.mjs 는 Emulation.setEmulatedMedia({media:'print'}) 를 켠 뒤 페이지를 연다.
+  //    이때 beforeprint 는 오지 않으므로 뜰 때 한 번 직접 확인한다(합본 PDF 가 이 경로다).
+  window.addEventListener('beforeprint', unfoldAll);
+  try { if (window.matchMedia && matchMedia('print').matches) unfoldAll(); } catch (_) {}
+
   /* ---------- 2. 각주 [n] → 참조 기사 목록 ---------- */
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('.ref');
@@ -330,6 +372,7 @@
     if (!li) { toast('[' + btn.dataset.ref + '] 참조 항목을 찾을 수 없습니다'); return; }
     document.querySelectorAll('.reflist li.hit').forEach(function (x) { x.classList.remove('hit'); });
     li.classList.add('hit');
+    unfold(li);
     li.scrollIntoView({ behavior: 'smooth', block: 'center' });
     setTimeout(function () { li.classList.remove('hit'); }, 2600);
   });
@@ -355,6 +398,7 @@
     var keep = document.getElementById(only);
     if (!keep) return;
     document.querySelectorAll('.week').forEach(function (w) { if (w !== keep) w.remove(); });
+    keep.querySelectorAll('details.wkbody').forEach(function (d) { d.open = true; });
     var side = document.querySelector('.side'); if (side) side.remove();
     var trend = document.querySelector('.trend'); if (trend) trend.remove();
     var acts = document.querySelector('.acts'); if (acts) acts.remove();
@@ -508,8 +552,7 @@
         if ((li.textContent || '').indexOf(key) < 0) return;
         li.classList.add('kw-on');
         hits.push(li);
-        var d = li.closest('details');
-        if (d) d.open = true;
+        unfold(li);
       });
 
       var m = (window.__PNU_NETMSG__ || {})[key] || {};

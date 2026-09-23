@@ -46,7 +46,16 @@
     var HW = +svg.dataset.hw || 300, HH = +svg.dataset.hh || 200;
     var PLANES = [];
     try { PLANES = JSON.parse(svg.dataset.planes || '[]'); } catch (e) { PLANES = []; }
-    PLANES.forEach(function (p) { p.rgb = hex(p.c); });
+    PLANES.forEach(function (p) { p.rgb = hex(p.c);
+      // 판은 제 노드가 놓인 만큼만 그린다. 모두 같은 크기로 그리면 교육·산업이 85% 겹쳐
+      // 어느 판인지 기둥을 따라가야만 알 수 있었다. 옛 데이터에는 모서리가 없으니 되돌린다.
+      if (typeof p.x0 !== 'number') { p.x0 = -HW; p.x1 = HW; p.y0 = -HH; p.y1 = HH; }
+    });
+    // 노드가 딛는 바닥 = 그 노드가 놓인 판의 아래 모서리
+    function floorZ(z) {
+      for (var i = 0; i < PLANES.length; i++) if (PLANES[i].z === z) return PLANES[i].y1;
+      return HH;
+    }
     PLANES.sort(function (a, b) { return a.z - b.z; });
 
     var nds = [].slice.call(svg.querySelectorAll('.nd'));
@@ -169,7 +178,7 @@
       PLANES.forEach(function (pl) {
         var c = pl.rgb;
         var on = !dim || pl.f === hotField;
-        var q = [[-HW, -HH], [HW, -HH], [HW, HH], [-HW, HH]].map(function (p) {
+        var q = [[pl.x0, pl.y0], [pl.x1, pl.y0], [pl.x1, pl.y1], [pl.x0, pl.y1]].map(function (p) {
           return project({ x: p[0], y: p[1], z: pl.z });
         });
         ctx.beginPath();
@@ -202,7 +211,7 @@
         .forEach(function (i) {
           var n = N[i], q = pts[i];
           var on = !dim || near[i], al = on ? 1 : 0.18;
-          var foot = project({ x: n.x, y: HH, z: n.z });
+          var foot = project({ x: n.x, y: floorZ(n.z), z: n.z });
 
           ctx.strokeStyle = rgba(n.fill, 0.22 * al);
           ctx.lineWidth = 1 * ss();

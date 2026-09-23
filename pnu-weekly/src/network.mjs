@@ -207,13 +207,33 @@ export function networkSvg(net, opt = {}) {
     }
   })();
 
+  // 판의 크기를 그 판에 놓인 노드에 맞춘다.
+  // 두 판 모두 600×400 으로 그리던 때에는 서로 85% 겹쳐 어느 판인지 기둥을 따라가야만 알 수 있었다.
+  // 노드가 적은 판(산업)은 작은 판을 얻으므로 겹침이 크게 준다.
+  const PAD = { x: 56, y: 48 };
+  const ext = {};
+  used.forEach((f) => {
+    const idx = nodes.map((nd, i) => (planeOf(nd) === f ? i : -1)).filter((i) => i >= 0);
+    if (!idx.length) { ext[f] = { x0: -PLANE.hw, x1: PLANE.hw, y0: -PLANE.hh, y1: PLANE.hh }; return; }
+    const xs = idx.map((i) => P[i].x), ys = idx.map((i) => P[i].y);
+    ext[f] = {
+      x0: Math.max(-PLANE.hw, Math.min(...xs) - PAD.x),
+      x1: Math.min(PLANE.hw, Math.max(...xs) + PAD.x),
+      y0: Math.max(-PLANE.hh, Math.min(...ys) - PAD.y),
+      y1: Math.min(PLANE.hh, Math.max(...ys) + PAD.y)
+    };
+  });
+  const corners = (f) => { const e = ext[f]; return [[e.x0, e.y0], [e.x1, e.y0], [e.x1, e.y1], [e.x0, e.y1]]; };
+  // 기둥은 제 판의 아래 모서리까지만 내린다(전에는 모든 기둥이 고정 모서리까지 갔다)
+  const floorOf = (nd) => ext[planeOf(nd)].y1;
+
   const pr = (i) => project(P[i], W, H);
 
   // 보기 범위 — 판 네 귀퉁이와 노드·라벨을 모두 담는다
   const box = (() => {
     let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
     used.forEach((f) => {
-      [[-PLANE.hw, -PLANE.hh], [PLANE.hw, -PLANE.hh], [PLANE.hw, PLANE.hh], [-PLANE.hw, PLANE.hh]].forEach((c) => {
+      corners(f).forEach((c) => {
         const q = project({ x: c[0], y: c[1], z: planeZ[f] }, W, H);
         x0 = Math.min(x0, q.x); x1 = Math.max(x1, q.x);
         y0 = Math.min(y0, q.y - 16); y1 = Math.max(y1, q.y);
@@ -249,8 +269,7 @@ export function networkSvg(net, opt = {}) {
   // ── 판: 뒤에서 앞으로
   const planes = used.map((f) => ({ f, z: planeZ[f] })).sort((a, b) => a.z - b.z).map((pl) => {
     const c = GROUP_COLOR[pl.f] || GROUP_COLOR['기타'];
-    const pts = [[-PLANE.hw, -PLANE.hh], [PLANE.hw, -PLANE.hh], [PLANE.hw, PLANE.hh], [-PLANE.hw, PLANE.hh]]
-      .map((p) => project({ x: p[0], y: p[1], z: pl.z }, W, H));
+    const pts = corners(pl.f).map((p) => project({ x: p[0], y: p[1], z: pl.z }, W, H));
     const lab = pts[0];
     return `<g class="pl" data-field="${esc(pl.f)}">
       <polygon points="${pts.map((q) => `${q.x.toFixed(1)},${q.y.toFixed(1)}`).join(' ')}"
@@ -275,7 +294,7 @@ export function networkSvg(net, opt = {}) {
   const order = nodes.map((_, i) => i).sort((a, b) => P[a].z - P[b].z);
   const circles = order.map((i) => {
     const n = nodes[i], q = pr(i);
-    const foot = project({ x: P[i].x, y: PLANE.hh, z: P[i].z }, W, H);
+    const foot = project({ x: P[i].x, y: floorOf(n), z: P[i].z }, W, H);
     const tip = [`${n.key} — ${n.n}건 · 위험신호 ${n.risk}% · ${n.field}`, n.sample ? n.sample.title : null].filter(Boolean).join('\n');
     return `<g class="nd" data-i="${i}" data-key="${esc(n.key)}"
       data-x="${P[i].x.toFixed(2)}" data-y="${P[i].y.toFixed(2)}" data-z="${P[i].z.toFixed(2)}"
@@ -292,7 +311,7 @@ export function networkSvg(net, opt = {}) {
     </g>`;
   }).join('');
 
-  const planeData = used.map((f) => ({ f, z: planeZ[f], c: GROUP_COLOR[f] || GROUP_COLOR['기타'] }));
+  const planeData = used.map((f) => ({ f, z: planeZ[f], c: GROUP_COLOR[f] || GROUP_COLOR['기타'], ...ext[f] }));
 
   // 화면용 회전 범위 — 360° 어느 각도에서도 잘리지 않는 틀.
   // 인쇄용 viewBox(box)는 정면에 딱 맞춘 것이라 돌리면 넘친다. 둘을 따로 둔다.

@@ -92,12 +92,12 @@ function renderDay(d, idx, T) {
   return `<section class="week" id="d-${d}">
   <div class="wk-head">
     <span class="tier-face">${sanjini(s.tier ? (TIER_MOOD[s.tier] || 'base') : 'sad', 44)}</span>
-    ${s.tier ? `<span class="tier t${s.tier}">Tier ${s.tier} ${esc(D.tierWord[s.tier])}</span>` : `<span class="tier t0">${esc(D.noTier)}</span>`}
+    ${s.tier ? `<span class="tier t${s.tier}">Tier ${s.tier} ${esc(D.tierWord[s.tier])}<span class="st">${STATE[s.tier]}</span></span>` : `<span class="tier t0">${esc(D.noTier)}</span>`}
     <div>
       <div class="wk-title">${d.replace(/-/g, '.')} (${esc(wd(d, T))})</div>
       <div class="wk-range">${esc(D.subline)}</div>
     </div>
-    ${s.tier ? `<div class="state t${s.tier}"><i class="dot d${s.tier}"></i>${STATE[s.tier]}</div>` : `<div class="state t0">${D.noTierState(MIN_N)}</div>`}
+    ${s.tier ? '' : `<div class="no-tier">${D.noTierState(MIN_N)}</div>`}
   </div>
   <div class="signal">${D.signal(s.crisis, s.warning, s.risk, s.n, deltaHtml)}</div>
   <div class="live-note"><span class="live-badge">${esc(T.liveBadge)}</span>${esc(D.liveNote)}</div>

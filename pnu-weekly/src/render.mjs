@@ -36,9 +36,10 @@ function sparkline(weeks, T) {
 
   // 눈금은 읽기 쉬운 단위로 올림하되 촘촘하게 잡는다.
   // 1·2·5 배수만 쓰면 최댓값 11.7 에 눈금 20 이 잡혀 위쪽이 크게 비었다.
-  const raw = Math.max(...vals, 1) * 1.12;
+  const raw = Math.max(...vals, 1) * 1.06;
   const mag = Math.pow(10, Math.floor(Math.log10(raw)));
-  const STEPS = [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10];
+  // 눈금 후보를 촘촘히 둔다 — 간격이 성기어 최댓값 10.8 이 눈금 15 로 올라갔다.
+  const STEPS = [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.8, 2, 2.2, 2.5, 3, 3.5, 4, 5, 6, 8, 10];
   const max = STEPS.map((k) => k * mag).find((v) => v >= raw) || raw;
 
   const slot = plotW / series.length;
@@ -86,14 +87,13 @@ function renderWeek(w, sources, T) {
   const head = `
   <div class="wk-head">
     <span class="tier-face" title="Tier ${w.tier} ${esc(T.tierWord[w.tier])}">${sanjini(TIER_MOOD[w.tier] || 'base', 46)}</span>
-    <span class="tier t${w.tier}">Tier ${w.tier} ${esc(w.tierName || T.tierWord[w.tier])}</span>
+    <span class="tier t${w.tier}">Tier ${w.tier} ${esc(w.tierName || T.tierWord[w.tier])}<span class="st">${esc(w.state)}</span></span>
     <div>
       <div class="wk-title">${esc(w.label)}</div>
       <div class="wk-range">${esc(T.collectRange)}: ${esc(w.range)}</div>
     </div>
-    <div class="state t${w.tier}"><i class="dot d${w.tier}"></i>${esc(w.state)}</div>
   </div>
-  <div class="signal">${T.signal(s.crisis, s.warning, sum, num(s.total), esc(s.trend))}</div>
+  <div class="signal">${T.signal(s.crisis, s.warning, sum, num(s.total), esc(T.trendWord[s.trend] || s.trend))}</div>
   ${w.live ? `<div class="live-note"><span class="live-badge">${esc(T.liveBadge)}</span>${esc(w.sourceNote || '')}</div>` : ''}`;
 
   if (!w.complete) {
@@ -106,32 +106,41 @@ function renderWeek(w, sources, T) {
   const map = `
   <h2 class="sec">🏫 ${esc(T.secMap)}</h2>
   <div class="mapbox"><div class="lmap" id="map-${w.id}" data-week="${w.id}"></div></div>
-  <div class="legend">
-    <span class="k" style="background:var(--crisis)"></span>${esc(T.legPrimary)}: ${esc(w.map.legend.primary)}
-    | <span class="k" style="background:var(--warn)"></span>${esc(T.legSecondary)}: ${esc(w.map.legend.secondary)}<br>
-    <br>${T.legWorld}
-    <br>${T.legMarker}
-    (<span class="k" style="background:#2f8f5b"></span>${esc(T.legNone)}
-     <span class="k" style="background:#c9a227"></span>${esc(T.legSome)}
-     <span class="k" style="background:#d9822b"></span>${esc(T.legHas)}
-     <span class="k" style="background:#b3261e"></span>${esc(T.legHigh)}).
-    ${T.legHover}<br>
-    ${T.legPaths}
-    | ${esc(T.legDisturb)}: ${esc(w.map.legend.disturb)} | ${esc(T.legBuffer)}: ${esc(w.map.legend.buffer)}
-  </div>`;
+  <dl class="legend keyed">
+    <dt>${esc(T.legIssueT)}</dt>
+    <dd><span class="k" style="background:var(--crisis)"></span>${esc(T.legPrimary)}: ${esc(w.map.legend.primary)}
+      <br><span class="k" style="background:var(--warn)"></span>${esc(T.legSecondary)}: ${esc(w.map.legend.secondary)}</dd>
+    <dt>${esc(T.legMarkerT)}</dt>
+    <dd>${T.legMarker}<br>
+      <span class="k" style="background:#2f8f5b"></span>${esc(T.legNone)}
+      <span class="k" style="background:#c9a227"></span>${esc(T.legSome)}
+      <span class="k" style="background:#d9822b"></span>${esc(T.legHas)}
+      <span class="k" style="background:#b3261e"></span>${esc(T.legHigh)}</dd>
+    <dt>${esc(T.legLinesT)}</dt>
+    <dd>${T.legPaths}</dd>
+    <dt>${esc(T.legFactorT)}</dt>
+    <dd>${esc(T.legDisturb)}: ${esc(w.map.legend.disturb)}<br>${esc(T.legBuffer)}: ${esc(w.map.legend.buffer)}</dd>
+    <dt>${esc(T.legUseT)}</dt>
+    <dd>${T.legWorld}<br>${T.legHover}</dd>
+  </dl>`;
 
   // 🕸 주간 키워드 네트워크 — 지도가 '어디'라면 이건 '무엇끼리'다.
   const net = !w.network || !w.network.nodes || !w.network.nodes.length ? '' : `
   <h2 class="sec">🕸 ${esc(T.secNet)} <small>${esc(T.netSub(Math.min(w.network.nodes.length, 22), w.network.links.length, num(w.network.basis)))}</small></h2>
   <div class="netbox" data-net>${networkSvg(w.network, { esc, id: w.id, label: T.secNet })}</div>
-  <div class="legend">
-    ${Object.entries(FIELD_COLOR).map(([f, c]) => `<span class="k" style="background:${c}"></span>${esc(f)}`).join(' ')}
-    <br><span class="k ring" style="border-color:${riskColor(0)}"></span>${esc(T.netRisk)} 0–8%
-    <span class="k ring" style="border-color:${riskColor(10)}"></span>8–20%
-    <span class="k ring" style="border-color:${riskColor(25)}"></span>20–40%
-    <span class="k ring" style="border-color:${riskColor(50)}"></span>40%+
-    <br>${T.netLegend(w.network.minEdge, w.network.minCount)}
-  </div>`;
+  <dl class="legend keyed">
+    <dt>${esc(T.netPlanesT)}</dt><dd>${T.netPlanes}</dd>
+    <dt>${esc(T.netDotsT)}</dt>
+    <dd>${T.netDots}<br>
+      ${Object.entries(FIELD_COLOR).map(([f, c]) => `<span class="k" style="background:${c}"></span>${esc(f)}`).join(' ')}
+      <br><span class="k ring" style="border-color:${riskColor(0)}"></span>${esc(T.netRisk)} 0–8%
+      <span class="k ring" style="border-color:${riskColor(10)}"></span>8–20%
+      <span class="k ring" style="border-color:${riskColor(25)}"></span>20–40%
+      <span class="k ring" style="border-color:${riskColor(50)}"></span>40%+</dd>
+    <dt>${esc(T.netPickT)}</dt><dd>${T.netPick(w.network.minEdge, w.network.minCount)}</dd>
+    <dt>${esc(T.netUseT)}</dt><dd>${T.netUse}</dd>
+    <dt>${esc(T.netNoteT)}</dt><dd>${T.netNote}</dd>
+  </dl>`;
 
   const summary = `
   <h2 class="sec">${esc(T.secSummary)}</h2>
@@ -142,6 +151,7 @@ function renderWeek(w, sources, T) {
 
   const articles = `
   <h2 class="sec">${esc(T.secArticles(num(s.total)))}</h2>
+  <p class="note-line">${esc(T.articlesCap)}</p>
   ${w.articles.map(d => `
   <details class="day"${d.open ? ' open' : ''}>
     <summary><span>${esc(d.day)}${d.count && d.day.indexOf('건') < 0 ? ` — ${cnt(d.count)}` : ''}</span></summary>
@@ -185,9 +195,8 @@ function renderWeek(w, sources, T) {
   <div class="kpis">${w.weeklyMetrics.map(m => `
     <div class="kpi live">
       <div class="n"><span>${esc(m.name)}</span></div>
-      <div class="val">${esc(m.value)}${m.unit ? `<small>${esc(m.unit)}</small>` : ''}</div>
+      <div class="val">${esc(T.trendWord[m.value] || m.value)}${m.unit ? `<small>${esc(m.unit)}</small>` : ''}</div>
       <div class="ch ${m.dir}">${m.dir === 'up' ? '▲' : m.dir === 'down' ? '▼' : '—'} ${esc(m.change)}</div>
-      <span class="freq f-week">${esc(T.weekBadge)}</span>
     </div>`).join('')}</div>`;
 
   const kpis = !w.kpis || !w.kpis.length ? '' : `
@@ -282,7 +291,14 @@ function renderWeek(w, sources, T) {
       </div>
     </li>`).join('')}</ul>`;
 
-  return `<section class="week" id="${w.id}">${head}${map}${net}${summary}${articles}${overseasRef}${changes}${watch}${weekly}${kpis}${voices}${paths}${sectors}${diag}${refs}</section>`;
+  const body = `${map}${net}${summary}${articles}${overseasRef}${changes}${watch}${weekly}${kpis}${voices}${paths}${sectors}${diag}${refs}`;
+  // 맨 위(최신) 주차만 펼친다. 열 주차를 모두 펼쳐 두니 68,921px·DOM 9,821개였다.
+  // 접어도 HTML 에는 그대로 있다 — 사이드바 점프·각주 이동은 app.js 가 열어 준다.
+  return `<section class="week" id="${w.id}">${head}
+    <details class="wkbody"${w.first ? ' open' : ''}>
+      <summary>${esc(w.first ? T.foldOpen : T.foldClosed)}</summary>
+      ${body}
+    </details></section>`;
 }
 
 // PDF 파일명 규칙 — pdf.mjs 가 굽는 이름과 반드시 같아야 한다
@@ -316,6 +332,9 @@ export function renderPage({ meta, weeks, sources, css, js, net3d, pdfPath, worl
     joongang: joongang ? joongang.universities : null,
     weeks: Object.fromEntries(weeks.filter(w => w.complete).map(w => [w.id, w.map]))
   };
+
+  // 펼쳐 둘 주차 — 맨 위가 진행 중이면 본문이 없으므로, 본문이 있는 첫 주차를 연다.
+  const firstFull = (weeks.find((w) => w.complete) || {}).id;
 
   const title = meta.title;
   const brand = meta.brand || "PNU";
@@ -376,7 +395,7 @@ export function renderPage({ meta, weeks, sources, css, js, net3d, pdfPath, worl
   <div class="spark-wrap">${sparkline(weeks, T)}</div>
 </details>
 
-${weeks.map(w => renderWeek(w, sources, T)).join('\n')}
+${weeks.map((w) => renderWeek({ ...w, first: w.id === firstFull }, sources, T)).join('\n')}
 
 <p class="foot">${esc(meta.foot)}<br>${esc(T.genAt)}: ${new Date().toISOString().slice(0, 19).replace('T', ' ')} · data/weeks.json</p>
 </main>
