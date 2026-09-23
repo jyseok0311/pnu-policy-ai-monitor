@@ -4,6 +4,18 @@
 // 대학 이름이 스쳐도 대학 정책 기사가 아닌 것들. 제목·요약 어디에 있어도 뺀다.
 const NOISE = /MC몽|아이돌|가수|연예|드라마|예능|축구|야구|프로야구|배구|농구|골프|검도|씨름|복권|로또|오늘날씨|내일날씨|주간날씨|미세먼지|부고|별세|운세|코스피|코스닥/;
 
+// 도박 SEO 스팸. 외국 도메인이 한국어 도박 낱말로 검색을 파고드는데, 노출을 늘리려고
+// 대학 이름까지 끌어다 쓴다 — '업데이트 날짜와 변경 항목을 읽는 부산대 토토 정보' 같은 식이다.
+// 수집본에서 124건이 국내 기사로 섞여 있었고, 한국 언론 기사가 여기 걸린 경우는 하나도 없었다.
+const GAMBLE = /토토|에볼루션\s?(?:카지노|사이트|게임)|에볼루션사이트|바카라|카지노|슬롯머신|슬롯사이트|먹튀|파워볼|홀덤|룰렛|메이저사이트|보증업체|배팅|베팅/;
+
+// 한국어로 옮겨 내보내는 외국 매체. 구글 뉴스 한국어 피드에 들어오므로 '국내'로 분류되지만
+// 내용은 그 나라 이야기다. Vietnam.vn 50건이 전부 베트남 국내 교육 기사였고
+// 옥토버페스트·북한 핵실험처럼 교육과 무관한 것까지 섞여 있었다.
+// 매체명으로 막는다 — 제목만으로는 한국 기사와 구별되지 않는다.
+// 굿모닝베트남미디어·씬짜오베트남처럼 한국 독자를 위해 한국어로 쓰는 매체는 막지 않는다.
+const FOREIGN_MEDIA = /^(?:vietnam\.vn|vietnamnews\.vn|báo\s?vietnamnet|luatvietnam)$/i;
+
 // 고등교육 정책 어휘.
 // '연구'는 뺐다 — 기업 연구소·학회·지자체 연구원까지 끌고 들어와 오탐 1위였다.
 // 대학 연구 기사는 대학명이나 다른 어휘로 이미 걸린다.
@@ -37,6 +49,9 @@ export function relevant(items) {
   return items.filter((x) => {
     const title = String(x.title || '');
     if (NOISE.test(title + ' ' + x.summary)) return false;
+    // 도박 스팸은 제목만 본다. 요약은 구글 리디렉션 주소 덩어리라 볼 것이 없다.
+    if (GAMBLE.test(title)) return false;
+    if (FOREIGN_MEDIA.test(String(x.media || '').trim())) return false;
     if (x.region === 'overseas') return TOPIC_EN.test(title);
     return TOPIC.test(title) || UNIV_NAME.test(title) || UNIV_ABBR.test(title) || AX_ADMIN.test(title);
   });

@@ -10,11 +10,11 @@
     "complete": false,
     "live": true,
     "partial": true,
-    "sourceNote": "진행 중 — 2026.09.18부터 2026.09.22까지 5일치 수집 · 관련 기사 686건 (주차 마감 후 본문 생성)",
+    "sourceNote": "진행 중 — 2026.09.18부터 2026.09.22까지 5일치 수집 · 관련 기사 662건 (주차 마감 후 본문 생성)",
     "signal": {
-      "crisis": 4.1,
-      "warning": 1.9,
-      "total": 686,
+      "crisis": 4.2,
+      "warning": 1.8,
+      "total": 662,
       "trend": "stable"
     }
   },
@@ -28,11 +28,11 @@
     "state": "Normal",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 3683건 → 관련성 필터 후 국내 1841건 (해외 395건은 참고 항목으로 별도) · 수집일 2026-09-11",
+    "sourceNote": "무료·공개 소스 수집 3683건 → 관련성 필터 후 국내 1825건 (해외 391건은 참고 항목으로 별도) · 수집일 2026-09-11",
     "signal": {
       "crisis": 1.9,
       "warning": 1.5,
-      "total": 1841,
+      "total": 1825,
       "trend": "falling"
     },
     "map": {
@@ -72,7 +72,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 313
+            "daysLeft": 311
           },
           "mentions": 41,
           "risky": 0,
@@ -129,7 +129,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1562
+            "daysLeft": 1560
           },
           "mentions": 9,
           "risky": 1,
@@ -182,7 +182,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 466
+            "daysLeft": 464
           },
           "mentions": 30,
           "risky": 7,
@@ -239,7 +239,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 313
+            "daysLeft": 311
           },
           "mentions": 56,
           "risky": 25,
@@ -296,7 +296,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 466
+            "daysLeft": 464
           },
           "mentions": 32,
           "risky": 2,
@@ -353,7 +353,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1987
+            "daysLeft": 1985
           },
           "mentions": 34,
           "risky": 0,
@@ -410,7 +410,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 313
+            "daysLeft": 311
           },
           "mentions": 21,
           "risky": 0,
@@ -467,7 +467,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 313
+            "daysLeft": 311
           },
           "mentions": 88,
           "risky": 2,
@@ -524,11 +524,11 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 832
+            "daysLeft": 830
           },
-          "mentions": 132,
+          "mentions": 128,
           "risky": 2,
-          "riskRate": 1.5,
+          "riskRate": 1.6,
           "riskLevel": 1,
           "keywords": [
             [
@@ -581,7 +581,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 313
+            "daysLeft": 311
           },
           "mentions": 25,
           "risky": 0,
@@ -632,7 +632,7 @@
       }
     },
     "network": {
-      "basis": 1841,
+      "basis": 1825,
       "minCount": 15,
       "minEdge": 4,
       "nodes": [
@@ -649,7 +649,7 @@
         },
         {
           "key": "인공지능",
-          "n": 257,
+          "n": 254,
           "risk": 0.4,
           "field": "증강인재교육",
           "sample": {
@@ -671,8 +671,8 @@
         },
         {
           "key": "부산대",
-          "n": 130,
-          "risk": 1.5,
+          "n": 126,
+          "risk": 1.6,
           "field": "증강인재교육",
           "sample": {
             "title": "‘특혜 논란’ 양산부산대병원 앞 통행로 예산 9000만원 전액 삭감",
@@ -682,7 +682,7 @@
         },
         {
           "key": "등록금",
-          "n": 121,
+          "n": 119,
           "risk": 1.7,
           "field": "정책/철학",
           "sample": {
@@ -703,17 +703,6 @@
           }
         },
         {
-          "key": "최고",
-          "n": 88,
-          "risk": 0,
-          "field": "증강인재교육",
-          "sample": {
-            "title": "건국대, ‘AI 최고급 신진연구자’ 110억 원 사업 선정",
-            "link": "https://news.unn.net/news/articleView.html?idxno=597616",
-            "media": "한국대학신문"
-          }
-        },
-        {
           "key": "경상국립대",
           "n": 87,
           "risk": 2.3,
@@ -722,6 +711,17 @@
             "title": "경상국립대, 100주년 기념관 건설업체 임대에 교수 반발",
             "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5nV1dOdHlLNzFEbF9tT0d2c3RwQU5LVy02bWNWZUtLXzUwUDVDMlpFb3dzeGl6WHJscWxJQnN5MUZJZ0FOODhmYkZTYkYtYk41bXpKZGRpSmx1Q1RxN054SHNId3hJb2dOLXc?oc=5",
             "media": "경남도민일보"
+          }
+        },
+        {
+          "key": "최고",
+          "n": 86,
+          "risk": 0,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "건국대, ‘AI 최고급 신진연구자’ 110억 원 사업 선정",
+            "link": "https://news.unn.net/news/articleView.html?idxno=597616",
+            "media": "한국대학신문"
           }
         },
         {
@@ -912,14 +912,14 @@
           }
         },
         {
-          "key": "행정",
-          "n": 17,
+          "key": "공공",
+          "n": 16,
           "risk": 0,
           "field": "적응형행정",
           "sample": {
-            "title": "한컴, 대구공공시설관리공단 행정 AI 전환 검증한다",
-            "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1DUlcySV9uMDdFaVlub0NGNG1uWmtDN0JNSjRhOTF2cGZJWTAzTmJUZWI5T1ZjMDBHTy1sazBKNldsX01hOVhsWEFja09ZODNVZ21GVWs5ajQ1Y3ZKaUowQjlJOXVlUDJEemdCeVZCd0szc1dv0gF0QVVfeXFMTUNSVzJJX24wN0VpWW5vQ0Y0bW5aa0M3Qk1KNGE5MXZwZklZMDNOYlRlYjlPVmMwMEdPLWxrMEo2V2xfTWE5WGxYQWNrT1k4M1VnbUZVazlqNDVjdkppSjBCOUk5dWVQMkR6Z0J5VkJ3SzNzV28?oc=5",
-            "media": "IT조선"
+            "title": "성신여대 축제 도자 판매전 ‘공공마켓’에 ‘오픈런’",
+            "link": "https://news.unn.net/news/articleView.html?idxno=597669",
+            "media": "한국대학신문"
           }
         }
       ],
@@ -931,12 +931,12 @@
         },
         {
           "s": 0,
-          "t": 6,
+          "t": 7,
           "n": 76
         },
         {
           "s": 2,
-          "t": 6,
+          "t": 7,
           "n": 75
         },
         {
@@ -1090,7 +1090,7 @@
           "n": 14
         },
         {
-          "s": 7,
+          "s": 6,
           "t": 0,
           "n": 13
         },
@@ -1100,17 +1100,12 @@
           "n": 13
         },
         {
-          "s": 7,
+          "s": 6,
           "t": 20,
           "n": 11
         },
         {
-          "s": 1,
-          "t": 25,
-          "n": 11
-        },
-        {
-          "s": 7,
+          "s": 6,
           "t": 2,
           "n": 11
         },
@@ -1145,13 +1140,18 @@
           "n": 8
         },
         {
+          "s": 25,
+          "t": 23,
+          "n": 8
+        },
+        {
           "s": 2,
           "t": 12,
           "n": 8
         },
         {
           "s": 16,
-          "t": 6,
+          "t": 7,
           "n": 7
         },
         {
@@ -1165,7 +1165,7 @@
           "n": 7
         },
         {
-          "s": 7,
+          "s": 6,
           "t": 13,
           "n": 6
         },
@@ -1185,7 +1185,7 @@
           "n": 6
         },
         {
-          "s": 7,
+          "s": 6,
           "t": 14,
           "n": 5
         },
@@ -1202,6 +1202,11 @@
         {
           "s": 22,
           "t": 1,
+          "n": 5
+        },
+        {
+          "s": 25,
+          "t": 12,
           "n": 5
         },
         {
@@ -1469,12 +1474,12 @@
       },
       {
         "day": "9/12(토)",
-        "count": 80,
+        "count": 76,
         "open": false,
         "cats": [
           {
             "name": "증강인재교육",
-            "count": 46,
+            "count": 44,
             "items": [
               "취업난에 지역 잔류 택했다…지방국립대 수시 전년比 12.6%↑",
               "경상국립대, 내년 신입생 수시모집 경쟁율 8.09대 1",
@@ -1501,18 +1506,18 @@
           },
           {
             "name": "기타",
-            "count": 8,
+            "count": 6,
             "items": [
               "국립대 지원만으로 무너지는 대학 생태계, 이제는 균형을 고민할 때",
               "세종대학교 대학일자리플러스센터, 현직자와 함께하는 ‘AI 실무 2Days’ 운영",
-              "테마보다 구조가 먼저 궁금한 분을 위한 부산대 토토"
+              "부산대 한의전, ‘제5회 동제신춘문예’ 시상식 성료 > 뉴스"
             ]
           }
         ]
       },
       {
         "day": "9/13(일)",
-        "count": 157,
+        "count": 155,
         "open": false,
         "cats": [
           {
@@ -1526,7 +1531,7 @@
           },
           {
             "name": "증강인재교육",
-            "count": 61,
+            "count": 60,
             "items": [
               "국립목포대, 2027 수시 경쟁률 5.58대 1 거점대학 제외 호남권 대학 중 1위",
               "‘등록금 0원’ 거점국립대 수시모집 지원 5.2% 늘어",
@@ -1535,7 +1540,7 @@
           },
           {
             "name": "기타",
-            "count": 10,
+            "count": 9,
             "items": [
               "'10개 서울대' 이니셔티브, 지역 혁신의 발판인가 사립대 도태의 촉매인가",
               "[장교수의 경영MBTI] 경북대학교라는 대학도시, ISTJ형 지성 공동체의 도시계획",
@@ -1555,7 +1560,7 @@
       },
       {
         "day": "9/14(월)",
-        "count": 301,
+        "count": 300,
         "open": false,
         "cats": [
           {
@@ -1587,7 +1592,7 @@
           },
           {
             "name": "기타",
-            "count": 28,
+            "count": 27,
             "items": [
               "교수노조 “호르무즈 파병에 단호히 반대”",
               "고려대, AI 네이티브 시대 논의…‘2026 KU AI 포럼’ 개최",
@@ -1598,7 +1603,7 @@
       },
       {
         "day": "9/15(화)",
-        "count": 299,
+        "count": 295,
         "open": false,
         "cats": [
           {
@@ -1612,7 +1617,7 @@
           },
           {
             "name": "정책/철학",
-            "count": 67,
+            "count": 64,
             "items": [
               "‘특혜 논란’ 양산부산대병원 앞 통행로 예산 9000만원 전액 삭감",
               "동명대 학업 위기 학생 맞춤 지원 'TU 리텐션 케어' 성과",
@@ -1630,7 +1635,7 @@
           },
           {
             "name": "기타",
-            "count": 43,
+            "count": 42,
             "items": [
               "국립대학병원 장애인 의무고용 미달 반복… 4년간 부담금 230억 원[2026 국감]",
               "부산소방, 추석 앞두고 대학병원 3곳 방문…응급환자 이송 협력 논의",
@@ -1641,12 +1646,12 @@
       },
       {
         "day": "9/16(수)",
-        "count": 419,
+        "count": 417,
         "open": false,
         "cats": [
           {
             "name": "증강인재교육",
-            "count": 141,
+            "count": 140,
             "items": [
               "[단독] [2027정시] ‘정시 학생부 반영’ 7개대 6684명 경쟁률 하락할까.. 'N수생 상대적 부담'",
               "성결대-캐나다 Techies, 글로벌 에듀테크 손잡는다…GMBC-Planet Ponder 교육협력 추진",
@@ -1655,7 +1660,7 @@
           },
           {
             "name": "정책/철학",
-            "count": 125,
+            "count": 124,
             "items": [
               "송하철 목포대 총장 사퇴…임기 4개월 앞두고 자리 내려놨다",
               "전국 시·도교육감들 “교부금 개편, 현행법 대비 재원 감소 규모부터 검증해야”",
@@ -1684,12 +1689,12 @@
       },
       {
         "day": "9/17(목)",
-        "count": 363,
+        "count": 360,
         "open": true,
         "cats": [
           {
             "name": "증강인재교육",
-            "count": 107,
+            "count": 106,
             "items": [
               "삼육대, 학생 1인당 장학금 439만원…7년 연속 ‘서울권 1위’",
               "성동광진교육지원청, 학부모·가족·어르신 생활체험 평생교육 프로그램 운영",
@@ -1716,7 +1721,7 @@
           },
           {
             "name": "기타",
-            "count": 57,
+            "count": 55,
             "items": [
               "경상국립대 교수회 “100주년 기념관 건설업체 임대 반대”",
               "상명대-카자흐스탄 카즈가사대, 웹툰·디자인 등 문화콘텐츠 협력 논의",
@@ -1727,7 +1732,7 @@
       }
     ],
     "overseas": {
-      "total": 395,
+      "total": 391,
       "groups": [
         {
           "field": "증강인재교육",
@@ -1817,7 +1822,7 @@
         },
         {
           "field": "정책/철학",
-          "count": 101,
+          "count": 98,
           "items": [
             {
               "title": "Sri Lanka’s university crisis: Brain drain and union action demand urgent reform",
@@ -1989,7 +1994,7 @@
         },
         {
           "field": "융합연구",
-          "count": 14,
+          "count": 13,
           "items": [
             {
               "title": "Utah’s college-age population decline could be worse than expected, new research says",
@@ -2056,18 +2061,18 @@
               "why": null
             },
             {
-              "title": "An investment of up to 750 million VND is provided for each doctoral student in the Social Sciences and Humanities.",
-              "media": "vietnam.vn",
-              "date": "2026-09-14",
-              "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPdUFwb1k2RG5JVm9TZElGYkk5Uk1Yc3AyVjZnVk5zem1PZ0trd1V6VlJjQzN6ZElOUXNLWWREdm1vSVdkQk84dXdSbUNRUzd3LXdkZGhDdzZ4aTFhZFFkeU5iQ29pV1RGSUNaMWw1bWR6bjZMR08zbWEwWVdsRkZSWE9kSTBQQ2Y0bVpmaEFfbVVtdzZueHM5WDZmYWxNd0RsYUgwTXp3b3VDSi05NVcyM2xVcm9qaUR2?oc=5",
-              "level": "normal",
-              "why": null
-            },
-            {
               "title": "Uttar Pradesh Moves to Embed AI Across Universities, Research and Administration",
               "media": "The420.in",
               "date": "2026-09-14",
               "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOaHNMWDhCZEhNSFo0ck05aURQbUZIZm1CZkJqNFFROFJrZko2NUd4TjhqLVU4aVN0aVMyWVNqMU5lT0Z1aWNrS2dHWDUyM3NRck9XWWd2U1VzT1d0RVZJbHUxaF9RRkkxUTc4OTUzYTNHVkdOSXZReWZPYnY2QUVIU1c2MGFKdw?oc=5",
+              "level": "normal",
+              "why": null
+            },
+            {
+              "title": "University Of Bristol Opens First International Campus In Mumbai With Data Science & Finance Programmes",
+              "media": "Free Press Journal",
+              "date": "2026-09-13",
+              "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPcWtDUENYbjEzbzRTSTIyUXk1TmdCTDBPZk9yb2JZOC1QTW10czc1ZFh6bmhiWmFqZFI2MENhaW82WEJFbmUtMWNJdERCM3VIcHRhQ2Jmdk9oektOTGpNTU5jVUUybG1oUGN5TDc3d1FhMDFtX2I0bnFudTNxeC1SY1BHbTBlT3JuVVNRSGZiYmczY19LNkw3bFdtTldTdi1HRTl5MXJOVjZ0V1dVbjYycTlZRGJZXzhsYUZubVdXNVY2ZUhoc1pUOHJoLTB5TElqQ2dkTHR2TmJ6Z0nSAeABQVVfeXFMT1BjMXBfZTI1aWJjYzlRZ1E2MnNZODdhYkhhN2xfSlNITW9oOE9Uc3BYZFk2MXhPZTFBU1JxTXFVTXJhNnI0WG9YUXM1bHlrTXdDa1hlVEZHM0wtZldpRDl3OHJvUm8zRkRROHZFSC1rX0FHZUZaSFdSWE81VUJuak9mSjRDel94T25HbWI4YVpNSjFsR0FBNXZwdm5SM1BmN19aNlQzNEJCZzlGeTM1alFtXzhXaGxCZjhKOThySzJDMkc0VlR3SUdIZmJUNDNmYkY5dTA1Y1RIbk5hY2wtVDU?oc=5",
               "level": "normal",
               "why": null
             }
@@ -2171,7 +2176,7 @@
       }
     ],
     "changesTitle": "전주 대비 주요 변화",
-    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 1009건 vs 전주 586건.",
+    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 993건 vs 전주 582건.",
     "watch": [
       {
         "when": "초기(0-4주)",
@@ -2204,49 +2209,49 @@
       },
       {
         "name": "수집 기사(비교기준)",
-        "value": "1,009",
+        "value": "993",
         "unit": "건",
-        "change": "+423건",
+        "change": "+411건",
         "dir": "up"
       },
       {
         "name": "정책/철학 기사",
-        "value": "366",
+        "value": "362",
         "unit": "건",
-        "change": "+104건",
+        "change": "+101건",
         "dir": "up"
       },
       {
         "name": "증강인재교육 기사",
-        "value": "328",
+        "value": "323",
         "unit": "건",
-        "change": "+169건",
+        "change": "+165건",
         "dir": "up"
       },
       {
         "name": "산업 기사",
         "value": "83",
         "unit": "건",
-        "change": "+44건",
+        "change": "+45건",
         "dir": "up"
       },
       {
         "name": "부울경 연계",
-        "value": "189",
+        "value": "185",
         "unit": "건",
-        "change": "+66건",
+        "change": "+63건",
         "dir": "up"
       },
       {
         "name": "부산대 직접 언급",
-        "value": "123",
+        "value": "119",
         "unit": "건",
-        "change": "+33건",
+        "change": "+30건",
         "dir": "up"
       },
       {
         "name": "해외 기사 (참고)",
-        "value": "395",
+        "value": "391",
         "unit": "건",
         "change": "신호·지표 미반영 · 별도 항목",
         "dir": "flat"
@@ -2686,7 +2691,7 @@
       "orgs": [
         {
           "label": "교육부",
-          "n": 66,
+          "n": 65,
           "ex": {
             "region": "domestic",
             "title": "교육부 “수시접수 먹통 구제 대상 388건… 188건 아직 검토 중”",
@@ -2840,7 +2845,7 @@
       "feedNote": "교육부 10건 · 산업통상부 10건 · 행정안전부 10건 · 소프트웨어정책연구소 6건 · 국가인공지능전략위원회 1건 · 교육정책네트워크 1건 (최근 14일)"
     },
     "comparable": {
-      "total": 1009,
+      "total": 993,
       "crisis": 3.3,
       "warning": 2.2,
       "risk": 5.5
@@ -2856,11 +2861,11 @@
     "state": "Warning",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 1439건 → 관련성 필터 후 국내 821건 (해외 202건은 참고 항목으로 별도) · 수집일 2026-09-04",
+    "sourceNote": "무료·공개 소스 수집 1439건 → 관련성 필터 후 국내 817건 (해외 201건은 참고 항목으로 별도) · 수집일 2026-09-04",
     "signal": {
       "crisis": 5.1,
       "warning": 2.9,
-      "total": 821,
+      "total": 817,
       "trend": "rising"
     },
     "map": {
@@ -2900,7 +2905,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 17,
           "risky": 1,
@@ -2957,7 +2962,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1566
+            "daysLeft": 1560
           },
           "mentions": 25,
           "risky": 0,
@@ -3014,7 +3019,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 7,
           "risky": 3,
@@ -3071,7 +3076,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 45,
           "risky": 17,
@@ -3128,7 +3133,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 11,
           "risky": 4,
@@ -3185,7 +3190,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1991
+            "daysLeft": 1985
           },
           "mentions": 23,
           "risky": 1,
@@ -3242,7 +3247,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 16,
           "risky": 1,
@@ -3299,7 +3304,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 17,
           "risky": 3,
@@ -3356,9 +3361,9 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 836
+            "daysLeft": 830
           },
-          "mentions": 92,
+          "mentions": 91,
           "risky": 2,
           "riskRate": 2.2,
           "riskLevel": 1,
@@ -3413,7 +3418,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 16,
           "risky": 2,
@@ -3464,13 +3469,13 @@
       }
     },
     "network": {
-      "basis": 821,
+      "basis": 817,
       "minCount": 7,
       "minEdge": 4,
       "nodes": [
         {
           "key": "인공지능",
-          "n": 145,
+          "n": 144,
           "risk": 0,
           "field": "증강인재교육",
           "sample": {
@@ -3481,7 +3486,7 @@
         },
         {
           "key": "부산대",
-          "n": 91,
+          "n": 90,
           "risk": 2.2,
           "field": "기타",
           "sample": {
@@ -3492,8 +3497,8 @@
         },
         {
           "key": "등록금",
-          "n": 78,
-          "risk": 10.3,
+          "n": 77,
+          "risk": 10.4,
           "field": "정책/철학",
           "sample": {
             "title": "지방 국립대 등록금 0원 수시에 영향?…사립대 반발",
@@ -4247,7 +4252,7 @@
       },
       {
         "day": "9/8(화)",
-        "count": 122,
+        "count": 121,
         "open": false,
         "cats": [
           {
@@ -4261,7 +4266,7 @@
           },
           {
             "name": "증강인재교육",
-            "count": 40,
+            "count": 39,
             "items": [
               "제주 초등교사 선발 94명→26명 72% ‘급감’…제주대 교육대학 학생들 교원 감축 '반발'",
               "제주대 교육대학 학생들 \"초등학교 교사 선발 규모 감축 전면 재검토하라\"",
@@ -4333,7 +4338,7 @@
       },
       {
         "day": "9/10(목)",
-        "count": 248,
+        "count": 245,
         "open": false,
         "cats": [
           {
@@ -4347,7 +4352,7 @@
           },
           {
             "name": "정책/철학",
-            "count": 76,
+            "count": 75,
             "items": [
               "충남대 반대로 국립공주대와 통합 무산… '학생 90% 반대벽 못 넘었다'",
               "‘서울대 10개’ 1차 탈락 격차 우려에… 김민석 “후속 선정·대상 확대 정부 요청할 것”",
@@ -4365,7 +4370,7 @@
           },
           {
             "name": "기타",
-            "count": 30,
+            "count": 29,
             "items": [
               "“국립대는 0원 우리는 수백만원”⋯지방 사립대생 반발",
               "경상국립대, 100주년 기념관 건설업체 임대에 교수 반발",
@@ -4419,7 +4424,7 @@
       }
     ],
     "overseas": {
-      "total": 202,
+      "total": 201,
       "groups": [
         {
           "field": "증강인재교육",
@@ -4681,7 +4686,7 @@
         },
         {
           "field": "융합연구",
-          "count": 7,
+          "count": 6,
           "items": [
             {
               "title": "[Lee Deok-hwan's Science World] Korea's plan to build 10 Seoul National Universities sidelines private universities",
@@ -4720,14 +4725,6 @@
               "media": "The State of Illinois Newsroom",
               "date": "2026-09-08",
               "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPc2dZd1BESzVCQVNYek9pb0M5T2Nab2x1bzNGdk9XT0lhMnd0dFJLZXZIeFNtTFZpOE02Rm1BN1dJeUVuTHhwTjZhQ1BuUEJYUFFaalI4QzVuQUo5cE5LR3BzU21WZDRfdnJZYnh4NzZSblBZUWZoSGhWY3FOMDdid1M4LXd1cFE4Y0JCS1RFb2FmaXI5enQydjBSSl9JcGhCMENWcWdlYkhrYm1OcjNCWmhySjhSbUd4M0pkVk1SSQ?oc=5",
-              "level": "normal",
-              "why": null
-            },
-            {
-              "title": "'Building an elite university requires four institutional breakthroughs'",
-              "media": "Vietnam.vn",
-              "date": "2026-09-08",
-              "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPM2RBMFlHbUoteTlaQmkyYVNkM3VXZGdOVC1MZjRqSmp4Q2hIWWhCT0UwdmNoUGhWZS1zOXkwTjYxeDZ6SnpzQ3pMMnhYSHdRZ3VpR0pzYld2RjdHTEVQOWo4YkJFY080bjRpMmJwTXE0NndTUVl2d0ZVbEZhZk1RWg?oc=5",
               "level": "normal",
               "why": null
             },
@@ -4785,7 +4782,7 @@
       }
     ],
     "changesTitle": "전주 대비 주요 변화",
-    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 586건 vs 전주 438건.",
+    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 582건 vs 전주 437건.",
     "watch": [
       {
         "when": "초기(0-4주)",
@@ -4818,49 +4815,49 @@
       },
       {
         "name": "수집 기사(비교기준)",
-        "value": "586",
+        "value": "582",
         "unit": "건",
-        "change": "+148건",
+        "change": "+145건",
         "dir": "up"
       },
       {
         "name": "정책/철학 기사",
-        "value": "262",
+        "value": "261",
         "unit": "건",
         "change": "+24건",
         "dir": "up"
       },
       {
         "name": "증강인재교육 기사",
-        "value": "159",
+        "value": "158",
         "unit": "건",
-        "change": "+89건",
+        "change": "+88건",
         "dir": "up"
       },
       {
         "name": "산업 기사",
-        "value": "39",
+        "value": "38",
         "unit": "건",
-        "change": "+6건",
+        "change": "+5건",
         "dir": "up"
       },
       {
         "name": "부울경 연계",
-        "value": "123",
+        "value": "122",
         "unit": "건",
-        "change": "-11건",
+        "change": "-12건",
         "dir": "down"
       },
       {
         "name": "부산대 직접 언급",
-        "value": "90",
+        "value": "89",
         "unit": "건",
-        "change": "-4건",
+        "change": "-5건",
         "dir": "down"
       },
       {
         "name": "해외 기사 (참고)",
-        "value": "202",
+        "value": "201",
         "unit": "건",
         "change": "신호·지표 미반영 · 별도 항목",
         "dir": "flat"
@@ -5448,7 +5445,7 @@
       "feedNote": "산업통상부 10건 · 행정안전부 10건 · 소프트웨어정책연구소 8건 · 교육부 10건 · 국가인공지능전략위원회 3건 · 교육정책네트워크 1건 (최근 14일)"
     },
     "comparable": {
-      "total": 586,
+      "total": 582,
       "crisis": 7,
       "warning": 3.8,
       "risk": 10.8
@@ -5464,11 +5461,11 @@
     "state": "Warning",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 805건 → 관련성 필터 후 국내 438건 (해외 139건은 참고 항목으로 별도) · 수집일 2026-08-28",
+    "sourceNote": "무료·공개 소스 수집 805건 → 관련성 필터 후 국내 437건 (해외 139건은 참고 항목으로 별도) · 수집일 2026-08-28",
     "signal": {
       "crisis": 6.4,
       "warning": 3.2,
-      "total": 438,
+      "total": 437,
       "trend": "rising"
     },
     "map": {
@@ -5508,7 +5505,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 4,
           "risky": 1,
@@ -5549,7 +5546,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1566
+            "daysLeft": 1560
           },
           "mentions": 1,
           "risky": 1,
@@ -5598,7 +5595,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 3,
           "risky": 2,
@@ -5639,7 +5636,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 37,
           "risky": 4,
@@ -5696,7 +5693,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 10,
           "risky": 6,
@@ -5753,7 +5750,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1991
+            "daysLeft": 1985
           },
           "mentions": 2,
           "risky": 2,
@@ -5794,7 +5791,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 25,
           "risky": 1,
@@ -5851,7 +5848,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 16,
           "risky": 0,
@@ -5908,7 +5905,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 836
+            "daysLeft": 830
           },
           "mentions": 94,
           "risky": 1,
@@ -5965,7 +5962,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 3,
           "risky": 0,
@@ -6014,7 +6011,7 @@
       }
     },
     "network": {
-      "basis": 438,
+      "basis": 437,
       "minCount": 4,
       "minEdge": 4,
       "nodes": [
@@ -6042,8 +6039,8 @@
         },
         {
           "key": "등록금",
-          "n": 67,
-          "risk": 13.4,
+          "n": 66,
+          "risk": 13.6,
           "field": "정책/철학",
           "sample": {
             "title": "등록금 0원 정책이 야기할 대학의 위기",
@@ -6833,12 +6830,12 @@
       },
       {
         "day": "9/3(목)",
-        "count": 82,
+        "count": 81,
         "open": true,
         "cats": [
           {
             "name": "정책/철학",
-            "count": 41,
+            "count": 40,
             "items": [
               "[위기의 경북대] 다시 높아지는 지거국 인기… 경북대도 수시 합격선 상승",
               "충남대·공주대 통합 반발 확산…지역사회까지 참전",
@@ -7241,16 +7238,16 @@
       },
       {
         "name": "수집 기사(비교기준)",
-        "value": "438",
+        "value": "437",
         "unit": "건",
-        "change": "+216건",
+        "change": "+215건",
         "dir": "up"
       },
       {
         "name": "정책/철학 기사",
-        "value": "238",
+        "value": "237",
         "unit": "건",
-        "change": "+160건",
+        "change": "+159건",
         "dir": "up"
       },
       {
@@ -7702,13 +7699,13 @@
       "feedNote": "이 주차에는 기관 홈페이지 수집본이 없습니다 (보도자료는 소급 수집이 되지 않습니다)."
     },
     "comparable": {
-      "total": 438,
+      "total": 437,
       "crisis": 6.4,
       "warning": 3.2,
       "risk": 9.6
     },
     "changesTitle": "전주 대비 주요 변화",
-    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 438건 vs 전주 222건."
+    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 437건 vs 전주 222건."
   },
   {
     "id": "w35",
@@ -7764,7 +7761,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 1,
           "risky": 0,
@@ -7805,7 +7802,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1566
+            "daysLeft": 1560
           },
           "mentions": 1,
           "risky": 0,
@@ -7854,7 +7851,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 2,
           "risky": 0,
@@ -7903,7 +7900,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 2,
           "risky": 1,
@@ -7944,7 +7941,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 4,
           "risky": 0,
@@ -7989,7 +7986,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1991
+            "daysLeft": 1985
           },
           "mentions": 3,
           "risky": 0,
@@ -8034,7 +8031,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 1,
           "risky": 0,
@@ -8083,7 +8080,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 2,
           "risky": 0,
@@ -8132,7 +8129,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 836
+            "daysLeft": 830
           },
           "mentions": 36,
           "risky": 0,
@@ -8189,7 +8186,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 3,
           "risky": 0,
@@ -9855,7 +9852,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 1,
           "risky": 0,
@@ -9904,7 +9901,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1566
+            "daysLeft": 1560
           },
           "mentions": 0,
           "risky": 0,
@@ -9936,7 +9933,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 4,
           "risky": 0,
@@ -9989,7 +9986,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 8,
           "risky": 1,
@@ -10042,7 +10039,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 1,
           "risky": 0,
@@ -10091,7 +10088,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1991
+            "daysLeft": 1985
           },
           "mentions": 3,
           "risky": 0,
@@ -10148,7 +10145,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 2,
           "risky": 0,
@@ -10197,7 +10194,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 17,
           "risky": 0,
@@ -10254,7 +10251,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 836
+            "daysLeft": 830
           },
           "mentions": 26,
           "risky": 0,
@@ -10311,7 +10308,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 6,
           "risky": 0,
@@ -11780,7 +11777,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 6,
           "risky": 0,
@@ -11837,7 +11834,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1566
+            "daysLeft": 1560
           },
           "mentions": 1,
           "risky": 0,
@@ -11886,7 +11883,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 1,
           "risky": 0,
@@ -11935,7 +11932,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 5,
           "risky": 0,
@@ -11992,7 +11989,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 3,
           "risky": 0,
@@ -12041,7 +12038,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1991
+            "daysLeft": 1985
           },
           "mentions": 0,
           "risky": 0,
@@ -12073,7 +12070,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 1,
           "risky": 0,
@@ -12122,7 +12119,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 12,
           "risky": 0,
@@ -12179,7 +12176,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 836
+            "daysLeft": 830
           },
           "mentions": 31,
           "risky": 0,
@@ -12236,7 +12233,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 5,
           "risky": 0,
@@ -13936,7 +13933,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 13,
           "risky": 1,
@@ -13993,7 +13990,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1566
+            "daysLeft": 1560
           },
           "mentions": 9,
           "risky": 0,
@@ -14050,7 +14047,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 12,
           "risky": 4,
@@ -14107,7 +14104,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 9,
           "risky": 2,
@@ -14164,7 +14161,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 0,
           "risky": 0,
@@ -14196,7 +14193,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1991
+            "daysLeft": 1985
           },
           "mentions": 0,
           "risky": 0,
@@ -14228,7 +14225,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 4,
           "risky": 0,
@@ -14277,7 +14274,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 13,
           "risky": 0,
@@ -14334,7 +14331,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 836
+            "daysLeft": 830
           },
           "mentions": 37,
           "risky": 0,
@@ -14391,7 +14388,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 7,
           "risky": 0,
@@ -16131,7 +16128,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 3,
           "risky": 2,
@@ -16184,7 +16181,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1566
+            "daysLeft": 1560
           },
           "mentions": 13,
           "risky": 0,
@@ -16241,7 +16238,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 7,
           "risky": 4,
@@ -16298,7 +16295,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 2,
           "risky": 1,
@@ -16347,7 +16344,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 2,
           "risky": 0,
@@ -16396,7 +16393,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1991
+            "daysLeft": 1985
           },
           "mentions": 3,
           "risky": 0,
@@ -16453,7 +16450,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 8,
           "risky": 0,
@@ -16510,7 +16507,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 10,
           "risky": 0,
@@ -16567,7 +16564,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 836
+            "daysLeft": 830
           },
           "mentions": 53,
           "risky": 0,
@@ -16624,7 +16621,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 2,
           "risky": 0,
@@ -17846,7 +17843,7 @@
         "name": "수집 기사(비교기준)",
         "value": "325",
         "unit": "건",
-        "change": "+68건",
+        "change": "+69건",
         "dir": "up"
       },
       {
@@ -17860,7 +17857,7 @@
         "name": "증강인재교육 기사",
         "value": "79",
         "unit": "건",
-        "change": "+4건",
+        "change": "+5건",
         "dir": "up"
       },
       {
@@ -18235,7 +18232,7 @@
       "risk": 8.6
     },
     "changesTitle": "전주 대비 주요 변화",
-    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 325건 vs 전주 257건."
+    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 325건 vs 전주 256건."
   },
   {
     "id": "w30",
@@ -18247,11 +18244,11 @@
     "state": "Watch",
     "complete": true,
     "live": true,
-    "sourceNote": "무료·공개 소스 수집 617건 → 관련성 필터 후 국내 257건 (해외 107건은 참고 항목으로 별도) · 수집일 2026-07-17",
+    "sourceNote": "무료·공개 소스 수집 617건 → 관련성 필터 후 국내 256건 (해외 107건은 참고 항목으로 별도) · 수집일 2026-07-17",
     "signal": {
       "crisis": 4.3,
       "warning": 3.1,
-      "total": 257,
+      "total": 256,
       "trend": "baseline"
     },
     "map": {
@@ -18291,7 +18288,7 @@
             "to": "2027.07.31",
             "type": "국립대법인",
             "region": "서울",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 5,
           "risky": 0,
@@ -18344,7 +18341,7 @@
             "to": "2030.12.31",
             "type": "국립",
             "region": "강원",
-            "daysLeft": 1566
+            "daysLeft": 1560
           },
           "mentions": 4,
           "risky": 0,
@@ -18397,7 +18394,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "충북",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 20,
           "risky": 13,
@@ -18454,7 +18451,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "대전",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 3,
           "risky": 0,
@@ -18503,7 +18500,7 @@
             "to": "2027.12.31",
             "type": "국립",
             "region": "대구",
-            "daysLeft": 470
+            "daysLeft": 464
           },
           "mentions": 1,
           "risky": 0,
@@ -18552,7 +18549,7 @@
             "to": "2032.02.29",
             "type": "국립",
             "region": "전북",
-            "daysLeft": 1991
+            "daysLeft": 1985
           },
           "mentions": 7,
           "risky": 0,
@@ -18609,7 +18606,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "광주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 5,
           "risky": 0,
@@ -18666,7 +18663,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "경남",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 9,
           "risky": 0,
@@ -18719,7 +18716,7 @@
             "to": "2028.12.31",
             "type": "국립",
             "region": "부산",
-            "daysLeft": 836
+            "daysLeft": 830
           },
           "mentions": 33,
           "risky": 1,
@@ -18776,7 +18773,7 @@
             "to": "2027.07.31",
             "type": "국립",
             "region": "제주",
-            "daysLeft": 317
+            "daysLeft": 311
           },
           "mentions": 1,
           "risky": 0,
@@ -18825,7 +18822,7 @@
       }
     },
     "network": {
-      "basis": 257,
+      "basis": 256,
       "minCount": 3,
       "minEdge": 4,
       "nodes": [
@@ -19385,7 +19382,7 @@
       },
       {
         "day": "7/20(월)",
-        "count": 61,
+        "count": 60,
         "open": false,
         "cats": [
           {
@@ -19399,7 +19396,7 @@
           },
           {
             "name": "증강인재교육",
-            "count": 19,
+            "count": 18,
             "items": [
               "“AI가 통역하는데 영어 왜 배우나”…中대학들, 영어 강의 축소 잇따라",
               "[전남대, 2027 수시 특집] 전남대, 지역혁신 거점으로 도약",
@@ -19920,7 +19917,7 @@
       },
       {
         "name": "총 수집 기사",
-        "value": "257",
+        "value": "256",
         "unit": "건",
         "change": "기준치",
         "dir": "flat"
@@ -19929,7 +19926,7 @@
         "name": "정책/철학 기사",
         "value": "93",
         "unit": "건",
-        "change": "전체의 36.2%",
+        "change": "전체의 36.3%",
         "dir": "flat"
       },
       {
@@ -20290,7 +20287,7 @@
       "feedNote": "이 주차에는 기관 홈페이지 수집본이 없습니다 (보도자료는 소급 수집이 되지 않습니다)."
     },
     "comparable": {
-      "total": 257,
+      "total": 256,
       "crisis": 4.3,
       "warning": 3.1,
       "risk": 7.4
