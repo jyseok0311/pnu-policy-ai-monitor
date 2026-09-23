@@ -26,6 +26,9 @@ export const FIELD_COLOR = {
 };
 // 판(대분류) 색. 판은 5% 남짓으로 옅게 깔리므로 계열을 대표하는 색 하나면 된다.
 export const GROUP_COLOR = { '교육': '#3b6fb8', '산업': '#c07b2a', '기타': '#7a8595' };
+// 판 이름(글자)용. 면에 쓰는 위 색을 그대로 글자에 쓰면 '산업' 3.26:1, '기타' 3.55:1 로 안 읽힌다.
+// 면은 밝아야 판이 구분되고 글자는 어두워야 읽히므로 따로 둔다('교육'은 4.80 이라 그대로).
+export const GROUP_INK = { '교육': '#3b6fb8', '산업': '#9a6222', '기타': '#666f7d' };
 export const riskColor = (r) => (r >= 40 ? '#b3261e' : r >= 20 ? '#d9822b' : r >= 8 ? '#c9a227' : '#2f8f5b');
 // 점을 판·후광보다 한 단계 진하게 찍는다. 작아진 만큼 또렷해야 위치가 읽힌다.
 const shade = (hex, k) => {
@@ -274,7 +277,7 @@ export function networkSvg(net, opt = {}) {
     return `<g class="pl" data-field="${esc(pl.f)}">
       <polygon points="${pts.map((q) => `${q.x.toFixed(1)},${q.y.toFixed(1)}`).join(' ')}"
         fill="${c}" fill-opacity=".055" stroke="${c}" stroke-opacity=".3" stroke-width="1.1"/>
-      <text x="${(lab.x + 7).toFixed(1)}" y="${(lab.y - 5).toFixed(1)}" class="plab" fill="${c}">${esc(pl.f)}</text>
+      <text x="${(lab.x + 7).toFixed(1)}" y="${(lab.y - 5).toFixed(1)}" class="plab" fill="${GROUP_INK[pl.f] || c}">${esc(pl.f)}</text>
     </g>`;
   }).join('');
 
@@ -311,7 +314,7 @@ export function networkSvg(net, opt = {}) {
     </g>`;
   }).join('');
 
-  const planeData = used.map((f) => ({ f, z: planeZ[f], c: GROUP_COLOR[f] || GROUP_COLOR['기타'], ...ext[f] }));
+  const planeData = used.map((f) => ({ f, z: planeZ[f], c: GROUP_COLOR[f] || GROUP_COLOR['기타'], ink: GROUP_INK[f] || GROUP_INK['기타'], ...ext[f] }));
 
   // 화면용 회전 범위 — 360° 어느 각도에서도 잘리지 않는 틀.
   // 인쇄용 viewBox(box)는 정면에 딱 맞춘 것이라 돌리면 넘친다. 둘을 따로 둔다.

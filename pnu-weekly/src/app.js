@@ -325,7 +325,13 @@
      지난 주차는 접어 둔다(펼친 열 주차 = 68,921px). 접혀 있으면 그 안의 앵커로 못 뛰므로,
      주차로 향하는 모든 길목에서 먼저 펼친다 — 사이드바 칩, 추이 그래프 막대, 주소창 #해시. */
   function unfold(el) {
-    for (var d = el && el.closest('details'); d; d = d.parentElement && d.parentElement.closest('details')) d.open = true;
+    if (!el) return;
+    // 조상 쪽 — 각주·기사 목록처럼 접힘 '안'에 있는 자리
+    for (var d = el.closest('details'); d; d = d.parentElement && d.parentElement.closest('details')) d.open = true;
+    // 자손 쪽 — 주차로 뛴 경우. 본문 details 는 <section class="week"> 의 자식이라
+    // 조상만 훑으면 접힌 제목줄에 내려앉고 만다. 읽으러 온 사람에게 한 번 더 누르게 할 일이 아니다.
+    var own = el.matches && el.matches('.week') ? el : (el.closest ? el.closest('.week') : null);
+    if (own) own.querySelectorAll('details.wkbody').forEach(function (x) { x.open = true; });
   }
   function unfoldAll() {
     document.querySelectorAll('details.wkbody').forEach(function (d) { d.open = true; });

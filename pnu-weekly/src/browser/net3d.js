@@ -46,7 +46,7 @@
     var HW = +svg.dataset.hw || 300, HH = +svg.dataset.hh || 200;
     var PLANES = [];
     try { PLANES = JSON.parse(svg.dataset.planes || '[]'); } catch (e) { PLANES = []; }
-    PLANES.forEach(function (p) { p.rgb = hex(p.c);
+    PLANES.forEach(function (p) { p.rgb = hex(p.c); p.inkRgb = hex(p.ink || p.c);
       // 판은 제 노드가 놓인 만큼만 그린다. 모두 같은 크기로 그리면 교육·산업이 85% 겹쳐
       // 어느 판인지 기둥을 따라가야만 알 수 있었다. 옛 데이터에는 모서리가 없으니 되돌린다.
       if (typeof p.x0 !== 'number') { p.x0 = -HW; p.x1 = HW; p.y0 = -HH; p.y1 = HH; }
@@ -191,7 +191,7 @@
         ctx.stroke();
         ctx.font = '800 ' + (11.5 * ss()).toFixed(1) + 'px Pretendard, system-ui, sans-serif';
         ctx.textAlign = 'left'; ctx.textBaseline = 'bottom';
-        ctx.fillStyle = rgba(c, on ? 0.95 : 0.35);
+        ctx.fillStyle = rgba(pl.inkRgb, on ? 1 : 0.35);   // 이름은 어두운 색으로(면 색과 분리)
         ctx.fillText(pl.f, q[0].x + 6 * ss(), q[0].y - 4 * ss());
       });
 

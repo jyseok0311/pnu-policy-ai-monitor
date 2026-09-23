@@ -50,7 +50,7 @@ function sparkline(weeks, T) {
   const ticks = [0, max / 2, max].map((t) => `
     <line x1="${padL}" y1="${y(t).toFixed(1)}" x2="${W - padR}" y2="${y(t).toFixed(1)}"
       stroke="${t === 0 ? '#c8cfd9' : '#eceff3'}" stroke-width="1"/>
-    <text x="${padL - 8}" y="${(y(t) + 4).toFixed(1)}" font-size="11" text-anchor="end" fill="#9ca3af">${Number.isInteger(t) ? t : +t.toFixed(1)}</text>`).join('');
+    <text x="${padL - 8}" y="${(y(t) + 4).toFixed(1)}" font-size="11" text-anchor="end" fill="#6a6e77">${Number.isInteger(t) ? t : +t.toFixed(1)}</text>`).join('');
 
   const bars = series.map((w, i) => {
     const v = vals[i], h = Math.max(plotH - (y(v) - padT), 1.5);
@@ -58,8 +58,8 @@ function sparkline(weeks, T) {
     return `<a class="bar" href="#${w.id}" aria-label="${esc(w.label)} ${v}%">
       <rect x="${(cx(i) - barW / 2).toFixed(1)}" y="${y(v).toFixed(1)}" width="${barW.toFixed(1)}" height="${h.toFixed(1)}" rx="3" fill="${fill}" fill-opacity=".82"/>
       <rect x="${(cx(i) - slot / 2).toFixed(1)}" y="${padT}" width="${slot.toFixed(1)}" height="${plotH}" fill="transparent"/>
-      <text x="${cx(i).toFixed(1)}" y="${(H - 12).toFixed(1)}" font-size="12" text-anchor="middle" fill="#6b7280">${esc(w.label.slice(5, 10))}</text>
-      <text x="${cx(i).toFixed(1)}" y="${(H - 24).toFixed(1)}" font-size="10.5" text-anchor="middle" fill="#b6bcc6">W${w.id.replace('w', '')}</text>
+      <text x="${cx(i).toFixed(1)}" y="${(H - 12).toFixed(1)}" font-size="12" text-anchor="middle" fill="#4b5563">${esc(w.label.slice(5, 10))}</text>
+      <text x="${cx(i).toFixed(1)}" y="${(H - 24).toFixed(1)}" font-size="10.5" text-anchor="middle" fill="#6a6e77">W${w.id.replace('w', '')}</text>
     </a>`;
   }).join('');
 
@@ -73,7 +73,7 @@ function sparkline(weeks, T) {
     <polyline points="${pts}" fill="none" stroke="var(--navy)" stroke-width="2.5"
       stroke-linejoin="round" stroke-linecap="round" opacity=".85"/>
     ${dots}
-    <text x="${padL - 8}" y="${(padT - 12).toFixed(1)}" font-size="10.5" text-anchor="end" fill="#9ca3af">%</text>
+    <text x="${padL - 8}" y="${(padT - 12).toFixed(1)}" font-size="10.5" text-anchor="end" fill="#6a6e77">%</text>
   </svg>`;
 }
 
