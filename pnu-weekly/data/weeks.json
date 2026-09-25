@@ -1,5 +1,24 @@
 [
   {
+    "id": "w40",
+    "label": "2026.10.02 (Week 40)",
+    "date": "2026-10-02",
+    "range": "2026.09.25~2026.10.02",
+    "tier": 1,
+    "tierName": "관심",
+    "state": "Normal",
+    "complete": false,
+    "live": true,
+    "partial": true,
+    "sourceNote": "진행 중 — 2026.09.25부터 2026.09.25까지 1일치 수집 · 관련 기사 4건 (주차 마감 후 본문 생성)",
+    "signal": {
+      "crisis": 0,
+      "warning": 0,
+      "total": 4,
+      "trend": "falling"
+    }
+  },
+  {
     "id": "w39",
     "label": "2026.09.25 (Week 39)",
     "date": "2026-09-25",
@@ -9,13 +28,13 @@
     "state": "Normal",
     "complete": false,
     "live": true,
-    "partial": true,
-    "sourceNote": "진행 중 — 2026.09.18부터 2026.09.24까지 7일치 수집 · 관련 기사 896건 (주차 마감 후 본문 생성)",
+    "partial": false,
+    "sourceNote": "구글 뉴스 소급 수집 · 관련 기사 926건",
     "signal": {
-      "crisis": 4.5,
-      "warning": 1.8,
-      "total": 896,
-      "trend": "rising"
+      "crisis": 4.3,
+      "warning": 1.7,
+      "total": 926,
+      "trend": "stable"
     }
   },
   {
@@ -2856,9 +2875,9 @@
     "label": "2026.09.11 (Week 37)",
     "date": "2026-09-11",
     "range": "2026.09.04~2026.09.11",
-    "tier": 3,
-    "tierName": "경계",
-    "state": "Warning",
+    "tier": 4,
+    "tierName": "위기",
+    "state": "Crisis",
     "complete": true,
     "live": true,
     "sourceNote": "무료·공개 소스 수집 1439건 → 관련성 필터 후 국내 817건 (해외 201건은 참고 항목으로 별도) · 수집일 2026-09-04",
@@ -13884,9 +13903,9 @@
     "label": "2026.08.07 (Week 32)",
     "date": "2026-08-07",
     "range": "2026.07.31~2026.08.07",
-    "tier": 2,
-    "tierName": "주의",
-    "state": "Watch",
+    "tier": 3,
+    "tierName": "경계",
+    "state": "Warning",
     "complete": true,
     "live": true,
     "sourceNote": "무료·공개 소스 수집 671건 → 관련성 필터 후 국내 306건 (해외 122건은 참고 항목으로 별도) · 수집일 2026-07-31",
