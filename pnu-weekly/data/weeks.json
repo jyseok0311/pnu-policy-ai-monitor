@@ -4,18 +4,18 @@
     "label": "2026.10.02 (Week 40)",
     "date": "2026-10-02",
     "range": "2026.09.25~2026.10.02",
-    "tier": 1,
-    "tierName": "관심",
-    "state": "Normal",
+    "tier": 4,
+    "tierName": "위기",
+    "state": "Crisis",
     "complete": false,
     "live": true,
     "partial": true,
-    "sourceNote": "진행 중 — 2026.09.25부터 2026.09.25까지 1일치 수집 · 관련 기사 4건 (주차 마감 후 본문 생성)",
+    "sourceNote": "진행 중 — 2026.09.25부터 2026.09.25까지 1일치 수집 · 관련 기사 7건 (주차 마감 후 본문 생성)",
     "signal": {
-      "crisis": 0,
+      "crisis": 14.3,
       "warning": 0,
-      "total": 4,
-      "trend": "falling"
+      "total": 7,
+      "trend": "rising"
     }
   },
   {
@@ -29,11 +29,11 @@
     "complete": false,
     "live": true,
     "partial": false,
-    "sourceNote": "구글 뉴스 소급 수집 · 관련 기사 926건",
+    "sourceNote": "구글 뉴스 소급 수집 · 관련 기사 928건",
     "signal": {
       "crisis": 4.3,
       "warning": 1.7,
-      "total": 926,
+      "total": 928,
       "trend": "stable"
     }
   },
