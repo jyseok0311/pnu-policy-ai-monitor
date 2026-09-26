@@ -1,31 +1,31 @@
 {
-  "collectedAt": "2026-09-25T22:05:53.751Z",
+  "collectedAt": "2026-09-26T00:21:52.938Z",
   "window": "2026-09-25 ~ (진행 중)",
   "from": "2026-09-25",
   "to": null,
-  "total": 154,
+  "total": 172,
   "signal": {
-    "crisis": 1.3,
-    "warning": 3.2,
-    "watch": 6.5
+    "crisis": 1.2,
+    "warning": 3.5,
+    "watch": 5.8
   },
   "byField": {
-    "정책/철학": 46,
-    "융합연구": 10,
-    "증강인재교육": 35,
-    "적응형행정": 3,
-    "기타": 58
+    "정책/철학": 49,
+    "융합연구": 12,
+    "증강인재교육": 41,
+    "적응형행정": 4,
+    "기타": 64
   },
   "byRegion": {
-    "국내": 34,
-    "해외": 120
+    "국내": 44,
+    "해외": 128
   },
   "byUniv": {
     "부산대": 1,
     "경북대": 0,
     "전남대": 0,
     "전북대": 0,
-    "충남대": 0,
+    "충남대": 1,
     "충북대": 1,
     "강원대": 0,
     "경상국립대": 0,
@@ -35,152 +35,152 @@
   "feeds": [
     {
       "feed": "구글뉴스:거점국립대",
+      "수신": 28,
+      "신규": 26,
+      "상태": "ok"
+    },
+    {
+      "feed": "구글뉴스:국립대 통합",
+      "수신": 12,
+      "신규": 11,
+      "상태": "ok"
+    },
+    {
+      "feed": "구글뉴스:글로컬대학",
+      "수신": 30,
+      "신규": 28,
+      "상태": "ok"
+    },
+    {
+      "feed": "구글뉴스:RISE 지역혁신중심 대학지원",
       "수신": 9,
       "신규": 9,
       "상태": "ok"
     },
     {
-      "feed": "구글뉴스:국립대 통합",
-      "수신": 5,
+      "feed": "구글뉴스:대학 정원 감축",
+      "수신": 6,
       "신규": 4,
       "상태": "ok"
     },
     {
-      "feed": "구글뉴스:글로컬대학",
-      "수신": 16,
-      "신규": 15,
-      "상태": "ok"
-    },
-    {
-      "feed": "구글뉴스:RISE 지역혁신중심 대학지원",
-      "수신": 5,
-      "신규": 5,
-      "상태": "ok"
-    },
-    {
-      "feed": "구글뉴스:대학 정원 감축",
-      "수신": 3,
-      "신규": 1,
-      "상태": "ok"
-    },
-    {
       "feed": "구글뉴스:대학 등록금",
-      "수신": 10,
-      "신규": 8,
+      "수신": 23,
+      "신규": 21,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 생성형 AI",
-      "수신": 20,
-      "신규": 19,
+      "수신": 51,
+      "신규": 50,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 구조개혁",
-      "수신": 0,
-      "신규": 0,
+      "수신": 4,
+      "신규": 3,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:부산대학교",
-      "수신": 17,
-      "신규": 17,
+      "수신": 45,
+      "신규": 39,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 행정 AI",
-      "수신": 10,
-      "신규": 10,
+      "수신": 34,
+      "신규": 33,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 학사행정 시스템",
       "수신": 4,
-      "신규": 0,
+      "신규": 1,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:공공부문 생성형 AI",
-      "수신": 6,
-      "신규": 5,
-      "상태": "ok"
-    },
-    {
-      "feed": "구글뉴스:공공기관 AI 행정혁신",
-      "수신": 7,
-      "신규": 6,
-      "상태": "ok"
-    },
-    {
-      "feed": "구글뉴스:생성형 AI 업무 도입",
-      "수신": 19,
-      "신규": 17,
-      "상태": "ok"
-    },
-    {
-      "feed": "해외:higher education policy reform",
-      "수신": 59,
-      "신규": 59,
-      "상태": "ok"
-    },
-    {
-      "feed": "해외:university funding cuts government",
-      "수신": 49,
-      "신규": 45,
-      "상태": "ok"
-    },
-    {
-      "feed": "해외:national university merger",
-      "수신": 11,
-      "신규": 11,
-      "상태": "ok"
-    },
-    {
-      "feed": "해외:university tuition free policy",
-      "수신": 21,
+      "수신": 20,
       "신규": 19,
       "상태": "ok"
     },
     {
+      "feed": "구글뉴스:공공기관 AI 행정혁신",
+      "수신": 34,
+      "신규": 32,
+      "상태": "ok"
+    },
+    {
+      "feed": "구글뉴스:생성형 AI 업무 도입",
+      "수신": 42,
+      "신규": 36,
+      "상태": "ok"
+    },
+    {
+      "feed": "해외:higher education policy reform",
+      "수신": 40,
+      "신규": 40,
+      "상태": "ok"
+    },
+    {
+      "feed": "해외:university funding cuts government",
+      "수신": 60,
+      "신규": 58,
+      "상태": "ok"
+    },
+    {
+      "feed": "해외:national university merger",
+      "수신": 17,
+      "신규": 16,
+      "상태": "ok"
+    },
+    {
+      "feed": "해외:university tuition free policy",
+      "수신": 40,
+      "신규": 34,
+      "상태": "ok"
+    },
+    {
       "feed": "해외:generative AI university policy",
-      "수신": 32,
-      "신규": 31,
+      "수신": 47,
+      "신규": 46,
       "상태": "ok"
     },
     {
       "feed": "해외:declining student enrollment university",
-      "수신": 45,
-      "신규": 42,
+      "수신": 44,
+      "신규": 43,
       "상태": "ok"
     },
     {
       "feed": "해외:regional university revitalization",
-      "수신": 4,
-      "신규": 4,
+      "수신": 6,
+      "신규": 6,
       "상태": "ok"
     },
     {
       "feed": "해외:university world rankings policy",
-      "수신": 11,
-      "신규": 8,
+      "수신": 29,
+      "신규": 26,
       "상태": "ok"
     },
     {
       "feed": "한국대학신문",
       "수신": 50,
-      "신규": 0,
+      "신규": 17,
       "상태": "ok"
     },
     {
       "feed": "교수신문",
       "수신": 50,
-      "신규": 1,
+      "신규": 36,
       "상태": "ok"
     },
     {
       "feed": "베리타스알파",
       "수신": 50,
-      "신규": 0,
+      "신규": 50,
       "상태": "ok"
     },
     {
@@ -191,6 +191,36 @@
     }
   ],
   "items": [
+    {
+      "title": "삼다수 재생에너지·AI 여행계획… 제주 17개 공공기관 혁신 상시점검",
+      "media": "v.daum.net",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB0LXJ5Tkt1YlZJM3pEcDdhWk9wR1QzbnEzVkRkRGVieVVpTllZQ2RUdG8zNTAwQmpMa2RxVTE4UDBOTEUyRDI1ZVFJN1ctM28?oc=5",
+      "region": "domestic",
+      "date": "2026-09-26",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiT0FVX3lxTFB0LXJ5Tkt1YlZJM3pEcDdhWk9wR1QzbnEzVkRkRGVieVVpTllZQ2RUdG8zNTAwQmpMa2RxVTE4UDBOTEUyRDI1ZVFJN1ctM28?oc=5\" target=\"_blank\">삼다수 재생에너지·AI 여행계획… 제",
+      "feeds": [
+        "구글뉴스:공공기관 AI 행정혁신"
+      ]
+    },
+    {
+      "title": "노년 생활, 마지막 박자까지 내 리듬으로 살 수 있을까",
+      "media": "교수신문",
+      "link": "https://www.kyosu.net/news/articleView.html?idxno=210589",
+      "region": "domestic",
+      "date": "2026-09-26",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[책으로 보는 세상_『나는 내 집에서 죽을 수 있을까』]",
+      "feeds": [
+        "교수신문"
+      ]
+    },
     {
       "region": "domestic",
       "title": "순천시, 그린바이오 생태계 구축 ‘가속도’",
@@ -2154,10 +2184,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "[기획] 거점국립대 통합 연쇄 좌초…벼랑 끝 내몰린 충청권 대학가 패닉",
       "media": "아주경제",
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9yYzVTb1Z3WlpVdl9GemxSZzFYUjVMQlhTU2VnRVpuelk5VnJsbTFIMHFPVnU0a3c2UGZmLWcwdHNRSjAwWUE0ZlA5NW5oX3NZdFdOYWJLV0QxQdIBWEFVX3lxTFAzOVowUUhQdWU0bllDcEhGamlyODJHSkVKNmRKUjZFSWZsNzNNRmV4dGYyOTAtYjFhakF0SVhRcG9obVZKTE54eEJCV3lpYTVWajBnSDNsV0I?oc=5",
-      "region": "domestic",
       "date": "2026-09-25",
       "field": "정책/철학",
       "group": "교육",
@@ -2173,10 +2203,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "학생 대출 프로그램 개혁:",
       "media": "Vietnam.vn",
       "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5QS1RnaGt4YWpITk5KellnYVYxX2ZuOWJWbkhxWjdBa0hkdlJIcUtnd3FmMmRPSkNtWHlkanRrb0lkVmtZOUh3em1GWXNURjRSRHhkQXRrQUFhaXFna2hvaVFWWnJCVG13YmpkcnZn?oc=5",
-      "region": "domestic",
       "date": "2026-09-25",
       "field": "증강인재교육",
       "group": "교육",
@@ -2188,10 +2218,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "\"차라리 내 사업할래\"…'996·구직난' 지친 중국 Z세대 1인 창업 열풍 - 머니투데이",
       "media": "mt.co.kr",
       "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBuVXBpZUZ3bjZNSTZ0bTZ6QlA4SnR2RDVFR0xYbUN2RFJVTkZMZ0owSTIxbVZ4YUs1amlScVJNM2JSSEdDek5zWWE1YjdwS1V2M3FMM2xxbk1ZZ1Vpdnh4YlN1S29jTl9TVFZ5ODl2b9IBb0FVX3lxTFBuVXBpZUZ3bjZNSTZ0bTZ6QlA4SnR2RDVFR0xYbUN2RFJVTkZMZ0owSTIxbVZ4YUs1amlScVJNM2JSSEdDek5zWWE1YjdwS1V2M3FMM2xxbk1ZZ1Vpdnh4YlN1S29jTl9TVFZ5ODl2bw?oc=5",
-      "region": "domestic",
       "date": "2026-09-25",
       "field": "융합연구",
       "group": "교육",
@@ -2203,10 +2233,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Oberlin Ranked 194th out of 216 for Free Speech on College Campuses Nationwide",
       "media": "The Oberlin Review",
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNODBoQVA5U1lpLVB0andKdXFBcmZJSFdKNzc4eEVkdFhXMlltWTdpSXdHTzRxLWVDWDVHR2tkTUw3dGwxNTFwTjduVXpYRTV6c1k1SDFNb2VWQUFWc2pEODZ2U2ViWFJfMkJwM08wQzBfTTRGdU14OGI0MEhtUGQwWkF0Y05SdHFvOVJjM3RyLXJwS3pfbzh1T3ZnQUlwSzlDQWw2enBDRHZReTI5SkYtZGtSaU40YzA?oc=5",
-      "region": "overseas",
       "date": "2026-09-25",
       "field": "기타",
       "group": "기타",
@@ -2218,10 +2248,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Federal judge blocks UC from enforcing portions of pronoun policy",
       "media": "Campus Reform",
       "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPLVZ0UkQ1ZV9wRWpfdjIza3ZZMENnUlM2UDEtaVlGNEpnTXhfRnNjSjNIeVNPczhqb2l5M25DT3A3aC12amVNVlZ4YjE3eHk1N0NYQW44TlB4M2o2ZUZYVWZXcUJIaVRYazYzcDB6RVR0eEgyV1prSjdpa255RTU0M19GUWVzLThSeEo4RWlDREhrVDVuRTRST0hrb09WakRuV2c?oc=5",
-      "region": "overseas",
       "date": "2026-09-25",
       "field": "정책/철학",
       "group": "교육",
@@ -2233,10 +2263,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "From High School to Life After School: Supporting Communication, Problem Solving, and Self-Advocacy in Autistic Students",
       "media": "Autism Spectrum News",
       "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQWU9JR0NMU1NVTmZYNTd3UUpIUkpkRlJBMllQZ2NxcFBFZzFMLU5uaHo3U09WbTNjdDNXOXBsSHU2UWlFSXdwRVFoZ2ZETjhGTXNmV1hhcF9VVmdrRGFEako5YlFYcENzVkpyYWItZjhTUGt3bnF3bGtJeHNZQUh6TG5sYjhtZXdnblg1Y3NUdHlRQndpNWo3X0JrZzZUbDBaS2dlSi1BaWt6bzJoTHB1QlR0UmZBMnBiZ09FTWY5Z3Q3N0pPRllYSVdzWW1sZ1ZZTEVzdXVpWl9ubElKUlRyQlkwNA?oc=5",
-      "region": "overseas",
       "date": "2026-09-25",
       "field": "증강인재교육",
       "group": "교육",
@@ -2248,10 +2278,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "‘We’ve simplified it’: Education Department rolls out FAFSA form earlier than ever before",
       "media": "weisradio.com",
       "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNZkVDNlhGSnNqZWZLakVIcXhUbm9jbm9TWUNiS2xKd1NSbXNLd1g5algtd21OdUVYLXByTkpJUWstcmw2MllfRi1lZ3FJdTI5U0UyOGo0cE9Na041UTFRZVI5WXNNY0FKMlo3N1VrTTBYc3V4RVllSkdfd2ZqekFZTGdpOWNxbGt0X3hIOTY3M2liRXFHclhIX1lzMkZ4QjdKQmpJWUN5YXhackMtVGR5ZkQ3TldRVDc1ZUpj?oc=5",
-      "region": "overseas",
       "date": "2026-09-25",
       "field": "기타",
       "group": "기타",
@@ -2263,10 +2293,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Trump administration guts data collection on US education as math and reading scores plummet",
       "media": "The Guardian",
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOQXIxZzl2UU1SRjRWUkpQX3lwWVZMSWpkMGJfcTdlUFZaQ2JJMFZYZ3F5VURpV2tuTVk2M1J6THlsOGliUlBWNjB1QWpEeEVmdW02aE9PeHJrRXFCLTBDV05WbndQWVF5bzZPOTMxMkEwcDlJZkhOU0cxdHhnczA2ZnFzWVk3THZwVEF5cDNFRFhoOThnLVFuSWFrMA?oc=5",
-      "region": "overseas",
       "date": "2026-09-25",
       "field": "적응형행정",
       "group": "산업",
@@ -2279,10 +2309,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Week in Review: September 25, 2026",
       "media": "cdcr.ca.gov",
       "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPMmY0UDgxSmtRd1NxMERiZWFDRFROTnhhR0JMdzkxNmFCMTFTeFBkdllZUzdzbWl1WHdOdUlXcGhJLTVRakppRlJGcGFDa1BrQ0NwNjZtRkVlaUh6RHk1OWlZV3dMVWY2bEhJX1V3WGdubU9MNk1PZzRYVUFkSFJnT1cxdWRjUQ?oc=5",
-      "region": "overseas",
       "date": "2026-09-25",
       "field": "기타",
       "group": "기타",
@@ -2294,10 +2324,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Spajić: The Euro model is sustainable, Vuković is familiar with it, many are not voting for the Government because they don't see the message in time",
       "media": "vijesti.me",
       "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOc2tEWlVrNmJRMWpXQkE2RFRpakVtcWVTMjVTMlFoaDN6TTB6M2VXT3cxNWE3bGdNUnFNUW9rNERVLTAzbHowanJuLTJmLU5KbVBMQnBVM0x4b05hWFN3VWdiTVl3S2h4MHgxQ1RNSURvNWp2M0tFcnNEVkM5VEV1UDduMWRPT1QyVlFqMmg0NFNPRzV5SV9xWE1SZ2h0elI3UExCUUlDLU9SVVBTcmw2dU9YY1NOcVNEaTRHeC1JbzdkNktHQ0w5aG5wc0lJVHEtb21j0gHTAUFVX3lxTE5za0RaVWs2YlExaldCQTZEVGlqRW1xZVMyNVMyUWhoM3pNMHozZVdPdzE1YTdsZ01ScU1Rb2s0RFUtMDNsejBqcm4tMmYtTkptUExCcFUzTHhvTmFYU3dVZ2JNWXdLaHgweDFDVE1JRG81anYzS0Vyc0RWQzlURXVQN24xZE9PVDJWUWoyaDQ0U09HNXlJX3FYTVJnaHR6UjdQTEJRSUMtT1JVUFNybDZ1T1hjU05xU0RpNEd4LUlvN2Q2S0dDTDlobnBzSUlUcS1vbWM?oc=5",
-      "region": "overseas",
       "date": "2026-09-25",
       "field": "정책/철학",
       "group": "교육",
@@ -2309,10 +2339,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Alders Advance Proposal Urging Yale To Reject Potential Trump Deal",
       "media": "New Haven Independent",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMnlmUVhfOTB0QVI2aThrSG4zRkM0TllmNFdoZ2F6VXY5UnhpS0VKRWlrbTNPbk1DdWJaOWdNN0dfY1U5MDR2V0xxalh3SHBtTDQ0aFY0QjFqcWliYkVyOEs2ZWo4Uk4xVWpEV1VIT0hJQTVtR253WUVDQ2xXRzR3Y0NmT2dCQUpFNG5OOXRrN3hwbFo1YkM2bFBaU2s1UDY0OFNhWHNIMFVSc1FVYlkyWm1GSV8?oc=5",
-      "region": "overseas",
       "date": "2026-09-25",
       "field": "기타",
       "group": "기타",
@@ -2324,10 +2354,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "NMU Keeping Greco Till (At Least) Spring 2028",
       "media": "fivepointmove.com",
       "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPU1ItSmtzYmx6SUhxSWpZQ2piZWJLSmsxejFQNDNqOEFNbGxkTTdfMGl5aFhPaWdfTXpIX21nb0tpX1F6bUlVX0VQaFZWX2tIa24tQVBKa1J4dmtGWWFqU3EwSEMtSWVPTWRyZ1hWTDBnTi1sNmlmR2I5VEhtc3NmRDlGNF9XcGs?oc=5",
-      "region": "overseas",
       "date": "2026-09-25",
       "field": "기타",
       "group": "기타",
@@ -2339,10 +2369,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Breaking down the federal investigations into Duke",
       "media": "The Duke Chronicle",
       "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxNSlNuWERvUVY3azB3WmxEZFl4QmE3bXR4ODNqTkc1bndmSzRSRkdkWVRPTTRiZ1B1dHZTMVVMUnJSdHBnUV9kOUdNSEZkbGpnMURlSDNKcE9uNFowZWFXejYwdE5FTTk4Mm43R0ZWbFBFa2JEOTI1ci1jY2RvekNtV09iQ3o3NnpsU09EV1o5RndoRFUtQlF6cFNyakpGQVR2T2dxWjBMZ0pQVm5UVkNqd1pCYkpQZXNjdXRSUHhYSkFWelpFTVlSVnFHRTVLeVBiTVd4Ykt5UDNMRnRpUGlZYmtlUXpkTDYyWUQ2bFFEV1JHUmtPNEE?oc=5",
-      "region": "overseas",
       "date": "2026-09-25",
       "field": "기타",
       "group": "기타",
@@ -2354,7 +2384,311 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Faculty and students critical of $225 million in cuts at University of Minnesota",
+      "media": "Star Tribune",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE53VkZYUWx3WklQVEZSb2Y4azdsbUdZMFNUNjN4enoyaWtxcVJIQk5sMnRrSTBDMDBaVmE0WnRHbDlVV0RPTmd2dHNkZmdQNzI3QWNNSVNZRTlmLUw3c0V6NzYxcUNuQms?oc=5",
+      "date": "2026-09-25",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "warning",
+      "why": "cuts",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE53VkZYUWx3WklQVEZSb2Y4azdsbUdZMFNUNjN4enoyaWtxcVJIQk5sMnRrSTBDMDBaVmE0WnRHbDlVV0RPTmd2dHNkZmdQNzI3QWNNSVNZRTlmLUw3c0V6NzYxcUNuQms?oc=5\" targ",
+      "feeds": [
+        "해외:university funding cuts government"
+      ]
+    },
+    {
+      "region": "overseas",
+      "title": "Emergency school funding endorsed by Gov. Lombardo",
+      "media": "Las Vegas Review-Journal",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPUl9UNUtNVnBQZW9VREJBNGVxSW43eTA5dzJ1UXdCWmlCUlE5ZV9ic1RGbFNtMU0xTVdhSHVEZWJjWWJCYWRZVnBOZkFkejVETGhjVjVlWVlHZ0VoUElodFNnNTQwaVNxU1BZUjFzdGwxRGs4UWVMN0Q3dW9ldDZGalRuX2N4QUtISmtUd2tKT0dpWUpzdjQyMkhBUXI3cDhUZ1ZyQTdYVQ?oc=5",
+      "date": "2026-09-25",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxPUl9UNUtNVnBQZW9VREJBNGVxSW43eTA5dzJ1UXdCWmlCUlE5ZV9ic1RGbFNtMU0xTVdhSHVEZWJjWWJCYWRZVnBOZkFkejVETGhjVjVlWVlHZ0VoUElodFNnNTQwaVNxU1BZUjFzdG",
+      "feeds": [
+        "해외:university funding cuts government"
+      ]
+    },
+    {
+      "region": "overseas",
+      "title": "Vicapsys Life Sciences Announces Advisory Board Following Completion of Stateline Merger",
+      "media": "joplinglobe.com",
+      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQM2otb1VnN2dxcnhBQnFkS1huQlhITDJwSXp5RTFzR2F2OUdlOFZnVmMtc1JEd3BWaktMMExRTkRkbk41VHo1eVRyUGo4RFBjZlpDNDdfd003UzZUbnpILTIzb2ZEYnNwN2liSjkwUHdHWkt5RlpEcl93YzFMM053NHp2R1p3dGtsMm9xaVJjODUyWFh4M1JHV0ZHdGVial9VSUE4UmRjSVM5QUx1SG1jZGg0NjBFQVpoc3dYMzBGTVNKd2lhem1KWVN2VEVXX2VSVVRVcWxZdUpoY0sxQTRjX3FyajdhVE9WRDg3bDlPRWljX1VpaTNiNk01ZGcwNU5wejNB?oc=5",
+      "date": "2026-09-25",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMigwJBVV95cUxQM2otb1VnN2dxcnhBQnFkS1huQlhITDJwSXp5RTFzR2F2OUdlOFZnVmMtc1JEd3BWaktMMExRTkRkbk41VHo1eVRyUGo4RFBjZlpDNDdfd003UzZUbnpILTIzb2ZEYnNwN2liSjkwUH",
+      "feeds": [
+        "해외:national university merger"
+      ]
+    },
+    {
+      "region": "overseas",
+      "title": "Maneen R.G. Riley",
+      "media": "Hot Springs Sentinel Record",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9JMklnQWxhSTJIdnY0VGc4Vjc0Qnh6eVVOV3AydkFHal9KcTE5NlI4RUJOME5OVGVCNGkxalFfMXZRZ0otbUNKNlNxb2pnelVrSWw3elU2YkR1ZW5BNFdxVU15TU5hZw?oc=5",
+      "date": "2026-09-25",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZkFVX3lxTE9JMklnQWxhSTJIdnY0VGc4Vjc0Qnh6eVVOV3AydkFHal9KcTE5NlI4RUJOME5OVGVCNGkxalFfMXZRZ0otbUNKNlNxb2pnelVrSWw3elU2YkR1ZW5BNFdxVU15TU5hZw?oc=5\" targe",
+      "feeds": [
+        "해외:national university merger"
+      ]
+    },
+    {
+      "region": "overseas",
+      "title": "Has SNP promise turned Scots students into 'third-class citizens'?",
+      "media": "Daily Mail",
+      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOcEJPUWswQm5NNUE0aGY1RDdvVjd4eWVWYmJkNkNNeDZ4SXpPX0Q2ODNOUnNXc19vbTd0ODBfaHF0ZnlxUE5OZ3AzQU1iSmRuWHVNX0NiM1lKMXZKalNlM0tsZFVhdHd1WGI2ZnZNVVBwSHcwb18wX1hUYnJTV3ZfU1hZdFhRM0xBUXZaUVhELTQ2bkhDRVlHWWdkcXl4RjJOOFFHR3lsR0xRZDBOeUwwSXpJbGozTWwxSGdoUWx4WkRCc0N5dFhTbFNfdExXQUFVZmY4?oc=5",
+      "date": "2026-09-25",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxOcEJPUWswQm5NNUE0aGY1RDdvVjd4eWVWYmJkNkNNeDZ4SXpPX0Q2ODNOUnNXc19vbTd0ODBfaHF0ZnlxUE5OZ3AzQU1iSmRuWHVNX0NiM1lKMXZKalNlM0tsZFVhdHd1WGI2ZnZNVV",
+      "feeds": [
+        "해외:university tuition free policy"
+      ]
+    },
+    {
+      "region": "overseas",
+      "title": "Texas Colleges Can Lower Your Tuition After 55 — If You Ask",
+      "media": "Low Income Relief",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1kaGF4SV9YSEpQSmNQdHRJY29ET1kwRng2M2N6UWZoTW1WOENldFUxOWdPeUxxNm8tZ0ZQV2NOM1VlZXRqSjdYS3lnMU8wYVlra0ltd05mdklTOHI2X25KZW1TVUtiQmx4Mkx1bkRKWDhfRGJPVWc?oc=5",
+      "date": "2026-09-25",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE1kaGF4SV9YSEpQSmNQdHRJY29ET1kwRng2M2N6UWZoTW1WOENldFUxOWdPeUxxNm8tZ0ZQV2NOM1VlZXRqSjdYS3lnMU8wYVlra0ltd05mdklTOHI2X25KZW1TVUtiQmx4Mkx1bkRKWD",
+      "feeds": [
+        "해외:university tuition free policy"
+      ]
+    },
+    {
+      "region": "overseas",
+      "title": "Canada's literary awards say publishers are in best position to sniff out AI",
+      "media": "CTV News",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNckJzRHhYZlZOc3FPcUZXZHM2blZ4Tk5fRm1NMy1WdF9KbElMY0h6WldVZXh3TXV4TF9wWWU5cjJrNlU3SHFBYVBlcnJTTTVVYzV4R1lvMW1aSW5TLXdybUo5cVNlczZzR3ppNGFfSjE1cWpXYnJXdFVZZVYtWk52c2NxdEhCM0hFQjcxTU5DVUgtdzJTWlRlejRZVmdOT1FPMXp3RWpPeDdsSUo3VUxQM1NOYWR1cmFzWFcxbjln?oc=5",
+      "date": "2026-09-25",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNckJzRHhYZlZOc3FPcUZXZHM2blZ4Tk5fRm1NMy1WdF9KbElMY0h6WldVZXh3TXV4TF9wWWU5cjJrNlU3SHFBYVBlcnJTTTVVYzV4R1lvMW1aSW5TLXdybUo5cVNlczZzR3ppNGFfSj",
+      "feeds": [
+        "해외:generative AI university policy"
+      ]
+    },
+    {
+      "region": "overseas",
+      "title": "Stanford University Under Fire for Altering Identity of Students in Photo With AI",
+      "media": "legalinsurrection.com",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcTN4WlNxdFpzNnlndXBJRUloTDFNQlFIVjV2NTlDLWNiZTBucjBLY1RzQ29kdE1xN2dxRUJ3R2tRTnd4YXZJQ1kyaTl2ajBfRERsSXlld3RSWEh1Q3NTZmV0akFDakpRajlPbmRWTGd5MEM2dXJkMlVaSFJzZ3Y1WWcyNm9IRGx1MEZVajhNMmxINWM0bjJJUlZqbkNUWEdZX2trMkYxUXlucGJkMlVPYk84NFAtalVjNTFkYkh6U2p0d9IBwgFBVV95cUxOcTN4WlNxdFpzNnlndXBJRUloTDFNQlFIVjV2NTlDLWNiZTBucjBLY1RzQ29kdE1xN2dxRUJ3R2tRTnd4YXZJQ1kyaTl2ajBfRERsSXlld3RSWEh1Q3NTZmV0akFDakpRajlPbmRWTGd5MEM2dXJkMlVaSFJzZ3Y1WWcyNm9IRGx1MEZVajhNMmxINWM0bjJJUlZqbkNUWEdZX2trMkYxUXlucGJkMlVPYk84NFAtalVjNTFkYkh6U2p0dw?oc=5",
+      "date": "2026-09-25",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcTN4WlNxdFpzNnlndXBJRUloTDFNQlFIVjV2NTlDLWNiZTBucjBLY1RzQ29kdE1xN2dxRUJ3R2tRTnd4YXZJQ1kyaTl2ajBfRERsSXlld3RSWEh1Q3NTZmV0akFDakpRajlPbmRWTG",
+      "feeds": [
+        "해외:generative AI university policy"
+      ]
+    },
+    {
+      "region": "overseas",
+      "title": "CMU fall enrollment dips: 'We've lost about 1,000 international students in two years'",
+      "media": "WCMU Public Media",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOanFYbDlTdmlYWTJ2S21KSm1YS1Nmb2pvQUN6TnBHV2VFcHE3TkRTbUpCSEsydGtrbWstT1FsMmI4MXZTVFRGVnhjcUNfT01PVjZhcHM1MkZ3VERjTWRKY2xOYjBydWdEYTQtTVFuYlQ3WklTMWVVdnFWeklLdl94UGFtMHd4RU1LakE1T3g4NHVRdTM5Y2xwTnRlMFptS3hsXzJTYm9KUEw0NXFoWVJ0dFVZYmNTY1hCOUFIaURieEpHY2MtYmZPX0VhX2pJVnpvbkJXaXVySUpncW00?oc=5",
+      "date": "2026-09-25",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxOanFYbDlTdmlYWTJ2S21KSm1YS1Nmb2pvQUN6TnBHV2VFcHE3TkRTbUpCSEsydGtrbWstT1FsMmI4MXZTVFRGVnhjcUNfT01PVjZhcHM1MkZ3VERjTWRKY2xOYjBydWdEYTQtTVFuYl",
+      "feeds": [
+        "해외:declining student enrollment university"
+      ]
+    },
+    {
+      "region": "overseas",
+      "title": "Amid national 'enrollment cliff,' JMU numbers continue surge",
+      "media": "dnronline.com",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQUlVNRWMxT2NFMTNsaFMwV2dQR2RkSDluTGg2UERuZlBqcnp3Xy1iVWFtbFZXR3RHQmhwYXpNU0d6ZTJ2S2FLbzdnamw4UEUtZ094cG0yOGZrRDFRSF9pTkJGbDA0RS02NnpxRXlaYmt3dVhRdlZQN0F5OGU5akFENVRPTXRUaEJzTThsNEx4QkhzekhtdFJISjFjVXNjbTVNaGdPOFNPWDlqeHNpMWxPOXBIMFhJNlZmLUxCZHprSGQ4bVlnVHJMWnJxZjhZdFdEa2J4VkZieHZ6dHFCaTJaV2pB?oc=5",
+      "date": "2026-09-25",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxQUlVNRWMxT2NFMTNsaFMwV2dQR2RkSDluTGg2UERuZlBqcnp3Xy1iVWFtbFZXR3RHQmhwYXpNU0d6ZTJ2S2FLbzdnamw4UEUtZ094cG0yOGZrRDFRSF9pTkJGbDA0RS02NnpxRXlaYm",
+      "feeds": [
+        "해외:declining student enrollment university"
+      ]
+    },
+    {
+      "region": "overseas",
+      "title": "UW enrollment continues to fall",
+      "media": "The Laramie Reporter",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5vUTU1Y1ZCNXhIRjZhVG1WRHBuS2hQeDRseFdRdlhNeGlkTDh2THlKdTJJUGJJQ3hDZFFDVXp2Tm02STBLVExaLWRtMllBN0UxX1ZSdUYzU2JpWXRac2NFYWc0TGg2NGp5dHVzenQ4NGdhMFN2bTVuNDln?oc=5",
+      "date": "2026-09-25",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE5vUTU1Y1ZCNXhIRjZhVG1WRHBuS2hQeDRseFdRdlhNeGlkTDh2THlKdTJJUGJJQ3hDZFFDVXp2Tm02STBLVExaLWRtMllBN0UxX1ZSdUYzU2JpWXRac2NFYWc0TGg2NGp5dHVzenQ4NG",
+      "feeds": [
+        "해외:declining student enrollment university"
+      ]
+    },
+    {
+      "region": "overseas",
+      "title": "Lombardo endorses emergency regulation for schools facing declining enrollments| 8 News Now",
+      "media": "KOLO | 8 News Now",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWGRNSGdKbHFmSzdOeU5YOTVwUkFvUVhKaDJ4dHo5SWVwNUQ4UE5IbU8yUDJGejRsMjVMejNoRWN6aE45OV9KQmFUN1J2eENxaGRzT1Y2N2V4d2xVaVMyVE0yTFhxakFOTVBBbDlEVFFWc0V0ZmIzM3Qzb21ndzd6MS1iMTFBUk1iVUtSRmNlRG9SdS1fYS1GQ0RLRmxrNXhBcm9kZFdvMjJkRTUzRU04?oc=5",
+      "date": "2026-09-25",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQWGRNSGdKbHFmSzdOeU5YOTVwUkFvUVhKaDJ4dHo5SWVwNUQ4UE5IbU8yUDJGejRsMjVMejNoRWN6aE45OV9KQmFUN1J2eENxaGRzT1Y2N2V4d2xVaVMyVE0yTFhxakFOTVBBbDlEVF",
+      "feeds": [
+        "해외:declining student enrollment university"
+      ]
+    },
+    {
+      "title": "진통 겪는 충남대·공주대, 통합신청서 제출할까?",
+      "media": "edaily.co.kr",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPSVFMVTRRNEdMSkRpanEtYUhfNVdkWm9rYUtJdmo2LTVKODhIZnBBRlpCdEFFdGo4b3B5RkhsTjI3eF9BSEx2TkY2TVB3eHhWbk8xMUYtSWJFbGpaVnFtZnlBMmtDT1l3S1pScTRSZFlncUIzUkZ2N2hJSnB6ekgtSQ?oc=5",
+      "region": "domestic",
+      "date": "2026-09-25",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [
+        "충남대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxPSVFMVTRRNEdMSkRpanEtYUhfNVdkWm9rYUtJdmo2LTVKODhIZnBBRlpCdEFFdGo4b3B5RkhsTjI3eF9BSEx2TkY2TVB3eHhWbk8xMUYtSWJFbGpaVnFtZnlBMmtDT1l3S1pScTRSZF",
+      "feeds": [
+        "구글뉴스:글로컬대학"
+      ]
+    },
+    {
+      "title": "토토 707벳 잭팟 기능 유무와 적용 조건",
+      "media": "Calgary Roughnecks",
+      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNQXF1TUNJcmx6M2dIRWllNE01Mi1fVnFfc3FOc3RRRW1ZZDcwOTVFVmtJTTQwQjlFSHNtZWs3eFp0TzVpWE9Xd0stSGhaMjR6bEx3Mm9WUTR3d3dqblhsRkphbXZnOTJBS1RkTG8zTGFQY0VrNW5ZME5FSHZ5YlN1czFWTktWZ1F6YWNvczU1M2dOZFlHLUVPQ2RUTzBWZkJfbUhqd2lvaUtkUzYxQzBVZ3FhcV9STFFBM1JkcFk4S0p3NXVvQ3dFaVNHdi1Lb19RRklZ?oc=5",
+      "region": "domestic",
+      "date": "2026-09-25",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxNQXF1TUNJcmx6M2dIRWllNE01Mi1fVnFfc3FOc3RRRW1ZZDcwOTVFVmtJTTQwQjlFSHNtZWs3eFp0TzVpWE9Xd0stSGhaMjR6bEx3Mm9WUTR3d3dqblhsRkphbXZnOTJBS1RkTG8zTG",
+      "feeds": [
+        "구글뉴스:대학 등록금"
+      ]
+    },
+    {
+      "title": "새로 접한 게임을 이해하는 출발점, 두바이 카지노 호텔",
+      "media": "Calgary Roughnecks",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOYm5CbGI5dWpPU0huclg0SkVINlJhcERPWHI5dTZLdlFIemdyWF8yYzE0WWwyb2E4Zmp4RkZ2ekgyRUlVU3ZPS3d3RlhZejV4QTdoeDZNUm9JdjAzVloyRUhuNHM2eWIzcnE5Yy1MMk9QOTJnd0NSMThGR195dHB3QlJnUQ?oc=5",
+      "region": "domestic",
+      "date": "2026-09-25",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOYm5CbGI5dWpPU0huclg0SkVINlJhcERPWHI5dTZLdlFIemdyWF8yYzE0WWwyb2E4Zmp4RkZ2ekgyRUlVU3ZPS3d3RlhZejV4QTdoeDZNUm9JdjAzVloyRUhuNHM2eWIzcnE5Yy1MMk",
+      "feeds": [
+        "구글뉴스:대학 생성형 AI"
+      ]
+    },
+    {
+      "title": "\"문서 작성부터 골목상권 분석까지\"…서울 자치구, AI 행정 속도",
+      "media": "v.daum.net",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFAxQ1IzeDgxa3h5QkpwVFgzX191b0NjT2swM2lHWkxla1lxQzA3U01oNThITmFTZlhJV1FPb2dnWW9HMng1bTltREFVYlZOYjQ?oc=5",
+      "region": "domestic",
+      "date": "2026-09-25",
+      "field": "적응형행정",
+      "group": "산업",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiT0FVX3lxTFAxQ1IzeDgxa3h5QkpwVFgzX191b0NjT2swM2lHWkxla1lxQzA3U01oNThITmFTZlhJV1FPb2dnWW9HMng1bTltREFVYlZOYjQ?oc=5\" target=\"_blank\">\"문서 작성부터 골목상권 분석까지\"…",
+      "feeds": [
+        "구글뉴스:대학 행정 AI",
+        "구글뉴스:생성형 AI 업무 도입"
+      ]
+    },
+    {
+      "title": "토토 울프 처음 열었을 때 확인할 안내 문구",
+      "media": "Calgary Roughnecks",
+      "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNRlJrUE1SYi1yTHZvNEZMWm1TbVpKZ2dDZU9sVE1xRktEZVV1NkY5dW8tb3Ytdm1aMHhCdWM3YzdVa3FSS2J0a3JLbWNRd1lmc1paMnlFYU9uX3lUd0tjVGpUWDdCcWwtQ3N2aXdyX2RBNk5tYWUzZkRoTE5DV1daQmIzczh4WV8wQjB6dFJSOGtERXVRNVlkbkNYeHVKeTZsOFV5M1ZEbG56alYtb002TTEyb2RmNC1CTlFnZHlCYUxfTXVlQnBQRllacmN1NnR0V2VVekdsRXlGOFp6b2lz?oc=5",
+      "region": "domestic",
+      "date": "2026-09-25",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3wFBVV95cUxNRlJrUE1SYi1yTHZvNEZMWm1TbVpKZ2dDZU9sVE1xRktEZVV1NkY5dW8tb3Ytdm1aMHhCdWM3YzdVa3FSS2J0a3JLbWNRd1lmc1paMnlFYU9uX3lUd0tjVGpUWDdCcWwtQ3N2aXdyX2",
+      "feeds": [
+        "구글뉴스:공공부문 생성형 AI"
+      ]
+    },
+    {
+      "title": "롤토토 오션 화면 하단 정보 영역 해설",
+      "media": "Calgary Roughnecks",
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0lWQjdpbGRpNVBOSktEbFFvWEl6V1ZMYWJnMHM4TV9zWV9OeWZVczhzUW1xYkZjOHdqRWpTbS1EdVhQOTByem1pR1V5Tlo2a09zNmtjSE1EbFBpVTkxNWtQb2o2TkJKTHdLa1p3eHc5azN3OGhoYXp5VlJ2WWIwV0RaT3otcVVGUFU0QjZ1T3hORUhneF9ZdElwRnhjZ3dGVGJJUkFjeFJTa0Jnd3cxOVhjX3BxWE4zT1JWaUln?oc=5",
+      "region": "domestic",
+      "date": "2026-09-25",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0lWQjdpbGRpNVBOSktEbFFvWEl6V1ZMYWJnMHM4TV9zWV9OeWZVczhzUW1xYkZjOHdqRWpTbS1EdVhQOTByem1pR1V5Tlo2a09zNmtjSE1EbFBpVTkxNWtQb2o2TkJKTHdLa1p3eH",
+      "feeds": [
+        "구글뉴스:생성형 AI 업무 도입"
+      ]
+    },
+    {
+      "title": "‘Inexplicable’: Australian student visa refusals at record high",
+      "media": "Times Higher Education",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPRjFjRjdaQVZsRWFFZENmWWp4T1ViQWVNMlI4MGotcndJYjBnRXZjTnh2Ymt5WDRiVlJBTFF3MVNsUUFNNGxqVS1OOUxtbDhqVC1ZbElKZjdCN0VJSDRHYTNEbHdzekpzTVFHSTZZSUFmTEN3Tl80UXg4emxWN2l4cFIxb3c2eE5TNXNHdUp0N1U2bDdjVGFCS0E4dkFJU1Zi?oc=5",
+      "region": "overseas",
+      "date": "2026-09-25",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPRjFjRjdaQVZsRWFFZENmWWp4T1ViQWVNMlI4MGotcndJYjBnRXZjTnh2Ymt5WDRiVlJBTFF3MVNsUUFNNGxqVS1OOUxtbDhqVC1ZbElKZjdCN0VJSDRHYTNEbHdzekpzTVFHSTZZSU",
+      "feeds": [
+        "해외:higher education policy reform"
+      ]
+    },
+    {
+      "title": "‘It’s a form of apocalypticism applied to science policy’",
+      "media": "American Enterprise Institute - AEI",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQczUyZWlVVDJUVkVacjQtck01ZFlleEZ1MDIwdHdTSG1YcWYwWDBSeS1XTGJwNTI1Vy1PR1pBbktXVWF5WmZyWjY2OFRITlo3QW9rY0EtVF9UT1MwRlBiaTY2ZjM0b19PSk5mbjdXNUljSTExZHhvcmd0NV8xMnpBc24xLTlpeVphZlBuZUo0TQ?oc=5",
+      "region": "overseas",
+      "date": "2026-09-25",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQczUyZWlVVDJUVkVacjQtck01ZFlleEZ1MDIwdHdTSG1YcWYwWDBSeS1XTGJwNTI1Vy1PR1pBbktXVWF5WmZyWjY2OFRITlo3QW9rY0EtVF9UT1MwRlBiaTY2ZjM0b19PSk5mbjdXNU",
+      "feeds": [
+        "해외:university funding cuts government"
+      ]
+    },
+    {
+      "title": "Faculty and students raise concerns about $225 million in cuts at University of Minnesota",
       "media": "Star Tribune",
       "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE53VkZYUWx3WklQVEZSb2Y4azdsbUdZMFNUNjN4enoyaWtxcVJIQk5sMnRrSTBDMDBaVmE0WnRHbDlVV0RPTmd2dHNkZmdQNzI3QWNNSVNZRTlmLUw3c0V6NzYxcUNuQms?oc=5",
       "region": "overseas",
@@ -2370,168 +2704,108 @@
       ]
     },
     {
-      "title": "Emergency school funding endorsed by Gov. Lombardo",
-      "media": "Las Vegas Review-Journal",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPUl9UNUtNVnBQZW9VREJBNGVxSW43eTA5dzJ1UXdCWmlCUlE5ZV9ic1RGbFNtMU0xTVdhSHVEZWJjWWJCYWRZVnBOZkFkejVETGhjVjVlWVlHZ0VoUElodFNnNTQwaVNxU1BZUjFzdGwxRGs4UWVMN0Q3dW9ldDZGalRuX2N4QUtISmtUd2tKT0dpWUpzdjQyMkhBUXI3cDhUZ1ZyQTdYVQ?oc=5",
+      "title": "Food and clothing are no joke for medical students.",
+      "media": "Vietnam.vn",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE8yZDJuZGtWajNaWXh3b2hjUjhjMnJGZER0aVR1YXU2eDIxWmFoRlJqUzVESW5Yb2laSzRDS2w5MDVCazB4ZWVod2l2R09Dd1NDZl94SFJPeHdqc0VUYlBYM1BxZnRseDlXckg3ZFRWVTktUQ?oc=5",
       "region": "overseas",
       "date": "2026-09-25",
-      "field": "정책/철학",
+      "field": "증강인재교육",
       "group": "교육",
       "level": "normal",
       "univ": [],
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxPUl9UNUtNVnBQZW9VREJBNGVxSW43eTA5dzJ1UXdCWmlCUlE5ZV9ic1RGbFNtMU0xTVdhSHVEZWJjWWJCYWRZVnBOZkFkejVETGhjVjVlWVlHZ0VoUElodFNnNTQwaVNxU1BZUjFzdG",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMickFVX3lxTE8yZDJuZGtWajNaWXh3b2hjUjhjMnJGZER0aVR1YXU2eDIxWmFoRlJqUzVESW5Yb2laSzRDS2w5MDVCazB4ZWVod2l2R09Dd1NDZl94SFJPeHdqc0VUYlBYM1BxZnRseDlXckg3ZFRWVT",
       "feeds": [
-        "해외:university funding cuts government"
+        "해외:university tuition free policy"
       ]
     },
     {
-      "title": "Vicapsys Life Sciences Announces Advisory Board Following Completion of Stateline Merger",
-      "media": "joplinglobe.com",
-      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQM2otb1VnN2dxcnhBQnFkS1huQlhITDJwSXp5RTFzR2F2OUdlOFZnVmMtc1JEd3BWaktMMExRTkRkbk41VHo1eVRyUGo4RFBjZlpDNDdfd003UzZUbnpILTIzb2ZEYnNwN2liSjkwUHdHWkt5RlpEcl93YzFMM053NHp2R1p3dGtsMm9xaVJjODUyWFh4M1JHV0ZHdGVial9VSUE4UmRjSVM5QUx1SG1jZGg0NjBFQVpoc3dYMzBGTVNKd2lhem1KWVN2VEVXX2VSVVRVcWxZdUpoY0sxQTRjX3FyajdhVE9WRDg3bDlPRWljX1VpaTNiNk01ZGcwNU5wejNB?oc=5",
+      "title": "Montville Township Public School District Celebrates Biliteracy Growth",
+      "media": "TAPinto",
+      "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdVhqRnpoYmpWSThiRkUybWo0MGFQd3NjUVFXMVBaRmlyQjhJV3Y0MG1GUzdkMmMxOGxhVDlkM2xJNjhBeWJmdTVYY21WM0lhTnQ5LU1hUFRyejlVWWlhcVctdlJLX3BqUzU0RHFESEZxdlJ0VVdLZExLbHFXbEhWQ0N6OExlT2tfV0tpUnYwSW5hZS01MzRMU1FXVXRPYUNpQXNyMjN0WFdMVHJiSHNYa3ByQlJRcC02OUNz?oc=5",
       "region": "overseas",
       "date": "2026-09-25",
-      "field": "정책/철학",
+      "field": "증강인재교육",
       "group": "교육",
       "level": "normal",
       "univ": [],
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMigwJBVV95cUxQM2otb1VnN2dxcnhBQnFkS1huQlhITDJwSXp5RTFzR2F2OUdlOFZnVmMtc1JEd3BWaktMMExRTkRkbk41VHo1eVRyUGo4RFBjZlpDNDdfd003UzZUbnpILTIzb2ZEYnNwN2liSjkwUH",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdVhqRnpoYmpWSThiRkUybWo0MGFQd3NjUVFXMVBaRmlyQjhJV3Y0MG1GUzdkMmMxOGxhVDlkM2xJNjhBeWJmdTVYY21WM0lhTnQ5LU1hUFRyejlVWWlhcVctdlJLX3BqUzU0RHFESE",
       "feeds": [
-        "해외:national university merger"
+        "해외:university tuition free policy"
       ]
     },
     {
-      "title": "Maneen R.G. Riley",
-      "media": "Hot Springs Sentinel Record",
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9JMklnQWxhSTJIdnY0VGc4Vjc0Qnh6eVVOV3AydkFHal9KcTE5NlI4RUJOME5OVGVCNGkxalFfMXZRZ0otbUNKNlNxb2pnelVrSWw3elU2YkR1ZW5BNFdxVU15TU5hZw?oc=5",
+      "title": "North Central College sets enrollment record for third straight year",
+      "media": "Daily Herald",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPU0xGZlVGZ1FnNWFpTGRrMFpscU9XMFhWcS1rQklrRjR2YVJnWXlxQm9BbmtuLTJPcUZaVW5kOXNHeFpReXVZVUZ1TXJaX0tlZTVvM2VLNkdkRnUzMXk2eFBkMzlkb2JYVGdUd2RieUFZZldWNkVKYzJLVGhfeVpReDI5Yjhad20wbkdkOWhNUGo1a203elBJMGY3bjNTbF8tLTVXeEgxc0NFZUdpRS1hSA?oc=5",
+      "region": "overseas",
+      "date": "2026-09-25",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPU0xGZlVGZ1FnNWFpTGRrMFpscU9XMFhWcS1rQklrRjR2YVJnWXlxQm9BbmtuLTJPcUZaVW5kOXNHeFpReXVZVUZ1TXJaX0tlZTVvM2VLNkdkRnUzMXk2eFBkMzlkb2JYVGdUd2RieU",
+      "feeds": [
+        "해외:declining student enrollment university"
+      ]
+    },
+    {
+      "title": "UpperClass bets on peer trust to reshape international student recruitment",
+      "media": "The Korea Times",
+      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxONXh5Vi1nczlXVmZUbTlUUVBTS1ZnZ0pDUVBYVWxZMHc2el9Oa2hxWk14UEVtVU0weHFuZUhYeXBwNVdFZjNWUmJFcHZmckJLM1hRR1FMSndkTTBwVEJjUWx4WlFCdnVSa1ZwY2g2QkVfaEtxRjJTWmVWNWdONjM1TGxGVHJ0NElqNnhrelpSMFhSM1QwU2lXajE0UkpxRGwtRWF5WldTNUdlSk5ZZlhEeHpwM3NjdERkcm4zZGVLdHVKRDhRa29oRzZuZ1ZQbkZ5Z3VQb0FKRnJfMWvSAdsBQVVfeXFMTjV4eVYtZ3M5V1ZmVG05VFFQU0tWZ2dKQ1FQWFVsWTB3NnpfTmtocVpNeFBFbVVNMHhxbmVIWHlwcDVXRWYzVlJiRXB2ZnJCSzNYUUdRTEp3ZE0wcFRCY1FseFpRQnZ1UmtWcGNoNkJFX2hLcUYyU1plVjVnTjYzNUxsRlRydDRJajZ4a3paUjBYUjNUMFNpV2oxNFJKcURsLUVheVpXUzVHZUpOWWZYRHh6cDNzY3REZHJuM2RlS3R1SkQ4UWtvaEc2bmdWUG5GeWd1UG9BSkZyXzFr?oc=5",
+      "region": "overseas",
+      "date": "2026-09-25",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2wFBVV95cUxONXh5Vi1nczlXVmZUbTlUUVBTS1ZnZ0pDUVBYVWxZMHc2el9Oa2hxWk14UEVtVU0weHFuZUhYeXBwNVdFZjNWUmJFcHZmckJLM1hRR1FMSndkTTBwVEJjUWx4WlFCdnVSa1ZwY2g2Qk",
+      "feeds": [
+        "해외:declining student enrollment university"
+      ]
+    },
+    {
+      "title": "PoliTO and UniTo among the world’s top fifteen universities for sustainability",
+      "media": "polito.it",
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNSXRrTWRjNGZjaER3b0JzS194QXhJQW1TX3dZcll4UGVWWFVRRDhJbzRTZ1dJM1FPdHBTWUg2VWo1ZDlvZlRwLXRCV29sc0syNEFaSTVyRFR2ZnZxRllxdGE1Smlnd1A1UklObUY2UllOQmhpd3dPeDgwam9NRG5QTnBIMDVFTF9mbkJpdGFScENxdEZELWVLODZlT3pjcEcxUFFZT2RuZWpJRENrNTNmdG8zaDFIQk1sSkNyTzNBdE92Y193SVhmMl9hVGI?oc=5",
       "region": "overseas",
       "date": "2026-09-25",
       "field": "기타",
       "group": "기타",
       "level": "normal",
       "univ": [],
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZkFVX3lxTE9JMklnQWxhSTJIdnY0VGc4Vjc0Qnh6eVVOV3AydkFHal9KcTE5NlI4RUJOME5OVGVCNGkxalFfMXZRZ0otbUNKNlNxb2pnelVrSWw3elU2YkR1ZW5BNFdxVU15TU5hZw?oc=5\" targe",
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNSXRrTWRjNGZjaER3b0JzS194QXhJQW1TX3dZcll4UGVWWFVRRDhJbzRTZ1dJM1FPdHBTWUg2VWo1ZDlvZlRwLXRCV29sc0syNEFaSTVyRFR2ZnZxRllxdGE1Smlnd1A1UklObUY2Ul",
       "feeds": [
-        "해외:national university merger"
+        "해외:university world rankings policy"
       ]
     },
     {
-      "title": "Has SNP promise turned Scots students into 'third-class citizens'?",
-      "media": "Daily Mail",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOcEJPUWswQm5NNUE0aGY1RDdvVjd4eWVWYmJkNkNNeDZ4SXpPX0Q2ODNOUnNXc19vbTd0ODBfaHF0ZnlxUE5OZ3AzQU1iSmRuWHVNX0NiM1lKMXZKalNlM0tsZFVhdHd1WGI2ZnZNVVBwSHcwb18wX1hUYnJTV3ZfU1hZdFhRM0xBUXZaUVhELTQ2bkhDRVlHWWdkcXl4RjJOOFFHR3lsR0xRZDBOeUwwSXpJbGozTWwxSGdoUWx4WkRCc0N5dFhTbFNfdExXQUFVZmY4?oc=5",
-      "region": "overseas",
+      "title": "한-멕시코, 대학원생 장학·학술교류 확대… 중남미 국가 최초",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=597914",
+      "region": "domestic",
       "date": "2026-09-25",
-      "field": "증강인재교육",
+      "field": "융합연구",
       "group": "교육",
       "level": "normal",
       "univ": [],
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxOcEJPUWswQm5NNUE0aGY1RDdvVjd4eWVWYmJkNkNNeDZ4SXpPX0Q2ODNOUnNXc19vbTd0ODBfaHF0ZnlxUE5OZ3AzQU1iSmRuWHVNX0NiM1lKMXZKalNlM0tsZFVhdHd1WGI2ZnZNVV",
+      "summary": "[한국대학신문 김소현 기자] 한국과 멕시코가 대학원생을 대상으로 한 장학·학술교류 프로그램 신설에 나선다. 중남미 국가와 정부 차원의 장학·교류 프로그램을 추진하는 것은 이번이 처음이다.교육부는 현지시간 24일 멕시코 멕시코시티에서 ‘대한민국 교육부와 멕시코합중국 외교부 간 대학원 교육을 위한 장학금 및 학술교류 프로그램 협력에 관한 양해각서’를 체결했다.",
       "feeds": [
-        "해외:university tuition free policy"
+        "한국대학신문"
       ]
     },
     {
-      "title": "Texas Colleges Can Lower Your Tuition After 55 — If You Ask",
-      "media": "Low Income Relief",
-      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1kaGF4SV9YSEpQSmNQdHRJY29ET1kwRng2M2N6UWZoTW1WOENldFUxOWdPeUxxNm8tZ0ZQV2NOM1VlZXRqSjdYS3lnMU8wYVlra0ltd05mdklTOHI2X25KZW1TVUtiQmx4Mkx1bkRKWDhfRGJPVWc?oc=5",
-      "region": "overseas",
+      "title": "박진희 육군3사관학교장 “대학서 추천받고 사관학교로… 내년 총장 추천제 도입”[파워인터뷰]",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=597837",
+      "region": "domestic",
       "date": "2026-09-25",
       "field": "정책/철학",
       "group": "교육",
       "level": "normal",
       "univ": [],
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE1kaGF4SV9YSEpQSmNQdHRJY29ET1kwRng2M2N6UWZoTW1WOENldFUxOWdPeUxxNm8tZ0ZQV2NOM1VlZXRqSjdYS3lnMU8wYVlra0ltd05mdklTOHI2X25KZW1TVUtiQmx4Mkx1bkRKWD",
+      "summary": "[한국대학신문 임연서 기자] 육군3사관학교는 지난 1968년 개교한 이후 약 16만 명의 정예장교를 배출한 특수목적 국립대학이다. 장교의 꿈을 가진 대학생들이 편입제도를 통해 입학할 수 있는 전 세계 유일의 편입학 사관학교이기도 하다. 육군3사관학교에는 전문대 졸업생과 일반대에서 2년 이상 학업을 이수한 다양한 전공·경험을 가진 인재들이 모인다.육군3사관학",
       "feeds": [
-        "해외:university tuition free policy"
-      ]
-    },
-    {
-      "title": "Canada's literary awards say publishers are in best position to sniff out AI",
-      "media": "CTV News",
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNckJzRHhYZlZOc3FPcUZXZHM2blZ4Tk5fRm1NMy1WdF9KbElMY0h6WldVZXh3TXV4TF9wWWU5cjJrNlU3SHFBYVBlcnJTTTVVYzV4R1lvMW1aSW5TLXdybUo5cVNlczZzR3ppNGFfSjE1cWpXYnJXdFVZZVYtWk52c2NxdEhCM0hFQjcxTU5DVUgtdzJTWlRlejRZVmdOT1FPMXp3RWpPeDdsSUo3VUxQM1NOYWR1cmFzWFcxbjln?oc=5",
-      "region": "overseas",
-      "date": "2026-09-25",
-      "field": "기타",
-      "group": "기타",
-      "level": "normal",
-      "univ": [],
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNckJzRHhYZlZOc3FPcUZXZHM2blZ4Tk5fRm1NMy1WdF9KbElMY0h6WldVZXh3TXV4TF9wWWU5cjJrNlU3SHFBYVBlcnJTTTVVYzV4R1lvMW1aSW5TLXdybUo5cVNlczZzR3ppNGFfSj",
-      "feeds": [
-        "해외:generative AI university policy"
-      ]
-    },
-    {
-      "title": "Stanford University Under Fire for Altering Identity of Students in Photo With AI",
-      "media": "legalinsurrection.com",
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcTN4WlNxdFpzNnlndXBJRUloTDFNQlFIVjV2NTlDLWNiZTBucjBLY1RzQ29kdE1xN2dxRUJ3R2tRTnd4YXZJQ1kyaTl2ajBfRERsSXlld3RSWEh1Q3NTZmV0akFDakpRajlPbmRWTGd5MEM2dXJkMlVaSFJzZ3Y1WWcyNm9IRGx1MEZVajhNMmxINWM0bjJJUlZqbkNUWEdZX2trMkYxUXlucGJkMlVPYk84NFAtalVjNTFkYkh6U2p0d9IBwgFBVV95cUxOcTN4WlNxdFpzNnlndXBJRUloTDFNQlFIVjV2NTlDLWNiZTBucjBLY1RzQ29kdE1xN2dxRUJ3R2tRTnd4YXZJQ1kyaTl2ajBfRERsSXlld3RSWEh1Q3NTZmV0akFDakpRajlPbmRWTGd5MEM2dXJkMlVaSFJzZ3Y1WWcyNm9IRGx1MEZVajhNMmxINWM0bjJJUlZqbkNUWEdZX2trMkYxUXlucGJkMlVPYk84NFAtalVjNTFkYkh6U2p0dw?oc=5",
-      "region": "overseas",
-      "date": "2026-09-25",
-      "field": "증강인재교육",
-      "group": "교육",
-      "level": "normal",
-      "univ": [],
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOcTN4WlNxdFpzNnlndXBJRUloTDFNQlFIVjV2NTlDLWNiZTBucjBLY1RzQ29kdE1xN2dxRUJ3R2tRTnd4YXZJQ1kyaTl2ajBfRERsSXlld3RSWEh1Q3NTZmV0akFDakpRajlPbmRWTG",
-      "feeds": [
-        "해외:generative AI university policy"
-      ]
-    },
-    {
-      "title": "CMU fall enrollment dips: 'We've lost about 1,000 international students in two years'",
-      "media": "WCMU Public Media",
-      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOanFYbDlTdmlYWTJ2S21KSm1YS1Nmb2pvQUN6TnBHV2VFcHE3TkRTbUpCSEsydGtrbWstT1FsMmI4MXZTVFRGVnhjcUNfT01PVjZhcHM1MkZ3VERjTWRKY2xOYjBydWdEYTQtTVFuYlQ3WklTMWVVdnFWeklLdl94UGFtMHd4RU1LakE1T3g4NHVRdTM5Y2xwTnRlMFptS3hsXzJTYm9KUEw0NXFoWVJ0dFVZYmNTY1hCOUFIaURieEpHY2MtYmZPX0VhX2pJVnpvbkJXaXVySUpncW00?oc=5",
-      "region": "overseas",
-      "date": "2026-09-25",
-      "field": "증강인재교육",
-      "group": "교육",
-      "level": "normal",
-      "univ": [],
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxOanFYbDlTdmlYWTJ2S21KSm1YS1Nmb2pvQUN6TnBHV2VFcHE3TkRTbUpCSEsydGtrbWstT1FsMmI4MXZTVFRGVnhjcUNfT01PVjZhcHM1MkZ3VERjTWRKY2xOYjBydWdEYTQtTVFuYl",
-      "feeds": [
-        "해외:declining student enrollment university"
-      ]
-    },
-    {
-      "title": "Amid national 'enrollment cliff,' JMU numbers continue surge",
-      "media": "dnronline.com",
-      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQUlVNRWMxT2NFMTNsaFMwV2dQR2RkSDluTGg2UERuZlBqcnp3Xy1iVWFtbFZXR3RHQmhwYXpNU0d6ZTJ2S2FLbzdnamw4UEUtZ094cG0yOGZrRDFRSF9pTkJGbDA0RS02NnpxRXlaYmt3dVhRdlZQN0F5OGU5akFENVRPTXRUaEJzTThsNEx4QkhzekhtdFJISjFjVXNjbTVNaGdPOFNPWDlqeHNpMWxPOXBIMFhJNlZmLUxCZHprSGQ4bVlnVHJMWnJxZjhZdFdEa2J4VkZieHZ6dHFCaTJaV2pB?oc=5",
-      "region": "overseas",
-      "date": "2026-09-25",
-      "field": "증강인재교육",
-      "group": "교육",
-      "level": "normal",
-      "univ": [],
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi4gFBVV95cUxQUlVNRWMxT2NFMTNsaFMwV2dQR2RkSDluTGg2UERuZlBqcnp3Xy1iVWFtbFZXR3RHQmhwYXpNU0d6ZTJ2S2FLbzdnamw4UEUtZ094cG0yOGZrRDFRSF9pTkJGbDA0RS02NnpxRXlaYm",
-      "feeds": [
-        "해외:declining student enrollment university"
-      ]
-    },
-    {
-      "title": "UW enrollment continues to fall",
-      "media": "The Laramie Reporter",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5vUTU1Y1ZCNXhIRjZhVG1WRHBuS2hQeDRseFdRdlhNeGlkTDh2THlKdTJJUGJJQ3hDZFFDVXp2Tm02STBLVExaLWRtMllBN0UxX1ZSdUYzU2JpWXRac2NFYWc0TGg2NGp5dHVzenQ4NGdhMFN2bTVuNDln?oc=5",
-      "region": "overseas",
-      "date": "2026-09-25",
-      "field": "증강인재교육",
-      "group": "교육",
-      "level": "normal",
-      "univ": [],
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE5vUTU1Y1ZCNXhIRjZhVG1WRHBuS2hQeDRseFdRdlhNeGlkTDh2THlKdTJJUGJJQ3hDZFFDVXp2Tm02STBLVExaLWRtMllBN0UxX1ZSdUYzU2JpWXRac2NFYWc0TGg2NGp5dHVzenQ4NG",
-      "feeds": [
-        "해외:declining student enrollment university"
-      ]
-    },
-    {
-      "title": "Lombardo endorses emergency regulation for schools facing declining enrollments| 8 News Now",
-      "media": "KOLO | 8 News Now",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQWGRNSGdKbHFmSzdOeU5YOTVwUkFvUVhKaDJ4dHo5SWVwNUQ4UE5IbU8yUDJGejRsMjVMejNoRWN6aE45OV9KQmFUN1J2eENxaGRzT1Y2N2V4d2xVaVMyVE0yTFhxakFOTVBBbDlEVFFWc0V0ZmIzM3Qzb21ndzd6MS1iMTFBUk1iVUtSRmNlRG9SdS1fYS1GQ0RLRmxrNXhBcm9kZFdvMjJkRTUzRU04?oc=5",
-      "region": "overseas",
-      "date": "2026-09-25",
-      "field": "정책/철학",
-      "group": "교육",
-      "level": "normal",
-      "univ": [],
-      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQWGRNSGdKbHFmSzdOeU5YOTVwUkFvUVhKaDJ4dHo5SWVwNUQ4UE5IbU8yUDJGejRsMjVMejNoRWN6aE45OV9KQmFUN1J2eENxaGRzT1Y2N2V4d2xVaVMyVE0yTFhxakFOTVBBbDlEVF",
-      "feeds": [
-        "해외:declining student enrollment university"
+        "한국대학신문"
       ]
     }
   ]
