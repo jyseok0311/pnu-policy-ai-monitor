@@ -1,24 +1,24 @@
 {
-  "collectedAt": "2026-09-27T00:12:39.343Z",
+  "collectedAt": "2026-09-27T01:12:20.005Z",
   "window": "2026-09-25 ~ (진행 중)",
   "from": "2026-09-25",
   "to": null,
-  "total": 350,
+  "total": 372,
   "signal": {
-    "crisis": 2,
-    "warning": 3.7,
-    "watch": 6.9
+    "crisis": 1.9,
+    "warning": 3.8,
+    "watch": 7
   },
   "byField": {
-    "정책/철학": 102,
-    "융합연구": 25,
-    "증강인재교육": 83,
+    "정책/철학": 107,
+    "융합연구": 28,
+    "증강인재교육": 87,
     "적응형행정": 9,
-    "기타": 127
+    "기타": 137
   },
   "byRegion": {
-    "국내": 133,
-    "해외": 217
+    "국내": 150,
+    "해외": 222
   },
   "byUniv": {
     "부산대": 3,
@@ -30,25 +30,25 @@
     "강원대": 0,
     "경상국립대": 1,
     "제주대": 1,
-    "서울대": 3
+    "서울대": 4
   },
   "feeds": [
     {
       "feed": "구글뉴스:거점국립대",
-      "수신": 12,
-      "신규": 12,
+      "수신": 7,
+      "신규": 7,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:국립대 통합",
-      "수신": 6,
-      "신규": 5,
+      "수신": 3,
+      "신규": 2,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:글로컬대학",
-      "수신": 16,
-      "신규": 15,
+      "수신": 5,
+      "신규": 4,
       "상태": "ok"
     },
     {
@@ -59,110 +59,110 @@
     },
     {
       "feed": "구글뉴스:대학 정원 감축",
-      "수신": 3,
-      "신규": 2,
+      "수신": 0,
+      "신규": 0,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 등록금",
-      "수신": 39,
-      "신규": 36,
+      "수신": 41,
+      "신규": 37,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 생성형 AI",
-      "수신": 35,
-      "신규": 34,
+      "수신": 24,
+      "신규": 23,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 구조개혁",
-      "수신": 1,
-      "신규": 1,
+      "수신": 2,
+      "신규": 2,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:부산대학교",
-      "수신": 21,
-      "신규": 20,
+      "수신": 12,
+      "신규": 12,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 행정 AI",
-      "수신": 10,
-      "신규": 10,
+      "수신": 6,
+      "신규": 6,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 학사행정 시스템",
-      "수신": 5,
+      "수신": 2,
       "신규": 0,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:공공부문 생성형 AI",
-      "수신": 11,
-      "신규": 10,
+      "수신": 5,
+      "신규": 5,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:공공기관 AI 행정혁신",
-      "수신": 16,
-      "신규": 15,
+      "수신": 12,
+      "신규": 12,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:생성형 AI 업무 도입",
-      "수신": 29,
-      "신규": 26,
+      "수신": 19,
+      "신규": 18,
       "상태": "ok"
     },
     {
       "feed": "해외:higher education policy reform",
-      "수신": 59,
-      "신규": 59,
+      "수신": 57,
+      "신규": 57,
       "상태": "ok"
     },
     {
       "feed": "해외:university funding cuts government",
+      "수신": 29,
+      "신규": 28,
+      "상태": "ok"
+    },
+    {
+      "feed": "해외:national university merger",
+      "수신": 3,
+      "신규": 3,
+      "상태": "ok"
+    },
+    {
+      "feed": "해외:university tuition free policy",
+      "수신": 14,
+      "신규": 13,
+      "상태": "ok"
+    },
+    {
+      "feed": "해외:generative AI university policy",
+      "수신": 22,
+      "신규": 22,
+      "상태": "ok"
+    },
+    {
+      "feed": "해외:declining student enrollment university",
       "수신": 42,
       "신규": 40,
       "상태": "ok"
     },
     {
-      "feed": "해외:national university merger",
-      "수신": 8,
-      "신규": 8,
-      "상태": "ok"
-    },
-    {
-      "feed": "해외:university tuition free policy",
-      "수신": 30,
-      "신규": 28,
-      "상태": "ok"
-    },
-    {
-      "feed": "해외:generative AI university policy",
-      "수신": 35,
-      "신규": 34,
-      "상태": "ok"
-    },
-    {
-      "feed": "해외:declining student enrollment university",
-      "수신": 49,
-      "신규": 46,
-      "상태": "ok"
-    },
-    {
       "feed": "해외:regional university revitalization",
-      "수신": 1,
-      "신규": 1,
+      "수신": 0,
+      "신규": 0,
       "상태": "ok"
     },
     {
       "feed": "해외:university world rankings policy",
-      "수신": 16,
-      "신규": 13,
+      "수신": 7,
+      "신규": 6,
       "상태": "ok"
     },
     {
@@ -174,13 +174,13 @@
     {
       "feed": "교수신문",
       "수신": 50,
-      "신규": 3,
+      "신규": 2,
       "상태": "ok"
     },
     {
       "feed": "베리타스알파",
       "수신": 50,
-      "신규": 2,
+      "신규": 1,
       "상태": "ok"
     },
     {
@@ -192,10 +192,10 @@
   ],
   "items": [
     {
+      "region": "overseas",
       "title": "Time to reform higher education",
       "media": "The Hans India",
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOVjhmNWJhSTFzaWx1V3kxU0ZvT1l0ODVxT0JqQTI4SzhhUUxOLUhJWl9HZ25BYkMtU05aTUFkc2tsRnl0SXU5aEpIcjBSSXRFb1lGaTNYZnlEak9PdlpQWVQ1R0VsaDhxdG9MT04tWndPc1RQdVhjVVpDMkZHWUdGMlVuUktnMVJyVEt1aElXbXNUeldhQmY0bFJWSQ?oc=5",
-      "region": "overseas",
       "date": "2026-09-27",
       "field": "정책/철학",
       "group": "교육",
@@ -206,6 +206,188 @@
       "feeds": [
         "해외:higher education policy reform",
         "해외:university tuition free policy"
+      ]
+    },
+    {
+      "title": "다낭의 한 여학생은 자금이 부족하고 학자금 대출을 받을 수 없어 학비 마련을 위해 스테인리스 공장에서 일하며 730만 VND를 벌었습니다.",
+      "media": "Vietnam.vn",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPcmM2eTZIRUtTRERCemZhTzhZNGtTMVY3VWo3ZUFnTjJYc0QyVWRxenYxTG90ZnlqNktQbkJfQTNFZ2dJYzhucU9GaUlhRWdXZk9uMlJobnY1ZDJZTjk2Y001QTl5aEJ4eW5TNmxKYXcwSEhIUks3d2tRZEZkYkstaG1jMmg1bEJUUDJSSTVSa2ZFWlZ2R1d1d3ZFa1o2OGpFbkNXaXpSdzlZT0p4VDI3RW5vaXBrT0p6Nml3SUhXUDQzOGdSLVE?oc=5",
+      "region": "domestic",
+      "date": "2026-09-27",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPcmM2eTZIRUtTRERCemZhTzhZNGtTMVY3VWo3ZUFnTjJYc0QyVWRxenYxTG90ZnlqNktQbkJfQTNFZ2dJYzhucU9GaUlhRWdXZk9uMlJobnY1ZDJZTjk2Y001QTl5aEJ4eW5TNmxKYX",
+      "feeds": [
+        "구글뉴스:대학 등록금"
+      ]
+    },
+    {
+      "title": "1693만 ‘왕사남’, 안방도 휩쓸었다…시청률 11%로 1위 [IS차트]",
+      "media": "일간스포츠",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1YV1c5U2p4cEpzRkhaMHJKaFoxMWhQTGJYMWxQVGdtZUhtSlZHQ2hWRi1UQUpHaXVJVmpKM1NmcS1QMmJJNk0tSm8yR0MxMzFrOHo0RkFLX2N2NHc2bjI5UENn?oc=5",
+      "region": "domestic",
+      "date": "2026-09-27",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE1YV1c5U2p4cEpzRkhaMHJKaFoxMWhQTGJYMWxQVGdtZUhtSlZHQ2hWRi1UQUpHaXVJVmpKM1NmcS1QMmJJNk0tSm8yR0MxMzFrOHo0RkFLX2N2NHc2bjI5UENn?oc=5\" target=\"_bl",
+      "feeds": [
+        "구글뉴스:대학 등록금"
+      ]
+    },
+    {
+      "title": "한경국립대, 2027년도 수시모집 10.08대 1 경쟁률 기록",
+      "media": "기호일보",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0tZ0pnaDZYZGQtdnhBLVdVZHc2ckFKV29oOFE4VWJaZUhDNGF4cVoyV1ZPVWppQ25jbmFIX2k3c3NvaDdGRlpjOHdEenQ0VHR4ZWpyRC1PdDMyODdzdlAxZUVhS2NidnB2QVBxMHJmSQ?oc=5",
+      "region": "domestic",
+      "date": "2026-09-27",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMib0FVX3lxTE0tZ0pnaDZYZGQtdnhBLVdVZHc2ckFKV29oOFE4VWJaZUhDNGF4cVoyV1ZPVWppQ25jbmFIX2k3c3NvaDdGRlpjOHdEenQ0VHR4ZWpyRC1PdDMyODdzdlAxZUVhS2NidnB2QVBxMHJmSQ",
+      "feeds": [
+        "구글뉴스:대학 등록금"
+      ]
+    },
+    {
+      "title": "[일간 김하성] 847일 만의 3루타로 20타수 무안타 탈출...시즌 첫 멀티 득점",
+      "media": "일간스포츠",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE8zYnVWLUJIRHZXcmtWenRJQ2lyWk5qaE03QlY1U3VkUUNPR2xXVXd2VVpKajBrdDBMZ2c0eUdPaDNsMldnVTIzV25ma2ZVUTRDWUxjd1hLc0NQT2Z0QTZXRjJB?oc=5",
+      "region": "domestic",
+      "date": "2026-09-27",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE8zYnVWLUJIRHZXcmtWenRJQ2lyWk5qaE03QlY1U3VkUUNPR2xXVXd2VVpKajBrdDBMZ2c0eUdPaDNsMldnVTIzV25ma2ZVUTRDWUxjd1hLc0NQT2Z0QTZXRjJB?oc=5\" target=\"_bl",
+      "feeds": [
+        "구글뉴스:대학 등록금"
+      ]
+    },
+    {
+      "title": "20년 인연 최코디 다시 만난 정준하... 고3 딸 대학 등록금 약속했다",
+      "media": "insight.co.kr",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE55TzBrTzNkN3RXLVFLekNzX1hFMnlIdmYxY2MwWnNRZjlkdzR0SVpjQ2VoZ25uaHZ3emlRYW1TdW1EVENkS0NtTk8wS1FYUQ?oc=5",
+      "region": "domestic",
+      "date": "2026-09-27",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiTkFVX3lxTE55TzBrTzNkN3RXLVFLekNzX1hFMnlIdmYxY2MwWnNRZjlkdzR0SVpjQ2VoZ25uaHZ3emlRYW1TdW1EVENkS0NtTk8wS1FYUQ?oc=5\" target=\"_blank\">20년 인연 최코디 다시 만난 정준하.",
+      "feeds": [
+        "구글뉴스:대학 등록금"
+      ]
+    },
+    {
+      "title": "AI가 촉발한 과학 논문 폭주, 17세기 학술 출판의 파산을 고하다",
+      "media": "대학지성 In&Out",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE10cVNiUzhtVFpadlA5eGlqM1Y5SXZyTS02Z2U4cE9NeW91SktybDI1S0E3T05sWmRUejVta2VEQk5mRTNGeFEwbjFsejdDaGl5SFJKbFpkNUI4akZ0TERJcjlXRzZmR2NrZkpLRQ?oc=5",
+      "region": "domestic",
+      "date": "2026-09-27",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE10cVNiUzhtVFpadlA5eGlqM1Y5SXZyTS02Z2U4cE9NeW91SktybDI1S0E3T05sWmRUejVta2VEQk5mRTNGeFEwbjFsejdDaGl5SFJKbFpkNUI4akZ0TERJcjlXRzZmR2NrZkpLRQ?oc=",
+      "feeds": [
+        "구글뉴스:대학 생성형 AI"
+      ]
+    },
+    {
+      "title": "충남도립대, 지역에서 ‘창업의 답’ 찾는다…도민 창업교육",
+      "media": "뉴스파이어",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBZRUt2RkhHOHdya09EdmpuS280bEJaV0duTjl4bVdSdWFLRHlqRlE5MzFDc1VQYmZRdGdnQ3AyeVBEemtOR0NTZzUxUFdEYTEzZVh1TmdEUG5KMUhRbFZFR1I5M1doYjNFMTZHdkNxdw?oc=5",
+      "region": "domestic",
+      "date": "2026-09-27",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMib0FVX3lxTFBZRUt2RkhHOHdya09EdmpuS280bEJaV0duTjl4bVdSdWFLRHlqRlE5MzFDc1VQYmZRdGdnQ3AyeVBEemtOR0NTZzUxUFdEYTEzZVh1TmdEUG5KMUhRbFZFR1I5M1doYjNFMTZHdkNxdw",
+      "feeds": [
+        "구글뉴스:대학 생성형 AI"
+      ]
+    },
+    {
+      "title": "경기도 '대한민국 AI 콘텐츠 어워즈' 공모에 1528편 접수",
+      "media": "뉴시스",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1KSDR4bUlMeXc3MGhycWRFMWU5NzVSWGFSWjBaQlhEU0dPY0JTQUFYd2pBaTFqZFRGYmtkbWs4VWUtTkhrbE1ydTk5U1ZuLUlwZWdPVVVzTEhXa1JZajRtbdIBeEFVX3lxTE1IWjRmelRNNTVQSTVxSlQzdWdjWWlETzFMVzMyeDN0UF9URW0zb2NRR3o5MUl3ZEIwQ3l4YURjaXlFbHRubWp6NjUzNTZ6TDdzVnBPTnJweUFhRjFyV1BTdEFjRmc5TURFb00ybHpLaGJ0UU1ZdW5nWA?oc=5",
+      "region": "domestic",
+      "date": "2026-09-27",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiYEFVX3lxTE1KSDR4bUlMeXc3MGhycWRFMWU5NzVSWGFSWjBaQlhEU0dPY0JTQUFYd2pBaTFqZFRGYmtkbWs4VWUtTkhrbE1ydTk5U1ZuLUlwZWdPVVVzTEhXa1JZajRtbdIBeEFVX3lxTE1IWjRmel",
+      "feeds": [
+        "구글뉴스:대학 생성형 AI"
+      ]
+    },
+    {
+      "title": "네트워크를 효율화하고 대학의 수준을 높입니다.",
+      "media": "Vietnam.vn",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1sOUxELWZKTkZRd2RIa19BY3lUSFQ1d0RSc0lYeS1Ic0EyS01Wdm1Za3dnMGhxSWtUdHUyQ1lMVFk3RFVjOFlVZHVGSkhfT1BPenlMalVqUHpocUxTNi1Vek5jV1cycXlRWTFQNmp3?oc=5",
+      "region": "domestic",
+      "date": "2026-09-27",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE1sOUxELWZKTkZRd2RIa19BY3lUSFQ1d0RSc0lYeS1Ic0EyS01Wdm1Za3dnMGhxSWtUdHUyQ1lMVFk3RFVjOFlVZHVGSkhfT1BPenlMalVqUHpocUxTNi1Vek5jV1cycXlRWTFQNmp3?o",
+      "feeds": [
+        "구글뉴스:대학 구조개혁"
+      ]
+    },
+    {
+      "title": "부산 R&D 주간 내달 1일 개막... 해양 AX 등 미래 혁신기술 탐색",
+      "media": "파이낸셜뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBWN1JzX21iX3pmX0NabTktNTVBU0FmXzdrNV91d004bHNzTjdTWHVLbkdOUnFYTHNoTG5WU1BLV0tuVVJlanhBcXZCOUZBNVF3OG5zLU5rSEpvUQ?oc=5",
+      "region": "domestic",
+      "date": "2026-09-27",
+      "field": "융합연구",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTFBWN1JzX21iX3pmX0NabTktNTVBU0FmXzdrNV91d004bHNzTjdTWHVLbkdOUnFYTHNoTG5WU1BLV0tuVVJlanhBcXZCOUZBNVF3OG5zLU5rSEpvUQ?oc=5\" target=\"_blank\">부산 R&",
+      "feeds": [
+        "구글뉴스:부산대학교"
+      ]
+    },
+    {
+      "title": "Making Sense of Higher Education – the literature review",
+      "media": "Wonkhe",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPdDZ5YVBLQThnaWU4UUJ1amF1VzZmWVZOWWNOZlpIcVp1QTFOeTA5NVhsQ1VOSGxtNVQxQndIZC1CU0FPaXJKdFQ4d1Y5elEwQi1XYnNjN3A3TUx3SVpjVTNTUWh4dmpXcERwd2Mwa3E2VWtwTDkybU9nZnFYcS02Qm95R2FfUQ?oc=5",
+      "region": "overseas",
+      "date": "2026-09-27",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "watch",
+      "why": "review",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxPdDZ5YVBLQThnaWU4UUJ1amF1VzZmWVZOWWNOZlpIcVp1QTFOeTA5NVhsQ1VOSGxtNVQxQndIZC1CU0FPaXJKdFQ4d1Y5elEwQi1XYnNjN3A3TUx3SVpjVTNTUWh4dmpXcERwd2Mwa3",
+      "feeds": [
+        "해외:higher education policy reform"
+      ]
+    },
+    {
+      "title": "Public universities and the fourth industrial revolution",
+      "media": "The News Pakistan",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOczk0bmFQTDlOUWc2Sy1GM2NKczNRajF3cU9tYURXblM3S0xnWk1nT0NWLXFqRkRXUmV2REJNS2RNeC1YbHROQVgtWlJPYmM2Ui1oc011NGxYYmJXVjlHMzdTT3FoV1N6WlNZNk1TNzdQUHlXc1YtQUJLYUg1WkNUZTQ3WU8tN18wYnpPU3BDZ3ZSWUJva1FYTHlGRm5qTGs?oc=5",
+      "region": "overseas",
+      "date": "2026-09-27",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxOczk0bmFQTDlOUWc2Sy1GM2NKczNRajF3cU9tYURXblM3S0xnWk1nT0NWLXFqRkRXUmV2REJNS2RNeC1YbHROQVgtWlJPYmM2Ui1oc011NGxYYmJXVjlHMzdTT3FoV1N6WlNZNk1TNz",
+      "feeds": [
+        "해외:higher education policy reform"
       ]
     },
     {
@@ -1756,10 +1938,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "충남대·공주대 통합신청서 제출기한 연말까지 연장…재추진 여부 관심",
       "media": "뉴스1",
       "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE41TVdhTV9vN0hLemlsY3lzRDEzQXJqaGJuNl85X3RpY3VWVDhoVml5c2dQX1BvN1J1WGpUQkdBQW94M2NNQkkxQ1B3MFFXaWQ4WG1oQXpiZ3NHNjZQa2ZrMNIBZkFVX3lxTFBLQXZSdDdfb05KZ3dDWHpWMzlGd09RVDV4aDhoSmpPcVB2QUN4UXI5YzMyLV9VM1dLdldaQU5QWmRaQXJTTl9CUFNqczhKSDIwSHQxamdFY2JLQzg1RjhCRmw3X0Rkdw?oc=5",
-      "region": "domestic",
       "date": "2026-09-26",
       "field": "정책/철학",
       "group": "교육",
@@ -1774,10 +1956,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "정준하, ‘무한도전’ 최코디 딸 대학 등록금 책임진다 “내가 해줄게”",
       "media": "일간스포츠",
       "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE54V3UtQ0tndk94MTZoS3RrYVlCWjlWY0hiSGNaNE9SaE5jUXVlM0k3RW9lU0FieUdLaWl6SGc0OVY5VnBrWUVVWTQ3dEQ5YUQ4dVNWLUtDbUZtSklIdncxWkJHNVM5aTJ2?oc=5",
-      "region": "domestic",
       "date": "2026-09-26",
       "field": "정책/철학",
       "group": "교육",
@@ -1789,10 +1971,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "\"수조원 재정확보\" 말잔치 서울대 총장선거…학생복지는 소외",
       "media": "연합뉴스",
       "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBKN3JFaW5xdi0wSW83bkRmOWNFbnRkVHpkVTFUSnVDS1k5cHBjVFoxRFFNa3dVcU9hVlpodTNUWUxIQUMzU0lhSE5zUGZYMWt3cFh1NFRzVW1aMklOUnlzY9IBYEFVX3lxTFBKN3JFaW5xdi0wSW83bkRmOWNFbnRkVHpkVTFUSnVDS1k5cHBjVFoxRFFNa3dVcU9hVlpodTNUWUxIQUMzU0lhSE5zUGZYMWt3cFh1NFRzVW1aMklOUnlzYw?oc=5",
-      "region": "domestic",
       "date": "2026-09-26",
       "field": "정책/철학",
       "group": "교육",
@@ -1806,10 +1988,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "“대학은 이단아를 키워내야 한다”… 리플릿 CEO가 본 AI 시대 교육",
       "media": "더밀크",
       "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFB3ekxzYmVVRnZ2QUZ6bzJSRUpwSDBNb3pmYXlPRm8tSGxXYmZBa3AtSHdEcnV1R3hHTHMzaW9HSTY3elFsai1iSjVTc1ZsUFB0?oc=5",
-      "region": "domestic",
       "date": "2026-09-26",
       "field": "증강인재교육",
       "group": "교육",
@@ -1821,10 +2003,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "‘PD♥’ 임예진 “시댁 안 간지 7~8년, 밥상 차리면 남자만 먹어” (동치미)",
       "media": "일간스포츠",
       "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1ZWDQtWWtZY2hMQzZqM2pjTzV3bG5iWEI3X3FRMEhPRnI4aDh4Rk9CSHl0cnczbzdkRlpUMXNuX1lOTWE3bm5kaENGYXpkTjBiMEtHWFY4NE54azg4S3FUOHd3?oc=5",
-      "region": "domestic",
       "date": "2026-09-26",
       "field": "기타",
       "group": "기타",
@@ -1836,10 +2018,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "전주정보문화산업진흥원-한국폴리텍대학 신기술교육원, '협업지능 기반 피지컬 AI 교육' 교육생 모집",
       "media": "전자신문",
       "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1EcmpYVUZUZ2hCb0ZtdVQ0ZVBnWWhidEZ6ZERzNTlHRTJsa2ZpR2dhQ01iVHN5a3Njc0Q5cUpDUkQ0aUJTcU9WX1lDM3RuQQ?oc=5",
-      "region": "domestic",
       "date": "2026-09-26",
       "field": "증강인재교육",
       "group": "교육",
@@ -1851,10 +2033,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "질문의 기술",
       "media": "브런치",
       "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1JYmtvTkxGME1WdkJmZ2Z4Y3NLYVN4bXZWSk45WXlDUU9TX2daYkp6RjB2VnhzYUlLZEFQekd6dVZQaEdTZGpidEszWUNyalZHcF9R?oc=5",
-      "region": "domestic",
       "date": "2026-09-26",
       "field": "융합연구",
       "group": "교육",
@@ -1866,10 +2048,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "[AI픽] KT '에이전틱 온' 공개…여러 AI가 나눠 일한다",
       "media": "매일경제 마켓",
       "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBjS0NVMEYzNHdRUlcyQkpKcFNCOWxELTR2OUNIeWV1YmVYeDgtRGg1ZWNaWmNVYV9lTVZyOWg2ZERaUkhkaWkxeG00R1BtMHpvQUE?oc=5",
-      "region": "domestic",
       "date": "2026-09-26",
       "field": "기타",
       "group": "기타",
@@ -1881,10 +2063,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "큐빅, 기존 데이터 플랫폼 위에서 ‘AI 최적화’ 데이터 제공 [서울AI허브 2027]",
       "media": "IT조선",
       "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5reFNyamI0NGx0bUpiN0Yzd2tEdkItM3NzdGVzaWRxQUIyVXAxcVlTanprRkJaSWJaR1lKTk11SnFBdEFMNnhpajJ3VXJCdHVxTEttNXYyT1BUQkdZM0F0OUZuNTlCU2tWNzNXNzJnMHTSAXRBVV95cUxPMkVBQ2xFZm1PMExOaVZ2NDAxUFBlMk5jTGloQjB0Tlg1dGhVSW5Xc0hULXg5aXR6aHYzR0JWWGJBNUR4bHlHWVFEMHpGMlRYWmFmcTAtLWEtaTB2VFZaVnM5RmVzMUpUVjZCZDJHTThtVXFldQ?oc=5",
-      "region": "domestic",
       "date": "2026-09-26",
       "field": "기타",
       "group": "기타",
@@ -1896,10 +2078,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Trump's new Medicaid rules will kick in, and GOP states are tougher about proving inability to work",
       "media": "fortune.com",
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPeU9tNUZsek5RcDlzbDhEcmIxR1drcFluWVpSbFpPaE1qa2ZPZUYxS3NXOGhBLWJKeEJGX1A5Wl9BdUFGR1VSWml6VmxDQmpNX01wdUxnUVYzQ01VSmZ3Qy1Sc3MtSUhJbk02ZVAtekVJSHBhcXpvZGZWaHV2SjgtbEw3eUNmYlVMNkdlLVRaaE9xMl8yV0tZbU1qUjBhRXpGdmNDMXJscmNLajA0aUloV3FEOA?oc=5",
-      "region": "overseas",
       "date": "2026-09-26",
       "field": "기타",
       "group": "기타",
@@ -1911,10 +2093,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Rise In Rankings Of UP Institutes: Research & Innovation Powers Massive Jump",
       "media": "Outlook India",
       "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxObEpIcTNKOEFIVlVRTGlBRFRhdDBLQlYtYXhQc3Iyd2FPbEtOV2wweEI1dXNVUFo5bDdnMTZDQWYwaWpoalBOUk1kZDFvNHJVN1p5NjJXUEY1U1pJQ2kxZEFBcnczWm9rejVFSmZQS2tKRGI3ckZGWFB0U1ZLdUpSUEphQ0UtSl9zSU1fTmxzSElMUzVkcm5WQVpiQndEcjhIb1Zpc3hpdEVoTFJOWXVsY09kRWNkS3FEZUhWN3g1LXdyMkhXSUlyVVdybG1xZmJZY1ZfTEtKWU1mZ9IB2gFBVV95cUxObEpIcTNKOEFIVlVRTGlBRFRhdDBLQlYtYXhQc3Iyd2FPbEtOV2wweEI1dXNVUFo5bDdnMTZDQWYwaWpoalBOUk1kZDFvNHJVN1p5NjJXUEY1U1pJQ2kxZEFBcnczWm9rejVFSmZQS2tKRGI3ckZGWFB0U1ZLdUpSUEphQ0UtSl9zSU1fTmxzSElMUzVkcm5WQVpiQndEcjhIb1Zpc3hpdEVoTFJOWXVsY09kRWNkS3FEZUhWN3g1LXdyMkhXSUlyVVdybG1xZmJZY1ZfTEtKWU1mZw?oc=5",
-      "region": "overseas",
       "date": "2026-09-26",
       "field": "융합연구",
       "group": "교육",
@@ -1923,6 +2105,99 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxObEpIcTNKOEFIVlVRTGlBRFRhdDBLQlYtYXhQc3Iyd2FPbEtOV2wweEI1dXNVUFo5bDdnMTZDQWYwaWpoalBOUk1kZDFvNHJVN1p5NjJXUEY1U1pJQ2kxZEFBcnczWm9rejVFSmZQS2",
       "feeds": [
         "해외:university world rankings policy"
+      ]
+    },
+    {
+      "title": "수시 먹통·서울대 10개·서논술형·교부금…교육위 국감 쟁점 쏟아진다",
+      "media": "뉴스1",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9acGNxQ29GS3REMWcxOVhfYU1yQTdWUUd4aUlUSHo4WklIRDIyaFJ6ajVTWHRqaVJVeWhJbE9YRXFPdjNCRXdFNm9PTzA3d1NSX2ZJa3F0OHIyTDN1QUZr0gFfQVVfeXFMT1pwY3FDb0ZLdEQxZzE5WF9hTXJBN1ZRR3hpSVRIejhaSUhEMjJoUnpqNVNYdGppUlV5aElsT1hFcU92M0JFd0U2b09PMDd3U1JfZklrcXQ4cjJMM3VBRms?oc=5",
+      "region": "domestic",
+      "date": "2026-09-26",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [
+        "서울대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE9acGNxQ29GS3REMWcxOVhfYU1yQTdWUUd4aUlUSHo4WklIRDIyaFJ6ajVTWHRqaVJVeWhJbE9YRXFPdjNCRXdFNm9PTzA3d1NSX2ZJa3F0OHIyTDN1QUZr0gFfQVVfeXFMT1pwY3FDb0",
+      "feeds": [
+        "구글뉴스:거점국립대"
+      ]
+    },
+    {
+      "title": "“비교과도 재미있게”…동신대, AI·취업·독서 등 217개 프로그램 '호평'",
+      "media": "etnews.com",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBQLUZEeE9lTHctRXg4RkZnaWJDdUZoYVRIaV9ab0VBc3g2VTdxcjhyVEdjSUFfaVMydGxOaWN3QzMwYkttaDM1anJ2Z1RFUQ?oc=5",
+      "region": "domestic",
+      "date": "2026-09-26",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiTkFVX3lxTFBQLUZEeE9lTHctRXg4RkZnaWJDdUZoYVRIaV9ab0VBc3g2VTdxcjhyVEdjSUFfaVMydGxOaWN3QzMwYkttaDM1anJ2Z1RFUQ?oc=5\" target=\"_blank\">“비교과도 재미있게”…동신대, AI·취",
+      "feeds": [
+        "구글뉴스:대학 생성형 AI"
+      ]
+    },
+    {
+      "title": "모바일 브라우저에서 점검하는 포커 블라인드 뜻 표시 상태",
+      "media": "Calgary Roughnecks",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNRW5MR19ReGtwS3FqcEFROElaQ0JTNkFDTmtZZUJMQkdHeHQ1Rm5oS0pRc21sbkIyRG9xdmRXUFoxY2dKWWZ5OUwtVTJ6a2RDdFdUbFU1amZGazRVaHpNZEdNcWF4OXd0aWhsNDlFQ3dpTWVOUk1jU0lWWlh4cW1Jb3ltZzhjUXRMcktZT0NQcjN4MlpESVRJZ1Ezbw?oc=5",
+      "region": "domestic",
+      "date": "2026-09-26",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxNRW5MR19ReGtwS3FqcEFROElaQ0JTNkFDTmtZZUJMQkdHeHQ1Rm5oS0pRc21sbkIyRG9xdmRXUFoxY2dKWWZ5OUwtVTJ6a2RDdFdUbFU1amZGazRVaHpNZEdNcWF4OXd0aWhsNDlFQ3",
+      "feeds": [
+        "구글뉴스:부산대학교"
+      ]
+    },
+    {
+      "title": "“부장님도 AI 배운다”…AI 전사화 본격 시동, 카드사 전담 조직·추진위 확산",
+      "media": "munhwa.com",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1Ec040V1B1VHdmU3ZOR2NEbHVfbUVnRFpBQ2szX3NfanliYm1HbmVQaFJJdklMeVY2Z0p2OWUyN09WNEVQSHY5Y0E0ZUwwdU5u?oc=5",
+      "region": "domestic",
+      "date": "2026-09-26",
+      "field": "기타",
+      "group": "기타",
+      "level": "watch",
+      "why": "추진",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE1Ec040V1B1VHdmU3ZOR2NEbHVfbUVnRFpBQ2szX3NfanliYm1HbmVQaFJJdklMeVY2Z0p2OWUyN09WNEVQSHY5Y0E0ZUwwdU5u?oc=5\" target=\"_blank\">“부장님도 AI 배운다”…AI 전사",
+      "feeds": [
+        "구글뉴스:생성형 AI 업무 도입"
+      ]
+    },
+    {
+      "title": "30화 90일 뒤에도 일이 줄어 있어야 합니다",
+      "media": "브런치",
+      "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE8zZVk2dU14Zk5QWnFlMWtWXzJMNWlQeVE5Q0JLb3ZucTJVS3VlX3d6anA1bHMxZGQ5U29zR2x6WXM2S21YRmlPMQ?oc=5",
+      "region": "domestic",
+      "date": "2026-09-26",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiSEFVX3lxTE8zZVk2dU14Zk5QWnFlMWtWXzJMNWlQeVE5Q0JLb3ZucTJVS3VlX3d6anA1bHMxZGQ5U29zR2x6WXM2S21YRmlPMQ?oc=5\" target=\"_blank\">30화 90일 뒤에도 일이 줄어 있어야 합니다</a>",
+      "feeds": [
+        "구글뉴스:생성형 AI 업무 도입"
+      ]
+    },
+    {
+      "title": "Opinion: Are We Trapped? Minneapolis Public Schools and Darth Vader Leadership",
+      "media": "Minneapolis Times",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNb2lvZjg4ZlB2MDNiTC0yS0JFY3dqVTVwNTVXZDhHZUJtNlVOYklEMFd4YzdpQTlTUjE4TDFpMmx3Skc5V0pJUXhldGFha1pSY09TbXNoUkJ2MUJPaFFNZkcxbnROSE5iR0QxaVAwVzB5cERIRzYyQWNVSXhaUHZURkVsdnJMdUdZNGNqTTZCWkhCaFZ0WGN4M1dIdWNuSHRrZ2l0bjNZSmc0QQ?oc=5",
+      "region": "overseas",
+      "date": "2026-09-26",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxNb2lvZjg4ZlB2MDNiTC0yS0JFY3dqVTVwNTVXZDhHZUJtNlVOYklEMFd4YzdpQTlTUjE4TDFpMmx3Skc5V0pJUXhldGFha1pSY09TbXNoUkJ2MUJPaFFNZkcxbnROSE5iR0QxaVAwVz",
+      "feeds": [
+        "해외:declining student enrollment university"
       ]
     },
     {
@@ -5516,10 +5791,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Comment on \"AI: How Safe Is Safe Enough?\"",
       "media": "Cato Institute",
       "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5OUWFrcUk0YnU2ek4yQ0o3TWdXaXhEZGxhWl9GMmJ3NWY5RlhHOGhhYzVZOGdNNU5yY1RBWEhxd1FGbjMwWVZWYUdyZUFTSnFJVW1YMDFSOWF3ZzloZFV5NU1sX2lXWmluWWtUNTc0NjBHamVkbXppTUQ1djVldw?oc=5",
-      "region": "overseas",
       "date": "2026-09-25",
       "field": "기타",
       "group": "기타",
@@ -5528,6 +5803,67 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMifkFVX3lxTE5OUWFrcUk0YnU2ek4yQ0o3TWdXaXhEZGxhWl9GMmJ3NWY5RlhHOGhhYzVZOGdNNU5yY1RBWEhxd1FGbjMwWVZWYUdyZUFTSnFJVW1YMDFSOWF3ZzloZFV5NU1sX2lXWmluWWtUNTc0Nj",
       "feeds": [
         "해외:generative AI university policy"
+      ]
+    },
+    {
+      "title": "[정태윤의 별달린다] \"가장 철들지 않는 얼굴, 가족\" (철들 무렵 ★★★☆)",
+      "media": "디스패치",
+      "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9UNFpkX3JyRUYtazB2TFpRd3pXci05TEJoczRqTjdCdTkxRWlCSGpiODNQZDdiTjVlazhhSm9QdFVEXzFLR1Rta1ZB?oc=5",
+      "region": "domestic",
+      "date": "2026-09-25",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiSkFVX3lxTE9UNFpkX3JyRUYtazB2TFpRd3pXci05TEJoczRqTjdCdTkxRWlCSGpiODNQZDdiTjVlazhhSm9QdFVEXzFLR1Rta1ZB?oc=5\" target=\"_blank\">[정태윤의 별달린다] \"가장 철들지 않는 얼굴, ",
+      "feeds": [
+        "구글뉴스:대학 등록금"
+      ]
+    },
+    {
+      "title": "부가 기능 없이도 이해할 수 있는 토토 매치 기본 흐름",
+      "media": "Histoire pour tous",
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPRkdtMF9XcXVfdEo0VE42Qk1ULXNLYWFDMVFkWWluT2cybDNzbzZnLXBiRGVJNFoxQWNuaE9CdjFya0lHN1pTOU1QNHFEd0xobFlYdjJPM0pDY2h4dENnbUNMdEd6emx1dkhyUzVGcTlHdnJCRmZoY3gxOEJibzlCdVZiM3J6VE1peFNXbHhiWjdhbWVkcWdneFB6cmMzSmRrWEpmUWZVRGNfV0xFX19fdnBFY2UwdFBLVUhyNndvWDJIcHpIbkFuZlJCa3RIN0V2TjYtSkdLUDd1cUw5?oc=5",
+      "region": "domestic",
+      "date": "2026-09-25",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxPRkdtMF9XcXVfdEo0VE42Qk1ULXNLYWFDMVFkWWluT2cybDNzbzZnLXBiRGVJNFoxQWNuaE9CdjFya0lHN1pTOU1QNHFEd0xobFlYdjJPM0pDY2h4dENnbUNMdEd6emx1dkhyUzVGcT",
+      "feeds": [
+        "구글뉴스:대학 등록금"
+      ]
+    },
+    {
+      "title": "University of Minnesota eyes $225M in budget cuts",
+      "media": "Higher Ed Dive",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQmQyR0pwU1pJeUFkNV9JTDNJTktSdE1FWl9DZmdFVW5nWmgtVVdzREcwVE5qV0h6ZEdzX1ZWcjVndm9xOUFLMXA1d1VFcEpxNWhFdkVjcWRRWE9YNUM4bWdEYndGR1hzbVZRclprVFR6UV9YWWJQZGxmN1dfU3lxVlVZT0NFUGJyaVpoVm92WmRtd0Nq?oc=5",
+      "region": "overseas",
+      "date": "2026-09-25",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "warning",
+      "why": "cuts",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxNQmQyR0pwU1pJeUFkNV9JTDNJTktSdE1FWl9DZmdFVW5nWmgtVVdzREcwVE5qV0h6ZEdzX1ZWcjVndm9xOUFLMXA1d1VFcEpxNWhFdkVjcWRRWE9YNUM4bWdEYndGR1hzbVZRclprVF",
+      "feeds": [
+        "해외:declining student enrollment university"
+      ]
+    },
+    {
+      "title": "First-time freshman numbers rise in fall enrollment",
+      "media": "unkantelope.com",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOd1pzUmh5d1RfTWNhcVMxUGpMeEVfZkNUX21TNEVOc0FKMHFra1RhU3ZDNW1MNk8zSk9aME9tSmNES2xJZGt2TXZDY2VKazRyZGRCSjlka3V3ZGM1VGZaNjZVRmo3RFdGZTFBckhiMThTVk5EWDNyZmR0YVQ2X1VKVVplcnhEYkt3SkdQamNQb3I?oc=5",
+      "region": "overseas",
+      "date": "2026-09-25",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxOd1pzUmh5d1RfTWNhcVMxUGpMeEVfZkNUX21TNEVOc0FKMHFra1RhU3ZDNW1MNk8zSk9aME9tSmNES2xJZGt2TXZDY2VKazRyZGRCSjlka3V3ZGM1VGZaNjZVRmo3RFdGZTFBckhiMT",
+      "feeds": [
+        "해외:declining student enrollment university"
       ]
     }
   ]
