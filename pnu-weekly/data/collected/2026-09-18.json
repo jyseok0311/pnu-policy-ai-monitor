@@ -1,24 +1,24 @@
 {
-  "collectedAt": "2026-09-26T22:32:23.806Z",
+  "collectedAt": "2026-09-27T00:12:39.343Z",
   "window": "2026-09-18 ~ 2026-09-25",
   "from": "2026-09-18",
   "to": "2026-09-25",
-  "total": 3515,
+  "total": 3521,
   "signal": {
     "crisis": 1.8,
     "warning": 3,
     "watch": 5.2
   },
   "byField": {
-    "정책/철학": 822,
+    "정책/철학": 823,
     "융합연구": 475,
-    "증강인재교육": 895,
-    "적응형행정": 113,
-    "기타": 1119
+    "증강인재교육": 897,
+    "적응형행정": 114,
+    "기타": 1121
   },
   "byRegion": {
-    "국내": 2515,
-    "해외": 1000
+    "국내": 2516,
+    "해외": 1005
   },
   "byUniv": {
     "부산대": 144,
@@ -35,20 +35,20 @@
   "feeds": [
     {
       "feed": "구글뉴스:거점국립대",
-      "수신": 7,
-      "신규": 7,
+      "수신": 12,
+      "신규": 12,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:국립대 통합",
-      "수신": 3,
-      "신규": 2,
+      "수신": 6,
+      "신규": 5,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:글로컬대학",
-      "수신": 5,
-      "신규": 4,
+      "수신": 16,
+      "신규": 15,
       "상태": "ok"
     },
     {
@@ -59,20 +59,20 @@
     },
     {
       "feed": "구글뉴스:대학 정원 감축",
-      "수신": 0,
-      "신규": 0,
+      "수신": 3,
+      "신규": 2,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 등록금",
-      "수신": 33,
-      "신규": 30,
+      "수신": 39,
+      "신규": 36,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 생성형 AI",
-      "수신": 22,
-      "신규": 21,
+      "수신": 35,
+      "신규": 34,
       "상태": "ok"
     },
     {
@@ -83,74 +83,74 @@
     },
     {
       "feed": "구글뉴스:부산대학교",
-      "수신": 12,
-      "신규": 12,
+      "수신": 21,
+      "신규": 20,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 행정 AI",
-      "수신": 6,
-      "신규": 6,
+      "수신": 10,
+      "신규": 10,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 학사행정 시스템",
-      "수신": 2,
+      "수신": 5,
       "신규": 0,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:공공부문 생성형 AI",
-      "수신": 8,
-      "신규": 7,
+      "수신": 11,
+      "신규": 10,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:공공기관 AI 행정혁신",
-      "수신": 13,
-      "신규": 12,
+      "수신": 16,
+      "신규": 15,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:생성형 AI 업무 도입",
-      "수신": 18,
-      "신규": 16,
+      "수신": 29,
+      "신규": 26,
       "상태": "ok"
     },
     {
       "feed": "해외:higher education policy reform",
-      "수신": 56,
-      "신규": 56,
+      "수신": 59,
+      "신규": 59,
       "상태": "ok"
     },
     {
       "feed": "해외:university funding cuts government",
+      "수신": 42,
+      "신규": 40,
+      "상태": "ok"
+    },
+    {
+      "feed": "해외:national university merger",
+      "수신": 8,
+      "신규": 8,
+      "상태": "ok"
+    },
+    {
+      "feed": "해외:university tuition free policy",
       "수신": 30,
       "신규": 28,
       "상태": "ok"
     },
     {
-      "feed": "해외:national university merger",
-      "수신": 6,
-      "신규": 6,
-      "상태": "ok"
-    },
-    {
-      "feed": "해외:university tuition free policy",
-      "수신": 15,
-      "신규": 14,
-      "상태": "ok"
-    },
-    {
       "feed": "해외:generative AI university policy",
-      "수신": 22,
-      "신규": 22,
+      "수신": 35,
+      "신규": 34,
       "상태": "ok"
     },
     {
       "feed": "해외:declining student enrollment university",
-      "수신": 42,
-      "신규": 40,
+      "수신": 49,
+      "신규": 46,
       "상태": "ok"
     },
     {
@@ -161,8 +161,8 @@
     },
     {
       "feed": "해외:university world rankings policy",
-      "수신": 8,
-      "신규": 8,
+      "수신": 16,
+      "신규": 13,
       "상태": "ok"
     },
     {
@@ -174,13 +174,13 @@
     {
       "feed": "교수신문",
       "수신": 50,
-      "신규": 2,
+      "신규": 3,
       "상태": "ok"
     },
     {
       "feed": "베리타스알파",
       "수신": 50,
-      "신규": 1,
+      "신규": 2,
       "상태": "ok"
     },
     {
@@ -3818,16 +3818,106 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "President Tarhule outlines five priorities for ISU at annual State of the University Address",
       "media": "Yahoo",
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQOUpVRXZWVkhpVm5jZHZGZ3AxeHZqY3lGYUNBVi1Gc2pkdVR0RGlLaVhwNU55OWJUbC04Wk93WjJxYmhBZGdJZS1nNUZOOHdpWEpkSnNnaEd6bUU2Qk5lWkdKSWRzLUxrUUJrZEItb091dXN4WFowbjBMM1lFY1E0TUZyczB2MEZPZUNTX2Nud211eUJtSEh2Q0FST2M?oc=5",
-      "region": "overseas",
       "date": "2026-09-24",
       "field": "기타",
       "group": "기타",
       "level": "normal",
       "univ": [],
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxQOUpVRXZWVkhpVm5jZHZGZ3AxeHZqY3lGYUNBVi1Gc2pkdVR0RGlLaVhwNU55OWJUbC04Wk93WjJxYmhBZGdJZS1nNUZOOHdpWEpkSnNnaEd6bUU2Qk5lWkdKSWRzLUxrUUJrZEItb0",
+      "feeds": [
+        "해외:declining student enrollment university"
+      ]
+    },
+    {
+      "title": "[Tech Guide] AI 에이전트 시대, ‘입력’과 ‘실행’ 두 구간 함께 통제해야",
+      "media": "데이터넷",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE14cFFDSE1IcnJLcDZxZlkya1NyOERnWm1ZeDNRMFlIdGcyc0dJeGUzZ2xoN29vY3doR0RmTjFENTBRLXR1RGs0VlpzRlAzUDZ3aEQ3V2dYRFFsUGZuYTcxeko2SEVxMXE3VEM3cw?oc=5",
+      "region": "domestic",
+      "date": "2026-09-24",
+      "field": "적응형행정",
+      "group": "산업",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE14cFFDSE1IcnJLcDZxZlkya1NyOERnWm1ZeDNRMFlIdGcyc0dJeGUzZ2xoN29vY3doR0RmTjFENTBRLXR1RGs0VlpzRlAzUDZ3aEQ3V2dYRFFsUGZuYTcxeko2SEVxMXE3VEM3cw?oc=",
+      "feeds": [
+        "구글뉴스:생성형 AI 업무 도입"
+      ]
+    },
+    {
+      "title": "Tax Deductions 2026: What’s New or Changed for the 2026 Tax Year",
+      "media": "TurboTax",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTFhielFxTlF5VFd5NXNsSWN2RVJLTl9EbC00aUtGS2NfbGE1WjJVNWtSY3hET0dNaGM3dFV4TE9nNmQ3S0RnY2dCdE9lWm9WYXljYmRfMzFXQmVDeUF0M2Z1R0tGVmx4U0RxZFEtSlMyZFFpalkteFlQUFdrM2N4dzZ5ZDlVN0l6b0I3Wk9NUm0zUWRITVJtejdCazlVTUNBckg0Q1Y0U3EzeHBMVVNQSVVkSTdXTkRKNnhTQg?oc=5",
+      "region": "overseas",
+      "date": "2026-09-24",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPTFhielFxTlF5VFd5NXNsSWN2RVJLTl9EbC00aUtGS2NfbGE1WjJVNWtSY3hET0dNaGM3dFV4TE9nNmQ3S0RnY2dCdE9lWm9WYXljYmRfMzFXQmVDeUF0M2Z1R0tGVmx4U0RxZFEtSl",
+      "feeds": [
+        "해외:higher education policy reform"
+      ]
+    },
+    {
+      "title": "Student loan Belgium: what expats and international students need to know",
+      "media": "Expatica",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNUllJZWNxM1BnRjdhdFYtaHhzdDM4S2xkRVk5Nk1UVXdHb21nSTdCTXFvRE5TblJfSDZaaWljWGhXUDdQVG9DWE1mOG10R3ZsRFhjTzI4a1JteTNBMEh6Y3JYZm5XWEhWZWhjZjNROTFyazh1TmtVTGRnbXZDbnA5a0t1NlU4Vndvc1E?oc=5",
+      "region": "overseas",
+      "date": "2026-09-24",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxNUllJZWNxM1BnRjdhdFYtaHhzdDM4S2xkRVk5Nk1UVXdHb21nSTdCTXFvRE5TblJfSDZaaWljWGhXUDdQVG9DWE1mOG10R3ZsRFhjTzI4a1JteTNBMEh6Y3JYZm5XWEhWZWhjZjNROT",
+      "feeds": [
+        "해외:university tuition free policy"
+      ]
+    },
+    {
+      "title": "VIT Vellore Cutoff for CSE: VITEEE Category-Wise Rank, Seat Intake, Fees",
+      "media": "Shiksha.com",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxObW5waDd0cER0anhyT2h0bEpNTldOSUJnalc2R3hDU1JCRE5KY1kwd043dldvMFEzRUtqdU05Uy1rWmR3ZXFrUGZ6X2RTeVpHT3FzQl9pMFpZRnpDS3FmUVg3QnR6Wnozd1l0ajJWbXVvbVNkQ1R2bFgzNDVFSFZwTXo5Ujd1NFh4VzB2ZVRB?oc=5",
+      "region": "overseas",
+      "date": "2026-09-24",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxObW5waDd0cER0anhyT2h0bEpNTldOSUJnalc2R3hDU1JCRE5KY1kwd043dldvMFEzRUtqdU05Uy1rWmR3ZXFrUGZ6X2RTeVpHT3FzQl9pMFpZRnpDS3FmUVg3QnR6Wnozd1l0ajJWbX",
+      "feeds": [
+        "해외:university tuition free policy"
+      ]
+    },
+    {
+      "title": "Artificial Intelligence Policy: Navigating the Future of AI Governance",
+      "media": "Coursera",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE4yUkNfbWtLdFlxRzdDNy1VcHRxWG01bGxTcTg0cnNIY0dBSEdYZi1ZZUJMWGZ0X2NBVFlSTGo2eVU3MjBTeTkxeVJfSFprV3VNWjYzNGhZeV9QbUdNeUJWN1VRMWdkR1lQRmR2bEd4WWc0UQ?oc=5",
+      "region": "overseas",
+      "date": "2026-09-24",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMickFVX3lxTE4yUkNfbWtLdFlxRzdDNy1VcHRxWG01bGxTcTg0cnNIY0dBSEdYZi1ZZUJMWGZ0X2NBVFlSTGo2eVU3MjBTeTkxeVJfSFprV3VNWjYzNGhZeV9QbUdNeUJWN1VRMWdkR1lQRmR2bEd4WW",
+      "feeds": [
+        "해외:generative AI university policy"
+      ]
+    },
+    {
+      "title": "'Scared to go to school': Palm Beach County sees big drop in non-US born students",
+      "media": "WPEC",
+      "link": "https://news.google.com/rss/articles/CBMizAJBVV95cUxOY0N1SC1JeVMwX19SSHNhZ0JUYUFoeGxqTC1Db0kwTmtQbVVRSFVlNUhnU01uSkRoNkFfb00xS3hTbkNUQ3R6UHdQa2lmRzVwNElCY01MLVZMUjFtVjVLSERxX3hQa0pGYnBHNDBsLVBGWFNiclNoZEJrNGNaYTBuc19wNWNKUzA2eEVHRm5NVGtsU3ZXTU96clFxc1o2OUpRZk9HYkYybHhzVF9DckhRSTZESFV5Rkt1UHJEeVdXRjh6Nk5oeVIwT3EwVGZVWnlzOUhRaDBkYnphVk9xQ1FJV3QzVGtfUTBMQVJTZTNMejV3ZVVtYUVKSFpRUnlDcU9LYlkxeDc1UUwyT1RERVppMlZvR2xWUUdzQ1d0TnlzMFJiVUZLZW5rUjB1d2MwSG1pSU9neFAwQTdxcFFFcF9iOEY0NHBEOEtBQmpWTw?oc=5",
+      "region": "overseas",
+      "date": "2026-09-24",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMizAJBVV95cUxOY0N1SC1JeVMwX19SSHNhZ0JUYUFoeGxqTC1Db0kwTmtQbVVRSFVlNUhnU01uSkRoNkFfb00xS3hTbkNUQ3R6UHdQa2lmRzVwNElCY01MLVZMUjFtVjVLSERxX3hQa0pGYnBHNDBsLV",
       "feeds": [
         "해외:declining student enrollment university"
       ]
