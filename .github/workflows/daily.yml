@@ -49,6 +49,10 @@ jobs:
     # 박아 두면 모든 실행이 큐에 걸린 채 멈추므로 기본값은 건드리지 않는다.
     runs-on: ${{ vars.RUNNER_LABEL || 'ubuntu-latest' }}
     timeout-minutes: 30
+    # 본문 대기 주차를 아래 notify 잡으로 넘긴다.
+    outputs:
+      pending: ${{ steps.narr.outputs.pending }}
+      pending_list: ${{ steps.narr.outputs.pending_list }}
     defaults:
       run:
         working-directory: pnu-weekly
@@ -105,6 +109,12 @@ jobs:
       - name: 시계열 · 임계값 · 진행 중 주차
         run: node series.mjs
 
+      # 주차 본문은 자동으로 만들어지지 않는다 — 서술 파일이 사람 손을 탄다.
+      # 빌드를 깨뜨리지 않고 '대기 중'이라는 사실만 내보낸다. 이슈는 notify-narrative 잡이 남긴다.
+      - name: 본문 대기 주차 확인
+        id: narr
+        run: node tools/check-narrative.mjs
+
       - name: HTML
         run: |
           node daily.mjs
@@ -156,6 +166,40 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # ── 본문 대기 알림.
+  # 주차가 닫혀도 리포트 본문은 자동으로 생기지 않는다(aggregate 가 서술 파일을 먼저 요구한다).
+  # 수집도 배포도 성공하므로 failure() 알림에는 걸리지 않는다 — Week 38·39 가 이렇게 조용히 지나갔다.
+  notify-narrative:
+    needs: build
+    if: needs.build.outputs.pending != '0' && needs.build.outputs.pending != ''
+    runs-on: ${{ vars.RUNNER_LABEL || 'ubuntu-latest' }}
+    steps:
+      - name: 이슈 열기 또는 댓글
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          LIST: ${{ needs.build.outputs.pending_list }}
+        run: |
+          TITLE="주간 리포트 본문 생성 대기"
+          BODY="주차가 마감됐지만 리포트 본문이 아직 없습니다 — ${LIST}
+
+          사이트에는 '이 주차는 아직 리포트가 생성되지 않았습니다'로 표시됩니다.
+          신호 수치와 기사 집계는 정상이며, 빠진 것은 서술 본문뿐입니다.
+
+          만드는 순서
+          1. pnu-weekly/data/narrative/<id>.json 작성 — 서술. refKey 로 실제 기사와 묶는다
+          2. node aggregate.mjs <id>
+          3. node series.mjs   ← 반드시 aggregate 뒤. 먼저 돌리면 등급·비교지표·주간지표가 지워진다
+          4. node build.mjs && node daily.mjs && node pdf.mjs
+
+          본문이 채워지면 다음 실행부터 댓글이 달리지 않습니다. 이슈는 직접 닫아 주세요."
+          NUM=$(gh issue list -R "$REPO" --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue comment -R "$REPO" "$NUM" --body "$BODY"
+          else
+            gh issue create -R "$REPO" --title "$TITLE" --body "$BODY"
+          fi
 
   # ── 실패 알림: 이슈를 하나만 열고, 이미 열려 있으면 거기에 댓글을 단다.
   alert:
