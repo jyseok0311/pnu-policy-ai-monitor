@@ -562,6 +562,36 @@ h2.sec .sec-face{margin-right:4px}
 .artmeta{color:var(--mute);font-size:12px;white-space:nowrap}
 @media (max-width:860px){.artlist li{grid-template-columns:46px 1fr}.artmeta{display:none}}
 
+/* ── 법령·조례 동향 (일일 브리핑)
+   제·개정 구분 배지는 위험 등급(.lv)과 색을 섞지 않는다 — '제정'이 빨갛게 보이면 위기로 읽힌다.
+   대신 무게를 채움/테두리로 나눈다: 제정 > 전부개정 > 폐지 > 일부개정 > 타법개정.
+   타법개정은 다른 법이 바뀌면서 이름만 따라 고쳐진 경우가 대부분이라 가장 옅게 둔다.
+   모든 조합이 4.5:1 을 넘는다(가장 낮은 것이 D-n 4.64). */
+.leglist{list-style:none;margin:0;padding:0}
+.leglist li{display:grid;grid-template-columns:62px 1fr;gap:3px 10px;align-items:baseline;
+  padding:7px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.leglist li:last-child{border-bottom:0}
+.leglist li.more{display:block}
+.leglist .lt{word-break:keep-all;overflow-wrap:break-word}
+.leglist .lmeta{grid-column:2;color:var(--mute);font-size:12px;word-break:keep-all}
+.leglist .lmeta span{white-space:nowrap}   /* 조각 안에서는 안 끊는다 — '08-28' 이 하이픈에서 갈라졌다 */
+.lc{display:inline-block;text-align:center;border-radius:3px;padding:1px 0;font-size:11px;font-weight:700;
+  border:1px solid transparent;white-space:nowrap}
+.lc.mk{background:var(--navy);color:#fff}
+.lc.full{background:var(--link);color:#fff}
+.lc.del{background:var(--slate-ink);color:#fff}
+.lc.part{background:var(--soft);color:var(--link);border-color:#c7d8f0}
+.lc.oth{background:var(--soft);color:var(--mute);border-color:var(--line)}
+.lnew{display:inline-block;margin-left:5px;background:var(--ok-ink);color:#fff;font-size:10px;font-weight:800;
+  border-radius:3px;padding:0 5px;vertical-align:1px;letter-spacing:.03em}
+.ldue{display:inline-block;margin-left:5px;color:var(--warn-ink);border:1px solid #ecd2b6;background:var(--soft);
+  font-size:10.5px;font-weight:700;border-radius:3px;padding:0 5px;vertical-align:1px;white-space:nowrap}
+.lstar{color:var(--warn-ink);font-weight:800}
+@media (max-width:640px){
+  .leglist li{grid-template-columns:54px 1fr;font-size:12.5px}
+  .lc{font-size:10px}
+}
+
 /* 헤더는 어디서도 고정하지 않는다.
    헤더의 선택 상자는 'PDF 를 어느 회차로 받을까' 이지 화면을 옮기는 것이 아니다.
    회차를 오가는 것은 .side 의 칩 띠이고, 모바일에서 고정하는 것은 그쪽이다(위 860px 블록). */

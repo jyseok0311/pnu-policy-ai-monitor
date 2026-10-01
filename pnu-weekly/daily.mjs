@@ -5,7 +5,7 @@
 // 일간은 서술(LLM)을 두지 않는다. 집계와 기사 목록만으로 구성해 매일 돌려도 비용이 들지 않게 했다.
 // 해석이 필요한 판단은 주간 리포트가 맡는다.
 
-import { readFileSync, writeFileSync, readdirSync, cpSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, cpSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { relevant, mentionsOf } from './src/filter.mjs';
@@ -38,6 +38,24 @@ const days = [...new Set(all.map((x) => x.date))].sort().reverse().slice(0, 10);
 
 const LVCLS = { crisis: 's', warning: 'i', watch: 'm', normal: 'l' };
 const ORDER = { crisis: 0, warning: 1, watch: 2, normal: 3 };
+
+// ── 법령·조례 스냅숏(legal.mjs 산출). 날짜별로 남아 있다.
+// 그날 것이 없으면 그날 '이전'의 가장 가까운 것을 쓴다 — 이후 것을 쓰면 과거 페이지에 미래가 보인다.
+// 수집을 시작하기 전 날짜는 해당 스냅숏이 없으므로 칸 자체를 싣지 않는다.
+const legalDir = join(root, 'data/legal');
+const legalDates = existsSync(legalDir)
+  ? readdirSync(legalDir).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).map((f) => f.slice(0, 10)).sort()
+  : [];
+const legalCache = new Map();
+function legalFor(d) {
+  const at = legalDates.filter((x) => x <= d).pop();
+  if (!at) return null;
+  if (!legalCache.has(at)) legalCache.set(at, J(`data/legal/${at}.json`));
+  return legalCache.get(at);
+}
+const dayDiff = (from, to) => Math.round((Date.parse(to) - Date.parse(from)) / 864e5);
+// 제·개정 구분 → 배지. 위험 등급(.lv)과 색을 섞지 않는다 — '제정'이 빨갛게 보이면 위기로 읽힌다.
+const LCCLS = { '제정': 'mk', '전부개정': 'full', '폐지': 'del', '일부개정': 'part', '타법개정': 'oth', '타법폐지': 'oth' };
 
 // 일간 등급은 주간 임계값을 그대로 쓰면 안 된다.
 // 하루 표본이 20~200건으로 들쭉날쭉해 위험신호 비중의 분산이 주간보다 훨씬 크다.
@@ -76,6 +94,65 @@ calibrateDaily(days.map((d) => {
 
 const FIELDS = ['정책/철학', '융합연구', '증강인재교육', '적응형행정', '기타'];
 const wd = (d, T) => T.daily.weekday[new Date(Date.parse(d)).getDay()];
+
+// ── ⚖ 법령·조례 동향
+// 줄기마다 접이식으로 둔다. 법령이 가장 무겁고 드물어 맨 위에 펼쳐 두고,
+// 조례는 양이 많아 접어 두되 부울경 건수를 제목줄에 미리 보인다.
+function legalSection(d, D) {
+  const L = legalFor(d);
+  if (!L) return '';
+  const CAP = { law: 20, admrul: 15, ordin: 15, notice: 20 };
+
+  const row = (x) => {
+    const isNew = x.date && dayDiff(x.date, d) >= 0 && dayDiff(x.date, d) <= 7;
+    const tags = [];
+    if (x.kind === 'notice') {
+      if (x.deadline) {
+        const left = dayDiff(d, x.deadline);
+        if (left >= 0) tags.push(`<span class="ldue">${esc(D.legalDue2(left))}</span>`);
+      }
+    } else if (x.effective && x.effective >= d) {
+      // 아직 시행 전 — 남은 날이 곧 준비 기간이다
+      tags.push(`<span class="ldue">${esc(D.legalDday(dayDiff(d, x.effective)))}</span>`);
+    }
+    const when = x.kind === 'notice'
+      ? [x.date && x.deadline ? `${x.date.slice(5)}~${x.deadline.slice(5)}` : (x.date || '')]
+      : [`${x.kind === 'admrul' ? D.legalIssued : D.legalProm} ${x.date ? x.date.slice(5) : '-'}`,
+         x.effective && x.effective !== x.date ? `${D.legalEff} ${x.effective.slice(5)}` : null];
+    // 조각마다 줄바꿈을 막는다. 모바일에서 '시행 08-' / '28' 처럼 날짜가 하이픈에서 갈라졌다.
+    // 끊기는 곳은 조각 사이의 ' · ' 뿐이어야 한다.
+    const meta = [x.category, x.org, ...when].filter(Boolean).map((v) => `<span>${esc(v)}</span>`).join(' · ');
+    return `
+      <li><span class="lc ${LCCLS[x.change] || 'oth'}">${esc(x.change || '—')}</span>
+      <span class="lt">${x.link ? `<a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a>` : esc(x.title)}${x.local ? ' <b class="lstar" title="부울경">★</b>' : ''}${isNew ? ' <span class="lnew">NEW</span>' : ''}${tags.join('')}</span>
+      <span class="lmeta">${meta}</span></li>`;
+  };
+
+  const group = (key, open) => {
+    const list = L[key] || [];
+    const src = (L.sources || {})[key] || {};
+    const local = key === 'ordin' ? list.filter((x) => x.local).length : 0;
+    if (key === 'notice' && !list.length) {
+      return `<details class="day legal"><summary><span>${esc(D.legalGroup[key])} — ${esc(D.count(0))}</span></summary>
+        <div class="cat"><p class="note-line">${esc(D.legalNoticeNone)}</p></div></details>`;
+    }
+    return `
+  <details class="day legal"${open ? ' open' : ''}>
+    <summary><span>${esc(D.legalGroup[key])} — ${esc(D.count(list.length))}${local ? esc(D.legalLocal(local)) : ''}</span></summary>
+    <div class="cat">
+      ${src.status === 'carried' && src.carriedFrom ? `<p class="note-line">${esc(D.legalCarried(src.carriedFrom))}</p>` : ''}
+      ${list.length ? `<ul class="leglist">${list.slice(0, CAP[key]).map(row).join('')}
+        ${list.length > CAP[key] ? `<li class="more">${esc(D.more(list.length - CAP[key]))}</li>` : ''}</ul>`
+        : `<p class="note-line">${esc(D.legalNone)}</p>`}
+    </div>
+  </details>`;
+  };
+
+  return `
+  <h2 class="sec">${esc(D.secLegal)} <small>${esc(D.secLegalSub)}</small></h2>
+  <p class="note-line">${D.legalNote(L.window)}</p>
+  ${group('law', true)}${group('admrul', false)}${group('ordin', false)}${group('notice', false)}`;
+}
 
 function renderDay(d, idx, T) {
   const D = T.daily;
@@ -116,6 +193,8 @@ function renderDay(d, idx, T) {
   ${uni.length ? `<h2 class="sec">${esc(D.secUni)}</h2>
   <div class="kpis">${uni.map((u) => `<div class="kpi${u.n === '부산대' ? ' live' : ''}">
     <div class="n"><span>${esc(u.n)}</span></div><div class="val">${u.c}<small>${esc(T.unit)}</small></div></div>`).join('')}</div>` : ''}
+
+  ${legalSection(d, D)}
 
   <h2 class="sec">${esc(D.secArticles)} <small>${esc(D.secArticlesSub)}</small></h2>
   ${byField.map(({ f, list }) => `

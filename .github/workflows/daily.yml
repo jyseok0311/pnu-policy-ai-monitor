@@ -101,6 +101,16 @@ jobs:
         continue-on-error: true     # 정부 사이트가 해외 IP 를 막을 수 있다. 실패는 파일 안에 기록된다.
         run: node feeds.mjs
 
+      # 법령·자치법규·행정규칙(law.go.kr API) + 입법예고(국민참여입법센터).
+      # 하루 한 번이면 된다 — 법령은 시간 단위로 바뀌지 않고, 검색어 18개를 매시 부르면
+      # 공용 OC 계정의 호출 한도에 걸릴 수 있다. 출처가 막히면 줄기별로 전날 것을 이어 받는다.
+      - name: 법령·조례 수집
+        if: github.event_name != 'push' && steps.mode.outputs.full == 'true'
+        continue-on-error: true
+        env:
+          LAW_OC: ${{ secrets.LAW_OC }}     # 비워 두면 공개 샘플 계정('test')으로 돈다
+        run: node legal.mjs
+
       - name: 수집 결과 검증
         if: github.event_name != 'push'
         run: node tools/check-collect.mjs
