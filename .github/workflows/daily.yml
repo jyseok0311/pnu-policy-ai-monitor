@@ -132,6 +132,7 @@ jobs:
           node viz-lab.mjs
           node net-lab.mjs        # 3D 시안 비교 — 결정 근거로 남긴다
           node node-lab.mjs       # 노드 표현 시안 비교
+          node menu-lab.mjs       # 메뉴(헤더·주차 목록·모바일 띠) 디자인 시안 비교
 
       - name: PDF
         env:
