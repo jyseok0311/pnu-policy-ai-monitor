@@ -387,10 +387,24 @@
   var navs = [].slice.call(document.querySelectorAll('[data-nav]'));
   var weeks = [].slice.call(document.querySelectorAll('.week'));
   if ('IntersectionObserver' in window && weeks.length) {
+    // 휴대전화에서는 목록이 가로로 흐르는 칩 띠다. 활성 칩이 띠 밖으로 나가 있으면
+    // 지금 어느 주를 보고 있는지 띠만 봐서는 모른다 — 활성 칩을 띠 안으로 끌어온다.
+    // scrollIntoView 는 쓰지 않는다. 페이지 전체가 세로로 같이 움직인다.
+    var strip = document.querySelector('.side ul');
+    function revealChip(a) {
+      if (!strip || strip.scrollWidth <= strip.clientWidth) return;   // PC 레일(세로)이면 할 일 없음
+      var l = a.offsetLeft, r = l + a.offsetWidth, pad = 12;
+      if (l < strip.scrollLeft + pad) strip.scrollTo({ left: l - pad, behavior: 'smooth' });
+      else if (r > strip.scrollLeft + strip.clientWidth - pad) strip.scrollTo({ left: r - strip.clientWidth + pad, behavior: 'smooth' });
+    }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (!en.isIntersecting) return;
-        navs.forEach(function (a) { a.classList.toggle('on', a.dataset.nav === en.target.id); });
+        navs.forEach(function (a) {
+          var on = a.dataset.nav === en.target.id;
+          a.classList.toggle('on', on);
+          if (on) revealChip(a);
+        });
       });
     }, { rootMargin: '-96px 0px -70% 0px' });
     weeks.forEach(function (w) { io.observe(w); });
@@ -418,8 +432,18 @@
     pdfSel.addEventListener('change', function () {
       var btn = document.querySelector('[data-pdf]');
       if (btn && pdfSel.value) btn.setAttribute('href', pdfSel.value);
+      // 휴대전화에서는 상자가 PDF 아이콘 밑에 숨어 있고 '받기' 단추가 없다(styles.css 860px 블록).
+      // 고르는 것이 곧 받는 것이어야 한다.
+      if (pdfMobile() && pdfSel.value) {
+        window.open(pdfSel.value, '_blank');
+        pdfSel.selectedIndex = -1;
+      }
     });
+    // 선택을 비워 둔다. 이미 골라져 있는 항목은 다시 골라도 change 가 오지 않아서,
+    // 첫 항목('전체 합본')을 휴대전화에서 받을 길이 없었다. 상자는 보이지 않으므로 비어 있어도 된다.
+    if (pdfMobile()) pdfSel.selectedIndex = -1;
   }
+  function pdfMobile() { return !!(window.matchMedia && matchMedia('(max-width:860px)').matches); }
 
   // PDF: 사전 생성 파일(KMI 방식). 없으면 브라우저 인쇄로 폴백.
   // 브라우저 인쇄(Ctrl+P)로 직접 뽑을 때도 기사 목록이 펼쳐지고 지도 화면이 유지되도록
@@ -572,4 +596,4 @@
   // 모바일에서 고정하는 것은 헤더가 아니라 날짜 칩 띠(.side)다.
   // 그건 CSS 의 position:sticky 만으로 되므로 헤더를 접던 stickyHead() 는 없앴다.
 
-})();
+})();

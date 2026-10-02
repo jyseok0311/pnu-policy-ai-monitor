@@ -28,32 +28,15 @@ a:hover{text-decoration:underline}
 .shell > *{min-width:0}
 
 /* sidebar */
-.side{background:var(--side-bg);border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;padding:14px 0}
-.side .go{display:block;margin:0 14px 12px;padding:8px 12px;background:var(--head-bg);color:#fff;border-radius:6px;font-size:13px;font-weight:600;text-align:center}
-.side .go:hover{background:var(--head-bg2);text-decoration:none}
-.side ul{list-style:none;margin:0;padding:0}
-.side li a{display:flex;align-items:center;gap:8px;padding:6px 16px;font-size:12.5px;color:var(--ink-2)}
-.side li a:hover,.side li a.on{background:var(--sky-l);color:var(--navy);text-decoration:none}
-.side li a.on{font-weight:700;box-shadow:inset 3px 0 0 var(--navy)}
-.side li a .cnt{margin-left:auto;font-size:10.5px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap}
-.side li a.on .cnt,.side li a.on .stub{color:var(--ink-3)}   /* 활성 행은 바탕이 옅은 파랑이라 한 단계 더 진하게 */
-.side li a .stub{margin-left:6px;font-size:10px;color:var(--faint);border:1px solid var(--line);border-radius:3px;padding:0 4px;white-space:nowrap;flex:none}
-.side li a .cnt + .stub{margin-left:6px}
 /* 주차 목록 위에 전체 합계를 한 줄로 */
-.side-sum{margin:0 14px 10px;font-size:11.5px;color:var(--mute);line-height:1.4}
 .dot{width:8px;height:8px;border-radius:50%;flex:none}
 .d4{background:var(--crisis)}.d3{background:var(--warn)}.d2{background:var(--watch)}.d1{background:var(--ok)}
 
 /* header */
-.top{background:var(--head-bg);color:var(--head-ink);padding:22px 32px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
-.brand{display:flex;gap:14px;align-items:center}
 .logo{width:48px;height:48px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-weight:800;font-size:14px;letter-spacing:.5px}
-.top h1{margin:0;font-size:22px;font-weight:700}
 /* 사이트 이름(워드마크). 설명문은 부제로 내려갔으므로 이 자리엔 이름만 남는다.
    자간을 벌려 제목이 아니라 이름으로 읽히게 한다. */
 .top h1.bmark{font-size:27px;font-weight:800;letter-spacing:.15em;line-height:1.1}
-.top .sub{font-size:13px;opacity:.85;margin-top:3px}
-.top .acts{display:flex;gap:8px;align-items:center;align-self:center}
 .btn{background:var(--btn-bg);color:var(--btn-ink);border:0;border-radius:6px;padding:7px 13px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
 .btn:hover{background:var(--sky-l);text-decoration:none}
 .btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
@@ -225,15 +208,6 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 
 @media (max-width:860px){
   .shell{grid-template-columns:minmax(0,1fr)}
-  /* 회차를 오가는 칩 띠를 붙박이로 둔다 — 읽는 내내 쓰는 것은 이쪽이다. */
-  /* z-index 는 지도보다 위여야 한다. Leaflet 컨트롤(+/-·🌐)이 1000, 마커 말풍선이 1200 이라
-     600 으로 두니 지도를 스크롤해 지나갈 때 컨트롤이 고정 막대 위로 튀어나왔다. */
-  .side{position:sticky;top:0;z-index:1300;height:auto;max-height:180px;
-    border-right:0;border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(10,18,34,.12)}
-  .side ul{display:flex;flex-wrap:wrap;gap:2px 6px;padding:0 10px}
-  .side li a{padding:4px 8px}
-  .side li a .stub,.side li a .cnt{display:none}   /* 칩은 좁다 — 건수는 합계 줄로 갈음한다 */
-  .side-sum{margin:0 12px 8px;font-size:11px}
   .top,.main{padding-left:16px;padding-right:16px}
   .week{padding:18px 16px}
   /* 고정 칩 띠(최대 180px + 그림자) 밑으로 제목이 들어가지 않도록 앵커 여백을 띠보다 크게 잡는다 */
@@ -349,28 +323,8 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 @media (max-width:640px){
   html,body{font-size:14.5px}
 
-  /* 헤더 — 세로 스택, 버튼은 가로 3분할 */
-  .top{flex-direction:column;align-items:stretch;gap:12px;padding:16px}
-  .brand{gap:11px}
   .logo{width:40px;height:40px;font-size:12px;flex:none}
-  .top h1{font-size:17px;line-height:1.25;word-break:keep-all}   /* 한국어는 어절 단위로 끊는다 */
-  .top h1.bmark{font-size:20px;letter-spacing:.12em}
-  .top .sub{font-size:12px;word-break:keep-all}
-  /* .acts 는 기본이 nowrap 이라, 드롭다운(flex-basis 100%)과 버튼이 한 줄에 눌려
-     버튼 폭이 8px 까지 찌그러졌다. 줄바꿈을 허용하고 버튼에 최소 폭을 준다. */
-  .top .acts{align-self:stretch;gap:6px;flex-wrap:wrap}
-  .acts .btn{flex:1 1 120px;min-width:110px;padding:9px 6px;font-size:12px;
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
 
-  /* 사이드바 — 2행 랩 대신 가로 스크롤 한 줄(칩) */
-  .side{max-height:none;padding:10px 0 8px}
-  .side .go{margin:0 12px 8px;padding:7px 10px;font-size:12px}
-  .side ul{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
-    padding:0 12px 4px;gap:6px;scrollbar-width:thin}
-  .side li{flex:none}
-  .side li a{border:1px solid var(--line);border-radius:14px;padding:5px 10px;
-    font-size:11.5px;white-space:nowrap;background:var(--paper)}
-  .side li a.on{box-shadow:none;border-color:var(--navy);background:var(--sky-l)}
 
   /* 본문 여백 */
   .main{padding:0 12px 40px}
@@ -443,18 +397,10 @@ td{padding:8px 6px;border:1px solid var(--line);vertical-align:top}
 /* 아주 좁은 화면(360px 이하) — 375px(아이폰 표준)은 2열을 유지한다 */
 @media (max-width:360px){
   .kpis{grid-template-columns:1fr}
-  .top h1{font-size:16px}
-  .top h1.bmark{font-size:18px}
-  .acts .btn{font-size:11px;padding:8px 3px}
 }
-/* PDF 날짜 선택 */
-.pdf-sel{background:var(--btn-bg);color:var(--btn-ink);border:0;border-radius:6px;padding:7px 9px;
-  font-size:12px;font-weight:700;font-family:inherit;max-width:190px;cursor:pointer}
-.pdf-sel:focus{outline:2px solid var(--sky)}
 /* ?only= 인쇄 전용 뷰 — 사이드바·추이·버튼을 걷어낸 한 회차짜리 화면 */
 body.only-view .shell{grid-template-columns:minmax(0,1fr)}
 body.only-view .main{padding-top:14px}
-@media (max-width:640px){ .pdf-sel{flex:1 1 100%;max-width:none;padding:9px} }
 /* 등록됐으나 이번 주 언급이 0인 워치리스트 항목 */
 .kpi.muted{background:var(--soft);border-style:dashed}
 .kpi.muted .val{color:var(--mute)}
@@ -507,8 +453,6 @@ h2.sec .sec-face{margin-right:4px}
 /* 헤더 — 부산대 공식 상징 */
 .logo-img{width:48px;height:48px;flex:none;display:block;
   background:#fff;border-radius:50%;padding:2px;box-sizing:border-box}
-@media (max-width:640px){ .logo-img{width:40px;height:40px} }
-@media print{ .logo-img{width:40px;height:40px} }
 /* ══════════════ 주간 키워드 공기 네트워크 (3D) ══════════════
    화면은 캔버스(src/browser/net3d.js)가 그린다 — 발광·깊이 안개·상시 회전.
    인쇄와 자바스크립트 미동작 시에는 같은 자리의 SVG 가 그대로 쓰인다.
@@ -552,7 +496,6 @@ h2.sec .sec-face{margin-right:4px}
 /* 네트워크에서 고른 키워드가 든 제목 */
 .kw-on{background:var(--hit);border-radius:3px;box-shadow:0 0 0 3px var(--hit)}
 /* 진행 중 주차 배지 — 미생성(회색)과 구분한다 */
-.side li a .stub.live{color:#1f6b42;border-color:#bfdccb;background:var(--live-bg)}
 
 /* 기사 목록(등급 배지 · 제목 · 매체) — 일일 브리핑과 주간 해외 참고 섹션이 같이 쓴다 */
 .artlist{list-style:none;margin:0;padding:0}
@@ -592,15 +535,114 @@ h2.sec .sec-face{margin-right:4px}
   .lc{font-size:10px}
 }
 
-/* 헤더는 어디서도 고정하지 않는다.
-   헤더의 선택 상자는 'PDF 를 어느 회차로 받을까' 이지 화면을 옮기는 것이 아니다.
-   회차를 오가는 것은 .side 의 칩 띠이고, 모바일에서 고정하는 것은 그쪽이다(위 860px 블록). */
-@media (max-width:640px){
-  .top{padding:12px 14px;gap:9px;transition:padding .16s ease}
-  .top .brand{align-items:center;gap:10px}
-  .top .acts{flex-wrap:nowrap;gap:6px}
-  .pdf-sel{flex:1 1 auto;min-width:0;max-width:none;padding:8px;font-size:11.5px}
-  .acts .btn{flex:0 0 auto;padding:8px 11px;font-size:11.5px;white-space:nowrap}
-
-}
 @media print{ .top,.side{position:static !important;box-shadow:none} }
+
+/* ══════════════ 메뉴 — 시안 A '관제실' (src/menu.mjs · dist/menu-lab.html) ══════════════
+   헤더를 위쪽 전체로 펴 브랜드와 목록을 한 틀에 묶는다. 목록 행은 고정 칸
+   [번호] [날짜] [위험신호 막대] [건수] — 등급을 8px 점이 아니라 길이로 읽게 한다.
+   강조색은 남색 하나(활성 행). 등급 색은 막대에만 쓴다 — 추이 차트 막대와 같은 면 색이다.
+   이 블록이 파일 맨 끝에 있는 이유: 옛 메뉴 규칙을 걷어낸 자리에 새 규칙을 흩어 넣으면
+   어느 규칙이 이기는지 다시 따져야 한다. 한 덩어리로 두고 순서로 이기게 한다. */
+
+.shell{grid-template-columns:256px minmax(0,1fr)}
+
+/* ── 헤더. PC 에서는 고정하지 않는다(사용자 요청) — 목록 레일만 붙박이다. */
+.top{position:relative;z-index:5;height:64px;background:var(--head-bg);color:var(--head-ink);
+  display:flex;align-items:center;gap:18px;padding:0 18px}
+.top .brand{display:flex;align-items:center;gap:10px;flex:0 0 220px;min-width:0}
+.logo-img{width:30px;height:30px}
+.top h1{margin:0;font-size:17px;font-weight:700;line-height:1.2}   /* 시안 페이지들의 일반 제목 */
+.top h1.bmark{font-size:19px;font-weight:800;letter-spacing:.14em;line-height:1}
+.top .sub{flex:1;min-width:0;margin:0;font-size:12px;color:#c9d3e3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seg{display:inline-flex;flex:none;background:rgba(255,255,255,.10);border-radius:8px;padding:3px;gap:2px}
+.seg a{padding:6px 14px;border-radius:6px;font-size:12.5px;font-weight:700;color:#d6deeb;white-space:nowrap}
+.seg a:hover{background:rgba(255,255,255,.08);text-decoration:none}
+.seg a.on{background:#fff;color:var(--navy)}
+.seg .s{display:none}
+.top .acts{display:flex;gap:8px;align-items:center;flex:none}
+.pdf-sel{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.24);border-radius:6px;
+  padding:6px 9px;font-size:12px;font-weight:600;font-family:inherit;max-width:200px;cursor:pointer}
+.pdf-sel option{color:var(--ink);background:#fff}
+.pdf-sel:focus{outline:2px solid var(--sky);outline-offset:1px}
+.top .btn{padding:6px 12px}
+
+/* ── 목록 레일 */
+.side{background:var(--side-bg);border-right:1px solid var(--line);position:sticky;top:0;height:100vh;overflow:auto;padding:12px 0 18px}
+.side-stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 12px 12px}
+.side-stats div{background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:6px 9px;line-height:1.15}
+.side-stats b{display:block;font-size:17px;font-weight:800;color:var(--navy);font-variant-numeric:tabular-nums}
+.side-stats small{font-size:10.5px;color:var(--mute)}
+.side-head{display:grid;grid-template-columns:40px 1fr 54px 46px;gap:6px;padding:0 14px 4px;
+  font-size:10.5px;color:var(--mute);border-bottom:1px solid var(--line);margin-bottom:2px}
+.side-head span:nth-child(2){grid-column:3}
+.side-head span:nth-child(3){text-align:right}
+.side ul{list-style:none;margin:0;padding:0}
+.side li.mo{font-size:10.5px;font-weight:800;color:var(--mute);padding:8px 14px 2px;letter-spacing:.04em}
+/* 행 높이를 고정한다 — 예전엔 건수·배지가 붙은 맨 위 두 행만 두 줄로 접혀 들쭉날쭉했다 */
+.side li a{display:grid;grid-template-columns:40px 1fr 54px 46px;gap:6px;align-items:center;height:28px;
+  padding:0 14px;font-size:12.5px;color:var(--ink-2)}
+.side li a:hover{background:#eef2f8;text-decoration:none}
+.side li a.on{background:var(--sky-l);color:var(--navy);font-weight:700;box-shadow:inset 3px 0 0 var(--navy)}
+.side .wk{font-family:ui-monospace,"SFMono-Regular",Consolas,monospace;font-size:11.5px;font-weight:700;color:var(--navy)}
+.side .dt{display:flex;align-items:center;gap:5px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.side .st{font-style:normal;font-size:9.5px;font-weight:800;border-radius:3px;padding:0 4px;line-height:15px}
+.side .st.live{background:var(--ok-ink);color:#fff}
+.side .st.pending{background:var(--paper);color:var(--warn-ink);border:1px solid #ecd2b6}
+.side .bar{height:6px;background:#e3e7ee;border-radius:3px;overflow:hidden}
+.side .bar i{display:block;height:100%;border-radius:3px;background:var(--t)}
+.side .bar.na{background:transparent;border:1px dashed #c4cbd6;height:7px}   /* 등급 미산정 — 길이를 그리지 않는다 */
+.side .n{text-align:right;font-variant-numeric:tabular-nums;font-size:11.5px;color:var(--mute)}
+.side li a.on .n{color:var(--ink-3)}
+
+/* ── 태블릿·휴대전화.
+   헤더(브랜드·전환·PDF)와 칩 띠를 남색 한 덩어리로 묶어 위에 붙인다 — 시안 A.
+   예전엔 큰 헤더(약 130px)가 따로 있고 그 위에 칩 띠(약 118px)가 고정돼 본문이 250px 아래에서 시작했다.
+   이제 고정 덩어리 전체가 약 96px 이고 그것 말고는 없다.
+   긴 제목('대학 AX정책 AI 주간 모니터링')은 휴대전화에서 싣지 않는다 — 고정하지 말아 달라던 것이 그 글이었다.
+   z-index 는 지도보다 위여야 한다. Leaflet 컨트롤(+/-·🌐)이 1000, 마커 말풍선이 1200 이라
+   600 으로 두었을 때 지도를 지나가며 컨트롤이 고정 막대 위로 튀어나왔다. */
+@media (max-width:860px){
+  .shell{grid-template-columns:minmax(0,1fr)}
+  .top{position:sticky;top:0;z-index:1310;height:50px;gap:10px;padding:0 12px}
+  .top .brand{flex:0 0 auto}
+  .top .logo-img,.top .sub{display:none}
+  .top h1.bmark{font-size:16px}
+  .seg{margin-left:auto}
+  .seg a{padding:4px 11px;font-size:12px}
+  .seg .l{display:none}
+  .seg .s{display:inline}
+  /* PDF — 회차 선택 상자를 32px 아이콘으로 줄인다. 누르면 휴대전화 기본 목록이 뜨고,
+     고르는 순간 app.js 가 그 회차 PDF 를 연다. 시안엔 아이콘만 있었는데 그대로 옮기면
+     회차별 PDF 를 고를 길이 사라진다 — 기능을 잃지 않으려고 상자를 아이콘 밑에 숨겨 둔다. */
+  .top .acts{position:relative;width:32px;height:32px}
+  .top .acts::before{content:"⤓";position:absolute;inset:0;display:grid;place-items:center;
+    background:#fff;color:var(--navy);border-radius:7px;font-weight:900;font-size:15px;pointer-events:none}
+  .top .acts .btn{display:none}
+  .pdf-sel{position:absolute;inset:0;width:100%;height:100%;max-width:none;opacity:0;padding:0}
+  /* 칩 띠 — 헤더 바로 밑에 붙어 같은 남색 덩어리가 된다. 위쪽 띠 색이 등급이다. */
+  .side{position:sticky;top:50px;z-index:1300;height:auto;overflow:visible;padding:0 0 10px;
+    background:var(--head-bg);border:0;box-shadow:0 2px 10px rgba(10,18,34,.18)}
+  .side-stats,.side-head,.side li.mo{display:none}
+  .side ul{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:0 12px;scrollbar-width:none}
+  .side ul::-webkit-scrollbar{display:none}
+  .side li{flex:none}
+  .side li a{display:flex;gap:5px;align-items:baseline;height:auto;padding:4px 9px 5px;border-radius:6px;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-top:3px solid var(--t);
+    font-size:11.5px;font-weight:500;color:#d6deeb;box-shadow:none}
+  .side li a:hover{background:rgba(255,255,255,.14)}
+  .side .wk{color:#fff;font-size:11px}
+  .side .bar,.side .n,.side .st{display:none}
+  .side li a.on{background:#fff;color:var(--navy);box-shadow:none}
+  .side li a.on .wk{color:var(--navy)}
+  /* 앵커가 고정 덩어리(약 96px) 밑으로 들어가지 않게 */
+  .week{scroll-margin-top:112px}
+  .reflist li{scroll-margin-top:122px}
+}
+
+/* ── 인쇄. 위 기본 규칙이 파일 끝에 있어 앞쪽 인쇄 블록을 덮으므로 여기서 다시 잡는다. */
+@media print{
+  .top{position:static;height:auto;padding:14px 0;background:#fff;color:var(--navy);border-bottom:3px solid var(--navy)}
+  .seg,.top .acts{display:none !important}
+  .top .brand{flex:none}
+  .top .sub{color:var(--ink-3);white-space:normal;flex:1}
+}

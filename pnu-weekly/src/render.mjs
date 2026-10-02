@@ -7,6 +7,7 @@
 import { sanjini } from './browser/sanjini.svg.js';
 import { networkSvg, FIELD_COLOR, riskColor } from './network.mjs';
 import { T } from './strings.mjs';
+import { header, rail, wordOf } from './menu.mjs';
 
 // 등급 → 산지니 표정. 숫자를 읽기 전에 상태가 전달되게 한다(등급 색의 보조 단서).
 const TIER_MOOD = { 1: 'happy', 2: 'base', 3: 'tense', 4: 'angry' };
@@ -306,17 +307,29 @@ const pdfName = (date) => `PNU_Univ_Policy_AI_Weekly(${date.replace(/-/g, '.')})
 
 export function renderPage({ meta, weeks, sources, css, js, net3d, pdfPath, world, joongang }) {
 
-  // 주차마다 취합한 국내 기사 수를 단다 — 어느 주가 조용했는지 목록만 훑어도 보인다.
-  // signal.total 은 리포트 머리글의 '국내 기사 N건' 과 같은 수다(비교용 구글 한정 수치가 아니다).
+  // ── 메뉴 (src/menu.mjs — 일일 브리핑과 같은 틀)
+  // 기사 수는 signal.total — 리포트 머리글의 '국내 기사 N건' 과 같은 수다(비교용 구글 한정 수치가 아니다).
+  // 막대 길이는 추이 차트와 같은 값으로 잰다(comparable 의 위기+경고). 두 그림이 서로 다른 수를 말하면 안 된다.
   const navTotal = weeks.reduce((a, w) => a + ((w.signal && w.signal.total) || 0), 0);
-  const nav = weeks.map((w, i) => {
-    const n = (w.signal && w.signal.total) || 0;
-    const badge = w.complete ? '' : `<span class="stub${w.partial ? ' live' : ''}">${esc(w.partial ? T.progressBadge : T.stubBadge)}</span>`;
-    return `
-    <li><a class="${i === 0 ? 'on' : ''}" href="#${w.id}" data-nav="${w.id}">
-      <i class="dot d${w.tier}"></i>${esc(w.label)}${n ? `<span class="cnt">${esc(T.navCount(n))}</span>` : ''}${badge}
-    </a></li>`;
-  }).join('');
+  const riskNav = (w) => +((w.comparable ? w.comparable.crisis + w.comparable.warning : (w.signal.crisis || 0) + (w.signal.warning || 0)) || 0).toFixed(1);
+  const maxRisk = Math.max(...weeks.map(riskNav), 1);
+  const railHtml = rail({
+    T, maxRisk,
+    stats: [{ v: String(weeks.length), label: T.navStatWeeks }, { v: navTotal.toLocaleString(T.locale), label: T.navStatArticles }],
+    cols: T.navColsWeekly,
+    rows: weeks.map((w, i) => {
+      const [, m, d] = w.date.split('-');
+      const n = (w.signal && w.signal.total) || 0;
+      const state = w.partial ? 'live' : !w.complete ? 'pending' : null;
+      const num = w.id.replace('w', '');
+      return {
+        id: w.id, on: i === 0, tag: `W${num}`, dt: `${m}.${d}`, month: +m,
+        state, stateFull: state ? T.navStateFull[state] : '',
+        risk: riskNav(w), tier: w.tier, n,
+        aria: T.navAria(num, `${+m}월 ${+d}일`, wordOf(w.tier), riskNav(w), n.toLocaleString(T.locale))
+      };
+    })
+  });
 
   const mapData = {
     universities: meta.universities,
@@ -361,30 +374,19 @@ export function renderPage({ meta, weeks, sources, css, js, net3d, pdfPath, worl
 <style>${css}</style>
 </head>
 <body>
-<div class="shell">
-<aside class="side">
-  <a class="go" href="daily.html">${esc(T.navDaily)}</a>
-  <div class="side-sum">${esc(T.navTotal(weeks.length, navTotal))}</div>
-  <ul>${nav}</ul>
-</aside>
-
-<div>
-<header class="top">
-  <div class="brand">
-    <img class="logo-img" src="assets/pnu-symbol.png" alt="PNU" width="48" height="48">
-    <div>
-      <h1 class="bmark">${esc(brand)}</h1>
-      <div class="sub">${esc(T.brandSub(meta.org, title))}${meta.contact ? ' · ' + esc(meta.contact) : ''}</div>
-    </div>
-  </div>
-  <div class="acts">
-    <select class="pdf-sel" data-pdf-select aria-label="${esc(T.pdfSelectLabel)}">
+${header({
+    T, brand, view: 'weekly',
+    sub: T.brandSub(meta.org, title) + (meta.contact ? ' · ' + meta.contact : ''),
+    acts: `<select class="pdf-sel" data-pdf-select aria-label="${esc(T.pdfSelectLabel)}" title="${esc(T.pdfPick)}">
       <option value="${esc(pdfPath)}">${esc(T.pdfAll(weeks.length))}</option>
       ${weeks.filter(w => w.complete).map(w => `<option value="pdf/${esc(pdfName(w.date))}">${esc(w.label)}</option>`).join('')}
     </select>
-    <a class="btn" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf>${esc(T.pdfDownload)}</a>
-  </div>
-</header>
+    <a class="btn" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf>${esc(T.pdfDownload)}</a>`
+  })}
+<div class="shell">
+${railHtml}
+
+<div>
 
 <main class="main">
 <p class="notice"><span class="sec-face notice-face">${sanjini('grad', 40)}</span>${esc(meta.notice)} <span class="sample">${esc(meta.sampleBadge)}</span></p>

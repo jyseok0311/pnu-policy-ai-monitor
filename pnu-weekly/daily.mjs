@@ -11,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 import { relevant, mentionsOf } from './src/filter.mjs';
 import { sanjini } from './src/browser/sanjini.svg.js';
 import { T } from './src/strings.mjs';
+import { header, rail, wordOf } from './src/menu.mjs';
 const TIER_MOOD = { 1: 'happy', 2: 'base', 3: 'tense', 4: 'angry' };
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -232,12 +233,26 @@ function renderDaily() {
   const title = meta.title + ' · ' + D.suffix;
   const brand = meta.brand || 'PNU';
 
-  const nav = days.map((d, i) => {
-    const s = stat(all.filter((x) => x.date === d));
-    return `<li><a class="${i === 0 ? 'on' : ''}" href="#d-${d}" data-nav="d-${d}">
-      <i class="dot ${s.tier ? 'd' + s.tier : 'd0'}"></i>${d.replace(/-/g, '.')} (${esc(wd(d, T))})
-      <span class="stub">${esc(D.count(s.n))}</span></a></li>`;
-  }).join('');
+  // ── 메뉴 (src/menu.mjs — 주간 리포트와 같은 틀). 첫 칸이 주차 번호 대신 날짜, 둘째 칸이 요일.
+  const dayStats = days.map((d) => ({ d, s: stat(all.filter((x) => x.date === d)) }));
+  // 막대 길이의 기준에서 표본 부족한 날을 뺀다. 기사 몇 건짜리 날의 비율 하나가 튀면
+  // 나머지 날의 막대가 전부 짧아져 차이가 안 보였다.
+  const maxRisk = Math.max(...dayStats.filter((x) => x.s.tier).map((x) => x.s.risk || 0), 1);
+  const railHtml = rail({
+    T, maxRisk,
+    stats: [{ v: String(days.length), label: T.navStatDays },
+      { v: dayStats.reduce((a, x) => a + x.s.n, 0).toLocaleString(T.locale), label: T.navStatArticles }],
+    cols: T.navColsDaily,
+    rows: dayStats.map(({ d, s }, i) => {
+      const [, m, dd] = d.split('-');
+      const wdn = wd(d, T);
+      return {
+        id: `d-${d}`, on: i === 0, tag: `${m}.${dd}`, dt: wdn, month: +m, state: null,
+        risk: s.risk || 0, tier: s.tier || 0, n: s.n,
+        aria: T.navAriaDay(`${+m}월 ${+dd}일`, wdn, wordOf(s.tier), s.risk || 0, s.n.toLocaleString(T.locale))
+      };
+    })
+  });
 
   return `<!DOCTYPE html>
 <html lang="ko">
@@ -251,27 +266,19 @@ function renderDaily() {
 </style>
 </head>
 <body>
-<div class="shell">
-<aside class="side">
-  <a class="go" href="index.html">${esc(T.navWeekly)}</a>
-  <ul>${nav}</ul>
-</aside>
-<div>
-<header class="top">
-  <div class="brand">
-    <img class="logo-img" src="assets/pnu-symbol.png" alt="PNU" width="48" height="48">
-    <div><h1 class="bmark">${esc(brand)}</h1>
-    <div class="sub">${esc(T.brandSub(meta.org, title))}${meta.contact ? ' · ' + esc(meta.contact) : ''}</div></div>
-  </div>
-  <div class="acts">
-    <select class="pdf-sel" data-pdf-select aria-label="${esc(T.pdfDateLabel)}">
+${header({
+    T, brand, view: 'daily',
+    sub: T.brandSub(meta.org, title) + (meta.contact ? ' · ' + meta.contact : ''),
+    // '주간 리포트' 단추는 걷어냈다 — 헤더의 주간/일일 전환이 같은 일을 한다.
+    acts: `<select class="pdf-sel" data-pdf-select aria-label="${esc(T.pdfDateLabel)}" title="${esc(T.pdfPick)}">
       <option value="${esc(pdfPath)}">${esc(T.pdfAllDays(days.length))}</option>
       ${days.map((d) => `<option value="${esc(dailyPdf(d))}">${d.replace(/-/g, '.')} (${esc(wd(d, T))})</option>`).join('')}
     </select>
-    <a class="btn" href="index.html">${esc(T.weeklyLink)}</a>
-    <a class="btn ghost" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf>${esc(T.pdfDownload)}</a>
-  </div>
-</header>
+    <a class="btn" href="${esc(pdfPath)}" target="_blank" rel="noopener" data-pdf>${esc(T.pdfDownload)}</a>`
+  })}
+<div class="shell">
+${railHtml}
+<div>
 <main class="main">
 <p class="notice"><span class="sec-face notice-face">${sanjini('grad', 40)}</span>${D.notice}
 <span class="sample">${esc(D.thresholdNote(DTH, MIN_N))}</span></p>
