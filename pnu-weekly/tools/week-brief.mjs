@@ -61,8 +61,11 @@ let prevNote = '';
 if (prev) {
   const pc = prev.comparable || prev.signal || {};
   const c = wk.comparable || wk.signal || {};
-  prevNote = `이번 주차 위험신호 ${c.risk ?? '-'}% (기사 ${c.total ?? '-'}건) · ` +
-    `전주 ${prev.label} ${pc.risk ?? '-'}% (기사 ${pc.total ?? '-'}건)`;
+  // 본문이 아직 없는 주차는 comparable 이 없고 signal 에는 risk 칸이 없다(위기·경고만 있다).
+  // 그대로 두면 '-%' 로 찍혀 쓰는 쪽이 이번 주 수준을 모른다. 두 값을 더해 채운다.
+  const riskOf = (o) => o.risk ?? (o.crisis != null && o.warning != null ? +(o.crisis + o.warning).toFixed(1) : '-');
+  prevNote = `이번 주차 위험신호 ${riskOf(c)}% (기사 ${c.total ?? '-'}건) · ` +
+    `전주 ${prev.label} ${riskOf(pc)}% (기사 ${pc.total ?? '-'}건)`;
   if (prev.complete && prev.summary) {
     prevNote += `\n\n전주에 다룬 소제목 — 이어지는 사안인지 새 사안인지 판단에 쓸 것:\n` +
       prev.summary.map((g) => `  · ${g.h}`).join('\n');
