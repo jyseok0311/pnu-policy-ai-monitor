@@ -14,16 +14,25 @@ const kst = (ms = Date.now()) => new Date(ms + 9 * 3600e3).toISOString().slice(0
 
 const files = readdirSync(join(root, 'data/collected')).filter((f) => f.endsWith('.json')).sort();
 const latest = files[files.length - 1];
-const J = JSON.parse(readFileSync(join(root, 'data/collected', latest), 'utf8'));
+const read = (f) => JSON.parse(readFileSync(join(root, 'data/collected', f), 'utf8'));
+const J = read(latest);
 
 // 어제·오늘(KST) 날짜의 기사. 07:00 에 돌리므로 '오늘' 기사는 아직 적고 '어제'가 본체다.
+//
+// 주차 경계를 넘겨서 본다. 금요일 새벽에 새 주차 파일이 막 생기면 그 파일은 비어 있고,
+// 어제(목요일) 기사는 지난 주차 파일에 들어 있다. 최신 파일만 보던 때에는
+// 수집이 멀쩡한데도(피드 25/26 정상) '최근 2일 0건'으로 실패해 배포가 막히고
+// 실패 이슈가 열렸다 — 2026-10-02 05:12 실행이 그랬다. 마지막 두 파일을 합쳐 센다.
 const today = kst(), yesterday = kst(Date.now() - 864e5);
-const recent = J.items.filter((x) => x.date === today || x.date === yesterday);
+const seen = new Set();
+const recent = files.slice(-2).flatMap((f) => (f === latest ? J : read(f)).items)
+  .filter((x) => x.date === today || x.date === yesterday)
+  .filter((x) => { const k = x.link || x.title; if (seen.has(k)) return false; seen.add(k); return true; });
 const domestic = recent.filter((x) => x.region !== 'overseas').length;
 const feedsOk = (J.feeds || []).filter((f) => f.상태 === 'ok').length;
 const feedsAll = (J.feeds || []).length;
 
-console.log(`· 파일 ${latest} · 전체 ${J.total}건 · 최근 2일(${yesterday}~${today}) ${recent.length}건 (국내 ${domestic})`);
+console.log(`· 파일 ${files.slice(-2).join(' + ')} · 최근 2일(${yesterday}~${today}) ${recent.length}건 (국내 ${domestic})`);
 console.log(`· 피드 ${feedsOk}/${feedsAll} 정상`);
 
 const problems = [];
