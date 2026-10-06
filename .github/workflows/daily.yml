@@ -54,6 +54,8 @@ jobs:
       pending: ${{ steps.narr.outputs.pending }}
       pending_list: ${{ steps.narr.outputs.pending_list }}
       full: ${{ steps.mode.outputs.full }}
+      narr_bad: ${{ steps.agg.outputs.narr_bad }}
+      narr_bad_msg: ${{ steps.agg.outputs.narr_bad_msg }}
     defaults:
       run:
         working-directory: pnu-weekly
@@ -117,9 +119,12 @@ jobs:
         run: node tools/check-collect.mjs
 
       # ── 빌드
-      # 서술 파일이 올라온 마감 주차에 본문을 붙인다(weekly-report 워크플로가 쓴 것이든 손으로 쓴 것이든).
+      # 서술 파일이 올라온 마감 주차에 본문을 붙이고(weekly-report 워크플로가 쓴 것이든 손으로 쓴 것이든),
+      # 이미 본문이 있는 주차도 서술 파일이 고쳐졌으면 다시 집계한다(본문을 만든 서술의 지문과 비교).
+      # 서술이 검사에 걸리면 그 주차만 건너뛰고 이전 본문을 둔다 — 고친 서술이 깨졌다고 배포를 막지 않는다.
       # 반드시 series 앞 — aggregate 는 주차 객체를 통째로 갈아끼우므로 뒤에서 돌면 등급·비교지표가 지워진다.
       - name: 서술 있는 주차 집계
+        id: agg
         run: node tools/aggregate-pending.mjs
 
       - name: 시계열 · 임계값 · 진행 중 주차
@@ -214,6 +219,41 @@ jobs:
           node tools/check-narrative-file.mjs <id> 로 검사한 뒤 커밋하면, 다음 실행이 본문을 붙여 배포합니다.
 
           본문이 채워지면 다음 실행부터 댓글이 달리지 않습니다. 이슈는 직접 닫아 주세요."
+          NUM=$(gh issue list -R "$REPO" --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue comment -R "$REPO" "$NUM" --body "$BODY"
+          else
+            gh issue create -R "$REPO" --title "$TITLE" --body "$BODY"
+          fi
+
+  # ── 서술 파일 오류 알림.
+  # 서술이 검사(refKey·값 범위·숫자 혼입)에 걸리면 그 주차는 건너뛰고 이전 본문을 그대로 둔다. 배포는 계속된다.
+  # 그 사실을 알려야 한다 — 안 알리면 고쳐 올린 서술이 왜 화면에 안 나오는지 아무도 모른다.
+  # push 로 서술을 고쳐 올렸을 때는 바로 알린다(그 사람이 결과를 기다리는 중이다). 그 밖에는 하루 한 번만.
+  notify-bad-narrative:
+    needs: build
+    if: always() && needs.build.outputs.narr_bad != '' && (github.event_name == 'push' || needs.build.outputs.full == 'true')
+    runs-on: ${{ vars.RUNNER_LABEL || 'ubuntu-latest' }}
+    steps:
+      - name: 이슈 열기 또는 댓글
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          IDS: ${{ needs.build.outputs.narr_bad }}
+          MSG: ${{ needs.build.outputs.narr_bad_msg }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          TITLE="주간 리포트 서술 파일 오류"
+          BODY="서술 파일이 검사를 통과하지 못해 반영하지 않았습니다 — ${IDS}
+
+          이전 본문이 그대로 화면에 남아 있고 사이트 배포는 정상입니다.
+          ${MSG}
+
+          실행 로그: ${RUN_URL}
+
+          고치는 법: 로컬에서 node pnu-weekly/tools/check-narrative-file.mjs <id> 를 돌리면 어느 칸이 문제인지 전부 나옵니다.
+          흔한 원인은 refKey 가 실제 기사 제목에 없는 경우입니다(기사 제목의 부분 문자열이어야 합니다).
+          고쳐서 커밋하면 다음 실행에서 자동으로 반영되고, 그 뒤로는 댓글이 달리지 않습니다. 이슈는 직접 닫아 주세요."
           NUM=$(gh issue list -R "$REPO" --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number // empty')
           if [ -n "$NUM" ]; then
             gh issue comment -R "$REPO" "$NUM" --body "$BODY"

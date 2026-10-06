@@ -9,6 +9,7 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { relevant } from './src/filter.mjs';
 import { extract } from './src/keywords.mjs';
+import { narrativeHash } from './src/narrative-hash.mjs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { readdirSync as _rd } from 'node:fs';
@@ -298,6 +299,8 @@ const overseas = {
 const week = {
   id: narr.id, label: narr.label, date: narr.date, range: narr.range,
   tier, tierName: { 4: '위기', 3: '경계', 2: '주의', 1: '관심' }[tier], state, complete: true, live: true,
+  // 이 본문을 만든 서술 파일의 지문. 서술 파일이 바뀌면 배포 때 다시 집계한다(tools/aggregate-pending.mjs).
+  narrativeHash: narrativeHash(join(root, `data/narrative/${ID}.json`)),
   sourceNote: `무료·공개 소스 수집 ${raw.total}건 → 관련성 필터 후 국내 ${n}건 (해외 ${overseasItems.length}건은 참고 항목으로 별도) · 수집일 ${latest.replace('.json', '')}`,
   signal,
   map: {
