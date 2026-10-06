@@ -40,9 +40,20 @@ if (!pending.length) {
   console.log('  먼저 돌리면 등급·비교지표·주간지표가 지워진다.');
 }
 
+// '써야 할' 주차 — 달력상 닫혔고, 본문도 없고, 서술 파일도 아직 없는 것.
+// weekly-report 워크플로가 이것만 보고 쓴다. pending 만 보면 안 된다:
+// 서술을 이미 올렸지만 아직 집계 전인 주차도 pending 이라, 두 번째 실행이 써 둔 서술을 덮어쓴다.
+// partial 깃발 대신 달력으로 판단한다 — weeks.json 의 깃발은 마지막 수집 실행 때 값이라 늦을 수 있다.
+const kstToday = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+const needWrite = weeks.filter((w) => !w.complete && w.date && w.date <= kstToday
+  && !existsSync(join(root, `data/narrative/${w.id}.json`)));
+
 // 워크플로가 읽을 수 있게 내보낸다. 실패로 끝내지는 않는다 — 사이트는 멀쩡하기 때문이다.
 if (process.env.GITHUB_OUTPUT) {
   appendFileSync(process.env.GITHUB_OUTPUT,
     `pending=${pending.length}\n` +
-    `pending_list=${pending.map((w) => `${w.id} (${w.label})`).join(', ')}\n`);
+    `pending_list=${pending.map((w) => `${w.id} (${w.label})`).join(', ')}\n` +
+    `need_write=${needWrite.length}\n` +
+    `need_write_ids=${needWrite.map((w) => w.id).join(' ')}\n`);
 }
+if (needWrite.length) console.log(`\n✍ 서술을 새로 써야 할 주차: ${needWrite.map((w) => w.id).join(' ')}`);
