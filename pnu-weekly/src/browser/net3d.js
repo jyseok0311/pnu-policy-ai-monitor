@@ -40,8 +40,21 @@
 
     // 화면은 '돌려도 안 잘리는 틀'(data-r*)을 쓴다. 인쇄용 viewBox(data-v*)는 정면에 딱 맞춘 것이라
     // 그대로 쓰면 돌리는 순간 바깥 판이 잘린다.
-    var VX = +svg.dataset.rx, VY = +svg.dataset.ry, VW = +svg.dataset.rw, VH = +svg.dataset.rh;
-    if (!isFinite(VW) || !VW) { VX = +svg.dataset.vx; VY = +svg.dataset.vy; VW = +svg.dataset.vw; VH = +svg.dataset.vh; }
+    var SPIN = [+svg.dataset.rx, +svg.dataset.ry, +svg.dataset.rw, +svg.dataset.rh];
+    var FRONT = [+svg.dataset.vx, +svg.dataset.vy, +svg.dataset.vw, +svg.dataset.vh];
+    if (!isFinite(SPIN[2]) || !SPIN[2]) SPIN = FRONT;
+    // 휴대전화에서는 정면 틀(+6% 여백)에 맞춘다.
+    // 회전 여유 틀에 맞추면 338px 폭에서 확대비가 0.56 이 돼 라벨이 7px 이었다 — 확대하지 않으면 못 읽는다.
+    // 대신 끝까지 돌리면 가장자리가 잘릴 수 있다. 두 손가락으로 오므리면(최소 0.75배) 다 보인다.
+    // PC 는 폭이 넉넉해 회전 여유 틀을 그대로 쓴다(돌려도 점·글자가 잘리지 않는다).
+    var PAD_FRONT = 0.06;
+    var VX = SPIN[0], VY = SPIN[1], VW = SPIN[2], VH = SPIN[3];
+    function pickFrame(width) {
+      var f = width < 640 && isFinite(FRONT[2]) && FRONT[2] ? [
+        FRONT[0] - FRONT[2] * PAD_FRONT, FRONT[1] - FRONT[3] * PAD_FRONT,
+        FRONT[2] * (1 + 2 * PAD_FRONT), FRONT[3] * (1 + 2 * PAD_FRONT)] : SPIN;
+      VX = f[0]; VY = f[1]; VW = f[2]; VH = f[3];
+    }
     var W = +svg.dataset.w || 1000, H = +svg.dataset.h || 640;
     var HW = +svg.dataset.hw || 300, HH = +svg.dataset.hh || 200;
     var PLANES = [];
@@ -120,6 +133,7 @@
     function resize() {
       var r = box.getBoundingClientRect();
       if (!r.width) return false;
+      pickFrame(r.width);   // 폭에 따라 틀을 고른다 — 휴대전화를 가로로 돌리면 PC 쪽 틀로 바뀐다
       dpr = Math.min(window.devicePixelRatio || 1, 2);
       // 높이에 상한을 둔다. 그림이 거의 정사각형(세로/가로 0.85~1.04)이라 본문 폭에 맞추면
       // 1440px 화면에서 1088×946 이 됐다 — 노트북 화면보다 높고, 글자가 12×1.8 ≈ 20px 로 커졌다.
@@ -152,6 +166,48 @@
 
     var pts = [];
     function compute() { pts = N.map(project); }
+
+    // 라벨 겹침 피하기.
+    // 휴대전화에서 라벨을 11px 로 키우자 '양성'과 '지방자치단체'가 붙어 '양성지방자치단체'로 읽혔다.
+    // 중요한 것(가리킨 점 > 그 이웃 > 언급 기사 많은 순)부터 놓고, 뒤에 오는 라벨이 이미 놓인 것과 겹치면
+    // 점 아래 → 위 → 오른쪽 → 왼쪽 순으로 자리를 찾는다. 위·아래 두 자리만 볼 때는 '지방자치단체'가
+    // 갈 곳이 없어 이름 없는 점으로 남았다. 네 자리가 다 차면 그때만 그리지 않는다 — 가리키면 맨 먼저 놓인다.
+    function placeLabels(list) {
+      var placed = [];
+      var hit = function (b) {
+        for (var k = 0; k < placed.length; k++) {
+          var p = placed[k];
+          if (b[0] < p[2] && b[2] > p[0] && b[1] < p[3] && b[3] > p[1]) return true;
+        }
+        return false;
+      };
+      list.sort(function (a, b) { return b.rank - a.rank; }).forEach(function (L) {
+        ctx.font = '700 ' + L.size.toFixed(1) + 'px Pretendard, "Apple SD Gothic Neo", system-ui, sans-serif';
+        var w = ctx.measureText(L.text).width, h = L.size * 1.08, gap = 1;
+        var box = function (cx, y) { return [cx - w / 2 - gap, y - gap, cx + w / 2 + gap, y + h + gap]; };
+        var side = L.r + 4, mid = L.cy - h / 2, R = L.x + side + w / 2, Lf = L.x - side - w / 2;
+        // 아래 → 위 → 오른쪽 → 왼쪽 → 대각선 넷. 붐비는 자리('양성'·'충북대' 사이의 '지방자치단체')는
+        // 상하좌우가 다 차 있어 대각선까지 봐야 자리가 났다.
+        var spots = [[L.x, L.below], [L.x, L.above], [R, mid], [Lf, mid],
+          [R, L.above], [Lf, L.above], [R, L.below], [Lf, L.below]];
+        for (var s = 0; s < spots.length; s++) {
+          var b = box(spots[s][0], spots[s][1]);
+          if (hit(b)) continue;
+          placed.push(b);
+          // 제자리(바로 아래)가 아닌 곳으로 밀려난 라벨은 제 점까지 가는 가는 선을 단다.
+          // '지방자치단체'가 왼쪽 위로 밀려나자 바로 아래 있던 '양성'의 점 위에 앉아, 그 점의 이름처럼 읽혔다.
+          if (s > 0) {
+            var px = Math.max(b[0], Math.min(L.x, b[2])), py = Math.max(b[1], Math.min(L.cy, b[3]));
+            var dx = px - L.x, dy = py - L.cy, d = Math.hypot(dx, dy) || 1;
+            ctx.strokeStyle = rgba(INK, 0.38 * L.al);
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(L.x + dx / d * (L.r + 1), L.cy + dy / d * (L.r + 1)); ctx.lineTo(px, py); ctx.stroke();
+          }
+          label(L.text, spots[s][0], spots[s][1], L.size, L.al);
+          return;
+        }
+      });
+    }
 
     function label(text, x, y, size, alpha) {
       ctx.font = '700 ' + size.toFixed(1) + 'px Pretendard, "Apple SD Gothic Neo", system-ui, sans-serif';
@@ -216,6 +272,8 @@
       });
 
       // ── 노드: 뒤에서 앞으로. 기둥이 어느 판인지 알려 준다.
+      // 라벨은 여기서 바로 그리지 않고 모아 두었다가 맨 마지막에 겹침을 피해 놓는다(아래 placeLabels).
+      var labels = [];
       N.map(function (_, i) { return i; }).sort(function (p, q) { return pts[p].z - pts[q].z; })
         .forEach(function (i) {
           var n = N[i], q = pts[i];
@@ -241,8 +299,13 @@
           ctx.fillStyle = rgba(n.risk >= 8 ? n.ring : mix(n.fill, [0, 0, 0], 0.2), al);
           ctx.beginPath(); ctx.arc(q.x, q.y, dr, 0, 6.2832); ctx.fill();
 
-          label(n.key, q.x, q.y + dr + 4 * ss(), LABEL * q.s, al);
+          // 휴대전화에서는 라벨에 하한(11px)을 둔다 — 원근 때문에 뒤쪽 판의 라벨은 더 작아진다.
+          // PC 는 하한 없이 그림 크기를 따른다(확대하면 같이 커지는 것이 자연스럽다).
+          var size = narrow ? Math.max(LABEL * q.s, 11) : LABEL * q.s;
+          labels.push({ i: i, text: n.key, x: q.x, cy: q.y, r: dr, below: q.y + dr + 4 * ss(), above: q.y - dr - 3 * ss() - size * 1.15,
+            size: size, al: al, rank: (i === hot ? 1e9 : 0) + (on ? 1e6 : 0) + n.cnt });
         });
+      placeLabels(labels);
 
       if (Math.abs(tYaw - yaw) > 1e-4 || Math.abs(tPitch - pitch) > 1e-4) schedule();
     }
