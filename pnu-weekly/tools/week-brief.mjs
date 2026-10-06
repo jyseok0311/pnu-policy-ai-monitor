@@ -14,6 +14,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { relevant } from '../src/filter.mjs';
 import { extract } from '../src/keywords.mjs';
+import { PROGRAMS, programsOf } from '../src/programs.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const J = (p) => JSON.parse(readFileSync(join(root, p), 'utf8'));
@@ -85,6 +86,19 @@ const pnu = dedup(dom.filter((x) => x.title.includes('부산대')));
 const industry = dedup(dom.filter((x) => ['적응형행정', 'AX 기술 동향'].includes(x.field)));
 const local = dedup(dom.filter((x) => x.local));
 
+// 정부 AI·AX 인재양성 사업(src/programs.mjs). 위험신호도 아니고 부산대 기사도 아니라 위 묶음에는 안 걸린다.
+// 2026-09 AI중심대학·AX대학원 선정 때 그 주 관련 기사가 47건이었는데 주간 리포트 본문에는 한 줄도 없었다.
+// 전국 단위 사업 선정은 부산대가 해당되든 아니든 대학 정책 동향의 본론이다 — 쓰는 쪽 눈에 들어오게 따로 뽑는다.
+// 'AI중심대학·AX대학원 동시 선정'처럼 두 사업에 걸친 기사는 먼저 나온 묶음에만 싣는다.
+const programSeen = new Set();
+const programBlock = PROGRAMS.map((p) => {
+  const hit = dedup(dom.filter((x) => programsOf(x.title).includes(p.id)), 20)
+    .filter((x) => { const k = x.title.slice(0, 30); if (programSeen.has(k)) return false; programSeen.add(k); return true; });
+  if (!hit.length) return '';
+  return `\n## 정부 사업 — ${p.name} (${p.org})  — ${hit.length}건 중 ${Math.min(8, hit.length)}건\n`
+    + hit.slice(0, 8).map(line).join('\n') + '\n';
+}).join('');
+
 console.log(`# ${wk.label} 서술 자료
 
 주차 id      : ${ID}
@@ -104,5 +118,10 @@ ${prevNote}
 + block('부산대 언급', pnu, 30)
 + block('산업 — 적응형행정 · AX 기술 동향', industry, 30)
 + block('부울경 지역', local, 20)
++ (programBlock
+  ? '\n────────────────────────────────────────────────────────────\n'
+    + '전국 단위 정부 사업 소식이다. 부산대가 선정됐는지와 상관없이 이번 주 대학 정책 동향이면 본문에서 다룬다.\n'
+    + '선정 대학·규모는 기사에 적힌 사실만 쓴다.\n' + programBlock
+  : '')
 + `\n## 해외 참고  — ${oversea.length}건 (국내 지표에 반영하지 않음)\n`
 + dedup(oversea).slice(0, 10).map(line).join('\n') + '\n');

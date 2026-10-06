@@ -10,6 +10,7 @@
 import { writeFileSync, mkdirSync, existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { classify } from './src/classify.mjs';
+import { PROGRAMS } from './src/programs.mjs';
 import { fileURLToPath } from 'node:url';
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -51,7 +52,10 @@ const GOOGLE_QUERIES = [
   // 적응형행정(AURA A) — 대학·공공의 행정 AX.
   // 대학 기사만 봐서는 주당 서너 건뿐이라 분야 판이 그려지지 않았다.
   '대학 행정 AI', '대학 학사행정 시스템', '공공부문 생성형 AI', '공공기관 AI 행정혁신',
-  '생성형 AI 업무 도입'
+  '생성형 AI 업무 도입',
+  // 정부 AI·AX 인재양성 사업(src/programs.mjs). 이 사업들을 겨냥한 검색어가 없어
+  // 넓은 검색어에 우연히 걸린 것만 들어왔다 — 전자신문 「15개 AX대학원…」은 아예 빠졌다.
+  ...PROGRAMS.map((p) => p.query)
 ];
 const PRESS_FEEDS = [
   { media: '한국대학신문', url: 'https://news.unn.net/rss/allArticle.xml' },
