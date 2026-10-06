@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-10-06T05:33:53.285Z",
+  "collectedAt": "2026-10-06T06:02:10.558Z",
   "date": "2026-10-06",
   "window": {
     "law": 120,
@@ -8,31 +8,27 @@
   },
   "sources": {
     "law": {
-      "status": "carried",
+      "status": "ok",
       "label": "법령",
-      "error": "fetch failed",
-      "carriedFrom": "2026-10-05",
+      "fetched": 122,
       "kept": 16
     },
     "admrul": {
-      "status": "carried",
+      "status": "ok",
       "label": "행정규칙",
-      "error": "fetch failed",
-      "carriedFrom": "2026-10-05",
-      "kept": 22
+      "fetched": 112,
+      "kept": 23
     },
     "ordin": {
-      "status": "carried",
+      "status": "ok",
       "label": "자치법규",
-      "error": "fetch failed",
-      "carriedFrom": "2026-10-05",
+      "fetched": 196,
       "kept": 46
     },
     "notice": {
-      "status": "carried",
+      "status": "ok",
       "label": "입법예고",
-      "error": "fetch failed",
-      "carriedFrom": "2026-10-05",
+      "fetched": 1,
       "kept": 1
     }
   },
@@ -217,6 +213,17 @@
   "admrul": [
     {
       "kind": "admrul",
+      "title": "자율기구 보훈인공지능담당관 설치 및 운영에 관한 규정",
+      "change": "제정",
+      "org": "국가보훈부",
+      "category": "훈령",
+      "date": "2026-10-06",
+      "effective": "2026-10-06",
+      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000285830",
+      "q": "인공지능"
+    },
+    {
+      "kind": "admrul",
       "title": "법학전문대학원 교육파견 심사위원회 규정",
       "change": "일부개정",
       "org": "법무부",
@@ -250,17 +257,6 @@
     },
     {
       "kind": "admrul",
-      "title": "자율기구 질병관리인공지능담당관의 설치 및 운영에 관한 규정",
-      "change": "일부개정",
-      "org": "질병관리청",
-      "category": "훈령",
-      "date": "2026-09-09",
-      "effective": "2026-09-09",
-      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000284876",
-      "q": "인공지능"
-    },
-    {
-      "kind": "admrul",
       "title": "글로벌 인공지능 허브 추진위원회의 설치 및 운영에 관한 규정",
       "change": "일부개정",
       "org": "국무조정실",
@@ -272,13 +268,13 @@
     },
     {
       "kind": "admrul",
-      "title": "재정경제부 인공지능 및 데이터 관리규정",
+      "title": "자율기구 질병관리인공지능담당관의 설치 및 운영에 관한 규정",
       "change": "일부개정",
-      "org": "재정경제부",
+      "org": "질병관리청",
       "category": "훈령",
-      "date": "2026-09-01",
-      "effective": "2026-09-07",
-      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000284612",
+      "date": "2026-09-09",
+      "effective": "2026-09-09",
+      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000284876",
       "q": "인공지능"
     },
     {
@@ -290,6 +286,17 @@
       "date": "2026-09-01",
       "effective": "2026-09-01",
       "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000284158",
+      "q": "인공지능"
+    },
+    {
+      "kind": "admrul",
+      "title": "재정경제부 인공지능 및 데이터 관리규정",
+      "change": "일부개정",
+      "org": "재정경제부",
+      "category": "훈령",
+      "date": "2026-09-01",
+      "effective": "2026-09-07",
+      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000284612",
       "q": "인공지능"
     },
     {
@@ -415,17 +422,6 @@
     },
     {
       "kind": "admrul",
-      "title": "소방 인공지능·로봇 기술위원회 운영 규정",
-      "change": "제정",
-      "org": "소방청",
-      "category": "훈령",
-      "date": "2026-06-30",
-      "effective": "2026-06-30",
-      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000281220",
-      "q": "인공지능"
-    },
-    {
-      "kind": "admrul",
       "title": "경찰청 인공지능의 개발 및 활용에 관한 규칙",
       "change": "제정",
       "org": "경찰청",
@@ -433,6 +429,17 @@
       "date": "2026-06-30",
       "effective": "2026-06-30",
       "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000281962",
+      "q": "인공지능"
+    },
+    {
+      "kind": "admrul",
+      "title": "소방 인공지능·로봇 기술위원회 운영 규정",
+      "change": "제정",
+      "org": "소방청",
+      "category": "훈령",
+      "date": "2026-06-30",
+      "effective": "2026-06-30",
+      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000281220",
       "q": "인공지능"
     },
     {
@@ -509,18 +516,6 @@
     },
     {
       "kind": "ordin",
-      "title": "밀양시 인공지능 활용 촉진 조례",
-      "change": "제정",
-      "org": "경상남도 밀양시",
-      "category": "조례",
-      "date": "2026-08-20",
-      "effective": "2026-08-20",
-      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2164279",
-      "local": true,
-      "q": "인공지능"
-    },
-    {
-      "kind": "ordin",
       "title": "진주시 인공지능산업 육성 및 지원에 관한 조례",
       "change": "제정",
       "org": "경상남도 진주시",
@@ -528,6 +523,18 @@
       "date": "2026-08-20",
       "effective": "2026-09-09",
       "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2164267",
+      "local": true,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "밀양시 인공지능 활용 촉진 조례",
+      "change": "제정",
+      "org": "경상남도 밀양시",
+      "category": "조례",
+      "date": "2026-08-20",
+      "effective": "2026-08-20",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2164279",
       "local": true,
       "q": "인공지능"
     },
@@ -629,18 +636,6 @@
     },
     {
       "kind": "ordin",
-      "title": "홍성군 인공지능행정 구현에 관한 조례",
-      "change": "제정",
-      "org": "충청남도 홍성군",
-      "category": "조례",
-      "date": "2026-09-30",
-      "effective": "2026-09-30",
-      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2172661",
-      "local": false,
-      "q": "인공지능"
-    },
-    {
-      "kind": "ordin",
       "title": "충청남도 인공지능 스타트업 육성 및 지원 조례",
       "change": "제정",
       "org": "충청남도",
@@ -648,6 +643,18 @@
       "date": "2026-09-30",
       "effective": "2026-09-30",
       "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2173133",
+      "local": false,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "홍성군 인공지능행정 구현에 관한 조례",
+      "change": "제정",
+      "org": "충청남도 홍성군",
+      "category": "조례",
+      "date": "2026-09-30",
+      "effective": "2026-09-30",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2172661",
       "local": false,
       "q": "인공지능"
     },
@@ -785,18 +792,6 @@
     },
     {
       "kind": "ordin",
-      "title": "무안군 대학 진학 축하금 지원에 관한 조례",
-      "change": "일부개정",
-      "org": "전남광주통합특별시 무안군",
-      "category": "조례",
-      "date": "2026-08-18",
-      "effective": "2026-08-18",
-      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2163813",
-      "local": false,
-      "q": "대학"
-    },
-    {
-      "kind": "ordin",
       "title": "무안군 지방대학 및 지역균형인재 육성에 관한 지원 조례",
       "change": "일부개정",
       "org": "전남광주통합특별시 무안군",
@@ -804,6 +799,18 @@
       "date": "2026-08-18",
       "effective": "2026-08-18",
       "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2163859",
+      "local": false,
+      "q": "대학"
+    },
+    {
+      "kind": "ordin",
+      "title": "무안군 대학 진학 축하금 지원에 관한 조례",
+      "change": "일부개정",
+      "org": "전남광주통합특별시 무안군",
+      "category": "조례",
+      "date": "2026-08-18",
+      "effective": "2026-08-18",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2163813",
       "local": false,
       "q": "대학"
     },
@@ -989,18 +996,6 @@
     },
     {
       "kind": "ordin",
-      "title": "서울특별시 강남구 인공지능산업 육성 및 지원 조례",
-      "change": "일부개정",
-      "org": "서울특별시 강남구",
-      "category": "조례",
-      "date": "2026-07-10",
-      "effective": "2026-07-10",
-      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2153223",
-      "local": false,
-      "q": "인공지능"
-    },
-    {
-      "kind": "ordin",
       "title": "서울특별시 강남구 인공지능 기본 조례",
       "change": "제정",
       "org": "서울특별시 강남구",
@@ -1008,6 +1003,18 @@
       "date": "2026-07-10",
       "effective": "2026-07-10",
       "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2147837",
+      "local": false,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "서울특별시 강남구 인공지능산업 육성 및 지원 조례",
+      "change": "일부개정",
+      "org": "서울특별시 강남구",
+      "category": "조례",
+      "date": "2026-07-10",
+      "effective": "2026-07-10",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2153223",
       "local": false,
       "q": "인공지능"
     }
@@ -1024,5 +1031,5 @@
       "seen": "2026-10-03"
     }
   ],
-  "total": 85
+  "total": 86
 }
