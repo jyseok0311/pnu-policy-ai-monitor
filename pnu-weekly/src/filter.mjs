@@ -72,3 +72,6 @@ export function mentionsOf(items, name) {
     return t.includes(name);
   }).length;
 }
+
+// 화면의 '수집·분류 기준' 표시용. 판정은 위 relevant() 가 하고, 이것은 같은 규칙을 읽기만 한다.
+export const FILTER_RULES = { NOISE, GAMBLE, FOREIGN_MEDIA, TOPIC, UNIV_ABBR, TOPIC_EN };

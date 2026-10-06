@@ -649,3 +649,28 @@ h2.sec .sec-face{margin-right:4px}
   .top .brand{flex:none}
   .top .sub{color:var(--ink-3);white-space:normal;flex:1}
 }
+
+/* ── 수집·분류 기준 낱말 (일일 브리핑) ──
+   낱말 목록은 페이지에 한 번만 있고 항목을 펼칠 때 채워진다(app.js 11번). 인쇄에는 싣지 않는다. */
+details.crit{margin:4px 0 10px;border:0;background:transparent}
+details.crit > summary{cursor:pointer;display:inline-flex;align-items:center;gap:6px;list-style:none;
+  padding:3px 10px;border:1px dashed var(--line);border-radius:14px;background:var(--soft);
+  font-size:12px;font-weight:700;color:var(--link)}
+details.crit > summary::-webkit-details-marker{display:none}
+details.crit > summary::before{content:"▸";font-size:10px;color:var(--mute)}
+details.crit[open] > summary::before{content:"▾"}
+details.crit > summary:hover{border-color:var(--sky);background:var(--sky-l)}
+.crit-slot{margin-top:8px;padding:12px 14px;background:var(--soft);border:1px solid var(--line);border-radius:8px}
+.crit-lead,.crit-rule{margin:0 0 8px;font-size:12.5px;color:var(--ink-3);max-width:var(--measure);word-break:keep-all}
+.crit-sub{margin:10px 0 3px;font-size:11.5px;font-weight:700;color:var(--navy)}
+.crit-blk{margin:12px 0 0;padding-top:8px;border-top:1px solid var(--line)}
+.crit-blk h5{margin:0 0 4px;font-size:13px;color:var(--navy);display:flex;align-items:center;gap:6px}
+.crit-fine{margin:6px 0 0;font-size:11.5px;color:var(--mute)}
+.kw{display:inline-block;margin:2px 4px 2px 0;padding:1px 8px;border-radius:10px;background:var(--chip-bg);
+  font-size:12px;color:var(--ink-2);line-height:1.6}
+.kw.s{background:var(--sky-l);color:var(--navy);font-weight:700}
+.kw i{font-style:normal;color:var(--navy);font-weight:800;margin-left:1px}
+.kw-notes{margin:8px 0 0;padding-left:18px;font-size:12px;color:var(--ink-3)}
+.kw-notes li{margin:2px 0;word-break:keep-all}
+@media print{ details.crit,#crit-data{display:none !important} }
+.kpis + .note-line{margin-top:10px}

@@ -10,7 +10,7 @@
 import { writeFileSync, mkdirSync, existsSync, readFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { classify } from './src/classify.mjs';
-import { PROGRAMS } from './src/programs.mjs';
+import { GOOGLE_QUERIES, PRESS_FEEDS, OVERSEAS_QUERIES } from './src/sources.mjs';
 import { fileURLToPath } from 'node:url';
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -46,35 +46,7 @@ const TAG = FROM && TO ? FROM : WEEKLY ? weekStart() : kstDate();
 const UA = 'Mozilla/5.0 (compatible; PNU-AX-Monitor/0.1; +ax@pusan.ac.kr)';
 
 // ── 수집 대상 ────────────────────────────────────────────────
-const GOOGLE_QUERIES = [
-  '거점국립대', '국립대 통합', '글로컬대학', 'RISE 지역혁신중심 대학지원',
-  '대학 정원 감축', '대학 등록금', '대학 생성형 AI', '대학 구조개혁', '부산대학교',
-  // 적응형행정(AURA A) — 대학·공공의 행정 AX.
-  // 대학 기사만 봐서는 주당 서너 건뿐이라 분야 판이 그려지지 않았다.
-  '대학 행정 AI', '대학 학사행정 시스템', '공공부문 생성형 AI', '공공기관 AI 행정혁신',
-  '생성형 AI 업무 도입',
-  // 정부 AI·AX 인재양성 사업(src/programs.mjs). 이 사업들을 겨냥한 검색어가 없어
-  // 넓은 검색어에 우연히 걸린 것만 들어왔다 — 전자신문 「15개 AX대학원…」은 아예 빠졌다.
-  ...PROGRAMS.map((p) => p.query)
-];
-const PRESS_FEEDS = [
-  { media: '한국대학신문', url: 'https://news.unn.net/rss/allArticle.xml' },
-  { media: '교수신문', url: 'https://www.kyosu.net/rss/allArticle.xml' },
-  { media: '베리타스알파', url: 'https://www.veritas-a.com/rss/allArticle.xml' },
-  { media: '대학지(유니프레스)', url: 'https://www.unipress.co.kr/rss/allArticle.xml' }
-];
-// 해외 고등교육 정책 — 국내 이슈의 선행/대조 사례로 쓴다.
-// 영문 구글 뉴스는 언어·지역 파라미터만 바꾸면 된다.
-const OVERSEAS_QUERIES = [
-  'higher education policy reform',
-  'university funding cuts government',
-  'national university merger',
-  'university tuition free policy',
-  'generative AI university policy',
-  'declining student enrollment university',
-  'regional university revitalization',
-  'university world rankings policy'
-];
+// 수집 대상(구글 검색어·언론사 RSS·해외 검색어)은 src/sources.mjs — 화면의 '수집 기준' 표시와 같은 목록을 쓴다.
 const gnews = (q) => `https://news.google.com/rss/search?q=${encodeURIComponent(q + ' ' + RANGE)}&hl=ko&gl=KR&ceid=KR:ko`;
 const gnewsEn = (q) => `https://news.google.com/rss/search?q=${encodeURIComponent(q + ' ' + RANGE)}&hl=en-US&gl=US&ceid=US:en`;
 

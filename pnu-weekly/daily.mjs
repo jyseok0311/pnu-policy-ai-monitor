@@ -12,6 +12,8 @@ import { relevant, mentionsOf } from './src/filter.mjs';
 import { sanjini } from './src/browser/sanjini.svg.js';
 import { T } from './src/strings.mjs';
 import { header, rail, wordOf } from './src/menu.mjs';
+import { FIELD_ORDER } from './src/criteria.mjs';
+import { critSlot, critData } from './src/criteria-html.mjs';
 const TIER_MOOD = { 1: 'happy', 2: 'base', 3: 'tense', 4: 'angry' };
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -93,7 +95,10 @@ calibrateDaily(days.map((d) => {
   return +(q('crisis') + q('warning')).toFixed(1);
 }));
 
-const FIELDS = ['정책/철학', '융합연구', '증강인재교육', '적응형행정', '기타'];
+// 분야 목록은 분류기(classify.mjs)에서 가져온다. 여기에 이름을 따로 적어 두었더니 'AX 기술 동향'이
+// 빠져 있었다 — 그 분야 기사는 합계·위험신호에는 들어가면서 목록에는 한 번도 나오지 않았다
+// (최근 10일 2,158건 중 17건). 분류기에 분야를 더하면 화면에도 저절로 생긴다.
+const FIELDS = FIELD_ORDER;
 const wd = (d, T) => T.daily.weekday[new Date(Date.parse(d)).getDay()];
 
 // ── ⚖ 법령·조례 동향
@@ -135,12 +140,13 @@ function legalSection(d, D) {
     const local = key === 'ordin' ? list.filter((x) => x.local).length : 0;
     if (key === 'notice' && !list.length) {
       return `<details class="day legal"><summary><span>${esc(D.legalGroup[key])} — ${esc(D.count(0))}</span></summary>
-        <div class="cat"><p class="note-line">${esc(D.legalNoticeNone)}</p></div></details>`;
+        <div class="cat"><p class="note-line">${esc(D.legalNoticeNone)}</p>${critSlot('legal:notice', D)}</div></details>`;
     }
     return `
   <details class="day legal"${open ? ' open' : ''}>
     <summary><span>${esc(D.legalGroup[key])} — ${esc(D.count(list.length))}${local ? esc(D.legalLocal(local)) : ''}</span></summary>
     <div class="cat">
+      ${critSlot('legal:' + key, D)}
       ${src.status === 'carried' && src.carriedFrom ? `<p class="note-line">${esc(D.legalCarried(src.carriedFrom))}</p>` : ''}
       ${list.length ? `<ul class="leglist">${list.slice(0, CAP[key]).map(row).join('')}
         ${list.length > CAP[key] ? `<li class="more">${esc(D.more(list.length - CAP[key]))}</li>` : ''}</ul>`
@@ -180,6 +186,7 @@ function renderDay(d, idx, T) {
   <div class="signal">${D.signal(s.crisis, s.warning, s.risk, s.n, deltaHtml)}</div>
   <div class="live-note"><span class="live-badge">${esc(T.liveBadge)}</span>${esc(D.liveNote)}</div>
   <p class="note-line">${esc(D.ruleNote)}</p>
+  ${critSlot('risk', D, D.critRiskShow)}
 
   <h2 class="sec">${esc(D.secFields)} <small>${esc(D.dayTotal(s.n))}</small></h2>
   <div class="kpis">${byField.map(({ f, list }) => {
@@ -190,10 +197,12 @@ function renderDay(d, idx, T) {
       <div class="ch ${list.length < 5 ? 'flat' : r.risk >= DTH.t3 ? 'up' : 'flat'}">${esc(list.length < 5 ? D.riskNone : D.riskPct(r.risk))}</div>
     </div>`;
   }).join('')}</div>
+  <p class="note-line">${esc(D.critFieldHint)}</p>
 
   ${uni.length ? `<h2 class="sec">${esc(D.secUni)}</h2>
   <div class="kpis">${uni.map((u) => `<div class="kpi${u.n === '부산대' ? ' live' : ''}">
-    <div class="n"><span>${esc(u.n)}</span></div><div class="val">${u.c}<small>${esc(T.unit)}</small></div></div>`).join('')}</div>` : ''}
+    <div class="n"><span>${esc(u.n)}</span></div><div class="val">${u.c}<small>${esc(T.unit)}</small></div></div>`).join('')}</div>
+  ${critSlot('uni', D)}` : ''}
 
   ${legalSection(d, D)}
 
@@ -201,7 +210,7 @@ function renderDay(d, idx, T) {
   ${byField.map(({ f, list }) => `
   <details class="day"${f === byField[0].f ? ' open' : ''}>
     <summary><span>${esc(f)} — ${esc(D.count(list.length))}</span></summary>
-    <div class="cat"><ul class="artlist">${list.slice(0, 40).map((x) => `
+    <div class="cat">${critSlot('field:' + f, D, D.critFieldShow(f))}<ul class="artlist">${list.slice(0, 40).map((x) => `
       <li><span class="lv ${LVCLS[x.level]}"${x.why ? ` title="${esc(D.whyTip(D.lvWord[x.level], x.why))}"` : ''}>${esc(D.lvWord[x.level])}</span>
       <a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a>
       <span class="artmeta">${esc(x.media)}</span></li>`).join('')}
@@ -212,7 +221,7 @@ function renderDay(d, idx, T) {
   <h2 class="sec">${esc(D.overseas(ov.length))} <small>${esc(D.overseasNote)}</small></h2>
   <details class="day">
     <summary><span>${esc(D.overseas(ov.length))}</span></summary>
-    <div class="cat"><ul class="artlist">${ov.slice(0, 30).map((x) => `
+    <div class="cat">${critSlot('overseas', D)}<ul class="artlist">${ov.slice(0, 30).map((x) => `
       <li><span class="lv ${LVCLS[x.level]}"${x.why ? ` title="${esc(D.whyTip(D.lvWord[x.level], x.why))}"` : ''}>${esc(D.lvWord[x.level])}</span>
       <a href="${esc(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a>
       <span class="artmeta">${esc(x.media)}</span></li>`).join('')}
@@ -282,8 +291,10 @@ ${railHtml}
 <main class="main">
 <p class="notice"><span class="sec-face notice-face">${sanjini('grad', 40)}</span>${D.notice}
 <span class="sample">${esc(D.thresholdNote(DTH, MIN_N))}</span></p>
+${critSlot('master', D, D.critMasterT)}
 ${days.map((d, i) => renderDay(d, i, T)).join('\n')}
 <p class="foot">${esc(meta.foot)}<br>${esc(T.genAt)}: ${new Date().toISOString().slice(0, 19).replace('T', ' ')} · data/collected/</p>
+${critData(D, { universities: meta.universities.map((u) => u.name) })}
 </main>
 </div>
 </div>

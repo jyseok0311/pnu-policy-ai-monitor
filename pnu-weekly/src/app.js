@@ -596,4 +596,19 @@
   // 모바일에서 고정하는 것은 헤더가 아니라 날짜 칩 띠(.side)다.
   // 그건 CSS 의 position:sticky 만으로 되므로 헤더를 접던 stickyHead() 는 없앴다.
 
+  /* ---------- 11. 일일 브리핑의 기준 낱말 ---------- */
+  // 낱말 목록은 페이지에 한 번만 있고(#crit-data), 각 항목의 .crit 은 빈 자리다.
+  // 날짜마다 10번 박으면 수백 KB 가 불어난다. 펼치는 순간 한 번만 복사해 채운다.
+  // toggle 은 버블링하지 않으므로 캡처 단계에서 듣는다.
+  document.addEventListener('toggle', function (e) {
+    var d = e.target;
+    if (!d || !d.classList || !d.classList.contains('crit') || !d.open) return;
+    var slot = d.querySelector('[data-crit]');
+    if (!slot || slot.getAttribute('data-filled')) return;
+    var src = document.querySelector('#crit-data [data-crit-src="' + slot.getAttribute('data-crit').replace(/"/g, '\\"') + '"]');
+    if (!src) return;
+    slot.innerHTML = src.innerHTML;
+    slot.setAttribute('data-filled', '1');
+  }, true);
+
 })();

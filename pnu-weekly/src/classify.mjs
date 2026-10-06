@@ -35,7 +35,7 @@ export const groupOf = (field) => FIELD_GROUP[field] || '기타';
 
 // 지역(부울경)은 분야가 아니라 태그다. 주제와 다른 축이라 분야로 두면
 // '부울경 산학협력' 기사가 융합연구와 지역 중 한쪽에서 사라진다.
-const BUKYEONG = /부울경|동남권|부산|울산|경남|창원|김해|양산|진주|거제|통영|밀양|사천|함안|거창|합천/;
+export const BUKYEONG = /부울경|동남권|부산|울산|경남|창원|김해|양산|진주|거제|통영|밀양|사천|함안|거창|합천/;
 export const isLocal = (title) => BUKYEONG.test(String(title || ''));
 
 export const FIELDS = {
