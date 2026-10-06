@@ -26,15 +26,2737 @@
     "tier": 1,
     "tierName": "관심",
     "state": "Normal",
-    "complete": false,
+    "complete": true,
     "live": true,
-    "partial": false,
-    "sourceNote": "구글 뉴스 소급 수집 · 관련 기사 898건",
+    "sourceNote": "무료·공개 소스 수집 3446건 → 관련성 필터 후 국내 1540건 (해외 496건은 참고 항목으로 별도) · 수집일 2026-09-25",
     "signal": {
+      "crisis": 1.6,
+      "warning": 1.8,
+      "total": 1540,
+      "trend": "falling"
+    },
+    "map": {
+      "levels": {
+        "snu": 3,
+        "knu": 1,
+        "cbnu": 4,
+        "cnu": 2,
+        "knu2": 2,
+        "jbnu": 3,
+        "jnu": 3,
+        "gnu": 3,
+        "pnu": 4,
+        "jeju": 1
+      },
+      "uni": {
+        "snu": {
+          "name": "서울대",
+          "rank": {
+            "qs": "38",
+            "the": "=58",
+            "city": "서울",
+            "ja": {
+              "year": "2025",
+              "rank": 1,
+              "series": {
+                "2021": 1,
+                "2022": 1,
+                "2023": 1,
+                "2024": 1,
+                "2025": 1
+              }
+            }
+          },
+          "accredit": {
+            "from": "2022.02.01",
+            "to": "2027.07.31",
+            "type": "국립대법인",
+            "region": "서울",
+            "daysLeft": 298
+          },
+          "mentions": 40,
+          "risky": 1,
+          "riskRate": 2.5,
+          "riskLevel": 1,
+          "keywords": [
+            [
+              "AI",
+              8
+            ],
+            [
+              "의예",
+              6
+            ],
+            [
+              "단독",
+              5
+            ],
+            [
+              "연대",
+              5
+            ],
+            [
+              "남서울대",
+              4
+            ]
+          ],
+          "lead": {
+            "title": "“SKY 말고 의대갈래요”… 지난 5년간 중도탈락 1만 명 ↑",
+            "media": "한국대학신문",
+            "level": "crisis"
+          }
+        },
+        "knu": {
+          "name": "강원대",
+          "rank": {
+            "qs": "1001-1200",
+            "the": "1201–1500",
+            "city": "춘천",
+            "ja": {
+              "year": "2022",
+              "rank": 33,
+              "series": {
+                "2021": 36,
+                "2022": 33,
+                "2023": null,
+                "2024": null,
+                "2025": null
+              }
+            }
+          },
+          "accredit": {
+            "from": "2023.01.01",
+            "to": "2030.12.31",
+            "type": "국립",
+            "region": "강원",
+            "daysLeft": 1547
+          },
+          "mentions": 3,
+          "risky": 0,
+          "riskRate": 0,
+          "riskLevel": 0,
+          "keywords": [
+            [
+              "한라대",
+              1
+            ],
+            [
+              "강원권",
+              1
+            ],
+            [
+              "AI",
+              1
+            ]
+          ],
+          "lead": {
+            "title": "한라대 강원권 3개 대학, '2026 AI/SW 페스티벌' 공동 개최",
+            "media": "베리타스알파",
+            "level": "normal"
+          }
+        },
+        "cbnu": {
+          "name": "충북대",
+          "rank": {
+            "qs": "951-1000",
+            "the": "1001–1200",
+            "city": "청주",
+            "ja": {
+              "year": "2022",
+              "rank": 31,
+              "series": {
+                "2021": 29,
+                "2022": 31,
+                "2023": null,
+                "2024": null,
+                "2025": null
+              }
+            }
+          },
+          "accredit": {
+            "from": "2023.01.01",
+            "to": "2027.12.31",
+            "type": "국립",
+            "region": "충북",
+            "daysLeft": 451
+          },
+          "mentions": 48,
+          "risky": 12,
+          "riskRate": 25,
+          "riskLevel": 3,
+          "keywords": [
+            [
+              "통합",
+              31
+            ],
+            [
+              "교통대",
+              26
+            ],
+            [
+              "유보",
+              16
+            ],
+            [
+              "충북도의회",
+              13
+            ],
+            [
+              "도민",
+              7
+            ]
+          ],
+          "lead": {
+            "title": "내일이 마감인데 잠정 중단…충북대-교통대 통합 불발 후폭풍 비상",
+            "media": "아주경제",
+            "level": "crisis"
+          }
+        },
+        "cnu": {
+          "name": "충남대",
+          "rank": {
+            "qs": "801-850",
+            "the": "1001–1200",
+            "city": "대전",
+            "ja": {
+              "year": "2025",
+              "rank": 28,
+              "series": {
+                "2021": 26,
+                "2022": 26,
+                "2023": null,
+                "2024": null,
+                "2025": 28
+              }
+            }
+          },
+          "accredit": {
+            "from": "2022.02.01",
+            "to": "2027.07.31",
+            "type": "국립",
+            "region": "대전",
+            "daysLeft": 298
+          },
+          "mentions": 15,
+          "risky": 3,
+          "riskRate": 20,
+          "riskLevel": 2,
+          "keywords": [
+            [
+              "공주대",
+              7
+            ],
+            [
+              "통합신청서",
+              5
+            ],
+            [
+              "창업진흥원",
+              4
+            ],
+            [
+              "딥테크",
+              4
+            ],
+            [
+              "창업",
+              4
+            ]
+          ],
+          "lead": {
+            "title": "충남대·충북대병원 전문의 '빅5' 절반… 박용갑 \"지역 의료 붕괴 우려\"",
+            "media": "대전일보",
+            "level": "warning"
+          }
+        },
+        "knu2": {
+          "name": "경북대",
+          "rank": {
+            "qs": "=481",
+            "the": "501–600",
+            "city": "대구",
+            "ja": {
+              "year": "2025",
+              "rank": 21,
+              "series": {
+                "2021": 19,
+                "2022": 20,
+                "2023": null,
+                "2024": 20,
+                "2025": 21
+              }
+            }
+          },
+          "accredit": {
+            "from": "2023.01.01",
+            "to": "2027.12.31",
+            "type": "국립",
+            "region": "대구",
+            "daysLeft": 451
+          },
+          "mentions": 20,
+          "risky": 0,
+          "riskRate": 0,
+          "riskLevel": 0,
+          "keywords": [
+            [
+              "세계대학평",
+              9
+            ],
+            [
+              "THE",
+              8
+            ],
+            [
+              "거점국립대",
+              8
+            ],
+            [
+              "단독",
+              7
+            ],
+            [
+              "세계",
+              2
+            ]
+          ],
+          "lead": {
+            "title": "경북대, THE 세계대학평가 거점국립대 단독 1위…세계 501~550위",
+            "media": "경북매일",
+            "level": "normal"
+          }
+        },
+        "jbnu": {
+          "name": "전북대",
+          "rank": {
+            "qs": "=677",
+            "the": "801–1000",
+            "city": "전주",
+            "ja": {
+              "year": "2025",
+              "rank": 26,
+              "series": {
+                "2021": 20,
+                "2022": 24,
+                "2023": 19,
+                "2024": null,
+                "2025": 26
+              }
+            }
+          },
+          "accredit": {
+            "from": "2026.07.01",
+            "to": "2032.02.29",
+            "type": "국립",
+            "region": "전북",
+            "daysLeft": 1972
+          },
+          "mentions": 21,
+          "risky": 3,
+          "riskRate": 14.3,
+          "riskLevel": 2,
+          "keywords": [
+            [
+              "선정",
+              6
+            ],
+            [
+              "전북대병원",
+              4
+            ],
+            [
+              "세계",
+              4
+            ],
+            [
+              "최고",
+              3
+            ],
+            [
+              "전문병원",
+              3
+            ]
+          ],
+          "lead": {
+            "title": "전북대 총장선거 앞두고 협박성 편지 고발…과열 조짐",
+            "media": "전북도민일보",
+            "level": "warning"
+          }
+        },
+        "jnu": {
+          "name": "전남대",
+          "rank": {
+            "qs": "781-790",
+            "the": "801–1000",
+            "city": "광주",
+            "ja": {
+              "year": "2025",
+              "rank": 30,
+              "series": {
+                "2021": 21,
+                "2022": 25,
+                "2023": null,
+                "2024": null,
+                "2025": 30
+              }
+            }
+          },
+          "accredit": {
+            "from": "2022.02.01",
+            "to": "2027.07.31",
+            "type": "국립",
+            "region": "광주",
+            "daysLeft": 298
+          },
+          "mentions": 25,
+          "risky": 0,
+          "riskRate": 0,
+          "riskLevel": 0,
+          "keywords": [
+            [
+              "AI",
+              9
+            ],
+            [
+              "서남권",
+              9
+            ],
+            [
+              "반도체",
+              8
+            ],
+            [
+              "인재",
+              8
+            ],
+            [
+              "에너지",
+              7
+            ]
+          ],
+          "lead": {
+            "title": "화순전남대병원 비임상시험센터, GLP 지정 기반 본격 운영",
+            "media": "사이언스엠디뉴스",
+            "level": "normal"
+          }
+        },
+        "gnu": {
+          "name": "경상국립대",
+          "rank": {
+            "qs": "1001-1200",
+            "the": "1201–1500",
+            "city": "진주",
+            "ja": {
+              "year": "2022",
+              "rank": 38,
+              "series": {
+                "2021": 38,
+                "2022": 38,
+                "2023": null,
+                "2024": null,
+                "2025": null
+              }
+            }
+          },
+          "accredit": {
+            "from": "2022.02.01",
+            "to": "2027.07.31",
+            "type": "국립",
+            "region": "경남",
+            "daysLeft": 298
+          },
+          "mentions": 38,
+          "risky": 2,
+          "riskRate": 5.3,
+          "riskLevel": 1,
+          "keywords": [
+            [
+              "국회",
+              8
+            ],
+            [
+              "시위",
+              8
+            ],
+            [
+              "선정",
+              6
+            ],
+            [
+              "개발",
+              6
+            ],
+            [
+              "실리콘",
+              6
+            ]
+          ],
+          "lead": {
+            "title": "“동남권 750만 인재 키울 대학인데 ‘서울대 10개’ 탈락”…경상국립대 국회 앞 1인 시위",
+            "media": "kyosu.net",
+            "level": "crisis"
+          }
+        },
+        "pnu": {
+          "name": "부산대",
+          "rank": {
+            "qs": "=449",
+            "the": "501–600",
+            "city": "부산",
+            "ja": {
+              "year": "2025",
+              "rank": 21,
+              "series": {
+                "2021": 15,
+                "2022": 21,
+                "2023": null,
+                "2024": null,
+                "2025": 21
+              }
+            }
+          },
+          "accredit": {
+            "from": "2024.01.01",
+            "to": "2028.12.31",
+            "type": "국립",
+            "region": "부산",
+            "daysLeft": 817
+          },
+          "mentions": 68,
+          "risky": 0,
+          "riskRate": 0,
+          "riskLevel": 0,
+          "keywords": [
+            [
+              "해사국제상사법무대학원",
+              10
+            ],
+            [
+              "양산캠퍼스",
+              10
+            ],
+            [
+              "AI",
+              9
+            ],
+            [
+              "산업",
+              8
+            ],
+            [
+              "IP",
+              7
+            ]
+          ],
+          "lead": {
+            "title": "부산대, AI시대 라이프케어 IP 전략 모색… 지역 산학연 머리 맞대",
+            "media": "아시아경제",
+            "level": "normal"
+          }
+        },
+        "jeju": {
+          "name": "제주대",
+          "rank": {
+            "qs": "1201-1400",
+            "the": "1201–1500",
+            "city": "제주",
+            "ja": {
+              "year": "2022",
+              "rank": 34,
+              "series": {
+                "2021": 29,
+                "2022": 34,
+                "2023": null,
+                "2024": null,
+                "2025": null
+              }
+            }
+          },
+          "accredit": {
+            "from": "2022.02.01",
+            "to": "2027.07.31",
+            "type": "국립",
+            "region": "제주",
+            "daysLeft": 298
+          },
+          "mentions": 3,
+          "risky": 1,
+          "riskRate": 33.3,
+          "riskLevel": 3,
+          "keywords": [
+            [
+              "제주",
+              2
+            ]
+          ],
+          "lead": {
+            "title": "제주대 S-10 탈락…제주 “평가 기준 밝혀라”",
+            "media": "제주매일",
+            "level": "crisis"
+          }
+        }
+      },
+      "flows": [
+        {
+          "to": "pnu",
+          "style": "solid",
+          "color": "#3b7dd8",
+          "label": "정책 전달 경로"
+        }
+      ],
+      "legend": {
+        "primary": "선별 지원 반발의 국회 이관과 부울경 내 부산예대 폐교",
+        "secondary": "충북대·교통대 무산 후폭풍, 통폐합 효과의 단기성 분석",
+        "disturb": "환수금 논란, 도의회·반대위 갈등, 전주대 지배구조 위기, 입학 원서 시스템 신뢰 문제",
+        "buffer": "해사국제상사법무대학원 개원 확정, IP·기술금융 협약, AX융합연구원 가동, 공공 AI 윤리기준 확정"
+      }
+    },
+    "network": {
+      "basis": 1540,
+      "minCount": 13,
+      "minEdge": 4,
+      "nodes": [
+        {
+          "key": "인공지능",
+          "n": 312,
+          "risk": 0.3,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "[AI넷] [빅테크 기업들이 학위증을 구매할 때] 미국 고등교육기관들이 20년 동안 경고해 온 \"등록률 급감\" 현상에 직면. 현재 100개 이상의 대학이 폐교 또는 합병 위험이 높은 것으로 분류되었으며, 피치 레이팅스는 2년 연속으로 고등 교육 부문에 대한 전망을 \"악화\"로 발",
+            "link": "https://news.google.com/rss/articles/CBMiQEFVX3lxTFBVTHB3SjRoMkJVVVF2XzQtRjNTbkQ1aWVaMGdsaVg1aXpCQ2JoZmlrd1NSenlSZUJTVTc1VmFCNFQ?oc=5",
+            "media": "AI넷"
+          }
+        },
+        {
+          "key": "선정",
+          "n": 93,
+          "risk": 0,
+          "field": "정책/철학",
+          "sample": {
+            "title": "정철호 목원대 RISE사업단장, ‘2026년 산학협력 유공자’ 선정",
+            "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE10S1ctTk0ybDJqck1ET2FIN2lLZm5EdUotSDFfamVFcklhS0NVU2Etc0taU09UQnRQbXp3eEpIem0xYkIwaGFUaXNqQUVLTWtmbTkzRw?oc=5",
+            "media": "매일경제"
+          }
+        },
+        {
+          "key": "인재",
+          "n": 70,
+          "risk": 2.9,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "“동남권 750만 인재 키울 대학인데 ‘서울대 10개’ 탈락”…경상국립대 국회 앞 1인 시위",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1WLTlrQ3dNVGJDSlJWUUx4T0IxaGI0MkdlMm0yMVU5WFUtRmFhU0w1T2JqYkxwRFY5Wm0xbUQ5eUYwUHRSbHNaaGxQY3A5M2FWMnVqeUpXWHByLVh5Sk1RY3JYVElUUFk?oc=5",
+            "media": "kyosu.net"
+          }
+        },
+        {
+          "key": "혁신",
+          "n": 69,
+          "risk": 0,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "한림대 현예준 학생 글로컬대학 참여 학생 혁신 성과 발표 대회 '대상' 수상",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE91dW51LVVwTTE3RExQMkU4TXBCZFlvTF9Ud0RmaVU4Q0pUMWR1dk4xNExSbi14RFpMSVVBdUdlOV9MRko0OUpXXzMtdzJxTklxZGhUTXJkem1MYnJpZjFnMGxUa3Y4MHpCZzNOWg?oc=5",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "부산대",
+          "n": 68,
+          "risk": 0,
+          "field": "기타",
+          "sample": {
+            "title": "부산대, AI시대 라이프케어 IP 전략 모색… 지역 산학연 머리 맞대",
+            "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9tQzVUYzh1V3dwUFB5cE1jeDR2NHlrdk5DMmpDV3BHckJPLU9YY05NOERxNnJ1ZEpDdjFEMWYzNjlnNFFoMUwtbXExcmUyam5KRnhlcklFb0prZDlUOG9LOQ?oc=5",
+            "media": "아시아경제"
+          }
+        },
+        {
+          "key": "산업",
+          "n": 57,
+          "risk": 0,
+          "field": "융합연구",
+          "sample": {
+            "title": "동의과학대 ANCHOR사업단 '재직자 AI 교육센터' 구축.. '지역 산업체 재직자 실무 역량 강화'",
+            "link": "https://www.veritas-a.com/news/articleView.html?idxno=630103",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "대상",
+          "n": 55,
+          "risk": 0,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "고려대 세종SW중심대학사업단/세종시, 세종시청 전 직원 대상 AI 행정혁신 교육 세미나 개최",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1aOGxmbWNWQ01vS0JuOHVhanl6dVZtOG5LaW13aENnT3hFbGJQTTIzWDg1dWc2Z1htNkZWazVla2YxZmh6SFVlY1dQSnRRS0dzUG9iTVEzWjdfaWpSSkJlOFVOMWI4bVZrdGR3MQ?oc=5",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "양성",
+          "n": 53,
+          "risk": 1.9,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "[韓경제 아킬레스건](8) 지방 대학 연쇄 폐교 : 지역 인재 양성 생태계의 파괴",
+            "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1jYVJXMW42dkJKTld3MllTdU9sT3gxaVZCRWVNb05GemVGQ3ljLUFqaEFmZkFXcko1UVNESFR1Tmk4VmhaYTJLUFB6ek9USXJYTVJHTWNZenJ3YjVzVFoxMHV6dzFCbl9iaWc?oc=5",
+            "media": "금융소비자뉴스"
+          }
+        },
+        {
+          "key": "통합",
+          "n": 52,
+          "risk": 26.9,
+          "field": "정책/철학",
+          "sample": {
+            "title": "내일이 마감인데 잠정 중단…충북대-교통대 통합 불발 후폭풍 비상",
+            "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB2MXpaaWF2d1BpbXhscXJKeEpGRXJjb3RTU1NKWE1yY0JLc2hBZmQtZzQta3VLLWozYzZuc1NQbHJ2dFVwbTJjRVgxZUNacTdTbTdYM0plN1lFQdIBWEFVX3lxTE9xLUdhUTE2UWpCN21vQTBhZTdNTlFldnZLOHhrdjI0RFVDSkVpd0NuRFF1c0hmbnVVZXd3NGtDbnhFSzYyaWVxckl3T0RyQ21vNktaYk9td0k?oc=5",
+            "media": "아주경제"
+          }
+        },
+        {
+          "key": "취업",
+          "n": 52,
+          "risk": 0,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "한경국립대, 발달장애인 ‘교육에서 취업까지’ 구축",
+            "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBzOTVDeEFhSFVub25BOGpvNnc0Z3hiZlpJQVRyLVBia1VzR3JTVXh2dW1sbUlzS21YYndDNUJneHQ5dkF0WDcxaG9qSzhZaERuN0pqR0VDSzNORkdHR2FxUnhtbXZXVmlX?oc=5",
+            "media": "newspeak.kr"
+          }
+        },
+        {
+          "key": "충북대",
+          "n": 47,
+          "risk": 23.4,
+          "field": "정책/철학",
+          "sample": {
+            "title": "내일이 마감인데 잠정 중단…충북대-교통대 통합 불발 후폭풍 비상",
+            "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB2MXpaaWF2d1BpbXhscXJKeEpGRXJjb3RTU1NKWE1yY0JLc2hBZmQtZzQta3VLLWozYzZuc1NQbHJ2dFVwbTJjRVgxZUNacTdTbTdYM0plN1lFQdIBWEFVX3lxTE9xLUdhUTE2UWpCN21vQTBhZTdNTlFldnZLOHhrdjI0RFVDSkVpd0NuRFF1c0hmbnVVZXd3NGtDbnhFSzYyaWVxckl3T0RyQ21vNktaYk9td0k?oc=5",
+            "media": "아주경제"
+          }
+        },
+        {
+          "key": "중심대학",
+          "n": 47,
+          "risk": 0,
+          "field": "정책/철학",
+          "sample": {
+            "title": "동아대, 과기정통부 ‘AI중심대학’ 최종 선정",
+            "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPcFhaVkkzTzNtTjNqZm9IQnVFWllxVnpxbjdqYXVvVGpFVEhQZFVyaWkxejkybnlwRlJVZUtHY3lNSU56bGZTSGNvLVJuNGhnaThLSHVNNUl1QTFBa19xaTQzUGoyWFZMcFR5eDczUnctLXFzNm1BeDgyYmFDSHNhQnFOdWpodE5jTEZJUlpR?oc=5",
+            "media": "국제신문"
+          }
+        },
+        {
+          "key": "기술",
+          "n": 45,
+          "risk": 0,
+          "field": "융합연구",
+          "sample": {
+            "title": "GIST-한양대 ERICA 공동연구팀 빛 세기 따라 영상 대비 높이는 반도체 기술 개발.. '인공신경망 인식 정확도 97.3%로 향상'",
+            "link": "https://www.veritas-a.com/news/articleView.html?idxno=630096",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "등록금",
+          "n": 44,
+          "risk": 6.8,
+          "field": "정책/철학",
+          "sample": {
+            "title": "“내년부터 등록금 0원”…‘서울대급’ 지원받는 알짜 대학 30곳",
+            "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1kSVpLUkt2RVJReHNuME5CczY5Q1p4LXJuSUxUc1BYM1ZCY0ZLZ3JMV1dsR2tZSktuZHZaU3hnMUhYWi1abDFEbGZPeU1LR1dLMG12OElB?oc=5",
+            "media": "중앙일보"
+          }
+        },
+        {
+          "key": "대학원",
+          "n": 44,
+          "risk": 0,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "국립의학전문대학원 남원 설립 확정… 2029년 개교 목표",
+            "link": "https://news.unn.net/news/articleView.html?idxno=598176",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "대구",
+          "n": 42,
+          "risk": 0,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "대구대 뷰티학부, AI 입은 K-뷰티 교육 혁신… ‘AX 스마트미러’ 전면 도입",
+            "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5vZTdHMVFyaFpDSVRkOE13U2x1dmRfNUlqQTJTV0UwX3B6d2tpaHZCOEMtVGpwMVpsbWs3UGhSYVJ3OFRvcTlKWldVdDF0eUZsRW8xdGdQRXJORXlBMXBySC15OGpVaTFpTkE?oc=5",
+            "media": "뷰티경제"
+          }
+        },
+        {
+          "key": "광주",
+          "n": 41,
+          "risk": 0,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "광주여대 물리치료학과 생성형 AI 활용 실무역량 강화 특강 운영",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE83b0xrWUg5Ui1uc3BoZ0tydW5WU1g0R3YxSnI2cGUwSEs5MEEtR0RzbERjMnN3REpsblROU1U1Zm82VWJkRUh1ejdBdUoxYWZNVGMwbXRSWjAxMXVfYzJLaEFSRFRzdXZvNWdYVw?oc=5",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "외국인",
+          "n": 41,
+          "risk": 0,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "교통법규 헷갈리는 외국인 위해…대학생들이 AI 다국어 콘텐츠 제작",
+            "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFB1eTZsQzdRQlhMS0JMWDJlMUQ2b3dObUVGOTdJdTRUcUlkWTkzWm14TFpvek4wXzVwazRkc2stS0kzdndURVl1aDdwdTh6X0xXU2RzTVJVOGV6VEdXT0MwdXBBZ05HRmVsQTJSLWk4Sm5ReWc?oc=5",
+            "media": "오늘경제"
+          }
+        },
+        {
+          "key": "수시",
+          "n": 41,
+          "risk": 2.4,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "서울예대, 수시 지원 1만 8053명… 역대 최다",
+            "link": "https://news.unn.net/news/articleView.html?idxno=598178",
+            "media": "한국대학신문"
+          }
+        },
+        {
+          "key": "창업",
+          "n": 40,
+          "risk": 0,
+          "field": "융합연구",
+          "sample": {
+            "title": "영산대 경남앵커사업단 인재 양성 취/창업 캠프 개최",
+            "link": "https://www.veritas-a.com/news/articleView.html?idxno=630105",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "글로벌",
+          "n": 39,
+          "risk": 0,
+          "field": "증강인재교육",
+          "sample": {
+            "title": "베스핀글로벌, 공공 AI 전환 성과 인정…‘조달의 날’ 장관 표창",
+            "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5BVFZNTm5DT0JJVVNwWG15QWhIWFhFNkY2NkU4Nm5VNWJldHltalVvaUd4alNMazNoZi1tUHIwZ2ZndXFfdHphYmZPUi1abWFMbUVBRXFua2t4N0g5dTI4?oc=5",
+            "media": "데이터뉴스"
+          }
+        },
+        {
+          "key": "경상국립대",
+          "n": 38,
+          "risk": 5.3,
+          "field": "융합연구",
+          "sample": {
+            "title": "“동남권 750만 인재 키울 대학인데 ‘서울대 10개’ 탈락”…경상국립대 국회 앞 1인 시위",
+            "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1WLTlrQ3dNVGJDSlJWUUx4T0IxaGI0MkdlMm0yMVU5WFUtRmFhU0w1T2JqYkxwRFY5Wm0xbUQ5eUYwUHRSbHNaaGxQY3A5M2FWMnVqeUpXWHByLVh5Sk1RY3JYVElUUFk?oc=5",
+            "media": "kyosu.net"
+          }
+        },
+        {
+          "key": "전환",
+          "n": 21,
+          "risk": 0,
+          "field": "적응형행정",
+          "sample": {
+            "title": "베스핀글로벌, 공공 AI 전환 성과 인정…‘조달의 날’ 장관 표창",
+            "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5BVFZNTm5DT0JJVVNwWG15QWhIWFhFNkY2NkU4Nm5VNWJldHltalVvaUd4alNMazNoZi1tUHIwZ2ZndXFfdHphYmZPUi1abWFMbUVBRXFua2t4N0g5dTI4?oc=5",
+            "media": "데이터뉴스"
+          }
+        },
+        {
+          "key": "AI 행정",
+          "n": 19,
+          "risk": 0,
+          "field": "적응형행정",
+          "sample": {
+            "title": "고려대 세종SW중심대학사업단/세종시, 세종시청 전 직원 대상 AI 행정혁신 교육 세미나 개최",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1aOGxmbWNWQ01vS0JuOHVhanl6dVZtOG5LaW13aENnT3hFbGJQTTIzWDg1dWc2Z1htNkZWazVla2YxZmh6SFVlY1dQSnRRS0dzUG9iTVEzWjdfaWpSSkJlOFVOMWI4bVZrdGR3MQ?oc=5",
+            "media": "베리타스알파"
+          }
+        },
+        {
+          "key": "지방자치단체",
+          "n": 13,
+          "risk": 0,
+          "field": "적응형행정",
+          "sample": {
+            "title": "국민연금공단, 지자체 복지공무원 위한 ‘AI 행정협업 플랫폼’ 가동",
+            "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA4Zkk5YW1ZWDBiXzcwc2xmNXlGeF8zdm80NTQ4SUdWTzBfMUdQak9MeXYxQ3RtTlN2WENaZEw3Y0g4OUZXcG1UQW1tbUxVRDZpeVhnbmpReTdncVp3WHF0TS1qOTBjUDBUQVE?oc=5",
+            "media": "천지일보"
+          }
+        },
+        {
+          "key": "지자체",
+          "n": 13,
+          "risk": 0,
+          "field": "적응형행정",
+          "sample": {
+            "title": "국민연금공단, 지자체 복지공무원 위한 ‘AI 행정협업 플랫폼’ 가동",
+            "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA4Zkk5YW1ZWDBiXzcwc2xmNXlGeF8zdm80NTQ4SUdWTzBfMUdQak9MeXYxQ3RtTlN2WENaZEw3Y0g4OUZXcG1UQW1tbUxVRDZpeVhnbmpReTdncVp3WHF0TS1qOTBjUDBUQVE?oc=5",
+            "media": "천지일보"
+          }
+        }
+      ],
+      "links": [
+        {
+          "s": 1,
+          "t": 0,
+          "n": 55
+        },
+        {
+          "s": 0,
+          "t": 11,
+          "n": 47
+        },
+        {
+          "s": 1,
+          "t": 11,
+          "n": 39
+        },
+        {
+          "s": 10,
+          "t": 8,
+          "n": 31
+        },
+        {
+          "s": 0,
+          "t": 2,
+          "n": 30
+        },
+        {
+          "s": 7,
+          "t": 2,
+          "n": 29
+        },
+        {
+          "s": 0,
+          "t": 3,
+          "n": 28
+        },
+        {
+          "s": 0,
+          "t": 22,
+          "n": 18
+        },
+        {
+          "s": 5,
+          "t": 0,
+          "n": 18
+        },
+        {
+          "s": 14,
+          "t": 0,
+          "n": 18
+        },
+        {
+          "s": 7,
+          "t": 0,
+          "n": 18
+        },
+        {
+          "s": 16,
+          "t": 0,
+          "n": 14
+        },
+        {
+          "s": 14,
+          "t": 1,
+          "n": 13
+        },
+        {
+          "s": 24,
+          "t": 25,
+          "n": 13
+        },
+        {
+          "s": 20,
+          "t": 3,
+          "n": 12
+        },
+        {
+          "s": 14,
+          "t": 11,
+          "n": 12
+        },
+        {
+          "s": 20,
+          "t": 0,
+          "n": 11
+        },
+        {
+          "s": 14,
+          "t": 4,
+          "n": 11
+        },
+        {
+          "s": 4,
+          "t": 0,
+          "n": 10
+        },
+        {
+          "s": 4,
+          "t": 5,
+          "n": 10
+        },
+        {
+          "s": 5,
+          "t": 3,
+          "n": 9
+        },
+        {
+          "s": 4,
+          "t": 3,
+          "n": 9
+        },
+        {
+          "s": 12,
+          "t": 5,
+          "n": 8
+        },
+        {
+          "s": 17,
+          "t": 0,
+          "n": 8
+        },
+        {
+          "s": 1,
+          "t": 2,
+          "n": 8
+        },
+        {
+          "s": 16,
+          "t": 3,
+          "n": 7
+        },
+        {
+          "s": 15,
+          "t": 18,
+          "n": 7
+        },
+        {
+          "s": 6,
+          "t": 17,
+          "n": 7
+        },
+        {
+          "s": 6,
+          "t": 0,
+          "n": 7
+        },
+        {
+          "s": 0,
+          "t": 24,
+          "n": 7
+        },
+        {
+          "s": 0,
+          "t": 25,
+          "n": 7
+        },
+        {
+          "s": 12,
+          "t": 4,
+          "n": 6
+        },
+        {
+          "s": 16,
+          "t": 20,
+          "n": 6
+        },
+        {
+          "s": 0,
+          "t": 19,
+          "n": 6
+        },
+        {
+          "s": 21,
+          "t": 1,
+          "n": 6
+        },
+        {
+          "s": 4,
+          "t": 9,
+          "n": 5
+        },
+        {
+          "s": 15,
+          "t": 0,
+          "n": 5
+        },
+        {
+          "s": 12,
+          "t": 0,
+          "n": 5
+        },
+        {
+          "s": 17,
+          "t": 9,
+          "n": 5
+        },
+        {
+          "s": 1,
+          "t": 3,
+          "n": 5
+        },
+        {
+          "s": 21,
+          "t": 12,
+          "n": 5
+        },
+        {
+          "s": 5,
+          "t": 2,
+          "n": 5
+        },
+        {
+          "s": 6,
+          "t": 19,
+          "n": 5
+        },
+        {
+          "s": 17,
+          "t": 24,
+          "n": 5
+        },
+        {
+          "s": 17,
+          "t": 25,
+          "n": 5
+        },
+        {
+          "s": 5,
+          "t": 7,
+          "n": 4
+        },
+        {
+          "s": 20,
+          "t": 2,
+          "n": 4
+        },
+        {
+          "s": 23,
+          "t": 24,
+          "n": 4
+        },
+        {
+          "s": 23,
+          "t": 25,
+          "n": 4
+        },
+        {
+          "s": 23,
+          "t": 0,
+          "n": 4
+        },
+        {
+          "s": 16,
+          "t": 1,
+          "n": 4
+        },
+        {
+          "s": 15,
+          "t": 6,
+          "n": 4
+        },
+        {
+          "s": 1,
+          "t": 7,
+          "n": 4
+        },
+        {
+          "s": 2,
+          "t": 11,
+          "n": 4
+        },
+        {
+          "s": 0,
+          "t": 9,
+          "n": 4
+        },
+        {
+          "s": 6,
+          "t": 2,
+          "n": 4
+        }
+      ]
+    },
+    "summary": [
+      {
+        "h": "충북대·교통대 무산이 후폭풍 국면으로 넘어갔다",
+        "items": [
+          {
+            "t": "지난주 최종 무산으로 정리된 사안에 <b>교육부가 중재</b>에 나섰지만, 마감 하루 전 잠정 중단이 이어지며 <b>후폭풍 비상</b>으로 번졌다. 지역 언론은 사설로 <b>환수금</b> 문제를 짚었다. 무산 이후의 비용이 실제 논쟁거리로 올라온 것이다.",
+            "refs": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "t": "충북도의회가 논의 중단에 <b>깊은 유감</b>을 표했고, 교통대 통합 반대위는 도의회의 <b>과도한 개입</b>을 문제 삼았다. 대학 간 협상이 <b>지역 정치의 대리전</b>으로 바뀌고 있다. 충남대·공주대 사업의 향방도 함께 거론되며, 통합 전제 사업 전반으로 불안이 옮겨 붙었다.",
+            "refs": [
+              4,
+              5,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "h": "선별 지원 반발이 국회 앞까지 갔다",
+        "items": [
+          {
+            "t": "지난주 지자체·지방의회로 넘어갔던 반발이 이번 주 <b>국회 앞 1인 시위</b>로 이어졌다. 경상국립대 교수회·동문회는 '동남권 인재를 키울 대학'이라는 논리로 <b>선별 지원 중단</b>을 요구했다. 부울경 권역 안에서 배분 문제가 제기됐다는 점에서 부산대와 무관하지 않다.",
+            "refs": [
+              7,
+              8
+            ]
+          },
+          {
+            "t": "전북대 구성원과 제주 지역도 평가 기준 공개 요구를 이어갔다. 한편 부산대 교수의 기고는 <b>선정된 세 곳은 출발점</b>이라는 논지를 폈다 — 반발과 옹호가 모두 '기준'과 '확장 경로'를 두고 맞서고 있다는 뜻이다.",
+            "refs": [
+              9,
+              10,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "h": "폐교가 부울경에서 현실이 됐다",
+        "items": [
+          {
+            "t": "부산예대가 재정난으로 <b>32년 만에 자진 폐교</b>하고 내년 2월 문을 닫는다. 지방대 위기가 통계나 전망이 아니라 <b>부산 안의 실제 폐교</b>로 나타났다. 지역 인재 양성 생태계가 무너진다는 기획 보도도 같은 주에 나왔다.",
+            "refs": [
+              12,
+              13
+            ]
+          },
+          {
+            "t": "통폐합 사례를 되짚은 분석은 이번 주에도 이어져, 구조조정 효과가 <b>단기에 그친다</b>는 결론과 함께 <b>자발적 간절함과 위기감이 없었다</b>는 진단을 내놨다. 글로컬 탈락 1년이 지난 전주대에서는 구성원 총궐기로 갈등이 격화됐다 — 재정사업 탈락이 <b>지배구조 위기</b>로 번지는 경로를 보여 준다.",
+            "refs": [
+              14,
+              15,
+              16
+            ]
+          }
+        ]
+      },
+      {
+        "h": "부산대 — 해사법 대학원과 IP·AX 기반이 함께 움직였다",
+        "items": [
+          {
+            "t": "해수부 이전·해사법원 개원을 앞두고 <b>해사국제상사법무대학원</b>이 내년 3월 개원하기로 확정됐다. 지난주 국제해양전문대학원에 이어 <b>해양 분야 전문대학원이 연달아</b> 짜이면서, 해양수도 부산의 전문인력 거점 역할이 구체화되고 있다.",
+            "refs": [
+              17,
+              18
+            ]
+          },
+          {
+            "t": "IP중점대학사업단은 <b>AI 시대 라이프케어 산업</b>을 주제로 IP 전략 포럼을 열었고, 로스쿨은 한국발명진흥회·기술보증기금과 잇달아 협약을 맺어 지역기업의 <b>지식재산·기술금융</b> 지원에 나섰다. <b>전략산업AX융합연구원</b>은 인력 채용에 들어갔다 — AX 사업이 확정 단계에서 <b>조직 가동 단계</b>로 넘어가고 있다.",
+            "refs": [
+              19,
+              20,
+              21
+            ]
+          },
+          {
+            "t": "부산대의 <b>연 1조 2336억 원</b> 규모 재정 투자·소비 지출의 지역 효과를 다룬 분석도 나왔다. 선별 지원을 둘러싼 반발이 커지는 국면에서, 거점대학의 <b>지역 기여를 수치로 설명</b>하는 근거로 쓸 수 있는 자료다.",
+            "refs": [
+              22
+            ]
+          }
+        ]
+      },
+      {
+        "h": "대학 AX가 '전교생 필수'로 내려가기 시작했다",
+        "items": [
+          {
+            "t": "부산의 동아대가 <b>212억 원</b>을 들여 <b>전교생 AI 필수 수강</b>으로 대학 체질을 바꾸겠다고 밝혔고, 한경대는 'AI 혁신 모델 대학'을 공식 발표했다. AX가 일부 학과의 특화 사업이 아니라 <b>전교 교육과정의 기준선</b>으로 옮겨 가고 있다.",
+            "refs": [
+              23,
+              24
+            ]
+          },
+          {
+            "t": "부산시는 지역인재 유출을 막고 AI 산업을 키우기 위해 <b>대학·산업 연계 강화</b>를 내걸었다. 같은 권역 사립대가 전교 AX를 선언한 상황에서, 부산대의 AX 교육이 <b>권역 안에서 어떤 위치</b>를 갖는지가 비교되기 시작할 것이다.",
+            "refs": [
+              25
+            ]
+          }
+        ]
+      },
+      {
+        "h": "공공 AX에 책임 원칙이 붙었다",
+        "items": [
+          {
+            "t": "국무총리가 AI 행정혁신 우수공직자 간담회를 주재하고 <b>AX 혁신 스토어 연내 오픈</b>을 밝혔다. 같은 주에 공공부문 AI 윤리기준이 확정됐는데, 핵심은 <b>AI 행정업무 오류의 책임은 사람이 진다</b>는 원칙이다. 지난주 부처 단위 실행에 이어 <b>책임 소재</b>가 제도로 정리된 것이다.",
+            "refs": [
+              26,
+              27
+            ]
+          },
+          {
+            "t": "국민연금공단의 지자체 복지공무원용 AI 행정협업 플랫폼, 서울시 공공데이터 MCP 시범운영처럼 <b>현장 적용 사례</b>가 이어졌다. 대학 학사·행정 AX도 같은 책임 원칙 아래 설계해야 할 시점이다.",
+            "refs": [
+              28,
+              29
+            ]
+          }
+        ]
+      }
+    ],
+    "articles": [
+      {
+        "day": "9/25(금)",
+        "count": 19,
+        "open": false,
+        "cats": [
+          {
+            "name": "정책/철학",
+            "count": 9,
+            "items": [
+              "[AI넷] [빅테크 기업들이 학위증을 구매할 때] 미국 고등교육기관들이 20년 동안 경고해 온 \"등록률 급감\" 현상에 직면. 현재 100개 이상의 대학이 폐교 또는 합병 위험이 높은 것으로 분류되었으며, 피치 레이팅스는 2년 연속으로 고등 교육 부문에 대한 전망을 \"악화\"로 발",
+              "[기획] 거점국립대 통합 연쇄 좌초…벼랑 끝 내몰린 충청권 대학가 패닉",
+              "창원대 법인화 공론화 시작부터 진통…교수회 불참·학생 갈등"
+            ]
+          },
+          {
+            "name": "융합연구",
+            "count": 5,
+            "items": [
+              "[Weekly 신기술 및 정책소식] 부산대 연구팀, 차세대 웨어러블 바이오 전자 시스템 개발",
+              "경복대학교 재학생들, 1년 새 국제학술지 영문 논문 6편 기재",
+              "전국대학선수권 우승팀 부산과학기술대, 2027 KBO 신인 드래프트 대학팀 최다 지명"
+            ]
+          },
+          {
+            "name": "증강인재교육",
+            "count": 2,
+            "items": [
+              "지방 국립대 재학생 절반 이상 등록금 ‘0원’",
+              "박명수, '무용 엘리트' 딸 대학 수시 결과 나왔다…\"좀 붙었으면\" 긴장 (할명수)"
+            ]
+          },
+          {
+            "name": "기타",
+            "count": 1,
+            "items": [
+              "충북대, 개교 75주년 기념식…“75년의 자부심 바탕으로 새로운 도약”"
+            ]
+          }
+        ]
+      },
+      {
+        "day": "9/26(토)",
+        "count": 52,
+        "open": false,
+        "cats": [
+          {
+            "name": "증강인재교육",
+            "count": 18,
+            "items": [
+              "지방대학 위기 가속화 … 거점국립대 중심의 권역별 인재양성 체계 구축해야",
+              "대학 심리학과 학비",
+              "[단독] [2027수능] 추석 직전 수험생 많이 산 참고서? ‘영어 대신 수학’ 뚜렷.. 수학/사탐런 ‘급증’"
+            ]
+          },
+          {
+            "name": "정책/철학",
+            "count": 18,
+            "items": [
+              "제주대 S-10 탈락…제주 “평가 기준 밝혀라”",
+              "국정원 추진 9대 사이버보안 정책 살펴보니...AI방어팀 세계 첫 구축",
+              "충남대·공주대 통합신청서 제출기한 연말까지 연장…재추진 여부 관심"
+            ]
+          },
+          {
+            "name": "융합연구",
+            "count": 9,
+            "items": [
+              "태백시, 사이버대 4곳과 추가 협약…직원 수업료 최대 50% 감면",
+              "행정안전부 국립재난안전연구원,‘제25회 국제방재협력 세미나’ 개최",
+              "코웨이·서울대, 음식물 분해 균주 기술 이전"
+            ]
+          },
+          {
+            "name": "기타",
+            "count": 6,
+            "items": [
+              "부산대학교 erp시스템 구축 사례로 보는 erp시스템 종류와 선택 기준",
+              "홍콩관광청, 서울·부산 5개 대학서 ‘캠퍼스 어택’",
+              "동아대 국어문화원, '우리 말글 사랑 큰잔치' 개최"
+            ]
+          }
+        ]
+      },
+      {
+        "day": "9/27(일)",
+        "count": 87,
+        "open": false,
+        "cats": [
+          {
+            "name": "증강인재교육",
+            "count": 32,
+            "items": [
+              "한경국립대, 2027년도 수시모집 10.08대 1 경쟁률 기록",
+              "인제대·경남도의회·경남도, 인재 양성·글로컬사업 협력 모색",
+              "김해인재양성재단, 7000만 원 사업 7억 원으로 의결 ‘질타’"
+            ]
+          },
+          {
+            "name": "정책/철학",
+            "count": 23,
+            "items": [
+              "충북대·교통대, 단계적 통합도 결국 무산",
+              "'서울대 10개 만들기' 탈락 후폭풍…전북대 교수·학생·동문 \"납득 못해\"",
+              "충북대·교통대 통합 끝내 좌초되나"
+            ]
+          },
+          {
+            "name": "융합연구",
+            "count": 18,
+            "items": [
+              "충남도립대, 지역에서 ‘창업의 답’ 찾는다…도민 창업교육",
+              "경상국립대, 균형발전 촉구·우주기술 사업화·글로벌 교류 강화",
+              "수원공고-한서대, 신산업분야 전문기술인력 양성 업무협약"
+            ]
+          },
+          {
+            "name": "기타",
+            "count": 8,
+            "items": [
+              "한림대 ‘2026 KELI 국제 심포지엄’ 개최",
+              "한림대 ‘2026 KELI 국제 심포지엄’ 10월 20일 서울드래곤시티서 개최",
+              "[박종문의 캠퍼스 오디세이] 일본 대학 10곳 세계 100위 내 진입, 왜 실패했나?"
+            ]
+          }
+        ]
+      },
+      {
+        "day": "9/28(월)",
+        "count": 331,
+        "open": false,
+        "cats": [
+          {
+            "name": "증강인재교육",
+            "count": 130,
+            "items": [
+              "한화에어로스페이스 '1980년생 이하·11개 대학' 채용 논란…대표 사과·책임자 징계",
+              "최교진, 전남대 찾아 '서울대 10개' 점검…서남권 인재 양성 논의",
+              "국립목포대, '글로컬 대학 경쟁력 강화'... AI 교육혁신 추진"
+            ]
+          },
+          {
+            "name": "기타",
+            "count": 67,
+            "items": [
+              "울산엘리야병원, 대학병원 출신 의료진 잇단 영입…2028년 290병상 증축 추진",
+              "동아방송예술대 김혜리 교수 비주얼 디렉터 참여...뮤지컬 '4번 출구' 시작으로 한·일 K-pop 프로젝트 추진",
+              "국립한밭대 '개교 100주년 기념사업 추진위원회' 신임 위원장에 최종인 교수 임명"
+            ]
+          },
+          {
+            "name": "융합연구",
+            "count": 66,
+            "items": [
+              "계명대 앵커추진단 캡스톤디자인 성과 공유/생성형 AI 체험 행사 개최",
+              "[교육소식]공주대 앵커사업단 현판식…운영방안 논의 등",
+              "계명대 앵커추진단, 캡스톤디자인 성과 공유·생성형 AI 체험 행사 개최"
+            ]
+          },
+          {
+            "name": "정책/철학",
+            "count": 57,
+            "items": [
+              "“SKY 말고 의대갈래요”… 지난 5년간 중도탈락 1만 명 ↑",
+              "서울대 10개 만들기 탈락 지역 반발 목소리 거세져",
+              "[사설] 통합 무산된 충북대, 환수금은?"
+            ]
+          }
+        ]
+      },
+      {
+        "day": "9/29(화)",
+        "count": 345,
+        "open": false,
+        "cats": [
+          {
+            "name": "증강인재교육",
+            "count": 116,
+            "items": [
+              "대학 통폐합 뒤 입학경쟁률 1.66 상승…줄였던 학과·비전임교원 다시 늘었다",
+              "7천이 7억으로…김해인재양성재단 이사회 의결 논란",
+              "신라대 교육대학원-덕원중 Microsoft 지원으로 AI 기반 플라스틱 순환 세계시민교육 추진"
+            ]
+          },
+          {
+            "name": "정책/철학",
+            "count": 91,
+            "items": [
+              "전북대 ‘서울대 10개 만들기’ 탈락 ‘여진’",
+              "충북대·교통대 통합 무산 앞두고 교육부 중재…논의 재개되나",
+              "충북대·교통대 통합 또 무산…충북도의회 “도민 약속 저버려”"
+            ]
+          },
+          {
+            "name": "융합연구",
+            "count": 65,
+            "items": [
+              "계명대 앵커추진단, ‘캡스톤디자인 전시회∙생성형 AI 체험 부스’ 운영",
+              "한국관광대-이천지역자활센터, 산학협력 MOU 체결…지역발전 공동 추진",
+              "한국공학대, 1만 1천 개 기업 전수조사…기업 맞춤형 산학협력 확대"
+            ]
+          },
+          {
+            "name": "기타",
+            "count": 62,
+            "items": [
+              "[2027논술면접 최종체크] 이번 주말 성신여대 논술 어떻게 나올까.. 인문 '시사 이슈 연계', 자연 '확통 기하 제외'",
+              "공공데이터 100개 조기 개방 추진…행안부, AI행정 협력체계 가동",
+              "계명문화대, '외국인 대상 교통안전 문화확산 사업' 추진..지자체·공공기관·4개 대학 협력"
+            ]
+          }
+        ]
+      },
+      {
+        "day": "9/30(수)",
+        "count": 343,
+        "open": false,
+        "cats": [
+          {
+            "name": "증강인재교육",
+            "count": 120,
+            "items": [
+              "[韓경제 아킬레스건](8) 지방 대학 연쇄 폐교 : 지역 인재 양성 생태계의 파괴",
+              "[단독] [2027정시] 10개 수의대 145명(29.2%) ‘축소’.. '사탐런 봉쇄' 8개교 과탐지정 '경쟁률 하락하나'",
+              "의성군, 다자녀 대학생 등록금 부담 던다···하반기 장학금 접수"
+            ]
+          },
+          {
+            "name": "정책/철학",
+            "count": 87,
+            "items": [
+              "교육부 표준 공통원서 시스템 예산 34% 삭감… 사전 검증도 ‘0건’[2026 국감]",
+              "글로컬 탈락 1년 지났지만…전주대 교수-법인 갈등 '평행선'",
+              "전주대, 글로컬대학 탈락 1년째 법인·대학본부 갈등 지속"
+            ]
+          },
+          {
+            "name": "융합연구",
+            "count": 75,
+            "items": [
+              "앵커(ANCHOR) 속 ‘초광역’ 본격화… 공유대학‧성장엔진 협의체 역할 분담 논의[현장]",
+              "부산대, 대만 국립대만대와 스마트농업 연구협력 MoU 체결… 공동연구·교류 추진",
+              "아산시·순천향대, AI 의료융합 인재·기업 연계…산학협력 강화"
+            ]
+          },
+          {
+            "name": "기타",
+            "count": 54,
+            "items": [
+              "충남대·충북대병원 전문의 '빅5' 절반… 박용갑 \"지역 의료 붕괴 우려\"",
+              "상명대 대학일자리플러스센터 경기 세경고등학교서 '실전면접 프로그램' 진행",
+              "성운대, 제4회 경북승마협회장배 전국승마대회서 우수 성적 거둬"
+            ]
+          }
+        ]
+      },
+      {
+        "day": "10/1(목)",
+        "count": 363,
+        "open": true,
+        "cats": [
+          {
+            "name": "증강인재교육",
+            "count": 159,
+            "items": [
+              "[단독] ‘수시 먹통’ 민간어플라이, 2027정시 '파국'까지 우려.. '130억 짜리 정시 합격예측이 진짜 뇌관’",
+              "세종여고, 상업계열 2개 학과 ‘AI 중심’ 개편…2027학년도 신입생 40명 모집",
+              "세종여고, AI 교육 중심 교육과정 개편한다"
+            ]
+          },
+          {
+            "name": "융합연구",
+            "count": 67,
+            "items": [
+              "부산대, 2026년 IP 전략 포럼 개최…AI 시대 라이프케어 산업 혁신 논의",
+              "서울대 로켓동아리 '하나로' 자체 제작 2단 로켓으로 NURA 학술/발사대회 잇따라 수상",
+              "GIST-한양대 ERICA 공동연구팀 빛 세기 따라 영상 대비 높이는 반도체 기술 개발.. '인공신경망 인식 정확도 97.3%로 향상'"
+            ]
+          },
+          {
+            "name": "정책/철학",
+            "count": 63,
+            "items": [
+              "내일이 마감인데 잠정 중단…충북대-교통대 통합 불발 후폭풍 비상",
+              "대학 통폐합에 경쟁력↑…구조조정 효과는 ‘단기’",
+              "'재정난' 부산예대, 32년 만에 자진 폐교…내년 2월 문 닫는다"
+            ]
+          },
+          {
+            "name": "기타",
+            "count": 54,
+            "items": [
+              "“참정권 침해 규탄”…전국 18개 대학 총학 동시 시국선언 [쿡 정치포토]",
+              "8년 진통 끝 ‘국립의전원’ 전북 남원에…2029년 개교 추진",
+              "서울시립대 6~7일 ‘2026 서울 빅데이터 포럼’ 개최…AI·도시혁신 논의"
+            ]
+          }
+        ]
+      }
+    ],
+    "overseas": {
+      "total": 496,
+      "groups": [
+        {
+          "field": "증강인재교육",
+          "count": 216,
+          "items": [
+            {
+              "title": "Fewer students, too many schools: Communities confront closures and consolidations",
+              "media": "Midland Daily News",
+              "date": "2026-09-29",
+              "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQdnFRSVVuWm95Z0t5QXZGa2g5ckJzd2ZBVncwckNMNUNzY2tHdmthTmNYaWtjSmdQMGRUazVyVHVESTY4NGpVWHctNmQyTmlxUVg2MkpjT2tfQWJqZXktTzg1RDlhQk1lWUI1TksxcVlJbWpOWVFTemItTWFOd3kwcTVjLWlrSklDTmJlRFVDQTMtVHhhZ2taVmZIV3c?oc=5",
+              "level": "crisis",
+              "why": "closure"
+            },
+            {
+              "title": "Poudre School District recommends nine school closures as enrollment declines",
+              "media": "KUNC News",
+              "date": "2026-09-28",
+              "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQckN4cUNGNndJcTVETHlUdUhtakhVaTJOZUM5R3lsQnYxUEQ5ckNQMHRRTTZqVlZ2cVp2TVlQLWlRTXVMSWY1cnk5ODQxSWJwbzVIOElIblY3RUdDNVRFTFMyR1hIUm5XS0J4NGZDbWFIWHMybGZaQVpXSExNaFpJbHVXR29ZblZMTkJuNU92enoyMTlqVGYxY3VKdFhYNnF6RVdDN21ud19kbVRFZTVRanhONkU?oc=5",
+              "level": "crisis",
+              "why": "closure"
+            },
+            {
+              "title": "Undergraduate enrollment at Virginia's public colleges and universities remains steady despite steep declines in graduate students at some institutions",
+              "media": "Cardinal News",
+              "date": "2026-10-01",
+              "link": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQMnpEaUROelNkNXljeDBvQlVKazA0dGdKSms0TURKNFhVVXpWRVlyLTByVUxBTmtyNVpXX1NxT19YRmF2RnFpYkkwaDJ1Y1ZiNm5RQ254M0ZBQzdnU2J6R0ZVcFhxQTJZRGs3MWdYeURLNkp1QjNSc2lzdkdEaWYtNl9KRUVBVWtxQU9YYVVDOUVESUpDRXhJZDkzdkN4bkFCM0RaeWd0SUtNWmNOTGUzaDQ3dE0yTnJaSTlhMlpkaUlfWm41d2kzYlhWeUpXMjkxNVB2dm1wZ3IxMWlyNS1icnZOendGckZzQktxMENrVndpdmZVbnQwQVhLcjU4RWxxd3RrT09PSmtodTFMdWFHNS1IY0tCZw?oc=5",
+              "level": "warning",
+              "why": "decline"
+            },
+            {
+              "title": "Los Angeles private colleges are fighting enrollment, tuition dollar declines. Experts say there's 'no silver bullet.'",
+              "media": "The Business Journals",
+              "date": "2026-10-01",
+              "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQTWtmdVUwTFIzdHdkYlp6Q2pTZ3BLaWtaV05zN25xY19UM3dWT0c3TC1OWlVmbTYyd0xtVUdjS0FNYmwwLTVXQ3IxV2pfNGttSjF4R1h5dEhOU3I1cDNBbzBvTFpLc3BXTHdSZFRpbEY1ZmFGeHJGSC00NldyMVJ5ZTRPcUVobGd1aE1MUG5GWQ?oc=5",
+              "level": "warning",
+              "why": "decline"
+            },
+            {
+              "title": "Private colleges across the U.S. are fighting enrollment, tuition dollar declines. Experts say there's 'no silver bullet.'",
+              "media": "The Business Journals",
+              "date": "2026-10-01",
+              "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQWnN1Y0pfZnhhcE1keTZfeFo3Tnd0cFFMZ3lET2d1Rmp0cnZnSWNaQk03UFR1WnNuRzNVTzVHOXo3dVZIdEh1enR6ZnFKb3RwWHA2bEpyZWxQUXBUTmk2RjVsdXhHYmVsNUNNZ3B4VWJNUllORnYybjQ0V09uTFpqeW5pakFZcDVneDNvRg?oc=5",
+              "level": "warning",
+              "why": "decline"
+            },
+            {
+              "title": "\"Would be very disheartening\": SC State cuts nine academic programs due to low enrollment",
+              "media": "wach.com",
+              "date": "2026-10-01",
+              "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPQ0ZZU0tOc01DZVZhNFhGMjFLbjJJelBQcHU3VFJNSEMzaUxJMnNCdGQxbExydXFsZVhBSE5za0lnOF94aWdvZmhGWjdDVUpkalIyRHJjRUk3SHExMHI3amZlRk1VTWYwLXNqNG5Ya2VBNy1xRzlqYjJYdG1ZdzBqZlN3WEFDbnlwMXhldHlnbTlDRWhkNnZyNG9INk1CQU0tN2pNOHpjMDdYLUJxcmdhSmUtNjU?oc=5",
+              "level": "warning",
+              "why": "cuts"
+            },
+            {
+              "title": "Kentucky college leaders address AI, enrollment declines",
+              "media": "Spectrum News",
+              "date": "2026-09-30",
+              "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQbGNjZGxGcjVkMlNxN0lOSmlqazE2ZTZkNDdkRHJBd0ZYbDhMTlk5VmZJZFJlRVNMMzhCeGhFX25yZklFeDZsSUkyczRSQ2dzTzZhLWFQWF93TTcxdVVacTN6dEZXdWFtU29MUllnUXE4UFlTbmk2a3kwYUNYOHVXdHJmekktc1Y0?oc=5",
+              "level": "warning",
+              "why": "decline"
+            },
+            {
+              "title": "Our Lady of the Lake University will overcome enrollment decline",
+              "media": "expressnews.com",
+              "date": "2026-09-30",
+              "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQM1ZHbkV4elFWRXlBb1JGZWduaUx0cUhMdmRjcVdxRVo3YlZqNmhsMlg5enhvQTZKTzlxTnVIdlF6UDNRcWJTQlprOThCcHVCS1EyT3JmM3pCdy1idzRNSjRqVFZPZ2Q2R3hzRUQwNDlhMDFuNlp0UWxNc2UyODJOUFU2SGQ1ZzA2Y21LREhfQnhfcS1EOGtCNzRuTFctTzNzRjRYckp2b3NFaHJTeUNJZU5sMGRqbkRJekszM3drYw?oc=5",
+              "level": "warning",
+              "why": "decline"
+            },
+            {
+              "title": "Regents note second straight year of enrollment growth at ESU, enrollment decline at FHTC",
+              "media": "KVOE",
+              "date": "2026-09-30",
+              "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxONTBIVlV1QnAwVjJRUG1BOU1McER6TTUyMzlUUVVZWUpPQVdQY1c0NjBMR1lWakpJU2dvS1hLWGJET196YzlqbXpTS09DQjFuRFNxNDIwWFE2Sl8zQ0xET3dlV2E0VGtGdS1ETTUzM0tsQWpvNHZtTjlMOGRDVjlKUmpmTjRtTVJHcnNtWmpTaUp4T1VMV0I1WnhieEpWd2ktUWMxblNjbFpwNmNOZGg2ajNiTWcxSkRT?oc=5",
+              "level": "warning",
+              "why": "decline"
+            },
+            {
+              "title": "Volunteer firefighter numbers have declined across the U.S. In Blacksburg, college students help fill the ranks.",
+              "media": "Cardinal News",
+              "date": "2026-09-30",
+              "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNa2d6YktRd1FtRG51Y3FDVE1nQktMUHFNTjJrM0xXRHM0UmJ1NlZucGdHb1ZTd2s3Slg3cl80ZlJzTmp3NE00Ry1vVmEwZjFkTHp1WmRTVTNxbExSSWcwNGd1b2RGVFFiYkNFbTAteml2Q1V5OEtMTXVuVFladG5ERlFPajNLb2dydjZlWWlyMUlQdXRSS0p3QkVMUnc3R2JjMHk4Y25BY2FJTGpic1VabnMzY0UwbUNtRjh0SmtwVV91NFk5M0RHSFB2V1lRVXBKbnRsMkRxSFdJWVNmckZB?oc=5",
+              "level": "warning",
+              "why": "decline"
+            }
+          ]
+        },
+        {
+          "field": "정책/철학",
+          "count": 185,
+          "items": [
+            {
+              "title": "French PM holds crisis meeting as student protests spread nationwide",
+              "media": "inkl",
+              "date": "2026-10-01",
+              "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQNDhkRmRkYWhzZlM1RVh6eXFkd3JPOVZsS2dITWhHMlhEN3ItSlJlTjMwWjExbm04UXkyUkRSeHUtMGFFS1ZuR21qcVZGNVF5Qm1SUGpTSmdHUDN0Xy15dVRwTUJHcm9ISDJmNVVkVkFoblBDVE9wSlNuaENfZVlZc0phRkpMajRpbVY1MFp5cUJkTG1BUGxpczlR?oc=5",
+              "level": "crisis",
+              "why": "crisis"
+            },
+            {
+              "title": "‘300 applications, 2-3 callbacks’: Indian students in Australia face high rent, cost and housing crisis",
+              "media": "The Indian Express",
+              "date": "2026-09-29",
+              "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOZTRRZ1JHYXFHNFpCUjRxa3BSM1FDcjhPS0hXYldrck41NEtKLTJFWkVaZWtIV25PY0xWcS0wOGRXaFVNb1Q1Q0VLN3NWSzRmaVVEZHcwQnlQNFVDWTloX3lWaDRzcW9DdHp2cXRkaUJJTk9QWEd4cG0xekhNNHFKZ3VBY1RpYWdFZE5VQ0cxVDhuSEc0STVYWWxLakdlRTQwNVlaaGc3QWpvMjdrU2lZY3kwTVRUbE1yWHFJMUhjbWJSZTEycl9kWnJlQXUtTUlWdDMzcmpNUkhpSUtWZ01xcGs0X0NvRU05cVJ4cUFOM3A5WVc0ek1GTdIB_wFBVV95cUxQSTFfNEtfY0RTVGlYcEFOLU8xU1I0V2RlSk8yanNwOGNlVU50S1ZNcDhobGstTEFnWklNWjhnOUF1V1dJUERIV2JtVkNoQ1ZyYnBPem1PTHM2bVRoUDhhdndMZTB4YmE5SXl1U3YydDR4eHdYc2k3ZmdWcE12aXhEemwwUm1xcndfM1JfVnVjWTdsbFhjWk9ueDVxX3NJbHlISkExSVNQb0hzd2JmcGY4ZThXRmZkQ056bGFrQ3lSQ3BKNUtkWkUxT2RWZmdtUzY4N2NvMkJ4SzNZRzc2eGhZSzhwZ1A1VkpDV05lRVZlYTlRY0FLejJXNDhHcUluTDg?oc=5",
+              "level": "crisis",
+              "why": "crisis"
+            },
+            {
+              "title": "Indian students in Australia face high rent, cost and housing crisis",
+              "media": "The Indian Express",
+              "date": "2026-09-29",
+              "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOZTRRZ1JHYXFHNFpCUjRxa3BSM1FDcjhPS0hXYldrck41NEtKLTJFWkVaZWtIV25PY0xWcS0wOGRXaFVNb1Q1Q0VLN3NWSzRmaVVEZHcwQnlQNFVDWTloX3lWaDRzcW9DdHp2cXRkaUJJTk9QWEd4cG0xekhNNHFKZ3VBY1RpYWdFZE5VQ0cxVDhuSEc0STVYWWxLakdlRTQwNVlaaGc3QWpvMjdrU2lZY3kwTVRUbE1yWHFJMUhjbWJSZTEycl9kWnJlQXUtTUlWdDMzcmpNUkhpSUtWZ01xcGs0X0NvRU05cVJ4cUFOM3A5WVc0ek1GTdIB_wFBVV95cUxQSTFfNEtfY0RTVGlYcEFOLU8xU1I0V2RlSk8yanNwOGNlVU50S1ZNcDhobGstTEFnWklNWjhnOUF1V1dJUERIV2JtVkNoQ1ZyYnBPem1PTHM2bVRoUDhhdndMZTB4YmE5SXl1U3YydDR4eHdYc2k3ZmdWcE12aXhEemwwUm1xcndfM1JfVnVjWTdsbFhjWk9ueDVxX3NJbHlISkExSVNQb0hzd2JmcGY4ZThXRmZkQ056bGFrQ3lSQ3BKNUtkWkUxT2RWZmdtUzY4N2NvMkJ4SzNZRzc2eGhZSzhwZ1A1VkpDV05lRVZlYTlRY0FLejJXNDhHcUluTDg?oc=5",
+              "level": "crisis",
+              "why": "crisis"
+            },
+            {
+              "title": "Universities are part of the solution to the NEETs crisis, v-cs insist",
+              "media": "Times Higher Education",
+              "date": "2026-09-28",
+              "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQd0JqY2pWRklramdVVGYzeU9vTFpZRUNNVzRUekxEb180bXZ3aU5VYks0bEV4V2ZvbUV4ZTdhVzdnSVFSRkMzVjE5SVl4MGc4a1VqUzNyOENmVHBKY2IwVTRrNFgzcURkZ2FVME94WWpuUE5UdkZaU0JBRFRoQk9yYWlpQ1hEYnFpQ2ZTN1N5bVpydDV2Rk93NzlDMmt1QQ?oc=5",
+              "level": "crisis",
+              "why": "crisis"
+            },
+            {
+              "title": "Universities are part of solution to NEETs crisis, v-cs insist",
+              "media": "timeshighereducation.com",
+              "date": "2026-09-28",
+              "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQd0JqY2pWRklramdVVGYzeU9vTFpZRUNNVzRUekxEb180bXZ3aU5VYks0bEV4V2ZvbUV4ZTdhVzdnSVFSRkMzVjE5SVl4MGc4a1VqUzNyOENmVHBKY2IwVTRrNFgzcURkZ2FVME94WWpuUE5UdkZaU0JBRFRoQk9yYWlpQ1hEYnFpQ2ZTN1N5bVpydDV2Rk93NzlDMmt1QQ?oc=5",
+              "level": "crisis",
+              "why": "crisis"
+            },
+            {
+              "title": "University of Edinburgh funding crisis – The NEN",
+              "media": "The NEN - North Edinburgh News",
+              "date": "2026-09-26",
+              "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9HT2NnS0R2VlZJaGoyZ1NNdldVSE1HWjF6WmVBNElvWHlzUkRaVzhpNGR2Z21ILWhOdU9nekJoaG4yWWViU3liQTlfYWVob1hrcThCaXZqUy0tdFVsTEsyMHhjRzlpOEVlSWdNTm53?oc=5",
+              "level": "crisis",
+              "why": "crisis"
+            },
+            {
+              "title": "Kansas Legislature’s budget cuts compel Fort Hays State University to close Sternberg Museum",
+              "media": "Kiowa County Press",
+              "date": "2026-10-01",
+              "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPREpMOHljNHRxYVN4ZzBWaDF5YkhRMmhPNy1sVXJfRENTeFJYYWR0S1Y3Z25fTXBWbTNqaGExdk5aZVd5RDRkeEVTenllLVk4UVVpaUh2ZFNTdThlcFZkQVcxbV84WHhxM1M3OEg2Y2s0T2M1d2dKalRsMHJnX3lLdU5nbk1nZU1ISHNDbk5sdEpIb3RTVnJ5VGc2TTZkRGdsa0ZxRXVqX0kxTjB6LVBObEFKd1Y5MVRwU1dKODBqTG1sMG8?oc=5",
+              "level": "warning",
+              "why": "cuts"
+            },
+            {
+              "title": "Kansas Legislature's budget cuts compel Fort Hays State University to close Sternberg Museum",
+              "media": "Kansas Reflector",
+              "date": "2026-09-30",
+              "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQSHEyRDZiZnBnMmpSZVRGR0tvOVBac3JSaVdiVnpBczlRU3E1bUpTU1liNTZQY3NpTzZOLUdpSm1ZUGxnOG9QLTlOYTNrbHh2SS1nSnVoN0RNV1U1X05fUkltUW1RTVRjVkIteVVDaTQ1Nk83X0ZYMGpkZWVEampHV0dwYlNHWFJjZnJRZEM0UzYwTE9TRFFrMzNrZ0lJV0Y0MG55Y2otd1ltTXR3OFBnN2VmdTZpNlp0SWRLSHJDZGVtNEk?oc=5",
+              "level": "warning",
+              "why": "cuts"
+            },
+            {
+              "title": "Student protests in France turned violent on Tuesday. The escalation came as public workers staged a national strike against planned budget cuts. #dwnews",
+              "media": "facebook.com",
+              "date": "2026-09-30",
+              "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOYWo3a3p1SE44ZjhSTy02LUQ2UlFiak51Y0o3eUFVWTRwaEx2SU9QRmdUTmoxWkMyZmhTNkdlYk9VRlRBUXhid0h4eGpydDctT1U2SS1TamdEbUhmTmxNZXlDeGJUd05QMUtGYmdoUERGWUxMMHRKdDNPeDVVZF9ZYUg5LUlnREZVUVhGbGtsRVVrOVM3cGJQQy1Ya0hEbnlJWnZqa0F2WkxuRTM1MGNWTkUtMTAxd0hKT1o3TmEwWWRTLU5jVmE0RU1LLXo1b05KZVk4UHlrUWZPSU1IRktCYg?oc=5",
+              "level": "warning",
+              "why": "cuts"
+            },
+            {
+              "title": "Redundancies set to impact Sunderland University teaching staff due to 'pressures' in higher education sector",
+              "media": "Chronicle Live",
+              "date": "2026-09-30",
+              "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNRktvQ2VLZ2NOTVl1MExWSDVjX0FScDRmem1EWUVCcXFpdmhRTDBoNE5WYV9GNFFwczBKd0pESWE4d3NiVERaNThDeHdfX0xwMF96cTUzcVVWTmNsUXVBUjd6YlRIQzBxYjBkTWszNnNNVTFvR25lVUR4SHc3b0lpblZEY1ZWWnFzd3ZYdndaWC1QRGNlQ04xOHY4RU5FQ0hnYU1KQVFaVWttczDSAbABQVVfeXFMT3VBbGRhN1B4U2twVlN5Y0U4VUlGeXZDd2FrYjdkNmRuMEVyRmFmNS1UZ2kxTnlESER4b3RHemQ1d2k3WjdHb0dCaUtEa3o3U3N3TWdzLTB1TnV1UWtPeWc1RkFJSkthalhRR2dncG9hSy1kZXZKOURtYzZjVVowN21iVVB3VFFqWlBGUXpDN3I1dGoxMjV6TUtYMG1fN3JVRUxHaXJoYUdUeGVuT0JIaHY?oc=5",
+              "level": "warning",
+              "why": "pressure"
+            }
+          ]
+        },
+        {
+          "field": "기타",
+          "count": 87,
+          "items": [
+            {
+              "title": "Massachusetts beefs up closure warnings for at-risk colleges",
+              "media": "Higher Dive",
+              "date": "2026-10-01",
+              "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdGgtVjZoOHdjZmRjVUFjcXZDWmxfT2Rvd0d6UHhNMkVrWlpFUFRMdlpPZFk5TlRVWFZrVFJsbTFfa0l6bGh0WkViREtKTDZWa0VPbnYyT0FGS0pBaXhUaEtLUkhadGN0dWpMdU10VFo3eXMzQTNmYUExeVowSHpNemR6dGVBY3h4X01NSXZ5NHVKRUpBdERPWGpvU1NLcHZGQUM4OA?oc=5",
+              "level": "crisis",
+              "why": "closure"
+            },
+            {
+              "title": "New college-closure rules tighten timeline for Mass. risk notices",
+              "media": "The Business Journals",
+              "date": "2026-09-29",
+              "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPMFlUeUhlLWNGMG1hM0ZqT283QndYaTV5QkZCZ1FNSTFOOUdfaXB1Q2oyZ3VrTVkzcGZQRHI2cXo2cUdCdG40cVhKc0ROdDZPMW1kYUZWNVc2dHlham5raDVYbnQwRXVZeVEzRHZ2ZEZOaHdZUnY4OUE1cldYN1VXS1ZYVnE3bTNCQ3VaOERSdjM0eGk0bE1zTklrbHk?oc=5",
+              "level": "crisis",
+              "why": "closure"
+            },
+            {
+              "title": "Mass. tightens college closure notification rules",
+              "media": "NBC Boston",
+              "date": "2026-09-29",
+              "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSlI5TkNTejd5T05UWFo1WFg5TlA0R3VTTDZaYkNvWGN2NVB3dGhZOWlWNW9IbjVQWFI2dlVyRGQ2MFh2R3NyQnRoMV9NaW5hVnJJNjlEbzhIU3IySG9oQ2NkU1ZKYjlFSGpfR1pfYmFZclJPeXFqdndGWlM0blZkd2V5NURYV0lSU09TelZnQ2cxVlFpTlV4MHV6bmpwQ1NoeEJhd3BzeXhRNXPSAbMBQVVfeXFMUG5FQm1LWkZPRkxtOFFDNzlINEpLNFV5bi00bmZxWl9SS3ZUYllJQVpHc3p6WkxqSWFhbE5PZDJWMkM5VnNqZ0EtdHNCYnpyN3dSRWJMdnNjaHRqd3VzT1hoVHRYcHl2Qmh1M0F2bFBpZ0d2MGZJNXZHZHlISmp5NWpvclpjU29GZEUxeG9QZDZ5SWxOTE5FZmNiU20xbXBhejl0QmJHMVJzOUJzQUtqdlZia28?oc=5",
+              "level": "crisis",
+              "why": "closure"
+            },
+            {
+              "title": "Two abrupt college closures prompt changes to Massachusetts oversight process",
+              "media": "MassLive.com",
+              "date": "2026-09-29",
+              "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOWnBkSEpKRzlHcFZOUV9wTUk3eF9qQll3TlVMV0puaVBwemg2bHVtT3VsU1NMNWE0bjN6bDBxSnBGemZzSFlvQUc1ZERzUDRuRmJZRlcySG1HZldrbWtzNktFZ01aczJCYWlCLVAwbTVUa054QjZRTzlkR1d6WmJQMTg1elZDaks3Qlh1cU1QNGpPN2VPMlNwNjA4Smh0dFJVeDgwTEp0SUoyY0h5RjA3WDRkUXNaN1JNb1RtSXVUXzdMNmRKWXJMdWZac09IT2M?oc=5",
+              "level": "crisis",
+              "why": "closure"
+            },
+            {
+              "title": "University plans £40m cuts amid 'visa refusals'",
+              "media": "Yahoo News Canada",
+              "date": "2026-10-01",
+              "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1tRXFYT1picU91RDdja0w5TEloSFBncXhtQTlocDdob3o0VEhzNWFaUjN1RW5vaHhlN1dQNXliXzRoYVNBVm1NSW55WFJqaHFWYzFYTjhVZC05ZzVLQUdzR0JuRjhzM2FnOENXaDJOMGJnUjNYOS14OEYwVQ?oc=5",
+              "level": "warning",
+              "why": "cuts"
+            },
+            {
+              "title": "University of Sunderland seeking £40m cuts amid visa refusals",
+              "media": "BBC",
+              "date": "2026-10-01",
+              "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8wUUxyMzRKQ0NQdHZqaGpVNGlSR1loU25iazFTU1JNdjVlb0J1Q3p0c3lpNzVCMWlGZTF1dF9TNjlZMlpzWk91cE5ycnAzZVFHcTlqN21tM0czUjQ?oc=5",
+              "level": "warning",
+              "why": "cuts"
+            },
+            {
+              "title": "New University of Michigan grading plan halted after backlash",
+              "media": "The Hill",
+              "date": "2026-09-30",
+              "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNdnF1TEVkYkVhR0dnMGZTZ0pjeU1CWUlHTkNyX1ZZREExeWY1Z3kwcmV0MWl1TFJobjkzRmtYUVhqWHZzU2haN3Z0V25VUnJsWTRvT0FFWk44SjAwUk5XbHoxcnpvOHJVRGJuRmRVbXlrWnFPWDgtZHdjV29JVWFWZmtKRGVEMFVxdkxzc3pDNjTSAZYBQVVfeXFMTXF3aDRpMVY4X21lSWNKckJVUnJneUd5VlM1OXRVR094T1FXY3FJT0Q4S25tdjlueDlFWTFGVVBUbUFPQzZqVkh6blBKLVZjME9UR3FOR0hpZHlTajdtN2ZqeE5pQ2VnSGROX3JvYmZZa1BoRTVYNThpQ0FOSE1TcFZOTFlyZ3c4R1Y4Mk5nelo4dFFWeE53?oc=5",
+              "level": "warning",
+              "why": "backlash"
+            },
+            {
+              "title": "'Pressing concern': US commission on civil rights releases report on campus antisemitism",
+              "media": "The Jerusalem Post",
+              "date": "2026-09-29",
+              "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFB0bENWUk11M2ZEZTRZcDR4Q3BQTjlMeVVXeGkzYVBGVEtEcjJzQmFpZTdUY3V5cHQ1aHdiXzdEdmhVZ0lXcFNuUFcxTktCakFNcjlDSXFOVHRVMEhPa3oyVkl1bWJUV0t6Znc?oc=5",
+              "level": "warning",
+              "why": "concern"
+            },
+            {
+              "title": "Chuseok moonlight and a warning for private universities",
+              "media": "Korea JoongAng Daily",
+              "date": "2026-09-28",
+              "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOT0FmZzNWM0pieUpxWHdLX19DbU12Zk9iT3lnNk11RHhZLXVrSi0xTXRhRHlyeExlNzdhZVdMbDBkVG9WSXM5bndoVFN2cnR0Si15ckdXQUtDaktGSjRCT3FIM1k2aUxMMEVKSHRoVkgzaFZhcHdrQkFnRUFmQkVoR2ZSZGtHN1o5Z2N2NGlmSFhCVmJZRUE?oc=5",
+              "level": "warning",
+              "why": "warning"
+            },
+            {
+              "title": "‘Partial Independents’ on meal plan split on University dining changes",
+              "media": "The Daily Princetonian",
+              "date": "2026-10-01",
+              "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQRnhMWmFfdzNXbnl2bTdVQk4tMzV1MTZwV3RyTmdmeTdaYWNmRDltWEcxNVdKeml5bXc0YjZYOGQzamRhbEhOYXlDSk1UTjliT2pIRUFaMFpPelpSak4wQ2J3dG1CUGpHV3NsYmE3SjBPRzZVck9LZkQ0VGFQYzR4ZVhsWFVtSFFRWXhWSHNTWWdfeW1sT0JNVzZtcnNpMGV6VXpBc3NhdWxObmhKY0xIQjNXa05RdEdHRmFZY3lWSzNtcG9wZnRPRTAwaVFlZw?oc=5",
+              "level": "watch",
+              "why": "plan"
+            }
+          ]
+        },
+        {
+          "field": "융합연구",
+          "count": 7,
+          "items": [
+            {
+              "title": "Infosys and Columbia University Launch Strategic Collaboration Across Deep Research to Drive Innovation and Unlock Business Value",
+              "media": "PR Newswire Canada",
+              "date": "2026-10-01",
+              "link": "https://news.google.com/rss/articles/CBMijwJBVV95cUxOTFNUVzRuVGVGSmR2SG4wTWhJT0ZUQVR1M2ZPdU9SZ045dm1Gb05FZHJOX2RwdEdZd0NIVEpvaEYwQ3UtS2xUa0thaGVnWVJzY1dhQXJxZEhpZ1h4cWFzeWU3MVVfY3VvejVhbmRSYW1DNll3Y3RMcXhZakZrbVQ0UzdlcVBubk5RTjVzWWNmRnZ4UmpHV19fRWR5eVhJNm5tTnRubi00bFN1Q0J1RFM1X3N5TDAzM1hHOFdPUkJKRHVGajdtYnliNjJwbi1CNl9ENEhWYlVZaXY1ZlZNV1VCUzJhME94bnMzWUhTYUxFYXFsNGZrQ2pYZlNTVS1iNmo3LW1RRWJKWmtMQWJFb2V3?oc=5",
+              "level": "normal",
+              "why": null
+            },
+            {
+              "title": "MI5 Warns U.K. Universities To Cut Research Partnerships With China",
+              "media": "LinkedIn",
+              "date": "2026-10-01",
+              "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxObXd1dXA5RmxvZjM3ei1Hb1dkLW40cEpWdUJIX2dsRUpUTDhXRFB3MVV4VzZFbXJMazgyTWJ1dHhPa3I0cEQzYktqRjhtY3A1dE5PbXlvbF9lVkFxMG1ZSHhDR0d4WGlaT21zOHMxUWZGSFRDZEFyVWcwN2JDOGo5RF9XTk9zTmVnTzNScWZHdUgzdw?oc=5",
+              "level": "normal",
+              "why": null
+            },
+            {
+              "title": "MI5 warns universities to cut ties with Chinese institute",
+              "media": "ft.com",
+              "date": "2026-09-30",
+              "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPM0Fxckp3dlc0WDNxRGtXZUdhYWVaTUlqbGpuMnZEM3g1d2hORmdNZjhWbHlfbWlIUnI4R1ZOekZ1MHlEUWRNTmFxYUE2cnhtVlFhUEQ0VVpVZktTS1BYMUFJa3E3WkpsMWFwZXlsNUQ1d1NyUHg0dDZSMTBhSEpXTDhtNEw?oc=5",
+              "level": "normal",
+              "why": null
+            },
+            {
+              "title": "MI5 issues spy alert to UK universities over Chinese ‘front company’ stealing research",
+              "media": "The Guardian",
+              "date": "2026-09-30",
+              "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPQTBmYnFoZWdKX1g0bFhhZm5ITWQ3bnlUTmtnd2dZQ25jYWtjNUM0UDJpdWFfUlpYR3ZKV3h2VFNKNUpzZENzc3JwS2xFN1hFSjZvdF8wLXcxZjJvU3AyclAtVU15Tkp4czdJS1JTeHJFdGVONmFwN0ZVVHNXS2NWTzZfTFowcE5TLWFLTGxWS1p2UmV5MlJ1eUoyeWJNMDBMalhTOUdYdEoxTWJRUUxPSkRNc2ttWnUzbDliM1cyN19FMGt6SXJHbV83cVZTWnpHQXpWbWd3?oc=5",
+              "level": "normal",
+              "why": null
+            },
+            {
+              "title": "MI5 Warns UK Universities To Cut Ties With China General Technology Research Institute: 12 outlets compared",
+              "media": "NewsCord",
+              "date": "2026-09-30",
+              "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPcVNYTGRsX3dvYS1CdjA4cUdVVVdVNHRyaXhwUFlhcVFoQ3R0blJ2b09NckU0R0RaSkI4SEJMaHhrZGNzTEZJLThCRDFZNHJLMkp0ZWZxQkdxU2hLY1pydk9MSnc0RmNEY3JQV3NnSWRjTjhzWDRYT0hRYl9ybW1tYVNNUXB1RTdqazRDQVp5QkZjc0YtR2w2bXZ6dHloT25TSjNDNkpRelV0X1Bmb3ZybGlXMFVFOU1CZXpWOEtKTHFDNHYwcFdvc21wNnI1UWwxTVRzSHJrYlFnVnQwUFlLYlU5VGREdng2Qnc?oc=5",
+              "level": "normal",
+              "why": null
+            },
+            {
+              "title": "Free Tuition Deals Most Effective as Marketing Strategies, Research Shows",
+              "media": "Inside Higher Ed",
+              "date": "2026-09-28",
+              "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOOW5LV0xxcXd5VXRCWnhhTzU3OThSWEkyR0NRcW5Rem5lRGpSWVRmY3hFeEtjLS15T3JkRmEyUGFsSmZ2aklEbEwyMkcwejZWeGVBQ0xMQkRlLXZ1ZTZHV1ZDdEtHcS1KNGNkWVhIOTZyTlFUbHRpRUpqdmszd1BUTUp0eGtrUkdscWRhcHpFT0pNWGRCOXFXQXRyYXdzZDFocjVLSEpEcVhaWWZsUHNfTFE1czBoQ3M?oc=5",
+              "level": "normal",
+              "why": null
+            },
+            {
+              "title": "Harvard, MIT professors join Canadian universities amid US research funding cut",
+              "media": "VnExpress International",
+              "date": "2026-09-25",
+              "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPa0x3ZDhRT0VQME9FWnRyY2tNbmxENDZqSElJeHRXX09yV2dMUGRZejMzR3VUU1hlMkhJT1dkYU1HRVl6S05ONVJDR0xLMUs5V1JhSEotV2FZTFRyaHlNZGVhYmhSTXBia2duM0ZSZ3VGaTl5eldJQ2FlVFlTd3VpWEpNVGdkRmpPU1BBVUloRVphVE01b1FhclRxOXZ1Um93MlkzM09qOU5kWXNqSjhHRjlDZHZiaHBuWXVMclQ1dVg5U3hCbllVeGdxR0xqcDZV?oc=5",
+              "level": "normal",
+              "why": null
+            }
+          ]
+        },
+        {
+          "field": "적응형행정",
+          "count": 1,
+          "items": [
+            {
+              "title": "How colleges are responding to Trump administration’s ‘call to action’",
+              "media": "Christian Science Monitor - CSMonitor.com",
+              "date": "2026-09-29",
+              "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNV2EzSnFSTUVVY3JDb3NobktncnB6TkRpR0ZLYUgzN3BCTFZ4VXdLbEpWZEhMZUtSdllrSWRjZGpERnNLS2dmY0hVNDREb0QyamUzRXhNU2N4dG9QcTlNZ1VZRm5icmRVeUVHWUF4SFR5bnlKTjU4Mmk2czVhdERwMnhlbVBaOTA5YWFTYi13?oc=5",
+              "level": "normal",
+              "why": null
+            }
+          ]
+        }
+      ]
+    },
+    "changes": [
+      {
+        "dir": "down",
+        "v": "부산예대 자진 폐교 — 부울경 안에서 폐교 현실화",
+        "why": "재정난으로 32년 만에 내년 2월 폐교. 지방대 위기가 권역 내부 사례로 들어옴"
+      },
+      {
+        "dir": "down",
+        "v": "선별 지원 반발이 국회 앞 1인 시위로 확대",
+        "why": "경상국립대 교수회·동문회가 동남권 논리로 중단 요구. 부울경 권역 내 배분 쟁점화"
+      },
+      {
+        "dir": "down",
+        "v": "충북대·교통대 무산 후폭풍 — 환수금·지역 정치 갈등",
+        "why": "교육부 중재에도 잠정 중단, 도의회 유감과 반대위 반발이 맞섬"
+      },
+      {
+        "dir": "up",
+        "v": "부산대 해사국제상사법무대학원 내년 3월 개원 확정",
+        "why": "국제해양전문대학원에 이어 해양 분야 전문대학원 연속 개설"
+      },
+      {
+        "dir": "up",
+        "v": "공공부문 AI 윤리기준 확정 — 오류 책임은 사람에게",
+        "why": "총리 주재 간담회에서 AX 혁신 스토어 연내 오픈 발표와 함께 책임 원칙 제도화"
+      }
+    ],
+    "changesTitle": "전주 대비 주요 변화",
+    "changesNote": "비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 898건 vs 전주 946건.",
+    "watch": [
+      {
+        "when": "초기(0-4주)",
+        "t": "충북대·교통대 교육부 중재 결과와 환수금 처리 기준 — 통합 추진 대학 전체가 감수할 위험의 선례"
+      },
+      {
+        "when": "초기(0-4주)",
+        "t": "부산대·부산교대 통합협상 재개 여부 — 충북 사례처럼 지역 정치가 개입하기 전에 절차를 확정하는지"
+      },
+      {
+        "when": "초기(0-4주)",
+        "t": "선별 지원 반발의 국정감사 반영 여부 — 경상국립대 등 동남권 논리가 부산대 선정의 정당성 논쟁으로 이어지는지"
+      },
+      {
+        "when": "중기(4-12주)",
+        "t": "부산예대 폐교 이후 재학생 편입·교직원 처리 방식 — 권역 내 대학의 흡수 역할 요구 가능성"
+      },
+      {
+        "when": "중기(4-12주)",
+        "t": "공공부문 AI 윤리기준의 대학 적용 지침화 여부 — 학사·행정 AX의 책임 소재 기준이 여기서 따라온다"
+      }
+    ],
+    "weeklyMetrics": [
+      {
+        "name": "위험신호 비중",
+        "value": "4.6",
+        "unit": "%",
+        "change": "-1.4%p",
+        "dir": "down"
+      },
+      {
+        "name": "수집 기사(비교기준)",
+        "value": "898",
+        "unit": "건",
+        "change": "-48건",
+        "dir": "down"
+      },
+      {
+        "name": "정책/철학 기사",
+        "value": "262",
+        "unit": "건",
+        "change": "-9건",
+        "dir": "down"
+      },
+      {
+        "name": "증강인재교육 기사",
+        "value": "320",
+        "unit": "건",
+        "change": "-4건",
+        "dir": "down"
+      },
+      {
+        "name": "산업 기사",
+        "value": "48",
+        "unit": "건",
+        "change": "-20건",
+        "dir": "down"
+      },
+      {
+        "name": "부울경 연계",
+        "value": "102",
+        "unit": "건",
+        "change": "-112건",
+        "dir": "down"
+      },
+      {
+        "name": "부산대 직접 언급",
+        "value": "65",
+        "unit": "건",
+        "change": "-69건",
+        "dir": "down"
+      },
+      {
+        "name": "해외 기사 (참고)",
+        "value": "496",
+        "unit": "건",
+        "change": "신호·지표 미반영 · 별도 항목",
+        "dir": "flat"
+      },
+      {
+        "name": "추세",
+        "value": "falling",
+        "unit": "",
+        "change": "전주 6%",
+        "dir": "down"
+      }
+    ],
+    "kpis": [
+      {
+        "group": "대학평가·순위 (부산대)",
+        "items": [
+          {
+            "name": "QS 세계대학순위",
+            "period": "2027",
+            "value": "449",
+            "unit": "위",
+            "change": "종합점수 34.6",
+            "dir": "flat",
+            "freq": "year",
+            "src": "qs"
+          },
+          {
+            "name": "THE 세계대학순위",
+            "period": "2026",
+            "value": "501–600",
+            "unit": "",
+            "change": "거점국립대 중 공동 2위",
+            "dir": "flat",
+            "freq": "year",
+            "src": "the"
+          },
+          {
+            "name": "중앙일보 국내 종합",
+            "period": "2025",
+            "value": "21",
+            "unit": "위",
+            "change": "21년 15위 · 22년 21위 · 25년 21위",
+            "dir": "flat",
+            "freq": "year",
+            "src": "joongang"
+          }
+        ]
+      },
+      {
+        "group": "대학 공식자료 (부산대)",
+        "items": [
+          {
+            "name": "대학기관평가인증",
+            "period": "2028까지",
+            "value": "유효",
+            "unit": "",
+            "change": "2024.01.01 ~ 2028.12.31 (잔여 2.2년)",
+            "dir": "flat",
+            "freq": "accredit",
+            "src": "kcue_aims"
+          },
+          {
+            "name": "전국 인증대학",
+            "period": "4주기",
+            "value": "167",
+            "unit": "개교",
+            "change": "국립 24 · 사립 140",
+            "dir": "flat",
+            "freq": "accredit",
+            "src": "kcue_aims"
+          },
+          {
+            "name": "부산 지역 인증대학",
+            "period": "4주기",
+            "value": "13",
+            "unit": "개교",
+            "change": "지역 내 경쟁 대학 수",
+            "dir": "flat",
+            "freq": "accredit",
+            "src": "kcue_aims"
+          }
+        ]
+      }
+    ],
+    "paths": [
+      {
+        "tag": "심각",
+        "cls": "",
+        "title": "거버넌스",
+        "flow": "충북대·교통대 무산 후 지역 정치 개입(즉시) → 통합 협상에 지자체·의회가 이해당사자로 들어옴(4-12주) → 통합 절차에 외부 이해관계 조정이 필수 단계로 편입(12주+)"
+      },
+      {
+        "tag": "경계",
+        "cls": "w",
+        "title": "대외·지역",
+        "flow": "선별 지원 반발의 국회 이관(즉시) → 동남권 내부 배분 논쟁 구체화(4-12주) → 선정 대학의 권역 기여 입증 요구 상설화(12주+)"
+      },
+      {
+        "tag": "경계",
+        "cls": "w",
+        "title": "입학·구조",
+        "flow": "부산예대 자진 폐교(즉시) → 권역 내 재학생 흡수·정원 재편 논의(4-12주) → 지역 고등교육 생태계 재설계 압력(12주+)"
+      },
+      {
+        "tag": "경계",
+        "cls": "w",
+        "title": "산학·AX",
+        "flow": "해사법 대학원·AX융합연구원 가동(즉시) → 권역 사립대 전교 AX 선언과의 비교 시작(4-12주) → 거점대학 AX의 차별 기능 입증 요구(12주+)"
+      }
+    ],
+    "innerPaths": [
+      {
+        "title": "기획 → 대외 → 재정",
+        "flow": "선별 지원 반발이 동남권 논리로 제기됨 → 재정 투자·소비 지출 효과 분석을 권역 기여 근거로 정리 → 국정감사·예산 심의 국면에서 대응 자료로 활용(1학기)"
+      },
+      {
+        "title": "연구·산학 → 교무 → 행정",
+        "flow": "전략산업AX융합연구원 인력 채용 착수 → AX 전공·교육과정과 연구원 기능의 역할 분담 정리 → 연구원 성과 지표를 산업 측 지표로 고정(1-2학기)"
+      },
+      {
+        "title": "행정 → 기획 → 교무",
+        "flow": "공공부문 AI 윤리기준 확정 → 대학 학사·행정 AX 업무의 책임 소재 규정 마련 → 전교 AI 교육과정에 책임 원칙 반영(1학기)"
+      }
+    ],
+    "sectors": [
+      {
+        "name": "기획·거버넌스",
+        "dir": "네거티브",
+        "d": "neg",
+        "lv": [
+          "s",
+          "s",
+          "i"
+        ],
+        "desc": "충북대·교통대 무산 이후 도의회와 반대위가 맞서며 통합 협상이 지역 정치로 번졌다. 부산대·부산교대 협상도 외부 개입 전에 절차를 확정해야 하는 압박을 받는다.",
+        "chg": "down"
+      },
+      {
+        "name": "재정·회계",
+        "dir": "혼합",
+        "d": "mix",
+        "lv": [
+          "i",
+          "i",
+          "m"
+        ],
+        "desc": "통합 무산의 환수금이 논쟁거리로 올라왔고, 부산예대 폐교로 재정난의 끝이 권역 안에서 확인됐다. 반면 부산대의 지역 재정 효과 분석은 기여를 설명하는 자료로 쓸 수 있다.",
+        "chg": "down"
+      },
+      {
+        "name": "연구·산학",
+        "dir": "포지티브",
+        "d": "pos",
+        "lv": [
+          "i",
+          "i",
+          "m"
+        ],
+        "desc": "IP 전략 포럼과 로스쿨의 지식재산·기술금융 협약, AX융합연구원 채용이 겹치며 AX 사업이 조직 가동 단계로 들어갔다.",
+        "chg": "up"
+      },
+      {
+        "name": "교육 AX",
+        "dir": "혼합",
+        "d": "mix",
+        "lv": [
+          "i",
+          "m",
+          "m"
+        ],
+        "desc": "해사법 대학원 개원으로 해양 분야 전문교육이 확장됐으나, 권역 사립대가 전교생 AI 필수 수강을 선언하면서 부산대 AX 교육의 범위와 차별성이 비교 대상이 됐다.",
+        "chg": "flat"
+      },
+      {
+        "name": "입학·학생",
+        "dir": "네거티브",
+        "d": "neg",
+        "lv": [
+          "i",
+          "i",
+          "m"
+        ],
+        "desc": "부산예대 폐교로 권역 내 학생 이동이 예상되고, 민간 원서 접수 장애와 표준 공통원서 예산 삭감 논란으로 입학 행정의 신뢰 문제도 이어졌다.",
+        "chg": "down"
+      },
+      {
+        "name": "대외·협력",
+        "dir": "혼합",
+        "d": "mix",
+        "lv": [
+          "s",
+          "i",
+          "i"
+        ],
+        "desc": "선별 지원 반발이 국회 앞으로 옮겨 가며 동남권 배분 쟁점이 생겼다. 국립대만대 스마트농업 공동연구, 태국 과학영재 초청 등 국제 협력은 이어졌다.",
+        "chg": "down"
+      }
+    ],
+    "diagnosis": {
+      "weak": [
+        {
+          "b": "권역 내 기여를 설명하는 근거가 흩어져 있다",
+          "t": "경상국립대가 동남권 인재 논리로 국회 앞에 섰고, 같은 주 부산대의 지역 재정 효과 분석이 따로 보도됐다. 반발이 권역 배분으로 좁혀질수록 부산대는 선정의 정당성을 권역 기여로 답해야 하는데, 이 자료들이 하나의 대응 논리로 묶여 있지 않다."
+        },
+        {
+          "b": "통합 협상에 외부 이해관계자가 들어오는 경로가 열려 있다",
+          "t": "충북에서는 도의회와 반대위가 협상의 당사자처럼 움직였다. 부산대·부산교대 협상이 멈춰 있는 동안 같은 경로가 열릴 수 있고, 절차를 먼저 정하지 않으면 외부 개입이 일정을 정하게 된다."
+        },
+        {
+          "b": "권역 폐교에 대한 거점대학의 역할이 정의돼 있지 않다",
+          "t": "부산예대가 내년 2월 문을 닫는다. 폐교 대학의 재학생·교육 기능을 권역 안에서 누가 받는지는 곧 질문으로 돌아오는데, 거점국립대로서 어떤 역할을 맡을지 정리된 입장이 없다."
+        },
+        {
+          "b": "AX 교육의 범위가 권역 경쟁 기준에 뒤처질 수 있다",
+          "t": "동아대는 전교생 AI 필수 수강을 내걸었다. 부산대의 AX는 사업·전문대학원·연구원 중심으로 짜여 있어, 학부 전체 교육과정 차원에서는 비교 기준이 불리하게 잡힐 수 있다."
+        }
+      ],
+      "rec": [
+        "재정 투자·소비 지출 효과 분석과 AX 사업 성과를 '동남권 기여' 하나의 자료로 묶어 국정감사·예산 심의 대응 논리로 준비",
+        "부산대·부산교대 통합 협상의 절차와 이해관계자 범위를 먼저 확정·공개 — 충북 사례처럼 지역 정치가 일정을 정하기 전에",
+        "부산예대 폐교에 따른 권역 재학생·교육 기능 흡수 요구에 대비해 거점대학 역할에 대한 내부 입장 정리",
+        "학부 전체 대상 AI 기초 교육 현황을 점검하고, 권역 사립대의 전교 필수화와 비교해 차별 지점(전공 연계·산업 실증)을 명시",
+        "공공부문 AI 윤리기준의 '책임은 사람이 진다' 원칙을 학사·행정 AX 업무 규정에 선반영"
+      ]
+    },
+    "refs": [
+      {
+        "n": 1,
+        "title": "내일이 마감인데 잠정 중단…충북대-교통대 통합 불발 후폭풍 비상",
+        "media": "아주경제",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB2MXpaaWF2d1BpbXhscXJKeEpGRXJjb3RTU1NKWE1yY0JLc2hBZmQtZzQta3VLLWozYzZuc1NQbHJ2dFVwbTJjRVgxZUNacTdTbTdYM0plN1lFQdIBWEFVX3lxTE9xLUdhUTE2UWpCN21vQTBhZTdNTlFldnZLOHhrdjI0RFVDSkVpd0NuRFF1c0hmbnVVZXd3NGtDbnhFSzYyaWVxckl3T0RyQ21vNktaYk9td0k?oc=5",
+        "direct": false
+      },
+      {
+        "n": 2,
+        "title": "'충북대-교통대 통합' 표류, 교육부 중재로 불씨 살릴까",
+        "media": "뉴시스",
+        "date": "2026-09-29",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1zNFlGNkFnTFI0ZWtUNzItYzlRdk5wQUtjUnNaYWYyRkdjRm9fT0Y0X3YxZ1NmX0JZc0lpRlN1WlJ0UXpMQnI5NkNkeWFkVjRlclFjVHBYS0pNS3NmeVNYU2pyaEJSM3cweXJIZGR0VEtQVFhFdGxEb9IBeEFVX3lxTE1zNFlGNkFnTFI0ZWtUNzItYzlRdk5wQUtjUnNaYWYyRkdjRm9fT0Y0X3YxZ1NmX0JZc0lpRlN1WlJ0UXpMQnI5NkNkeWFkVjRlclFjVHBYS0pNS3NmeVNYU2pyaEJSM3cweXJIZGR0VEtQVFhFdGxEbw?oc=5",
+        "direct": false
+      },
+      {
+        "n": 3,
+        "title": "[사설] 통합 무산된 충북대, 환수금은?",
+        "media": "충청일보",
+        "date": "2026-09-28",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE00OFJYdXRzVGd4VDQ1NHFyT1k5cm1WT3E0b2EweVB5bEFYMV9NaklFSlpnNnVsS0ZaWWY3ZFV3QU5lYWRpMU1wZ2I3MUlmQVZkOTU1eDBqRUJUc2pJblFiTEhxYk1JVFU5T2JZOUg4VG0?oc=5",
+        "direct": false
+      },
+      {
+        "n": 4,
+        "title": "충북도의회, 대학 통합 논의 중단에 깊은 유감 표명",
+        "media": "브릿지경제",
+        "date": "2026-09-29",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1zaGo4ZEhSX25WOE9Ud1JKdEtWMXRoek5oQ1hFWFd6MUxhV1RFTUJvbVdabDAxN28zOGU4VWR3ai15UzhCaXB2UVEyY0NlSDFreEpSQnNOTENMdw?oc=5",
+        "direct": false
+      },
+      {
+        "n": 5,
+        "title": "교통대 통합 반대위 \"도의회, 과도한 개입 유감\"",
+        "media": "뉴시스",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9QY1ZVbGMyT3JNSFFLeVg3Y3BwVkRaczZWSXNzZXB4dTZuZjdvTWRMV0VyajVwaE1oYkdoNmJZMEZPc3FBZ0cwS2ttSmQxc1J6NExJNkJyZHdObHVta2VxdUs0VEJwMWdSZXBoajQzMEh2VEN3VGc0StIBeEFVX3lxTE9QY1ZVbGMyT3JNSFFLeVg3Y3BwVkRaczZWSXNzZXB4dTZuZjdvTWRMV0VyajVwaE1oYkdoNmJZMEZPc3FBZ0cwS2ttSmQxc1J6NExJNkJyZHdObHVta2VxdUs0VEJwMWdSZXBoajQzMEh2VEN3VGc0Sg?oc=5",
+        "direct": false
+      },
+      {
+        "n": 6,
+        "title": "글로컬대학 ‘통합’ 곳곳서 난항… 충남대·공주대 사업 향방은",
+        "media": "v.daum.net",
+        "date": "2026-09-27",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1zeVZ6YUEtNHNDS3ItVllCWFdXM1p4X0J6eUpxcXZvOVp0dXotS2llYnNXR0tHUFdlZzBDQUVwNkpMbzUwVFVRTTJ0aGI2T0k?oc=5",
+        "direct": false
+      },
+      {
+        "n": 7,
+        "title": "“동남권 750만 인재 키울 대학인데 ‘서울대 10개’ 탈락”…경상국립대 국회 앞 1인 시위",
+        "media": "kyosu.net",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1WLTlrQ3dNVGJDSlJWUUx4T0IxaGI0MkdlMm0yMVU5WFUtRmFhU0w1T2JqYkxwRFY5Wm0xbUQ5eUYwUHRSbHNaaGxQY3A5M2FWMnVqeUpXWHByLVh5Sk1RY3JYVElUUFk?oc=5",
+        "direct": false
+      },
+      {
+        "n": 8,
+        "title": "경상국립대 교수회·동문회, '국회 앞 1인 시위'…선별 지원 중단 촉구",
+        "media": "경남저널",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBXZnNHQTBMcmFOUXBqTEhnbC1NTkFHMmpzaHNlUlR1WDdleE1CTFhQOTMtdHZSZmhzaW8xLTV5T1JUel9xUU55NkxKRVJoeFoxSTJyckZVUFRCNXNLdDNTUFVuZVlqSDdQTVRUS0wza9IBb0FVX3lxTFBXZnNHQTBMcmFOUXBqTEhnbC1NTkFHMmpzaHNlUlR1WDdleE1CTFhQOTMtdHZSZmhzaW8xLTV5T1JUel9xUU55NkxKRVJoeFoxSTJyckZVUFRCNXNLdDNTUFVuZVlqSDdQTVRUS0wzaw?oc=5",
+        "direct": false
+      },
+      {
+        "n": 9,
+        "title": "'서울대 10개 만들기' 탈락 후폭풍…전북대 교수·학생·동문 \"납득 못해\"",
+        "media": "news1.kr",
+        "date": "2026-09-27",
+        "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFA2Tk5CMURfaHpsVGg1cF9SR3BQQjZWcjhlbHNRYUtWSGpfTkxQcHVwTXVMYlZpLVlsSDVCMC15UXgyTjVsYVBGU1drWGRmeFJvbXdjQ2NRbnBFZ9IBWkFVX3lxTFA2Tk5CMURfaHpsVGg1cF9SR3BQQjZWcjhlbHNRYUtWSGpfTkxQcHVwTXVMYlZpLVlsSDVCMC15UXgyTjVsYVBGU1drWGRmeFJvbXdjQ2NRbnBFZw?oc=5",
+        "direct": false
+      },
+      {
+        "n": 10,
+        "title": "제주대 S-10 탈락…제주 “평가 기준 밝혀라”",
+        "media": "제주매일",
+        "date": "2026-09-26",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9BQlBSVW5MOXdhZVJRWG8wMEliMlJiWGt1aGdlYVNqa0pUblgxclA1RGdVRklLbXpUXzRKSW5vbXNKSWE1V3d1dDl5c3EwWmZhZW94Nk81VWpENGUya01xQkhMSXczY2l6RjdNcg?oc=5",
+        "direct": false
+      },
+      {
+        "n": 11,
+        "title": "'서울대 10개 만들기'…세 곳은 출발점이다",
+        "media": "korea.kr",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNZlA2a0VFd3gwcjVnYTNhR0JqQVlXZlNYaEc0ZkRLbHNtS3IyeGpEWndLOUs2U3V4ai1USjBsS0xoWlY0Uy01NHNjaTA4NHNNTTZwLTJNU0k3MERmTlZOMmVMR0JLSHNqMXF3YVJac2hOT090THRWQnM2VkV5WklnQnFRNGE0dktlVEtWM3kzenNnMFl3?oc=5",
+        "direct": false
+      },
+      {
+        "n": 12,
+        "title": "'재정난' 부산예대, 32년 만에 자진 폐교…내년 2월 문 닫는다",
+        "media": "교수신문",
+        "date": "2026-10-01",
+        "url": "https://www.kyosu.net/news/articleView.html?idxno=210826",
+        "direct": true
+      },
+      {
+        "n": 13,
+        "title": "[韓경제 아킬레스건](8) 지방 대학 연쇄 폐교 : 지역 인재 양성 생태계의 파괴",
+        "media": "금융소비자뉴스",
+        "date": "2026-09-30",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1jYVJXMW42dkJKTld3MllTdU9sT3gxaVZCRWVNb05GemVGQ3ljLUFqaEFmZkFXcko1UVNESFR1Tmk4VmhaYTJLUFB6ek9USXJYTVJHTWNZenJ3YjVzVFoxMHV6dzFCbl9iaWc?oc=5",
+        "direct": false
+      },
+      {
+        "n": 14,
+        "title": "대학 통폐합에 경쟁력↑…구조조정 효과는 ‘단기’",
+        "media": "한국교육신문",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1lRVJFLXdmUGp4bXU4LXhsb2l1UmJoTHJYZjd1bzAtcjFkSWNkRjRoU1VsM1RqYkpMYlpNZDBOVGlDSXhSOWxwUWhfOEVNSEEzOTYtUUpHZU9kbzE5UGdv?oc=5",
+        "direct": false
+      },
+      {
+        "n": 15,
+        "title": "대학통폐합 32건(75개대학) 반면교사해보니... \"자발적 간절함과 위기감은 없었다\"",
+        "media": "usline.kr",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE4tUkhYUDZvUDBidmN0TUdEV3FwSlpBMlhSeHY2c3RWdmtqaDNpWDhYUGFvTFFGVGY2NEJiUEl2VXdGRDFwUkFocUZUVkhGRUZzZVcwZmJ4N3VQQzR4OGc3NEV3SEFOYTM10gFoQVVfeXFMTi1SSFhQNm9QMGJ2Y3RNR0RXcXBKWkEyWFJ4djZzdFZ2a2poM2lYOFhQYW9MUUZUZjY0QmJQSXZVd0ZEMXBSQWhxRlRWSEZFRnNlVzBmYng3dVBDNHg4Zzc0RXdIQU5hMzU?oc=5",
+        "direct": false
+      },
+      {
+        "n": 16,
+        "title": "전주대 구성원 총궐기 “글로컬 탈락·행정 파행, 이사장·총장 즉각 사퇴하라”",
+        "media": "전북도민일보",
+        "date": "2026-09-30",
+        "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9hdndWTWhkZVpmMjlOLUR0c3BFZzY0Z3lfV0VCcXVEYTdiNDBvR2F3RVJ0cGhvSy1RTGU2cVpRZXFQOFBRV2ZYbTlKamtjMUREbDRYNUZvSTcyaUZiNUhOYnduN3l5ZXRKRGNB?oc=5",
+        "direct": false
+      },
+      {
+        "n": 17,
+        "title": "부산대 해사국제상사법무대학원 출범…정원 30명",
+        "media": "중도일보",
+        "date": "2026-09-30",
+        "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5lejN5cVltdGhOR2FGbGgxSWJ1VUhXemdZR2RvQjFEb3d1U0pOOFR4N2xWeFlxQW5SYi0xSHZfWWFHY0pmc1FaTzNGeWJ4eExkU1k3QmZkaHFDVjdxbkIxeFpNTGlKeWJXSjZ1TQ?oc=5",
+        "direct": false
+      },
+      {
+        "n": 18,
+        "title": "부산대, 내년 3월 해사국제상사법무대학원 개원",
+        "media": "연합뉴스",
+        "date": "2026-09-30",
+        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBYcHBueXNuRERkdDdUMWtCWWNlU2h2RkV5c3ZYRlVGamVIcEhwUDJjRWhUekxuVFpCb2h6NzU5UGVlVVZsX3JWUTVjUTNlQTE1V2doaDVCZ0RiQjjSAWBBVV95cUxPTVVnY0hYcTBVTGJOOUJKOUJscWpySWs2dHA0cWdhdk52enFOWElMaVNBTGd5bVJjRUIyRXhGd3ZqbW91SW9ObTQzaG1BUHh2RlpsM2FDaXlCRkJ3bnEwck0?oc=5",
+        "direct": false
+      },
+      {
+        "n": 19,
+        "title": "부산대 IP중점대학사업단, 「2026 IP 전략 포럼」 개최",
+        "media": "국제신문",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOQVoxTEMwc3lna3lySmdCbUNZaXFZd19sOHJVXzhDSDRhMDAxSGxFSVA2NERLdFVPbDZDU0J0OVVuVHB4THhGNk50VFEzVDFqNjJNTGhCRDdzdWJERk9EQmliaXMzYnQwUXlDVG5fTjNCUHdCUDZBcl9FNXdjTUhyQ2NrOUxLd3kydEZTQ3F3?oc=5",
+        "direct": false
+      },
+      {
+        "n": 20,
+        "title": "부산대 로스쿨, 한국발명진흥회·기술보증기금과 잇단 MoU 체결",
+        "media": "부산일보",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE03TVZiSFUtR1BYYVlXZ21RWFpycUNNOWNLYzNHTzh6VkdBOXpuZ1NZTTZKSkwwMGw5NGgtMlY3YU53Y25fVk1YaElEN1NncGNrZDNGekUzSGZ5SzZJTENoWlhjbENYMjcxZ3o2YjNLRkthXzNxcEs3VFJqTQ?oc=5",
+        "direct": false
+      },
+      {
+        "n": 21,
+        "title": "부산대학교 전략산업AX융합연구원 계약직원(전임연구원, 사무원) 채용 공고",
+        "media": "go.seoul.co.kr",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1nbnZmcHVZVVE2d2JSajF3WVh2bTZCVkg5dW9TblJMY0liLWNYUHRobjVCdWdMUVpyaXZ2UVpTSDBZR1B6X3p3dkg4V0dWQzN0b3RVazlHcVdKcXZFakMzS3l3?oc=5",
+        "direct": false
+      },
+      {
+        "n": 22,
+        "title": "부산대 연 1조 2336억 원 재정 투자·소비 지출, 그 효과는?",
+        "media": "한국대학신문",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE4xa1ZsWjkxNFppdThqTGNXZHBqYTZsNnRROFQ1TFB3RkxKdmZBMTAtZW8tb0hyeXBOSXQ4clh0U1pyM3U1WjdrTzJ3RTdEZDRpeUJoWVFOVTlFZEF5ajNNVEROeWVpdw?oc=5",
+        "direct": false
+      },
+      {
+        "n": 23,
+        "title": "\"전교생 AI 필수 수강\"…동아대, 212억 들여 대학 체질 바꾼다 - 머니투데이",
+        "media": "머니투데이",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBUYXpoaXhFLXVCclZ3OWRZM0JtekVGeHZWdWlrcGkxYmtsYl9nVXEwVWZmcVI1RkF2bUFfVmpwX0FwVUVlWEo5RGJJaWY1dnR4VVUyakQyMFFDMmlTUTAtQ1pRMHltdG9NeHfSAW9BVV95cUxPSlFyenJNMkNSRGtUOXltQVF1RDhmdVVJWnNlN2N2NU5VQ042QzBZZTVxTVp4Ql93MVI5WGtwMTREQlk2MnJERE9YVjFFY0VXbDVKSVQ5NTVpRVd1V1Y3SDE0dkRfZU9jdnZndGZiakU?oc=5",
+        "direct": false
+      },
+      {
+        "n": 24,
+        "title": "한경대, 'AI 혁신 모델 대학' 공식 발표",
+        "media": "hankukdaily.co.kr",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB2RV81dHBjVnk5cmR6c3B2bVJsQjVNVXY5UnBzaDVZMVEyZUZPcU5MMmgwZXdfNk1Oc1hnWGJxc1hsVW5jOF9OSEJXMGJhWml3SG5OVlBqSE5Sb3lra2I5SUswU1BhVjRMWHM4Y2RfZms?oc=5",
+        "direct": false
+      },
+      {
+        "n": 25,
+        "title": "지역인재 유출 막고 AI 산업 키운다…부산시, 대학·산업 연계 강화",
+        "media": "대한민국교육신문",
+        "date": "2026-09-30",
+        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9aT1dhWEZRZ1BUVjlLY0x0dWxHNC1LamN6Rm9nOEJTbmNORDBScTUweXJMUmxuU2RObkNWUXpNWU5BUkVBMXgxelFXVWQ5N2o0WGFvTVYyYVpsNlVpNTUwclZrcw?oc=5",
+        "direct": false
+      },
+      {
+        "n": 26,
+        "title": "한 총리, AI 행정혁신 간담회 개최…\"AX 혁신 스토어 연내 오픈\"",
+        "media": "newsis.com",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBVZXBrVXJ4TWxIR0l5WnVtbUZ5ZnF5a1NPanlDeUl3WnZ3MFNPTC1mbnI1d21IMTJfcnRYQk5paUNNMDBzUVdVN3BTaEdHSTQwV2dGNVBLdTVwX0dYaUZ6TDJSRVBMVzZjbVRtT05hUkZfOWlvQTlzR9IBeEFVX3lxTFBVZXBrVXJ4TWxIR0l5WnVtbUZ5ZnF5a1NPanlDeUl3WnZ3MFNPTC1mbnI1d21IMTJfcnRYQk5paUNNMDBzUVdVN3BTaEdHSTQwV2dGNVBLdTVwX0dYaUZ6TDJSRVBMVzZjbVRtT05hUkZfOWlvQTlzRw?oc=5",
+        "direct": false
+      },
+      {
+        "n": 27,
+        "title": "\"AI 행정업무 오류 책임은 '사람'이 진다\"…공공부문 윤리기준 확정",
+        "media": "아시아경제",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA5Q2pJRjVyWVpsV2p2QUlEcVJoS294cWIwZURKQnh4WTVPbEdJMy1yZWdpOEpUREY5NjVFOFg1REM5NldCUFhyWk1sbGdSSnZ4aHJHWmtEMHNfcW5lVlRLMQ?oc=5",
+        "direct": false
+      },
+      {
+        "n": 28,
+        "title": "국민연금공단, 지자체 복지공무원 위한 ‘AI 행정협업 플랫폼’ 가동",
+        "media": "천지일보",
+        "date": "2026-10-01",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA4Zkk5YW1ZWDBiXzcwc2xmNXlGeF8zdm80NTQ4SUdWTzBfMUdQak9MeXYxQ3RtTlN2WENaZEw3Y0g4OUZXcG1UQW1tbUxVRDZpeVhnbmpReTdncVp3WHF0TS1qOTBjUDBUQVE?oc=5",
+        "direct": false
+      },
+      {
+        "n": 29,
+        "title": "화이트스캔, 서울시와 공공데이터 최초 MCP 구축 및 시범운영...공공 AI 활용성 검증",
+        "media": "전자신문",
+        "date": "2026-09-30",
+        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE95UlBTVTlPMWlsUm1wWjZVYW10Q2xqXzJ3U1RSaXNPYTZfQ0dzUGFpX2xqaGdiV2hXV3I2T3RLanRBcTBGN3h4NzJ4bGdkUQ?oc=5",
+        "direct": false
+      }
+    ],
+    "voices": {
+      "persons": [
+        {
+          "label": "최교진 교육부 장관",
+          "who": "최교진",
+          "role": "교육부 장관",
+          "n": 3,
+          "ex": {
+            "region": "domestic",
+            "title": "최교진, UAE 대사 면담…AI·평생교육 등 협력 확대 논의",
+            "media": "뉴시스",
+            "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE8yR2hhZDBqSjhWQ1IyMWdQaHB2UzdzRGhOR0JLOVo5WjFFdkxTcG9ZZ0gxNGhuY1pRSXQ5d3RncHFwRng1eVluMTRmN2tTWnQ2WGE1Nmh4TzNZY1RmOXRmVTIxcTgyN2VDZjY0ZEFqUkxZNEVCZGVJQtIBeEFVX3lxTE8yR2hhZDBqSjhWQ1IyMWdQaHB2UzdzRGhOR0JLOVo5WjFFdkxTcG9ZZ0gxNGhuY1pRSXQ5d3RncHFwRng1eVluMTRmN2tTWnQ2WGE1Nmh4TzNZY1RmOXRmVTIxcTgyN2VDZjY0ZEFqUkxZNEVCZGVJQg?oc=5",
+            "date": "2026-09-30",
+            "field": "증강인재교육",
+            "group": "교육",
+            "level": "watch",
+            "why": "논의",
+            "univ": [],
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMieEFVX3lxTE8yR2hhZDBqSjhWQ1IyMWdQaHB2UzdzRGhOR0JLOVo5WjFFdkxTcG9ZZ0gxNGhuY1pRSXQ5d3RncHFwRng1eVluMTRmN2tTWnQ2WGE1Nmh4TzNZY1RmOXRmVTIxcTgyN2VDZjY0ZEFqUk",
+            "feeds": [
+              "구글뉴스:거점국립대"
+            ]
+          },
+          "risky": 0
+        },
+        {
+          "label": "배경훈 부총리 겸 과학기술정보통신부 장관",
+          "who": "배경훈",
+          "role": "부총리 겸 과학기술정보통신부 장관",
+          "n": 1,
+          "ex": {
+            "region": "domestic",
+            "title": "한양대·금오공대 등 18곳 AI중심대학 선정…AX대학원 15곳 지원",
+            "media": "교수신문",
+            "link": "https://www.kyosu.net/news/articleView.html?idxno=210778",
+            "date": "2026-09-30",
+            "field": "정책/철학",
+            "group": "교육",
+            "level": "normal",
+            "univ": [],
+            "summary": "올해 신설하는 AI중심대학(18개교)과 AX대학원(15개교)의 본격적인 시작을 알리는 출범식이 열렸다. 과학기술정보통신부(부총리 겸 장관 배경훈, 과기정통부)는 AI중심대학과 AX대학원 참여대학 선정을 완료하고, 지난 29일 연세대 백양누리홀에서 ‘AI중심대학·AX대학원 공동 출범식’을 개최했다.이날 행사에는 류제명 과기정통부 2차관을 비롯해 윤동섭 연세대",
+            "feeds": [
+              "교수신문"
+            ]
+          },
+          "risky": 0
+        },
+        {
+          "label": "이재명 대통령",
+          "who": "이재명",
+          "role": "대통령",
+          "n": 0,
+          "ex": null,
+          "risky": 0
+        },
+        {
+          "label": "전재수 부산광역시장",
+          "who": "전재수",
+          "role": "부산광역시장",
+          "n": 0,
+          "ex": null,
+          "risky": 0
+        }
+      ],
+      "orgs": [
+        {
+          "label": "교육부",
+          "n": 67,
+          "ex": {
+            "region": "domestic",
+            "title": "목원대 정철호 RISE사업단장, 산학협력 유공 교육부장관 표창",
+            "media": "cctoday.co.kr",
+            "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5IZk1EMUFMa0FHXzFLSEh3VTVKY0pydXJxZzlDMzJiZnVHLW5acEwxNzFISndhdFgwVDVHWWZNQXp4ZnBFZEk0X0ZwdTRJYVhhcEtVSWJkSkEtRDdQbnMyY3c1RlZuNncxNmNndHFR?oc=5",
+            "date": "2026-10-01",
+            "field": "정책/철학",
+            "group": "교육",
+            "level": "normal",
+            "univ": [],
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE5IZk1EMUFMa0FHXzFLSEh3VTVKY0pydXJxZzlDMzJiZnVHLW5acEwxNzFISndhdFgwVDVHWWZNQXp4ZnBFZEk0X0ZwdTRJYVhhcEtVSWJkSkEtRDdQbnMyY3c1RlZuNncxNmNndHFR?o",
+            "feeds": [
+              "구글뉴스:RISE 지역혁신중심 대학지원"
+            ]
+          },
+          "risky": 4
+        },
+        {
+          "label": "과학기술정보통신부",
+          "n": 21,
+          "ex": {
+            "region": "domestic",
+            "title": "동아대, 과기정통부 ‘AI중심대학’ 최종 선정",
+            "media": "국제신문",
+            "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPcFhaVkkzTzNtTjNqZm9IQnVFWllxVnpxbjdqYXVvVGpFVEhQZFVyaWkxejkybnlwRlJVZUtHY3lNSU56bGZTSGNvLVJuNGhnaThLSHVNNUl1QTFBa19xaTQzUGoyWFZMcFR5eDczUnctLXFzNm1BeDgyYmFDSHNhQnFOdWpodE5jTEZJUlpR?oc=5",
+            "date": "2026-10-01",
+            "field": "정책/철학",
+            "group": "교육",
+            "level": "normal",
+            "univ": [],
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxPcFhaVkkzTzNtTjNqZm9IQnVFWllxVnpxbjdqYXVvVGpFVEhQZFVyaWkxejkybnlwRlJVZUtHY3lNSU56bGZTSGNvLVJuNGhnaThLSHVNNUl1QTFBa19xaTQzUGoyWFZMcFR5eDczUn",
+            "feeds": [
+              "구글뉴스:대학 생성형 AI"
+            ]
+          },
+          "risky": 0
+        },
+        {
+          "label": "국회 교육위원회",
+          "n": 14,
+          "ex": {
+            "region": "domestic",
+            "title": "교육공무원 정신질환 공무상재해 5년간 992건…타 직렬 크게 웃돌아[2026 국감]",
+            "media": "한국대학신문",
+            "link": "https://news.unn.net/news/articleView.html?idxno=598128",
+            "date": "2026-10-01",
+            "field": "정책/철학",
+            "group": "교육",
+            "level": "normal",
+            "univ": [],
+            "summary": "[한국대학신문 임지연 기자] 교육공무원이 정신질환으로 공무상요양을 승인받은 사례가 최근 5년간 992건에 달한 것으로 나타났다. 일반·경찰·소방 등 다른 직렬과 비교해 승인 건수가 많은 가운데, 교육공무원의 정신질환 공무상요양 승인 건수도 2021년 106건에서 2025년 234건으로 2배 이상 증가했다.국회 교육위원회 소속 김준혁 의원(더불어민주당)이 인",
+            "feeds": [
+              "한국대학신문"
+            ]
+          },
+          "risky": 1
+        },
+        {
+          "label": "한국대학교육협의회",
+          "n": 6,
+          "ex": {
+            "region": "domestic",
+            "title": "전문대교협, 전문대 여성 인재 양성 위한 업무협약 체결",
+            "media": "한국대학신문",
+            "link": "https://news.unn.net/news/articleView.html?idxno=598127",
+            "date": "2026-10-01",
+            "field": "증강인재교육",
+            "group": "교육",
+            "level": "normal",
+            "univ": [],
+            "summary": "[한국대학신문 김소현 기자] 한국전문대학교육협의회(전문대교협)와 전국 7개 여자전문대, 한국여성정책연구원은 여성의 고등직업교육 협력 체계를 구축하기 위한 업무협약(MOU)을 체결했다.전문대교협은 지난달 30일 한양여대·경인여대·배화여대·부산여대·서울여자간호대·수원여대·숭의여대 등 전국 7개 여자전문대, 한국여성정책연구원과 함께 전문대 여성 인재 양성·여성 ",
+            "feeds": [
+              "한국대학신문"
+            ]
+          },
+          "risky": 0
+        },
+        {
+          "label": "부산광역시",
+          "n": 5,
+          "ex": {
+            "region": "domestic",
+            "title": "동의과학대 의료피부미용과 MSC 크루즈 타고 K-Beauty 글로벌 현장교육.. '크루즈 관광객 위한 뷰티/웰니스 관광상품 발굴'",
+            "media": "베리타스알파",
+            "link": "https://www.veritas-a.com/news/articleView.html?idxno=629947",
+            "date": "2026-09-30",
+            "field": "증강인재교육",
+            "group": "교육",
+            "level": "normal",
+            "univ": [],
+            "summary": "[베리타스알파=김하연 기자] 동의과학대 의료피부미용과가 9월10일부터 14일까지 4박5일간 부산~상하이~제주~부산 항로를 오가는 MSC 벨리시마호에서 '크루즈 관광객 대상 상품 개발을 위한 문화관광상품 체험 프로그램'을 운영했다고 30일 밝혔다. 이번 프로그램은 2026년 부산형 지역성장 인재양성체계(ANCHOR) 사업의 하나로 기획됐다. 부산시가 중점 육",
+            "feeds": [
+              "베리타스알파"
+            ]
+          },
+          "risky": 0
+        },
+        {
+          "label": "재정경제부",
+          "n": 1,
+          "ex": {
+            "region": "domestic",
+            "title": "베스핀글로벌, ‘조달의 날’ 재정경제부 장관 표창…공공 AI 전환 성과 인정",
+            "media": "뉴스탭",
+            "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE50cGJCbExpU1NWaEEwMnNjMTB1ZnBiQW40VUZoS2twMlpNYkFEcGtadl9HZ0FVcXNTMmdtNzRlN2NmMHRnNkVZbmhSRE9NNGsyZmYtY2RJY3dfTXpzeTJRS1BSMHE5c192LTU1Ng?oc=5",
+            "date": "2026-09-30",
+            "field": "적응형행정",
+            "group": "산업",
+            "level": "normal",
+            "univ": [],
+            "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE50cGJCbExpU1NWaEEwMnNjMTB1ZnBiQW40VUZoS2twMlpNYkFEcGtadl9HZ0FVcXNTMmdtNzRlN2NmMHRnNkVZbmhSRE9NNGsyZmYtY2RJY3dfTXpzeTJRS1BSMHE5c192LTU1Ng?oc=",
+            "feeds": [
+              "구글뉴스:공공부문 생성형 AI"
+            ]
+          },
+          "risky": 0
+        }
+      ],
+      "feeds": [
+        {
+          "org": "행정안전부",
+          "channel": "보도자료",
+          "title": "‘공공부문 AI 윤리기준’ 최종 확정, 공공분야 인공지능 신뢰성 확보한다",
+          "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129926",
+          "date": "2026-10-01"
+        },
+        {
+          "org": "행정안전부",
+          "channel": "보도자료",
+          "title": "인공지능(AI) 시대 안전한 개인정보 보호·활용 방안, 국민 의견 모은다",
+          "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=129895",
+          "date": "2026-10-01"
+        },
+        {
+          "org": "국가인공지능전략위원회",
+          "channel": "보도자료",
+          "title": "국가AI전략위, ‘AI 개발 속도조절론’ 관련 세미나 개최",
+          "link": "https://www.aikorea.go.kr/web/board/brdDetail.do?menu_cd=000012&num=987",
+          "date": "2026-10-01"
+        },
+        {
+          "org": "교육부",
+          "channel": "보도자료",
+          "title": "2027학년도 수시모집 원서접수 마감시간 연장에 따른 추가 접수 현황 분석 및 향후 대응계획",
+          "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107331&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+          "date": "2026-09-30"
+        },
+        {
+          "org": "산업통상부",
+          "channel": "보도자료",
+          "title": "「함께 크는 M.AX 프로젝트」로 미래차 생태계 구축 가속화",
+          "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172250/view?mno=&pageIndex=1",
+          "date": "2026-09-30"
+        },
+        {
+          "org": "교육부",
+          "channel": "보도자료",
+          "title": "지역과 인재를 잇는 산학연, ‘2026 산학연협력 엑스포’에서 미래를 만나다",
+          "link": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=294&boardSeq=107313&lev=0&searchType=null&statusYN=W&page=1&s=moe&m=020402&opType=N",
+          "date": "2026-09-29"
+        }
+      ],
+      "vacant": [
+        "재정경제부 장관",
+        "교육부 차관",
+        "국회 교육위원장",
+        "부산대 총장"
+      ],
+      "feedNote": "산업통상부 10건 · 행정안전부 10건 · 국가인공지능전략위원회 1건 · 교육부 10건 (최근 14일)"
+    },
+    "comparable": {
+      "total": 898,
       "crisis": 2.4,
       "warning": 2.2,
-      "total": 898,
-      "trend": "falling"
+      "risk": 4.6
     }
   },
   {
