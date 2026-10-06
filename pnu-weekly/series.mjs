@@ -102,8 +102,9 @@ for (const s of stats) {
     full.comparable = { total: s.total, crisis: s.crisis, warning: s.warning, risk: s.risk };
     if (prev) {
       const dd = (a, b, u = '') => `${a - b >= 0 ? '+' : ''}${(a - b).toFixed(u === '%p' ? 1 : 0)}${u}`;
-      full.changesTitle = '전주 대비 주요 변화';
-      full.changesNote = `비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 ${s.total}건 vs 전주 ${prev.total}건.`;
+      // 자동 취합본은 전주와 비교한 변화가 아니다 — 서술이 정해 둔 제목·설명을 그대로 둔다.
+      if (full.narrMode !== 'digest') full.changesTitle = '전주 대비 주요 변화';
+      if (full.narrMode !== 'digest') full.changesNote = `비교 지표는 구글 뉴스 소스로 통일해 산출했다(과거 주차는 언론사 RSS 소급이 불가). 이번 주 ${s.total}건 vs 전주 ${prev.total}건.`;
       full.weeklyMetrics = [
         { name: '위험신호 비중', value: String(s.risk), unit: '%', change: dd(s.risk, prev.risk, '%p'), dir: s.risk > prev.risk ? 'up' : s.risk < prev.risk ? 'down' : 'flat' },
         { name: '수집 기사(비교기준)', value: s.total.toLocaleString('ko-KR'), unit: '건', change: dd(s.total, prev.total, '건'), dir: s.total > prev.total ? 'up' : 'down' },

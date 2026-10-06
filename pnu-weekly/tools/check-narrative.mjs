@@ -13,7 +13,7 @@
 //   빌드를 깨뜨리지는 않는다 — 본문이 없어도 사이트는 정상이고 신호 수치는 맞다.
 //   다만 '대기 중'이라는 사실을 워크플로가 알 수 있도록 내보내, 이슈로 남게 한다.
 
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { appendFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -48,12 +48,23 @@ const kstToday = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
 const needWrite = weeks.filter((w) => !w.complete && w.date && w.date <= kstToday
   && !existsSync(join(root, `data/narrative/${w.id}.json`)));
 
+// '교체할' 주차 — 서술 파일이 자동 취합본(mode:'digest')인 것.
+// 코드만으로 만든 임시 본문이라 LLM 인증이 생기면(또는 앱의 예약 작업이 돌면) 해석 본문으로 덮어쓴다.
+// 이 목록이 없으면 취합본이 만들어지는 순간 '본문이 있는 주차'가 돼서 아무도 교체하지 않는다.
+const needUpgrade = readdirSync(join(root, 'data/narrative'))
+  .filter((f) => /^w\d+\.json$/.test(f)).map((f) => f.replace('.json', ''))
+  .filter((id) => { try { return JSON.parse(readFileSync(join(root, `data/narrative/${id}.json`), 'utf8')).mode === 'digest'; } catch { return false; } })
+  .filter((id) => weeks.some((w) => w.id === id));
+
 // 워크플로가 읽을 수 있게 내보낸다. 실패로 끝내지는 않는다 — 사이트는 멀쩡하기 때문이다.
 if (process.env.GITHUB_OUTPUT) {
   appendFileSync(process.env.GITHUB_OUTPUT,
     `pending=${pending.length}\n` +
     `pending_list=${pending.map((w) => `${w.id} (${w.label})`).join(', ')}\n` +
     `need_write=${needWrite.length}\n` +
-    `need_write_ids=${needWrite.map((w) => w.id).join(' ')}\n`);
+    `need_write_ids=${needWrite.map((w) => w.id).join(' ')}\n` +
+    `need_upgrade=${needUpgrade.length}\n` +
+    `need_upgrade_ids=${needUpgrade.join(' ')}\n`);
 }
 if (needWrite.length) console.log(`\n✍ 서술을 새로 써야 할 주차: ${needWrite.map((w) => w.id).join(' ')}`);
+if (needUpgrade.length) console.log(`\n🔁 자동 취합본을 해석 본문으로 바꿀 주차: ${needUpgrade.join(' ')}   (서술 파일을 해석 본문으로 덮어쓴다 — mode 칸은 넣지 않는다)`);

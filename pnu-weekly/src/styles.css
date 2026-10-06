@@ -674,3 +674,8 @@ details.crit > summary:hover{border-color:var(--sky);background:var(--sky-l)}
 .kw-notes li{margin:2px 0;word-break:keep-all}
 @media print{ details.crit,#crit-data{display:none !important} }
 .kpis + .note-line{margin-top:10px}
+
+/* 자동 취합본 안내 — 해석 있는 본문과 헷갈리지 않게 눈에 띄게 */
+.digest-note{margin:14px 0 4px;padding:10px 14px;border:1px dashed #d8b46b;border-left:4px solid var(--warn-ink);
+  background:#fffaf0;border-radius:6px;font-size:13px;color:var(--ink-2);max-width:var(--measure);word-break:keep-all}
+.digest-note b{color:var(--navy)}

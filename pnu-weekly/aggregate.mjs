@@ -301,6 +301,8 @@ const week = {
   tier, tierName: { 4: '위기', 3: '경계', 2: '주의', 1: '관심' }[tier], state, complete: true, live: true,
   // 이 본문을 만든 서술 파일의 지문. 서술 파일이 바뀌면 배포 때 다시 집계한다(tools/aggregate-pending.mjs).
   narrativeHash: narrativeHash(join(root, `data/narrative/${ID}.json`)),
+  // 'digest' 면 코드가 만든 자동 취합본이다(해석 없음) — 화면에 그렇게 밝히고, 변화 제목을 '전주 대비'로 덮어쓰지 않는다.
+  narrMode: narr.mode || 'ai',
   sourceNote: `무료·공개 소스 수집 ${raw.total}건 → 관련성 필터 후 국내 ${n}건 (해외 ${overseasItems.length}건은 참고 항목으로 별도) · 수집일 ${latest.replace('.json', '')}`,
   signal,
   map: {

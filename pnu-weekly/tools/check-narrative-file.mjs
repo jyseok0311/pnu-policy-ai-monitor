@@ -32,8 +32,11 @@ const err = [];
 const warn = [];
 
 // ── 1. 필수 칸
-const need = ['id', 'label', 'date', 'range', 'collected',
-  'summary', 'changes', 'watch', 'paths', 'innerPaths', 'sectors', 'diagnosis', 'legend'];
+// 자동 취합본(mode:'digest')은 해석 칸(경로·부문별·진단)을 일부러 비운다 — 코드가 해석을 흉내 내지 않는다.
+// 그래도 요약의 refKey 가 실제 기사에 걸리는지, 집계 수치가 안 섞였는지는 똑같이 검사한다.
+const digest = narr.mode === 'digest';
+const need = ['id', 'label', 'date', 'range', 'collected', 'summary', 'changes', 'watch', 'legend',
+  ...(digest ? [] : ['paths', 'innerPaths', 'sectors', 'diagnosis'])];
 for (const k of need) if (narr[k] === undefined) err.push(`필수 칸 없음: ${k}`);
 if (narr.id && narr.id !== ID) err.push(`id 불일치: 파일은 ${ID}, 내용은 ${narr.id}`);
 for (const k of ['primary', 'secondary', 'disturb', 'buffer']) {
@@ -44,7 +47,7 @@ if (narr.diagnosis) {
   if (!Array.isArray(narr.diagnosis.rec) || !narr.diagnosis.rec.length) err.push('diagnosis.rec 비어 있음');
 }
 // 너무 빈약하면 화면에 구역이 휑하게 남는다
-const least = { summary: 3, changes: 3, watch: 3, paths: 2, innerPaths: 2, sectors: 4 };
+const least = digest ? { summary: 2 } : { summary: 3, changes: 3, watch: 3, paths: 2, innerPaths: 2, sectors: 4 };
 for (const [k, n] of Object.entries(least)) {
   if (Array.isArray(narr[k]) && narr[k].length < n) warn.push(`${k} 가 ${narr[k].length}개뿐 — 최소 ${n}개 권장`);
 }

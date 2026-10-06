@@ -292,7 +292,9 @@ function renderWeek(w, sources, T) {
       </div>
     </li>`).join('')}</ul>`;
 
-  const body = `${map}${net}${summary}${articles}${overseasRef}${changes}${watch}${weekly}${kpis}${voices}${paths}${sectors}${diag}${refs}`;
+  // 자동 취합본(코드만으로 만든 것)이면 맨 위에 그렇게 밝힌다 — 해석이 있는 본문으로 오해하지 않도록.
+  const digestNote = w.narrMode === 'digest' ? `<p class="digest-note">${T.digestNote}</p>` : '';
+  const body = `${digestNote}${map}${net}${summary}${articles}${overseasRef}${changes}${watch}${weekly}${kpis}${voices}${paths}${sectors}${diag}${refs}`;
   // 맨 위(최신) 주차만 펼친다. 열 주차를 모두 펼쳐 두니 68,921px·DOM 9,821개였다.
   // 접어도 HTML 에는 그대로 있다 — 사이드바 점프·각주 이동은 app.js 가 열어 준다.
   return `<section class="week" id="${w.id}">${head}
