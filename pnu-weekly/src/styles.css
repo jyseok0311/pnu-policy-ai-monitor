@@ -460,7 +460,10 @@ h2.sec .sec-face{margin-right:4px}
 /* 어두운 판은 캔버스가 자리를 잡았을 때만. 폴백 SVG 는 밝은 바탕이어야 읽힌다
    (시안 비교 페이지 viz-lab 처럼 캔버스를 안 쓰는 곳도 있다). */
 .netbox{position:relative;overflow:hidden;border-radius:12px;border:1px solid var(--line);
-  background:var(--soft);touch-action:pan-y}
+  background:var(--soft);touch-action:pan-y;
+  --net-max-h:560px}   /* 화면용 높이 상한(net3d.js 가 읽는다). 정사각형에 가까운 그림이 본문 폭만큼 커지던 것을 막는다 */
+/* 캔버스를 못 쓸 때 보이는 SVG 도 같은 상한. 인쇄에는 걸지 않는다 — 종이 폭(703px)에서는 원래 알맞다 */
+@media screen{ .netbox .net{max-height:560px} }
 .netbox.gl-on{border-color:var(--line);background:#fbfcfe}
 .net-gl{display:none;width:100%;height:auto;vertical-align:top}
 .netbox.gl-on .net-gl{display:block}

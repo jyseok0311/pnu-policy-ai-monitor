@@ -108,7 +108,7 @@
     var yaw = CAM.yaw, pitch = CAM.pitch, tYaw = CAM.yaw, tPitch = CAM.pitch;
     // 끌어서 돌린 각도가 새 기준이 된다. 마우스를 떼도 정면으로 튕겨 돌아가지 않는다.
     var base = { yaw: CAM.yaw, pitch: CAM.pitch };
-    var hot = -1, raf = null, dpr = 1, cw = 0, ch = 0, scale = 1, hover = false;
+    var hot = -1, raf = null, dpr = 1, cw = 0, ch = 0, scale = 1, ox = 0, oy = 0, hover = false;
     var drag = null;
     // 확대/축소. 1 = 틀에 딱 맞은 기본 크기.
     var zoom = 1, panX = 0, panY = 0, ZMIN = 0.75, ZMAX = 4;
@@ -121,15 +121,24 @@
       var r = box.getBoundingClientRect();
       if (!r.width) return false;
       dpr = Math.min(window.devicePixelRatio || 1, 2);
-      cw = r.width; ch = r.width * (VH / VW);
+      // 높이에 상한을 둔다. 그림이 거의 정사각형(세로/가로 0.85~1.04)이라 본문 폭에 맞추면
+      // 1440px 화면에서 1088×946 이 됐다 — 노트북 화면보다 높고, 글자가 12×1.8 ≈ 20px 로 커졌다.
+      // 상한은 CSS(--net-max-h)와 화면 높이의 72% 중 작은 쪽. 폭은 그대로 둔다 — 끌어 돌릴 자리다.
+      // 그림은 남는 폭 가운데에 놓는다(ox·oy). 확대·이동은 이 '가운데 놓인 그림 전체'에 건다.
+      var cap = Math.min(parseFloat(getComputedStyle(box).getPropertyValue('--net-max-h')) || Infinity,
+        (window.innerHeight || 900) * 0.72);
+      cw = r.width; ch = Math.min(r.width * (VH / VW), Math.max(cap, 280));
       cv.width = Math.round(cw * dpr); cv.height = Math.round(ch * dpr);
       cv.style.width = cw + 'px'; cv.style.height = ch + 'px';
-      scale = cw / VW;
+      scale = Math.min(cw / VW, ch / VH);
+      ox = (cw - VW * scale) / 2; oy = (ch - VH * scale) / 2;
       clampPan();   // 창이 바뀌면 확대해 둔 위치도 다시 묶는다
       return true;
     }
     // 세계 좌표 → 화면 픽셀. 확대·이동은 여기 한 곳에서만 건다.
-    function toPx(x, y) { return [(x - VX) * scale * zoom + panX, (y - VY) * scale * zoom + panY]; }
+    // 가운데 맞춤(ox·oy)은 확대 전 그림의 일부다 — 그래서 zoom 안쪽에 둔다.
+    // 이렇게 해야 clampPan·커서 기준 확대가 예전처럼 '캔버스 전체'를 그림으로 보고 그대로 맞는다.
+    function toPx(x, y) { return [((x - VX) * scale + ox) * zoom + panX, ((y - VY) * scale + oy) * zoom + panY]; }
     function ss() { return scale * zoom; }
 
     function project(p) {
