@@ -1,0 +1,112 @@
+# 멈춘 실행을 풀고, 수집이 끊기면 알린다.
+#
+# 왜 만들었나:
+#   2026-10-06 14:58(UTC)에 수집 실행의 배포 단계가 'waiting' 에서 멈췄다. 승인 대기도 러너 배정도 아니었다.
+#   daily.yml 은 배포를 한 번에 하나씩만 하도록 줄(concurrency: pages-deploy)을 세우는데,
+#   멈춘 실행이 그 줄을 쥔 채 놓지 않아 뒤따르는 예약 실행이 전부 대기하다 새 실행에 밀려 취소됐다.
+#   6일 동안 수집이 한 번도 돌지 못했는데, 알림 단계가 수집 실행 안에 있어서 아무 알림도 없었다.
+#
+#   그래서 감시는 수집 실행 '밖'에 둔다 — 다른 워크플로, 다른 줄. 수집이 막혀도 이 워크플로는 돈다.
+#
+# 하는 일
+#   1. 오래 멈춘 실행(진행 중·대기·큐 상태로 60분 넘김)을 취소한다. 줄이 풀리면 대기하던 실행이 이어 받는다.
+#   2. 수집본이 오래 갱신되지 않았으면(기본 6시간) 이슈로 알린다. 예약 실행이 아예 안 도는 경우까지 잡는다.
+#
+# 정상 수집 실행은 5~10분, 주간 서술 실행은 최대 45분이다. 60분이 넘으면 멈춘 것으로 본다.
+
+name: 감시 (멈춘 실행 풀기)
+
+on:
+  schedule:
+    - cron: '17,47 * * * *'    # 30분마다. 정각을 피해 예약 실행이 몰리는 시각을 비킨다
+  workflow_dispatch:
+
+permissions:
+  actions: write            # 멈춘 실행 취소
+  issues: write             # 알림
+  contents: read
+
+# 수집 실행의 줄과 다르다 — 그 줄이 막혀도 이 감시는 돈다.
+concurrency:
+  group: watchdog
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  REPO: ${{ github.repository }}
+  STUCK_MIN: 60             # 이 시간(분)을 넘긴 진행 중·대기 실행은 멈춘 것으로 본다
+  STALE_HOURS: 6            # 수집본이 이 시간(시간)을 넘겨 갱신되지 않으면 알린다
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 멈춘 실행 취소
+        id: stuck
+        run: |
+          now=$(date -u +%s)
+          # 줄에서 기다리는 'pending' 은 제외한다 — 앞 실행이 풀리면 저절로 간다. 줄을 쥔 쪽이 문제다.
+          gh api "repos/$REPO/actions/runs?per_page=100" --jq '
+            .workflow_runs[]
+            | select(.status=="in_progress" or .status=="queued" or .status=="waiting")
+            | [.id, .name, .status, .created_at] | @tsv' > runs.tsv || true
+          : > cancelled.txt
+          while IFS=$'\t' read -r id name status created; do
+            [ -z "$id" ] && continue
+            age=$(( (now - $(date -u -d "$created" +%s)) / 60 ))
+            if [ "$age" -ge "$STUCK_MIN" ]; then
+              echo "멈춘 실행: $id · $name · $status · ${age}분 경과"
+              gh run cancel -R "$REPO" "$id" || true
+              echo "- #$id ($name) — $status 상태로 ${age}분" >> cancelled.txt
+            fi
+          done < runs.tsv
+
+          # 일반 취소가 안 먹는 경우가 있다(상태가 그대로면 강제 취소).
+          if [ -s cancelled.txt ]; then
+            sleep 30
+            for id in $(grep -o '^- #[0-9]*' cancelled.txt | tr -dc '0-9\n'); do
+              st=$(gh api "repos/$REPO/actions/runs/$id" --jq .status)
+              if [ "$st" != "completed" ]; then
+                echo "$id 가 아직 $st — 강제 취소"
+                gh api -X POST "repos/$REPO/actions/runs/$id/force-cancel" || true
+              fi
+            done
+            echo "any=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "any=false" >> "$GITHUB_OUTPUT"
+            echo "멈춘 실행 없음"
+          fi
+
+      - name: 취소 알림
+        if: steps.stuck.outputs.any == 'true'
+        run: |
+          TITLE="멈춘 실행을 자동으로 취소했습니다"
+          BODY="수집·배포 실행이 ${STUCK_MIN}분 넘게 멈춰 있어 감시 워크플로가 취소했습니다. 멈춘 실행이 배포 줄을 쥐고 있으면 뒤따르는 수집이 전부 대기하다 취소됩니다.
+
+          $(cat cancelled.txt)
+
+          줄이 풀리면 대기하던 실행이 이어 받습니다. 취소로 빠진 시간대의 기사는 다음 실행의 수집 창(2~3일)이 주워 담지만,
+          멈춤이 이틀을 넘겼다면 Actions → '수집 · 빌드 · 배포' → Run workflow 에서 days 를 7 로 두고 한 번 돌려 주세요.
+          이 이슈는 직접 닫아 주세요. 같은 일이 또 생기면 댓글이 달립니다."
+          NUM=$(gh issue list -R "$REPO" --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then gh issue comment -R "$REPO" "$NUM" --body "$BODY"
+          else gh issue create -R "$REPO" --title "$TITLE" --body "$BODY"; fi
+
+      # 예약 실행이 아예 안 도는 경우는 위에서 안 잡힌다 — 실행 자체가 없으니 멈춘 것도 없다.
+      # 그래서 수집본이 마지막으로 바뀐 시각을 따로 본다.
+      - name: 수집 갱신 확인
+        run: |
+          last=$(gh api "repos/$REPO/commits?path=pnu-weekly/data/collected&per_page=1" --jq '.[0].commit.committer.date')
+          if [ -z "$last" ] || [ "$last" = "null" ]; then echo "마지막 수집 시각을 읽지 못했습니다"; exit 0; fi
+          hours=$(( ($(date -u +%s) - $(date -u -d "$last" +%s)) / 3600 ))
+          echo "마지막 수집 커밋: $last (${hours}시간 전)"
+          if [ "$hours" -lt "$STALE_HOURS" ]; then exit 0; fi
+          TITLE="수집이 ${STALE_HOURS}시간 넘게 갱신되지 않았습니다"
+          NUM=$(gh issue list -R "$REPO" --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then echo "이미 열린 이슈 #$NUM"; exit 0; fi
+          gh issue create -R "$REPO" --title "$TITLE" --body "수집본(data/collected)이 마지막으로 바뀐 것은 ${last} (${hours}시간 전)입니다.
+
+          예약 실행이 돌지 않았거나 실행이 실패했을 수 있습니다. Actions → '수집 · 빌드 · 배포' 의 최근 실행을 확인하고,
+          필요하면 Run workflow 로 직접 돌려 주세요(days 를 7 로 두면 빠진 기간을 메웁니다).
+          수집이 다시 돌면 이 이슈를 직접 닫아 주세요."
