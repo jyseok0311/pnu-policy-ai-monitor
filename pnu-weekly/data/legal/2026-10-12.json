@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-10-12T00:35:48.292Z",
+  "collectedAt": "2026-10-12T00:47:28.422Z",
   "date": "2026-10-12",
   "window": {
     "law": 120,
@@ -8,25 +8,22 @@
   },
   "sources": {
     "law": {
-      "status": "carried",
+      "status": "ok",
       "label": "법령",
-      "error": "fetch failed",
-      "carriedFrom": "2026-10-06",
+      "fetched": 122,
       "kept": 16
     },
     "admrul": {
-      "status": "carried",
+      "status": "ok",
       "label": "행정규칙",
-      "error": "fetch failed",
-      "carriedFrom": "2026-10-06",
-      "kept": 23
+      "fetched": 112,
+      "kept": 22
     },
     "ordin": {
-      "status": "carried",
+      "status": "ok",
       "label": "자치법규",
-      "error": "fetch failed",
-      "carriedFrom": "2026-10-06",
-      "kept": 46
+      "fetched": 195,
+      "kept": 54
     },
     "notice": {
       "status": "ok",
@@ -216,6 +213,17 @@
   "admrul": [
     {
       "kind": "admrul",
+      "title": "지역인공지능전환추진단 설치ㆍ운영에 관한 규정",
+      "change": "제정",
+      "org": "과학기술정보통신부",
+      "category": "훈령",
+      "date": "2026-10-08",
+      "effective": "2026-10-08",
+      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000286676",
+      "q": "인공지능"
+    },
+    {
+      "kind": "admrul",
       "title": "자율기구 보훈인공지능담당관 설치 및 운영에 관한 규정",
       "change": "제정",
       "org": "국가보훈부",
@@ -260,17 +268,6 @@
     },
     {
       "kind": "admrul",
-      "title": "글로벌 인공지능 허브 추진위원회의 설치 및 운영에 관한 규정",
-      "change": "일부개정",
-      "org": "국무조정실",
-      "category": "국무총리훈령",
-      "date": "2026-09-09",
-      "effective": "2026-09-09",
-      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2200000108951",
-      "q": "인공지능"
-    },
-    {
-      "kind": "admrul",
       "title": "자율기구 질병관리인공지능담당관의 설치 및 운영에 관한 규정",
       "change": "일부개정",
       "org": "질병관리청",
@@ -282,13 +279,13 @@
     },
     {
       "kind": "admrul",
-      "title": "자율기구 문화인공지능정책과 설치 및 운영에 관한 규정",
+      "title": "글로벌 인공지능 허브 추진위원회의 설치 및 운영에 관한 규정",
       "change": "일부개정",
-      "org": "문화체육관광부",
-      "category": "훈령",
-      "date": "2026-09-01",
-      "effective": "2026-09-01",
-      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000284158",
+      "org": "국무조정실",
+      "category": "국무총리훈령",
+      "date": "2026-09-09",
+      "effective": "2026-09-09",
+      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2200000108951",
       "q": "인공지능"
     },
     {
@@ -300,6 +297,17 @@
       "date": "2026-09-01",
       "effective": "2026-09-07",
       "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000284612",
+      "q": "인공지능"
+    },
+    {
+      "kind": "admrul",
+      "title": "자율기구 문화인공지능정책과 설치 및 운영에 관한 규정",
+      "change": "일부개정",
+      "org": "문화체육관광부",
+      "category": "훈령",
+      "date": "2026-09-01",
+      "effective": "2026-09-01",
+      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000284158",
       "q": "인공지능"
     },
     {
@@ -403,17 +411,6 @@
     },
     {
       "kind": "admrul",
-      "title": "자율기구 제조인공지능전환협력과 설치 및 운영에 관한 규정",
-      "change": "일부개정",
-      "org": "산업통상부",
-      "category": "훈령",
-      "date": "2026-06-30",
-      "effective": "2026-06-30",
-      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000281122",
-      "q": "인공지능"
-    },
-    {
-      "kind": "admrul",
       "title": "자율기구 “중소기업인공지능확산추진단” 설치 및 운영에 관한 규정",
       "change": "일부개정",
       "org": "중소벤처기업부",
@@ -425,13 +422,13 @@
     },
     {
       "kind": "admrul",
-      "title": "경찰청 인공지능의 개발 및 활용에 관한 규칙",
-      "change": "제정",
-      "org": "경찰청",
+      "title": "자율기구 제조인공지능전환협력과 설치 및 운영에 관한 규정",
+      "change": "일부개정",
+      "org": "산업통상부",
       "category": "훈령",
       "date": "2026-06-30",
       "effective": "2026-06-30",
-      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000281962",
+      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000281122",
       "q": "인공지능"
     },
     {
@@ -447,25 +444,14 @@
     },
     {
       "kind": "admrul",
-      "title": "자율기구 인공지능이용자보호과의 설치 및 운영에 관한 규정",
-      "change": "일부개정",
-      "org": "방송미디어통신위원회",
+      "title": "경찰청 인공지능의 개발 및 활용에 관한 규칙",
+      "change": "제정",
+      "org": "경찰청",
       "category": "훈령",
-      "date": "2026-06-13",
-      "effective": "2026-06-13",
-      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000280446",
+      "date": "2026-06-30",
+      "effective": "2026-06-30",
+      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000281962",
       "q": "인공지능"
-    },
-    {
-      "kind": "admrul",
-      "title": "통계작성의 변경승인(협의) 고시(대학산학협력활동실태조사)",
-      "change": "일부개정",
-      "org": "국가데이터처",
-      "category": "고시",
-      "date": "2026-06-11",
-      "effective": "2026-06-18",
-      "link": "https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000280600",
-      "q": "대학"
     }
   ],
   "ordin": [
@@ -519,18 +505,6 @@
     },
     {
       "kind": "ordin",
-      "title": "진주시 인공지능산업 육성 및 지원에 관한 조례",
-      "change": "제정",
-      "org": "경상남도 진주시",
-      "category": "조례",
-      "date": "2026-08-20",
-      "effective": "2026-09-09",
-      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2164267",
-      "local": true,
-      "q": "인공지능"
-    },
-    {
-      "kind": "ordin",
       "title": "밀양시 인공지능 활용 촉진 조례",
       "change": "제정",
       "org": "경상남도 밀양시",
@@ -538,6 +512,18 @@
       "date": "2026-08-20",
       "effective": "2026-08-20",
       "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2164279",
+      "local": true,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "진주시 인공지능산업 육성 및 지원에 관한 조례",
+      "change": "제정",
+      "org": "경상남도 진주시",
+      "category": "조례",
+      "date": "2026-08-20",
+      "effective": "2026-09-09",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2164267",
       "local": true,
       "q": "인공지능"
     },
@@ -591,13 +577,121 @@
     },
     {
       "kind": "ordin",
-      "title": "서울특별시 종로구 인공지능 기본 조례",
-      "change": "제정",
-      "org": "서울특별시 종로구",
+      "title": "충청북도 지역성장 인재양성체계 구축 및 운영 조례",
+      "change": "전부개정",
+      "org": "충청북도",
       "category": "조례",
-      "date": "2026-10-02",
-      "effective": "2026-10-02",
-      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2174849",
+      "date": "2026-10-08",
+      "effective": "2026-10-08",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2177605",
+      "local": false,
+      "q": "대학"
+    },
+    {
+      "kind": "ordin",
+      "title": "전북특별자치도교육청 인공지능(AI) 시대 학생의 읽기 역량과 학교도서관 지원 조례",
+      "change": "제정",
+      "org": "전북특별자치도교육청",
+      "category": "조례",
+      "date": "2026-10-08",
+      "effective": "2026-10-08",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2175689",
+      "local": false,
+      "q": "대학"
+    },
+    {
+      "kind": "ordin",
+      "title": "전북특별자치도 인공지능 기본 조례",
+      "change": "제정",
+      "org": "전북특별자치도",
+      "category": "조례",
+      "date": "2026-10-08",
+      "effective": "2026-10-08",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2177819",
+      "local": false,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "광명시 인공지능산업 육성 및 지원 조례",
+      "change": "제정",
+      "org": "경기도 광명시",
+      "category": "조례",
+      "date": "2026-10-08",
+      "effective": "2026-10-08",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2177833",
+      "local": false,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "파주시 대형차량 인공지능(AI) 기반 보행자 감지장치 설치 및 지원 조례",
+      "change": "제정",
+      "org": "경기도 파주시",
+      "category": "조례",
+      "date": "2026-10-08",
+      "effective": "2026-10-08",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2177251",
+      "local": false,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "전북특별자치도 인공지능산업 육성 및 지원 조례",
+      "change": "일부개정",
+      "org": "전북특별자치도",
+      "category": "조례",
+      "date": "2026-10-08",
+      "effective": "2026-10-08",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2177789",
+      "local": false,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "서울특별시 동작구 인공지능 기본 조례",
+      "change": "제정",
+      "org": "서울특별시 동작구",
+      "category": "조례",
+      "date": "2026-10-08",
+      "effective": "2026-10-08",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2176989",
+      "local": false,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "서울특별시 서대문구 인공지능(AI) 기본 조례",
+      "change": "제정",
+      "org": "서울특별시 서대문구",
+      "category": "조례",
+      "date": "2026-10-07",
+      "effective": "2026-10-07",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2176293",
+      "local": false,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "경기도교육청 생성형 인공지능 활용 교육 지원에 관한 조례",
+      "change": "일부개정",
+      "org": "경기도교육청",
+      "category": "조례",
+      "date": "2026-10-07",
+      "effective": "2026-10-07",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2176269",
+      "local": false,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "인천광역시부평구 인공지능행정지원플랫폼 및 데이터 기반 행정 구현에 관한 조례",
+      "change": "제정",
+      "org": "인천광역시 부평구",
+      "category": "조례",
+      "date": "2026-10-06",
+      "effective": "2026-10-06",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2175907",
       "local": false,
       "q": "인공지능"
     },
@@ -615,6 +709,18 @@
     },
     {
       "kind": "ordin",
+      "title": "서울특별시 종로구 인공지능 기본 조례",
+      "change": "제정",
+      "org": "서울특별시 종로구",
+      "category": "조례",
+      "date": "2026-10-02",
+      "effective": "2026-10-02",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2174849",
+      "local": false,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
       "title": "서울특별시 관악구 인공지능 인재 양성 지원 조례",
       "change": "제정",
       "org": "서울특별시 관악구",
@@ -624,6 +730,18 @@
       "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2173485",
       "local": false,
       "q": "인재양성"
+    },
+    {
+      "kind": "ordin",
+      "title": "홍성군 인공지능행정 구현에 관한 조례",
+      "change": "제정",
+      "org": "충청남도 홍성군",
+      "category": "조례",
+      "date": "2026-09-30",
+      "effective": "2026-09-30",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2172661",
+      "local": false,
+      "q": "인공지능"
     },
     {
       "kind": "ordin",
@@ -646,18 +764,6 @@
       "date": "2026-09-30",
       "effective": "2026-09-30",
       "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2173133",
-      "local": false,
-      "q": "인공지능"
-    },
-    {
-      "kind": "ordin",
-      "title": "홍성군 인공지능행정 구현에 관한 조례",
-      "change": "제정",
-      "org": "충청남도 홍성군",
-      "category": "조례",
-      "date": "2026-09-30",
-      "effective": "2026-09-30",
-      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2172661",
       "local": false,
       "q": "인공지능"
     },
@@ -819,18 +925,6 @@
     },
     {
       "kind": "ordin",
-      "title": "세종특별자치시 인공지능산업 육성 및 지원 조례",
-      "change": "일부개정",
-      "org": "세종특별자치시",
-      "category": "조례",
-      "date": "2026-08-18",
-      "effective": "2026-08-18",
-      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2162927",
-      "local": false,
-      "q": "인공지능"
-    },
-    {
-      "kind": "ordin",
       "title": "수원시 피지컬 인공지능산업 육성 및 지원 조례",
       "change": "제정",
       "org": "경기도 수원시",
@@ -838,6 +932,18 @@
       "date": "2026-08-18",
       "effective": "2026-08-18",
       "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2162529",
+      "local": false,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "세종특별자치시 인공지능산업 육성 및 지원 조례",
+      "change": "일부개정",
+      "org": "세종특별자치시",
+      "category": "조례",
+      "date": "2026-08-18",
+      "effective": "2026-08-18",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2162927",
       "local": false,
       "q": "인공지능"
     },
@@ -903,18 +1009,6 @@
     },
     {
       "kind": "ordin",
-      "title": "광양시 인공지능윤리 기반 조성에 관한 조례",
-      "change": "일부개정",
-      "org": "전남광주통합특별시 광양시",
-      "category": "조례",
-      "date": "2026-08-12",
-      "effective": "2026-08-12",
-      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2167281",
-      "local": false,
-      "q": "인공지능"
-    },
-    {
-      "kind": "ordin",
       "title": "광양시 인공지능(AI)산업 육성 및 지원에 관한 조례",
       "change": "일부개정",
       "org": "전남광주통합특별시 광양시",
@@ -922,6 +1016,18 @@
       "date": "2026-08-12",
       "effective": "2026-08-12",
       "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2167279",
+      "local": false,
+      "q": "인공지능"
+    },
+    {
+      "kind": "ordin",
+      "title": "광양시 인공지능윤리 기반 조성에 관한 조례",
+      "change": "일부개정",
+      "org": "전남광주통합특별시 광양시",
+      "category": "조례",
+      "date": "2026-08-12",
+      "effective": "2026-08-12",
+      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2167281",
       "local": false,
       "q": "인공지능"
     },
@@ -996,30 +1102,6 @@
       "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2151403",
       "local": false,
       "q": "인공지능"
-    },
-    {
-      "kind": "ordin",
-      "title": "서울특별시 강남구 인공지능 기본 조례",
-      "change": "제정",
-      "org": "서울특별시 강남구",
-      "category": "조례",
-      "date": "2026-07-10",
-      "effective": "2026-07-10",
-      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2147837",
-      "local": false,
-      "q": "인공지능"
-    },
-    {
-      "kind": "ordin",
-      "title": "서울특별시 강남구 인공지능산업 육성 및 지원 조례",
-      "change": "일부개정",
-      "org": "서울특별시 강남구",
-      "category": "조례",
-      "date": "2026-07-10",
-      "effective": "2026-07-10",
-      "link": "https://www.law.go.kr/LSW/ordinInfoP.do?ordinSeq=2153223",
-      "local": false,
-      "q": "인공지능"
     }
   ],
   "notice": [
@@ -1044,5 +1126,5 @@
       "seen": "2026-10-12"
     }
   ],
-  "total": 87
+  "total": 94
 }
