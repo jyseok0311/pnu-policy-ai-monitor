@@ -1,5 +1,24 @@
 [
   {
+    "id": "w43",
+    "label": "2026.10.23 (Week 43)",
+    "date": "2026-10-23",
+    "range": "2026.10.16~2026.10.23",
+    "tier": 1,
+    "tierName": "관심",
+    "state": "Normal",
+    "complete": false,
+    "live": true,
+    "partial": true,
+    "sourceNote": "진행 중 — 2026.10.16부터 2026.10.16까지 0일치 수집 · 관련 기사 0건 (주차 마감 후 본문 생성)",
+    "signal": {
+      "crisis": 0,
+      "warning": 0,
+      "total": 0,
+      "trend": "falling"
+    }
+  },
+  {
     "id": "w42",
     "label": "2026.10.16 (Week 42)",
     "date": "2026-10-16",
@@ -9,13 +28,13 @@
     "state": "Normal",
     "complete": false,
     "live": true,
-    "partial": true,
-    "sourceNote": "진행 중 — 2026.10.09부터 2026.10.15까지 7일치 수집 · 관련 기사 936건 (주차 마감 후 본문 생성)",
+    "partial": false,
+    "sourceNote": "구글 뉴스 소급 수집 · 관련 기사 952건",
     "signal": {
       "crisis": 1.1,
-      "warning": 2.7,
-      "total": 936,
-      "trend": "stable"
+      "warning": 2.6,
+      "total": 952,
+      "trend": "falling"
     }
   },
   {
@@ -8205,9 +8224,9 @@
     "label": "2026.09.18 (Week 38)",
     "date": "2026-09-18",
     "range": "2026.09.11~2026.09.18",
-    "tier": 1,
-    "tierName": "관심",
-    "state": "Normal",
+    "tier": 2,
+    "tierName": "주의",
+    "state": "Watch",
     "complete": true,
     "live": true,
     "sourceNote": "무료·공개 소스 수집 3683건 → 관련성 필터 후 국내 1825건 (해외 391건은 참고 항목으로 별도) · 수집일 2026-09-11",
