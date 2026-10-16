@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-10-16T00:04:18.456Z",
+  "collectedAt": "2026-10-16T00:55:50.821Z",
   "date": "2026-10-16",
   "window": {
     "law": 120,
@@ -8,9 +8,10 @@
   },
   "sources": {
     "law": {
-      "status": "ok",
+      "status": "carried",
       "label": "법령",
-      "fetched": 122,
+      "error": "fetch failed",
+      "carriedFrom": "2026-10-15",
       "kept": 15
     },
     "admrul": {

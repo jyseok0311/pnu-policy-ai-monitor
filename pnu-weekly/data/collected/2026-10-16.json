@@ -1,31 +1,31 @@
 {
-  "collectedAt": "2026-10-16T00:04:04.115Z",
+  "collectedAt": "2026-10-16T00:55:36.536Z",
   "window": "2026-10-16 ~ (진행 중)",
   "from": "2026-10-16",
   "to": null,
-  "total": 4,
+  "total": 21,
   "signal": {
     "crisis": 0,
     "warning": 0,
-    "watch": 0
+    "watch": 4.8
   },
   "byField": {
-    "정책/철학": 1,
-    "융합연구": 1,
-    "증강인재교육": 1,
+    "정책/철학": 2,
+    "융합연구": 4,
+    "증강인재교육": 11,
     "적응형행정": 0,
-    "기타": 1
+    "기타": 4
   },
   "byRegion": {
-    "국내": 4,
-    "해외": 0
+    "국내": 19,
+    "해외": 2
   },
   "byUniv": {
-    "부산대": 0,
+    "부산대": 1,
     "경북대": 0,
     "전남대": 0,
-    "전북대": 0,
-    "충남대": 0,
+    "전북대": 1,
+    "충남대": 1,
     "충북대": 0,
     "강원대": 0,
     "경상국립대": 0,
@@ -35,20 +35,20 @@
   "feeds": [
     {
       "feed": "구글뉴스:거점국립대",
-      "수신": 39,
-      "신규": 39,
+      "수신": 38,
+      "신규": 38,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:국립대 통합",
-      "수신": 21,
-      "신규": 16,
+      "수신": 22,
+      "신규": 17,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:글로컬대학",
-      "수신": 42,
-      "신규": 41,
+      "수신": 46,
+      "신규": 45,
       "상태": "ok"
     },
     {
@@ -59,20 +59,20 @@
     },
     {
       "feed": "구글뉴스:대학 정원 감축",
-      "수신": 17,
-      "신규": 17,
+      "수신": 16,
+      "신규": 16,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 등록금",
       "수신": 52,
-      "신규": 46,
+      "신규": 45,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 생성형 AI",
-      "수신": 52,
-      "신규": 50,
+      "수신": 30,
+      "신규": 30,
       "상태": "ok"
     },
     {
@@ -84,13 +84,13 @@
     {
       "feed": "구글뉴스:부산대학교",
       "수신": 94,
-      "신규": 92,
+      "신규": 93,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 행정 AI",
-      "수신": 49,
-      "신규": 37,
+      "수신": 52,
+      "신규": 43,
       "상태": "ok"
     },
     {
@@ -107,32 +107,32 @@
     },
     {
       "feed": "구글뉴스:공공기관 AI 행정혁신",
-      "수신": 43,
+      "수신": 44,
       "신규": 37,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:생성형 AI 업무 도입",
-      "수신": 50,
+      "수신": 49,
       "신규": 48,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:AI중심대학",
-      "수신": 58,
-      "신규": 53,
+      "수신": 60,
+      "신규": 55,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:AX대학원",
-      "수신": 47,
-      "신규": 31,
+      "수신": 45,
+      "신규": 29,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:AI대학원 선정",
-      "수신": 28,
-      "신규": 13,
+      "수신": 29,
+      "신규": 15,
       "상태": "ok"
     },
     {
@@ -143,8 +143,8 @@
     },
     {
       "feed": "구글뉴스:첨단분야 혁신융합대학",
-      "수신": 9,
-      "신규": 9,
+      "수신": 11,
+      "신규": 11,
       "상태": "ok"
     },
     {
@@ -155,26 +155,26 @@
     },
     {
       "feed": "해외:higher education policy reform",
-      "수신": 64,
-      "신규": 64,
+      "수신": 63,
+      "신규": 63,
       "상태": "ok"
     },
     {
       "feed": "해외:university funding cuts government",
-      "수신": 58,
-      "신규": 55,
+      "수신": 57,
+      "신규": 54,
       "상태": "ok"
     },
     {
       "feed": "해외:national university merger",
-      "수신": 29,
-      "신규": 26,
+      "수신": 28,
+      "신규": 25,
       "상태": "ok"
     },
     {
       "feed": "해외:university tuition free policy",
-      "수신": 37,
-      "신규": 33,
+      "수신": 35,
+      "신규": 31,
       "상태": "ok"
     },
     {
@@ -185,8 +185,8 @@
     },
     {
       "feed": "해외:declining student enrollment university",
-      "수신": 41,
-      "신규": 39,
+      "수신": 42,
+      "신규": 40,
       "상태": "ok"
     },
     {
@@ -197,8 +197,8 @@
     },
     {
       "feed": "해외:university world rankings policy",
-      "수신": 32,
-      "신규": 25,
+      "수신": 31,
+      "신규": 24,
       "상태": "ok"
     },
     {
@@ -210,7 +210,7 @@
     {
       "feed": "교수신문",
       "수신": 50,
-      "신규": 47,
+      "신규": 48,
       "상태": "ok"
     },
     {
@@ -228,10 +228,10 @@
   ],
   "items": [
     {
+      "region": "domestic",
       "title": "케리스, ‘한국 ESG 혁신정책대상’ 사회 부문 우수상 수상",
       "media": "한국대학신문",
       "link": "https://news.unn.net/news/articleView.html?idxno=598754",
-      "region": "domestic",
       "date": "2026-10-16",
       "field": "정책/철학",
       "group": "교육",
@@ -243,10 +243,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "사이버한국외대 대학원, 미주 교사·동포 대상 한국어학 석사과정 모집",
       "media": "한국대학신문",
       "link": "https://news.unn.net/news/articleView.html?idxno=598753",
-      "region": "domestic",
       "date": "2026-10-16",
       "field": "증강인재교육",
       "group": "교육",
@@ -258,10 +258,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "서울 일교차 10도 안팎…출근길 겉옷 챙기고 건강관리 유의[오늘날씨]",
       "media": "한국대학신문",
       "link": "https://news.unn.net/news/articleView.html?idxno=598746",
-      "region": "domestic",
       "date": "2026-10-16",
       "field": "기타",
       "group": "기타",
@@ -273,16 +273,280 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "1조8천 억 매칭 R&D, 지역기여는 왜 선택사항인가",
       "media": "교수신문",
       "link": "https://www.kyosu.net/news/articleView.html?idxno=210928",
-      "region": "domestic",
       "date": "2026-10-16",
       "field": "융합연구",
       "group": "교육",
       "level": "normal",
       "univ": [],
       "summary": "[시론_김은영 대전연구원 경제사회연구실 책임연구위원]",
+      "feeds": [
+        "교수신문"
+      ]
+    },
+    {
+      "title": "전북대 신입생 5명 중 1명은 수도권 출신…802명, 2023학년도보다 170명 늘어",
+      "media": "전북미래교육신문",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5qd3BoUTNqUVFwUnJqLWpla3E1TERWeFBxbXJUM1ZfLXBscHJxNndlUkVFSkhQQnVyV1VUY3FuTmFHMkZ4S24xN1JaSkluS2xEUkpaY1M3TWtSbVZ3b2tn?oc=5",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [
+        "전북대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE5qd3BoUTNqUVFwUnJqLWpla3E1TERWeFBxbXJUM1ZfLXBscHJxNndlUkVFSkhQQnVyV1VUY3FuTmFHMkZ4S24xN1JaSkluS2xEUkpaY1M3TWtSbVZ3b2tn?oc=5\" target=\"_blank\"",
+      "feeds": [
+        "구글뉴스:거점국립대",
+        "구글뉴스:대학 등록금"
+      ]
+    },
+    {
+      "title": "연구실 기술이 지역 기업 신제품으로…포스텍, 1000억 글로컬 결실 한자리",
+      "media": "경북매일",
+      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFB1UVNpS01YVWhJMGduT183LUVsaWJjRmdQa0IwOXhkSFVkQkJXX2k5cEprUkNJQ2RMWEFxb0FjSng5VzZUd2J3dFJqcmJ4QVQ5LTc1MXZmZzhWUQ?oc=5",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiWkFVX3lxTFB1UVNpS01YVWhJMGduT183LUVsaWJjRmdQa0IwOXhkSFVkQkJXX2k5cEprUkNJQ2RMWEFxb0FjSng5VzZUd2J3dFJqcmJ4QVQ5LTc1MXZmZzhWUQ?oc=5\" target=\"_blank\">연구실 기",
+      "feeds": [
+        "구글뉴스:글로컬대학"
+      ]
+    },
+    {
+      "title": "오가노이드사이언스-원광대, 레드·그린바이오 융합 협력 강화",
+      "media": "전자신문",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1NZHR2M3pmNGpnODNvN1BsUkNJckpTUUpvczkyOGozVVRNTGdaNzlid1gzSGFkS3lIcEU4ZUI5SnFlcmZlRUFfb0pORTB5dw?oc=5",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiTkFVX3lxTE1NZHR2M3pmNGpnODNvN1BsUkNJckpTUUpvczkyOGozVVRNTGdaNzlid1gzSGFkS3lIcEU4ZUI5SnFlcmZlRUFfb0pORTB5dw?oc=5\" target=\"_blank\">오가노이드사이언스-원광대, 레드·그린바",
+      "feeds": [
+        "구글뉴스:글로컬대학"
+      ]
+    },
+    {
+      "title": "미국 대학들이 등록금을 '낮추고' 있다.",
+      "media": "Vietnam.vn",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1vLWZMYzhGT2lXSV9IZ0lKMWpPYUxGNjNiMVV5R0J2NTl0RUx0NUJUZEJhUDlPX2dlWGMyb3d2Q0tuZy1tMmxmek9kRWZhd05wSVk2Tm1CcXN6TDl0T0Z6MFRB?oc=5",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE1vLWZMYzhGT2lXSV9IZ0lKMWpPYUxGNjNiMVV5R0J2NTl0RUx0NUJUZEJhUDlPX2dlWGMyb3d2Q0tuZy1tMmxmek9kRWZhd05wSVk2Tm1CcXN6TDl0T0Z6MFRB?oc=5\" target=\"_bl",
+      "feeds": [
+        "구글뉴스:대학 등록금"
+      ]
+    },
+    {
+      "title": "수성대-몬스터미디어-수성구청, '클로드 AI 마케팅' 실무자 양성 나선다",
+      "media": "프레시안",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5mTlJtREx5cEFWQk1BU2lUckJjaEk3T2xiUjNVYTBWYUp5TENRWWxjQV82MFdwb2U0TWJtdTR0b2JRR2VEZS1KTUFJbFlGNFk5bXJjZ3NLS0tnV1JKd0E3VjBVSTJrbEZYQXNv?oc=5",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE5mTlJtREx5cEFWQk1BU2lUckJjaEk3T2xiUjNVYTBWYUp5TENRWWxjQV82MFdwb2U0TWJtdTR0b2JRR2VEZS1KTUFJbFlGNFk5bXJjZ3NLS0tnV1JKd0E3VjBVSTJrbEZYQXNv?oc=5\"",
+      "feeds": [
+        "구글뉴스:대학 생성형 AI"
+      ]
+    },
+    {
+      "title": "부산항만공사·부산대, 해사법무 전문인재 육성 ‘맞손’",
+      "media": "인더스트리뉴스",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5uZ3FiQTF6TGpkZzg2UERYSjZJYVpRTElhSEVtVXByb0F1dU9jbXdfLVRHeHhjMVplOEtjVGdVYV9XX20tbkxPZUhDd3JJN3RtWnlfZkF0MHlINEJ0UlI5YXZJYTNQc3RMUjMxOGZhblE1Zw?oc=5",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "증강인재교육",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [
+        "부산대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMickFVX3lxTE5uZ3FiQTF6TGpkZzg2UERYSjZJYVpRTElhSEVtVXByb0F1dU9jbXdfLVRHeHhjMVplOEtjVGdVYV9XX20tbkxPZUhDd3JJN3RtWnlfZkF0MHlINEJ0UlI5YXZJYTNQc3RMUjMxOGZhbl",
+      "feeds": [
+        "구글뉴스:부산대학교"
+      ]
+    },
+    {
+      "title": "경북도, 인공지능(AI) 인재 혁신대학 조성 본격 추진",
+      "media": "시민행정신문",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5XdXFKdnU4UVhBeXBkSGpXUWdDSkFyVUdBYndNODBXT2JGazRqSEdXV3lmSlVIT2pvU19XUVhQbkdVTGRSQkpwSFk1Rk1Ca2JiTEpVZmJXYkpKRmZDSW1ycUhHN01wUUpBcnVKWTlR?oc=5",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "watch",
+      "why": "추진",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE5XdXFKdnU4UVhBeXBkSGpXUWdDSkFyVUdBYndNODBXT2JGazRqSEdXV3lmSlVIT2pvU19XUVhQbkdVTGRSQkpwSFk1Rk1Ca2JiTEpVZmJXYkpKRmZDSW1ycUhHN01wUUpBcnVKWTlR?o",
+      "feeds": [
+        "구글뉴스:대학 행정 AI"
+      ]
+    },
+    {
+      "title": "인하대, AI로 인천항 선박 도착시간 예측…정확도 49% 개선",
+      "media": "데일리안",
+      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNYWdObW5VRmhZSjd6eTNySU9PTkNEM3VJODdIM3liV2RsY0dJLUFVS2ZVTkNSc2NBV1RfdHFrbDRDOUtVOTdxTjFwSENCVzdyUmdlWENjVy1EeHBjMEkzMTJXS1M3MXdwVVdMUHdGanhJYXNmaWRKb0swREMzMUJyMmltVEoxT1BGUlVJQWdRczUxbjQ5YktIVE5qaURUVUFTeTBiX0xnanNzLVkyTlJsV0ZlZjNHbUdkbkxFX3VHV3NtSnd4UDkzeTJXZHB6NHlhMnJVTFBpWW1FaG9pZ0hQdEZlZ190ZUt2Y3pjdGYyb0JnR2tZaWprRVE5MUJmcDRwQkE?oc=5",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiggJBVV95cUxNYWdObW5VRmhZSjd6eTNySU9PTkNEM3VJODdIM3liV2RsY0dJLUFVS2ZVTkNSc2NBV1RfdHFrbDRDOUtVOTdxTjFwSENCVzdyUmdlWENjVy1EeHBjMEkzMTJXS1M3MXdwVVdMUHdGan",
+      "feeds": [
+        "구글뉴스:AX대학원"
+      ]
+    },
+    {
+      "title": "한국공대 ‘지능형로봇 브릴스 현장실습 프로그램’ 성료",
+      "media": "뉴스와이어",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBSc3J4S1pCSUhMa2p5N29zenA3LU85anl1RnBFRXc1VTViNFFpY19NZHAtOEtsNDd2NUJsWHdrZlBiZ01adzI3dGx0ZzVvdkZNTzVzOG1FZ1RxS0tqbjdV?oc=5",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTFBSc3J4S1pCSUhMa2p5N29zenA3LU85anl1RnBFRXc1VTViNFFpY19NZHAtOEtsNDd2NUJsWHdrZlBiZ01adzI3dGx0ZzVvdkZNTzVzOG1FZ1RxS0tqbjdV?oc=5\" target=\"_blank\"",
+      "feeds": [
+        "구글뉴스:첨단분야 혁신융합대학"
+      ]
+    },
+    {
+      "title": "충남대 그린바이오 혁신융합대학사업단, ‘2026 그린바이오 포럼’ 성료",
+      "media": "아시아뉴스통신",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xWnRkamxyN3RNWlp5QUhMRmVfeVNjem5oN3NTRjN4YzlvenFWTDZYWXYxSEh1OENRTUF2RFYwU21LRWctVzRyeUdOc1M2eEdNRF9QcUJncjZ6NVl5?oc=5",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [
+        "충남대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xWnRkamxyN3RNWlp5QUhMRmVfeVNjem5oN3NTRjN4YzlvenFWTDZYWXYxSEh1OENRTUF2RFYwU21LRWctVzRyeUdOc1M2eEdNRF9QcUJncjZ6NVl5?oc=5\" target=\"_blank\">충남대",
+      "feeds": [
+        "구글뉴스:첨단분야 혁신융합대학"
+      ]
+    },
+    {
+      "title": "What counts as a graduate outcome when the labour market is changing?",
+      "media": "Wonkhe",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNVUR5d0ZnU0NlZUh6UDA2Sm1VRzBlZU4wODBrNWdJcHp3RzJXRXVtVzZJRTU5bXZ4S0w4amR5MDhUUXJTY0hUa0VWb2F5Vmk2dkRJV212WU9TbTU1ZkFsT0M4eWhNeUF4TFB3b2NkR1ZyQnREQTVBcm1wdHZCMzY5ajRXSTcyTnRFcEowRXctT1VYZFZ2OGJXSA?oc=5",
+      "region": "overseas",
+      "date": "2026-10-16",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxNVUR5d0ZnU0NlZUh6UDA2Sm1VRzBlZU4wODBrNWdJcHp3RzJXRXVtVzZJRTU5bXZ4S0w4amR5MDhUUXJTY0hUa0VWb2F5Vmk2dkRJV212WU9TbTU1ZkFsT0M4eWhNeUF4TFB3b2NkR1",
+      "feeds": [
+        "해외:higher education policy reform"
+      ]
+    },
+    {
+      "title": "American universities are 'undercutting' tuition fees.",
+      "media": "Vietnam.vn",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1pNjVfU2hzTFJWY3puQWxHYzZMLXRwZTNBZG9nYVN4SzRMNFByUjJXa2Y4ZFo3Znp3MDR4VlpnaGVTMHNRNXo5VVhHTkxFX01ybS1yNzR1TjN0dnk3aFhjTjNR?oc=5",
+      "region": "overseas",
+      "date": "2026-10-16",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE1pNjVfU2hzTFJWY3puQWxHYzZMLXRwZTNBZG9nYVN4SzRMNFByUjJXa2Y4ZFo3Znp3MDR4VlpnaGVTMHNRNXo5VVhHTkxFX01ybS1yNzR1TjN0dnk3aFhjTjNR?oc=5\" target=\"_bl",
+      "feeds": [
+        "해외:declining student enrollment university"
+      ]
+    },
+    {
+      "title": "조선 왕실 족보 53점 한자리에…장서각 기획전 ‘선원(璿源), 조선 왕실의 보첩’ 열린다",
+      "media": "교수신문",
+      "link": "https://www.kyosu.net/news/articleView.html?idxno=211322",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "한국학중앙연구원 장서각이 조선 왕실의 계보와 친족 관계를 담은 왕실 족보 전시를 연다. 장서각은 오는 10월 19일부터 12월 31일까지 기획전 ‘선원(璿源), 조선 왕실의 보첩’을 개최한다. 왕실 보첩을 주제로 한 국내 최초의 전시로, 『선원록』과 『선원계보기략』, 『돈녕보첩』 등 주요 자료 53점을 공개한다.‘선원’은 아름다운 옥의 근원이라는 뜻으로, ",
+      "feeds": [
+        "교수신문"
+      ]
+    },
+    {
+      "title": "[교수초빙] 동국대학교 WISE캠퍼스 2027학년도 1학기 신규교원 초빙공고",
+      "media": "교수신문",
+      "link": "https://www.kyosu.net/news/articleView.html?idxno=211315",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "대학 홈페이지 바로가기 >가. 접수기간 - 2026.10.16.(금) ~ 10.30.(금) 15:00까지나. 자세한 사항은 대학 홈페이지를 참고하시기 바랍니다.",
+      "feeds": [
+        "교수신문"
+      ]
+    },
+    {
+      "title": "[교수초빙] 순천향대학교 2027학년도 1학기 교수 초빙 공고",
+      "media": "교수신문",
+      "link": "https://www.kyosu.net/news/articleView.html?idxno=211314",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "대학 홈페이지 바로가기 >가. 접수기간 - 2026. 10. 20.(화) 10:00 ~ 30.(금) 17:00다. 자세한 사항은 대학 홈페이지를 참고하시기 바랍니다.",
+      "feeds": [
+        "교수신문"
+      ]
+    },
+    {
+      "title": "“특성화 선도대학, 산업현장 인재 키울 기회…학과 간 균형이 과제”",
+      "media": "교수신문",
+      "link": "https://www.kyosu.net/news/articleView.html?idxno=211289",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[지방 사립대의 엇갈린 기대와 우려] 정부의 사립대학 특성화 정책을 바라보는 대학 현장의 시선은 복잡하다. 학령인구 감소에 대응해 학과를 조정하고 교육과정을 재배치해야 한다는 데는 이견이 적다. 문제는 구조조정의 부담은 대학 전체가 나누는데 재정 지원의 혜택은 특성화 분야에 집중된다는 점이다.",
+      "feeds": [
+        "교수신문"
+      ]
+    },
+    {
+      "title": "26편 영화 속 집단의 민낯… 따뜻한 둥지인가, 가혹한 감옥인가",
+      "media": "교수신문",
+      "link": "https://www.kyosu.net/news/articleView.html?idxno=211115",
+      "region": "domestic",
+      "date": "2026-10-16",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[저자가 말하다_『영화 속 조직 이야기』]",
       "feeds": [
         "교수신문"
       ]
