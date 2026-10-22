@@ -29,7 +29,7 @@ const recent = files.slice(-2).flatMap((f) => (f === latest ? J : read(f)).items
   .filter((x) => x.date === today || x.date === yesterday)
   .filter((x) => { const k = x.link || x.title; if (seen.has(k)) return false; seen.add(k); return true; });
 const domestic = recent.filter((x) => x.region !== 'overseas').length;
-const feedsOk = (J.feeds || []).filter((f) => f.상태 === 'ok').length;
+const feedsOk = (J.feeds || []).filter((f) => String(f.상태).startsWith('ok')).length;
 const feedsAll = (J.feeds || []).length;
 
 console.log(`· 파일 ${files.slice(-2).join(' + ')} · 최근 2일(${yesterday}~${today}) ${recent.length}건 (국내 ${domestic})`);

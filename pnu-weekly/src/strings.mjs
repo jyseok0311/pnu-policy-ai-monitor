@@ -195,7 +195,23 @@ ko.daily = {
   legalEff: '시행', legalProm: '공포', legalIssued: '발령', legalDue: '마감',
   legalDday: (n) => (n === 0 ? '오늘 시행' : `시행 D-${n}`),
   legalDue2: (n) => (n === 0 ? '오늘 마감' : `마감 D-${n}`),
-  weekday: ['일', '월', '화', '수', '목', '금', '토']
+  weekday: ['일', '월', '화', '수', '목', '금', '토'],
+
+  // ── 수집 상태 — 출처별 최근 7일(data/source-health.json)
+  // 출처 하나가 몇 주째 비어도 화면에서는 티가 나지 않았다(유니프레스 5주, 과기정통부 2주). 그래서 드러낸다.
+  secHealth: '🩺 수집 상태',
+  secHealthSub: (t) => `출처별 최근 7일 · ${t} 기준`,
+  healthNote: '수집 실행마다 출처별로 성공·실패를 기록합니다. 기사 검색어와 언론사 RSS는 매시, 기관 보도자료와 법령은 하루 한 번 걷습니다. ' +
+    '칸에 마우스를 올리면 그날의 성공·실패 횟수와 받은 건수가 보입니다.',
+  healthLegend: '<b class="sh ok">●</b> 성공 · <b class="sh fallback">◇</b> 우회로로 성공 · <b class="sh partial">◐</b> 일부 실패 · <b class="sh fail">✕</b> 실패 · <b class="sh none">·</b> 기록 없음',
+  healthAlert: (n, list) => `<b>${n}곳</b>이 며칠째 수집되지 않고 있습니다 — ${list}. 그 출처의 소식은 지금 브리핑에 빠져 있습니다.`,
+  healthAlertTop: (n) => `⚠ 수집되지 않는 출처가 ${n}곳 있습니다 — 아래 ‘수집 상태’에서 확인하세요.`,
+  healthCols: { src: '출처', last: '마지막 성공', note: '비고' },
+  healthKindSum: (label, n, bad) => `${label} — ${n}곳${bad ? ` · 문제 ${bad}곳` : ''}`,
+  healthTip: (d, r) => `${d}: 성공 ${r.ok}회 · 실패 ${r.fail}회 · 받은 항목 최대 ${r.n}건${r.note ? ' — ' + r.note : ''}`,
+  healthNoTip: (d) => `${d}: 이 날은 이 출처를 걷는 실행이 없었습니다`,
+  healthNever: '기록 안에 없음',
+  healthEmpty: '아직 쌓인 기록이 없습니다. 다음 수집 실행부터 채워집니다.'
 };
 
 

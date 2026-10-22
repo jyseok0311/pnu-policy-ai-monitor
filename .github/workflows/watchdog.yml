@@ -10,7 +10,11 @@
 #
 # 하는 일
 #   1. 오래 멈춘 실행(진행 중·대기·큐 상태로 60분 넘김)을 취소한다. 줄이 풀리면 대기하던 실행이 이어 받는다.
-#   2. 수집본이 오래 갱신되지 않았으면(기본 6시간) 이슈로 알린다. 예약 실행이 아예 안 도는 경우까지 잡는다.
+#   2. 수집본이 오래 갱신되지 않았으면(12시간) 이슈로 알린다. 예약 실행이 아예 안 도는 경우까지 잡는다.
+#   3. 한 출처가 며칠째 실패하면 이슈로 알린다(data/source-health.json). 전체 검증은 '절반 이상 실패'만 보므로
+#      출처 하나가 죽은 것은 걸리지 않는다 — 유니프레스 5주, 과기정통부 2주가 그렇게 조용히 비었다.
+#   4. 문제가 풀린 이슈는 닫는다. 알림만 열고 닫지 않았더니 회복된 지 오래인 이슈가 넷 쌓였다
+#      (본문 대기 이슈는 댓글이 27개였다).
 #
 # 정상 수집 실행은 5~10분, 주간 서술 실행은 최대 45분이다. 60분이 넘으면 멈춘 것으로 본다.
 
@@ -35,13 +39,21 @@ env:
   GH_TOKEN: ${{ github.token }}
   REPO: ${{ github.repository }}
   STUCK_MIN: 60             # 이 시간(분)을 넘긴 진행 중·대기 실행은 멈춘 것으로 본다
-  STALE_HOURS: 6            # 수집본이 이 시간(시간)을 넘겨 갱신되지 않으면 알린다
+  # 수집본이 이 시간을 넘겨 갱신되지 않으면 알린다. 매시 예약이지만 GitHub 가 실제로 돌리는 간격은
+  # 중앙값 3.5시간, 길면 6~8시간이다(2026-10 측정). 6시간으로 두었더니 정상 범위에서도 울렸다.
+  STALE_HOURS: 12
 
 jobs:
   watch:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+      # 출처 이력·서술 파일을 읽어야 한다(최신 커밋 하나면 된다).
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
       - name: 멈춘 실행 취소
         id: stuck
         run: |
@@ -94,19 +106,84 @@ jobs:
           else gh issue create -R "$REPO" --title "$TITLE" --body "$BODY"; fi
 
       # 예약 실행이 아예 안 도는 경우는 위에서 안 잡힌다 — 실행 자체가 없으니 멈춘 것도 없다.
-      # 그래서 수집본이 마지막으로 바뀐 시각을 따로 본다.
+      # 그래서 수집본이 마지막으로 바뀐 시각을 따로 본다. 회복되면 이슈를 닫는다.
       - name: 수집 갱신 확인
         run: |
           last=$(gh api "repos/$REPO/commits?path=pnu-weekly/data/collected&per_page=1" --jq '.[0].commit.committer.date')
           if [ -z "$last" ] || [ "$last" = "null" ]; then echo "마지막 수집 시각을 읽지 못했습니다"; exit 0; fi
           hours=$(( ($(date -u +%s) - $(date -u -d "$last" +%s)) / 3600 ))
           echo "마지막 수집 커밋: $last (${hours}시간 전)"
-          if [ "$hours" -lt "$STALE_HOURS" ]; then exit 0; fi
-          TITLE="수집이 ${STALE_HOURS}시간 넘게 갱신되지 않았습니다"
-          NUM=$(gh issue list -R "$REPO" --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number // empty')
+          # 제목의 시간 숫자가 바뀌어도 같은 이슈로 본다
+          NUM=$(gh issue list -R "$REPO" --state open --search "in:title 갱신되지 않았습니다" --json number,title             --jq 'map(select(.title|test("^수집이 .*갱신되지 않았습니다")))|.[0].number // empty')
+          if [ "$hours" -lt "$STALE_HOURS" ]; then
+            if [ -n "$NUM" ]; then gh issue close -R "$REPO" "$NUM" -c "수집이 다시 돌고 있습니다 — 마지막 수집 $last (${hours}시간 전). 감시 워크플로가 닫습니다."; fi
+            exit 0
+          fi
           if [ -n "$NUM" ]; then echo "이미 열린 이슈 #$NUM"; exit 0; fi
-          gh issue create -R "$REPO" --title "$TITLE" --body "수집본(data/collected)이 마지막으로 바뀐 것은 ${last} (${hours}시간 전)입니다.
+          gh issue create -R "$REPO" --title "수집이 ${STALE_HOURS}시간 넘게 갱신되지 않았습니다" --body "수집본(data/collected)이 마지막으로 바뀐 것은 ${last} (${hours}시간 전)입니다.
 
           예약 실행이 돌지 않았거나 실행이 실패했을 수 있습니다. Actions → '수집 · 빌드 · 배포' 의 최근 실행을 확인하고,
           필요하면 Run workflow 로 직접 돌려 주세요(days 를 7 로 두면 빠진 기간을 메웁니다).
-          수집이 다시 돌면 이 이슈를 직접 닫아 주세요."
+          수집이 다시 돌면 감시 워크플로가 이 이슈를 닫습니다."
+
+      # 출처 하나가 며칠째 비는 것 — 출처 목록이 바뀔 때만 댓글을 단다(같은 내용을 반복하지 않는다).
+      - name: 출처 장기 실패
+        id: health
+        working-directory: pnu-weekly
+        run: node tools/health-alert.mjs
+
+      - name: 출처 장기 실패 알림 또는 닫기
+        working-directory: pnu-weekly
+        env:
+          COUNT: ${{ steps.health.outputs.count }}
+          SIG: ${{ steps.health.outputs.sig }}
+        run: |
+          TITLE="수집되지 않는 출처가 있습니다"
+          NUM=$(gh issue list -R "$REPO" --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number // empty')
+          if [ "$COUNT" = "0" ]; then
+            if [ -n "$NUM" ]; then gh issue close -R "$REPO" "$NUM" -c "모든 출처가 다시 수집되고 있습니다. 감시 워크플로가 닫습니다."; fi
+            exit 0
+          fi
+          if [ -z "$NUM" ]; then gh issue create -R "$REPO" --title "$TITLE" --body-file health-alert.md; exit 0; fi
+          # 마지막으로 알린 목록(본문 또는 마지막 댓글의 sig)과 같으면 조용히 넘어간다
+          PREV=$(gh issue view -R "$REPO" "$NUM" --json body,comments --jq '[.body] + [.comments[].body] | map(select(test("<!-- sig:"))) | last' | grep -o 'sig: [^>]*' | sed 's/^sig: //; s/ *--$//')
+          if [ "$PREV" = "$SIG" ]; then echo "목록이 같아 댓글 생략"; exit 0; fi
+          gh issue comment -R "$REPO" "$NUM" --body-file health-alert.md
+
+      # 회복된 문제의 이슈를 닫는다. 판단 근거를 댓글로 남긴다.
+      - name: 해결된 이슈 닫기
+        working-directory: pnu-weekly
+        run: |
+          close_if() {   # $1 제목  $2 닫는 이유
+            local n
+            n=$(gh issue list -R "$REPO" --state open --search "in:title \"$1\"" --json number,title --jq "map(select(.title==\"$1\"))|.[0].number // empty")
+            if [ -n "$n" ]; then gh issue close -R "$REPO" "$n" -c "$2 감시 워크플로가 닫습니다."; echo "#$n 닫음 — $1"; fi
+          }
+
+          # 자동 수집 실패 — 최근 완료된 수집 실행 둘이 모두 성공이면 회복으로 본다
+          RECENT=$(gh run list -R "$REPO" --workflow daily.yml --status completed -L 6 --json event,conclusion             --jq '[.[]|select(.event!="push")][0:2]|map(.conclusion)|join(",")')
+          if [ "$RECENT" = "success,success" ]; then close_if "자동 수집 실패" "최근 수집 실행 두 번이 연달아 성공했습니다."; fi
+
+          # 본문 대기 — 마감됐는데 본문 없는 주차가 없으면
+          if node tools/check-narrative.mjs | grep -q "모두 본문이 있습니다"; then
+            close_if "주간 리포트 본문 생성 대기" "마감된 주차에 모두 본문이 있습니다."
+          fi
+
+          # 서술 파일 오류 — 모든 서술 파일이 검사를 통과하면
+          ok=1
+          for f in data/narrative/w*.json; do
+            id=$(basename "$f" .json)
+            node tools/check-narrative-file.mjs "$id" > /dev/null 2>&1 || { ok=0; echo "검사 실패: $id"; }
+          done
+          if [ "$ok" = "1" ]; then close_if "주간 리포트 서술 파일 오류" "모든 서술 파일이 검사를 통과합니다."; fi
+
+          # 자동 취합본 — 남은 취합본이 없으면
+          if ! grep -lq '"mode": *"digest"' data/narrative/w*.json 2>/dev/null; then
+            close_if "주간 리포트 자동 취합본 게시됨 (해석 본문 아님)" "남은 자동 취합본이 없습니다 — 모든 주차가 해석 본문입니다."
+          else
+            echo "남은 취합본: $(grep -l '"mode": *"digest"' data/narrative/w*.json | xargs -n1 basename | paste -sd' ')"
+          fi
+
+          # 멈춘 실행 취소 — 사흘 동안 다시 일어나지 않았으면
+          n=$(gh issue list -R "$REPO" --state open --search 'in:title "멈춘 실행을 자동으로 취소했습니다"' --json number,updatedAt             --jq "map(select((now - (.updatedAt|fromdateiso8601)) > 259200))|.[0].number // empty")
+          if [ -n "$n" ]; then gh issue close -R "$REPO" "$n" -c "사흘 동안 멈춘 실행이 다시 생기지 않았습니다. 감시 워크플로가 닫습니다."; fi

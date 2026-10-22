@@ -14,6 +14,7 @@ import { T } from './src/strings.mjs';
 import { header, rail, wordOf } from './src/menu.mjs';
 import { FIELD_ORDER } from './src/criteria.mjs';
 import { critSlot, critData } from './src/criteria-html.mjs';
+import { loadHealth, dayStatus, longFailures, KIND_LABEL, KIND_ORDER } from './src/source-health.mjs';
 const TIER_MOOD = { 1: 'happy', 2: 'base', 3: 'tense', 4: 'angry' };
 
 const root = dirname(fileURLToPath(import.meta.url));
@@ -231,6 +232,49 @@ function renderDay(d, idx, T) {
 </section>`;
 }
 
+// ── 수집 상태 — 출처별 최근 7일. 오늘(KST)부터 거꾸로 7칸.
+const health = loadHealth(root);
+const healthBad = longFailures(health);
+const SH_MARK = { ok: '●', fallback: '◇', partial: '◐', fail: '✕' };
+function healthSection(D) {
+  const srcs = Object.entries(health.sources || {});
+  const head = `<h2 class="sec" id="src-health">${esc(D.secHealth)} <small>${esc(D.secHealthSub(health.updatedAt ? new Date(Date.parse(health.updatedAt) + 9 * 3600e3).toISOString().slice(0, 16).replace('T', ' ') + ' KST' : '-'))}</small></h2>`;
+  if (!srcs.length) return `${head}<p class="note-line">${esc(D.healthEmpty)}</p>`;
+  const today = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+  const cols = Array.from({ length: 7 }, (_, i) => new Date(Date.parse(today) - (6 - i) * 864e5).toISOString().slice(0, 10));
+  const badKeys = new Set(healthBad.map((b) => b.key));
+  const row = ([key, s]) => {
+    const okDays = Object.keys(s.days).filter((d) => s.days[d].ok).sort();
+    const lastNote = Object.keys(s.days).sort().map((d) => s.days[d]).filter((r) => r.note).pop();
+    const cells = cols.map((d) => {
+      const r = s.days[d]; const st = dayStatus(r);
+      return st ? `<td><span class="sh ${st}" title="${esc(D.healthTip(d.slice(5), r))}">${SH_MARK[st]}</span></td>`
+        : `<td><span class="sh none" title="${esc(D.healthNoTip(d.slice(5)))}">·</span></td>`;
+    }).join('');
+    return `<tr${badKeys.has(key) ? ' class="sh-bad"' : ''}><th scope="row">${esc(s.label)}</th>${cells}
+      <td class="sh-last">${esc(okDays.length ? okDays.pop().slice(5) : D.healthNever)}</td>
+      <td class="sh-note">${esc(lastNote ? lastNote.note : '')}</td></tr>`;
+  };
+  const groups = KIND_ORDER.map((k) => ({ k, list: srcs.filter(([, s]) => s.kind === k) })).filter((g) => g.list.length);
+  return `${head}
+  <p class="note-line">${esc(D.healthNote)}</p>
+  <p class="note-line">${D.healthLegend}</p>
+  ${healthBad.length ? `<p class="src-alert">${D.healthAlert(healthBad.length, healthBad.map((b) => esc(b.label)).join(', '))}</p>` : ''}
+  ${groups.map(({ k, list }) => {
+    const bad = list.filter(([key]) => badKeys.has(key)).length;
+    // 문제가 있는 묶음과 기관 보도자료는 펼쳐 둔다. 검색어 수십 개는 접어 둔다.
+    const open = bad || k === 'org';
+    return `
+  <details class="day src"${open ? ' open' : ''}>
+    <summary><span>${esc(D.healthKindSum(KIND_LABEL[k], list.length, bad))}</span></summary>
+    <div class="cat sh-wrap"><table class="sh-table">
+      <thead><tr><th scope="col">${esc(D.healthCols.src)}</th>${cols.map((d) => `<th scope="col">${d.slice(5).replace('-', '.')}</th>`).join('')}<th scope="col">${esc(D.healthCols.last)}</th><th scope="col">${esc(D.healthCols.note)}</th></tr></thead>
+      <tbody>${list.sort(([a], [b]) => (badKeys.has(b) - badKeys.has(a)) || a.localeCompare(b, 'ko')).map(row).join('')}</tbody>
+    </table></div>
+  </details>`;
+  }).join('')}`;
+}
+
 // 원본 자산(assets/)을 산출물 옆으로 복사한다. dist/ 는 git 에 없으므로 빌드가 매번 채워야 한다.
 cpSync(join(root, 'assets'), join(root, 'dist/assets'), { recursive: true });
 const css = readFileSync(join(root, 'src/styles.css'), 'utf8');
@@ -291,8 +335,10 @@ ${railHtml}
 <main class="main">
 <p class="notice"><span class="sec-face notice-face">${sanjini('grad', 40)}</span>${D.notice}
 <span class="sample">${esc(D.thresholdNote(DTH, MIN_N))}</span></p>
+${healthBad.length ? `<p class="src-alert top"><a href="#src-health">${esc(D.healthAlertTop(healthBad.length))}</a></p>` : ''}
 ${critSlot('master', D, D.critMasterT)}
 ${days.map((d, i) => renderDay(d, i, T)).join('\n')}
+<section class="week src-health">${healthSection(D)}</section>
 <p class="foot">${esc(meta.foot)}<br>${esc(T.genAt)}: ${new Date().toISOString().slice(0, 19).replace('T', ' ')} · data/collected/</p>
 ${critData(D, { universities: meta.universities.map((u) => u.name) })}
 </main>

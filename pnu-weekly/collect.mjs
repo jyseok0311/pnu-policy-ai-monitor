@@ -118,18 +118,27 @@ const feedLog = [];
 const feeds = [
   ...GOOGLE_QUERIES.map((q) => ({ kind: 'google', region: 'domestic', label: `구글뉴스:${q}`, url: gnews(q) })),
   ...OVERSEAS_QUERIES.map((q) => ({ kind: 'google', region: 'overseas', label: `해외:${q}`, url: gnewsEn(q) })),
-  ...(FROM ? [] : PRESS_FEEDS.map((f) => ({ kind: 'press', region: 'domestic', label: f.media, url: f.url, media: f.media })))
+  ...(FROM ? [] : PRESS_FEEDS.map((f) => ({ kind: 'press', region: 'domestic', label: f.media, url: f.url, media: f.media, site: f.site })))
 ];
 
 for (const f of feeds) {
   try {
-    const raw = parseRss(await get(f.url));
+    let raw, via = '';
+    try { raw = parseRss(await get(f.url)); }
+    catch (e) {
+      // 매체 RSS 가 막히면 구글 뉴스에서 그 도메인 기사만 찾는다. 링크는 구글 경유가 되지만 0건보다 낫다.
+      if (!f.site) throw e;
+      raw = parseRss(await get(gnews(`site:${f.site}`)));
+      via = ` (RSS 실패 → 구글 뉴스 site:${f.site} 우회: ${e.message})`;
+    }
     let kept = 0;
     for (const it of raw) {
       if (!it.title || !it.link) continue;
       const t = Date.parse(it.date);
       if (Number.isFinite(t) && (t < since || t >= until)) continue;
-      const { title, media } = f.kind === 'google' ? splitMedia(it) : { title: it.title, media: f.media };
+      const { title, media } = f.kind === 'google' ? splitMedia(it)
+        : via ? { title: splitMedia(it).title, media: f.media }
+        : { title: it.title, media: f.media };
       const key = title.replace(/\s+/g, '').slice(0, 40);
       if (items.has(key)) { items.get(key).feeds.push(f.label); continue; }
       // 분류는 제목만 본다 — 요약(기사 첫 문단)을 섞으면 본문 소재가 등급을 만든다.
@@ -144,7 +153,7 @@ for (const f of feeds) {
       });
       kept++;
     }
-    feedLog.push({ feed: f.label, 수신: raw.length, 신규: kept, 상태: 'ok' });
+    feedLog.push({ feed: f.label, 수신: raw.length, 신규: kept, 상태: via ? `ok${via}` : 'ok' });
   } catch (e) {
     feedLog.push({ feed: f.label, 수신: 0, 신규: 0, 상태: `실패 ${e.message}` });
   }

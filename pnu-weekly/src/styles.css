@@ -679,3 +679,22 @@ details.crit > summary:hover{border-color:var(--sky);background:var(--sky-l)}
 .digest-note{margin:14px 0 4px;padding:10px 14px;border:1px dashed #d8b46b;border-left:4px solid var(--warn-ink);
   background:#fffaf0;border-radius:6px;font-size:13px;color:var(--ink-2);max-width:var(--measure);word-break:keep-all}
 .digest-note b{color:var(--navy)}
+
+/* 수집 상태 — 출처별 최근 7일. 색만으로 구분하지 않도록 모양(● ◇ ◐ ✕ ·)도 다르게 둔다. */
+.sh{font-weight:700;font-size:14px;line-height:1}
+.sh.ok{color:var(--ok-ink)} .sh.fallback{color:var(--link)} .sh.partial{color:var(--warn-ink)}
+.sh.fail{color:var(--crisis)} .sh.none{color:var(--faint);font-weight:400}
+.src-alert{margin:10px 0 12px;padding:9px 13px;border-left:4px solid var(--crisis);background:#fdf3f2;
+  border-radius:6px;font-size:13px;color:var(--ink-2);max-width:var(--measure);word-break:keep-all}
+.src-alert.top a{color:var(--crisis);font-weight:600;text-decoration:none}
+.src-alert.top a:hover{text-decoration:underline}
+.sh-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sh-table{border-collapse:collapse;font-size:12.5px;width:100%;min-width:780px}
+.sh-table th,.sh-table td{padding:6px 7px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+.sh-table thead th{background:var(--thead);color:var(--ink-2);font-weight:600;font-size:12px}
+.sh-table tbody th{text-align:left;font-weight:500;color:var(--ink);white-space:normal;word-break:keep-all;min-width:150px}
+.sh-table .sh-last{color:var(--ink-3)}
+.sh-table .sh-note{text-align:left;color:var(--mute);white-space:normal;font-size:12px;min-width:200px;max-width:300px;word-break:keep-all;overflow-wrap:anywhere}
+.sh-table tr.sh-bad th{color:var(--crisis);font-weight:700}
+.sh-table tr.sh-bad{background:#fdf6f5}
+@media print{.src-health,.src-alert.top{display:none !important}}

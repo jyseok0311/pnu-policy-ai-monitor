@@ -53,11 +53,27 @@ export const SITES = [
   {
     id: 'msit', name: '과학기술정보통신부', board: '보도자료',
     home: 'https://www.msit.go.kr/index.do',
-    list: 'https://www.msit.go.kr/bbs/list.do?sCode=user&mId=113&mPid=112',
-    parse(html, url) {
-      return [...html.matchAll(/<a[^>]+href="([^"]*view\.do[^"]*)"[^>]*>([\s\S]{0,300}?)<\/a>/gi)]
-        .map((m) => ({ title: strip(m[2]), link: abs(url, m[1]), date: null }))
-        .filter((x) => x.title.length > 8 && x.link);
+    // 2026-10 게시판 이전: 옛 주소(mId=113)는 '시스템 점검 안내' 화면만 준다 — 10/5 이후 0건이었다.
+    list: 'https://www.msit.go.kr/bbs/list.do?sCode=user&mPid=208&mId=307&bbsSeqNo=94',
+    // 새 게시판은 목록 칸을 비워 두고, 아래 인라인 스크립트가 행마다 채운다.
+    //   $('#td_'+'NTT_SJ'+'_0').html(sHtml);
+    //   //$('#td_'+'NTT_SJ'+'_0').html('<a ... data-value="3187880"><span>제목</span></a>');
+    //   $('#td_'+'REG_DT'+'_0').html('2026. 10. 22');
+    // 주석 처리된 줄에 글 번호와 제목이 함께 있다. 행 번호(_0, _1 …)로 날짜와 짝짓는다.
+    // 상세 주소는 목록의 GET 폼(actionForm)이 view.do 로 보내는 조합과 같다.
+    parse(html) {
+      const rowsBy = {};
+      for (const m of html.matchAll(/'NTT_SJ'\+'_(\d+)'\)\.html\('[^\n]*?data-value="(\d+)"[^>]*>\s*<span>([\s\S]*?)<\/span>/g)) {
+        rowsBy[m[1]] = { id: m[2], title: strip(m[3]) };
+      }
+      for (const m of html.matchAll(/'REG_DT'\+'_(\d+)'\)\.html\('([^']*)'\)/g)) {
+        if (rowsBy[m[1]]) rowsBy[m[1]].date = ymd(m[2].replace(/\.\s+/g, '.'));
+      }
+      return Object.values(rowsBy).map((r) => ({
+        title: r.title,
+        link: `https://www.msit.go.kr/bbs/view.do?sCode=user&mPid=208&mId=307&bbsSeqNo=94&nttSeqNo=${r.id}`,
+        date: r.date || null
+      })).filter((x) => x.title.length > 4);
     }
   },
   {

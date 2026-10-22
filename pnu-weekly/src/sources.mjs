@@ -21,11 +21,13 @@ export const GOOGLE_QUERIES = [
 ];
 
 // 대학 전문 언론 RSS. 구글 뉴스와 달리 매체가 직접 주는 원문 링크라 최신 50건 정도만 준다.
+// site: 는 RSS 를 못 받을 때 쓰는 우회로 — 구글 뉴스에서 그 도메인 기사만 찾는다.
+//   유니프레스는 GitHub 러너(해외 IP)에서만 'fetch failed' 로 5주 넘게 0건이었다(국내에서는 정상).
 export const PRESS_FEEDS = [
-  { media: '한국대학신문', url: 'https://news.unn.net/rss/allArticle.xml' },
-  { media: '교수신문', url: 'https://www.kyosu.net/rss/allArticle.xml' },
-  { media: '베리타스알파', url: 'https://www.veritas-a.com/rss/allArticle.xml' },
-  { media: '대학지(유니프레스)', url: 'https://www.unipress.co.kr/rss/allArticle.xml' }
+  { media: '한국대학신문', url: 'https://news.unn.net/rss/allArticle.xml', site: 'unn.net' },
+  { media: '교수신문', url: 'https://www.kyosu.net/rss/allArticle.xml', site: 'kyosu.net' },
+  { media: '베리타스알파', url: 'https://www.veritas-a.com/rss/allArticle.xml', site: 'veritas-a.com' },
+  { media: '대학지(유니프레스)', url: 'https://www.unipress.co.kr/rss/allArticle.xml', site: 'unipress.co.kr' }
 ];
 
 // 해외 고등교육 정책 — 국내 이슈의 선행/대조 사례로 쓴다.
