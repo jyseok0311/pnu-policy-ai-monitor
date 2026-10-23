@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-10-23T00:23:42.014Z",
+  "collectedAt": "2026-10-23T01:07:57.836Z",
   "window": "최근 14일",
   "policy": "기관 공식 홈페이지 게시판만 수집. 개인 SNS·블로그는 수집하지 않는다.",
   "sources": [
@@ -55,10 +55,10 @@
   ],
   "total": 45,
   "byOrg": {
+    "행정안전부": 10,
     "교육부": 10,
     "과학기술정보통신부": 10,
     "산업통상부": 10,
-    "행정안전부": 10,
     "국가인공지능전략위원회": 5
   },
   "feeds": [
@@ -113,6 +113,24 @@
     }
   ],
   "items": [
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "제30호 태풍 ‘참피’, 호우·강풍 피해 대비 관계기관 대책회의 개최",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=130444",
+      "date": "2026-10-23",
+      "summary": ""
+    },
+    {
+      "org": "행정안전부",
+      "orgId": "mois",
+      "channel": "보도자료",
+      "title": "한국 재난안전통신망 운영 경험, 해외와 공유한다",
+      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=130426",
+      "date": "2026-10-23",
+      "summary": ""
+    },
     {
       "org": "교육부",
       "orgId": "moe",
@@ -407,24 +425,6 @@
       "channel": "보도자료",
       "title": "‘M.AX인증’ 해외에서도 통한다",
       "link": "https://www.motir.go.kr/kor/article/ATCL3f49a5a8c/172312/view?mno=&pageIndex=1",
-      "date": "2026-10-20",
-      "summary": ""
-    },
-    {
-      "org": "행정안전부",
-      "orgId": "mois",
-      "channel": "보도자료",
-      "title": "행안부 차관, ‘2026여수세계섬박람회’ 현장 점검... 폐막까지 안정적 마무리 당부",
-      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=130339",
-      "date": "2026-10-20",
-      "summary": ""
-    },
-    {
-      "org": "행정안전부",
-      "orgId": "mois",
-      "channel": "보도자료",
-      "title": "행정안전부, 핼러윈 앞두고 다중운집인파 안전관리 총력 대응",
-      "link": "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=130338",
       "date": "2026-10-20",
       "summary": ""
     },
