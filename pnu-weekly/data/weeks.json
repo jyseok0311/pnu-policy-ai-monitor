@@ -4,18 +4,18 @@
     "label": "2026.10.30 (Week 44)",
     "date": "2026-10-30",
     "range": "2026.10.23~2026.10.30",
-    "tier": 3,
-    "tierName": "경계",
-    "state": "Warning",
+    "tier": 2,
+    "tierName": "주의",
+    "state": "Watch",
     "complete": false,
     "live": true,
     "partial": true,
-    "sourceNote": "진행 중 — 2026.10.23부터 2026.10.23까지 1일치 수집 · 관련 기사 25건 (주차 마감 후 본문 생성)",
+    "sourceNote": "진행 중 — 2026.10.23부터 2026.10.23까지 1일치 수집 · 관련 기사 91건 (주차 마감 후 본문 생성)",
     "signal": {
-      "crisis": 0,
-      "warning": 8,
-      "total": 25,
-      "trend": "rising"
+      "crisis": 2.2,
+      "warning": 4.4,
+      "total": 91,
+      "trend": "stable"
     }
   },
   {
@@ -2218,30 +2218,30 @@
     "weeklyMetrics": [
       {
         "name": "위험신호 비중",
-        "value": "6.2",
+        "value": "6.3",
         "unit": "%",
-        "change": "+2.4%p",
+        "change": "+2.5%p",
         "dir": "up"
       },
       {
         "name": "수집 기사(비교기준)",
-        "value": "1,114",
+        "value": "1,137",
         "unit": "건",
-        "change": "+77건",
+        "change": "+100건",
         "dir": "up"
       },
       {
         "name": "정책/철학 기사",
-        "value": "361",
+        "value": "368",
         "unit": "건",
-        "change": "+76건",
+        "change": "+83건",
         "dir": "up"
       },
       {
         "name": "증강인재교육 기사",
-        "value": "302",
+        "value": "308",
         "unit": "건",
-        "change": "-47건",
+        "change": "-41건",
         "dir": "down"
       },
       {
@@ -2253,9 +2253,9 @@
       },
       {
         "name": "부울경 연계",
-        "value": "189",
+        "value": "192",
         "unit": "건",
-        "change": "-13건",
+        "change": "-10건",
         "dir": "down"
       },
       {
@@ -2267,7 +2267,7 @@
       },
       {
         "name": "해외 기사 (참고)",
-        "value": "404",
+        "value": "409",
         "unit": "건",
         "change": "신호·지표 미반영 · 별도 항목",
         "dir": "flat"
@@ -2779,10 +2779,10 @@
       "feedNote": "행정안전부 10건 · 교육부 10건 · 과학기술정보통신부 10건 · 산업통상부 10건 · 국가인공지능전략위원회 5건 (최근 14일)"
     },
     "comparable": {
-      "total": 1114,
-      "crisis": 3.1,
-      "warning": 3.1,
-      "risk": 6.2
+      "total": 1137,
+      "crisis": 3,
+      "warning": 3.3,
+      "risk": 6.3
     }
   },
   {
