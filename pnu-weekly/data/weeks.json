@@ -4,18 +4,18 @@
     "label": "2026.10.30 (Week 44)",
     "date": "2026-10-30",
     "range": "2026.10.23~2026.10.30",
-    "tier": 2,
-    "tierName": "주의",
-    "state": "Watch",
+    "tier": 4,
+    "tierName": "위기",
+    "state": "Crisis",
     "complete": false,
     "live": true,
     "partial": true,
-    "sourceNote": "진행 중 — 2026.10.23부터 2026.10.23까지 1일치 수집 · 관련 기사 91건 (주차 마감 후 본문 생성)",
+    "sourceNote": "진행 중 — 2026.10.23부터 2026.10.23까지 1일치 수집 · 관련 기사 112건 (주차 마감 후 본문 생성)",
     "signal": {
-      "crisis": 2.2,
-      "warning": 4.4,
-      "total": 91,
-      "trend": "stable"
+      "crisis": 4.5,
+      "warning": 5.4,
+      "total": 112,
+      "trend": "rising"
     }
   },
   {
@@ -2218,16 +2218,16 @@
     "weeklyMetrics": [
       {
         "name": "위험신호 비중",
-        "value": "6.3",
+        "value": "6.2",
         "unit": "%",
-        "change": "+2.5%p",
+        "change": "+2.4%p",
         "dir": "up"
       },
       {
         "name": "수집 기사(비교기준)",
-        "value": "1,137",
+        "value": "1,142",
         "unit": "건",
-        "change": "+100건",
+        "change": "+105건",
         "dir": "up"
       },
       {
@@ -2239,9 +2239,9 @@
       },
       {
         "name": "증강인재교육 기사",
-        "value": "308",
+        "value": "312",
         "unit": "건",
-        "change": "-41건",
+        "change": "-37건",
         "dir": "down"
       },
       {
@@ -2267,7 +2267,7 @@
       },
       {
         "name": "해외 기사 (참고)",
-        "value": "409",
+        "value": "411",
         "unit": "건",
         "change": "신호·지표 미반영 · 별도 항목",
         "dir": "flat"
@@ -2779,10 +2779,10 @@
       "feedNote": "행정안전부 10건 · 교육부 10건 · 과학기술정보통신부 10건 · 산업통상부 10건 · 국가인공지능전략위원회 5건 (최근 14일)"
     },
     "comparable": {
-      "total": 1137,
+      "total": 1142,
       "crisis": 3,
-      "warning": 3.3,
-      "risk": 6.3
+      "warning": 3.2,
+      "risk": 6.2
     }
   },
   {
