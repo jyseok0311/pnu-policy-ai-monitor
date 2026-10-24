@@ -1,16 +1,16 @@
 {
-  "collectedAt": "2026-10-24T16:28:43.279Z",
+  "collectedAt": "2026-10-24T19:19:48.487Z",
   "window": "2026-10-16 ~ 2026-10-23",
   "from": "2026-10-16",
   "to": "2026-10-23",
-  "total": 4257,
+  "total": 4258,
   "signal": {
     "crisis": 1.3,
     "warning": 3.4,
     "watch": 4.2
   },
   "byField": {
-    "정책/철학": 974,
+    "정책/철학": 975,
     "융합연구": 607,
     "증강인재교육": 983,
     "적응형행정": 173,
@@ -18,7 +18,7 @@
   },
   "byRegion": {
     "국내": 3248,
-    "해외": 1009
+    "해외": 1010
   },
   "byUniv": {
     "부산대": 113,
@@ -35,26 +35,26 @@
   "feeds": [
     {
       "feed": "구글뉴스:거점국립대",
-      "수신": 20,
-      "신규": 20,
+      "수신": 18,
+      "신규": 18,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:국립대 통합",
-      "수신": 12,
-      "신규": 7,
+      "수신": 11,
+      "신규": 6,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:글로컬대학",
-      "수신": 21,
-      "신규": 17,
+      "수신": 31,
+      "신규": 26,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:RISE 지역혁신중심 대학지원",
-      "수신": 5,
-      "신규": 4,
+      "수신": 4,
+      "신규": 3,
       "상태": "ok"
     },
     {
@@ -65,8 +65,8 @@
     },
     {
       "feed": "구글뉴스:대학 등록금",
-      "수신": 35,
-      "신규": 34,
+      "수신": 34,
+      "신규": 33,
       "상태": "ok"
     },
     {
@@ -77,20 +77,20 @@
     },
     {
       "feed": "구글뉴스:대학 구조개혁",
-      "수신": 9,
-      "신규": 9,
+      "수신": 2,
+      "신규": 2,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:부산대학교",
-      "수신": 39,
-      "신규": 38,
+      "수신": 37,
+      "신규": 36,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 행정 AI",
-      "수신": 26,
-      "신규": 24,
+      "수신": 24,
+      "신규": 22,
       "상태": "ok"
     },
     {
@@ -107,8 +107,8 @@
     },
     {
       "feed": "구글뉴스:공공기관 AI 행정혁신",
-      "수신": 29,
-      "신규": 27,
+      "수신": 16,
+      "신규": 15,
       "상태": "ok"
     },
     {
@@ -119,14 +119,14 @@
     },
     {
       "feed": "구글뉴스:AI중심대학",
-      "수신": 16,
-      "신규": 15,
+      "수신": 20,
+      "신규": 18,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:AX대학원",
-      "수신": 6,
-      "신규": 4,
+      "수신": 5,
+      "신규": 3,
       "상태": "ok"
     },
     {
@@ -138,7 +138,7 @@
     {
       "feed": "구글뉴스:SW중심대학",
       "수신": 6,
-      "신규": 3,
+      "신규": 2,
       "상태": "ok"
     },
     {
@@ -162,7 +162,7 @@
     {
       "feed": "해외:university funding cuts government",
       "수신": 52,
-      "신규": 47,
+      "신규": 48,
       "상태": "ok"
     },
     {
@@ -173,8 +173,8 @@
     },
     {
       "feed": "해외:university tuition free policy",
-      "수신": 20,
-      "신규": 20,
+      "수신": 21,
+      "신규": 21,
       "상태": "ok"
     },
     {
@@ -191,20 +191,20 @@
     },
     {
       "feed": "해외:regional university revitalization",
-      "수신": 9,
-      "신규": 9,
+      "수신": 10,
+      "신규": 10,
       "상태": "ok"
     },
     {
       "feed": "해외:university world rankings policy",
-      "수신": 10,
-      "신규": 8,
+      "수신": 11,
+      "신규": 10,
       "상태": "ok"
     },
     {
       "feed": "한국대학신문",
       "수신": 50,
-      "신규": 44,
+      "신규": 42,
       "상태": "ok"
     },
     {
@@ -216,13 +216,13 @@
     {
       "feed": "베리타스알파",
       "수신": 50,
-      "신규": 49,
+      "신규": 50,
       "상태": "ok"
     },
     {
       "feed": "대학지(유니프레스)",
-      "수신": 12,
-      "신규": 11,
+      "수신": 18,
+      "신규": 16,
       "상태": "ok (RSS 실패 → 구글 뉴스 site:unipress.co.kr 우회: fetch failed)"
     }
   ],
@@ -11472,10 +11472,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "오석근 부산시 경제부시장, 80억원 신고…주식만 48억대[재산공개]",
       "media": "뉴시스",
       "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1pQ0VIcWNXc21NcjctWkU3a2lVSHRwNEY5eTd1QmxKdHlsRm1RaWtMTkpLQXF4SUpoODE1VmVFS2RlY01RY1BYSXl3VzNvYTZKcUtISlR3TDdQdE16UXUyeTFUUFlzaVpxWVNDejlRalBpU0I2M3Fac9IBeEFVX3lxTE1pQ0VIcWNXc21NcjctWkU3a2lVSHRwNEY5eTd1QmxKdHlsRm1RaWtMTkpLQXF4SUpoODE1VmVFS2RlY01RY1BYSXl3VzNvYTZKcUtISlR3TDdQdE16UXUyeTFUUFlzaVpxWVNDejlRalBpU0I2M3Facw?oc=5",
-      "region": "domestic",
       "date": "2026-10-22",
       "field": "기타",
       "group": "기타",
@@ -11488,10 +11488,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "\"AI 도입하면 끝?\"…세계 병원들 \"AI 성과를 숫자로 증명하라’”",
       "media": "MEDI:GATE NEWS",
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBOYkpNVVN1TFltcExfbWRoYTI5bDk1c0lCY1VMcEI3THVyZ092UkN6Z0xseFQweGV5dWxiNG5KYVJKX2wyeVJTeFlGVUhYc0RXeDFrVHVn?oc=5",
-      "region": "domestic",
       "date": "2026-10-22",
       "field": "기타",
       "group": "기타",
@@ -11503,16 +11503,31 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Where Are Democrats on Education? 5 Takeaways from a Recent AEI Event",
       "media": "American Enterprise Institute - AEI",
       "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPdVNYQ1RnbW0zdExwcEZKTmR0aUZqODZkMldmSkk0ajJkWVNEOW5LZVVlNjR3c3B2dkZJM1VoN085ZFhxOFoxeWxyNm44bU0tOTF4MWF3dThoOUtCOW5uRktudjh6YllDTFZTeDF2UzhqTEVhWUFhM3J5QVNNMWlhVXdoMXJPSU5BcnM1aHI0SzhWUGd1TENLT09FXzl0WDBQS0Fib2hKazk5Rnk2SktzcVVYNnU4Zw?oc=5",
-      "region": "overseas",
       "date": "2026-10-22",
       "field": "기타",
       "group": "기타",
       "level": "normal",
       "univ": [],
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPdVNYQ1RnbW0zdExwcEZKTmR0aUZqODZkMldmSkk0ajJkWVNEOW5LZVVlNjR3c3B2dkZJM1VoN085ZFhxOFoxeWxyNm44bU0tOTF4MWF3dThoOUtCOW5uRktudjh6YllDTFZTeDF2Uz",
+      "feeds": [
+        "해외:higher education policy reform"
+      ]
+    },
+    {
+      "title": "TCU chancellor resigns as former leader returns to oversee Fort Worth university",
+      "media": "Fort Worth Report",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOV2pOVDZydFhjT2l0RU5OWUNQSEtXRUJqaW5YSnFKdHB2S2tKZGhIZEJpeXgzb2RGLU5vX2xnS2NGZEtKWUxpZGlfU3FOTURXd3llNzIyaFlYSUdlM2x5aER0U0IwNzVzRUJnNDVMa1dlY3dCMmhXelpTSkR0X01IdWJ6cmRSTnY0R2tNUjFRU1BKYUxiT1p4VXBOMk9vMlRtR293WUI1SzNrOVI5MEdFVHFQdHdiOGJGeU5tZg?oc=5",
+      "region": "overseas",
+      "date": "2026-10-22",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOV2pOVDZydFhjT2l0RU5OWUNQSEtXRUJqaW5YSnFKdHB2S2tKZGhIZEJpeXgzb2RGLU5vX2xnS2NGZEtKWUxpZGlfU3FOTURXd3llNzIyaFlYSUdlM2x5aER0U0IwNzVzRUJnNDVMa1",
       "feeds": [
         "해외:higher education policy reform"
       ]
