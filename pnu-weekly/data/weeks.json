@@ -4,17 +4,17 @@
     "label": "2026.10.30 (Week 44)",
     "date": "2026-10-30",
     "range": "2026.10.23~2026.10.30",
-    "tier": 4,
-    "tierName": "위기",
-    "state": "Crisis",
+    "tier": 3,
+    "tierName": "경계",
+    "state": "Warning",
     "complete": false,
     "live": true,
     "partial": true,
-    "sourceNote": "진행 중 — 2026.10.23부터 2026.10.24까지 2일치 수집 · 관련 기사 130건 (주차 마감 후 본문 생성)",
+    "sourceNote": "진행 중 — 2026.10.23부터 2026.10.24까지 2일치 수집 · 관련 기사 155건 (주차 마감 후 본문 생성)",
     "signal": {
-      "crisis": 3.8,
-      "warning": 5.4,
-      "total": 130,
+      "crisis": 3.2,
+      "warning": 5.2,
+      "total": 155,
       "trend": "rising"
     }
   },
@@ -2225,23 +2225,23 @@
       },
       {
         "name": "수집 기사(비교기준)",
-        "value": "1,143",
+        "value": "1,146",
         "unit": "건",
-        "change": "+106건",
+        "change": "+109건",
         "dir": "up"
       },
       {
         "name": "정책/철학 기사",
-        "value": "368",
+        "value": "369",
         "unit": "건",
-        "change": "+83건",
+        "change": "+84건",
         "dir": "up"
       },
       {
         "name": "증강인재교육 기사",
-        "value": "313",
+        "value": "314",
         "unit": "건",
-        "change": "-36건",
+        "change": "-35건",
         "dir": "down"
       },
       {
@@ -2253,9 +2253,9 @@
       },
       {
         "name": "부울경 연계",
-        "value": "192",
+        "value": "193",
         "unit": "건",
-        "change": "-10건",
+        "change": "-9건",
         "dir": "down"
       },
       {
@@ -2267,7 +2267,7 @@
       },
       {
         "name": "해외 기사 (참고)",
-        "value": "418",
+        "value": "419",
         "unit": "건",
         "change": "신호·지표 미반영 · 별도 항목",
         "dir": "flat"
@@ -2779,7 +2779,7 @@
       "feedNote": "행정안전부 10건 · 교육부 10건 · 과학기술정보통신부 10건 · 산업통상부 10건 · 국가인공지능전략위원회 5건 (최근 14일)"
     },
     "comparable": {
-      "total": 1143,
+      "total": 1146,
       "crisis": 3,
       "warning": 3.2,
       "risk": 6.2
