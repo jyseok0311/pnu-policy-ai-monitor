@@ -4,17 +4,17 @@
     "label": "2026.11.06 (Week 45)",
     "date": "2026-11-06",
     "range": "2026.10.30~2026.11.06",
-    "tier": 2,
-    "tierName": "주의",
-    "state": "Watch",
+    "tier": 3,
+    "tierName": "경계",
+    "state": "Warning",
     "complete": false,
     "live": true,
     "partial": true,
-    "sourceNote": "진행 중 — 2026.10.30부터 2026.10.30까지 1일치 수집 · 관련 기사 18건 (주차 마감 후 본문 생성)",
+    "sourceNote": "진행 중 — 2026.10.30부터 2026.10.30까지 1일치 수집 · 관련 기사 28건 (주차 마감 후 본문 생성)",
     "signal": {
-      "crisis": 0,
-      "warning": 5.6,
-      "total": 18,
+      "crisis": 3.6,
+      "warning": 3.6,
+      "total": 28,
       "trend": "rising"
     }
   },
@@ -2190,9 +2190,9 @@
       },
       {
         "name": "수집 기사(비교기준)",
-        "value": "1,157",
+        "value": "1,163",
         "unit": "건",
-        "change": "+10건",
+        "change": "+16건",
         "dir": "up"
       },
       {
@@ -2211,16 +2211,16 @@
       },
       {
         "name": "산업 기사",
-        "value": "89",
+        "value": "91",
         "unit": "건",
-        "change": "+14건",
+        "change": "+16건",
         "dir": "up"
       },
       {
         "name": "부울경 연계",
-        "value": "219",
+        "value": "220",
         "unit": "건",
-        "change": "+26건",
+        "change": "+27건",
         "dir": "up"
       },
       {
@@ -2232,7 +2232,7 @@
       },
       {
         "name": "해외 기사 (참고)",
-        "value": "410",
+        "value": "420",
         "unit": "건",
         "change": "신호·지표 미반영 · 별도 항목",
         "dir": "flat"
@@ -2767,7 +2767,7 @@
       "feedNote": "교육부 10건 · 과학기술정보통신부 10건 · 산업통상부 10건 · 행정안전부 10건 · 국가인공지능전략위원회 4건 (최근 14일)"
     },
     "comparable": {
-      "total": 1157,
+      "total": 1163,
       "crisis": 1.7,
       "warning": 3.3,
       "risk": 5
