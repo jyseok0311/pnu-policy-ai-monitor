@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-11-06T01:59:17.376Z",
+  "collectedAt": "2026-11-06T03:19:17.051Z",
   "date": "2026-11-06",
   "window": {
     "law": 120,
@@ -15,15 +15,17 @@
       "kept": 0
     },
     "admrul": {
-      "status": "ok",
+      "status": "carried",
       "label": "행정규칙",
-      "fetched": 0,
+      "error": "fetch failed",
+      "carriedFrom": "2026-11-05",
       "kept": 0
     },
     "ordin": {
-      "status": "ok",
+      "status": "carried",
       "label": "자치법규",
-      "fetched": 0,
+      "error": "fetch failed",
+      "carriedFrom": "2026-11-05",
       "kept": 0
     },
     "notice": {
