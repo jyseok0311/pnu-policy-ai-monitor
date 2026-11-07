@@ -1,9 +1,9 @@
 {
-  "collectedAt": "2026-11-07T13:49:13.835Z",
+  "collectedAt": "2026-11-07T18:31:37.536Z",
   "window": "2026-10-30 ~ 2026-11-06",
   "from": "2026-10-30",
   "to": "2026-11-06",
-  "total": 3945,
+  "total": 3946,
   "signal": {
     "crisis": 0.8,
     "warning": 2.7,
@@ -14,11 +14,11 @@
     "융합연구": 611,
     "증강인재교육": 1039,
     "적응형행정": 221,
-    "기타": 1162
+    "기타": 1163
   },
   "byRegion": {
     "국내": 2918,
-    "해외": 1027
+    "해외": 1028
   },
   "byUniv": {
     "부산대": 149,
@@ -35,32 +35,32 @@
   "feeds": [
     {
       "feed": "구글뉴스:거점국립대",
-      "수신": 15,
+      "수신": 14,
       "신규": 13,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:국립대 통합",
-      "수신": 12,
-      "신규": 11,
+      "수신": 10,
+      "신규": 9,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:글로컬대학",
-      "수신": 12,
-      "신규": 12,
+      "수신": 11,
+      "신규": 11,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:RISE 지역혁신중심 대학지원",
-      "수신": 3,
-      "신규": 3,
+      "수신": 2,
+      "신규": 2,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 정원 감축",
-      "수신": 2,
-      "신규": 2,
+      "수신": 1,
+      "신규": 1,
       "상태": "ok"
     },
     {
@@ -71,8 +71,8 @@
     },
     {
       "feed": "구글뉴스:대학 생성형 AI",
-      "수신": 17,
-      "신규": 17,
+      "수신": 18,
+      "신규": 18,
       "상태": "ok"
     },
     {
@@ -83,14 +83,14 @@
     },
     {
       "feed": "구글뉴스:부산대학교",
-      "수신": 27,
-      "신규": 26,
+      "수신": 24,
+      "신규": 23,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 행정 AI",
       "수신": 14,
-      "신규": 13,
+      "신규": 14,
       "상태": "ok"
     },
     {
@@ -101,20 +101,20 @@
     },
     {
       "feed": "구글뉴스:공공부문 생성형 AI",
-      "수신": 16,
-      "신규": 16,
+      "수신": 14,
+      "신규": 14,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:공공기관 AI 행정혁신",
-      "수신": 24,
-      "신규": 22,
+      "수신": 26,
+      "신규": 25,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:생성형 AI 업무 도입",
-      "수신": 23,
-      "신규": 23,
+      "수신": 24,
+      "신규": 24,
       "상태": "ok"
     },
     {
@@ -161,26 +161,26 @@
     },
     {
       "feed": "해외:university funding cuts government",
-      "수신": 28,
-      "신규": 28,
+      "수신": 29,
+      "신규": 29,
       "상태": "ok"
     },
     {
       "feed": "해외:national university merger",
-      "수신": 12,
+      "수신": 11,
       "신규": 10,
       "상태": "ok"
     },
     {
       "feed": "해외:university tuition free policy",
-      "수신": 18,
-      "신규": 17,
+      "수신": 16,
+      "신규": 15,
       "상태": "ok"
     },
     {
       "feed": "해외:generative AI university policy",
-      "수신": 27,
-      "신규": 27,
+      "수신": 28,
+      "신규": 28,
       "상태": "ok"
     },
     {
@@ -197,7 +197,7 @@
     },
     {
       "feed": "해외:university world rankings policy",
-      "수신": 12,
+      "수신": 11,
       "신규": 9,
       "상태": "ok"
     },
@@ -210,7 +210,7 @@
     {
       "feed": "교수신문",
       "수신": 50,
-      "신규": 48,
+      "신규": 41,
       "상태": "ok"
     },
     {
@@ -221,8 +221,8 @@
     },
     {
       "feed": "대학지(유니프레스)",
-      "수신": 17,
-      "신규": 17,
+      "수신": 16,
+      "신규": 16,
       "상태": "ok (RSS 실패 → 구글 뉴스 site:unipress.co.kr 우회: fetch failed)"
     }
   ],
@@ -9100,10 +9100,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "“인구 줄자 환자도 감소”…일본은 의대정원 감축한다",
       "media": "동아일보",
       "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1oV19DUS05UUxIUW54UnBha3I4Mlh0V3ZTVGlzRWVscUs3bHk1UGJ6QUNIaHhWaVRqZmNaaHhnN3hxZHpSRjR4a0FRTEpoRzM4a0dBTHpVUFh1ZEZ6MHdwWmtPTVBQM0daN05XWlNsTUhQdzDSAWZBVV95cUxNR0cwcTVJS0gxdS1KUWpUYVYtdVVfUm4xVEZxWjJXd2xkeVFqUUcwMnpleW9BTWotNGh3QVp6OEFMdzd0UmNBQW5VY3pyZGhPZlA5Z25CNHdDQkF6RDVGZ0NKaFpuVmc?oc=5",
-      "region": "domestic",
       "date": "2026-11-05",
       "field": "정책/철학",
       "group": "교육",
@@ -9116,10 +9116,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "AI 도입 확대하던 애플(AAPL.O)의 역주행...내부 AI 활용 비용 줄인다",
       "media": "메디컬투데이",
       "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB6ZFJabFFaRmFFbDJpQU1NajVCOWsybE9DTkNlTng0b1JnbGt6X1VvZmx4WkYyRUxjeHQxWFBUTjVJdllReW82T0RnN0h3Uk1tWHV6OUdVby1wRUI1cGV1TENiSmhCcnUtT2hmTQ?oc=5",
-      "region": "domestic",
       "date": "2026-11-05",
       "field": "기타",
       "group": "기타",
@@ -9131,10 +9131,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "AVMA plans for changes to veterinary accreditation to comply with Dept of Ed rules",
       "media": "American Veterinary Medical Association",
       "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQSFNCQVI4ZDBSSkVkczhMV2E1bVktUUp6WWxSTFlYUVRFQ0dVS3R2ekpHMTBxUGNrZHZYNXRmUHdqZGt3V294SDBDNmc1X3RlVmZoUlZlcmNicWZnQzl0bWxDZktTLWtBN3R5MUd1RnNyUlplNnZQeEt1RDFzNmJnWktwV0Joek5WamtrLWxqZi1HZHNy?oc=5",
-      "region": "overseas",
       "date": "2026-11-05",
       "field": "정책/철학",
       "group": "교육",
@@ -9147,10 +9147,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "The great reckoning for American higher education",
       "media": "Alabama Political Reporter",
       "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOU2lFQVI4bUFEYXBadWZNYnRaYk54a28xS3Q1OUR6Q05TelZfTVFnREJDbUpwcFEzdlo1VEk2ci1uV3pVb0R3NWNfZXhKX0ZnQjJvZEhlbHRldE5pQ29mbEM3WVl3MlF3MmRNY2VWZFdESk44RXUzeDVreXJrYWFJNUthWjlTN2M?oc=5",
-      "region": "overseas",
       "date": "2026-11-05",
       "field": "정책/철학",
       "group": "교육",
@@ -9162,10 +9162,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "WATCH: What Universities Get Wrong About Africa",
       "media": "Minding The Campus",
       "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOOGxfM0R0OTliN2dKYlM0TGgwNEdOZlZnOFNRd3Fna092R19MUk1MS2JuanI2SXlsM1Rhd1k0N1c4Z3ZGQWlCNUF4SmswYlVMTTRKaVcxSF9LSzRwSm52UG5DV1VRd1FPMVd6cHl3ZzdVNEdCWDhvNlZPR1gwZ1ZvMklEakpBaGNwcmVRaU5DR2I?oc=5",
-      "region": "overseas",
       "date": "2026-11-05",
       "field": "기타",
       "group": "기타",
@@ -9177,10 +9177,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Higher Education and the 120th Congress: What New Committee Leadership Means for Oversight of Colleges and Universities",
       "media": "Foley Hoag",
       "link": "https://news.google.com/rss/articles/CBMiowJBVV95cUxQM3hXVFRGMUFCbngzbzdZTnJ5MW8tQ3E4SEVGVk9LcXpFSkEyQm9KV3MyVDE3T1k1WkVrNy04WnhqQ242R1FyZ1ZIcEgtU2NzWVc2amxhZWJnaVEyUkFyV20wVmZRajJxVVlJM1YwVEJSbUdCclN2U3JnTVB1aXVpNWlSX1RNaGNWOGxLTjlSVDAtQUJOUHZNUHpPclUzeWJ6YXpkN1JYaDFFQ0lwZFlabEZvbEw5dHg3clpLSGQ2RmpUbmdvWDJ4WlJoSDFtcUtWVkJIYmtvVmtKWGxjZkxfX0stQTJFdXpaTUZWLWY3cjZybkwzR0xvU0MzMjMwTG5faFZNTGV1SnlWRm5La0RhUXBSWThNeGhrb2h3SzFTdUU4OUE?oc=5",
-      "region": "overseas",
       "date": "2026-11-05",
       "field": "정책/철학",
       "group": "교육",
@@ -9192,10 +9192,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Arkansas higher education officials propose eliminating two scholarship programs",
       "media": "Northwest Arkansas Democrat-Gazette",
       "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPN292QzVfc2ozQlhIRUhSQUljdkl5X01mY0xLUXZaeFNnTGVTNkhrNzdSaUlWeEtYZ21CYWJVODZmUThBTktjc3VxM3A2T0RER2JQOFFTNkN6R2FaSkV6MHRGMXdCSF84S2Z6cmpsQ1o2S2NMdWVWcEtWaGxtRnhZb1JpUTRpMTNocXlVc2kzTEk?oc=5",
-      "region": "overseas",
       "date": "2026-11-05",
       "field": "정책/철학",
       "group": "교육",
@@ -9207,10 +9207,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Russian Regions Cut Payments to Families of Fallen Soldiers",
       "media": "Bloomberg.com",
       "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPZFNNOE5ZR0s2OVF3ZndmR2I1ZDhwbl9rUDM2cEJCUExIUTNjT1RUX3AteGFYZmtFZjJZZEVjc1BObE0yaEllbXIyM2dSeWhlRkdTR3ZvQzNmQXZaSVdPTVN6MTlmX3d4azc5YW40UjRuendYQ0FSOE15U0NiUGwxZURvZ1VjMnp3NHhmckpXYXlSTlJiVV9pNWRkVXY1cGFYbHVEanlvRDR2bU9SbFp3?oc=5",
-      "region": "overseas",
       "date": "2026-11-05",
       "field": "기타",
       "group": "기타",
@@ -9222,10 +9222,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "2027 State Tax Competitiveness Index | Full Report",
       "media": "Tax Foundation",
       "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxONXVEVjcxTExxTkNqVUo5Vkh1ckJtNzJCbDVtWm9KZGMwdmN5R0lfTW13ZUQzNHhuTW5nbFUtR21tdmg4QWxPTmRKSVFFWVM1TjlkaXhOTW9nZ1l1d3RRUE9SbWo5ZnI2aW11TEtlYjNwdDI1VU1yQnBBS2o0QXVnTXRwc0pVZ3ZXOEE?oc=5",
-      "region": "overseas",
       "date": "2026-11-05",
       "field": "기타",
       "group": "기타",
@@ -9234,6 +9234,21 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxONXVEVjcxTExxTkNqVUo5Vkh1ckJtNzJCbDVtWm9KZGMwdmN5R0lfTW13ZUQzNHhuTW5nbFUtR21tdmg4QWxPTmRKSVFFWVM1TjlkaXhOTW9nZ1l1d3RRUE9SbWo5ZnI2aW11TEtlYj",
       "feeds": [
         "해외:university world rankings policy"
+      ]
+    },
+    {
+      "title": "Texas Agencies Asked for $4.3B Less in Appropriations, but $13.3B More Elsewhere",
+      "media": "Texas Scorecard",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQT3p2NjNWYlVWNTBpR1FDZlFDNnJaUkV5azc2cFl6Rm5IV250aVNHR0VBbHJJaElkSXF1Mk8yTGRWV2FxYWZmTncxT3otNTBSVE5fVlU0djBlaVFhTkpMLTJvVlVEcFV5dkZOZW9sWmlYLTlnNmxzV2VIRjRKRGlWRlZxWWZfdC1xZ1M2LV9vQk5lcVQxNXFBM2p6OXZ4V19RcDBuVVVUX3RkUkMyVEhsSw?oc=5",
+      "region": "overseas",
+      "date": "2026-11-05",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQT3p2NjNWYlVWNTBpR1FDZlFDNnJaUkV5azc2cFl6Rm5IV250aVNHR0VBbHJJaElkSXF1Mk8yTGRWV2FxYWZmTncxT3otNTBSVE5fVlU0djBlaVFhTkpMLTJvVlVEcFV5dkZOZW9sWm",
+      "feeds": [
+        "해외:higher education policy reform"
       ]
     },
     {
