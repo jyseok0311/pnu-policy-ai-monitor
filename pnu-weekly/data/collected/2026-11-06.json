@@ -1,12 +1,12 @@
 {
-  "collectedAt": "2026-11-14T16:54:00.144Z",
+  "collectedAt": "2026-11-14T21:12:27.271Z",
   "window": "2026-11-06 ~ 2026-11-13",
   "from": "2026-11-06",
   "to": "2026-11-13",
-  "total": 3265,
+  "total": 3267,
   "signal": {
     "crisis": 0.7,
-    "warning": 3.3,
+    "warning": 3.4,
     "watch": 4.6
   },
   "byField": {
@@ -14,11 +14,11 @@
     "융합연구": 597,
     "증강인재교육": 895,
     "적응형행정": 146,
-    "기타": 906
+    "기타": 908
   },
   "byRegion": {
     "국내": 2537,
-    "해외": 728
+    "해외": 730
   },
   "byUniv": {
     "부산대": 122,
@@ -35,8 +35,8 @@
   "feeds": [
     {
       "feed": "구글뉴스:거점국립대",
-      "수신": 18,
-      "신규": 18,
+      "수신": 17,
+      "신규": 17,
       "상태": "ok"
     },
     {
@@ -47,8 +47,8 @@
     },
     {
       "feed": "구글뉴스:글로컬대학",
-      "수신": 20,
-      "신규": 19,
+      "수신": 22,
+      "신규": 21,
       "상태": "ok"
     },
     {
@@ -65,14 +65,14 @@
     },
     {
       "feed": "구글뉴스:대학 등록금",
-      "수신": 34,
-      "신규": 31,
+      "수신": 33,
+      "신규": 30,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 생성형 AI",
-      "수신": 29,
-      "신규": 29,
+      "수신": 30,
+      "신규": 30,
       "상태": "ok"
     },
     {
@@ -83,8 +83,8 @@
     },
     {
       "feed": "구글뉴스:부산대학교",
-      "수신": 32,
-      "신규": 30,
+      "수신": 31,
+      "신규": 29,
       "상태": "ok"
     },
     {
@@ -114,13 +114,13 @@
     {
       "feed": "구글뉴스:생성형 AI 업무 도입",
       "수신": 21,
-      "신규": 20,
+      "신규": 19,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:AI중심대학",
       "수신": 19,
-      "신규": 15,
+      "신규": 16,
       "상태": "ok"
     },
     {
@@ -138,7 +138,7 @@
     {
       "feed": "구글뉴스:SW중심대학",
       "수신": 9,
-      "신규": 2,
+      "신규": 1,
       "상태": "ok"
     },
     {
@@ -155,20 +155,20 @@
     },
     {
       "feed": "해외:higher education policy reform",
-      "수신": 27,
-      "신규": 27,
+      "수신": 29,
+      "신규": 29,
       "상태": "ok"
     },
     {
       "feed": "해외:university funding cuts government",
-      "수신": 21,
-      "신규": 19,
+      "수신": 28,
+      "신규": 26,
       "상태": "ok"
     },
     {
       "feed": "해외:national university merger",
-      "수신": 16,
-      "신규": 16,
+      "수신": 13,
+      "신규": 13,
       "상태": "ok"
     },
     {
@@ -179,14 +179,14 @@
     },
     {
       "feed": "해외:generative AI university policy",
-      "수신": 24,
-      "신규": 24,
+      "수신": 26,
+      "신규": 26,
       "상태": "ok"
     },
     {
       "feed": "해외:declining student enrollment university",
       "수신": 25,
-      "신규": 22,
+      "신규": 19,
       "상태": "ok"
     },
     {
@@ -197,20 +197,20 @@
     },
     {
       "feed": "해외:university world rankings policy",
-      "수신": 8,
+      "수신": 9,
       "신규": 8,
       "상태": "ok"
     },
     {
       "feed": "한국대학신문",
       "수신": 50,
-      "신규": 48,
+      "신규": 30,
       "상태": "ok"
     },
     {
       "feed": "교수신문",
       "수신": 50,
-      "신규": 49,
+      "신규": 40,
       "상태": "ok"
     },
     {
@@ -221,8 +221,8 @@
     },
     {
       "feed": "대학지(유니프레스)",
-      "수신": 10,
-      "신규": 10,
+      "수신": 15,
+      "신규": 15,
       "상태": "ok (RSS 실패 → 구글 뉴스 site:unipress.co.kr 우회: fetch failed)"
     }
   ],
@@ -7948,10 +7948,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "성남시, 기업과 대학을 잇다 HD현대 AI 연구원 ‘재능기부 강연회' 열어",
       "media": "한국시민기자협회 뉴스포털1",
       "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9STl9WYTBzZmtYM3lndUxYenFTVW1sQWR0SEItcXdobW4wejlQeTNUTS00TjFDOWM3MnFUb3FzSWRZRV90SjdKN0FRbi1kVW9DOEUwMUxNMkpyc3hhUTZrdWZ5UWRBaFM0ZGJWVWJhYkhqeGJyOTlB0gF3QVVfeXFMT1JOX1ZhMHNma1gzeWd1TFh6cVNVbWxBZHRIQi1xd2htbjB6OVB5M1RNLTROMUM5YzcycVRvcXNJZFlFX3RKN0o3QVFuLWRVb0M4RTAxTE0ySnJzeGFRNmt1ZnlRZEFoUzRkYlZVYmFiSGp4YnI5OUE?oc=5",
-      "region": "domestic",
       "date": "2026-11-12",
       "field": "융합연구",
       "group": "교육",
@@ -7963,10 +7963,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "게임업계 40% 생성형 AI 업무 활용…사용자 57% 매일 쓴다",
       "media": "토큰포스트",
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBLV2FYdUpyTFB1Qi1SZVllOHJXWVVYQUx0ZVpLRmRGMnJqTU90dGxfaDcxRFVaSnJVeGFRR3BpdjdWdUhpTno2M21OalV1LWRma1pvSVd30gFWQVVfeXFMUEtXYVh1SnJMUHVCLVJlWWU4cldZVVhBTHRlWktGZEYycmpNT3R0bF9oNzFEVVpKclV4YVFHcGl2N1Z1SGlOejYzbU5qVXUtZGZrWm9JV3c?oc=5",
-      "region": "domestic",
       "date": "2026-11-12",
       "field": "적응형행정",
       "group": "산업",
@@ -7975,6 +7975,37 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiVkFVX3lxTFBLV2FYdUpyTFB1Qi1SZVllOHJXWVVYQUx0ZVpLRmRGMnJqTU90dGxfaDcxRFVaSnJVeGFRR3BpdjdWdUhpTno2M21OalV1LWRma1pvSVd30gFWQVVfeXFMUEtXYVh1SnJMUHVCLVJlWW",
       "feeds": [
         "구글뉴스:생성형 AI 업무 도입"
+      ]
+    },
+    {
+      "title": "CDC cuts $29M from Texas health groups for HIV prevention",
+      "media": "Dallas News",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNczV3ZEFBdmVrMEpxVW1ZZzZnWGQ3em1PcHJUUWtMVUkzWDMwT0hiN21kRk82ZjBNVXppYm8xNEc3YnBEWURwal82WnFzRGVBTVpkdHQ2T0o1UkJKTTJ0NkFyLXdnSzVVbUV1U2tUbGFfWnBpd1AzTTZGZDZ0eXAxYW5mekZLcUJBazhDZ0RwcXVUU2tNTTlUWndJU3BfRnRIWGU4TURYYm9odndsdno2Z1ZXZG0?oc=5",
+      "region": "overseas",
+      "date": "2026-11-12",
+      "field": "기타",
+      "group": "기타",
+      "level": "warning",
+      "why": "cuts",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNczV3ZEFBdmVrMEpxVW1ZZzZnWGQ3em1PcHJUUWtMVUkzWDMwT0hiN21kRk82ZjBNVXppYm8xNEc3YnBEWURwal82WnFzRGVBTVpkdHQ2T0o1UkJKTTJ0NkFyLXdnSzVVbUV1U2tUbG",
+      "feeds": [
+        "해외:university funding cuts government"
+      ]
+    },
+    {
+      "title": "York College nears $7.4M purchase of shuttering Penn State campus",
+      "media": "Higher Ed Dive",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPaTdqRzJxazlsV3c4Nm13ZFVmT3pIbEdmVkZRYjZjY3MtVlpTNkFqaTI2eFNfWmhScEY0dXFWd0YyNEtIMFU3RUdhT29VMW5JRVpVaGZBWmhScXhKMVlrZXJ6MWpCUEV6dWhiYVpzTnRfalY4aHpDR09zdDd3N002Y2d2OEdrbWl0cmwtS292UGxMTmpVbzU4aHA4YmNjZ3dFcU9WNWZSS2E?oc=5",
+      "region": "overseas",
+      "date": "2026-11-12",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPaTdqRzJxazlsV3c4Nm13ZFVmT3pIbEdmVkZRYjZjY3MtVlpTNkFqaTI2eFNfWmhScEY0dXFWd0YyNEtIMFU3RUdhT29VMW5JRVpVaGZBWmhScXhKMVlrZXJ6MWpCUEV6dWhiYVpzTn",
+      "feeds": [
+        "해외:declining student enrollment university"
       ]
     },
     {
