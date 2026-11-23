@@ -1,150 +1,150 @@
 {
-  "collectedAt": "2026-11-23T00:04:56.433Z",
+  "collectedAt": "2026-11-23T02:12:41.938Z",
   "window": "2026-11-20 ~ (진행 중)",
   "from": "2026-11-20",
   "to": null,
-  "total": 1097,
+  "total": 1235,
   "signal": {
-    "crisis": 0.9,
-    "warning": 3.2,
-    "watch": 4.6
+    "crisis": 1,
+    "warning": 2.8,
+    "watch": 4.1
   },
   "byField": {
-    "정책/철학": 258,
-    "융합연구": 149,
-    "증강인재교육": 266,
-    "적응형행정": 42,
-    "기타": 359
+    "정책/철학": 279,
+    "융합연구": 176,
+    "증강인재교육": 312,
+    "적응형행정": 50,
+    "기타": 393
   },
   "byRegion": {
-    "국내": 772,
-    "해외": 325
+    "국내": 896,
+    "해외": 339
   },
   "byUniv": {
-    "부산대": 29,
+    "부산대": 36,
     "경북대": 1,
     "전남대": 1,
-    "전북대": 12,
+    "전북대": 13,
     "충남대": 0,
-    "충북대": 10,
+    "충북대": 12,
     "강원대": 0,
     "경상국립대": 19,
-    "제주대": 11,
-    "서울대": 6
+    "제주대": 12,
+    "서울대": 9
   },
   "feeds": [
     {
       "feed": "구글뉴스:거점국립대",
-      "수신": 7,
-      "신규": 7,
+      "수신": 11,
+      "신규": 10,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:국립대 통합",
-      "수신": 6,
-      "신규": 5,
+      "수신": 11,
+      "신규": 11,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:글로컬대학",
-      "수신": 19,
-      "신규": 18,
+      "수신": 22,
+      "신규": 21,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:RISE 지역혁신중심 대학지원",
-      "수신": 5,
-      "신규": 5,
+      "수신": 9,
+      "신규": 9,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 정원 감축",
-      "수신": 1,
-      "신규": 1,
-      "상태": "ok"
-    },
-    {
-      "feed": "구글뉴스:대학 등록금",
-      "수신": 17,
-      "신규": 16,
-      "상태": "ok"
-    },
-    {
-      "feed": "구글뉴스:대학 생성형 AI",
-      "수신": 23,
-      "신규": 22,
-      "상태": "ok"
-    },
-    {
-      "feed": "구글뉴스:대학 구조개혁",
       "수신": 2,
       "신규": 2,
       "상태": "ok"
     },
     {
+      "feed": "구글뉴스:대학 등록금",
+      "수신": 24,
+      "신규": 23,
+      "상태": "ok"
+    },
+    {
+      "feed": "구글뉴스:대학 생성형 AI",
+      "수신": 29,
+      "신규": 28,
+      "상태": "ok"
+    },
+    {
+      "feed": "구글뉴스:대학 구조개혁",
+      "수신": 9,
+      "신규": 8,
+      "상태": "ok"
+    },
+    {
       "feed": "구글뉴스:부산대학교",
-      "수신": 23,
-      "신규": 21,
+      "수신": 25,
+      "신규": 24,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:대학 행정 AI",
-      "수신": 19,
-      "신규": 17,
-      "상태": "ok"
-    },
-    {
-      "feed": "구글뉴스:대학 학사행정 시스템",
-      "수신": 0,
-      "신규": 0,
-      "상태": "ok"
-    },
-    {
-      "feed": "구글뉴스:공공부문 생성형 AI",
-      "수신": 13,
-      "신규": 13,
-      "상태": "ok"
-    },
-    {
-      "feed": "구글뉴스:공공기관 AI 행정혁신",
-      "수신": 22,
+      "수신": 24,
       "신규": 18,
       "상태": "ok"
     },
     {
+      "feed": "구글뉴스:대학 학사행정 시스템",
+      "수신": 2,
+      "신규": 2,
+      "상태": "ok"
+    },
+    {
+      "feed": "구글뉴스:공공부문 생성형 AI",
+      "수신": 27,
+      "신규": 27,
+      "상태": "ok"
+    },
+    {
+      "feed": "구글뉴스:공공기관 AI 행정혁신",
+      "수신": 23,
+      "신규": 19,
+      "상태": "ok"
+    },
+    {
       "feed": "구글뉴스:생성형 AI 업무 도입",
+      "수신": 20,
+      "신규": 13,
+      "상태": "ok"
+    },
+    {
+      "feed": "구글뉴스:AI중심대학",
       "수신": 22,
       "신규": 20,
       "상태": "ok"
     },
     {
-      "feed": "구글뉴스:AI중심대학",
-      "수신": 29,
-      "신규": 25,
-      "상태": "ok"
-    },
-    {
       "feed": "구글뉴스:AX대학원",
-      "수신": 3,
-      "신규": 2,
+      "수신": 8,
+      "신규": 5,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:AI대학원 선정",
-      "수신": 1,
-      "신규": 0,
+      "수신": 5,
+      "신규": 1,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:SW중심대학",
-      "수신": 8,
-      "신규": 0,
+      "수신": 13,
+      "신규": 6,
       "상태": "ok"
     },
     {
       "feed": "구글뉴스:첨단분야 혁신융합대학",
-      "수신": 13,
-      "신규": 13,
+      "수신": 24,
+      "신규": 22,
       "상태": "ok"
     },
     {
@@ -155,83 +155,83 @@
     },
     {
       "feed": "해외:higher education policy reform",
-      "수신": 27,
-      "신규": 27,
+      "수신": 30,
+      "신규": 30,
       "상태": "ok"
     },
     {
       "feed": "해외:university funding cuts government",
-      "수신": 25,
+      "수신": 26,
       "신규": 25,
       "상태": "ok"
     },
     {
       "feed": "해외:national university merger",
-      "수신": 4,
-      "신규": 4,
-      "상태": "ok"
-    },
-    {
-      "feed": "해외:university tuition free policy",
-      "수신": 7,
+      "수신": 8,
       "신규": 7,
       "상태": "ok"
     },
     {
-      "feed": "해외:generative AI university policy",
+      "feed": "해외:university tuition free policy",
       "수신": 13,
-      "신규": 13,
+      "신규": 12,
+      "상태": "ok"
+    },
+    {
+      "feed": "해외:generative AI university policy",
+      "수신": 29,
+      "신규": 28,
       "상태": "ok"
     },
     {
       "feed": "해외:declining student enrollment university",
-      "수신": 24,
-      "신규": 23,
+      "수신": 29,
+      "신규": 27,
       "상태": "ok"
     },
     {
       "feed": "해외:regional university revitalization",
-      "수신": 6,
-      "신규": 6,
+      "수신": 9,
+      "신규": 9,
       "상태": "ok"
     },
     {
       "feed": "해외:university world rankings policy",
-      "수신": 13,
-      "신규": 13,
+      "수신": 12,
+      "신규": 12,
       "상태": "ok"
     },
     {
       "feed": "한국대학신문",
       "수신": 50,
-      "신규": 9,
+      "신규": 47,
       "상태": "ok"
     },
     {
       "feed": "교수신문",
       "수신": 50,
-      "신규": 5,
+      "신규": 48,
       "상태": "ok"
     },
     {
       "feed": "베리타스알파",
       "수신": 50,
-      "신규": 0,
+      "신규": 49,
       "상태": "ok"
     },
     {
       "feed": "대학지(유니프레스)",
-      "수신": 21,
-      "신규": 21,
+      "수신": 24,
+      "신규": 24,
       "상태": "ok (RSS 실패 → 구글 뉴스 site:unipress.co.kr 우회: fetch failed)"
     }
   ],
   "items": [
     {
+      "region": "overseas",
       "title": "Is South Korea pointing the way for Asian excellence initiatives?",
       "media": "Times Higher Education",
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNT2FPb2d2LWJjY0o5a2dTYVB0T3lVMXhnaFdnZWhfUjZ5MmFMNFdjZno5N1NNM0hyLTNVdDZNTENaNWg3TS1WR2V2V2tXRWYyZE05ZEVKZGFrWmVWcVIxbW4tN0xhNW9JZ3pIYVhXZi1pU3NPUkpMeTE5N1F6bFhXTjF3OFZOSW91eDhDQ0ZVTTQ4dURTOVFqNk11X3A?oc=5",
-      "region": "overseas",
       "date": "2026-11-23",
       "field": "기타",
       "group": "기타",
@@ -243,10 +243,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "The UK mustn’t stifle overseas investment in bioscience spin-outs",
       "media": "Times Higher Education",
       "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOVFFlbVB0WTAyeTNvZGxDbmhaZGxpQ3dTekw4UHpxRjFCZE9hV2VTam9Qd29HU09jZjZJU1BBSGpLeExMVU1raWo1U0xTemhCNzRQZjAxR0dxMHh6NFJkOFltZmcwUmdNRlpDWXVmTzZYbEZra3B3MFBZdmlJWmdTQjRXSDFVbXR0S2dfMUR6VFpXY3JVb1UxTUNubkdtX1Uzc2ZEbQ?oc=5",
-      "region": "overseas",
       "date": "2026-11-23",
       "field": "융합연구",
       "group": "교육",
@@ -258,10 +258,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "대학은 질문을 키울 수 있는가[특별기고]",
       "media": "한국대학신문",
       "link": "https://news.unn.net/news/articleView.html?idxno=601102",
-      "region": "domestic",
       "date": "2026-11-23",
       "field": "기타",
       "group": "기타",
@@ -273,10 +273,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "“사람이 문장이다”[김학준 칼럼]",
       "media": "한국대학신문",
       "link": "https://news.unn.net/news/articleView.html?idxno=601097",
-      "region": "domestic",
       "date": "2026-11-23",
       "field": "기타",
       "group": "기타",
@@ -288,10 +288,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "취업에는 ‘거절당할 용기’가 필요하다[대학通]",
       "media": "한국대학신문",
       "link": "https://news.unn.net/news/articleView.html?idxno=600933",
-      "region": "domestic",
       "date": "2026-11-23",
       "field": "증강인재교육",
       "group": "교육",
@@ -303,10 +303,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "의대 열풍[시론]",
       "media": "한국대학신문",
       "link": "https://news.unn.net/news/articleView.html?idxno=600884",
-      "region": "domestic",
       "date": "2026-11-23",
       "field": "정책/철학",
       "group": "교육",
@@ -318,10 +318,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "대학생 마음건강, 국가 차원 통합 지원체계 필요하다②[본지-대교협 공동기획]",
       "media": "한국대학신문",
       "link": "https://news.unn.net/news/articleView.html?idxno=599928",
-      "region": "domestic",
       "date": "2026-11-23",
       "field": "정책/철학",
       "group": "교육",
@@ -333,10 +333,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "AI가 인간 닮을수록 교육은 ‘판단하는 인간’을 지켜야",
       "media": "교수신문",
       "link": "https://www.kyosu.net/news/articleView.html?idxno=212749",
-      "region": "domestic",
       "date": "2026-11-23",
       "field": "증강인재교육",
       "group": "교육",
@@ -348,10 +348,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "허지혜, 「Kind compadre」, Re-claimed paper, starch, steel wire, 2026",
       "media": "교수신문",
       "link": "https://www.kyosu.net/news/articleView.html?idxno=212698",
-      "region": "domestic",
       "date": "2026-11-23",
       "field": "기타",
       "group": "기타",
@@ -360,6 +360,1737 @@
       "summary": "사물을 보고, 손으로 그 표면을 만진다. 매끄러운 것과 거친 것, 단단한 것과 무른 것, 얇은 것과 두꺼운 것을 구별한다. 눈으로 확인한 감각과 손끝에 닿는 감각이 언제나 일치하는 것은 아니다. 단단해 보이는 것이 의외로 가볍기도 하고, 부드러워 보이는 표면에서 거친 질감이 느껴지기도 한다.허지혜는 버려진 신문과 잡지, 책 등의 종이를 수집해 끓이고 반죽한",
       "feeds": [
         "교수신문"
+      ]
+    },
+    {
+      "title": "국립창원대 특별법 기반 국립대 운영안에 “전체 법인화 전제” 반발",
+      "media": "부산일보",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1FSUx5OEY1Y0RzdlJaZEhQQ25kb1VHSmpBQXdjUkNLUkNfVUp0b3hmcGxCZ21YNjctNVlRTjkybjVqZUNEeFpncVdORkNwVGRMLU42R2x0YzhXNUhmSzJNak9LQXZCaHpWVjlQU2pUc0lIMjdBY3Vv?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "local": true,
+      "level": "crisis",
+      "why": "반발",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE1FSUx5OEY1Y0RzdlJaZEhQQ25kb1VHSmpBQXdjUkNLUkNfVUp0b3hmcGxCZ21YNjctNVlRTjkybjVqZUNEeFpncVdORkNwVGRMLU42R2x0YzhXNUhmSzJNak9LQXZCaHpWVjlQU2pUc0",
+      "feeds": [
+        "구글뉴스:국립대 통합",
+        "구글뉴스:글로컬대학"
+      ]
+    },
+    {
+      "title": "동아-동서 연합IR센터 '2026년 글로컬대학 요구도 조사' 실시",
+      "media": "베리타스알파",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1XZ2M5RENxcmZRRGQxU3FUU0VGbU1DdEtRTkFjb0JfUm81ZHltVlBSYzJ4NExtSlA1eEc4TDZ1ZFMyTE1Qcm0ybmxmaUIwbzRNTWlkUV9XS0lxQUJkSWpBRW90blM3UHRwVFV5Qw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1XZ2M5RENxcmZRRGQxU3FUU0VGbU1DdEtRTkFjb0JfUm81ZHltVlBSYzJ4NExtSlA1eEc4TDZ1ZFMyTE1Qcm0ybmxmaUIwbzRNTWlkUV9XS0lxQUJkSWpBRW90blM3UHRwVFV5Qw?oc=",
+      "feeds": [
+        "구글뉴스:글로컬대학",
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "[부산소식] 부산대·SK AX, 산학협력 협약",
+      "media": "연합뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1aZ3lTdmxRcHVvdzZ6UjJ0SEJrZWdFZ0dQYy1qOHI0YnVxdF9iLW5DelZYVEVVRFNiQ1p3MmM4ZUtydVVxcksxY0J5WGMzLW1WMGpxQ2sxMGhjUkXSAWBBVV95cUxNZl9hWnBldTJJUHRvSUJseEYteDVLdXRleVkwQ050TFZZVkNuSWRGeTBfY0ozWGpvSERnbnFyeXBvY0M5NjJGY2RTLW4tS0lUYndIcjkyWktsd1BuSGRLMFo?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [
+        "부산대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiW0FVX3lxTE1aZ3lTdmxRcHVvdzZ6UjJ0SEJrZWdFZ0dQYy1qOHI0YnVxdF9iLW5DelZYVEVVRFNiQ1p3MmM4ZUtydVVxcksxY0J5WGMzLW1WMGpxQ2sxMGhjUkXSAWBBVV95cUxNZl9hWnBldTJJUH",
+      "feeds": [
+        "구글뉴스:글로컬대학",
+        "구글뉴스:부산대학교"
+      ]
+    },
+    {
+      "title": "의정부문화원, 지역사 강좌 ‘걸음마’ 올해 15회 일정 마쳐",
+      "media": "Chosunbiz",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE8tSHFpY2t1U1hNTVUxdEhQR3ZzOVRJSnptNnlaakExbWx1dlVMaGFFTWc3RnVsYmRDSkk5OFFTNHB1dUVXN3FmSFhaWmZzNVE2NTFKdDlvN054aXR0cG5vaFBNZUx6OVBxUVhzZmg2RjdVeUF3aFhsdUU2TdIBjwFBVV95cUxOSTdrNE85VTBQOHF6dkdQdXAyb0pQUTNLUUVmUzFnbnhqaWdpZmFrXzdHcElyZllvbDBOT05CZE5tRm5GQUNpWkNjSUtpOGRuYUhBems5VXc4blpwei1wdzNFaXc1OFR1Wl9BeUJEYjhPY0RWWGxWQm1iSFpYaUZnYlRUYUx6bUVrZThQUGJHTQ?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE8tSHFpY2t1U1hNTVUxdEhQR3ZzOVRJSnptNnlaakExbWx1dlVMaGFFTWc3RnVsYmRDSkk5OFFTNHB1dUVXN3FmSFhaWmZzNVE2NTFKdDlvN054aXR0cG5vaFBNZUx6OVBxUVhzZmg2Rj",
+      "feeds": [
+        "구글뉴스:RISE 지역혁신중심 대학지원"
+      ]
+    },
+    {
+      "title": "AI 부정행위 막기 비상... '구조' 안 바꾸면 다 소용없다",
+      "media": "OhmyNews",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5ZM2xJazY0UGxldG04d3FNQWtyazBfT2NLWUphTk5Lc2Y1VERpZWdzc0FraWZBLVNiUGdlSU1yem9pQU1GV2ZXclN1RlJnVTZrQmd5SFVCUDR6ZmtKR05Sa3o3dG9zUW1kS0hoaWc4V2p1cFF6?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMidEFVX3lxTE5ZM2xJazY0UGxldG04d3FNQWtyazBfT2NLWUphTk5Lc2Y1VERpZWdzc0FraWZBLVNiUGdlSU1yem9pQU1GV2ZXclN1RlJnVTZrQmd5SFVCUDR6ZmtKR05Sa3o3dG9zUW1kS0hoaWc4V2",
+      "feeds": [
+        "구글뉴스:대학 정원 감축",
+        "구글뉴스:대학 구조개혁"
+      ]
+    },
+    {
+      "title": "세종대 HUSS 위험사회 컨소시엄 사업단 '생성형 AI 시대의 똑똑한 AI 글쓰기' 특강 개최.. '보고서 작성/데이터 시각화 실습과 결과물 검증 강조'",
+      "media": "베리타스알파",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBhbkFuMmY5QWZWZGN0b21YSWNCTDd6TzE4NGtsVnpxMkFveTBjNTl6cU1QV0NUMWxJei1SOGdQd2NCdmxyUS1RLVVHS24zVTFUM19JczlKWS1rbUdibFlkdWtTT2NMS1Y1bS1JRw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTFBhbkFuMmY5QWZWZGN0b21YSWNCTDd6TzE4NGtsVnpxMkFveTBjNTl6cU1QV0NUMWxJei1SOGdQd2NCdmxyUS1RLVVHS24zVTFUM19JczlKWS1rbUdibFlkdWtTT2NMS1Y1bS1JRw?oc=",
+      "feeds": [
+        "구글뉴스:대학 생성형 AI"
+      ]
+    },
+    {
+      "title": "세계 대학들 AI부정행위 비상…대면시험 치니 성적 ‘뚝’",
+      "media": "헤럴드경제",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE13UGpXbGtxc1JiZVRyc2Fld1FHR3VqMXFjeG9seUNiaFJjc01aV2ZXdTZvSk15ODFqUm1CNkJEQ3lpN0JFSkcxRk44RXhUWmlmQVpFZklpMVloc2tibWNaTmhpaw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiY0FVX3lxTE13UGpXbGtxc1JiZVRyc2Fld1FHR3VqMXFjeG9seUNiaFJjc01aV2ZXdTZvSk15ODFqUm1CNkJEQ3lpN0JFSkcxRk44RXhUWmlmQVpFZklpMVloc2tibWNaTmhpaw?oc=5\" target=\"_",
+      "feeds": [
+        "구글뉴스:대학 생성형 AI"
+      ]
+    },
+    {
+      "title": "3D 생성 AI 플랫폼 Meshy, 정화예술대학교에서 특수분장 세미나 ‘AI×분장’ 개최",
+      "media": "뉴스와이어",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBvb1hkMG00VUFtQzJITjY2X29FeUFjeWZOWWJRVEFLamhkc3hYVmczRUJtbHE1bGxTamlONEd2bFoyWGFpMmVOSEJhTThwODZ4ekFNcW1jeUdNLUdHc0Uw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "AX 기술 동향",
+      "group": "산업",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTFBvb1hkMG00VUFtQzJITjY2X29FeUFjeWZOWWJRVEFLamhkc3hYVmczRUJtbHE1bGxTamlONEd2bFoyWGFpMmVOSEJhTThwODZ4ekFNcW1jeUdNLUdHc0Uw?oc=5\" target=\"_blank\"",
+      "feeds": [
+        "구글뉴스:대학 생성형 AI"
+      ]
+    },
+    {
+      "title": "원광대 제15대 총장에 남궁문 교수 선임…'개벽' 비전 새 100년 연다 - 머니투데이",
+      "media": "머니투데이",
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5DSm5kdkVOaDFXeUt6UUZhOUctMy1mWWNDQlBEem9zRFdmTFBiTzV0WFFaRU53dVFGaXkzeXhsZmhNU3JvejNUbDBXQWNfWElTUGVRVHN2elVyTExDaFFlWE9mRWtIWHhMYXhoVXVINNIBb0FVX3lxTE5DSm5kdkVOaDFXeUt6UUZhOUctMy1mWWNDQlBEem9zRFdmTFBiTzV0WFFaRU53dVFGaXkzeXhsZmhNU3JvejNUbDBXQWNfWElTUGVRVHN2elVyTExDaFFlWE9mRWtIWHhMYXhoVXVINA?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMib0FVX3lxTE5DSm5kdkVOaDFXeUt6UUZhOUctMy1mWWNDQlBEem9zRFdmTFBiTzV0WFFaRU53dVFGaXkzeXhsZmhNU3JvejNUbDBXQWNfWElTUGVRVHN2elVyTExDaFFlWE9mRWtIWHhMYXhoVXVINN",
+      "feeds": [
+        "구글뉴스:대학 구조개혁"
+      ]
+    },
+    {
+      "title": "[부산소식]\"AI 인재 양성\"…부산대, SK AX와 손잡았다 등",
+      "media": "뉴시스",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5QOTBVYV9JWnpHZ3ZmQkY4bmtzbUUtaHpsQ21WdldvU1NjdzdNM0RCT3dEaC1JQzQ0aWs4YjQ5ejVIeG5Mck5qekROOTFLVlEwMWdIQk5FeXAzQmozUzJKN9IBeEFVX3lxTE9jRkpOUkFnZ0x4ZlFjbWJOWGV2Zzc2WkZvZFpvY2F1d0VudU5Ed1VmTlE3QmpSS011T0Y1cXk2SHhDQWt0SVloUm51N3Z5ZlZQNjVaVFlVOUpoWk5GQmRyVTE3T0pSU3dnZkxhTENZMDh3WUhTVlpaRw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [
+        "부산대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiYEFVX3lxTE5QOTBVYV9JWnpHZ3ZmQkY4bmtzbUUtaHpsQ21WdldvU1NjdzdNM0RCT3dEaC1JQzQ0aWs4YjQ5ejVIeG5Mck5qekROOTFLVlEwMWdIQk5FeXAzQmozUzJKN9IBeEFVX3lxTE9jRkpOUk",
+      "feeds": [
+        "구글뉴스:부산대학교"
+      ]
+    },
+    {
+      "title": "부산대 SK AX 산학협력, 지역 AI 인재양성 협약 체결",
+      "media": "공감신문",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1VYmNiaFNJa2Y3OUNQS2pldFBaMnZNODN6eS1FZ3prZ3J1ZDlPRG5BZzZJS3ZKRWU0X1E4MENkMHZUZnZwZm1MU08zYmh5RmlMX0l2bWpsMlY2Yl80aS1SVW5BNlo3MDJl?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [
+        "부산대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE1VYmNiaFNJa2Y3OUNQS2pldFBaMnZNODN6eS1FZ3prZ3J1ZDlPRG5BZzZJS3ZKRWU0X1E4MENkMHZUZnZwZm1MU08zYmh5RmlMX0l2bWpsMlY2Yl80aS1SVW5BNlo3MDJl?oc=5\" tar",
+      "feeds": [
+        "구글뉴스:부산대학교"
+      ]
+    },
+    {
+      "title": "부산대·SK AX, 산학협력 협약",
+      "media": "핀포인트뉴스",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9Cc2w0c2xwM18ycVZJMUR1RmJOekkyM283TFdPellBYnJTQmhnbENqV0c0YlVoMXBnci13TTk4S1BLUWRzWUFCRHgwR3FtdWVoTXJ1b2RUY2dkQ3V1OWlpenNndGNMdUtNa3Nub0w0Q3lPelHSAXdBVV95cUxQaXEzQ2JvUVVUbjRvbk90YklGVFAwLUY3T2Y0Q204Yk9HYTN0THBoM2dNYUZqdjhnYy1ocEtDQU9vWVFmOWRDWTNqdjBnUlFUWTdxOHRySEo2MmxkRzVsQUdsZEhHXzFvUFVWdnJPNDR0SGYybDZFSQ?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [
+        "부산대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMic0FVX3lxTE9Cc2w0c2xwM18ycVZJMUR1RmJOekkyM283TFdPellBYnJTQmhnbENqV0c0YlVoMXBnci13TTk4S1BLUWRzWUFCRHgwR3FtdWVoTXJ1b2RUY2dkQ3V1OWlpenNndGNMdUtNa3Nub0w0Q3",
+      "feeds": [
+        "구글뉴스:부산대학교"
+      ]
+    },
+    {
+      "title": "[부산ㆍ경남 대학 브리핑 모음(11월23일)] 인제대, 지역 청년 대상 AI·재테크·소통 교육 운영 등",
+      "media": "대한경제",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5lSi13YllhOG03Rnp1Wmt2cEF1RHdBSnFUam5sdUpZNURBOVZ5Q3FHTGRnMDctRHdkY0thelAzdFNyX2hFOFR6c3EtbjJXTUY4UDk2cXR0allSUXpnSS1VM0tvMXYwN3BWLS1TNlJjMm0xOEU?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMic0FVX3lxTE5lSi13YllhOG03Rnp1Wmt2cEF1RHdBSnFUam5sdUpZNURBOVZ5Q3FHTGRnMDctRHdkY0thelAzdFNyX2hFOFR6c3EtbjJXTUY4UDk2cXR0allSUXpnSS1VM0tvMXYwN3BWLS1TNlJjMm",
+      "feeds": [
+        "구글뉴스:대학 행정 AI",
+        "구글뉴스:AX대학원",
+        "구글뉴스:SW중심대학"
+      ]
+    },
+    {
+      "title": "지역정보개발원, 대통령상 받은 전북 AI 행정혁신 사례 공유",
+      "media": "핀포인트뉴스",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE8weGJkLXZZR2xYWTFtTXVqcENxd2xtaU9DNE13ZGtSMUhMMDhtbk1CcTBDYjdFUzE5R2dObDVQVlRZWFRIN2U1dXJtU1cyRjFWX3djQmZLeVJ2UXZrOFRDN1hmMVQ5aWRPd3llVGVxeFNjYUVQWnV30gF3QVVfeXFMTzB4YmQtdllHbFhZMW1NdWpwQ3F3bG1pT0M0TXdka1IxSEwwOG1uTUJxMENiN0VTMTlHZ05sNVBWVFlYVEg3ZTV1cm1TVzJGMVZfd2NCZkt5UnZRdms4VEM3WGYxVDlpZE93eWVUZXF4U2NhRVBadXc?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "적응형행정",
+      "group": "산업",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE8weGJkLXZZR2xYWTFtTXVqcENxd2xtaU9DNE13ZGtSMUhMMDhtbk1CcTBDYjdFUzE5R2dObDVQVlRZWFRIN2U1dXJtU1cyRjFWX3djQmZLeVJ2UXZrOFRDN1hmMVQ5aWRPd3llVGVxeF",
+      "feeds": [
+        "구글뉴스:공공부문 생성형 AI",
+        "구글뉴스:공공기관 AI 행정혁신",
+        "구글뉴스:생성형 AI 업무 도입"
+      ]
+    },
+    {
+      "title": "지역정보개발원, '지방정부 AX 역량 강화' 특강",
+      "media": "뉴시스",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9IN2p0SnhlMHFmYkROS01VRnFzX1JyOUtoUXluUjIySVhjMW1QSHhuNDhacjctZmFpRW5PaDkybDNzUV9QUnk3NGh0WXhXYTViRUdtZnNiTFlvcFpUQWZYZtIBeEFVX3lxTE5RU1FsZDI5RWExSnZmYjZ5bm9MMXpiYTJfQ0lwU3NJX0ZycXVYR2NQMi1BWjdEYjJOT0RwSTZkR19QY3lfU3libnVhM2FvdUZnc1lrdmNqWm9tQUJFbnhOSFQzXzV5dGh1SWFnMUpmdFBnUDI1OTM0eA?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiYEFVX3lxTE9IN2p0SnhlMHFmYkROS01VRnFzX1JyOUtoUXluUjIySVhjMW1QSHhuNDhacjctZmFpRW5PaDkybDNzUV9QUnk3NGh0WXhXYTViRUdtZnNiTFlvcFpUQWZYZtIBeEFVX3lxTE5RU1FsZD",
+      "feeds": [
+        "구글뉴스:공공부문 생성형 AI",
+        "구글뉴스:공공기관 AI 행정혁신"
+      ]
+    },
+    {
+      "title": "티맥스소프트, 공공 AX 시장 공략 가속…차세대 AI 플랫폼 ‘컨티뉴엄 AI’ 공개",
+      "media": "뉴스탭",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9kUDdiY2ZCemIwZkN6LTY0dHBpa0c0dkxyYTBIdmppZHJQb1diQVp3ZjgzTS1wWl9aaFVvbDFSaHFVUUJSck1ad1FnTDJ2M2gyWHBOVGE2T1ZEcTA1dDR5bklhVWdlZTRwajBCNw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "적응형행정",
+      "group": "산업",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE9kUDdiY2ZCemIwZkN6LTY0dHBpa0c0dkxyYTBIdmppZHJQb1diQVp3ZjgzTS1wWl9aaFVvbDFSaHFVUUJSck1ad1FnTDJ2M2gyWHBOVGE2T1ZEcTA1dDR5bklhVWdlZTRwajBCNw?oc=",
+      "feeds": [
+        "구글뉴스:공공부문 생성형 AI",
+        "구글뉴스:공공기관 AI 행정혁신"
+      ]
+    },
+    {
+      "title": "EY한영, 투이컨설팅 인수…금융·공공 IT 컨설팅 역량 강화",
+      "media": "디지털데일리",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5XejBTekxmQ082eEY2U3B3NXllMm1OMDF2SUk3TVhNdVdiMmRWbUdJdC1ZX0taS05mZDA0N2VCU01ScW53MFpOZjk4TzhhSWhxUVJQaDlDcnpuR2xybGJDZ3ZmbXo?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE5XejBTekxmQ082eEY2U3B3NXllMm1OMDF2SUk3TVhNdVdiMmRWbUdJdC1ZX0taS05mZDA0N2VCU01ScW53MFpOZjk4TzhhSWhxUVJQaDlDcnpuR2xybGJDZ3ZmbXo?oc=5\" target=\"",
+      "feeds": [
+        "구글뉴스:공공부문 생성형 AI"
+      ]
+    },
+    {
+      "title": "‘26 글로벌 AI 소프트웨어 매출 2천억달러 돌파 전망",
+      "media": "knpp.co.kr",
+      "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE9pdF96M3NhVHVnTFNGYWVJenZaTi1EUWpqaUhXeFc1T3dfRE5NMmVRbVkzM2IyVndpTUVGelNaX2x0cXc?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiQ0FVX3lxTE9pdF96M3NhVHVnTFNGYWVJenZaTi1EUWpqaUhXeFc1T3dfRE5NMmVRbVkzM2IyVndpTUVGelNaX2x0cXc?oc=5\" target=\"_blank\">‘26 글로벌 AI 소프트웨어 매출 2천억달러 돌파 전망</a> ",
+      "feeds": [
+        "구글뉴스:공공부문 생성형 AI"
+      ]
+    },
+    {
+      "title": "EY한영, ‘투이컨설팅’ 인수 … 금융·공공 디지털 컨설팅 역량 강화",
+      "media": "데이터넷",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBOYUtkaUxCRmRqaWFoMTV0MnNscDRiU0tTMHNpR0I3MGpUMk9pOU5SZHo1akxlejJGdmZoeUN4RXBFejE5Ui14SVcxaEpOV1N0WkFJUW1pcV93eUZqYUlRMjdxUGdMU2ZkTV9kMw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTFBOYUtkaUxCRmRqaWFoMTV0MnNscDRiU0tTMHNpR0I3MGpUMk9pOU5SZHo1akxlejJGdmZoeUN4RXBFejE5Ui14SVcxaEpOV1N0WkFJUW1pcV93eUZqYUlRMjdxUGdMU2ZkTV9kMw?oc=",
+      "feeds": [
+        "구글뉴스:공공부문 생성형 AI"
+      ]
+    },
+    {
+      "title": "한국지역정보개발원, 대통령상 받은 전북 AI 행정 노하우 공유",
+      "media": "한국금융신문",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBxa0E5V2FxSmhXdVM0dmNkX3FfMmRWbVhhMmV2WnQ0RmJmWjU4Tkt4S2FxVmp2cFlHVWVZSE92NDRVTERWS2tzUmlxaS1QV01LVk0xTklZbUJRT2h2dUxCVHBUUTc2UEZiQV9falBEdnVsT3V4X1ktRHNQZw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "적응형행정",
+      "group": "산업",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTFBxa0E5V2FxSmhXdVM0dmNkX3FfMmRWbVhhMmV2WnQ0RmJmWjU4Tkt4S2FxVmp2cFlHVWVZSE92NDRVTERWS2tzUmlxaS1QV01LVk0xTklZbUJRT2h2dUxCVHBUUTc2UEZiQV9falBEdn",
+      "feeds": [
+        "구글뉴스:공공기관 AI 행정혁신"
+      ]
+    },
+    {
+      "title": "대통령상 받은 전북 AI 행정…지방정부 AX 확산 나선다",
+      "media": "SR타임스",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4ybVI5YjZmbXZ1R05QQV9CVVhpb2dwMXU5UjREVENyRHhsRzBBSnNSS3J4MWM1MnplbjBNeHFkdmphZndtQ2tTbFZkS19KaHUzMC1kU0RjVXBQUFliTTdFdHJjTC1pdHPSAWtBVV95cUxQNTJfUUhkMjBOUGhFSUpyd2pER3ZWZFZuZ0pyZkJnUEVkRmlnSlQ2bHBxRFVuYjlBNDBHT0s0d1Z2bExqbm9NVUNKTnVEU2FwQTFSZG53QVUwSFJvdC1Ka2hweFZ0WmQzTUtmVQ?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "적응형행정",
+      "group": "산업",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE4ybVI5YjZmbXZ1R05QQV9CVVhpb2dwMXU5UjREVENyRHhsRzBBSnNSS3J4MWM1MnplbjBNeHFkdmphZndtQ2tTbFZkS19KaHUzMC1kU0RjVXBQUFliTTdFdHJjTC1pdHPSAWtBVV95cU",
+      "feeds": [
+        "구글뉴스:공공기관 AI 행정혁신"
+      ]
+    },
+    {
+      "title": "티맥스소프트, '대한민국 정부혁신 박람회' 참가…차세대 AI 플랫폼 소개",
+      "media": "전자신문",
+      "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1CdUx2MEZPZFdHT0RYX2NoNWp0REZsbHoxby1iVVJNYUFzYmlBN2FqQzlpTGwtalRxVDU4QkRjWUswMlRNV1ZPdzFpbVY?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "AX 기술 동향",
+      "group": "산업",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiTEFVX3lxTE1CdUx2MEZPZFdHT0RYX2NoNWp0REZsbHoxby1iVVJNYUFzYmlBN2FqQzlpTGwtalRxVDU4QkRjWUswMlRNV1ZPdzFpbVY?oc=5\" target=\"_blank\">티맥스소프트, '대한민국 정부혁신 박람회' ",
+      "feeds": [
+        "구글뉴스:공공기관 AI 행정혁신"
+      ]
+    },
+    {
+      "title": "갑자기 아플 땐 카카오톡 '대전시 119 챗봇'에 물어보세요",
+      "media": "로컬투데이",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE8zcktSdzQ0anBxQkpBcGpMVFBqS1VMNUdRSHRMVXhZLS1uQ1J4SkRsRm9YaE9jdWw5QndkcVRxbzdYUEJMalVST1ZCXzVyeW8xUHZqb1lSVFJlUTFpYUNwUGRiMU0wY2xzMG9BOTlSaDk?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "적응형행정",
+      "group": "산업",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMicEFVX3lxTE8zcktSdzQ0anBxQkpBcGpMVFBqS1VMNUdRSHRMVXhZLS1uQ1J4SkRsRm9YaE9jdWw5QndkcVRxbzdYUEJMalVST1ZCXzVyeW8xUHZqb1lSVFJlUTFpYUNwUGRiMU0wY2xzMG9BOTlSaD",
+      "feeds": [
+        "구글뉴스:공공기관 AI 행정혁신"
+      ]
+    },
+    {
+      "title": "충남도, '공공AX 챌린지' 개최…AI로 행정혁신 나선다",
+      "media": "충청탑뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1VTzhSTnVNVWhNcm9lN1A4WWZGUHB0MVk0bklvVGFTTGZwQXR2WHE5OGZlQlBobjRiWEhQeUxjYUxlRWVvRkU2UjdCRlpHNnY4NkpZdkNPZmVnN2lLYUR5bS1YQ0c?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "적응형행정",
+      "group": "산업",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE1VTzhSTnVNVWhNcm9lN1A4WWZGUHB0MVk0bklvVGFTTGZwQXR2WHE5OGZlQlBobjRiWEhQeUxjYUxlRWVvRkU2UjdCRlpHNnY4NkpZdkNPZmVnN2lLYUR5bS1YQ0c?oc=5\" target=\"",
+      "feeds": [
+        "구글뉴스:공공기관 AI 행정혁신"
+      ]
+    },
+    {
+      "title": "경기도사회서비스원 안혜영 원장, ‘2026 대한민국 지방자치 혁신대상’ 수상",
+      "media": "사회적경제뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiP0FVX3lxTFA1cnpLcHVBTjdrUE84Q2xSOUdmZWxyVEU1NzhiYjJGWk5MSGFOYVVTc0dJZTQwZVVwRWJsWGRHYw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiP0FVX3lxTFA1cnpLcHVBTjdrUE84Q2xSOUdmZWxyVEU1NzhiYjJGWk5MSGFOYVVTc0dJZTQwZVVwRWJsWGRHYw?oc=5\" target=\"_blank\">경기도사회서비스원 안혜영 원장, ‘2026 대한민국 지방자치 혁신대상’ 수",
+      "feeds": [
+        "구글뉴스:공공기관 AI 행정혁신"
+      ]
+    },
+    {
+      "title": "발전노동자·청년·취약계층 품은 충남 사회적기업 성장 주목",
+      "media": "충청탑뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9UZWhMT2lfVlVCZ21rRlpxZDhickdrZ3VCUGRDcUJIT1FwUE1EN3lWcFJqZUdSOWl1UW5hTW9rWTNzTzdUSDN1cmE4RnU1R0lVTDNlRkhuU21qRng3X1Z4emJCeVU?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE9UZWhMT2lfVlVCZ21rRlpxZDhickdrZ3VCUGRDcUJIT1FwUE1EN3lWcFJqZUdSOWl1UW5hTW9rWTNzTzdUSDN1cmE4RnU1R0lVTDNlRkhuU21qRng3X1Z4emJCeVU?oc=5\" target=\"",
+      "feeds": [
+        "구글뉴스:공공기관 AI 행정혁신"
+      ]
+    },
+    {
+      "title": "AI대학원 성과, 취업률로 재단?…핵심 연구 역량 놓친다",
+      "media": "지디넷코리아",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1zNnlkRmJsNkRhQ1p2S1phMXU2T1hTekpmdzRuWUxzSWZEUVR1NEtKel95Snd1RTdSZkoxM2IxX2RsWVkzY1dvNWlRMGJSaURYU01GUkpB?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiVkFVX3lxTE1zNnlkRmJsNkRhQ1p2S1phMXU2T1hTekpmdzRuWUxzSWZEUVR1NEtKel95Snd1RTdSZkoxM2IxX2RsWVkzY1dvNWlRMGJSaURYU01GUkpB?oc=5\" target=\"_blank\">AI대학원 성과, 취",
+      "feeds": [
+        "구글뉴스:AI중심대학",
+        "구글뉴스:AX대학원",
+        "구글뉴스:AI대학원 선정"
+      ]
+    },
+    {
+      "title": "금성초, 찾아가는 AI·SW 체험교실 운영",
+      "media": "한국교육신문",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9pck5lUGtVck5vOUlkWDdTdEtDcGZHdmNUamprSXRWY2ZsMENZU3E5TW51X21aTmZqbUhtYk5odVQzNVprYkt4aGZNcE9NWVl5MzhwRGFRNkNWQ2k0M1A4?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE9pck5lUGtVck5vOUlkWDdTdEtDcGZHdmNUamprSXRWY2ZsMENZU3E5TW51X21aTmZqbUhtYk5odVQzNVprYkt4aGZNcE9NWVl5MzhwRGFRNkNWQ2k0M1A4?oc=5\" target=\"_blank\"",
+      "feeds": [
+        "구글뉴스:AI중심대학",
+        "구글뉴스:SW중심대학"
+      ]
+    },
+    {
+      "title": "켄텍, 'AI 부정행위 원천 차단'... 창의성면접 30일 실시",
+      "media": "뉴스워커",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFA5OWJKVnY0MkNiNXNJMnNHRnZqUElLemFidWN1NVhoMXQ5V1UtU2EwT3dsejBSbkh4WHByN1l3cWhyVG9mbWRvb0E2QzZPc3FEUnBwemdzSi1NRGlkX2dIUWU3bmZBalJMU2JfQUpKYmrSAXRBVV95cUxPYjJrRExYTkp5LVpERXM3aHNWQy1zTWZFcTZwZVMzWWc5eEVNd2JyME1DUVZvS2ZoM3F3cXQ0RU13VnJha0xiLVNVQzFaUzRhWlBzdklYem9xYl9BVDRZQ0F2RlhybnpTU0lOemZqOVZmb3N0cQ?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMicEFVX3lxTFA5OWJKVnY0MkNiNXNJMnNHRnZqUElLemFidWN1NVhoMXQ5V1UtU2EwT3dsejBSbkh4WHByN1l3cWhyVG9mbWRvb0E2QzZPc3FEUnBwemdzSi1NRGlkX2dIUWU3bmZBalJMU2JfQUpKYm",
+      "feeds": [
+        "구글뉴스:AX대학원",
+        "구글뉴스:AI대학원 선정"
+      ]
+    },
+    {
+      "title": "동대문구시설관리공단-서울시립대학교 업무협약 체결",
+      "media": "환경일보",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE13M0ZKUGpsVUdSdlM3a3dKMm41UGNPMHV6dXdMMldLMXdjZXFMQU1KRmctWmhZdzZVei1qQlF5UUVrT1k3Z3FjZzB5QkRKZmFTcG1ndkdCSU83cEd6bkRTX0N2WGlzQlls?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE13M0ZKUGpsVUdSdlM3a3dKMm41UGNPMHV6dXdMMldLMXdjZXFMQU1KRmctWmhZdzZVei1qQlF5UUVrT1k3Z3FjZzB5QkRKZmFTcG1ndkdCSU83cEd6bkRTX0N2WGlzQlls?oc=5\" tar",
+      "feeds": [
+        "구글뉴스:SW중심대학"
+      ]
+    },
+    {
+      "title": "선문대 PIS팀, 자율주행 경진대회 대상 - 머니투데이",
+      "media": "머니투데이",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1HSl9vMVh0Rzkxa3N2OThzUEc4blNuX0pJUnlvaURkaTRSUndHd3pnZkVlV0pONmYyVkFFbjZPOHJsTFM0MWhrTF93SkZWWlVZekZGRjh3OUpHNU5FRjdnZVVXSnZiRUUyQVZZVmZ4anllZjVmWUJYc1NtOTPSAXxBVV95cUxNR0pfbzFYdEc5MWtzdjk4c1BHOG5Tbl9KSVJ5b2lEZGk0UlJ3R3d6Z2ZFZVdKTjZmMlZBRW42TzhybExTNDFoa0xfd0pGVlpVWXpGRkY4dzlKRzVORUY3Z2VVV0p2YkVFMkFWWVZmeGp5ZWY1ZllCWHNTbTkz?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE1HSl9vMVh0Rzkxa3N2OThzUEc4blNuX0pJUnlvaURkaTRSUndHd3pnZkVlV0pONmYyVkFFbjZPOHJsTFM0MWhrTF93SkZWWlVZekZGRjh3OUpHNU5FRjdnZVVXSnZiRUUyQVZZVmZ4an",
+      "feeds": [
+        "구글뉴스:첨단분야 혁신융합대학"
+      ]
+    },
+    {
+      "title": "호서대 바이오헬스 AI 챔피언십 대상.. 교육부장관상 영예",
+      "media": "베리타스알파",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFAwUWhsbkNnaE9QQjNFODhIVVVtX1NVN2VXeDdjR0JIZDlweWlmNUZ4MW42bkh1dVdxYXNWNlJaMkZoYkxBZEF6b3Y3b180bEV6eG9WSnJKR1Y4M3dCWjN1cXY3dzNpMkFpSTExMA?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTFAwUWhsbkNnaE9QQjNFODhIVVVtX1NVN2VXeDdjR0JIZDlweWlmNUZ4MW42bkh1dVdxYXNWNlJaMkZoYkxBZEF6b3Y3b180bEV6eG9WSnJKR1Y4M3dCWjN1cXY3dzNpMkFpSTExMA?oc=",
+      "feeds": [
+        "구글뉴스:첨단분야 혁신융합대학"
+      ]
+    },
+    {
+      "title": "호서대, 바이오헬스 AI 챔피언십 대상…교육부장관상 수상",
+      "media": "메가충청뉴스",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5hY1pvWFRCR0RyNm9PS1NWWVNyVklfX1F3ZmdmdFVZNWF6cFk0QThEWUgxMTJScklWcWJBczBpbk5RODc0S01MSmhpZ21QeXppclNwMzhoVGEtVXhBWG5sdU41bVpvNmVLVGNRYw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE5hY1pvWFRCR0RyNm9PS1NWWVNyVklfX1F3ZmdmdFVZNWF6cFk0QThEWUgxMTJScklWcWJBczBpbk5RODc0S01MSmhpZ21QeXppclNwMzhoVGEtVXhBWG5sdU41bVpvNmVLVGNRYw?oc=",
+      "feeds": [
+        "구글뉴스:첨단분야 혁신융합대학"
+      ]
+    },
+    {
+      "title": "호서대, 바이오헬스 AI 챔피언십 대상 ‘교육부장관상’ 영예",
+      "media": "충남일보",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE4zdFNZQk5MM2NnX25YMHlianRzLVdJVFNIWUhjRDBBTmF2MlRfZ3h5dE83ejRUQnBCdmlvVHJUaG9zbjZwNl9CNnlJdmVQMVZqSEtvdS1adGxaT3dRVTcwZG5PY2ZaRFBYWThabk5KblIwSnM?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMic0FVX3lxTE4zdFNZQk5MM2NnX25YMHlianRzLVdJVFNIWUhjRDBBTmF2MlRfZ3h5dE83ejRUQnBCdmlvVHJUaG9zbjZwNl9CNnlJdmVQMVZqSEtvdS1adGxaT3dRVTcwZG5PY2ZaRFBYWThabk5Kbl",
+      "feeds": [
+        "구글뉴스:첨단분야 혁신융합대학"
+      ]
+    },
+    {
+      "title": "선문대, 스케일카 자율주행 경진대회 대상 ‘교육부장관상’ 수상",
+      "media": "충남일보",
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5TN283Z0pnWmI5bkhpdHItQm1IMWJSOV91dUFsQUV2QXU1VXFkamd4V2VVQkJfbmN6WTdfSTRXb0lxbUJjR3dabF9ESklMcTluTTEzbkZyZ2lVZzlQLWZqTExHRkhEb0g5VVFHMmNSUUlMQWs?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMic0FVX3lxTE5TN283Z0pnWmI5bkhpdHItQm1IMWJSOV91dUFsQUV2QXU1VXFkamd4V2VVQkJfbmN6WTdfSTRXb0lxbUJjR3dabF9ESklMcTluTTEzbkZyZ2lVZzlQLWZqTExHRkhEb0g5VVFHMmNSUU",
+      "feeds": [
+        "구글뉴스:첨단분야 혁신융합대학"
+      ]
+    },
+    {
+      "title": "아우토크립트, AutoHack 2026 후원 미래 모빌리티 보안 인재 육성 나서",
+      "media": "전자신문",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5hdmw2NTM1WFlSUG56U0VUV0o0SUF0NGltcktGWjhxTk5CdGczdnVsWld1U1Y3Y2VlZGViVWRvVTRQTEVMc09NSGxMUVptQQ?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiTkFVX3lxTE5hdmw2NTM1WFlSUG56U0VUV0o0SUF0NGltcktGWjhxTk5CdGczdnVsWld1U1Y3Y2VlZGViVWRvVTRQTEVMc09NSGxMUVptQQ?oc=5\" target=\"_blank\">아우토크립트, AutoHack 2026",
+      "feeds": [
+        "구글뉴스:첨단분야 혁신융합대학"
+      ]
+    },
+    {
+      "title": "선문대, 전국 자율주행 경진대회서 대상…교육부장관상 수상",
+      "media": "현대경제",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE95WXFQUGFZeFBES0F5Qi1EM1VvQjRvYnpLRDlMSDhFZ2xNLXlITGJ3UW84NlJCWjJ3QnExbl9tUE9wNzNXamxqOGozbk5GMDZxN3FiN0JMX3NfbXlHaTBEWTBxS19Rb0hFUGdZ?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE95WXFQUGFZeFBES0F5Qi1EM1VvQjRvYnpLRDlMSDhFZ2xNLXlITGJ3UW84NlJCWjJ3QnExbl9tUE9wNzNXamxqOGozbk5GMDZxN3FiN0JMX3NfbXlHaTBEWTBxS19Rb0hFUGdZ?oc=5\"",
+      "feeds": [
+        "구글뉴스:첨단분야 혁신융합대학"
+      ]
+    },
+    {
+      "title": "Gen Z Protesters Rally in Bangkok for Education Reform",
+      "media": "Chiang Rai Times",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5DM1Y1M09lcWxsMjlqSnVsU1RLQkY4eXB1cHU3MWRNT2RlbVFRekpHS0hLaXg0aGg3Q2tRU2liWlNXVTJESHh2ZmV4ZF9nRDhnQ1lYMzgyRXlsT0Jhd3p3NnVZZDNJakQxM0dRUTMzXzlTbkZENU5VdUFB?oc=5",
+      "region": "overseas",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE5DM1Y1M09lcWxsMjlqSnVsU1RLQkY4eXB1cHU3MWRNT2RlbVFRekpHS0hLaXg0aGg3Q2tRU2liWlNXVTJESHh2ZmV4ZF9nRDhnQ1lYMzgyRXlsT0Jhd3p3NnVZZDNJakQxM0dRUTMzXz",
+      "feeds": [
+        "해외:higher education policy reform"
+      ]
+    },
+    {
+      "title": "Learning is something to be savoured, not optimised",
+      "media": "Wonkhe",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPMjhWU1pMb2xRY01vd0lfdUZ2b0JVc2dIOWF0R0szbXNUdkcwSlBfR3FpN21TaVRzRUdzeVFiUGZXZDIyRDBtVHZlaXhLTlZ2QzQ5b2FIdEZmUmw3QXBGZ29hbnViWjhISXVBQ0pmVHBnZTdDelJmS1RNX3pfdm44Ng?oc=5",
+      "region": "overseas",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMigAFBVV95cUxPMjhWU1pMb2xRY01vd0lfdUZ2b0JVc2dIOWF0R0szbXNUdkcwSlBfR3FpN21TaVRzRUdzeVFiUGZXZDIyRDBtVHZlaXhLTlZ2QzQ5b2FIdEZmUmw3QXBGZ29hbnViWjhISXVBQ0pmVH",
+      "feeds": [
+        "해외:generative AI university policy"
+      ]
+    },
+    {
+      "title": "Are We Attending a Business or an Academic Institution?",
+      "media": "The University News",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUm5vZUkzWkJoWXI5RzdGZ0lPRGlqY09GYVdjMkEwU0JZeG1ndENwb3VvNlk0Q0dOLW1rTEhXeFV6Z3dNMXVCRm5wdldkQ0V6QTFJYVd1d2JtZjdBR0lEcVVLcGhtU3dmUkpBclpEOTNkaXhCemxwUXFxdTBGMlhvQ2NndTJxaDhVUnpVOThPamU?oc=5",
+      "region": "overseas",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMikAFBVV95cUxQUm5vZUkzWkJoWXI5RzdGZ0lPRGlqY09GYVdjMkEwU0JZeG1ndENwb3VvNlk0Q0dOLW1rTEhXeFV6Z3dNMXVCRm5wdldkQ0V6QTFJYVd1d2JtZjdBR0lEcVVLcGhtU3dmUkpBclpEOT",
+      "feeds": [
+        "해외:generative AI university policy"
+      ]
+    },
+    {
+      "title": "Inside fiscal policy: A new dataset on government actions",
+      "media": "CEPR",
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxObzktU2ZpMkN4R3ZmNldiUHd1WHpzNWJESjBLRnplTEZJaWlVMGJTazBNNUVZblBXWmdoS19rODZoTGhVQnVCd19HeWZucDZhVzNoMjFhWXlnOTRuR0xadHY3T29xYzJuN2lfS2w5N1lLUTcxZS1RcEI0U3lhU1hWZnFwSzJGRm5OYlE?oc=5",
+      "region": "overseas",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiigFBVV95cUxObzktU2ZpMkN4R3ZmNldiUHd1WHpzNWJESjBLRnplTEZJaWlVMGJTazBNNUVZblBXWmdoS19rODZoTGhVQnVCd19HeWZucDZhVzNoMjFhWXlnOTRuR0xadHY3T29xYzJuN2lfS2w5N1",
+      "feeds": [
+        "해외:generative AI university policy"
+      ]
+    },
+    {
+      "title": "덕성여대-티앤디소프트 사이버보안 산학협력 맞손",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601159",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 김윤미 기자] 덕성여자대학교(총장 민재홍)는 지난 17일 정보보안 전문기업 ㈜티앤디소프트(대표이사 최성묵)와 사이버·융합보안 분야의 공동 연구개발 및 전문인력 양성을 위한 산학협력 업무협약(MOU)을 체결했다.이번 협약은 덕성여대의 보안 분야 교육·연구 역량과 티앤디소프트의 정보보호 컨설팅, 보안관제 및 보안솔루션 개발 기술을 연계해 산학협력",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "동의과학대, 부산국제의료관광컨벤션서 K-뷰티 웰니스 체험 선보여",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601158",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "local": true,
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 김연주 기자] 동의과학대학교(총장 김영도) 의료피부미용과(학과장 장정현)는 지난 13일부터 14일까지 부산 벡스코에서 열린 ‘2026 부산국제의료관광컨벤션(BIMTC)’에 참가해 K-뷰티 웰니스 체험 부스를 운영했다고 23일 밝혔다.올해로 18회째를 맞은 이번 행사는 부산광역시와 부산일보사가 공동 주최하고 부산권의료산업협의회가 주관했다. 부산",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "청운대, 2026년 신입직원 혁신역량강화 워크숍 개최",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601157",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 김윤미 기자] 청운대학교(총장 정윤)는 지난 19일부터 20일까지 충남 보령시 호텔 쏠레르에서 ‘2026년 신입직원 혁신역량강화 워크숍’을 개최했다고 밝혔다.이번 워크숍에는 김재호 기획처장, 김동환 사무처장을 비롯해 홍성과 인천캠퍼스 신입직원 30명이 참석했으며, △대학혁신지원사업 성과 공유 △조직문화 및 팀빌딩 △AI 실무교육 등 다양한 프",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "단국대 이용걸 교수 연구팀, 난분해성 폐플라스틱 분해 속도 3배 높이는 기술 개발",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601156",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 김연주 기자] 단국대 이용걸 교수(화학공학과) 연구팀이 재활용이 어려운 폐플라스틱(초고분자량 폴리에틸렌, UHMWE)의 분해 속도를 최대 3배 높일 수 있는 기술을 개발했다.폐플라스틱의 화학적 재활용에는 주로 열분해와 촉매 분해 기술이 활용된다. 그러나 높은 온도와 많은 에너지가 필요하고, 특히 초고분자량 폴리에틸렌(UHMWPE)은 분자사슬이",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "서울시교육청, 특성화고 학생 14명 작품 전시…27일까지 5일간",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601144",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 박인규 기자] 서울특별시교육청이 11월 23일부터 27일까지 5일간 교육청 1층 로비에서 ‘2027년도 서울교육달력 일러스트 작품 전시회’를 연다. 이번 전시는 ‘열두 달의 시간 위에, 우리의 색을 더하다’를 주제로, 특성화고 학생들이 직접 제작한 달력 일러스트를 선보인다.이 사업은 지난 7월부터 추진됐으며, 서울웹툰애니메이션고와 예림디자인고",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "한국교육학술정보원·한국스마트에듀테크협동조합, 공교육 에듀테크 활성화 협약",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601141",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 박인규 기자] 한국교육학술정보원(원장 정제영)과 한국스마트에듀테크협동조합(이사장 정광열)이 지난 20일 공교육 내 교육정보기술(에듀테크) 활성화를 위한 업무 협약을 맺었다. 이번 협약은 중소기업 협동조합인 한국스마트에듀테크협동조합과의 협력을 통해 공교육 분야의 에듀테크 발전을 도모하는 데 목적이 있다.양 기관은 공교육을 위한 우수 에듀테크 발",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "서울시교육청, 23일 유보통합 성과공유회…한 해 추진 성과 나눈다",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601137",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "watch",
+      "why": "추진",
+      "univ": [],
+      "summary": "[한국대학신문 박인규 기자] 서울특별시교육청(교육감 정근식)은 11월 23일 오후 2시30분부터 교육청 1층 대강당에서 2026년 유보통합 추진 성과공유회를 연다. 이번 행사는 한 해 동안 추진된 유보통합의 주요 성과와 현장 운영 사례를 공유하기 위해 마련됐다.행사에서는 유보통합 추진에 기여한 유공자와 기관에 교육감 표창이 수여되며, 유보통합의 실행기반 강",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "서일대, 우수 희망직업 경력개발로드맵 경진대회 시상식 성료",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601152",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 김윤미 기자] 서일대학교(총장직무대행 최인호) 고교생 맞춤형 고용서비스팀은 2026년 사업 참여 고등학교 5개교를 대상으로 ‘제3회 우수 희망직업 경력개발로드맵 경진대회 시상식’을 지난 6일 개최했다고 밝혔다.이번 대회는 고교생 맞춤형 고용서비스 사업의 일환으로, 학생들이 자신의 적성과 전공을 바탕으로 희망 직업을 탐색하고 구체적인 진로 목표",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "아주대 연구팀, 온실가스 배출 없는 ‘청정 수소’ 대량 생산 기술 개발",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601151",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 김연주 기자] 국내 연구진이 천연가스로부터 온실가스인 이산화탄소 배출 없이 고순도의 청정 수소와 고부가가치 고체 탄소를 동시에 대량 생산할 수 있는 차세대 액체 금속 촉매 공정을 개발했다. 기존에 활용되던 청정 수소 생산방식보다 훨씬 낮은 에너지로 안정적 수소 대량 생산이 가능해 청정 수소 생산 확대에 기여할 전망이다.23일 아주대학교(총장 ",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "호원대, 군산 임피역서 ‘아임피움’ 출범 페스티벌 개최",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601148",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 김윤미 기자] 호원대학교(총장 강희성) 앵커사업단은 지난 21일 군산 임피역사 공원에서 군산문화관광재단과 함께 로컬 문화 브랜드 ‘I’M PI:UM(아임피움)’의 첫 현장을 선보였다.이번 행사는 지역 식재료를 활용한 시제품을 시민이 직접 맛보고 평가하는 한편, 대학의 전공 역량을 활용한 건강관리 체험과 학생 창업동아리 부스, 문화공연 등을 통",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "실험실 연구 성과 바탕 '딥테크 창업'…건국대의 리더십, 비상 준비 완료",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601146",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 김연주 기자] 건국대학교(총장 원종필) 창업지원본부 실험실창업혁신센터는 올해 ‘공공기술기반 시장연계 창업탐색 지원사업(이하 TeX-Corps)’에 참여한 건국대 실험실창업탐색팀 10개 팀이 지난 12일 대전컨벤션센터(DCC) 제2전시장에서 열린 ‘2026 대한민국 딥테크 사업화 페스티벌’에 참가해 수료증을 받았다고 밝혔다.TeX-Corps는 ",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "영산대, ‘내면의 아름다움’ 주제로 AI시대 인간 가치 조명",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601145",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 이정환 기자] 와이즈유 영산대학교(총장 부구욱)는 지난 18일 해운대캠퍼스 성심오디토리움에서 ‘제12회 영산 휴머니티 콘테스트’를 성황리에 개최했다.2015년 시작된 ‘휴머니티 콘테스트’는 학생들이 ‘인간 내면의 아름다움’을 스스로 고민하고 실천하는 영산대의 대표적인 인성·교양 축제다. 이날 행사에는 부구욱 총장, 권경휘 교학부총장, 김영부 ",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "유한대, 교원 대상 유한양행 윌로우하우스 견학 프로그램 운영",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601143",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 김윤미 기자] 유한대학교(총장 장은영)는 지난 4일, 6일, 9일 총 3회에 걸쳐 전임교원 28명을 대상으로 유한양행 윌로우하우스에서 ‘교원 대상 유한양행 상호 협력’ 프로그램을 운영했다. 이번 프로그램은 유한양행 창립 100주년을 맞아 유일한 박사의 창업 정신과 기업의 사회적 책임을 되새기고, 교원들의 대학 설립 이념에 대한 이해와 소속감을",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "대림대, 파르나스호텔 경영진 초청 특강 개최",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601142",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 김연주 기자] 대림대학교(총장 박주호)는 지난 10일 홍지관 아트홀에서 파르나스 호텔앤리조트 경영진을 초청해 항공호텔관광과 및 호텔조리과 재학생 약 160명을 대상으로 특강을 개최했다.이번 강연에는 파르나스 호텔 제주 이동환 총지배인 등 호텔 경영진이 참석해 호텔 산업의 최신 동향과 경영 노하우, 현장 중심의 실무 경험을 공유하며 학생들에게 ",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "한국영상대-TJB대전방송 공동기획 ‘로컬청년스타’ 26일 첫 방송",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601140",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 김윤미 기자] 한국영상대학교(총장 유주현)가 TJB대전방송(대표이사 김세범)'과 공동 기획한 방송 프로그램 ‘로컬청년스타’가 오는 26일(목) 오후 6시 10분 첫 방송된다.‘로컬 청년 스타’는 대전·세종·충남에서 자신의 꿈을 향해 도전하는 청년들의 삶과 성장 이야기를 담은 지역 밀착형 리얼리티 예능 프로그램이다. 지역 청년의 수도권 유출이라",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "뇌졸중 위험 신호, 빛과 초음파로 찾아낸다",
+      "media": "한국대학신문",
+      "link": "https://news.unn.net/news/articleView.html?idxno=601136",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[한국대학신문 이정환 기자] 뇌졸중을 일으키는 목 혈관 속 '시한폭탄'을 빛과 소리로 미리 찾아내는 기술이 나왔다. 이 기술은 경동맥에 쌓인 찌꺼기(플라크, plaque) 안에 피가 고였는지를 확인하고, 그 출혈이 얼마나 오래됐는지까지 MRI 없이 알아낸다.POSTECH(포항공과대학교) 전자전기공학과·의공학과·기계공학과·융합대학원 김철홍 교수 연구팀은 영남",
+      "feeds": [
+        "한국대학신문"
+      ]
+    },
+    {
+      "title": "[메디톡] 네비게이션 임플란트, 치과 치료 전 확인해야 할 사항은?",
+      "media": "교수신문",
+      "link": "https://www.kyosu.net/news/articleView.html?idxno=212766",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "임플란트 치료를 계획할 때는 인공치근을 어느 위치에, 어떤 각도로 식립할 것인지 결정하는 과정이 중요하다. 잇몸뼈의 두께와 높이뿐 아니라 주변 치아의 배열, 신경관과 상악동의 위치까지 고려해야 하기 때문이다. 이러한 해부학적 구조를 사전에 분석하고 식립 계획을 수립하는 방법 중 하나가 네비게이션 임플란트다.네비게이션 임플란트는 치과용 컴퓨터단층촬영(CT) ",
+      "feeds": [
+        "교수신문"
+      ]
+    },
+    {
+      "title": "[교수초빙] 인덕대학교 2027학년도 교수초빙 공고",
+      "media": "교수신문",
+      "link": "https://www.kyosu.net/news/articleView.html?idxno=212765",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "대학 홈페이지 바로가기 >가. 초빙분야나. 자세한 사항은 대학 홈페이지를 참고하시기 바랍니다.",
+      "feeds": [
+        "교수신문"
+      ]
+    },
+    {
+      "title": "[교수초빙] 한성대학교 2027학년도 1학기 <2차> 전임교원 초빙 공고",
+      "media": "교수신문",
+      "link": "https://www.kyosu.net/news/articleView.html?idxno=212764",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "대학 홈페이지 바로가기 >가. 초빙분야나. 자세한 사항은 대학 홈페이지를 참고하시기 바랍니다.",
+      "feeds": [
+        "교수신문"
+      ]
+    },
+    {
+      "title": "[메디톡] 여아 성조숙증, 또래보다 빠른 신체 변화… 성장 시기 놓치지 않아야",
+      "media": "교수신문",
+      "link": "https://www.kyosu.net/news/articleView.html?idxno=212762",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "초등학교 저학년 여아에게 가슴 발달이나 급격한 키 성장 등 사춘기 징후가 나타나면 성조숙증 여부를 확인할 필요가 있다. 성장기에는 개인마다 발달 속도가 다르지만, 사춘기가 지나치게 일찍 시작되면 성장판의 성숙 속도에도 영향을 미칠 수 있기 때문이다. 특히 여아는 신체 변화가 비교적 뚜렷하게 나타나는 만큼 부모의 세심한 관찰이 중요하다.일반적으로 여아 성조숙",
+      "feeds": [
+        "교수신문"
+      ]
+    },
+    {
+      "title": "건국대병원 지현근 교수, 흉부외과학회 연구공로상 수상",
+      "media": "교수신문",
+      "link": "https://www.kyosu.net/news/articleView.html?idxno=212758",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "건국대병원 심장혈관흉부외과 지현근 교수가 지난 11월 4일부터 6일까지 경주화백컨벤션센터에서 열린 대한심장혈관흉부외과학회 제58차 추계학술대회에서 연구공로상을 수상했다.이번 수상은 지난 30년간 심장수술 분야에서 연구를 이어오며 흉부외과학 발전에 기여한 공로를 인정받은 데 따른 것이다.연구공로상은 흉부외과학의 학문적 발전에 기여한 원로 연구자의 업적을 기리",
+      "feeds": [
+        "교수신문"
+      ]
+    },
+    {
+      "title": "광주여대 미용과학과 미용심리학 연계 '전공 디딤돌 클래스' 운영",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638590",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 광주여자대학교 미용과학과는 10월29일과 19일 미용심리학 교과목과 연계한 '전공 디딤돌 클래스(Class)'를 두 차례 운영했다고 23일 밝혔다.프로그램은 학생들이 색과 이미지를 활용해 자신의 감정과 생각을 표현하고, 다른 사람의 작품과 표현을 통해 다양한 관점을 이해하며 자기이해와 공감/소통 역량을 키울 수 있도록 마련됐다.",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "경성대 간호학과 ‘2026년 나이팅게일 선서식’ 성료",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638588",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 경성대 간호학과는 12일 ‘2026년 나이팅게일 선서식’을 성공적으로 열었다.나이팅게일 선서식은 예비 간호사로 첫걸음을 내딛는 학생들이 플로렌스 나이팅게일의 숭고한 희생정신을 이어받아 전문직 간호인으로서의 사명을 성실히 이행할 것을 다짐하는 뜻깊은 행사다.이날 행사에는 박남희 부산광역시간호사회 회장을 비롯해 경성대 학무부총장, ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "연세대 서대문구와 손잡고 지역 청소년 AI 교육 지원",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638585",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 연세대(총장 윤동섭) 4단계 BK21 '공감, 공존, 공생하는 사회를 위한 혁신적 디자인' 교육연구단과 AI혁신연구원 AI에듀테크센터가 서대문구와 손잡고 지역 청소년의 인공지능(AI) 교육 기회 확대에 나선다.연세대는 지난 11월 12일 서대문구청 구청장실에서 서대문구와 '청소년 AI 미래역량 증진 프로그램' 공동 운영을 위한 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "계명대 제6회 전국 어린이 미술대회 성료.. 2645명 상상력 겨뤄",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638587",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 계명대는 21일 ‘제6회 계명대학교 미술대학 전국 어린이 미술대회’ 시상식을 열었다. 이날 행사에는 수상 어린이와 학부모 등 600여 명이 참석해 수상자들을 축하했다.계명대가 주관하고 (재)협립매곡문화재단 ㈜에스알 송강미술관이 후원한 대회에는 전국에서 2645명이 예선에 참가했다. ‘내가 꿈꾸는 상상 미술관’을 주제로 열린 본선",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "부산녹색환경지원센터-부경대 환경연구소 낙동강유역환경청장 초청 환경정책 특강 개최",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638586",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 부산녹색환경지원센터와 부경대 환경연구소는 19일 이형섭 낙동강유역환경청장을 초청해 환경정책 전문가 특강을 공동 개최했다.특강은 기후에너지환경부의 주요 환경정책과 미래 산업 동향에 대한 이해를 높이고, 지역 대학생들에게 환경 분야 진로 탐색/전문 역량 강화 기회를 제공하기 위해 마련됐다. 이날 부경대 환경 관련 학부생 대학원생 교",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "청운대 2026년 신입직원 혁신역량강화 워크숍 개최",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638584",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 청운대는 19일부터 20일까지 충남 보령시에서 ‘2026년 신입직원 혁신역량강화 워크숍’을 열었다고 밝혔다.워크숍에는 김재호 기획처장, 김동환 사무처장을 비롯해 홍성과 인천캠퍼스 신입직원 30명이 참석했으며, △대학혁신지원사업 성과 공유 △조직문화/팀빌딩 △AI 실무교육 등 다양한 프로그램을 통해 대학에 대한 이해도를 높이고 실",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "동명대 군사학과 2026학년도 충렬제 개최",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638581",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 동명대(총장 이상천) 군사학과는 11월 18일 교내에서 재학생과 교수진, 외부 전문가 등 98명이 참석한 가운데 한 해의 성과를 공유하는 '2026학년도 군사학과 충렬제'를 개최했다.이번 충렬제는 '첨단 과학기술 발전과 미래 군사 리더의 역량 개발'을 주제로, 급변하는 안보환경과 미래 전장 변화에 대응할 수 있는 예비장교의 전문",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "인하공전 삼성바이오로직스 선배와 함께한 직무 멘토링 성료",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638583",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 인하공업전문대학(이하 인하공전) 대학일자리플러스센터가 13일 삼성바이오로직스 재직 동문을 초청해 온라인 직무 멘토링을 진행했다.멘토링은 고용노동부 '졸업생특화프로그램'의 하나로, 미취업 졸업생과 구직 청년들의 바이오산업 진출을 실질적으로 돕기 위해 마련됐다. 강연에 나선 동문 선배는 바이오제약 플랜트의 'Utility Opera",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "광주여대 학생상담센터 3학기 LOM[마음의 등대] 프로그램 운영",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638582",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 광주여자대학교 학생상담센터는 9월14일부터 13일까지 2026학년도 3학기 LOM[마음의 등대] 프로그램을 운영했다고 23일 밝혔다.LOM[마음의 등대] 프로그램은 학사경고자와 특별지도학생을 대상으로 학업 부진으로 어려움을 겪고 있는 재학생들의 심리/정서적 어려움을 지원하고, 대학생활 적응력을 높이기 위해 매 학기 운영하고 있다",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "숙명여대 글로벌 광고/미디어 기업 WPP Media 본사 탐방",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638580",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 숙명여대(총장 문시연)는 11월 20일 광고/미디어 및 디지털 마케팅 분야 진출을 희망하는 재학생들을 대상으로 영국계 글로벌 미디어/마케팅 기업 WPP Media Korea 본사에서 'WPP Media Campus Day'를 개최했다.고용노동부 대학일자리플러스센터 사업의 일환으로 마련된 이번 행사는 학생들이 글로벌 광고/미디어 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "청운대 홍성군 초등학생 대상 '주니어주말 영어학교' 수료식 개최",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638579",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 청운대(총장 정윤) 평생교육원은 지난 21일 호텔관광대학 6층 그랜드볼룸에서 '2026년 주니어주말 영어학교 수료식'을 개최했다고 밝혔다.홍성군 지원사업으로 청운대가 위탁 운영하는 주니어주말 영어학교는 지난 8월부터 홍성군 초등학생 20여 명을 대상으로 10주간 진행됐다.영어표현과 회화 학습을 비롯해 문화/역사 체험, 다양한 주",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "손톱 크기에 50TB 담는'체스판형 메모리'만들 도메인 벽 발견",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638578",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 산화하프늄에 일반적인 강유전체와 다른 형태의 도메인 벽이 존재한다는 사실이 이론적으로 입증됐다. 이 도메인 벽 때문에 도메인 한 변 길이를 약 0.5나노미터(nm) 수준으로 줄여도 정보를 저장할 수 있는 특성인 분극이 약해지지 않는다. 도메인을 체스판처럼 배열해 손톱(1㎠)만 한 메모리 소재에 약 50테라바이트(TB)의 정보를 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "UNIST '세계 상위 1% 연구자' 8명… 국내 2위",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638577",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] UNIST(총장 박종래) 교원 8명이 올해 '세계에서 가장 영향력 있는 연구자(HCR)'에 선정됐다. 서울대에 이어 국내 공동 2위다. 화학과 로드니 루오프(Rodney S. Ruoff) 특훈교수는 13년 연속 명단에 올랐다. 8명 모두 지난해에도 뽑혔으며, 이 가운데 7명은 5번 이상 선정됐다.글로벌 정보분석 기업 클래리베이트",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "UNIST 학생 206명, 경동장학재단 장학금 받았다",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638576",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] UNIST(총장 박종래)는 경동장학재단 장학금을 받은 학생이 올해 누적 200명을 넘어섰다고 23일 밝혔다. 재단은 2009년 UNIST 학생 17명에게 처음 장학금을 수여한 뒤 올해까지 206명에게 약 21억원을 후원했다.이날 UNIST 대학본부 대회의실에서 열린 '2026년 경동장학재단 장학증서 수여식'에서는 신입생 5명이 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "UNIST–KAI, 미래 항공우주 인재양성/공동연구 맞손",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638574",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] UNIST(총장 박종래)와 KAI(한국항공우주산업, 대표이사 김종출)가 항공우주 분야 전문인재 양성과 공동연구를 추진한다.두 기관은 20일 UNIST 대학본부 대회의실에서 '항공우주산학협력 협약'을 체결했다. 이날 협약식에는 UNIST 박종래 총장과 KAI 김종출 대표이사를 비롯한 양 기관 주요 관계자들이 참석했다.협약에 따라 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "유원대 보훈 대상 어르신/소방서에 수제 빵 나눔 봉사활동",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638575",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 유원대가 19일 학생과 교직원이 직접 만든 수제 빵을 보훈 대상 어르신과 영동소방서에 전달했다.봉사활동은 국가유공자의 헌신에 감사를 표하고 지역 안전을 위해 애쓰는 소방관들을 응원하기 위해 마련됐으며 충북남부보훈지청이 재료비와 음료를 지원했다.봉사활동에는 교내 동아리 '카맀으마'와 참여를 희망한 학생/교직원 등 약 30명이 함께",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "신라대 소방안전/응급구조/경찰행정학과 신입생 연합 체육대회 개최",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638573",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 신라대 소방안전학과 응급구조학과 경찰행정학과는 신입생들의 대학생활 적응과 학과 간 교류 활성화를 위해 10일 연합 체육대회를 열었다고 밝혔다.행사는 대학혁신지원사업의 일환으로 마련됐다. 신입생들이 신라대 공동체의 일원으로서 소속감을 형성하고, 선후배와 다른 학과 학생들과 자연스럽게 어울리며 대학생활에 안정적으로 적응할 수 있도록",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "효소 속 '이웃 분자' 하나가 산화 반응 속도 3000배 높였다!",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638566",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 생체 효소는 수십억 년의 진화가 빚어낸 정교한 화학 반응 촉매다. 이 가운데 약 40%는 망간이나 철과 같은 금속 이온을 포함하는 것으로 알려져 있는데, 그중 망간 금속 중심에 어떤 곁가지가 이웃하느냐에 따라 수소 원자를 떼어내는 반응 속도가 약 3,000배까지 달라질 수 있다는 사실이 드러났다. UNIST 화학과 조재흥 교수팀",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "유원대 (사)충남평생복지협회/아산지부와 장애인 교육복지/문화활동 활성화 업무협약 체결",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638572",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 유원대 장애학생지원센터/중등특수교육과가 20일 (사)충남평생복지협회, (사)충남평생복지협회 아산지부와 장애인 교육복지와 문화활동 활성화를 위한 업무협약(MOU)을 체결했다.협약은 지역사회 내 장애인의 평생교육 기회를 확대하고, 건전한 장애인식개선 문화 조성과 복지 증진을 위한 협력체계를 구축하기 위해 마련됐다.협약에 따라 각 기",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "대구한의대 재학생맞춤형고용서비스 사업팀 재학생 진로/취업 경험 공유 공모전 시상",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638571",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 글로컬대학 대구한의대 대학일자리플러스센터 재학생맞춤형고용서비스 사업팀은 11일 ‘2026학년도 재학생맞춤형고용서비스 참여 수기와 신직업(직무) 아이디어 공모전’ 시상식을 열었다.공모전은 재학생들이 한 해 동안 경험한 진로/취업 활동을 공유하고 미래 유망 직업과 직무에 대한 창의적인 아이디어를 발굴하기 위해 마련됐다.공모전에는 재",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "유원대 실버다문화에듀케어센터/옥천군가족센터 결혼이주여성 대상 '이중언어 & 한국문화 아카데미' 개강",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638570",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 유원대는 충북ANCHOR사업단 실버다문화에듀케어센터가 18일 옥천군가족센터와 함께 결혼이주여성 대상 ‘이중언어 & 한국문화 아카데미’를 개강했다.아카데미는 옥천군에 거주하는 결혼이주여성의 한국어 능력을 높이고 가정 내 원활한 이중언어 소통을 돕기 위해 마련됐다. 참여자들은 모국어와 한국어를 함께 배우며 일상생활과 가족 간 대화에",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "서울공대 오준학 교수팀 1000번 늘려도 균열 없는 고성능 고무 반도체 개발",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638569",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 몸에 붙이는 건강 측정기기부터 로봇의 전자피부까지, 움직임에 따라 늘어나는 전자기기에 활용할 수 있는 고성능 '고무 반도체'가 개발됐다.오준학 서울대 공과대학 화학생물공학부 교수 연구팀이 호주 퀸즐랜드공과대학교, 중국 푸단대학교 연구팀과 공동으로 고무처럼 늘어났다가 원래 모양으로 돌아오는 고성능 n형 고분자 반도체를 개발했다. ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "원광대 앵커사업단 AI/글로벌 청년 역량강화 교육 운영",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638568",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 원광대 앵커(ANCHOR)사업단은 19일부터 20일까지 이틀간 익산 청년시청과 연계해 지역 청년과 외국인 유학생 등을 대상으로 'AI/글로벌 청년 로컬 역량강화 프로그램'을 운영했다.프로그램은 전북특별자치도 ANCHOR 사업의 일환으로, AI/디지털 기술에 대한 이해와 활용 역량을 높이고 글로벌 청년의 지역사회 적응과 지역 내 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "대구대 패션디자인학과 '제15회 국제디지털패션콘테스트' 대상/최우수상 등 11명 입상",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638567",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 대구대 패션디자인학과 학생들이 14일 시상식이 열린 '제15회 국제디지털패션콘테스트'에서 대상과 최우수상을 비롯해 총 11명이 입상했다.(사)한국의류산업학회가 주최하고 산업통상부, (주)파크랜드, (주)성주디앤디, (주)씨에이플래닛이 후원한 대회에서 대구대 패션디자인학과는 대상 1명(정지완), 최우수상 1명(황현준), 장려상 3",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "경남대 경남문화유산돌봄센터 강상환 팀장 국가유산청장 표창",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638565",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "local": true,
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 경남대 산학협력단 경남문화유산돌봄센터 강상환 보존관리 5팀장이 18일 '2026년 국가유산돌봄사업 합동연수회'에서 국가유산의 상시/예방관리와 국가유산돌봄사업 발전에 기여한 공로로 국가유산청장 표창을 받았다.합동연수회에는 국가유산청과 16개 광역시/도 담당자, 중앙/지역문화유산돌봄센터, 한국문화유산돌봄협회 등 관계자들이 참석해 사",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "단국대 이용걸 교수팀 난분해성 폐플라스틱 분해 속도 최대 3배 높이는 기술 개발.. '기계적 힘과 촉매 결합해 약 300℃서 분해 촉진'",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638564",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 단국대 화학공학과 이용걸 교수팀이 재활용이 까다로운 폐플라스틱인 초고분자량 폴리에틸렌(UHMWPE)의 분해 속도를 최대 3배까지 끌어올리는 기술을 개발했다. 연구 결과는 화학공학 분야 상위 4.5%(IF 기준) 국제학술지 'Chemical Engineering Journal'에 2026년 10월 실렸다. 논문명은 'Reveali",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "국립한국해양대 해사법대학원 2027학년도 1기 신입생 모집",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638563",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 국립한국해양대 해사법대학원이 해양수도 부산의 미래와 해사법원 시대를 함께 열어갈 2027학년도 전기 석사과정 1기 신입생 20명을 모집한다.원서접수는 25일 오전 9시부터 12월7일 오후 6시까지 유웨이어플라이에서 진행한다.2028년 3월1일 부산해사국제상사법원 개원을 앞두고 해사법과 국제거래법을 이해하고 현장의 분쟁에 대응할 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "춘해보건대 제14회 울주복지박람회서 주민 건강관리 지원",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638562",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 춘해보건대는 21일 진행된 '제14회 울주복지박람회'에 참여해 지역주민을 대상으로 건강증진 부스를 운영했다.활동은 2026년 지역성장 인재양성체계(앵커)사업의 일환으로, 사회적 약자를 포함한 지역주민에게 건강관리 서비스를 제공하고 지역 유관기관과의 협력을 강화하기 위해 마련됐다.울주군지역사회보장협의체가 주관하는 울주복지박람회는 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "동의대 부산AI혁신센터 미래제조혁신협회와 업무협약",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638561",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 동의대 앵커사업단 부산AI혁신센터는 17일 미래제조혁신협회와 지역 제조기업의 AI/디지털 전환과 산학협력 활성화를 위한 업무협약을 체결했다.이날 협약식에는 정석찬 동의대 부산AI혁신센터 센터장과 배인열 미래제조혁신협회 회장을 비롯한 양 기관 관계자들이 참석해 제조산업의 인공지능 전환(AX)과 기술혁신을 위한 협력 방안을 논의했다",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "유원대 장애학생지원센터 '제2회 장애인 스포츠스태킹 대회' 성료",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638560",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 유원대 장애학생지원센터가 20일 '제2회 장애인 스포츠스태킹 대회'를 열었다.대회는 지역 장애인의 스포츠 참여 기회를 확대하고 사회통합과 평생학습 기반을 강화하기 위해 마련됐다. 유원대 장애학생지원센터가 주최하고 유원대 중등특수교육과와 대한스포츠스태킹협회가 공동 주관했으며, 스피드스택스코리아가 후원했다.올해 대회에는 천안시해누리",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "성균관대 클라리베이트 '2026 세계 상위 1% 연구자(HCR)' 8명 선정.. '국내 종합 사립대 최다 박남규 교수 10년 연속'",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638557",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 성균관대가 클라리베이트(Clarivate)가 발표한 2026년 세계 상위 1% 연구자(Highly Cited Researcher, HCR) 선정 결과에서 소속 교원 8명이 이름을 올렸다고 밝혔다. 국내 종합 사립대 가운데 가장 많은 인원이다.HCR은 분야별 피인용 상위 1% 논문인 HCP(Highly Cited Paper)를 보",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "\"드론은 탄약이다\".. 중원대 드론봇 군사학과 박상혁 교수 6개월간 육군 제2작전사령부 정책연구 마무리",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638559",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] (사)국제융복합연구원장인 박상혁 중원대 ‘드론봇 군사학과’ 교수가 육군 제2작전사령부의 정책연구를 4월27일부터 약 6개월간 수행하고, 최종 연구 보고서를 제출했다. 이번 연구는 AI와 드론을 비롯한 유무인복합전투체계를 바탕으로 후방지역 작전의 발전 방향을 모색한 정책연구다.국가중요시설 현장을 누비는 대드론 전문가박상혁 교수(국",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "중원대 제12회 (사)국제융복합연구원 동계 학술 세미나 [연구윤리 특강] 개최",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638558",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 박상혁 중원대 교수가 연구원장(이하, 국제융복합연구원 연구원장)을 맡고 있는 (사)국제융복합연구원이 주관하고 중원대 드론봇 군사학과가 주최한 '제12회 동계 학술 세미나 및 연구윤리 특강'이 21일 열렸다.이날 세미나에는 (사)국제융복합연구원 학술 회원과 육군과 해군 해병대 장교와 드론봇 군사학과 학부생(후보생) 등 약 80명이",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "국립순천대 RIC센터 '해남 뿌리/조선산업 애로기술 컨설팅' 전문가 1:1 매칭으로 현장 난제 해결",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638556",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 국립순천대 차세대 전략산업용 희유자원 실용화(RIC)센터는 19일부터 20일까지 이틀간 ‘2026년 시군구연고산업육성사업 해남 뿌리/조선산업 애로기술 컨설팅’을 열었다고 밝혔다.행사는 해남 지역 뿌리/조선기업들이 겪고 있는 현장 기술 애로사항을 즉시 해결하고, 정부지원사업 계획서와 결과보고서 작성 역량을 끌어올리기 위해 마련됐다",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "국립순천대 RIC센터 '해남 뿌리/조선산업 역량강화 워크숍' 성료",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638555",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 국립순천대 차세대 전략산업용 희유자원 실용화(RIC)센터는 19일 '2026년 시군구연고산업육성사업 해남 뿌리/조선산업 역량강화 워크숍'을 열었다고 밝혔다.워크숍은 앞서 진행된 수혜기업 사업 모니터링의 일환으로 '애로기술닥터'의 기업 현장방문을 통해 파악된 해남 지역 뿌리/조선기업들의 실질적인 고충을 해소하기 위해 기획됐다. 행",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "아이딧 박원빈/정세민, 문학 낭독 첫 도전... 최종편 참여",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638552",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 교육부와 EBS가 공동 기획한 오디오 학습 콘텐츠 '아이돌이 들려주는 교과서 속 문학'의 마지막 주자로 그룹 IDID(아이딧)의 박원빈과 정세민이 나선다.'아이돌이 들려주는 교과서 속 문학'은 K팝 아티스트들이 고등학교 문학 교과서에 실린 주요 작품 30편을 직접 낭독하고 작품의 배경과 표현 기법, 감상 포인트를 함께 소개하는 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "부경대 글로벌지역학연구소 부산연구원 인구전략연구센터장 초청 콜로키움 개최",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638554",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 국립부경대 글로벌지역학연구소는 4단계 BK21사업 부산의 관문도시형 국제화를 위한 글로벌지역학 전문인력 교육연구단과 19일 정현일 부산연구원 인구전략연구센터장 초청 콜로키움을 공동으로 열었다.이번 콜로키움은 부산의 관문도시적 특성과 인구 이동, 경제적 연계 간의 관계를 살펴보고 빅데이터를 활용한 지역연구 방법론을 논의하기 위해 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "국립창원대-서울대 'SMR 생태계/공급망 조성 포럼' 공동 개최한다!",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638553",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "local": true,
+      "level": "normal",
+      "univ": [
+        "서울대"
+      ],
+      "summary": "[베리타스알파=김하연 기자] 국립창원대에서 차세대 무탄소 에너지원으로 주목받는 소형모듈원전(SMR) 시장을 선점하기 위해 학계와 산업계, 지자체가 머리를 맞댄다. 국립창원대 SMR² 플랫폼 국가연구소는 서울대 원자력정책센터와 공동으로 12월1일 'SMR 생태계, 공급망 조성 및 지역 기업 진출방안' 포럼을 공동 개최한다고 19일 밝혔다.포럼은 국내 SMR ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "부산대 지역 유망 딥테크 스타트업 17개 사 발굴/육성 결실",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638551",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [
+        "부산대"
+      ],
+      "summary": "[베리타스알파=김하연 기자] 부산대 창업지원단은 19일 예비/초기 창업기업의 성장을 지원하기 위한 [2026 부산 창업기업 액셀러레이팅 프로그램 IR 데모데이]를 열었다고 23일 밝혔다.행사는 부산지방중소벤처기업청과 함께 창업중심대학 사업을 수행하는 부산대를 비롯해 동아대/(재)부산창조경제혁신센터가 공동 주관하고, 액셀러레이터 시리즈벤처스가 운영했다.투자브",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "충북대 자율전공학부 동문 선배와 함께하는 진로 설계 홈커밍데이 개최",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638550",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [
+        "충북대"
+      ],
+      "summary": "[베리타스알파=김하연 기자] 충북대 창의융합대학 자율전공학부가 19일 재학생들의 성공적인 전공 선택과 자기주도적 진로 설계를 지원하기 위한 '2026학년도 자율전공학부 홈커밍데이'를 열었다.행사는 전공 배정을 앞둔 1학년 학생들이 전공 선택 이후의 대학 생활과 진로 방향을 구체적으로 설계할 수 있도록 마련됐다. 특히 다양한 분야에서 전문성을 발휘하고 있는 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "조선대/앰코코리아 지역 청년 반도체 분야 취업 지원에 협력",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638549",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 조선대 대학일자리플러스센터가 앰코코리아, 광주고용센터와 협력해 지역 청년들의 반도체 분야 취업 지원에 나선다.조선대 대학일자리플러스센터는 24일 열리는 ‘앰코코리아 취업특강 및 1:1 컨설팅’ 행사에 참여해 지역 청년들에게 기업 채용 정보와 맞춤형 취업지원 서비스를 제공할 예정이다.행사는 앰코코리아 채용설명회와 반도체 분야 취업",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "동아대 등 4개 대학 '제21회 영호남 4개대학 교직원 체육대회' 성황리 개최",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638548",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 동아대는 동아대를 비롯한 영호남 4개 사립대학이 참가한 ‘제21회 영/호남 4개 대학 교직원 체육대회’를 성황리에 열었다고 23일 밝혔다.전국대학노동조합 동아대학교지부(지부장 박종현)가 주관해 21일 열린 이번 대회에는 주최교인 동아대와 영남대 원광대 조선대 등 4개 대학 교직원과 가족 등 550여 명이 참가했다. 행사는 ‘지역",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "동아대 '2026학년도 (재)동아장학회 장학금 수여식' 개최",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638546",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 동아대 (재)동아장학회는 '2026학년도 재단법인 동아장학회 장학금 수여식'을 열고 재학생 45명에게 모두 4500만원의 장학금을 전달했다고 23일 밝혔다.동아대 교수진의 자발적인 출연과 정성으로 1997년 설립된 (재)동아장학회는 현재까지 학부생과 대학원생 등 모두 833명에게 11억2500만원에 달하는 장학금을 지급하며 후학",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "숭실대 글로벌미래교육원 시각디자인전공 졸업전시회 'eso:ego' 개최.. '12월 2~5일 형남공학관서 예비 디자이너 작품 전시'",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638544",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 숭실대 글로벌미래교육원(원장 고동환) 시각디자인전공이 12월 2일부터 5일까지 교내 형남공학관 2층에서 졸업전시회 'eso:ego'를 연다. 전시 제목에는 알에서 깬 새끼 새가 자라 둥지를 떠나듯, 학교라는 익숙한 울타리를 넘어 더 넓은 세상으로 나아간다는 뜻을 담았다.전시를 기획한 백금란 주임교수는 \"첫 비행을 앞둔 새의 두려",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "상명대 마스코트 데뷔 5주년 기념 '수뭉이의 다섯돌' 이벤트 진행",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638541",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 상명대(총장 김종희)가 공식 마스코트 '수뭉이'의 데뷔 5주년을 맞아 온/오프라인 연계 이벤트 '수뭉이의 다섯돌'을 진행한다.상명대 상징동물인 사슴에서 모티프를 얻어 탄생한 수뭉이는 2021년 11월 29일 '상명인을 지키는 수호신'이라는 설정으로 데뷔했다. 상명대 졸업생인 신지원 작가(불어교육과 14학번)가 디자인했으며, 동글",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "부산대-SK AX [AI 인재 키우고 부울경 산업 바꾼다]",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638540",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [
+        "부산대"
+      ],
+      "summary": "[베리타스알파=김하연 기자] 부산대는 SK그룹의 IT/AI 전문 계열사인 SK AX와 [인공지능(AI) 인재 양성 및 지역의 AI 전환(AX)을 위한 산학협력 업무협약]을 20일 체결했다고 23일 밝혔다.협약은 부산대의 교육/연구 역량과 SK AX의 기술력/현장 경험을 연결해 산업 수요에 부응하는 AI 인재를 양성하고, 동남권의 AI 교육 기회를 확대하기 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "충북대 '통번역에디터 영어 취업캠프' 개설.. 현직 동시통역사 참여 실무교육 운영",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638539",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [
+        "충북대"
+      ],
+      "summary": "[베리타스알파=김하연 기자] 충북대 인문학연구소가 충북 ANCHOR 사업단과 공동으로 겨울방학 기간 중 '통번역에디터 영어 취업캠프'를 개설하고 수강생 모집에 나선다.취업캠프는 학생들의 영어 통번역 실무능력과 취업 경쟁력을 강화하기 위해 마련한 집중 교육 프로그램이다. 특히 통번역대학원 출신 전문 동시통역사가 직접 교육을 맡아 현장 중심의 실무 역량을 높이",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "서울대 사회과학대학 언론정보연구소 [AI 서비스와 아동/청소년 보호] 세미나 개최",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638538",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [
+        "서울대"
+      ],
+      "summary": "[베리타스알파=김하연 기자] 서울대 사회과학대학 언론정보연구소는 2026년 11월 25일 오후 1시 30분, 서울대 법학전문대학원(15-1동) 303호에서 'AI 서비스와 아동/청소년 보호' 세미나를 개최한다. 이번 세미나는 방송미디어통신위원회 2026년 방송통신융합정책연구 사업의 일환으로, 서울대 언론정보연구소/포스트팬데믹 시기 디지털 소통과 지속가능성 ",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "호원대 군산 임피역서 ‘아임피움’ 출범.. 민/관/학 협업을 현장에 담다",
+      "media": "베리타스알파",
+      "link": "https://www.veritas-a.com/news/articleView.html?idxno=638537",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "[베리타스알파=김하연 기자] 호원대 앵커사업단은 21일 군산문화관광재단과 함께 로컬 문화 브랜드 ‘I’M PI:UM(아임피움)’의 첫 현장을 선보였다.행사는 지역 식재료를 활용한 시제품을 시민이 직접 맛보고 평가하는 한편, 대학의 전공 역량을 활용한 건강관리 체험과 학생 창업동아리 부스, 문화공연 등을 통해 브랜드의 출발을 알리고 지역사회와 소통하는 자리로",
+      "feeds": [
+        "베리타스알파"
+      ]
+    },
+    {
+      "title": "대구대 교수들, 비정년트랙 차별 철폐 천막농성·서명운동 전개",
+      "media": "대학지(유니프레스)",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9tN3NoalVzWnA2d0pGLUhWZkZ5eHZxZGhyb1VNX1JlQ2dTT0xnV3RkQVc5V1UwSjlzWGFKcWhsd3FxS1B3WnE1Z0FaS0lYVDFhU1ZzN0h6bUh3QzZpal9aWDlCU0Uwa3Y0Yk9CVw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-23",
+      "field": "기타",
+      "group": "기타",
+      "level": "crisis",
+      "why": "농성",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE9tN3NoalVzWnA2d0pGLUhWZkZ5eHZxZGhyb1VNX1JlQ2dTT0xnV3RkQVc5V1UwSjlzWGFKcWhsd3FxS1B3WnE1Z0FaS0lYVDFhU1ZzN0h6bUh3QzZpal9aWDlCU0Uwa3Y0Yk9CVw?oc=",
+      "feeds": [
+        "대학지(유니프레스)"
       ]
     },
     {
@@ -3470,10 +5201,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "박준 의장, 경상국립대병원장 만나 지역의료 현안 논의",
       "media": "쿠키뉴스",
       "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5jYkwtUmxqS2picDJ0Zlo5aE1kdUZjR3ktN1Z1b2QxeFVXWEM5anRJa0NmTi1hRXRfYU8wNmlRdGZjMWJGOU56YldFMS04OURpQkV5VmFjSk9BNnBvZDZSZ2JlTQ?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3488,10 +5219,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "송병국 순천향대 총장 “대학 혁신, 속도보다 ‘방향’… ‘AI의료융합’으로 의료·바이오 인재 양성”[파워인터뷰]",
       "media": "한국대학신문",
       "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1DOWFYazQ4WjZYYlBLS1JvYWZXS2hpWlFZaVJpS1pTaDIxX3owSjZqRVNQbl8zemNGWWp2OHZXeE84cW1aa2lTS0RkRG1rSVItbTZBR2dGRmJxUnNxX3F6eWZ0MlpoZw?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "증강인재교육",
       "group": "교육",
@@ -3507,10 +5238,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "국립공주대, 외국인 근로자 대상 ‘찾아가는 한국어 교실’ 수료식 개최",
       "media": "일간투데이",
       "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5qWGN1VmkwRFFFa2FHSVhDcVpReDNDeVNSbHUtaVA5Yno1VUNFemRSVVdBVUs0Vk1vQ3l2ZnNMaWJwUVduajhwVnQxc0hidlhsUFg0TEVLdUJFeDk2eWdWLVA0bklwbWcydVdV?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "기타",
       "group": "기타",
@@ -3522,10 +5253,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "\"내 등록금으로 아이돌 불렀는데 웬 외부인이?\"…선 긋는 대학 축제[이슈N]",
       "media": "뉴시스",
       "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE56N2cwdU5YN1paM3RBUWVkaC1sQktYaFNOcmtqeTYzdWs0cWFNSFFFZGpWTjJ1WU14Z2ZMZlphN1hCSVJjYnBSQ3k2ejB5RkdjY0RnNEFFQWFwSUVGbDhmUNIBeEFVX3lxTFB4YkFjM1RNdFNHZDlZS2JJVDB1aDFaczkyWm1TdlduS3M5NkRfWC1odHlsWFlKZ1g1YXhsRUZWei04RnlqcWl2OGc2QnlsNjY1TGp4bElNN1pySG5Fc1RhdEoxRmZRc0xXalo0SC12R21BeVhRNnhBeA?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3537,10 +5268,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "R)'등록금 0원'·'지역의사제', \"정책 따른 실리 지원\"",
       "media": "안동MBC",
       "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9hLThMX1VyRGRVMGlPSWNYWHYtaGRLeC10TEowOHo0NFMzS0V0c1FYeG5sdmJXbHRuRTZIY2dDTlozOGcwR2pKdDIyN05CSS1tMC1RanFsZnBBelVqbXBQTkVPS29HTmZWTlNpY1Y5WVluQ2NCNkE?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3552,10 +5283,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "AI에 “어느 대학 갈까” 물었더니…답변 4건 중 3건, 근거에 대학·공공자료 없었다",
       "media": "교수신문",
       "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBmVzFZYV9VVEtzdTB3V2NHZ1ZZVnZBWHJUNVpvQjBHYjZTeVRnRzdYU0hJbHlzY19sRzJ0MnpGSjhWUHZNeDF3Znc2U3VYR2M0ZlAzRTk3YmdDSXNJUTlXeHhock9oaW8?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "기타",
       "group": "기타",
@@ -3568,10 +5299,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "“단순 서술형 전환, 해법 아니다…평가 자체를 바꿔야”",
       "media": "교수신문",
       "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBpNE4ySmJTLVdVLVE2ZW56dkYwUmUtR09zZEpoVUcxN2x5YWFMdFFlMUw3OWRLLWZwb3JWVlpFUUVnV1BDSGN0ZS1NSmNlMGtiTzdBMXFTeVhONkloVlFyYXkxQldjN0U?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3585,10 +5316,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "[편집인 칼럼] AI 활용 시험 부정, 시대전환을 위한 사회 대개혁의 계기 돼야",
       "media": "군포시민신문",
       "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE15X1lIYklCUzZSUXJKMXF0NGlYSElIeXNlOU5VZXN5NXpnQ1FmZVB1NDUzQVBfczl1TjU0bkJ2OTVuaEk?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "기타",
       "group": "기타",
@@ -3600,10 +5331,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "'AI 로봇 의사' 현실로‥실제 수술 첫 성공",
       "media": "MBC 뉴스",
       "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFA4ZWgxZFBkVGtENGZSLVBfbEJOX0xtY0RvTkV2aTUwajFjQ1IzTkpBYklvaUVEYzJIamFjV3NUNGRjNjFnVnB4M2JrRVdZOThTQnF2eTRLQ2FERHJNZktJcE1MMjFjbVBpWFkzRWlERHdRTHpIZjFlZUFB0gF6QVVfeXFMUDhlaDFkUGRUa0Q0ZlItUF9sQk5fTG1jRG9ORXZpNTBqMWNDUjNOSkFiSW9pRURjMkhqYWNXc1Q0ZGM2MWdWcHgzYmtFV1k5OFNCcXZ5NEtDYUREck1mS0lwTUwyMWNtUGlYWTNFaUREd1FMekhmMWVlQUE?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "융합연구",
       "group": "교육",
@@ -3615,10 +5346,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "李대통령, 2기 내각 '교육장관 교체' 돌발변수…원포인트? 일괄 개각?",
       "media": "파이낸셜뉴스",
       "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE14UzBiRGRDWHZudkNVdXljZzFRNGZCcVhvNWpGVWJJdWo1aF9zNDNMTUJhR2FoNlRfN1l5SEJ5dHZha2RCQVBJMVQ0b3NMNGZEeFNrU1ZSbVJBUQ?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "기타",
       "group": "기타",
@@ -3630,10 +5361,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "'최교진 사퇴'에 친정 전교조 \"AI 대응할 교육부 장관 인선해야\" - 머니투데이",
       "media": "머니투데이",
       "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBQRmplbk9Wd3ZoaVNOU3E0SEwzdXBaekRHTkRiU2RtY3Q0bE9jY0F2UmVrVGRlQUtmTGFkUnNIZnVlcVJyZG9vdWZlVzJtWmNVQU1GYWtaQ19CU3ZTc0R5aWJjc0ttVUlkUmVMLUE4Y9IBb0FVX3lxTFBQRmplbk9Wd3ZoaVNOU3E0SEwzdXBaekRHTkRiU2RtY3Q0bE9jY0F2UmVrVGRlQUtmTGFkUnNIZnVlcVJyZG9vdWZlVzJtWmNVQU1GYWtaQ19CU3ZTc0R5aWJjc0ttVUlkUmVMLUE4Yw?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3646,10 +5377,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "김상일 경북도의원, 행감서 수능 부정행위 예방·국립경국대 의대 군 단위 진학 기회 보장 촉구",
       "media": "글로벌경제신문",
       "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5vdE92RC1ld3gxcF9wNU9kazhWWnhTS3NiT0xCN3ZCWXNJVW8xVjREcl9kNHBFY0htMnU0TkRPRUNfb1R6cnRkRFRCbnNzRkZUYkRIV3M0X2s4YXNOOHlrZTROclRFVlR0OHVDSNIBcEFVX3lxTFBuNjBTdTVSbG5PRnpOSUpIa3Q5MHBoUUQyTHhLV2Y4blpCRVllOV9RcmNFWXZJeVZNa2dDTzlqS1pOSVBFUGNpZzFrYm5admlOclZEZTVfUGUtaTVWSF9EcmVIR0dpczlqek1oT1Q2cWU?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3661,10 +5392,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "투비소프트, 공공 업무시스템 웹 전환에 AI 적용…화면 검증도 자동화",
       "media": "테크월드",
       "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1MMXV6aVBNai13bDdsdkVPV3RhS282T0JOT2I4SmpUbVNvZEVwNmtTanN2d01jT3gzSVhTbkQxSjY5bVJhYXAwdVdUNHQ1M2xTdU1KZE9uWHJBSkpQZjRURGNZNl9BQXd6?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "적응형행정",
       "group": "산업",
@@ -3676,10 +5407,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "AWS와 손잡은 미래에셋증권, ‘상품 지식 AI검색’ 서비스 운영 개시",
       "media": "IT비즈뉴스",
       "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1lZE5HVWZ6QlRYRnFXSXZRYmZ1b0JEYnpvNTJYbVdoRUJPRFdtaW5vcmJtMlBtUTQ2T0EwMU5CVnFwQmJFbllLNk9NdWJhT3NwYUZzNGZ3VFFXOGlGVXlMVWFIalFRRkZmX1JqUg?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "기타",
       "group": "기타",
@@ -3691,10 +5422,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "김포시, 대한민국 지방자치혁신대상 ‘디지털·AI혁신 부문’ 대상",
       "media": "중부일보",
       "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBOcUswOHVEUS11aU5yQk5KYmswbUVldkJBSWFfV1Zub2hqWUs1ZmtZaHBiSmc0WVV3TlJSbXNBdHpxd1FXRzJsOUtXd0d5Zzl0amNKVkRlSGRDOHRsN3ZjTlVfdl9TN25PZzV4MlRR?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "기타",
       "group": "기타",
@@ -3706,10 +5437,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "[글로벌 테크·환경] “전기료 폭탄에 식수 고갈까지”… 신간 ‘하이퍼스케일’ 저자가 폭로한 AI 데이터센터의 민낯",
       "media": "AI넷",
       "link": "https://news.google.com/rss/articles/CBMiQEFVX3lxTFA2VXZ6Yjc3TFJLcUNydWlNUVl6NVBOMVBpTXpNdDFtYnNqMURNRnJ0VE5BellBLXBWalFyNFpRSXE?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "AX 기술 동향",
       "group": "산업",
@@ -3721,10 +5452,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "[스페셜인터뷰] 박수현 충남지사 “충남을 대한민국 성장 중심으로…AI 혁신과 민생 경제 함께 챙길 것”",
       "media": "주간한국",
       "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5BRWkyQ3ZfTGtreERaWEhlYkFLXzZZVTdBU3VWQVY5YV95TmxZSUk0MEk2WDQzZWhzaTZoYm41TTFGTERhVXdKVmNtYXQ1M1dVbEJUV1BHRXB4RDdVS2twZGk1QVp3TGZTMFpnanN5eULSAXRBVV95cUxORElrUWZZcmRHSkViR05lV3lkVk02QU5XSzhpNUtOSXNkZ0xCQWd5bnVrcFRXOXVEbFVVVkk3SmNsdXJReFJsMkN5anlXOGkzUWZYbjdBVmNXallyMVRfbnJpODJkakl0NTZZTm8zNHZaZDhBXw?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "기타",
       "group": "기타",
@@ -3736,10 +5467,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "\"'신뢰 생명' 사법부 AI…실시간 정보 확보·자동검증 강화 기술 관건\"",
       "media": "이데일리",
       "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOUzdlZlBXYmlvbUl1U0w0QlNaVHJBNnlTUndoOVY5TUZjR2Z1bHNXTUtubENuOGJrLWp3cldWYzZCTDZITV9rQVNZNTVPYk9aNTZxRklTNVpYdFFZRkFPQmN6RTFYS3FYamdvQUlpWGpEWE9qaEktTm8tV2pxRW1pSw?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "융합연구",
       "group": "교육",
@@ -3751,10 +5482,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "[하이트진로]손흥민과 AI 필터로 200만 접속… 테라의 AI 마케팅이 전사 ‘AX’로 번지기까지",
       "media": "https://aimkt.biz/",
       "link": "https://news.google.com/rss/articles/CBMirAJBVV95cUxOWjRBS2lWZ0FwNjBxa2RDMXJiMmszSWJOY1d5aHBQTnkycTJEUEZwX2FhZ0lQd0V1bi01blVVMzZ5Z0htU3lBZDBHXzZqVkRYeVlVSDhreGpNOHpMa2ZYbFJNdmt0NndSdFUtMm92eU5YSjFlZmZ1dGVWNHVTTlRKMzFYQjdYV2VKb0ZJQ0g5Q3c2QzRnWmZzRDl3RjlCeG5iY1JTWHN2SGpHSDJoakxjWUFaUFlRUUV4VEktV0JiSUNUWWd2bTZHcjczUkJ0YjdUcDdic2J1Y29LOENjMkYzakVrdVU0bHd0QkVid1dwcThpXzRzd1VVVHdjTHl2VVBrTUtxSHlRMnNmaHpBdUVqU3RlaHdSek8yS3I2R2F3YURJdUFFNlFXaHF1OTc?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "증강인재교육",
       "group": "교육",
@@ -3766,10 +5497,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "AI 쓰자니 기밀 유출 걱정, 막자니 경쟁력 걱정…산업계 ‘딜레마",
       "media": "이코노미스트",
       "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9VOU9CXzF4UXAtUDdjd2JQNkVZMzVPd2tFYmE0ckxMaVU4Y0tSMkhQRnBISDUyTUlTS1Zza3BXWkdJMURiT1pob3dHMFZScUE5NjBUZTNQZGszU3hZNTBXSVd3?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3781,10 +5512,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "원주시, 복지서비스 23종 통합 관리",
       "media": "원주투데이",
       "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE92eWVDckhzdVJISDlobTlrMHB5QXpvNzBfazZDWW1aZF9PQzA4clZyNnA1bnpWR09YNEpVTWM2Qkh1YVE3NnpLUHNkVWpscm5WSm9ZSTRabm04ZVpWNmZRT09JWjduaDVWNjYtSlFJd0I?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3796,10 +5527,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "기술유출 107건 중 40건이 반도체…AI 시대 기업 보안 비상",
       "media": "이코노미스트",
       "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5aVmVRZURibnJBTnZpTXB1cXcyeklKSXpJQmxPdFFLbHJ1YXlEaUEwalBSVDV0WFBzbnV6a19HYXBMRE8teFpPcnc4Um9QTG5TbWw3dnVESlZMM0JMYVlEalRn?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "융합연구",
       "group": "교육",
@@ -3811,10 +5542,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "“고객이 말 안 할 땐 AI도 쉰다”…오픈AI, 음성 AI 대기 요금 60% 할인",
       "media": "이데일리",
       "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOS3dMZW5HbDE0Ry1qWm5USzlDci1GNWg1SkNPUTZSSk5vZHpvc3QwNmNwR0Y0T05xSS1qaThtcW5TZ0hqNW1RS21yZnVRd0VfaDFfTUlIMGlfZlVQRU9NNG9TY29DRUJTQkdFbVNpT0xOSlNqTnpWNTFUNE94cDQwaA?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "AX 기술 동향",
       "group": "산업",
@@ -3826,10 +5557,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "큐리옥스, 중국 연구중심 대학에 'Pluto ALPHA' 10대 공급 계약",
       "media": "뉴스핌",
       "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAtTmRZUFBROWhCRkFFaGI1X3F2UWtUQk8yaU14WHc3ZENHbG80NS1qMVFJRnFELU1Td0xTMVpXdzd2YW54cWxya1RuSU9MeEpyYTlHR3Y2enZBNEo5?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "융합연구",
       "group": "교육",
@@ -3841,10 +5572,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "성균관대, THE 학제간 과학 순위 전 세계 1,058개 대학 중 24위 기록",
       "media": "국민뉴스",
       "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5YMEZydG96aGw0S1A5N0pmQTF1Y3NUQmlsWWdDZFBXQzh5c2s4T0xPcUhvMnJNOEpHRTFiRlZnOEs0cFFaT3RsSUJB?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "융합연구",
       "group": "교육",
@@ -3856,10 +5587,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "호서대, 바이오헬스 AI 챔피언십 대상…교육부장관상 영예",
       "media": "한국대학신문",
       "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBzMHZiaGJTSEFSM3ZWOGZwalB0NFpLTC0xX3pIT0x5c1Q4TnlWM1RfZ0ZQS0JwWXgwck56YmRLcGVFVzdlMWxFVkx3bW9Wdk00RE9aajcxcEZ4Vl9fNzZSVXFVZXlaUQ?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3871,10 +5602,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "충북대, 코스 배터리 챔피언십 '금상·은상'",
       "media": "충북일보",
       "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBvTFkxLXgzRFVnSk5HZ0t0cW9jWk9OcW9QMU1YZXZ1Rnc0SmtpUkMxeGpVZmsxWnZ4Y0QwQ09WRHR4LW5wSWtHTV9UYmNxYUE2MzJiM2tKd2lXTTB1WGJaRw?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "기타",
       "group": "기타",
@@ -3888,10 +5619,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "선문대, 스케일카 자율주행 경진대회 대상…교육부장관상 수상",
       "media": "백제뉴스",
       "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE41RHZLX0ZMSWRKSkF3VGJXczZYUlRUbkZmVmJnTmF6RkNjQkJGd2JTVVlYT09TalpwQ2RVeC1QTFl3N1BQTGZvMjJyVzZwYzcwTDktWEJSOWh3d1VlWmc0WnVCaWttd1RvWkpPeg?oc=5",
-      "region": "domestic",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3903,10 +5634,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Degree Inflation Has a Source. States Can Fix It.",
       "media": "RealClearEducation",
       "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNQ2VodnFaeGNwNjl0WHJKSzhzRXB3WC1ySEtKd0Q4cjRPRkNsdnFVOXpZY0tGaFVpNXFPWkxybVZRN200Yy1XQTB3S0FrblN1TlQ4a3U0NFU1TTJiRGFwR1pZMTB5OHAzQkxQaEgzaWVXZFRGTjVpWXUwQ3BMdHpZcUxLdmZVVjUzNEFLMGFkYkVDY2dKSVIzMF8xXzNiWF9HTnlaZUNSREJjcW5oSVZWdldId3V5UQ?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "증강인재교육",
       "group": "교육",
@@ -3918,10 +5649,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Illinois’ projected $927M surplus could give way to $2.4B deficit next year amid federal changes",
       "media": "WSJD 100.5",
       "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPZVRmMjY4Wk5EYVhLV0dEbnFjWWJ4Y0t5Q2l6SUpBZUVObFlLWERudWJtejJCalBhYTU2MVoyTEdISENMS1VRc1JHc2JsZC1ubl9wTURVMm9uNFljRkNFa0dvbGdITUlKTXJ0eTVoOTdiVjloZlQzMHZVUUY2WmVuVHgtZWFkTFVOc1dTVzQ2MTJiTF9DQWFIaXZDVTZPc1kxZzNfOWZVdUFXZlppOHVmaXRiVzRxUHBIanNSS0s2cnA1c0ZMWGJMUlNB?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "기타",
       "group": "기타",
@@ -3933,10 +5664,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "SCCC Announces Changes in Board of Trustees Leadership Roles",
       "media": "TAPinto",
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQRktrelJtUDVhMjd0NXUzQVV0VWJFOW1ZaFFVMzF0Yk1qTWo4ZGhkdHlmOU9XUkVSU3QwdVlGWVBRaDVGT0ZrMWdDVTBEVV9hd3N5TXA0Z2w4RmZnRnY2WmRfX0Y0a2dQUzZNMndTZEpKTHRmQmo1SlBtVmtiV1lRYnpfZG5OUkZHSFg2cm9LQzVZNGt2YU9LMnFZSXBxTkxKMjJjSGhKS2NncDdfY1RtalUxdWFscnJpcHo0TURQWlAzbnVnbl94TnQ4MVRKWlZD?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3948,10 +5679,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Raising living standards requires real reform",
       "media": "AFR",
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVm9CUEpSQ1BwbFFOZm9Tb0IyY3JrMlVjQlk1LVE1ZFlKSGROTmhtNG9JVGk5Y0Y5eG9ZSW4zZ2NpZmM2RnNERmpwZE8zZGYtczZNV2x0SFl6aFVsaFpaeTJEOUg5WXFYdW52Z2hJdGtsX1ExV3V1WVdSNzI0VGllb0J2WXJlTk9rRGczSDZmQ0ZXNzNpN3AxdWpCcng?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3964,10 +5695,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "CJI Suryakant welcomes judicial reforms, says media should also introspect on reforms it needs",
       "media": "ANI News",
       "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNWUhxT3hUWW5kU3RsRFV0SWlrVXZOVmVyeEgzcW5iV2hSV2phRHZoRVN6SHlhbVpsenJONWotV0dobG05V2FxaVRMZWM5T2hSY2dhY3BtQzRacTVrWnpBMWh0S2t2ZFZ3OUt3QS1IYUtVRUhiQ0VQbDRRel85WGtNVU8ycVFpcTBvSjh2T2Z0am92RWtQdkhUMi1YcElfY3JobzZFNDlnR2ExeGx0eWxodXBud3lSWEh3TUdnWlZtV3V3U2ZRcmQzY1JwdFl5TmlaaVpCVy1CT2xLMUZaVDRNNWVCZFI5ejlmU2NpRWRn?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3980,10 +5711,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Donald Trump Activates 'Secret Weapon' Overhaul Threatening Over $100 Billion in Federal University Funding",
       "media": "inkl",
       "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPZk9qWC10ZWplWXUxTmlwdXRFTmVGS18wblRHNjBMeU02RGZIZnR0WDJqT0NTbFJ1cXpYOUVaWk9vRDhPaHZJOXBrckJaSjMxWFpQaGpqcUxpQkJJT2NheFF5aTFEMnp2NUtpS29vWGdTejRlUElrT1AwbHBqelN3ckNPSjBaRlV0SlBpNEFkSFVueXVMbzVmMmFBbHpqc2tUYVFxSkptbFMwTXdNSUNKbXFuNlFGcWp6TVRKLUVwb0FTSkNDVkc4Nmh3?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -3995,10 +5726,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "How millions of graduates just saved $4000",
       "media": "Toowoomba Chronicle",
       "link": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxQZVk0WUp1Z3JmTEpmVkswVzZqNHExd1dmNC1MNHBINkdzYzZHUnIxVjg0TzgzZnI3bGNkYWc5WVV0X2dkOWtFaUpXMEF1azlFeEM0dXBVaTUzSER2eHdtV211ODZlUzlMY3pZN1d2cjhYWGJicUVvaFo3el9FejlNTWQzRVM0MWdBU2RhS0VxZ2traWZLNlZvWXRaakFzT1JOQkxHQWh2bm1SdWpMMmNZSWZmUjBUZjRKZ1Y0eTNXTjFhaG4zSFVKNlhybHBzRWZMNTVlcFZrZko4c0VCX3ptdENmNzBUZWY0ZWZXeVRaMjlsR0xHNmRxeEl1X2VseGtxbDh2RHNwTDdaWkkwUjZab3NCWVRsREtkbWZhOF9LaVI2dEVYTjVka25B?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "증강인재교육",
       "group": "교육",
@@ -4010,10 +5741,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Govt announces introduction of new university funding model to prioritise poor students",
       "media": "People Daily",
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxORTd4RzE4WjlCdHZjM2NxNjlPX1RnbkVSVXEwbTUwZDAxY0xWbWJmUjRCaVREMndhc0JNRHByLWp6eFU2M1Y0RnVNVnVCdmM0M1ZqbUs3N2M1czRiUFJPV3pzMGUtLXM4a2FQdUpkX0cxclJkNFpucVFIcWhwQzFDOGFjM19xa1FBb21VYTRxVjloZmgwX3Zac0dXRm12cVZwelB0ZmVBM0VCMFhRa2YwS015NWF1SWJVN0R6OXB3?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -4025,10 +5756,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Scientist Two and the new knowledge frontier",
       "media": "The Express Tribune",
       "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRE5DNlpnanZzbV9tXzdVeVh2OEFUeWxfODRVS1dGZHdSZHBBNExuVFl3WjFNTTk1ekEyamhXWmYtS2t6TGVqYmVKUWNoWERiaFUtakFHdGsydkFueDM0clRkYS1xeUhDVXhwYmNnWTk2WnBsSnJlc0k5YVdtS3BDZElEQUpqZWRR0gGQAUFVX3lxTFBWTTlGSnJiWW9pWWYybzVpYWk1LUNacnhidVNfcEtsdHdIcnY4Q2drN3JZeXdFdk1KeW1pWkl1X3g2LTN5UVZKM1pncExQTHA1WW5wWG5neW0wTGg4NWZGcC0tTHcta0tZUGxZQ05jRUV2RjNDaEhHN2ZzS25fU1Q0VGFtbzNmcVR3dXNQbkhlVw?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "융합연구",
       "group": "교육",
@@ -4040,10 +5771,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Column: Lots to celebrate at Northwest",
       "media": "Maryville Forum",
       "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZUszem9pQXkxTjJSaW40VlJ2a2VfcHFNakFEWG5BY0tNNXpxNUMwQzhmNm5DOHhqOFVfTkhKRTI5c281bTlBMHlURjFTLUdlbTA3WmNZcXN3QlR0cmlNazd4akVHb2lxLTVha050WTFQZUtUR3ZGMFZ5aTNhdFM5TVYtQlc3cVk?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "기타",
       "group": "기타",
@@ -4055,10 +5786,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "ASU Retains Top Public University Spot for International Students",
       "media": "bsinews.id",
       "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1DQ3lpRFk2X3o0X3ZhMFBGZXRtYnd3Ny1nRDVwcGNmb0k2RzczTU9wcGFFY2lwUWVwOXVNTC1TUV9mdjVCOW5Jd21kZHk2MHpYN2hhM09hcTh5VmlNYlJSMno2LS04VzRBdkE?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "증강인재교육",
       "group": "교육",
@@ -4070,10 +5801,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "ASU Ranks Second Nationwide for International Students in 2026",
       "media": "SuaraGarut.ID",
       "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9lUUFnd3hhWXh5TkVTX1N5bVFwbUpRRmJrbXF3R0twTUlpVDFadEJCMUlLb241UVRURTF1d09NVGRzZGpuMkVRanB4MlBfbk5qNHZJMC01dE9UV0kxd2FIZXc1ZWZqZWl1OW9QaGtaRFA?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "증강인재교육",
       "group": "교육",
@@ -4085,10 +5816,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Humiliation for California college after hitting nearly 20-year low in university rankings",
       "media": "New York Post",
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWFNQX2g3ZGVSOHdQb293TW9FOFlIdWg2Y193T3FDRTBwTnRZQWF6eWhyeFFjNHNOdTRJdTltMU9RdUg0VjZYTFBPczM1a2hxa3VPcTJEdUpwdG1wRV9EMFY3Zk5RVXplTk1qTkIzQXc2dm8wWFBlRjdKdVZWT0NsRS1wXy13b0JfRHR6bmliTTlBTjl4VG1LTkM0NEhqUjd1d0NVelBKa0dpbG9FNmZCUW9LNnZ2R1d6ZVE?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "정책/철학",
       "group": "교육",
@@ -4100,10 +5831,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Newly released documents chronicle legal row behind racism report",
       "media": "Times Higher Education",
       "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZW5ENHFfbXZhUWd3cU5BOHZRdHpTYmxZRFV6R3pYSHFyVEZrQ3NnSG94dE1tRzhoc0M1Z2w0a05xX0VQZjJPRjVxU2JaWkRDUEVKMEZRQzdhUnc3eVRXYzVBTjN2c3J4SHFZTUpzcE9hTklNaVp5cUdWLUx0NElGcFN0SHhPYV9Ud3JNcXpFZnlUVjhVRFZSN0dBams3dUExWkZiQTJOTnhTaG8?oc=5",
-      "region": "overseas",
       "date": "2026-11-22",
       "field": "기타",
       "group": "기타",
@@ -4112,6 +5843,36 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZW5ENHFfbXZhUWd3cU5BOHZRdHpTYmxZRFV6R3pYSHFyVEZrQ3NnSG94dE1tRzhoc0M1Z2w0a05xX0VQZjJPRjVxU2JaWkRDUEVKMEZRQzdhUnc3eVRXYzVBTjN2c3J4SHFZTUpzcE",
       "feeds": [
         "해외:university world rankings policy"
+      ]
+    },
+    {
+      "title": "외부 AI에 기밀 올리면 ‘차단’…가드레일 강화하는 SI업계",
+      "media": "서울경제",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBfb1VIRGxWQ1RyLVlyQlB1WEZZdFJEV1dPdkthWW5hYWdqakdYZDZGSlRtUmxBck90Y0RMdUlIMGxXQ0xzc0NnbVZPb3NmYXVjR3fSAVNBVV95cUxPVS1xMlBLb2RsR3hYSGVmbzJBeTBHLVVnMlc5T2pMVDMwZU0yV24zYzlqazAyMVJFX0o4TWhnRTJnbENBRmlUR3FfVUhHdGlrTHRRZw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-22",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiUkFVX3lxTFBfb1VIRGxWQ1RyLVlyQlB1WEZZdFJEV1dPdkthWW5hYWdqakdYZDZGSlRtUmxBck90Y0RMdUlIMGxXQ0xzc0NnbVZPb3NmYXVjR3fSAVNBVV95cUxPVS1xMlBLb2RsR3hYSGVmbzJBeT",
+      "feeds": [
+        "구글뉴스:생성형 AI 업무 도입"
+      ]
+    },
+    {
+      "title": "한남대 첨단분야 혁신융합대학사업단, 2026 CO-SHOW 참가",
+      "media": "중부매일",
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBzaFowbWtsaFhJOWpzOTg4WkZHTmI1bTVFNEhiQlo3cFZJODVsZVpuSkZRWTMxWWFQNndnWWNBbDdmU2JONFpQanNsLWxUNkpJYVZUQWdSX1dMUUdhMzZrd3lUcy1iYXJM0gFuQVVfeXFMUEVwSVZvSEFfeThHSTIwZUxZNF9IaExqWGxnLUMtejdkQzhsVk4tOTVNcWZFVF9zaWJUcFFJVzNhRUVfNHcwTXRDVUFsYUhMWU5NUnktWmljcGJiVVV2OVNJNVIxYlFLcXBuQzBBN2c?oc=5",
+      "region": "domestic",
+      "date": "2026-11-22",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTFBzaFowbWtsaFhJOWpzOTg4WkZHTmI1bTVFNEhiQlo3cFZJODVsZVpuSkZRWTMxWWFQNndnWWNBbDdmU2JONFpQanNsLWxUNkpJYVZUQWdSX1dMUUdhMzZrd3lUcy1iYXJM0gFuQVVfeX",
+      "feeds": [
+        "구글뉴스:첨단분야 혁신융합대학"
       ]
     },
     {
@@ -6687,10 +8448,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "한림대, 춘천 의료·바이오기업 미국 시장 진출 지원",
       "media": "쿠키뉴스",
       "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE14eEJSaWg1SDRnUXJYd2ExbDhxd2xJNDZ2SGVfekt4YXBWeU9fQlpCTnJCbFQtZ0ozdy01amdJS1hmajhJX3pueUUtOVUtOVJ4SW8xR290UWhYZnMzY0t0UFBScw?oc=5",
-      "region": "domestic",
       "date": "2026-11-21",
       "field": "융합연구",
       "group": "교육",
@@ -6702,10 +8463,10 @@
       ]
     },
     {
+      "region": "domestic",
       "title": "[오늘의 AI 준비] 11월 21일(토) AI가 답한다고 미리 알리고 있습니까",
       "media": "코리안투데이",
       "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBGTnFUbkNWcF9vaEdUa2tEZi1tUDFTZnJjU0dPbGlncWNmd3htaUJkV2pob3ZlSm1wRGpVdUdVOHdzSU40MmJXaA?oc=5",
-      "region": "domestic",
       "date": "2026-11-21",
       "field": "기타",
       "group": "기타",
@@ -6717,10 +8478,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Government plans two new oil refineries to cut fuel imports – official",
       "media": "Eye Radio",
       "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQWENkelZRZTgyYWptcEZicGVGLXJpUXdjNUFISnJVSlppc1lacHdvZmZiYU51eEUzMkt0UDNGbHRoSzlEdTNFRkYwTHNsSGpBSmYyTHEyY0l5bVpOU05STnNiVmhQbU9PNHZoZjNkWVhPcVprZmdYYUpzMUN5aWs2NnNXaFA1RXdMbFVlYnZ6NmtYVGFK0gGaAUFVX3lxTE5RdVloSzl5Z3lUQXBfTFBkQzcxTElPdXFiZnBOTXdtSm4zRkxFQTg2QVh5dkRGdS1JQnJLQVdnWEhUb1NBYWYwdTdQWk1WVjhhem4tVVlDblFqZGxVMlBnR1VPSXEwVGhiN1ZzekJuR05KbC1FVUtDS1VBRGdvVjFqNEFTV0tJZDVUWDVwLVZLd1VENlNSSDNxekE?oc=5",
-      "region": "overseas",
       "date": "2026-11-21",
       "field": "정책/철학",
       "group": "교육",
@@ -6733,10 +8494,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Fewer students are traveling from abroad to study at US universities, report shows",
       "media": "ABC News - Breaking News, Latest News and Videos",
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQajEwakM0emhEMjEzeDBPaDhqb1ZCWUVVekpwY1RnblJBOE1MczhhR2FxREI3QlBxZ1dYaGk2S1JlQmdERXgyQXJVb1ZlNXc2Z0VwbTVNRFYwbzlCWXBzV3VhQzRxY0dKTWtFUEpoelk5dGh6LTBhMWNhb0tXSHVaS2ZyWVBfOEpnMGZXemw0cjhJUlcxa1lqRkxiRzkzcVhFemI0dVhR0gGrAUFVX3lxTE1MSTJhekxNREpYVDRpVWEyU0N5UlZMN05NN2RlQXE5cElIXy0tSmVidXpCN3BqRjNORG9zVzdoaFd2VlA4NXp6dVFtTVh2VVBpWmRua2hrTjJ4UjZlaTBlY0NKTUx0M2VNQ1RqTGRHa2VGTjI1MlBDa0gtQXpNU1pkOTdhRUN3NUxyR0lnZE9wNTRMRlN2eEM3czZXTWdkYVZKWlZ3M05wWVNfZw?oc=5",
-      "region": "overseas",
       "date": "2026-11-21",
       "field": "증강인재교육",
       "group": "교육",
@@ -6748,10 +8509,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Fact Check Team: Why schools are closing across America as enrollment declines",
       "media": "WKEF",
       "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPVE5sY01iN2FSX2t3MEhSTmJ6b1JoOWNKREpMN3Q3dXAzeXdHMVlhdUdqakFPZTBRVkFTcmdFZU1iZy14N1Y3Tmtybm4zYmtqSkliRUJBZHV3YmVDY2tqRmFmb2YwcnVBTWptUjVGcDVxZUtXUmc5RFZsblhrN0NMQWsxNWc5NmdaS0pxcHk0ejd1SlBna3ZDRl9nZHctOVE3Z0V4VkRYMVNnZFlpMk5FSjZZbGhVUnlMby12ZzF6bkhoMTZ6NFhudGpoLW9WVHlONmRiQWtVS0lwM3ZXTHQ0bXlMX2FMb3FveFdUdVVmcVpTeTYtRTdsdA?oc=5",
-      "region": "overseas",
       "date": "2026-11-21",
       "field": "증강인재교육",
       "group": "교육",
@@ -6764,10 +8525,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "US school closures mount as enrollment falls, parents push back",
       "media": "https://streamlinefeed.co.ke/",
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOVnlUNTdPampnNXJjRlVJMzRWaW9jY1I0YUxZR0FsTmswbjcwWHNrdzBxckQ4ZDl3WW5rY01Jay1YVUZIcUZBRWRRWTRYTlhaa1RUTlNuZTdhc2dJQ2NjZHUzOE0zMGIxVzRWSmV5UWZmVk1HelA5YXlaZWVIdkhfT2o5UnZZSzZwRUFHeGVyMUdMU0tncE9rSE5UdFk?oc=5",
-      "region": "overseas",
       "date": "2026-11-21",
       "field": "증강인재교육",
       "group": "교육",
@@ -6780,10 +8541,10 @@
       ]
     },
     {
+      "region": "overseas",
       "title": "Students Rally Against UO Budget Cuts",
       "media": "Wisevoter",
       "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOUmQxV3hSZzZ6cjNQdXdvTDhkZ2w1dnRUQWFadmtpamxRRUFSdjhOYzV2MktXYk1kMXVSY1B2QTFOTmZlQktjc0huQV9BWWRkR2hKZzlUODNCWl9TZEpVa1dsQkRkRUlfOGJRTzBsYnZhMnlzUUdHVENfSlRMV0czWW4zbldIUFJ2WEpGeVVTdEJKMGs?oc=5",
-      "region": "overseas",
       "date": "2026-11-21",
       "field": "정책/철학",
       "group": "교육",
@@ -6792,6 +8553,37 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxOUmQxV3hSZzZ6cjNQdXdvTDhkZ2w1dnRUQWFadmtpamxRRUFSdjhOYzV2MktXYk1kMXVSY1B2QTFOTmZlQktjc0huQV9BWWRkR2hKZzlUODNCWl9TZEpVa1dsQkRkRUlfOGJRTzBsYn",
       "feeds": [
         "해외:declining student enrollment university"
+      ]
+    },
+    {
+      "title": "창원대 ‘특별법 국립대’ 숙의 돌입…교수회 “법인화 꼼수”",
+      "media": "쿠키뉴스",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1penN5eDVtVG5MNGhVd29wd3lHN2VXU0RKT01PWTFpYzY2SDV3MmxBc3plOWVtX1E4VmlYbTY0QlFHSXZSaE5ia2NCUnNrVVlKbjhKOUVrOUZabmtja25ndWNpNA?oc=5",
+      "region": "domestic",
+      "date": "2026-11-21",
+      "field": "정책/철학",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiY0FVX3lxTE1penN5eDVtVG5MNGhVd29wd3lHN2VXU0RKT01PWTFpYzY2SDV3MmxBc3plOWVtX1E4VmlYbTY0QlFHSXZSaE5ia2NCUnNrVVlKbjhKOUVrOUZabmtja25ndWNpNA?oc=5\" target=\"_",
+      "feeds": [
+        "구글뉴스:국립대 통합"
+      ]
+    },
+    {
+      "title": "AI 도입 확대만으로는 경쟁력 부족...AI 거버넌스 자동화와 통합 관리 시급",
+      "media": "지티티코리아",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE11d0d6VUhrUEtZQWZ3UFRQSjgzcW4wVzd2R3FvLUN4OFcxV0dpX1N2cXNLRlk3dk1waGltUXM4d016U3NLX3d5ejBXRmZUQWNaOWdra0E2T2VnYW4tTktuSlVYd0N6ZHdENVE?oc=5",
+      "region": "domestic",
+      "date": "2026-11-21",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiakFVX3lxTE11d0d6VUhrUEtZQWZ3UFRQSjgzcW4wVzd2R3FvLUN4OFcxV0dpX1N2cXNLRlk3dk1waGltUXM4d016U3NLX3d5ejBXRmZUQWNaOWdra0E2T2VnYW4tTktuSlVYd0N6ZHdENVE?oc=5\" ",
+      "feeds": [
+        "구글뉴스:생성형 AI 업무 도입"
       ]
     },
     {
@@ -17074,6 +18866,346 @@
       "summary": "<a href=\"https://news.google.com/rss/articles/CBMi-wJBVV95cUxOZmpud1VqZndxeWd4QTQ0ZHZxZDdfU3BYRUVCYlg0b0p1OFdJaWtmRnZ1UEo5VTJTRzVIZTZBYkxHWmVLRU5UdkVwOENRbkQ5SFJwT19DOFhwUThyOUpMcmFNQVY3cTJ3OFdiTXZ6Q2",
       "feeds": [
         "해외:regional university revitalization"
+      ]
+    },
+    {
+      "title": "서울대 대학연대 지역인재양성 사업단·네이버커넥트재단 ‘AI Agent Challenge’ 공동 운영 성료… 전국 10개 거점국립대 학생 참여",
+      "media": "베리타스알파",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1DcWJ6OW8xb1dTWl9UcHkzNmpnV3JUcmw3bnVTUTc4ZGw4VnBtUlBaWXY1RjduMHpBUmloM3NDWXBEOXdyMERVdkIxS2xfMkt4QkJ5SEliYmM3RW95bkdsZjhvcVRyaDlZVlJ3Ug?oc=5",
+      "region": "domestic",
+      "date": "2026-11-20",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [
+        "서울대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1DcWJ6OW8xb1dTWl9UcHkzNmpnV3JUcmw3bnVTUTc4ZGw4VnBtUlBaWXY1RjduMHpBUmloM3NDWXBEOXdyMERVdkIxS2xfMkt4QkJ5SEliYmM3RW95bkdsZjhvcVRyaDlZVlJ3Ug?oc=",
+      "feeds": [
+        "구글뉴스:거점국립대"
+      ]
+    },
+    {
+      "title": "[단독][2027정시] '입결 없는 첫 선발' 신설학과 '주목'.. 연대 첨단약과학, 성대 인공지능, 단대 AI건축융합 등 7개교 9개학과",
+      "media": "베리타스알파",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5TVkF6MTVUU1FYTHhySWFnVnotUTBxTTF3eXhzeDcwVm5HMmRhdVhFV1dDa3IzVjJ5eHlabmg0cUZ4a1drdWV4Q0M5WWo1S3laTnoxYUtsMzA2MVBWTi1Nc0FRVHdNOElaTG5Pdw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-20",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE5TVkF6MTVUU1FYTHhySWFnVnotUTBxTTF3eXhzeDcwVm5HMmRhdVhFV1dDa3IzVjJ5eHlabmg0cUZ4a1drdWV4Q0M5WWo1S3laTnoxYUtsMzA2MVBWTi1Nc0FRVHdNOElaTG5Pdw?oc=",
+      "feeds": [
+        "구글뉴스:거점국립대"
+      ]
+    },
+    {
+      "title": "국립공주대 글로컬대학사업단 지역산업특화센터 코스닥 스타트업 에스비비테크 채용설명회 개최",
+      "media": "베리타스알파",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE8yVThUUFBJc29CbVZZOHUwaXBmWTg3T2lqTHVSRmhFcW9aVzZWYjNRelZScEx3YWN1eE9ZaHAtYm9ReGRXOUVTb1NBTmMzdzAxOGdMalpuamlaWlNxOEdZQ2x5ZVN1WUVyMEp2eQ?oc=5",
+      "region": "domestic",
+      "date": "2026-11-20",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE8yVThUUFBJc29CbVZZOHUwaXBmWTg3T2lqTHVSRmhFcW9aVzZWYjNRelZScEx3YWN1eE9ZaHAtYm9ReGRXOUVTb1NBTmMzdzAxOGdMalpuamlaWlNxOEdZQ2x5ZVN1WUVyMEp2eQ?oc=",
+      "feeds": [
+        "구글뉴스:글로컬대학"
+      ]
+    },
+    {
+      "title": "'글로컬대학30' 국립한국교통대 2025 입결 공개.. 정시 백분위 평균 항공운항 93.44 '최고' 철도운전시스템 철도전기정보 톱3",
+      "media": "베리타스알파",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1hZ2w3MGc1NUlVeEtlblBnX2tNVEpLOEpRLUpmOU15UHh3U1FNV0s5S296X182SDYxRWpXRjhBLTNENHZ3ZnZmVkVjZTNKZllRZTNTbEIyaVZvbU5WWmdwQWhUQXlsNlNJV1dtag?oc=5",
+      "region": "domestic",
+      "date": "2026-11-20",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1hZ2w3MGc1NUlVeEtlblBnX2tNVEpLOEpRLUpmOU15UHh3U1FNV0s5S296X182SDYxRWpXRjhBLTNENHZ3ZnZmVkVjZTNKZllRZTNTbEIyaVZvbU5WWmdwQWhUQXlsNlNJV1dtag?oc=",
+      "feeds": [
+        "구글뉴스:글로컬대학"
+      ]
+    },
+    {
+      "title": "대학생들, 제주의 돌담과 자연을 판화로 기록하다… 제주대 미술학과 '글로컬 런케이션' 운영",
+      "media": "베리타스알파",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1BR25MdmhIbW1xUnpkeXlJRGE0LVlWNjhDQnZiU09nOTZtTk4wUS1SOUtLdjM0U2xMRjItZ1JOWWExMjF6MjlVWFBkMkxBWnFEV2dxeVRfbDFVZnVVd2lPR3ZCTjVrckF6VDdYRQ?oc=5",
+      "region": "domestic",
+      "date": "2026-11-20",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [
+        "제주대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE1BR25MdmhIbW1xUnpkeXlJRGE0LVlWNjhDQnZiU09nOTZtTk4wUS1SOUtLdjM0U2xMRjItZ1JOWWExMjF6MjlVWFBkMkxBWnFEV2dxeVRfbDFVZnVVd2lPR3ZCTjVrckF6VDdYRQ?oc=",
+      "feeds": [
+        "구글뉴스:글로컬대학"
+      ]
+    },
+    {
+      "title": "[2027전문대수시특집] ‘미래 신산업 4개 학과 신설' 강릉영동대 667명(95.3%)..‘학생부 유리한 과목 선택’",
+      "media": "베리타스알파",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9HLTlmc21xQ3JLcVFHbk1nVXdMcnBNWjBUam9OVkVKMl9aQ0kyR0dMVnhSOU9mMnp2SUVEdXBTZ1ZuQnVNODZ5WDNQSFFESTkxeVdPRjcxWWZqT0hVQzd0V3A2ZG51alVnYlNTMQ?oc=5",
+      "region": "domestic",
+      "date": "2026-11-20",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE9HLTlmc21xQ3JLcVFHbk1nVXdMcnBNWjBUam9OVkVKMl9aQ0kyR0dMVnhSOU9mMnp2SUVEdXBTZ1ZuQnVNODZ5WDNQSFFESTkxeVdPRjcxWWZqT0hVQzd0V3A2ZG51alVnYlNTMQ?oc=",
+      "feeds": [
+        "구글뉴스:RISE 지역혁신중심 대학지원"
+      ]
+    },
+    {
+      "title": "전북대 중앙도서관 생성형 AI 활용부터 해외 학술지 투고까지 '논문작성 집중 특강'.. '대학 구성원/전북지역 연구자 대상'",
+      "media": "베리타스알파",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5wb21IaUNOZTFhamdrVU5kc001d3F2YzFaY3p4Qm1oMGp0WEZBd3RHSHlxT2U4RDY4T0lfRG9JY3dOLWI3OUN5ZWVCYzlkVU0yY3NVZjlYM3NEOFNwbnRxYnN5UGxBRkdpOHRhVg?oc=5",
+      "region": "domestic",
+      "date": "2026-11-20",
+      "field": "융합연구",
+      "group": "교육",
+      "level": "normal",
+      "univ": [
+        "전북대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE5wb21IaUNOZTFhamdrVU5kc001d3F2YzFaY3p4Qm1oMGp0WEZBd3RHSHlxT2U4RDY4T0lfRG9JY3dOLWI3OUN5ZWVCYzlkVU0yY3NVZjlYM3NEOFNwbnRxYnN5UGxBRkdpOHRhVg?oc=",
+      "feeds": [
+        "구글뉴스:대학 생성형 AI"
+      ]
+    },
+    {
+      "title": "부산대기술지주 글로벌 기술창업 프로그램 'P&U STRIKE' 베트남 호치민서 성공적 개최",
+      "media": "베리타스알파",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBnNlVWMUZ4bTlma2VvUXhXOFotLWtQQlEzMGZ5MXpCUWppZ2lWWF9leEF1dGZYbVhiRHMwSUQwbmU5RFdJSTE4RS11RDFHdWVrV1NSOXhFcGpiNFlBU0NYZklFRDVzY2xYdFZIeA?oc=5",
+      "region": "domestic",
+      "date": "2026-11-20",
+      "field": "융합연구",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [
+        "부산대"
+      ],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTFBnNlVWMUZ4bTlma2VvUXhXOFotLWtQQlEzMGZ5MXpCUWppZ2lWWF9leEF1dGZYbVhiRHMwSUQwbmU5RFdJSTE4RS11RDFHdWVrV1NSOXhFcGpiNFlBU0NYZklFRDVzY2xYdFZIeA?oc=",
+      "feeds": [
+        "구글뉴스:부산대학교"
+      ]
+    },
+    {
+      "title": "공문 작성부터 코딩 자동화까지… 경남정보대, 교직원 대상 ‘AI 실무역량 강화 워크숍’",
+      "media": "아시아경제",
+      "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1GM2xaRUJ3VzJKb3d0SmdiaDBITVhybi1Ja3FVSjJrLThPVS1MelY3UVhWTTgzRlNlSXZsdzNLSnU1VWJnbzNocl9RR3NDeUxSUkM3b0hTUzdudEpibjZWTA?oc=5",
+      "region": "domestic",
+      "date": "2026-11-20",
+      "field": "증강인재교육",
+      "group": "교육",
+      "local": true,
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiYEFVX3lxTE1GM2xaRUJ3VzJKb3d0SmdiaDBITVhybi1Ja3FVSjJrLThPVS1MelY3UVhWTTgzRlNlSXZsdzNLSnU1VWJnbzNocl9RR3NDeUxSUkM3b0hTUzdudEpibjZWTA?oc=5\" target=\"_blan",
+      "feeds": [
+        "구글뉴스:대학 행정 AI"
+      ]
+    },
+    {
+      "title": "배리어프리 키오스크 의무화와 공공부문 이행 책임 위한 과제",
+      "media": "에이블뉴스",
+      "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1iV1YyWUY2dW54QnZDaklrSUU2OXE5dGZRZDBlbEhINUFDczdtYXFJa0tJX2F4TkNFakRXRGhJTXBSc1pxLVpBTEhqU2g4T0paRUY0NC1ud0R0bF9ZRGJURE80ZDVnYkxSUFJ0c3Rn0gFyQVVfeXFMUHhjRHhSdS1pQVY5cnh3aUVhOGhPMjhPb0JXYXJHc3NLNU1qRkE0ajMwWTF6MFJqaTIzb3VnUUhDcnpMdjRaVE1aWU1JU09YOFhKVnFZMEtoVk96dzByZk9UeW9QX1gwOFVrNVo0bDJKTVlR?oc=5",
+      "region": "domestic",
+      "date": "2026-11-20",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE1iV1YyWUY2dW54QnZDaklrSUU2OXE5dGZRZDBlbEhINUFDczdtYXFJa0tJX2F4TkNFakRXRGhJTXBSc1pxLVpBTEhqU2g4T0paRUY0NC1ud0R0bF9ZRGJURE80ZDVnYkxSUFJ0c3Rn0g",
+      "feeds": [
+        "구글뉴스:공공부문 생성형 AI"
+      ]
+    },
+    {
+      "title": "한양대, ‘대학 ESG 성적표’ QS 지속가능성평가 세계 133위로 28계단 도약…올해 세계대학평가·아시아대학평가까지 모두 상승",
+      "media": "뉴스H",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE41WHpocG5zaERKa3VhYjBGeVZXUVV4d1dRYWJfMC1zcDFITHpacVpBYW9TM1FVWEhPb3ZDUzE3d0s2ck1FbGxQNTZIM196dTdSSUlOTDRrY0FmaEtwd1E4d3BMMlBBYldsQW5z?oc=5",
+      "region": "domestic",
+      "date": "2026-11-20",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE41WHpocG5zaERKa3VhYjBGeVZXUVV4d1dRYWJfMC1zcDFITHpacVpBYW9TM1FVWEhPb3ZDUzE3d0s2ck1FbGxQNTZIM196dTdSSUlOTDRrY0FmaEtwd1E4d3BMMlBBYldsQW5z?oc=5\"",
+      "feeds": [
+        "구글뉴스:AI대학원 선정"
+      ]
+    },
+    {
+      "title": "[2027수시특집] 경기대 2026입결 정시 수능 백분위 70%컷 공공안전 84.05 ‘최고’.. 전자공 미디어영상 신소재화학공 자유전공(수원) 톱5",
+      "media": "베리타스알파",
+      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE95NmJ0Q3RuQ2w2T0VTcGltaV94M3RtTVhyVW4wcU5xVGlUX2JERXB6VVQ0UGRBOEZscERDYUQ5ekRMN3VvZkFoYWc5NmNFbmsxMUN6MnpHWGtid0VYLW5OTWVSMzBfY0t6dWUwdw?oc=5",
+      "region": "domestic",
+      "date": "2026-11-20",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMibEFVX3lxTE95NmJ0Q3RuQ2w2T0VTcGltaV94M3RtTVhyVW4wcU5xVGlUX2JERXB6VVQ0UGRBOEZscERDYUQ5ekRMN3VvZkFoYWc5NmNFbmsxMUN6MnpHWGtid0VYLW5OTWVSMzBfY0t6dWUwdw?oc=",
+      "feeds": [
+        "구글뉴스:SW중심대학"
+      ]
+    },
+    {
+      "title": "Democrats want ‘Medicare for More.’ Then comes the hard part",
+      "media": "The Hill",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPS2VOeUlKWXd5Q09BcGg2UFp5ZUs0RlRjajI1M3VuOFhLNXdlcDBxZjQxc04wT2xicVlNRDhtNVdRU1RDeUVfcUMxRUp3R2ZmS2RJTE1USE8xMkdxX3lDdHI5SkNFOWxGX3R4RVl4dnNnYWdOYlEzMFA5TWJwM0dha280VkZldUxL0gGOAUFVX3lxTFA3cHZ6QU53dVVodWJDby1tWk5kcTdZcFo0UkY1Y1d4VG51SGxkMnRQRDNxbHlfeUZxQXE4bFNWSXVhTUt6M0YzcU5UUHltZU9wNXVTRHo0MEQ2eWNua0JIVU96VXg3dktXUHZhNE5HcmdjdmMyaWFvdE5mazVHZHNveDgtVzJRSWhRYVU3aEE?oc=5",
+      "region": "overseas",
+      "date": "2026-11-20",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxPS2VOeUlKWXd5Q09BcGg2UFp5ZUs0RlRjajI1M3VuOFhLNXdlcDBxZjQxc04wT2xicVlNRDhtNVdRU1RDeUVfcUMxRUp3R2ZmS2RJTE1USE8xMkdxX3lDdHI5SkNFOWxGX3R4RVl4dn",
+      "feeds": [
+        "해외:higher education policy reform"
+      ]
+    },
+    {
+      "title": "France - Politics, Constitution, Revolution",
+      "media": "Britannica",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1sS25MT0dOOXczNXpJbklncDlKcXVOZnF3WTFrdVd0THFFSUttVzV5X0g2VTB2ZkpSU082NE5GMVB6R3M1YldIazNoMVFZSDVYWGkwVkZ0Ty1yQ3hXNTJDZFpSWU5LM1E3dUM0?oc=5",
+      "region": "overseas",
+      "date": "2026-11-20",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTE1sS25MT0dOOXczNXpJbklncDlKcXVOZnF3WTFrdVd0THFFSUttVzV5X0g2VTB2ZkpSU082NE5GMVB6R3M1YldIazNoMVFZSDVYWGkwVkZ0Ty1yQ3hXNTJDZFpSWU5LM1E3dUM0?oc=5\"",
+      "feeds": [
+        "해외:higher education policy reform"
+      ]
+    },
+    {
+      "title": "Hungary - Economic and social change",
+      "media": "Britannica",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1ldEtjekJIUmFwUnduazhoX084OFdvbS15QVA1bmdhUXMtdzZJZXJJTmIwSE4wbk9pVHZ4ejFMQzgwMENsUVA0REkybFQ2YzlBcVc0THVCMDBMZmhxTjd3LUExcFkzeGt6em1rSGpWTVZjcmJMVHc?oc=5",
+      "region": "overseas",
+      "date": "2026-11-20",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMidkFVX3lxTE1ldEtjekJIUmFwUnduazhoX084OFdvbS15QVA1bmdhUXMtdzZJZXJJTmIwSE4wbk9pVHZ4ejFMQzgwMENsUVA0REkybFQ2YzlBcVc0THVCMDBMZmhxTjd3LUExcFkzeGt6em1rSGpWTV",
+      "feeds": [
+        "해외:higher education policy reform"
+      ]
+    },
+    {
+      "title": "Litigation Tracker: Legal Challenges to Trump Administration Actions",
+      "media": "Just Security",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZllENnFPcEptNWUyMk5PRGdhVWVsWjhxMDFOQ0twUEl6LU5ZVEMxWUpSdzBqandqNDdBRVVqdFJRdEtFZkpfd1dKY2ZEZ1hLQ0Nfb0xWMXVLMnNCYjZSVURwbTlCdFFwWTVGbmhMR2xieUFsNnZ5Tms5b0t1SWRpTTNSQ2xTdWo4ZkpPbmZQTUFZYkp1OWY0RA?oc=5",
+      "region": "overseas",
+      "date": "2026-11-20",
+      "field": "적응형행정",
+      "group": "산업",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxPZllENnFPcEptNWUyMk5PRGdhVWVsWjhxMDFOQ0twUEl6LU5ZVEMxWUpSdzBqandqNDdBRVVqdFJRdEtFZkpfd1dKY2ZEZ1hLQ0Nfb0xWMXVLMnNCYjZSVURwbTlCdFFwWTVGbmhMR2",
+      "feeds": [
+        "해외:university funding cuts government"
+      ]
+    },
+    {
+      "title": "Peter Navarro | Economic Adviser, International Trade, Prison Term, Education, & Biography",
+      "media": "Britannica",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBGdjJjRFoteERRS0ZhX3g5cDEzQl9hQWlfVW5zTnFZZFJNc3FFdFB4SFptVWlLNjQwU2tLdDd1U09VR3BNa2NnR0pLclJWWEtZUnJXdzAzRVlxa0dCRm44?oc=5",
+      "region": "overseas",
+      "date": "2026-11-20",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTFBGdjJjRFoteERRS0ZhX3g5cDEzQl9hQWlfVW5zTnFZZFJNc3FFdFB4SFptVWlLNjQwU2tLdDd1U09VR3BNa2NnR0pLclJWWEtZUnJXdzAzRVlxa0dCRm44?oc=5\" target=\"_blank\"",
+      "feeds": [
+        "해외:university funding cuts government"
+      ]
+    },
+    {
+      "title": "Nationalist Congress Party",
+      "media": "Britannica",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBydE5Xam54YVVNaHlNVGpHU2Y3d0xMelcyNmJCOUppdFJsb001YjZhMzYyRkNObTROd0M5U1JVUXd1M1BXQ0ZqVUJCZFZvSlpiYUgzbzNPWXdJYkdzOU9RdnA0T2ZuV2tQMWFR?oc=5",
+      "region": "overseas",
+      "date": "2026-11-20",
+      "field": "기타",
+      "group": "기타",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMia0FVX3lxTFBydE5Xam54YVVNaHlNVGpHU2Y3d0xMelcyNmJCOUppdFJsb001YjZhMzYyRkNObTROd0M5U1JVUXd1M1BXQ0ZqVUJCZFZvSlpiYUgzbzNPWXdJYkdzOU9RdnA0T2ZuV2tQMWFR?oc=5\"",
+      "feeds": [
+        "해외:national university merger"
+      ]
+    },
+    {
+      "title": "Sharda University Online MBA in Healthcare and Hospital Administration: Fees, Eligibility, Syllabus and Career Options",
+      "media": "PW",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOcTNoM0Y4MTRmaVhHTHQzcGpCaFdSTGQ2WWVnVEVucVUzcWpTa2lkOGtDRFN0OG5JcVNMLUk0bGRibWktVGJsR1BiazNENkJnZmdiU0pqcVFUTUhjQ2pxc3ZpOFV4eE1hQWxEQWZfOS1jNTVmM1FMVHZrVkt6QlJGWnUwamdTYUtGbDViakJrNTdMbzZMMG8wbjZLcHloMDNaUzdVVy1DOWsybklZNDd3?oc=5",
+      "region": "overseas",
+      "date": "2026-11-20",
+      "field": "적응형행정",
+      "group": "산업",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOcTNoM0Y4MTRmaVhHTHQzcGpCaFdSTGQ2WWVnVEVucVUzcWpTa2lkOGtDRFN0OG5JcVNMLUk0bGRibWktVGJsR1BiazNENkJnZmdiU0pqcVFUTUhjQ2pxc3ZpOFV4eE1hQWxEQWZfOS",
+      "feeds": [
+        "해외:university tuition free policy"
+      ]
+    },
+    {
+      "title": "College students are too pessimistic",
+      "media": "Daily Trojan",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE00ekc5VnpvYlJSTVFsTmsyTzlxZF81a1JZcmhLb3QxTVdnVzFReUhXSnIzR3pLcWxIS0I1dDlOYzBkdE44MXhITDFNaklXMy1BcWtsbl9HRDU5T243d3BtOVVfZERTLVVMWkliNlU3X0tyc3ItTHF1bXZJcE4?oc=5",
+      "region": "overseas",
+      "date": "2026-11-20",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMifEFVX3lxTE00ekc5VnpvYlJSTVFsTmsyTzlxZF81a1JZcmhLb3QxTVdnVzFReUhXSnIzR3pLcWxIS0I1dDlOYzBkdE44MXhITDFNaklXMy1BcWtsbl9HRDU5T243d3BtOVVfZERTLVVMWkliNlU3X0",
+      "feeds": [
+        "해외:generative AI university policy"
+      ]
+    },
+    {
+      "title": "Former trade policy chief reflects on $1 trillion exports milestone",
+      "media": "The Korea Times",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOOENDOEtIdG1WdmRPNEdEalZMbkpjV18tUHhBblc0d295akFoSnlMU1ZWX3NwaWlpbFVPZDV0WVd6dFRJRnUxNkxpdDUzVXBMRDhPb0JqZVNNNHliZHpfY0ZZczhxWGFUYlQxNUtMV25Ed1R0N2FhSmlBSHNwZ05YSmRsY0I5eHpLbmdZOG5fTG96cmtLUWFnZjQ1RndFbVBHOHVwbWk0VW1GRG5UZVdDbDFkRUphUdIBuwFBVV95cUxQc3A1c29FSC1qN19xa0RWRFhTTnpUaVdPVzlDUDlDdDBMTnJCcEZzTVdSa21qbVpyQkZJeFU0aWVYbG1idTc0NlVGVUZmd0JjRG5UOUpMemt1UWtPUjJRZVBjWlYxd0Nuc29WNEI3dU01bUgwS3BpbldDeVpQdndfWWd3WlljLUd0MUxGcmJqVjZWaTkyazFpQXAzQWpqQjEzZVNlZFZNNWZKaUQ4dWh1ZktvT01vWU5NV053?oc=5",
+      "region": "overseas",
+      "date": "2026-11-20",
+      "field": "정책/철학",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOOENDOEtIdG1WdmRPNEdEalZMbkpjV18tUHhBblc0d295akFoSnlMU1ZWX3NwaWlpbFVPZDV0WVd6dFRJRnUxNkxpdDUzVXBMRDhPb0JqZVNNNHliZHpfY0ZZczhxWGFUYlQxNUtMV2",
+      "feeds": [
+        "해외:generative AI university policy"
+      ]
+    },
+    {
+      "title": "Data Show Steep Declines in New International Student Enrollment - Association of American Universities (AAU)",
+      "media": "Association of American Universities (AAU)",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNejFxd3Bzelh4WU5GMExqQVVqNFh4RTg1YmtIdi14ZlhPcUtRdGVVYVdMSEJxbmh6UmZKd09wbkVFRmlBNnZxN3JEX3hlM2VjR0F3OGhwcUZmRW5kM25hV0hYcFVmU1p0WXRjTjRTQ1g3ZGNZbDRMQ0h4TkdCUG9VUmxncDVjd09xZWtLLUxYN1VUSjFjVktUWg?oc=5",
+      "region": "overseas",
+      "date": "2026-11-20",
+      "field": "증강인재교육",
+      "group": "교육",
+      "level": "normal",
+      "univ": [],
+      "summary": "<a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxNejFxd3Bzelh4WU5GMExqQVVqNFh4RTg1YmtIdi14ZlhPcUtRdGVVYVdMSEJxbmh6UmZKd09wbkVFRmlBNnZxN3JEX3hlM2VjR0F3OGhwcUZmRW5kM25hV0hYcFVmU1p0WXRjTjRTQ1",
+      "feeds": [
+        "해외:declining student enrollment university"
       ]
     }
   ]
